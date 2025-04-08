@@ -1,0 +1,52 @@
+body {
+  background-image: URL(background.jpg);
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*�弱�羌頵�������*/
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.LoginBg {
+  width: 1334px;
+  height: 750px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.guide {
+  width: 612px;
+  height: 190px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.loading {
+  width: 150px;
+  height: 15px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.loadingtext {
+  color: black;
+  font-family: "Microsoft YaHei";
+  font-size: 18px;
+}

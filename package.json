@@ -1,0 +1,19 @@
+{
+  "name": "wof",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-glsl": "^1.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^5.8.3"
+  }
+}

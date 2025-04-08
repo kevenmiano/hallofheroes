@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "none",
+    "outDir": "bin/js",
+    "rootDir": "src",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2015"]
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,15 @@
+{
+  "tip": "神曲正式配置",
+  "gameUrl": "https://cn-abstract-sdk.wan.com",
+  "appKey": "a7a168e0df854ddd83b3923007963d33",
+  "appId": "60051",
+  "packageId": "2201",
+  "channelId": "20380",
+  "channelName": "wxgame",
+  "subChannelId": "20380",
+  "subChannelName": "wxgame",
+  "logUrl": "https://upload-log.wan.com",
+  "logId": "1009",
+  "logkey": "b1ef86dfdfcb44aca58e3320709791c9",
+  "channel": "sq-wx"
+}

@@ -1,0 +1,58 @@
+{
+  "siteConfig": [
+    {
+      "SITE_ZONE": [
+        {
+          "area": 1,
+          "siteID": 1,
+          "platformID": "4",
+          "siteName": {
+            "zhcn": "美洲",
+            "en": "Americas",
+            "de": "Amerika",
+            "es": "Américas",
+            "pt": "Américas",
+            "tr": "Amerika",
+            "fr": "Amérique"
+          },
+          "siteOrder": "https://sqh5hwna-order.wan.com/order/",
+          "baseUrl": "https://bm-wan-abstract-sdk.wan.com/",
+          "appId": 10180,
+          "packageId": 455,
+          "android_packageId": 455,
+          "iOS_packageId": 465,
+          "official_packageId": 505,
+          "YOUME": "YOUMED0360EB2D54A2AFFB105335CE6DF3BB23771B383",
+          "localCDN": "na"
+        },
+        {
+          "area": 2,
+          "siteID": 2,
+          "platformID": "5",
+          "siteName": {
+            "zhcn": "欧洲",
+            "en": "Europe",
+            "de": "Europa",
+            "es": "Europa",
+            "pt": "Europa",
+            "tr": "Avrupa",
+            "fr": "Europe"
+          },
+          "siteOrder": "https://sqh5hweu-order.wan.com/order/",
+          "baseUrl": "https://eu-wan-abstract-sdk.wan.com/",
+          "appId": 10200,
+          "packageId": 455,
+          "android_packageId": 455,
+          "iOS_packageId": 465,
+          "official_packageId": 505,
+          "YOUME": "YOUMED0360EB2D54A2AFFB105335CE6DF3BB23771B383",
+          "localCDN": "eu"
+        }
+      ],
+      "ORDER_PATH": "https://sqh5hwna-order.wan.com/order/",
+      "ResourcePath": "https://sqh5hw-cdn.wan.com/7road/",
+      "PAY": "",
+      "UPLOAD_PATH": "http://121.10.143.167:8085/"
+    }
+  ]
+}

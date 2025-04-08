@@ -1,0 +1,72 @@
+{
+  "t_s_gameconfig": [
+    {
+      "LANGUAGE": "en",
+      "LANGUAGE_DEF": [
+        {
+          "index": 1,
+          "key": "zhcn",
+          "appkey": "Hans",
+          "value": "中文简体",
+          "white": 1
+        },
+        { "index": 3, "key": "en", "appkey": "en", "value": "English" },
+        { "index": 4, "key": "es", "appkey": "es", "value": "Español" },
+        { "index": 5, "key": "pt", "appkey": "pt", "value": "Português" },
+        { "index": 6, "key": "tr", "appkey": "tr", "value": "Türkçe" },
+        { "index": 7, "key": "fr", "appkey": "fr", "value": "Français" },
+        { "index": 8, "key": "de", "appkey": "de", "value": "Deutsch" }
+      ],
+      "FONT": "Arial",
+      "PLATFORM": {
+        "WAN": 7777,
+        "IOS": 8888
+      },
+      "SECURITY_GRAPHY": {
+        "WAN": "Kt5opAFWh1eRZEyv",
+        "30010": "a7a168e0df854ddd83b3923007963d33",
+        "3001010": "a7a168e0df854ddd83b3923007963d33",
+        "30020": "a7a168e0df854ddd83b3923007963d33",
+        "3002010": "a7a168e0df854ddd83b3923007963d33",
+        "30030": "a7a168e0df854ddd83b3923007963d33",
+        "30040": "a7a168e0df854ddd83b3923007963d33",
+        "70013": "bc09c68e85f2448b9fa555efb4e26e54",
+        "70014": "bc09c68e85f2448b9fa555efb4e26e54"
+      },
+      "USE_ASTC": 0,
+      "FACE_NUM": 35,
+      "VERSION": "1.0.0",
+      "LOADINGSUSLIKS": 1,
+      "BATTLE_LOG": 1,
+      "LOGIN_CHECK_NICK": 1,
+      "OPNE_LOADINGSUSLIKS": 1,
+      "PAWNSPECIAL": 1,
+      "SOULMAKE_BTN": 1,
+      "GVG": 1,
+      "PVP_CAMPAIGN": 1,
+      "AUTO_MAZE": 1,
+      "DOUBLE_SKILL": 1,
+      "COUNT_LOGIN": 1,
+      "MAZE_SWTICH": 1,
+      "WORLDBOSS_BUFF": 1,
+      "SECURITY_CODE": 1,
+      "SNS_PORT": 1,
+      "WORLDBOSS_TISHEN": 1,
+      "FILTER_TRIM": 0,
+      "IOS_INTERROGATION": 0,
+      "VERSION_COMPARE": 1,
+      "VERSION_DOWNS": ["2.2.1.3", "2.2.1.4"],
+      "APP_DOWN_URL": "https://play.google.com/store/apps/details?id=com.wan.wartuneh5",
+      "RELOAD_ALERT": 1,
+      "LOGO_CODE": ["com.road7.sqhjb", "com.road7.sqjqb", "com.road7.sqgbb"],
+      "MICRO_TERMINAL": "https://www.baidu.com",
+      "BETAS": ["hequ_0001"],
+      "YOUME": "YOUMED0360EB2D54A2AFFB105335CE6DF3BB23771B383",
+      "serviceAppID": 10700,
+      "serviceURL": "https://bm-wan-cs.wan.com/index.html#/customer/list",
+      "share_android": [6, 16, 18, 20, 22, 24],
+      "share_ios": [6],
+      "share_web": [6]
+    }
+  ]
+}
