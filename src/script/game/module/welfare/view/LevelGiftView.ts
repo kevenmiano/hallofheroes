@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LevelGiftView from "../../../../../fui/Welfare/FUI_LevelGiftView";
 import { ArrayUtils, ArrayConstant } from "../../../../core/utils/ArrayUtils";
 import Utils from "../../../../core/utils/Utils";

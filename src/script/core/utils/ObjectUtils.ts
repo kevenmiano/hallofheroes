@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObjectContainer, DisplayObject } from "../../game/component/DisplayObject";
 import { MovieClip } from "../../game/component/MovieClip";
 import ByteArray from "../net/ByteArray";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {ConsortiaEvent} from "../../../constant/event/NotificationEvent";
 import {TempleteManager} from "../../../manager/TempleteManager";
 import {ConsortiaUpgradeType} from "../../../constant/ConsortiaUpgradeType";

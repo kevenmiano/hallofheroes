@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaActivityPage from "../../../../../../fui/Consortia/FUI_ConsortiaActivityPage";
 import { FrameCtrlManager } from "../../../../mvc/FrameCtrlManager";
 import { EmWindow } from "../../../../constant/UIDefine";

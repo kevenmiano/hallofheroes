@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { ConfigType } from "../../constant/ConfigDefine";

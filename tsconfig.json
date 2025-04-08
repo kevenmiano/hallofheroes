@@ -1,17 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "ES2015",
-    "outDir": "bin/js",
-    "rootDir": "src",
-    "sourceMap": true,
-    "experimentalDecorators": true,
-    "lib": ["dom", "es2015"],
-    "noEmitOnError": false,
-    "skipLibCheck": false,
-    "strict": false
+    "module": "es6",
+    "target": "es6",
+    "noEmitHelpers": true,
+    "sourceMap": false
   },
-  "include": ["src", "src/libs/**/*"],
-
   "exclude": ["node_modules"]
 }

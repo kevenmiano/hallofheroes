@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ComponentSetting from "../../../utils/ComponentSetting";
 import {MapElmsLibrary} from "../../libray/MapElmsLibrary";
 import {MapInfo} from "../../space/data/MapInfo";

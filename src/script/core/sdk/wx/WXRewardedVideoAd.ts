@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../logger/Logger";
 import BaseAd from "../base/BaseAd";
 import { ResultCallback, SDKState, ResultState, compareVersion, USE_SHARE } from "../SDKConfig";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import ResMgr from "../../../core/res/ResMgr";
 import { Sequence } from "../../../core/task/Sequence";

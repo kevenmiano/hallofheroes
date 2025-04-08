@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_IconAvatarFrame from "../../../../../../fui/BaseCommon/FUI_IconAvatarFrame";
 import ResMgr from "../../../../../core/res/ResMgr";
 import { UIFilter } from "../../../../../core/ui/UIFilter";

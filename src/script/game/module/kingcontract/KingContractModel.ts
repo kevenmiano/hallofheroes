@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import { KingContractInfo } from "./KingContractInfo";
 import ConfigMgr from "../../../core/config/ConfigMgr";

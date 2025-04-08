@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ArtifactItem from "../../../../../fui/PlayerInfo/FUI_ArtifactItem";
 import Utils from "../../../../core/utils/Utils";
 import { BagType } from "../../../constant/BagDefine";

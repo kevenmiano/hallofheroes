@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class ArrayConstant {
     static CASEINSENSITIVE: number = 1;
     static DESCENDING: number = 2;

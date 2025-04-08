@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class OuterCityWarBuildBuffInfo {
     buildId?: number;
     buffId?: number;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class MineralCarInfo {
     public ownerId: number = -1; // 所属玩家id

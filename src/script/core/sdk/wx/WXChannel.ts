@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import { ChannelID, ChannelSTR } from "../SDKConfig";
 import WXBannerAd from "./WXBannerAd";

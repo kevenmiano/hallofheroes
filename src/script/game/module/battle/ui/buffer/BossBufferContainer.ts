@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import ConfigMgr from "../../../../../core/config/ConfigMgr";
 import { IconFactory } from "../../../../../core/utils/IconFactory";

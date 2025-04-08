@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FormationItem from "../../../../../../fui/Pet/FUI_FormationItem";
 import { ShowPetAvatar } from "../../../../avatar/view/ShowPetAvatar";
 import { PetData } from "../../data/PetData";

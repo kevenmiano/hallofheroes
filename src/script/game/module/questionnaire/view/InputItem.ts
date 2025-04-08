@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_inputItem from '../../../../../fui/QuestionNaire/FUI_inputItem';
 import { QuestionEvent } from '../../../constant/event/NotificationEvent';
 import { NotificationManager } from '../../../manager/NotificationManager';

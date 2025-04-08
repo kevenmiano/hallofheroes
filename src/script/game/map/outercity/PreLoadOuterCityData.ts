@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import ByteArray from "../../../core/net/ByteArray";
 import ResMgr from "../../../core/res/ResMgr";

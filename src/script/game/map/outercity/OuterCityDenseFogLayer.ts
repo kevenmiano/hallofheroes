@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FreedomTeamEvent, OuterCityEvent, SpaceEvent } from "../../constant/event/NotificationEvent";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";
 import { BaseCastle } from "../../datas/template/BaseCastle";

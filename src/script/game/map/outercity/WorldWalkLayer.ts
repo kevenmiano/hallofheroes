@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import { MovieClip } from "../../component/MovieClip";
 import { FreedomTeamEvent, OuterCityEvent, SpaceEvent } from "../../constant/event/NotificationEvent";

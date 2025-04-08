@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SmallMapCityItem from "../../../../../fui/OuterCity/FUI_SmallMapCityItem";
 import StringHelper from "../../../../core/utils/StringHelper";
 import Utils from "../../../../core/utils/Utils";

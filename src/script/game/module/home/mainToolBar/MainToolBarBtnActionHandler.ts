@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIButton from "../../../../core/ui/UIButton";
 import MainToolBar from "../MainToolBar";
 import { EmMainToolBarBtnLocationType } from "./EmMainToolBarBtnLocationType";

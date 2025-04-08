@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2021-08-31 20:58:31

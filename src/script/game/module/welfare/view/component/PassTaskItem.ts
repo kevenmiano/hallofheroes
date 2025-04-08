@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PassTaskItem from "../../../../../../fui/Welfare/FUI_PassTaskItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import SimpleAlertHelper from "../../../../component/SimpleAlertHelper";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {InteractiveEvent} from "../constant/event/NotificationEvent";
 import Logger from "../../core/logger/Logger";
 

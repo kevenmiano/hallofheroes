@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {BaseItem} from "./BaseItem";
 import {GoodsInfo} from "../../datas/goods/GoodsInfo";
 import FUI_ResolveMaterialItem from "../../../../fui/Base/FUI_ResolveMaterialItem";

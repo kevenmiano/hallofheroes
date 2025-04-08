@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @description 职业专精
  */

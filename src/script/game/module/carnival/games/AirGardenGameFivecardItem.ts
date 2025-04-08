@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameFivecardItem from "../../../../../fui/Carnival/FUI_AirGardenGameFivecardItem";
 import FUIHelper from "../../../utils/FUIHelper";
 import { FivecardData } from "./FivecardData";

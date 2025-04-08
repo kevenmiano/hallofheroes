@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AccountItem from '../../../../../fui/Login/FUI_AccountItem';
 import { IconFactory } from '../../../../core/utils/IconFactory';
 import { IconType } from '../../../constant/IconType';

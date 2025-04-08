@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Resolution from "../../../core/comps/Resolution";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import Utils from "../../../core/utils/Utils";

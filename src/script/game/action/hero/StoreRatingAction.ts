@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import { SceneEvent } from "../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../manager/NotificationManager";

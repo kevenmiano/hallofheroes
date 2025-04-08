@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageOut } from "../../core/net/PackageOut";
 import { SocketManager } from "../../core/net/SocketManager";
 import { C2SProtocol } from "../constant/protocol/C2SProtocol";

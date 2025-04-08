@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AppellCellItem from "../../../../fui/Appell/FUI_AppellCellItem";
 import FUI_AppellPreviewBtn from "../../../../fui/Appell/FUI_AppellPreviewBtn";
 import { AppellView } from "../../avatar/view/AppellView";

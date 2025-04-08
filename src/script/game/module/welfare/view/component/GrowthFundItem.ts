@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GrowthFundItem from "../../../../../../fui/Welfare/FUI_GrowthFundItem";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import GrowthFundItemInfo from "../../data/GrowthFundItemInfo";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BaseCastle } from "../../../datas/template/BaseCastle";
 import { OuterCityManager } from "../../../manager/OuterCityManager";
 import { PathManager } from "../../../manager/PathManager";

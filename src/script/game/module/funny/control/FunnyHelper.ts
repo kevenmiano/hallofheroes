@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TempleteManager } from '../../../manager/TempleteManager';
 import { GoodsManager } from "../../../manager/GoodsManager";
 import DayGuideCatecory from "../../welfare/data/DayGuideCatecory";

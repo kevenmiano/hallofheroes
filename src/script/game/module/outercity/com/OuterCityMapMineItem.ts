@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OuterCityMapMineItem from "../../../../../fui/OuterCity/FUI_OuterCityMapMineItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

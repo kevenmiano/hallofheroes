@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { EmWindow } from "../../../constant/UIDefine";

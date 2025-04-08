@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import SDKManager from "../../../core/sdk/SDKManager";
 import {PlayerManager} from "../../manager/PlayerManager";

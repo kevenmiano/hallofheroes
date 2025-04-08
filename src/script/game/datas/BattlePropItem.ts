@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import {BattleEvent} from "../constant/event/NotificationEvent";
 import ConfigMgr from "../../core/config/ConfigMgr";

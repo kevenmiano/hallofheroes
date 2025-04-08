@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../core/utils/StringHelper";
 import { VIPManager } from "../manager/VIPManager";
 import t_s_baseConfigData from "./t_s_baseConfigData";

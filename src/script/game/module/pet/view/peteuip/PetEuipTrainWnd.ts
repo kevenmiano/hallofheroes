@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_StrenAtrriItem1 from "../../../../../../fui/Pet/FUI_StrenAtrriItem1";
 import LangManager from "../../../../../core/lang/LangManager";
 import Logger from "../../../../../core/logger/Logger";

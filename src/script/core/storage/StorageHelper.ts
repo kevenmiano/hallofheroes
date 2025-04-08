@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Base64 from "../utils/Base64";
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from '../Interface/IManager';

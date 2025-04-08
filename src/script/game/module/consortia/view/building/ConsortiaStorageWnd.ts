@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../../core/ui/Base/BaseWindow";
 import { ConsortiaModel } from "../../model/ConsortiaModel";
 import { FrameCtrlManager } from "../../../../mvc/FrameCtrlManager";

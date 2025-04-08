@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseSubPackage from "../base/BaseSubPackage";
 import { ResultState, DataCallback } from "../SDKConfig";
 

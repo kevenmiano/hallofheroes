@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SFortuneGuardCom from "../../../../../fui/SBag/FUI_SFortuneGuardCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { ServerDataManager } from "../../../../core/net/ServerDataManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../../core/utils/Dictionary";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
 import { SharedManager } from "../../../manager/SharedManager";

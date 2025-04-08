@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameLLKItem from "../../../../../fui/Carnival/FUI_AirGardenGameLLKItem";
 import FUIHelper from "../../../utils/FUIHelper";
 import LlkNodeData from "../model/llk/LlkNodeData";

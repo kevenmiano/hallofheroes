@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WarlordsRewardItem from "../../../../../../fui/Warlords/FUI_WarlordsRewardItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { EmWindow } from "../../../../constant/UIDefine";

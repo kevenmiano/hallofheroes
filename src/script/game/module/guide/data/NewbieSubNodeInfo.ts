@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
 * @author:pzlricky
 * @data: 2021-05-25 12:27

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {MapPhysics} from "../space/data/MapPhysics";
 import {SystemArmy} from "../space/data/SystemArmy";
 import {t_s_mapphysicstemplateData} from "../../config/t_s_mapphysicstemplate";

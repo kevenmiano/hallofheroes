@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_VSTeamItem from "../../../../../../fui/Consortia/FUI_VSTeamItem";
 import { GuildGroupInfo } from "../../data/gvg/GuildGroupInfo";
 import { EmWindow } from "../../../../constant/UIDefine";

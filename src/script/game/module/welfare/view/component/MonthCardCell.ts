@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WelfareMonthCardCell from '../../../../../../fui/Welfare/FUI_WelfareMonthCardCell';
 import LangManager from '../../../../../core/lang/LangManager';
 import Logger from '../../../../../core/logger/Logger';

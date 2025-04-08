@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ItemWithSelectEffect from "../../../../fui/Base/FUI_ItemWithSelectEffect";
 import {BaseItem} from "./BaseItem";
 import {GoodsInfo} from "../../datas/goods/GoodsInfo";

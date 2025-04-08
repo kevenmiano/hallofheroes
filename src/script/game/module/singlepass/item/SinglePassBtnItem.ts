@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SinglePassBtnItem from "../../../../../fui/SinglePass/FUI_SinglePassBtnItem";
 import FUIHelper from "../../../utils/FUIHelper";
 import SinglePassCardInfo from "../model/SinglePassCardInfo";

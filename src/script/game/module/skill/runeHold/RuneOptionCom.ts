@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneOptionCom from "../../../../../fui/Skill/FUI_RuneOptionCom";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

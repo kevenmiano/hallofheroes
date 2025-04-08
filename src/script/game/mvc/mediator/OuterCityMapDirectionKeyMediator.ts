@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {DisplayObject} from "../../component/DisplayObject";
 import IMediator from "../../interfaces/IMediator";
 import KeyBoardRegister from "../../keyboard/KeyBoardRegister";

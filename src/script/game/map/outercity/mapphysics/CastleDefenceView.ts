@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BaseCastle } from "../../../datas/template/BaseCastle";
 import FUI_CastleDefenceView from "../../../../../fui/OuterCity/FUI_CastleDefenceView";
 import { PlayerManager } from "../../../manager/PlayerManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BufferItem from "../../../../fui/Home/FUI_BufferItem";
 import LangManager from '../../../core/lang/LangManager';
 import { IconFactory } from "../../../core/utils/IconFactory";

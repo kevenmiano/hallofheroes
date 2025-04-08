@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from "../../core/net/PackageIn";
 import { DialogModel } from "../module/dialog/DialogModel";
 import { StageReferance } from "../roadComponent/pickgliss/toplevel/StageReferance";

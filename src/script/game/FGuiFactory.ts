@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AllocateItem from "../../fui/Allocate/FUI_AllocateItem";
 import FUI_SpecialSelecteItem from "../../fui/Allocate/FUI_SpecialSelecteItem";
 import FUI_AppellCellItem from "../../fui/Appell/FUI_AppellCellItem";

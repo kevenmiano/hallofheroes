@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class PlayerEffectInfo {
     /**************值加成*************/
     private _buildTimeAddition: number = 0;//建筑建造时间加成

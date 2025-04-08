@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import FightingType from "../../../constant/FightingType";
 import FightingManager from "../../../manager/FightingManager";

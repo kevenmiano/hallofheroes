@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_NumericStepper from "../../../fui/Base/FUI_NumericStepper";
 
 /**

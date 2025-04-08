@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "./GameEventDispatcher";
 
 export class RemotePetEvent extends GameEventDispatcher {

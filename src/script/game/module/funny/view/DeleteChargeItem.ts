@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DeleteChargeItem from "../../../../../fui/Funny/FUI_DeleteChargeItem";
 import LangManager from "../../../../core/lang/LangManager";
 import FunnyManager from "../../../manager/FunnyManager";

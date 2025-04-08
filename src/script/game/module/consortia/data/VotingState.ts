@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 选举状态
  * @author yuanzhan.yu

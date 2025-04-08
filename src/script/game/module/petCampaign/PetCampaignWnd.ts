@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetCampaignBackBtn from '../../../../fui/PetCampaign/FUI_PetCampaignBackBtn';
 // import FUI_PetCampaignItem from '../../../../fui/PetCampaign/FUI_PetCampaignItem';
 import LangManager from '../../../core/lang/LangManager';

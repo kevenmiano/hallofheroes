@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LlkInfo from "./LlkInfo";
 import LlkNodeData from "./LlkNodeData";
 

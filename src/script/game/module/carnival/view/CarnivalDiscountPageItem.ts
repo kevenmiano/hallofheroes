@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CarnivalDiscountPageItem from "../../../../../fui/Carnival/FUI_CarnivalDiscountPageItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";

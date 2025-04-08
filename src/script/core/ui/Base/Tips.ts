@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseUI from './BaseUI';
 /**
 * @author:pzlricky

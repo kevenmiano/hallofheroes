@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneDrawCom from "../../../../../fui/Skill/FUI_RuneDrawCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { PackageIn } from "../../../../core/net/PackageIn";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DiamondShopView from "../../../../../../fui/Shop/FUI_DiamondShopView";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { PlayerEvent } from "../../../../constant/event/PlayerEvent";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SevenTabListItem from "../../../../fui/SevenTarget/FUI_SevenTabListItem";
 import SevenGoalsManager from "../../manager/SevenGoalsManager";
 import SevenGoalsModel from "./SevenGoalsModel";

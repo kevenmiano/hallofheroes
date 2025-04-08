@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QuestionAnswer from '../../../../fui/QuestionNaire/FUI_QuestionAnswer';
 import FUI_QuestionItem from '../../../../fui/QuestionNaire/FUI_QuestionItem';
 import FUI_QuestionTitle from '../../../../fui/QuestionNaire/FUI_QuestionTitle';

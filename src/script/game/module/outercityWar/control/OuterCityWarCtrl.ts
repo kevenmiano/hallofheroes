@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase"
 
 export default class OuterCityWarCtrl extends FrameCtrlBase {

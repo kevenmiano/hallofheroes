@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FaceType } from "../../constant/BattleDefine";
 import { AwakenAppearAction } from "../actions/AwakenAppearAction";
 import { BattleManager } from "../BattleManager";

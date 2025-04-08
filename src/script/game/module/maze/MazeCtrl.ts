@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 
 export class MazeCtrl extends FrameCtrlBase

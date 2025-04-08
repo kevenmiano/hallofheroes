@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { ShopManager } from "../../../manager/ShopManager";
 import { NotificationManager } from "../../../manager/NotificationManager";

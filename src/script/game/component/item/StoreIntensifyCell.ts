@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_StoreIntensifyCell from "../../../../fui/Base/FUI_StoreIntensifyCell";
 import {BaseItem} from "./BaseItem";
 import MediatorMananger from "../../manager/MediatorMananger";

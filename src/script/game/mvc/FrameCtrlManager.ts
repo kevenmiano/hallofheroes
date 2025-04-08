@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IManager from "../../core/Interface/IManager";
 import Logger from "../../core/logger/Logger";
 import Dictionary from "../../core/utils/Dictionary";

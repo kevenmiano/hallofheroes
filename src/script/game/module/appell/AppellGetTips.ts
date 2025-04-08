@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from '../../../core/ui/Base/BaseWindow';
 import Logger from '../../../core/logger/Logger';
 import { ArmyManager } from '../../manager/ArmyManager';

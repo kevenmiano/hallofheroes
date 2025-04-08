@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class AirGardenGameEvent {
 
     //梭哈

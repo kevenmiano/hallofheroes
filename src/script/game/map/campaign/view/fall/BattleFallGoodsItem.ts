@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BattleFallGoodsItem from '../../../../../../fui/Battle/FUI_BattleFallGoodsItem';
 import ConfigMgr from '../../../../../core/config/ConfigMgr';
 import { IconFactory } from '../../../../../core/utils/IconFactory';

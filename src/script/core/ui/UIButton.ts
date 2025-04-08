@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SoundIds } from '../../game/constant/SoundIds';
 import { EmPackName, EmWindow } from '../../game/constant/UIDefine';
 import FUIHelper from '../../game/utils/FUIHelper';

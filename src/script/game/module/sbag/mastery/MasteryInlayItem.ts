@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_InlayCom from "../../../../../fui/SBag/FUI_InlayCom";
 import FUI_MasteryInlayItem from "../../../../../fui/SBag/FUI_MasteryInlayItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";

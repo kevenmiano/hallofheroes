@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";

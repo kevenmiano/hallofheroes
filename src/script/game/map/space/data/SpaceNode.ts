@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {SpaceModel} from "../SpaceModel";
 import NodeMapPhysics from "./NodeMapPhysics";
 

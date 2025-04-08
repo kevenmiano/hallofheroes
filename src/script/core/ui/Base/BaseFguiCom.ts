@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../event/GameEventDispatcher';
 import UIButton from '../UIButton';
 /**

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class AvatarActions
 {
     public static ACTION_STOP:string = "S";

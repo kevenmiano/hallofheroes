@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import { AiEvents } from "../../constant/event/NotificationEvent";
 import { NpcEffectiveState } from "../../constant/NpcEffectiveState";

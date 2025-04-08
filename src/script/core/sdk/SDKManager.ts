@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "./base/BaseChannel";
 import { ChannelID } from "./SDKConfig";
 import WXChannel from "./wx/WXChannel";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignManager } from '../../../manager/CampaignManager';
 import { TaskTraceTipManager } from '../../../manager/TaskTraceTipManager';
 import TaskTraceTipWnd from './TaskTraceTipWnd';

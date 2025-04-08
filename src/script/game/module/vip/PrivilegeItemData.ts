@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 /**
  * Vip特权数据

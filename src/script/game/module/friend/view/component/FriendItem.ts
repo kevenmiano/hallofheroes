@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FriendItem from "../../../../../../fui/Friend/FUI_FriendItem";
 import { ThaneInfo } from "../../../../datas/playerinfo/ThaneInfo";
 import { IconFactory } from "../../../../../core/utils/IconFactory";

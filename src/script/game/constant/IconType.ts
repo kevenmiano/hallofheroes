@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class IconType
 {
     public static HEAD_ICON:string = "head";

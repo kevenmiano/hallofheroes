@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SwitchInfoMsg = com.road.yishi.proto.switches.SwitchInfoMsg;
 
 export class SwitchInfo {

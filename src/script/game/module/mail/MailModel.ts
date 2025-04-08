@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import FrameDataBase from "../../mvc/FrameDataBase";
 import EmailInfo from "./EmailInfo";

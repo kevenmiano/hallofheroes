@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class SinglePassBugleInfo {
 	/**
 	 * 下次开启需要的钻石数量

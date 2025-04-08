@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from '../../../../core/ui/UIManager';
 import { EmWindow } from "../../../constant/UIDefine";

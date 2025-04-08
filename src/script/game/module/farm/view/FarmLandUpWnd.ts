@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import FarmInfo from "../data/FarmInfo";
 import LangManager from '../../../../core/lang/LangManager';

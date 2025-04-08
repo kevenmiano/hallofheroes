@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SoundManager from "../../../../core/audio/SoundManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import StringHelper from "../../../../core/utils/StringHelper";

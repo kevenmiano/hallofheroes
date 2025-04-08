@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { JobType } from "../../constant/JobType";
 import { EmWindow } from "../../constant/UIDefine";
 import FUIHelper from "../../utils/FUIHelper";

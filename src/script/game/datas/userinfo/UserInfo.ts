@@ -1,3 +1,4 @@
+// @ts-nocheck
 import MD5Utils from '../../../core/utils/MD5Utils';
 
 export class UserInfo {

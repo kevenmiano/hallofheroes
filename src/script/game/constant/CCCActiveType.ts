@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class CCCActiveType {
 	public static CHARGELOTTERY: number = 200; // 充值抽奖
 

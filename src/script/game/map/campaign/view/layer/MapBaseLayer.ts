@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {DisplayObject} from "../../../../component/DisplayObject";
 
 export class MapBaseLayer extends Laya.Sprite

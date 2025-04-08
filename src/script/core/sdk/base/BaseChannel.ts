@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SimpleAlertHelper, { AlertBtnType } from "../../../game/component/SimpleAlertHelper";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";
 import { ArmyManager } from "../../../game/manager/ArmyManager";

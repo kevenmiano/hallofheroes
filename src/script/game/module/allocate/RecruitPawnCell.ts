@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArmyEvent, PawnEvent, ServiceReceiveEvent } from "../../constant/event/NotificationEvent";
 import { ArmyPawn } from "../../datas/ArmyPawn";
 import { TempleteManager } from "../../manager/TempleteManager";

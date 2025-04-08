@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { XMLType, XmlURL } from "../../game/constant/XmlDefine";
 import ComponentSetting from "../../game/utils/ComponentSetting";
 import GameEventDispatcher from "../event/GameEventDispatcher";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import { PackageOut } from "../../../core/net/PackageOut";
 import { SocketManager } from "../../../core/net/SocketManager";

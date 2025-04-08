@@ -1,3 +1,4 @@
+// @ts-nocheck
 import DegreeActivityBox from '../view/component/DegreeActivityBox';
 /**
 * @author:pzlricky

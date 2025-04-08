@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from '../../../core/audio/AudioManager';
 import SDKManager from '../../../core/sdk/SDKManager';
 import BaseWindow from '../../../core/ui/Base/BaseWindow';

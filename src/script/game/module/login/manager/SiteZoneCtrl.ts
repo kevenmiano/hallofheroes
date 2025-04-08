@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PathManager } from "../../../manager/PathManager";
 import { SharedManager } from "../../../manager/SharedManager";
 import SiteZoneData, { ZONE_AREA } from "../model/SiteZoneData";

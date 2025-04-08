@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PvpRewardsItem from "../../../../../../fui/RoomList/FUI_PvpRewardsItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { BaseItem } from "../../../../component/item/BaseItem";

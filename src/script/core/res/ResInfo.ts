@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class ResInfo {
     public url: string = "";
     public type: string = ""

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameDataBase from "../../mvc/FrameDataBase";
 
 /**

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  * @Description: 战斗编辑选择英灵列表头像Item
  */

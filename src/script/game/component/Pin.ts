@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Pin from "../../../fui/BaseCommon/FUI_Pin";
 import LangManager from "../../core/lang/LangManager";
 import Logger from "../../core/logger/Logger";

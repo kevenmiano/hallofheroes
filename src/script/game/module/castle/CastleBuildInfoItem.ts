@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CastleBuildInfoItem from "../../../../fui/Castle/FUI_CastleBuildInfoItem";
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";

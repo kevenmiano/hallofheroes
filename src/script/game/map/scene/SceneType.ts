@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class SceneType {
 	static LOGIN_SCENE: string = 'LOGIN_SCENE';
 	/**

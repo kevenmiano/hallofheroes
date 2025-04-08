@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MyGoldInfoView from "../../../../../fui/OuterCity/FUI_MyGoldInfoView";
 import LangManager from "../../../../core/lang/LangManager";
 import Logger from "../../../../core/logger/Logger";

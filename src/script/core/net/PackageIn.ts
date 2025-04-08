@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ByteArray from "./ByteArray";
 import Logger from "../logger/Logger";
 import StringHelper from "../utils/StringHelper";

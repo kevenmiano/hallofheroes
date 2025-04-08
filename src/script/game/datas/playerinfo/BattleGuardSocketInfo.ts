@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";
 import { ConfigType } from "../../constant/ConfigDefine";

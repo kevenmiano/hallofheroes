@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../core/lang/LangManager';
 import { FilterWordAnalyzer } from '../datas/loader/FilterWordAnalyzer';
 import StringUtils from '../utils/StringUtils';

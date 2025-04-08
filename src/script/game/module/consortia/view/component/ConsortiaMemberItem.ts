@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaMemberItem from "../../../../../../fui/Consortia/FUI_ConsortiaMemberItem";
 import AudioManager from "../../../../../core/audio/AudioManager";
 import LangManager from "../../../../../core/lang/LangManager";

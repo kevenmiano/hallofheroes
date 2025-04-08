@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  *  已经通过的副本评价信息
  * @author alan

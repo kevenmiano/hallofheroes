@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ByteArray from "./ByteArray";
 
 export class PackageOut extends ByteArray

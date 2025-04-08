@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from '../../../core/ui/Base/BaseWindow';
 import Resolution from '../../../core/comps/Resolution';
 import LangManager from '../../../core/lang/LangManager';

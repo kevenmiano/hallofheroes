@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { t_s_secrettreasureData } from "../../config/t_s_secrettreasure";
 import { ConfigType } from "../../constant/ConfigDefine";

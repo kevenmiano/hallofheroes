@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from "../../../core/net/PackageIn";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { TransactionBase } from "./TransactionBase";

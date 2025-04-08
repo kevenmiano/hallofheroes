@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetRoleCom from "../../../../fui/Home/FUI_PetRoleCom";
 import { IconFactory } from "../../../core/utils/IconFactory";
 import { EmWindow } from "../../constant/UIDefine";

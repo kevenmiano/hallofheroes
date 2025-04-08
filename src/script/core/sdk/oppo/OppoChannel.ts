@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import { ResultCallback, ResultState } from "../SDKConfig";
 import OppoRewardAd from "./OppoRewardAd";

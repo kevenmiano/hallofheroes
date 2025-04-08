@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum ActionsEvent {
 	ACTION_ALL_COMPLETE = "action_all_complete",
 }

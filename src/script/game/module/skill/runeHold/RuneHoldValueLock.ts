@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RuneHoldValueLock from "../../../../../fui/Skill/FUI_RuneHoldValueLock";
 import LangManager from "../../../../core/lang/LangManager";

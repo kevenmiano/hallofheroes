@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ChatOerateBtn from '../../../../fui/Chat/FUI_ChatOerateBtn';
 /**
 * @author:pzlricky

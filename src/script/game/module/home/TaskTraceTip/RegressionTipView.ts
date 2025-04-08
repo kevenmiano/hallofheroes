@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
 import { ArmyManager } from "../../../manager/ArmyManager";

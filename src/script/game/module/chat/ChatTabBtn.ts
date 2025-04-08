@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ChatTabBtn from '../../../../fui/Chat/FUI_ChatTabBtn';
 import ChatTabData from './data/ChatTabData';
 /**

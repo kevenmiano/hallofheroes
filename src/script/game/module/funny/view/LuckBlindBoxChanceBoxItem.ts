@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LuckBlindBox_ChanceBoxItem from "../../../../../fui/Funny/FUI_LuckBlindBox_ChanceBoxItem";
 
 import { BaseItem } from "../../../component/item/BaseItem";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Runes_Panel from '../../../../../fui/Skill/FUI_Runes_Panel';
 import LangManager from '../../../../core/lang/LangManager';
 import { isCNLanguage } from '../../../../core/lang/LanguageDefine';

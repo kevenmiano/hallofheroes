@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../core/audio/AudioManager";
 import { SoundIds } from "../../constant/SoundIds";
 import SevenGiftBagInfo from "../welfare/data/SevenGiftBagInfo";

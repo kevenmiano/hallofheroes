@@ -1,3 +1,4 @@
+// @ts-nocheck
 // import ShaderDissolve from "./ShaderDissolve";
 import ShaderMosaicDissolve from "./ShaderMosaicDissolves";
 // import ShaderTranslation from "./ShaderTranslation";

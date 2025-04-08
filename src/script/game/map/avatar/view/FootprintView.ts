@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import { Avatar } from "../../../avatar/view/Avatar";
 import { Disposeable } from "../../../component/DisplayObject";

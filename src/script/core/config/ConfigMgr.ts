@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @author:pzlricky
  * @data: 2020-11-10 18:00

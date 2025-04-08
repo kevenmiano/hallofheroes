@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 
 import Resolution from "../../../../core/comps/Resolution";

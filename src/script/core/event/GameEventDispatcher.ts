@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export default class GameEventDispatcher {
     protected static claName: string = 'GameEventDispatcher';

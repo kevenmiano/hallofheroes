@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ComTalentsCirle from '../../../../../fui/Skill/FUI_ComTalentsCirle';
 import FUI_ComTalentsMask from '../../../../../fui/Skill/FUI_ComTalentsMask';
 import FUI_FastkeyTalent from '../../../../../fui/Skill/FUI_FastkeyTalent';

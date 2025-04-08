@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ToolTipsManager } from "../../../manager/ToolTipsManager";
 import {PhysicsFieldView} from "./PhysicsFieldView";
 

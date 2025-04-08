@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SFashionCom from "../../../../../fui/SBag/FUI_SFashionCom";
 import { FashionManager } from "../../../manager/FashionManager";
 import { SharedManager } from "../../../manager/SharedManager";

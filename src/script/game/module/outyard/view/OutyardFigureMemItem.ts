@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardFigureMemItem from "../../../../../fui/OutYard/FUI_OutyardFigureMemItem";
 import LangManager from "../../../../core/lang/LangManager";
 import SimpleAlertHelper from "../../../component/SimpleAlertHelper";

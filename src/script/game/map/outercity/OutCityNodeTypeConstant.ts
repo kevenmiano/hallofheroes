@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class OutCityNodeTypeConstant{
     public static TYPE_CASTLE:number= 1;
     public static TYPE_TREASURE:number= 2;

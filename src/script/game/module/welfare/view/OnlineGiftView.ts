@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OnlineGiftView from "../../../../../fui/Welfare/FUI_OnlineGiftView";
 import { BaseItem } from "../../../component/item/BaseItem";
 import WelfareCtrl from "../WelfareCtrl";

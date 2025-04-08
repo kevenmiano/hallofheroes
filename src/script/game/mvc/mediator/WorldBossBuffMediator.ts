@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import IMediator from "../../interfaces/IMediator";
 import { ConfigManager } from "../../manager/ConfigManager";

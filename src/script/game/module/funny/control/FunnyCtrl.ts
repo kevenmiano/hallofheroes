@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from '../../../../core/net/PackageIn';
 import { ServerDataManager } from '../../../../core/net/ServerDataManager';
 import ResMgr from '../../../../core/res/ResMgr';

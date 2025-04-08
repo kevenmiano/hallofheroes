@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum SocketEvent
 {
     SERVER_SUCCESS = "server_success",

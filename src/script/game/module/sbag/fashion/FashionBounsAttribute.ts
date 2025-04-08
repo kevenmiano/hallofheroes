@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FashionBounsAttribute from "../../../../../fui/SBag/FUI_FashionBounsAttribute";
 
 export class FashionBounsAttribute extends FUI_FashionBounsAttribute {

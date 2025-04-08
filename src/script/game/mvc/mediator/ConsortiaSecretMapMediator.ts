@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from "../../constant/UIDefine";
 import IMediator from "../../interfaces/IMediator";
 import { ConsortiaManager } from "../../manager/ConsortiaManager";

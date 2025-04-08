@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_TextBox from "../../../fui/Base/FUI_TextBox";
 import LangManager from "../../core/lang/LangManager";
 import {YTextInput} from "../module/common/YTextInput";

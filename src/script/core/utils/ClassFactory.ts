@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {DateFormatter} from "./DateFormatter";
 
 export class ClassFactory

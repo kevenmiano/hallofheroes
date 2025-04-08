@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class MouseData {
 	public static ON_DRAG: string = "ON_DRAG";//正在拖 动
 	public static BACK_DRAG: string = "BACK_DRAG";//拖动处理中

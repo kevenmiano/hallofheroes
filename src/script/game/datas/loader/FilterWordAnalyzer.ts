@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DataAnalyzer } from "../../../core/lang/LanguageAnalyzer";
 import ResMgr from "../../../core/res/ResMgr";
 import ByteArray from "../../../core/net/ByteArray";

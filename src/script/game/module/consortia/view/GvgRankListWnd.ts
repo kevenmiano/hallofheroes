@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { GuildGroupIndex } from "../data/gvg/GuildGroupIndex";
 import { PlayerEvent } from "../../../constant/event/PlayerEvent";

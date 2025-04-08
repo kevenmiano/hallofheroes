@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SBagCom from "../../../../../fui/SBag/FUI_SBagCom";
 import LangManager from "../../../../core/lang/LangManager";
 import Logger from "../../../../core/logger/Logger";

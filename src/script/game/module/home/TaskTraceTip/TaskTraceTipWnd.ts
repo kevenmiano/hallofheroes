@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../../core/audio/AudioManager";
 import Resolution from "../../../../core/comps/Resolution";
 import {

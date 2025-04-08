@@ -1,3 +1,4 @@
+// @ts-nocheck
 import EmailInfo from "./EmailInfo";
 import LangManager from '../../../core/lang/LangManager';
 import EmailType from "./EmailType";

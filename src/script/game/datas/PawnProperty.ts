@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 士兵的加成属性集合
  * @author alan

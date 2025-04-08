@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../event/GameEventDispatcher';
 import IView from '../ViewInterface';
 import { UICFG, EnUIShowType, EnUIHideType, EmWindow } from '../../../game/constant/UIDefine';

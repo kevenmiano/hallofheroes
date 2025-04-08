@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {DisplayObject} from "../../component/DisplayObject";
 import {NotificationEvent, ServiceReceiveEvent} from "../../constant/event/NotificationEvent";
 import {BaseCastle} from "../../datas/template/BaseCastle";

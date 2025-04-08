@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TaskConditionType } from '../../constant/TaskConditionType';
 import { TaskSocketManager } from '../../manager/TaskSocketManager';
 import { TaskTemplate } from './TaskTemplate';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class OutCityOneMineInfo{
     public posId:number = 0//地图显示的节点id  mapposition id
     public nodeId:number = 0;//打开节点后不同等级的矿 mapmine id

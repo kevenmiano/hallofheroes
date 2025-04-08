@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GeniusItem from "../../../../../fui/Skill/FUI_GeniusItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from '../../../../core/ui/UIFilter';

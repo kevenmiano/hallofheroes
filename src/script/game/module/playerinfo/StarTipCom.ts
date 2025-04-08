@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_StarTipCom from "../../../../fui/PlayerInfo/FUI_StarTipCom";
 import LangManager from "../../../core/lang/LangManager";
 import Utils from "../../../core/utils/Utils";

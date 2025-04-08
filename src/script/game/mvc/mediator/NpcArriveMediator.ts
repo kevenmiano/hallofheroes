@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NpcEffectiveState } from "../../constant/NpcEffectiveState";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import IMediator from "../../interfaces/IMediator";

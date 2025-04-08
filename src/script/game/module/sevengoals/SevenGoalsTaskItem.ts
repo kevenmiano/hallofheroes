@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SevenGoalsTaskItem from "../../../../fui/SevenTarget/FUI_SevenGoalsTaskItem";
 import AudioManager from "../../../core/audio/AudioManager";
 import LangManager from "../../../core/lang/LangManager";

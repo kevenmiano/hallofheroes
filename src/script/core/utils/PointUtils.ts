@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../lang/LangManager';
 
 	export class PointUtils

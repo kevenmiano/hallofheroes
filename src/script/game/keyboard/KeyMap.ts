@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../core/logger/Logger";
 import Dictionary from "../../core/utils/Dictionary";
 import KeyStroke from "./KeyStroke";

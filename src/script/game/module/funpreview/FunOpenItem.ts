@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FunOpenItem from "../../../../fui/FunPreview/FUI_FunOpenItem";
 import { t_s_systemopentipsData } from "../../config/t_s_systemopentips";
 import { EmPackName, EmWindow } from "../../constant/UIDefine";

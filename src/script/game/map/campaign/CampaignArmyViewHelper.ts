@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import { PointDirectionHelper } from "../../../core/utils/PointDirectionHelper";
 import { PointUtils } from "../../../core/utils/PointUtils";

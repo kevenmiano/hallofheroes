@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoodsInfo } from "../goods/GoodsInfo";
 import { SecretDropType } from "./SecretConst";
 import { SecretTresureInfo } from "./SecretTresureInfo";

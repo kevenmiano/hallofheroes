@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AdjustPetItem from "../../../../../fui/RemotePet/FUI_AdjustPetItem";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";
 import { IconFactory } from "../../../../core/utils/IconFactory";

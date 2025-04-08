@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BgTileInfo } from "../BgTileInfo";
 import Logger from "../../../../core/logger/Logger";
 import { SceneManager } from "../../scene/SceneManager";

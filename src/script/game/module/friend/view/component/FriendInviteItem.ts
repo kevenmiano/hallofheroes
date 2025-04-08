@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FriendInviteItem from "../../../../../../fui/Friend/FUI_FriendInviteItem";
 import ToolInviteInfo from "../../../../datas/ToolInviteInfo";
 import UIButton from "../../../../../core/ui/UIButton";

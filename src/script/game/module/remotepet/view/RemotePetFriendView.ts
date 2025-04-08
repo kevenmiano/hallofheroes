@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RemotePetFriendView from "../../../../../fui/RemotePet/FUI_RemotePetFriendView";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";

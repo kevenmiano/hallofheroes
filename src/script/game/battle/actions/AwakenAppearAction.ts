@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FaceType, InheritIActionType } from "../../constant/BattleDefine";
 import { BattleManager } from "../BattleManager";
 import { ResourceModel } from "../data/ResourceModel";

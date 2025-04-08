@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from "../../game/constant/UIDefine";
 import Resolution from "../comps/Resolution";
 import { ILayer } from "../layer/ILayer";

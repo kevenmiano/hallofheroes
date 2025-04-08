@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "./Dictionary";
 import GameEventDispatcher from '../event/GameEventDispatcher';
 

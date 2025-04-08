@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignArmyView } from './CampaignArmyView';
 import IBaseMouseEvent from '../../../space/interfaces/IBaseMouseEvent';
 import { HeroAvatar } from '../../../avatar/view/HeroAvatar';

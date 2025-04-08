@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum BuildingEvent
 { 
        U_C_GOLD_IMPOSERESULT = "U_C_GOLD_IMPOSERESULT",

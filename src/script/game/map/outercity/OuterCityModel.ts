@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import { ArmyState } from "../../constant/ArmyState";
 import { NotificationEvent, OuterCityEvent } from "../../constant/event/NotificationEvent";

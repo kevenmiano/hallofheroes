@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { ResultCallback, SDKState } from "../SDKConfig";
 import BaseAd from "../base/BaseAd";

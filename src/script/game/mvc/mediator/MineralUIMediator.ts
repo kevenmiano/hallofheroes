@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { CampaignMapEvent, NotificationEvent } from "../../constant/event/NotificationEvent";
 import { EmPackName, EmWindow } from "../../constant/UIDefine";

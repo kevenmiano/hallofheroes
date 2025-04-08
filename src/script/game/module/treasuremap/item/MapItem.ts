@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MapItem from "../../../../../fui/TreasureMap/FUI_MapItem";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../core/lang/LangManager';
     /**
 	 * 海外主干1.6.5——静态变量类

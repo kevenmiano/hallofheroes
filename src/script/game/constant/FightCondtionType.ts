@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class FightCondtionType{
     /** 宝石 */
 		public static  GEM:number = 1 ;

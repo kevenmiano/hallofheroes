@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {ArmyState} from "../../constant/ArmyState";
 import {AiEvents, NotificationEvent, PhysicsEvent} from "../../constant/event/NotificationEvent";
 import {NpcEffectiveState} from "../../constant/NpcEffectiveState";

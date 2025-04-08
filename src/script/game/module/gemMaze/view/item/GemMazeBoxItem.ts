@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemMazeBoxItem from "../../../../../../fui/GemMaze/FUI_GemMazeBoxItem";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";

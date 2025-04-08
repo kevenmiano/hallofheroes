@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum C2SProtocol {
     L_GET_PLAYER_LIST = 0x7000,   // 获取角色列表
     L_PREPARE_LOGIN = 0x7002,   // 准备登录

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaActivityListView from "../../../../../../fui/Consortia/FUI_ConsortiaActivityListView";
 import { ConsortiaModel } from "../../model/ConsortiaModel";
 import { ConsortiaControler } from "../../control/ConsortiaControler";

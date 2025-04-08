@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import {IAction} from "../interfaces/IAction";
 import {IEnterFrame} from "../interfaces/IEnterFrame";

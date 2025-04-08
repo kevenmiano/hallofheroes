@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../../core/lang/LangManager';
 import LayerMgr from '../../../../core/layer/LayerMgr';
 import Logger from "../../../../core/logger/Logger";

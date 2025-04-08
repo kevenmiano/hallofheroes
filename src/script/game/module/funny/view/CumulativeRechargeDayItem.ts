@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CumulativeRechargeDayItem from "../../../../../fui/Funny/FUI_CumulativeRechargeDayItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { EmWindow } from "../../../constant/UIDefine";

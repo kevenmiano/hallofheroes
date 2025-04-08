@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import {IEnterFrame} from "../../interfaces/IEnterFrame";
 import IMediator from "../../interfaces/IMediator";

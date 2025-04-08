@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DragRuneIcon from "../../../../../fui/Skill/FUI_DragRuneIcon";
 import FUI_DragSealIcon from "../../../../../fui/Skill/FUI_DragSealIcon";
 import ConfigMgr from "../../../../core/config/ConfigMgr";

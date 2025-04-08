@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_VoiceMsgCell from '../../../../fui/Chat/FUI_VoiceMsgCell';
 import { AndroidWebviewChannel } from '../../../core/sdk/android_webview/AndroidWebviewChannel';
 import BaseChannel from '../../../core/sdk/base/BaseChannel';

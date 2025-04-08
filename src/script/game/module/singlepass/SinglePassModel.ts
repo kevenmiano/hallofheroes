@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SinglePassEvent } from '../../constant/event/NotificationEvent';
 import { RankInfo } from '../../datas/playerinfo/RankInfo';
 import { TempleteManager } from '../../manager/TempleteManager';

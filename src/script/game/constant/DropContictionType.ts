@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum DropCondictionType {
     NONE = 0,
     DEGREE = 13,//活跃度

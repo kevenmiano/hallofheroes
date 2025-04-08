@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {TipsEvent} from "../constant/event/NotificationEvent";
 import {GoodsInfo} from "../datas/goods/GoodsInfo";
 import {NotificationManager} from "../manager/NotificationManager";

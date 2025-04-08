@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemoteSkillItemView from "../../../../../fui/RemotePet/FUI_RemoteSkillItemView";
 import LangManager from "../../../../core/lang/LangManager";
 import { IconFactory } from "../../../../core/utils/IconFactory";

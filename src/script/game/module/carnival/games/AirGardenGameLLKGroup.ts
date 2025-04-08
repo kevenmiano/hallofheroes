@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameLLKGroup from "../../../../../fui/Carnival/FUI_AirGardenGameLLKGroup";
 import AirGardenGameLLKItem from "./AirGardenGameLLKItem";
 

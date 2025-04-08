@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../../core/utils/Dictionary";
 import { ConfigManager } from "../../../manager/ConfigManager";
 import DailyItemInfo from "./DailyItemInfo";

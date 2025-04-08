@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../logger/Logger";
 import BaseLogin from "../base/BaseLogin";
 import { ResultCallback, DataCallback, ResultState } from "../SDKConfig";

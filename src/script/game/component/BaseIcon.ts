@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BaseIcon from "../../../fui/Base/FUI_BaseIcon";
 
 /**

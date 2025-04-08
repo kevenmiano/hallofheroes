@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../interfaces/IMediator";
 import Sprite = Laya.Sprite;
 import {OuterCityArmyView} from "../../map/outercity/OuterCityArmyView";

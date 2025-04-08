@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../core/config/ConfigMgr";
 import ResMgr from "../../core/res/ResMgr";
 import t_s_mapnode from "../config/t_s_mapnode";

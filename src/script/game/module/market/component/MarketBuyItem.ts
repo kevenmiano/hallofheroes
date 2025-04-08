@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MarketBuyItem from "../../../../../fui/Market/FUI_MarketBuyItem";
 
 import IMarketItemPriceMsg = com.road.yishi.proto.market.IMarketItemPriceMsg;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SmallMapTreasureItem from "../../../../../fui/OuterCity/FUI_SmallMapTreasureItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import Utils from "../../../../core/utils/Utils";

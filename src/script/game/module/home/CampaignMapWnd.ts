@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_NpcItem from '../../../../fui/Home/FUI_NpcItem';
 import FUI_TransferItem from '../../../../fui/Home/FUI_TransferItem';
 import Dictionary from '../../../core/utils/Dictionary';

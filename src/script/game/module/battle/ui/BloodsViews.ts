@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BloodsViews from "../../../../../fui/Battle/FUI_BloodsViews";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";

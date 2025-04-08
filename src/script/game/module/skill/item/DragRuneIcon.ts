@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DragRuneIcon from "../../../../../fui/Skill/FUI_DragRuneIcon";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { DragObject, DragType } from "../../../component/DragObject";

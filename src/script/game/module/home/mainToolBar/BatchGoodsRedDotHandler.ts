@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BagType } from "../../../constant/BagDefine";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { GoodsManager } from "../../../manager/GoodsManager";

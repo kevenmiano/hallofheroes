@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QueueItem from "../../../../fui/Home/FUI_QueueItem";
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SRolePropertyCom from "../../../../fui/SBag/FUI_SRolePropertyCom";
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";

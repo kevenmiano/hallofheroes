@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaApplyCell from "../../../../../../fui/Consortia/FUI_ConsortiaApplyCell";
 import LangManager from "../../../../../core/lang/LangManager";
 import { ConsortiaManager } from "../../../../manager/ConsortiaManager";

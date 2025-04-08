@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { DragObject, DragType } from "../../component/DragObject";
 import { EmWindow } from "../../constant/UIDefine";

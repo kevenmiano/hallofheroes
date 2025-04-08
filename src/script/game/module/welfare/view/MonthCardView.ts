@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MonthCardView from '../../../../../fui/Welfare/FUI_MonthCardView';
 import ConfigMgr from '../../../../core/config/ConfigMgr';
 import { t_s_configData } from '../../../config/t_s_config';

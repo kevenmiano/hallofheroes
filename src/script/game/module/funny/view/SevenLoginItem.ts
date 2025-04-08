@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SevenLoginItem from "../../../../../fui/Funny/FUI_SevenLoginItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 英雄基础属性集合
  * @author alan

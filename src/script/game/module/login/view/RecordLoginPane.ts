@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RecordList from '../../../../../fui/Login/FUI_RecordList';
 import Utils from '../../../../core/utils/Utils';
 import { SelectServerEvent } from '../../../constant/event/NotificationEvent';

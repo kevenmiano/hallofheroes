@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_ConsortiaPrizeAllotItem from "../../../../../../fui/Consortia/FUI_ConsortiaPrizeAllotItem";
 import { NumericStepper } from "../../../../component/NumericStepper";

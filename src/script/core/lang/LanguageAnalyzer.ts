@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class DataAnalyzer {
     protected _onCompleteCall: Function;

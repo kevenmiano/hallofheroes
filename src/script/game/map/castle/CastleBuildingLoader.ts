@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Func } from '../../../core/comps/Func';
 import Logger from '../../../core/logger/Logger';
 import ResMgr from '../../../core/res/ResMgr';

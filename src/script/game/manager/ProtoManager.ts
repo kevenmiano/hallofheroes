@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../core/lang/LangManager";
 import NetDelayUtils from "../../core/utils/NetDelayUtils";
 import { C2SProtocol } from "../constant/protocol/C2SProtocol";

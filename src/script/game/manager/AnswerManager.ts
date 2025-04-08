@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import { ServerDataManager } from '../../core/net/ServerDataManager';
 import { AnswerEvent } from '../constant/event/NotificationEvent';

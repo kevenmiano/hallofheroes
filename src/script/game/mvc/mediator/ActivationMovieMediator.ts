@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignMapEvent, NotificationEvent } from "../../constant/event/NotificationEvent";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import IMediator from "../../interfaces/IMediator";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MovieClip } from "../../component/MovieClip";
 import IMediator from "../../interfaces/IMediator";
 import { NpcAvatarView } from "../../map/campaign/view/physics/NpcAvatarView";

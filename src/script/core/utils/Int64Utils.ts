@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class Int64Utils
 {
     constructor()

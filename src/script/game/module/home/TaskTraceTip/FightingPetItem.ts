@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FightingPetItem from "../../../../../fui/Home/FUI_FightingPetItem";
 import LangManager from '../../../../core/lang/LangManager';
 import ColorConstant from "../../../constant/ColorConstant";

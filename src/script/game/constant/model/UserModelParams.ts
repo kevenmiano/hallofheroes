@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SimpleUserInfo = com.road.yishi.proto.login.SimpleUserInfo;
 
 /**UserModel用户属性 */

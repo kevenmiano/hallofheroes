@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GameSetCom from "../../../../../fui/PersonalCenter/FUI_GameSetCom";
 import { BattleEvent, SpaceEvent, SwitchEvent } from "../../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../../manager/NotificationManager";

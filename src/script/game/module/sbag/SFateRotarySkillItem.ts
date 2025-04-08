@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_SFotruneHead from "../../../../fui/SBag/FUI_SFotruneHead";
 import SoundManager from "../../../core/audio/SoundManager";

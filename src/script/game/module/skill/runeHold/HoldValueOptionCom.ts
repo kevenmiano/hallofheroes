@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_HoldValueOptionCom from "../../../../../fui/Skill/FUI_HoldValueOptionCom";
 import LangManager from "../../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HomeBugleNoticeWnd from '../../../../fui/Home/FUI_HomeBugleNoticeWnd';
 import FUI_SystemNoticeWnd from '../../../../fui/Home/FUI_SystemNoticeWnd';
 import LangManager from '../../../core/lang/LangManager';

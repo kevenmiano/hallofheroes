@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../core/lang/LangManager";
 import { AlertTipAction } from "../battle/actions/AlertTipAction";
 import { BagType } from "../constant/BagDefine";

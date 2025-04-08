@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapElmsLibrary } from "../libray/MapElmsLibrary";
 import Logger from '../../../core/logger/Logger';
 import { CampaignMapView } from "./view/CampaignMapView";

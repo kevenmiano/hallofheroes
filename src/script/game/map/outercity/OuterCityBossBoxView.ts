@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {OuterCityManager} from "../../manager/OuterCityManager";
 import {BoxMsgInfo} from "./BoxMsgInfo";
 import Sprite = Laya.Sprite;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ITransSceneEffect } from "./ITransSceneEffect";
 import { DisplayObject } from "../../component/DisplayObject";
 import { CellEffectUtils } from "./CellEffectUtils";

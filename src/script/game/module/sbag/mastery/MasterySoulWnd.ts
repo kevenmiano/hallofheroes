@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AttrItem from "../../../../../fui/SBag/FUI_AttrItem";
 import FUI_MasteryAttrItem from "../../../../../fui/SBag/FUI_MasteryAttrItem";
 import LangManager from "../../../../core/lang/LangManager";

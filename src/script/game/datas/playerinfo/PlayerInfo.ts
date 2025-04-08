@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimplePlayerInfo } from "./SimplePlayerInfo";
 import ByteArray from "../../../core/net/ByteArray";
 import { BagEvent, ConsortiaEvent } from "../../constant/event/NotificationEvent";

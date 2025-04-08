@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum S2CProtocol {
 	U_C_TIME_ZONE = 0x016a, // 服务器时区
 

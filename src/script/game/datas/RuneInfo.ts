@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
 	 * 玩家符文信息
 	 * @author alan

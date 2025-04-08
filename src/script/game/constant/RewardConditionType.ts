@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class RewardConditionType {
     /** 缴兵  */

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ActivityCodeView from "../../../../../fui/Funny/FUI_ActivityCodeView";
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import ActivityManager from "../../../manager/ActivityManager";

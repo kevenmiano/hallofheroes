@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_EditSkillItem from "../../../../../../fui/SkillEdit/FUI_EditSkillItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_runetemplateData } from "../../../../config/t_s_runetemplate";

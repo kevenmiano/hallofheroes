@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class QQGiftEnum {
 
     /** 新手礼包 */

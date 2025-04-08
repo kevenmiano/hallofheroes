@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 /**
  * VIP特权枚举

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {FriendUpdateEvent} from "../constant/event/NotificationEvent";
 import {FriendManager} from "../manager/FriendManager";
 import IMManager from "../manager/IMManager";

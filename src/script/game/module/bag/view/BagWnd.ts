@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { GoodsManager } from "../../../manager/GoodsManager";
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";

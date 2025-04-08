@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum TaskConditionType {
     /**
          * 领主等级级 

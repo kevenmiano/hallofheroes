@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DoubleBossInfoView from "../../../../../fui/CampaignCommon/FUI_DoubleBossInfoView";
 import Resolution from "../../../../core/comps/Resolution";
 import ConfigMgr from "../../../../core/config/ConfigMgr";

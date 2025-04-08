@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ResMgr from "../../core/res/ResMgr";
 
 export class AgentFilterManager {

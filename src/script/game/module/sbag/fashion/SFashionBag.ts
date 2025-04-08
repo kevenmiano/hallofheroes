@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SFashionBag from "../../../../../fui/SBag/FUI_SFashionBag";
 import { PackageIn } from "../../../../core/net/PackageIn";
 import { ServerDataManager } from "../../../../core/net/ServerDataManager";

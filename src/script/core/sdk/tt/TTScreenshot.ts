@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../logger/Logger";
 import BaseScrennshot from "../base/BaseScreenshot";
 

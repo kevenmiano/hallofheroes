@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { MapPhysics } from "../../../map/space/data/MapPhysics";
 

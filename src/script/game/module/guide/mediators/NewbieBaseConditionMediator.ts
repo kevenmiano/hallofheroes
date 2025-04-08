@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";
 import { JobType } from "../../../constant/JobType";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_MemToolItem from '../../../../fui/MemTool/FUI_MemToolItem';
 import MemToolItemInfo from './MemToolItemInfo';

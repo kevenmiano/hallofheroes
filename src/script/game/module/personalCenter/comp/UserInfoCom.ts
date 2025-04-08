@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_UserInfoCom from "../../../../../fui/PersonalCenter/FUI_UserInfoCom";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

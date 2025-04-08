@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from '../../../../../core/utils/ObjectUtils';
 import { MovieClip } from '../../../../component/MovieClip';
 import { NotificationEvent } from "../../../../constant/event/NotificationEvent";

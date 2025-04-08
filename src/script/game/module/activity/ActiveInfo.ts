@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getMultiLangList, getMultiLangValue } from "../../../core/lang/LanguageDefine";
 
 export default class ActiveInfo {

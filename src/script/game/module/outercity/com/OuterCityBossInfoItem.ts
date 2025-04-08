@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OuterCityBossInfoItem from "../../../../../fui/OuterCity/FUI_OuterCityBossInfoItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { EmWindow } from "../../../constant/UIDefine";

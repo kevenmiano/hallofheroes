@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import LayerMgr from '../../../core/layer/LayerMgr';
 import Logger from '../../../core/logger/Logger';

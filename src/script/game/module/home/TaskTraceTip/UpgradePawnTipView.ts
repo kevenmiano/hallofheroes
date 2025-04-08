@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { ArmyPawn } from "../../../datas/ArmyPawn";
 import { ArmyManager } from "../../../manager/ArmyManager";

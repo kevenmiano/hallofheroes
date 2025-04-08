@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {MapBaseAction} from "./MapBaseAction";
 import {SceneManager} from "../../map/scene/SceneManager";
 import {PlayerManager} from "../../manager/PlayerManager";

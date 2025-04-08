@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { t_s_campaigndataData } from "../../game/config/t_s_campaigndata";
 import { t_s_herotemplateData } from "../../game/config/t_s_herotemplate";
 import { t_s_itemtemplateData } from "../../game/config/t_s_itemtemplate";

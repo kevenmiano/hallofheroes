@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../../core/audio/AudioManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";
 import Dictionary from "../../../../core/utils/Dictionary";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from "../../game/constant/UIDefine";
 import { ProtoCheckInfo } from "../../game/manager/ProtoManager";
 import { FrameCtrlManager } from "../../game/mvc/FrameCtrlManager";

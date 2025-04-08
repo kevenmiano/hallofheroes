@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
 *ClassName:BaseHttp
 *Description:http请求

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class GoldenSheepRecordInfo {
 	public nickName: string = "";
 	public money: number = 0;

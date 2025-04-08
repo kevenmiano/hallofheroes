@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class OutyardGuildInfo {
     public guildUid: string = "";
     public guildName: string = "";

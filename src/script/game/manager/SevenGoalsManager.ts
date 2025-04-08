@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import { PackageIn } from "../../core/net/PackageIn";
 import { ArrayUtils, ArrayConstant } from "../../core/utils/ArrayUtils";

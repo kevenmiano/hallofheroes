@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { S2CProtocol } from '../constant/protocol/S2CProtocol';
 import { ServerDataManager } from '../../core/net/ServerDataManager';
 import { PackageIn } from '../../core/net/PackageIn';

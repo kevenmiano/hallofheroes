@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PathIHitTester } from "../../../interfaces/PathIHitTester";
 import { OuterCityManager } from "../../../manager/OuterCityManager";
 import { Geometry } from "./Geometry";

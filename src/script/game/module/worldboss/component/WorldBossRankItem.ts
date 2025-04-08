@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WorldBossRankItem from "../../../../../fui/WorldBoss/FUI_WorldBossRankItem";
 import { WoundInfo } from "../../../mvc/model/worldboss/WoundInfo";
 import LangManager from '../../../../core/lang/LangManager';

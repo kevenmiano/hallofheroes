@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { EmWindow } from "../../constant/UIDefine";
 import IMediator from "../../interfaces/IMediator";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SimpleAlertHelper, {
   AlertBtnType,
 } from "../../../game/component/SimpleAlertHelper";

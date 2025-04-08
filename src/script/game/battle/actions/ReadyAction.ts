@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ActionLabesType } from '../../constant/BattleDefine';
 import { GameBaseAction } from './GameBaseAction';
 

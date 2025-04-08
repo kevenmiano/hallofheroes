@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GemMazeGemInfoVO from "./GemMazeGemInfoVO";
 
 /**

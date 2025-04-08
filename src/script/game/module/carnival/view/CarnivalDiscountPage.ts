@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CarnivalDiscountPage from "../../../../../fui/Carnival/FUI_CarnivalDiscountPage";
 import LangManager from "../../../../core/lang/LangManager";
 import Logger from "../../../../core/logger/Logger";

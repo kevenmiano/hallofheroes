@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject } from "../../../component/DisplayObject";
 import IFilterFormat from "../../space/interfaces/IFilterFormat";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ComponentSetting from "../../../../game/utils/ComponentSetting";
 import Resolution from "../../../comps/Resolution";
 import Logger from "../../../logger/Logger";

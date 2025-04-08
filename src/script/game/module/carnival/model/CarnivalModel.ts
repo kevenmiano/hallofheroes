@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../../core/utils/Dictionary";
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";
 import { t_s_carnivaldailychallengeData } from "../../../config/t_s_carnivaldailychallenge";

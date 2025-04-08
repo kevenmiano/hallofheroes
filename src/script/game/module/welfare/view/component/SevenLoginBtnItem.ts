@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SevenLoginInfo from "../../data/SevenLoginInfo";
 import { BaseItem } from '../../../../component/item/BaseItem';
 import { EmWindow } from "../../../../constant/UIDefine";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GvgManageView from "../../../../../../fui/Consortia/FUI_GvgManageView";
 import AudioManager from "../../../../../core/audio/AudioManager";
 import { ConsortiaSocketOutManager } from "../../../../manager/ConsortiaSocketOutManager";

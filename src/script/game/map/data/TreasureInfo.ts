@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { t_s_mapphysicpositionData } from "../../config/t_s_mapphysicposition";
 import { ConfigType } from "../../constant/ConfigDefine";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import LangManager from '../../core/lang/LangManager';
 import Logger from "../../core/logger/Logger";

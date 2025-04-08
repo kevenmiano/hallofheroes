@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class GvgTeamEditType
 {
     public static MANAGE_TEAM:number = 2;

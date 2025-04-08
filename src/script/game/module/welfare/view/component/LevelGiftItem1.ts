@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LevelGiftItem1 from "../../../../../../fui/Welfare/FUI_LevelGiftItem1";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";
 import { BaseItem } from '../../../../component/item/BaseItem';

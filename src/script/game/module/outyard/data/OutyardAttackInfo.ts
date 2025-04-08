@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class OutyardAttackInfo{
     public  fromPos:number = 0;
     public  toPos:number = 0;

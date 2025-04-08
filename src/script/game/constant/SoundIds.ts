@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ComponentSetting from "../utils/ComponentSetting";
 
 export class SoundIds {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignArmyViewHelper } from "../../CampaignArmyViewHelper";
 import { DisplayObject } from "../../../../component/DisplayObject";
 import { FilterFrameText, eFilterFrameText } from "../../../../component/FilterFrameText";

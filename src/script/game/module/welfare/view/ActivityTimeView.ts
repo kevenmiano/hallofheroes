@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ActivityTimeView from "../../../../../fui/Welfare/FUI_ActivityTimeView";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import Utils from "../../../../core/utils/Utils";

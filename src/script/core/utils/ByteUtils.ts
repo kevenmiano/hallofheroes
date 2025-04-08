@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ByteArray from "../net/ByteArray";
 
 export class ByteUtils

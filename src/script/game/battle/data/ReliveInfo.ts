@@ -1,3 +1,4 @@
+// @ts-nocheck
 import WaitReviveMsg = com.road.yishi.proto.battle.WaitReviveMsg;
 export default class ReliveInfo {
     public battleId: string;

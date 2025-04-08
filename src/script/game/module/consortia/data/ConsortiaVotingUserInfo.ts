@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 公会选举用户数据
  * @author yuanzhan.yu

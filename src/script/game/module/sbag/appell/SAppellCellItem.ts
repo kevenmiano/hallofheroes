@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_SAppellCellItem from "../../../../../fui/SBag/FUI_SAppellCellItem";
 import { t_s_appellData } from "../../../config/t_s_appell";

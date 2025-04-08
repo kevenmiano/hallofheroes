@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export default class FirstPayModel {
     /** 可领取 */

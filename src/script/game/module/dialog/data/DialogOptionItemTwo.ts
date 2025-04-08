@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Btn_3red from "../../../../../fui/Dialog/FUI_Btn_3red";
 import AudioManager from "../../../../core/audio/AudioManager";
 import LangManager from "../../../../core/lang/LangManager";

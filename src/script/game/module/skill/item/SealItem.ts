@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SealItem from "../../../../../fui/Skill/FUI_SealItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { IconFactory } from "../../../../core/utils/IconFactory";

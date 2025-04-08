@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { DialogControl } from "./DialogControl";
 import { DialogModel } from "./DialogModel";

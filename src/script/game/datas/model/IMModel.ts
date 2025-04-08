@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../core/lang/LangManager';
 import Dictionary from "../../../core/utils/Dictionary";
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";

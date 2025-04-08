@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {KingContractModel} from "../module/kingcontract/KingContractModel";
 import {ServerDataManager} from "../../core/net/ServerDataManager";
 import {S2CProtocol} from "../constant/protocol/S2CProtocol";

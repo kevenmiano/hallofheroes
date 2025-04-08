@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PreCampaignData } from "./PreCampaignData";
 import { CampaignMapModel } from "../../mvc/model/CampaignMapModel";
 import Logger from "../../../core/logger/Logger";

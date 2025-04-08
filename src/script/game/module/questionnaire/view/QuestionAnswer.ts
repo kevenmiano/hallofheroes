@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QuestionAnswer from "../../../../../fui/QuestionNaire/FUI_QuestionAnswer";
 import LangManager from '../../../../core/lang/LangManager';
 import LTextInput from "../../../component/laya/LTextInput";

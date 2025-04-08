@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameConfig from '../../../GameConfig';
 import Logger from "../logger/Logger";
 

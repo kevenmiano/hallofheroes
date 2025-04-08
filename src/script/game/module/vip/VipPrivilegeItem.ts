@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_VipPrivilegeItem from '../../../../fui/Shop/FUI_VipPrivilegeItem';
 import LangManager from '../../../core/lang/LangManager';
 import { VIPEvent } from '../../constant/event/NotificationEvent';

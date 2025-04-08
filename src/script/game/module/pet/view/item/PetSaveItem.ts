@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetSaveItem from "../../../../../../fui/Pet/FUI_PetSaveItem";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { ItemSelectState } from "../../../../constant/Const";

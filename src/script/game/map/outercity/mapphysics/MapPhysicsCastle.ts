@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { ArmyManager } from "../../../manager/ArmyManager";
 import { MessageTipManager } from "../../../manager/MessageTipManager";

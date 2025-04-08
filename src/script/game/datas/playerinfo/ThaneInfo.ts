@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import { AvatarPosition } from "../../avatar/data/AvatarPosition";

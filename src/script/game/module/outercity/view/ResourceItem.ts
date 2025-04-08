@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ResourceItem from "../../../../../fui/Base/FUI_ResourceItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";

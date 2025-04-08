@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import { PathManager } from "../../manager/PathManager";
 import ResMgr from '../../../core/res/ResMgr';

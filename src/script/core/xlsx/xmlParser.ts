@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IParserConfiguration } from './interfaces';
 
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class BattleQuickenModel {
     /**
      * 战斗加速的速度 

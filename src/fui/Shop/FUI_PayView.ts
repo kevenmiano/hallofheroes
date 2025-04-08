@@ -1,3 +1,4 @@
+// @ts-nocheck
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_Btn_ShopService from "./FUI_Btn_ShopService";

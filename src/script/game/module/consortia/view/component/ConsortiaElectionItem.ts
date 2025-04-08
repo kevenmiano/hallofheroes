@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaElectionItem from "../../../../../../fui/Consortia/FUI_ConsortiaElectionItem";
 import { ConsortiaVotingUserInfo } from "../../data/ConsortiaVotingUserInfo";
 

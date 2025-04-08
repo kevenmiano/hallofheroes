@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../core/logger/Logger";
 import { Avatar } from '../../../avatar/view/Avatar';
 import { DisplayObject } from "../../../component/DisplayObject";

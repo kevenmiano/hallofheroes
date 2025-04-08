@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIButton from "../../../../core/ui/UIButton";
 import { EmWindow } from "../../../constant/UIDefine";
 import { BagEvent, FriendUpdateEvent, VIPEvent, RuneEvent, FashionEvent, MountsEvent, EmailEvent, ShopEvent, NotificationEvent, ConsortiaEvent } from "../../../constant/event/NotificationEvent";

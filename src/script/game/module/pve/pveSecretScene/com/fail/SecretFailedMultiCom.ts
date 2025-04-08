@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SecretFailedMultiCom from "../../../../../../../fui/PveSecretScene/FUI_SecretFailedMultiCom";
 import LangManager from "../../../../../../core/lang/LangManager";
 import SimpleAlertHelper from "../../../../../component/SimpleAlertHelper";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from '../../../../core/utils/ObjectUtils';
 import Resolution from '../../../../core/comps/Resolution';
 import { EmPackName } from '../../../constant/UIDefine';

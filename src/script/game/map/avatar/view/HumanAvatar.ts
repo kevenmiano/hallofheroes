@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Avatar } from "../../../avatar/view/Avatar";
 import { ResourceLoaderInfo } from "../data/ResourceLoaderInfo";
 

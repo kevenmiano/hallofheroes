@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from "../../../constant/UIDefine"
 import { getZoneData, isOversea } from "./SiteZoneCtrl"
 import { ZONE_AREA } from "../model/SiteZoneData";

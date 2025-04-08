@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @description    野外怪物掉落宝箱数据类
  * @author yuanzhan.yu

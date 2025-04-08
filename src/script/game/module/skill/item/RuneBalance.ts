@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneBalance from "../../../../../fui/Skill/FUI_RuneBalance";
 import { FormularySets } from "../../../../core/utils/FormularySets";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

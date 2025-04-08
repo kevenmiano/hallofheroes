@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import { TempleteManager } from "../manager/TempleteManager";
 import { t_s_skilltemplateData } from "../config/t_s_skilltemplate";

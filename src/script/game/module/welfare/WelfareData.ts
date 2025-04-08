@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArrayConstant, ArrayUtils } from "../../../core/utils/ArrayUtils";
 import { ExpBackEvent, NotificationEvent } from '../../constant/event/NotificationEvent';
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";

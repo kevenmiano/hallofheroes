@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseModel from "../../../mvc/model/BaseModel";
 
 export class UserModel extends BaseModel

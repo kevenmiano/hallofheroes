@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { StateType } from "../../../constant/StateType";
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
 

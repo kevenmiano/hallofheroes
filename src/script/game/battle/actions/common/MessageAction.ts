@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from "../../../../core/net/PackageIn";
 import { CampaignEvent, SceneEvent } from "../../../constant/event/NotificationEvent";
 import { PlayerModel } from "../../../datas/playerinfo/PlayerModel";

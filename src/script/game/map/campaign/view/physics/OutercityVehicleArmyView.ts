@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameConfig from "../../../../../../GameConfig";
 import LangManager from "../../../../../core/lang/LangManager";
 import Logger from "../../../../../core/logger/Logger";

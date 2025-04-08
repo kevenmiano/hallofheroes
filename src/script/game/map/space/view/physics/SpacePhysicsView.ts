@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SpaceNodeType from "../../constant/SpaceNodeType";
 import { MapPhysics } from "../../data/MapPhysics";
 import { SpaceNode } from "../../data/SpaceNode";

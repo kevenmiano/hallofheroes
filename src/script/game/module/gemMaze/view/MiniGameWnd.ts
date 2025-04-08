@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";
 import { getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";

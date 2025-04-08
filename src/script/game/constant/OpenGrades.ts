@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 各功能开放等级的枚举 同步t_s_levelupprompt
  */

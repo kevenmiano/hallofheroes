@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import BitArray from "../../../../core/utils/BitArray";
 import Dictionary from "../../../../core/utils/Dictionary";

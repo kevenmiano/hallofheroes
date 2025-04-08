@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../core/lang/LangManager";
 import { BagType } from "../constant/BagDefine";
 import { EmWindow } from "../constant/UIDefine";

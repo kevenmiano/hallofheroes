@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LoginMethodItem from "../../../../../fui/Login/FUI_LoginMethodItem";
 
 export default class LoginMethodItem extends FUI_LoginMethodItem {

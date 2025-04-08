@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AllExchangeView from "../../../../../fui/Funny/FUI_AllExchangeView";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

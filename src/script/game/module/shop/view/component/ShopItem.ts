@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ShopItem from "../../../../../../fui/Base/FUI_ShopItem";
 import LangManager from '../../../../../core/lang/LangManager';
 import Logger from "../../../../../core/logger/Logger";

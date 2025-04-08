@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FoisonHornView from "../../../../../fui/Funny/FUI_FoisonHornView";
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

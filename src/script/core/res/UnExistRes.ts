@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class UnExistRes {
 
     public static BlankURL: string = "res/atlas/blank.png";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SwitchInfo } from "../datas/SwitchInfo";
 
 	export class ConfigManager

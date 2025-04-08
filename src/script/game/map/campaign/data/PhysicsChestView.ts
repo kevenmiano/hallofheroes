@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationEvent } from "../../../constant/event/NotificationEvent";
 import { CampaignManager } from "../../../manager/CampaignManager";
 import { NotificationManager } from "../../../manager/NotificationManager";

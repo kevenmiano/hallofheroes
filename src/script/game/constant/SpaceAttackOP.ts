@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum SpaceAttackOP {
     /** 发起挑战 */
     ATTACK = 1,

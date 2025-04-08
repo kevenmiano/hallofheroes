@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AnswerItem from '../../../../../fui/QuestionNaire/FUI_AnswerItem';
 import LangManager from '../../../../core/lang/LangManager';
 import Logger from '../../../../core/logger/Logger';

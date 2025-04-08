@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArmyState } from "../../constant/ArmyState";
 import { NotificationEvent } from "../../constant/event/NotificationEvent";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";

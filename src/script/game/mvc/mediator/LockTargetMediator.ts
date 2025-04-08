@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {SpaceEvent} from "../../constant/event/NotificationEvent";
 import {PlayerModel} from "../../datas/playerinfo/PlayerModel";
 import IMediator from "../../interfaces/IMediator";

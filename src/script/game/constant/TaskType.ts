@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum TaskType {
     TASK_MAIN = 0,
     TASK_COMMON = 1,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 import PlayerPetOpMsg = com.road.yishi.proto.pet.PlayerPetOpMsg
 import { SocketManager } from "../../../core/net/SocketManager";

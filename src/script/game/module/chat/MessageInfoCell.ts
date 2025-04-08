@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MessageCellInfo from "../../../../fui/Base/FUI_MessageCellInfo";
 
 

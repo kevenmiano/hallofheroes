@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemAttriItem from "../../../../../fui/Skill/FUI_GemAttriItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 

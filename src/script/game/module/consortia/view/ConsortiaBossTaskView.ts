@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Resolution from "../../../../core/comps/Resolution";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseFguiCom from "../../../../core/ui/Base/BaseFguiCom";

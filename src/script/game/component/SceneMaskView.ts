@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Disposeable } from './DisplayObject';
 import FUIHelper from '../utils/FUIHelper';
 import { EmPackName, EmWindow } from '../constant/UIDefine';

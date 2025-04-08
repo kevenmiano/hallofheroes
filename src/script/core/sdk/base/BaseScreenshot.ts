@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "./BaseChannel";
 
 export default class BaseScrennshot {

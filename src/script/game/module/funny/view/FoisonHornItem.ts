@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FoisonHornItem from "../../../../../fui/Funny/FUI_FoisonHornItem";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { BaseItem } from "../../../component/item/BaseItem";

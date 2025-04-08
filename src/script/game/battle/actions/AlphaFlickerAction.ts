@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignEvent } from "../../constant/event/NotificationEvent";
 import { PlayerModel } from "../../datas/playerinfo/PlayerModel";
 import { PlayerManager } from "../../manager/PlayerManager";

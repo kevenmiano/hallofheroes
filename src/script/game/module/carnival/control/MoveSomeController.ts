@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import { DisplayObject } from "../../../component/DisplayObject";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";

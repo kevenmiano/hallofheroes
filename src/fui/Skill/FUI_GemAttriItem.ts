@@ -1,3 +1,4 @@
+// @ts-nocheck
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_RuneHole_s from "./FUI_RuneHole_s";

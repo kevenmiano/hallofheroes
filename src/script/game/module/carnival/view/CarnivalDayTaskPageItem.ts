@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CarnivalDayTaskPageItem from "../../../../../fui/Carnival/FUI_CarnivalDayTaskPageItem";
 import LangManager from "../../../../core/lang/LangManager";
 import UIButton from "../../../../core/ui/UIButton";

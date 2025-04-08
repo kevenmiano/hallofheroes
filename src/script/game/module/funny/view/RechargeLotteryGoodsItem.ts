@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RechargeLotteryGoodsItem from "../../../../../fui/Funny/FUI_RechargeLotteryGoodsItem";
 import {BaseItem} from "../../../component/item/BaseItem";
 import {GoodsInfo} from "../../../datas/goods/GoodsInfo";

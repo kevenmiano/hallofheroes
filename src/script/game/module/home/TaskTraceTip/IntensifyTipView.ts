@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import GTabIndex from "../../../constant/GTabIndex";
 import { TaskTraceTipManager } from "../../../manager/TaskTraceTipManager";

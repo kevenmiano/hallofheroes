@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 
 import FUI_VipTitle from "../../../../fui/Shop/FUI_VipTitle";

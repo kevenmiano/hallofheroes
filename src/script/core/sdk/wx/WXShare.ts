@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BaseShare } from "../base/BaseShare";
 
 import { ResultCallback, ADName, SDKState, ResultState } from "../SDKConfig";

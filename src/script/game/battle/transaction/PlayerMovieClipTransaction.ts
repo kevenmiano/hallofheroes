@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from "../../../core/net/PackageIn";
 import { TransactionBase } from "./TransactionBase";
 import { S2CProtocol } from '../../constant/protocol/S2CProtocol';

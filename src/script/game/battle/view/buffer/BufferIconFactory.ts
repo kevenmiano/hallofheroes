@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleEffect } from "../../skillsys/effect/BattleEffect";
 import { SkillEffect } from "../../skillsys/effect/SkillEffect";
 

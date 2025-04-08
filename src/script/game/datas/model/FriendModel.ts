@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../../core/event/GameEventDispatcher';
 /**
      * 好友模块数据的存储、处理类, 提供数据操作的API

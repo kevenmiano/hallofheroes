@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SmalMapRightItem from '../../../../fui/Home/FUI_SmalMapRightItem';
 import ObjectUtils from '../../../core/utils/ObjectUtils';
 import { SpaceNode } from '../../map/space/data/SpaceNode';

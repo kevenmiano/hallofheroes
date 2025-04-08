@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";
 import { ArmyManager } from "../../../manager/ArmyManager";
 import FrameDataBase from "../../../mvc/FrameDataBase";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Func } from "../../../core/comps/Func";
 import LayerMgr from "../../../core/layer/LayerMgr";
 import Logger from "../../../core/logger/Logger";

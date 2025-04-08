@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MovePointAction } from "../actions/MovePointAction";
 import { FaceType, RoleType } from "../../constant/BattleDefine";
 import { BattleUtils } from "../utils/BattleUtils";

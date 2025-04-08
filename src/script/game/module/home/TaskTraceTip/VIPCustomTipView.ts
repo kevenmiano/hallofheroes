@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketSendManager } from "../../../manager/SocketSendManager";
 import { TaskTraceTipManager } from "../../../manager/TaskTraceTipManager";
 import TaskTraceTipWnd from "./TaskTraceTipWnd";

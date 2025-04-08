@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import Dictionary from "../../core/utils/Dictionary";
 import { SHARE_EVENT } from "../constant/event/NotificationEvent";

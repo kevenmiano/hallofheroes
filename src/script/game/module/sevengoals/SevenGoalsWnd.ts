@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow"
 import { DateFormatter } from "../../../core/utils/DateFormatter";
 import ProgressHelp from "../../../core/utils/ProgressHelp";

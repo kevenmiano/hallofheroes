@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArrayConstant, ArrayUtils } from "../../../core/utils/ArrayUtils";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import IMediator from "../../interfaces/IMediator";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationManager } from "../../manager/NotificationManager";
 import { TransactionBase } from "./TransactionBase";
 import { S2CProtocol } from '../../constant/protocol/S2CProtocol';

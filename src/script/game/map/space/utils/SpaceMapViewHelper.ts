@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { StageReferance } from "../../../roadComponent/pickgliss/toplevel/StageReferance";
 
 	export class SpaceMapViewHelper

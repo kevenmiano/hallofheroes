@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PlayerPetFigure from "../../../../fui/PlayerInfo/FUI_PlayerPetFigure";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

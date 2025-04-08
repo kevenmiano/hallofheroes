@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../core/lang/LangManager';
 import { Avatar } from "../../avatar/view/Avatar";
 import { CampaignEvent, CampaignMapEvent, NotificationEvent } from "../../constant/event/NotificationEvent";

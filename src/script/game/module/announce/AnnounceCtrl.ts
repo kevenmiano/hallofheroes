@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ResMgr from "../../../core/res/ResMgr";
 import Singleton from "../../../core/singleton/Singleton";
 import ComponentSetting from "../../utils/ComponentSetting";

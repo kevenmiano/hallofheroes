@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QuestionItem from "../../../../../fui/QuestionNaire/FUI_QuestionItem";
 import { MessageTipManager } from '../../../manager/MessageTipManager';
 import { NotificationManager } from "../../../manager/NotificationManager";

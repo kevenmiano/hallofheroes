@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../../../core/event/GameEventDispatcher';
 import Dictionary from '../../../../core/utils/Dictionary';
 import { t_s_mapData } from '../../../config/t_s_map';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DateFormatter } from "../../../core/utils/DateFormatter";
 import { PlayerManager } from "../../manager/PlayerManager";
 import { TempleteManager } from "../../manager/TempleteManager";

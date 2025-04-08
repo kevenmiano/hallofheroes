@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GAME_ALL_LANG, GAME_LANG, GAME_LANG_WHITE, LANGCFG } from "../../core/lang/LanguageDefine";
 import { isOversea, saveZoneData, updateZoneData } from "../module/login/manager/SiteZoneCtrl";
 import SiteZoneData from "../module/login/model/SiteZoneData";

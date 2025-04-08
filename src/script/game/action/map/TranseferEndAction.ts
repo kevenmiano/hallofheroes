@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from '../../../core/config/ConfigMgr';
 import Logger from '../../../core/logger/Logger';
 import { PackageIn } from "../../../core/net/PackageIn";

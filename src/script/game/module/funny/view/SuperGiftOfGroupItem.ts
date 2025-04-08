@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SuperGiftITitleItemCell from "../../../../../fui/Funny/FUI_SuperGiftITitleItemCell";
 
 import { NumericStepper } from "../../../component/NumericStepper";

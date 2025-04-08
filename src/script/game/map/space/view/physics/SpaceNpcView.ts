@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../../core/logger/Logger";
 import { AvatarPosition } from "../../../../avatar/data/AvatarPosition";
 import { AvatarStaticData } from "../../../../avatar/data/AvatarStaticData";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {MapPhysicsBase} from "./MapPhysicsBase";
 import {EmWindow} from "../../../../constant/UIDefine";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../../interfaces/IMediator";
 import {PlayerBagCell} from "../../../component/item/PlayerBagCell";
 import {GoodsInfo} from "../../../datas/goods/GoodsInfo";

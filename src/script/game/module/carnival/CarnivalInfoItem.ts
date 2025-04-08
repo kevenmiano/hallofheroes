@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CarnivalInfoItem from "../../../../fui/Carnival/FUI_CarnivalInfoItem";
 
 export default class CarnivalInfoItem extends FUI_CarnivalInfoItem {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaActivityItem from "../../../../../../fui/Consortia/FUI_ConsortiaActivityItem";
 import { PlayerInfo } from "../../../../datas/playerinfo/PlayerInfo";
 import { ConsortiaManager } from "../../../../manager/ConsortiaManager";

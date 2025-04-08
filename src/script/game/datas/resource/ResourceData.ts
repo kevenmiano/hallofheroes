@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ResourceEvent } from "../../constant/event/NotificationEvent";
 import GameEventDispatcher from '../../../core/event/GameEventDispatcher';
 

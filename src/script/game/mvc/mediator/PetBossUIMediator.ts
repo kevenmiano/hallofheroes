@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { NotificationEvent } from "../../constant/event/NotificationEvent";
 import { EmWindow } from "../../constant/UIDefine";

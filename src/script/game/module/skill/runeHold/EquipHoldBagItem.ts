@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_EquipHoldBagItem from "../../../../../fui/Skill/FUI_EquipHoldBagItem";
 import { BagType } from "../../../constant/BagDefine";
 import { ItemSelectState } from "../../../constant/Const";

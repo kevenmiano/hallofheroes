@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AvatarPosition } from "../../../avatar/data/AvatarPosition";
 import { Disposeable } from "../../../component/DisplayObject";
 

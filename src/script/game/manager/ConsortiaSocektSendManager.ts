@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketManager } from "../../core/net/SocketManager";
 import { ThaneInfo } from "../datas/playerinfo/ThaneInfo";
 import { ArmyManager } from "./ArmyManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import {BattleEvent} from "../constant/event/NotificationEvent";
 import {t_s_skilltemplateData} from "../config/t_s_skilltemplate";

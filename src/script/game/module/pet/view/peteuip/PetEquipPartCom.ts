@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetEquipPartCom from "../../../../../../fui/Pet/FUI_PetEquipPartCom";
 import LangManager from "../../../../../core/lang/LangManager";
 import Logger from "../../../../../core/logger/Logger";

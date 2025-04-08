@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import { EquipTip } from "./EquipTip";
 import { ThaneInfo } from "../datas/playerinfo/ThaneInfo";

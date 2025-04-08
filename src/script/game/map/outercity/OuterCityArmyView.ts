@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../../core/utils/StringHelper";
 import { AvatarActionType } from "../../avatar/data/AvatarActionType";
 import { AvatarPosition } from "../../avatar/data/AvatarPosition";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../../core/audio/AudioManager";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

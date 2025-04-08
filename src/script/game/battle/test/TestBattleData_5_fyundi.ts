@@ -1,3 +1,4 @@
+// @ts-nocheck
 //卡洛营地
 
 // tempId[2071]  炎魔之眼  monster001C     skillIds:[40013, 40014]

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WishPoolItem from "../../../../../../fui/Shop/FUI_WishPoolItem";
 import BaseTipItem from "../../../../component/item/BaseTipItem";
 import { t_s_wishingpoolData } from "../../../../config/t_s_wishingpool";

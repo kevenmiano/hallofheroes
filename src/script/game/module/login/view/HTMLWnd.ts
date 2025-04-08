@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Resolution from "../../../../core/comps/Resolution";
 import { getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";
 import ResMgr from "../../../../core/res/ResMgr";

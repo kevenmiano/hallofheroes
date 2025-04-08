@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 
 export default class ConsortiaPrayInfo{

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MonopolyFinishColumnView from "../../../../../fui/Monopoly/FUI_MonopolyFinishColumnView";
 import FUI_MonopolyFinishRewardItem from "../../../../../fui/Monopoly/FUI_MonopolyFinishRewardItem";
 import { UIFilter } from "../../../../core/ui/UIFilter";

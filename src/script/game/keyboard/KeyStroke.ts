@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { KeyType } from './KeyType';
 /**
 * @author:pzlricky

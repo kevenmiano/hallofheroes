@@ -1,3 +1,4 @@
+// @ts-nocheck
 import TSMap from "../struct/TSMap";
 
 

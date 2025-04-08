@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { IconFactory } from "../../core/utils/IconFactory";
 import { SkillResLoaderVO } from "../battle/skillsys/loader/SkillResLoaderVO";

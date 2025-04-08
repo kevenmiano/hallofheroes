@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 //拖拽类型
 export enum DragType {

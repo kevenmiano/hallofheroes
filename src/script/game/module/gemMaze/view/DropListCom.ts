@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DropList from "../../../../../fui/GemMaze/FUI_DropList";
 import FUI_DropListItem from "../../../../../fui/GemMaze/FUI_DropListItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";

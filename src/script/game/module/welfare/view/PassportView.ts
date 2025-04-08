@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PassportView from "../../../../../fui/Welfare/FUI_PassportView";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

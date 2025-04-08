@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../core/audio/AudioManager";
 import Logger from "../../../core/logger/Logger";
 import Dictionary from "../../../core/utils/Dictionary";

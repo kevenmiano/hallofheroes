@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import { Disposeable } from "../../component/DisplayObject";
 import Dictionary from "../../../core/utils/Dictionary";

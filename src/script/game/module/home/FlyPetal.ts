@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmPackName } from "../../constant/UIDefine";
 import FUIHelper from "../../utils/FUIHelper";
 

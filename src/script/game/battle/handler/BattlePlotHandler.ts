@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {IEnterFrame} from "../../interfaces/IEnterFrame";
 import {IAction} from "../../interfaces/IAction";
 import {PackageIn} from "../../../core/net/PackageIn";

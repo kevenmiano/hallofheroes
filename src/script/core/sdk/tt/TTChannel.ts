@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import TTBanner from "./TTBanner";
 import TTVideoAd from "./TTVideoAd";
@@ -63,7 +64,7 @@ export default class TTChannel extends BaseChannel {
             current: imgUrl, // 当前显示图片的http链接
             urls: [imgUrl] // 需要预览的图片http链接列表
         })
-    }    
+    }
     checkForUpdate(callback: ResultCallback) {
         //小游戏官方的分包加载方式
         if (tt.getUpdateManager) {

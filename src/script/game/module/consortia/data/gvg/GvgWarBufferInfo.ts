@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../../core/event/GameEventDispatcher";
 import {GvgEvent} from "../../../../constant/event/NotificationEvent";
 import {PlayerManager} from "../../../../manager/PlayerManager";

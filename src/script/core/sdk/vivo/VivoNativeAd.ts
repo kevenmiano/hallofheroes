@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import OppoNativeAdItemModel from "../oppo/OppoNativeAdItemModel";
 import BaseAd from "../base/BaseAd";

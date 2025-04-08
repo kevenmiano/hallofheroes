@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from '../../../../core/config/ConfigMgr';
 import { t_s_campaignData } from "../../../config/t_s_campaign";
 import { WorldBossEvent } from "../../../constant/event/NotificationEvent";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class RelationType
 {
     public static NONE:number = 0x00;          // 无关系

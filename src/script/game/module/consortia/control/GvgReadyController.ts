@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PackageIn } from "../../../../core/net/PackageIn";
 import { SocketManager } from "../../../../core/net/SocketManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

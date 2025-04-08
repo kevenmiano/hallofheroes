@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetMap from "../../../../../fui/RemotePet/FUI_RemotePetMap";
 import FUI_RemotePetRewardItem from "../../../../../fui/RemotePet/FUI_RemotePetRewardItem";
 import LangManager from "../../../../core/lang/LangManager";

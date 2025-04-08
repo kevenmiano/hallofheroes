@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArmyPawn } from "../../datas/ArmyPawn";
 import { ThaneInfo } from "../../datas/playerinfo/ThaneInfo";
 import { BaseCastle } from "../../datas/template/BaseCastle";

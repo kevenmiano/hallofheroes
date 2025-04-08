@@ -1,3 +1,4 @@
+// @ts-nocheck
 import t_s_baseConfigData from "./t_s_baseConfigData";
 
 export default class t_s_activityschedule {

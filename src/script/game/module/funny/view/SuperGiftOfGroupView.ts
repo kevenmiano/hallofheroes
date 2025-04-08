@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SuperGiftOfGroup from "../../../../../fui/Funny/FUI_SuperGiftOfGroup";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

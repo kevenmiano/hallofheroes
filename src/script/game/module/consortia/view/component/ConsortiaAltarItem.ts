@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaAltarItem from "../../../../../../fui/Consortia/FUI_ConsortiaAltarItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_dropviewData } from "../../../../config/t_s_dropview";

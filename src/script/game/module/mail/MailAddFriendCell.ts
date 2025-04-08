@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MailAddFriendCell from '../../../../fui/Mail/FUI_MailAddFriendCell';
 import Logger from '../../../core/logger/Logger';
 import { IconFactory } from '../../../core/utils/IconFactory';

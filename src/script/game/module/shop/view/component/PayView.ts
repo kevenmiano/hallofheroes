@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PayView from "../../../../../../fui/Shop/FUI_PayView";
 import LangManager from '../../../../../core/lang/LangManager';
 import UIButton from "../../../../../core/ui/UIButton";

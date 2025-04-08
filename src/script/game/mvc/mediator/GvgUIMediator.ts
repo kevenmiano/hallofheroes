@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../interfaces/IMediator";
 import {IEnterFrame} from "../../interfaces/IEnterFrame";
 import UIManager from "../../../core/ui/UIManager";

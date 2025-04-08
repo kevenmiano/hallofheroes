@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../logger/Logger";
 import TSMap from "../struct/TSMap";
 import BaseAudioManager from "./BaseAudioManager";

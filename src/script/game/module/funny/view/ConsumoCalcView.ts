@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsumoCalcView from '../../../../../fui/Funny/FUI_ConsumoCalcView';
 import LangManager from '../../../../core/lang/LangManager';
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

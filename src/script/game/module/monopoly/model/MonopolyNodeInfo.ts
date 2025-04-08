@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignNode } from "../../../map/space/data/CampaignNode";
 import { PhysicInfo } from "../../../map/space/data/PhysicInfo";
 

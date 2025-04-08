@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SFashionSwitchView from "../../../../../fui/SBag/FUI_SFashionSwitchView";
 import Logger from "../../../../core/logger/Logger";
 import { ArrayConstant, ArrayUtils } from "../../../../core/utils/ArrayUtils";

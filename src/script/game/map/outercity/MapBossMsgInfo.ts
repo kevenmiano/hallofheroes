@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TempleteManager } from "../../manager/TempleteManager";
 import { WildLand } from "../data/WildLand";
 

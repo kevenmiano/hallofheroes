@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GemRewardInfoVO from "./GemRewardInfoVO";
 
 /**

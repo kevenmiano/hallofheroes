@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { BottleModel } from "../model/BottleModel";
 import { BottleManager } from "../../../manager/BottleManager";

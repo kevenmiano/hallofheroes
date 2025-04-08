@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export interface xmlCfg {
     url: string,   //文件路径

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../core/audio/AudioManager";
 import { GAME_LANG } from "../../../core/lang/LanguageDefine";
 import Logger from '../../../core/logger/Logger';

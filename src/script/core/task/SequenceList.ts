@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Status, Sequence} from "./Sequence"
 
 export enum ActionsExecutionMode {

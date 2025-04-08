@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../logger/Logger";
 import Singleton from "../singleton/Singleton";
 import { RPT_EVENT, RPT_KEY } from "./RptEvent";

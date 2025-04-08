@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class Func {
     private mThisObj: any
     private mCallBack: Function

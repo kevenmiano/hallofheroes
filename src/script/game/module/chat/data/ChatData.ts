@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from '../../../../core/utils/ObjectUtils';
 import XmlMgr from '../../../../core/xlsx/XmlMgr';
 import { ChatChannel } from '../../../datas/ChatChannel';

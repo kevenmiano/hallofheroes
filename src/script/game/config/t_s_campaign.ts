@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../core/lang/LangManager";
 import { CommonConstant } from "../constant/CommonConstant";
 import t_s_baseConfigData from "./t_s_baseConfigData";

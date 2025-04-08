@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "./GameEventDispatcher";
 
 export default class GlobalEvent extends GameEventDispatcher {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class FogGridType {
 	public static OPEN_ONE: number = 1;

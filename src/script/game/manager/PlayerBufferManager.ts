@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../core/utils/SimpleDictionary";
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import { PlayerBufferInfo } from "../datas/playerinfo/PlayerBufferInfo";

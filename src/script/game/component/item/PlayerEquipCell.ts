@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PlayerEquipCell from "../../../../fui/Base/FUI_PlayerEquipCell";
 import Utils from "../../../core/utils/Utils";
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";

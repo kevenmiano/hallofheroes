@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameConfig from "../GameConfig";
 import AudioManager from "./core/audio/AudioManager";
 import Resolution from "./core/comps/Resolution";

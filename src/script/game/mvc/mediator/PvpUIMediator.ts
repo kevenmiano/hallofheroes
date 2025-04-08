@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../interfaces/IMediator";
 import { FrameCtrlManager } from '../FrameCtrlManager';
 import { EmWindow } from "../../constant/UIDefine";

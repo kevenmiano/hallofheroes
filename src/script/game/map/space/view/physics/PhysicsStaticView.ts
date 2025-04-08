@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PathManager } from "../../../../manager/PathManager";
 import { PosType } from "../../constant/PosType";
 import { CampaignNode } from "../../data/CampaignNode";

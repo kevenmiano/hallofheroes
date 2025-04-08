@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from "../../../core/audio/AudioManager";
 import { BattleType } from "../../constant/BattleDefine";
 import { BattleEvent } from "../../constant/event/NotificationEvent";

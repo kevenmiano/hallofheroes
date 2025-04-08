@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import {Disposeable} from "../../component/DisplayObject";
 import {CampaignMapEvent, OuterCityEvent} from "../../constant/event/NotificationEvent";

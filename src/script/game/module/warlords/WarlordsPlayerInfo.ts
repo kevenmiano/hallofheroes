@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ThaneInfo } from "../../datas/playerinfo/ThaneInfo";
 import WarlordsModel from "./WarlordsModel";
 

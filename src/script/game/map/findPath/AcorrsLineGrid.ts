@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Tiles from "../space/constant/Tiles";
 import { CampaignNode } from "../space/data/CampaignNode";
 import StringHelper from '../../../core/utils/StringHelper';

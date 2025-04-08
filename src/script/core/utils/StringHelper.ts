@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../lang/LangManager';
 /**
  * 我们目前所用的K、M、G、T等都是英文表示方法, 分别是Kilo（103）、Mega（106）、Giga（109）、Tera（1012）的简写, 

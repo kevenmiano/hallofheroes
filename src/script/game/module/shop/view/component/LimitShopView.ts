@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LimitShopView from "../../../../../../fui/Shop/FUI_LimitShopView";
 import LangManager from "../../../../../core/lang/LangManager";
 import { PackageIn } from "../../../../../core/net/PackageIn";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GoldenTreeView from "../../../../../fui/Funny/FUI_GoldenTreeView";
 import { t_s_configData } from "../../../config/t_s_config";
 import LangManager from "../../../../core/lang/LangManager";

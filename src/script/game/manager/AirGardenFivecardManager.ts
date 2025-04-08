@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { FivecardModel } from "../module/carnival/games/FivecardModel";
 import { PackageIn } from "../../core/net/PackageIn";

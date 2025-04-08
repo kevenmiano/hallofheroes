@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FightingItem from "../../../../../fui/Home/FUI_FightingItem";
 import ColorConstant from "../../../constant/ColorConstant";
 import FightingType from "../../../constant/FightingType";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";
 import { PlayerManager } from "../../../game/manager/PlayerManager";

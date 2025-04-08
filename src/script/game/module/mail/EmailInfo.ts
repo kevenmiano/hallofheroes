@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../../core/event/GameEventDispatcher';
 import { DateFormatter } from '../../../core/utils/DateFormatter';
 import ObjectUtils from '../../../core/utils/ObjectUtils';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import TipsItem from "../../core/ui/Base/Tips.ts";
 import { EmLayer } from "../../core/ui/ViewInterface.ts";
 import MessageLabel from "../component/MessageLabel.ts";

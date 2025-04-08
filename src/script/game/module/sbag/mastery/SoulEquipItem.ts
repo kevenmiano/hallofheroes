@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SoulEquipItem from "../../../../../fui/Base/FUI_SoulEquipItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

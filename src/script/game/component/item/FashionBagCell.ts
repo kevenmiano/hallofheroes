@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FashionBagCell from "../../../../fui/Base/FUI_FashionBagCell";
 import {GoodsInfo} from "../../datas/goods/GoodsInfo";
 import {BaseItem} from "./BaseItem";

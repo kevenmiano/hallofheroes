@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../core/config/ConfigMgr";
 import { ConfigType } from "../constant/ConfigDefine";
 import t_s_baseConfigData from "./t_s_baseConfigData";

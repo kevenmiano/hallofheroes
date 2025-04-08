@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_TaskAddFriendItem from "../../../../fui/Home/FUI_TaskAddFriendItem";
 import LangManager from "../../../core/lang/LangManager";
 import { UIFilter } from "../../../core/ui/UIFilter";

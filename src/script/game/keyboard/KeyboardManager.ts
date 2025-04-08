@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import Logger from '../../core/logger/Logger';
 import KeyMap from './KeyMap';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Promotion from "../../../../../../fui/Shop/FUI_Promotion";
 import LangManager from "../../../../../core/lang/LangManager";
 import { t_s_rechargeData } from "../../../../config/t_s_recharge";

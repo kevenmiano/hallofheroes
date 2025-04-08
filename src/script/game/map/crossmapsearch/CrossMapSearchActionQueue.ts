@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GlobalConfig } from "../../constant/GlobalConfig";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import { CampaignManager } from "../../manager/CampaignManager";

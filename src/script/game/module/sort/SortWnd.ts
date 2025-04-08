@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SortRankItemTitle from '../../../../fui/Sort/FUI_SortRankItemTitle';
 import AudioManager from '../../../core/audio/AudioManager';
 import LangManager from '../../../core/lang/LangManager';

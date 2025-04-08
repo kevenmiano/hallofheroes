@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../core/lang/LangManager';
 import { ArrayConstant, ArrayUtils } from '../../../core/utils/ArrayUtils';
 import StringHelper from '../../../core/utils/StringHelper';

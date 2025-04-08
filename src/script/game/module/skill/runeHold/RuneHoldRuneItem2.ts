@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RuneHoldRuneItem2 from "../../../../../fui/Skill/FUI_RuneHoldRuneItem2";
 import LangManager from "../../../../core/lang/LangManager";

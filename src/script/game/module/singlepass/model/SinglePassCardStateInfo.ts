@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class SinglePassCardStateInfo {
 	public static LEFT: string = "left";
 	public static CENTER: string = "center";

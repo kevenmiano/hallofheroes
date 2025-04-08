@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WarlordsBetSelectItem from "../../../../../../fui/Warlords/FUI_WarlordsBetSelectItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { IconType } from "../../../../constant/IconType";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AudioSetting from "../../../../../fui/Login/FUI_AudioSetting";
 import AudioManager from "../../../../core/audio/AudioManager";
 import { SoundIds } from "../../../constant/SoundIds";

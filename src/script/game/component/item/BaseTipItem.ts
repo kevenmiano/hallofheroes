@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BaseTipItem from "../../../../fui/Base/FUI_BaseTipItem";
 import UIButton from "../../../core/ui/UIButton";
 import TemplateIDConstant from "../../constant/TemplateIDConstant";

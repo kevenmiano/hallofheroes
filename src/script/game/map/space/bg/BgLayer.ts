@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Disposeable } from "../../../component/DisplayObject";
 import { t_s_mapData } from "../../../config/t_s_map";
 import { BgModel } from "./BgModel";

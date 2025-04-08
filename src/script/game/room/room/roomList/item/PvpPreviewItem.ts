@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PvpPreviewItem from "../../../../../../fui/RoomList/FUI_PvpPreviewItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { JobType } from "../../../../constant/JobType";

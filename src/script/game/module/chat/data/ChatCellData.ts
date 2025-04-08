@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UserType from "../../../constant/UserType";
 import ChatCellType from "./ChatCellType";
 

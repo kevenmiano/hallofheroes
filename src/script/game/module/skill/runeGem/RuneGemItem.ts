@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneGemItem from "../../../../../fui/Skill/FUI_RuneGemItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { BaseItem } from "../../../component/item/BaseItem";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoodsInfo } from "./goods/GoodsInfo";
 
 export class TipMessageData {

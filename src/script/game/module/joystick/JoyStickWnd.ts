@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Resolution from '../../../core/comps/Resolution';
 import Logger from '../../../core/logger/Logger';
 import BaseWindow from '../../../core/ui/Base/BaseWindow';

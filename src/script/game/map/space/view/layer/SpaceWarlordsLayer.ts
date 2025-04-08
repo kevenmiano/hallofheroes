@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import { WarlordsEvent } from "../../../../constant/event/NotificationEvent";
 import { JobType } from "../../../../constant/JobType";

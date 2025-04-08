@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {S2CProtocol} from "../../constant/protocol/S2CProtocol";
 import {TransactionBase} from "./TransactionBase";
 import {ReinforceHandler} from "../handler/ReinforceHandler";

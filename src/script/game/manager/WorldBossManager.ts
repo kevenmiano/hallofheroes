@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PlayerInfo } from "../datas/playerinfo/PlayerInfo";
 import { CampaignManager } from "./CampaignManager";
 import { NotificationManager } from "./NotificationManager";

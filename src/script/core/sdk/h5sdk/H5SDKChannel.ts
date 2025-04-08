@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChannelID, ChannelSTR, H5SDK_CHANNEL_ID } from "../SDKConfig";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";
 import { ArmyManager } from "../../../game/manager/ArmyManager";

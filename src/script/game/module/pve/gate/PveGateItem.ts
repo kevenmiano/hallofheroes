@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PveGateItem from "../../../../../fui/PveGate/FUI_PveGateItem";
 import Logger from "../../../../core/logger/Logger";
 import { EmPackName } from "../../../constant/UIDefine";

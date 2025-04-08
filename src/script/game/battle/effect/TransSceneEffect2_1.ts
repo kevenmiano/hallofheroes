@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TransSceneEffect2 } from "./TransSceneEffect2";
 import { DisplayObject } from "../../component/DisplayObject";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import { PackageIn } from "../../../core/net/PackageIn";
 import { ServerDataManager } from "../../../core/net/ServerDataManager";

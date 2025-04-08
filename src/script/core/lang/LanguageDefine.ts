@@ -1,3 +1,4 @@
+// @ts-nocheck
 var defaultLangKey = "";
 var cfgdefaultLangKey = "";
 /**

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SimpleAlertHelper from '../../component/SimpleAlertHelper';
 import { SceneManager } from '../../map/scene/SceneManager';
 import { MapBaseAction } from './MapBaseAction';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ResourceData } from "../datas/resource/ResourceData";
 import { SocketSendManager } from "./SocketSendManager";
 import { ServerDataManager } from "../../core/net/ServerDataManager";

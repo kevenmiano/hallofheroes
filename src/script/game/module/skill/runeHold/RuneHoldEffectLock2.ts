@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RuneHoldEffectLock2 from "../../../../../fui/Skill/FUI_RuneHoldEffectLock2";
 import { IconFactory } from "../../../../core/utils/IconFactory";

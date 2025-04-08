@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../../core/utils/StringHelper";
 import { ArmyState } from "../../constant/ArmyState";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";

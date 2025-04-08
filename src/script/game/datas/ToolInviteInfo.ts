@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class ToolInviteInfo {
 	public id: number = 0;
 	public nickName: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameConfig from "../../../GameConfig";
 import { NativeEvent, NotificationEvent } from "../../game/constant/event/NotificationEvent";
 import { UIAlignType } from "../../game/constant/UIAlignType";

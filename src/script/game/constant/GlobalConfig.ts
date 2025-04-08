@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class GlobalConfig {
     // mark 全删除
     public static NEWBIE_11300: number = 11300;

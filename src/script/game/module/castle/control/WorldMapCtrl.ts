@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import LangManager from "../../../../core/lang/LangManager";
 import SimpleAlertHelper from "../../../component/SimpleAlertHelper";

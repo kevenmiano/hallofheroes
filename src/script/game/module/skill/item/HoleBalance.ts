@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HoleBalance from "../../../../../fui/Skill/FUI_HoleBalance";
 import { CommonConstant } from "../../../constant/CommonConstant";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

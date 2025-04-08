@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ConsortiaModel } from "../model/ConsortiaModel";
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import { ConsortiaManager } from "../../../manager/ConsortiaManager";

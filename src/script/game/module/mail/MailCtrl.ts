@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../core/lang/LangManager';
 import SimpleAlertHelper from '../../component/SimpleAlertHelper';
 import EmailManager from "../../manager/EmailManager";

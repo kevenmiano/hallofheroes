@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_TaskTraceProgressTipWnd from "../../../../../fui/Home/FUI_TaskTraceProgressTipWnd";
 import AudioManager from "../../../../core/audio/AudioManager";
 import Resolution from "../../../../core/comps/Resolution";

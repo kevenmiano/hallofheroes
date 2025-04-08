@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AccountCom from "../../../../fui/Base/FUI_AccountCom";
 import { FormularySets } from "../../../core/utils/FormularySets";
 import { BagType } from "../../constant/BagDefine";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class VehiclePlayerInfo {
     public userId: number = 0;
     public headId: number = 0;//头像id

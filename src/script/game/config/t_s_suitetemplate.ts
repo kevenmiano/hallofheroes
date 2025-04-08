@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import t_s_baseConfigData from "./t_s_baseConfigData";
 

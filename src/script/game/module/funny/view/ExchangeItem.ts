@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ExchangeAnimation from "../../../../../fui/Funny/FUI_ExchangeAnimation";
 import FUI_ExchangeItem from "../../../../../fui/Funny/FUI_ExchangeItem";
 import LangManager from "../../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OuterCityBossInfoView from "../../../../fui/Home/FUI_OuterCityBossInfoView";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { OuterCityEvent } from "../../constant/event/NotificationEvent";

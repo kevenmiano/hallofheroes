@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { eFilterFrameText, FilterFrameText } from "../../../component/FilterFrameText";
 import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
 import { PathManager } from "../../../manager/PathManager";

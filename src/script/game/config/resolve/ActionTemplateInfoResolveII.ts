@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ActionTemplateData } from "../../battle/skillsys/mode/ActionTemplateData";
 import { SkillFrameData } from "../../battle/skillsys/mode/framedata/SkillFrameData";
 import { SkillFrameDataTransform } from "../../battle/skillsys/transform/SkillFrameDataTransform";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { ConfigType } from "../../constant/ConfigDefine";

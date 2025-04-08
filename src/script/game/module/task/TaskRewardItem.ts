@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_TaskRewardItem from "../../../../fui/Task/FUI_TaskRewardItem";
 import Utils from "../../../core/utils/Utils";
 import BaseTipItem from "../../component/item/BaseTipItem";

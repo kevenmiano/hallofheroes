@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BoxItem from "../../../../../../fui/Welfare/FUI_BoxItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { EmWindow } from "../../../../constant/UIDefine";

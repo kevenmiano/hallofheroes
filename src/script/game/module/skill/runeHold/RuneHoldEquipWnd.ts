@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_EquipHoldItem from "../../../../../fui/Skill/FUI_EquipHoldItem";
 import FUI_EquipRuneList from "../../../../../fui/Skill/FUI_EquipRuneList";
 import LangManager from "../../../../core/lang/LangManager";

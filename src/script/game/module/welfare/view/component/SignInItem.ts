@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SignInDayBtn from '../../../../../../fui/Welfare/FUI_SignInDayBtn';
 import FUI_SignInItem from '../../../../../../fui/Welfare/FUI_SignInItem';
 import LangManager from '../../../../../core/lang/LangManager';

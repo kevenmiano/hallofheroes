@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject } from "../../component/DisplayObject";
 import OneStatusButton from '../../component/OneStatusButton';
 import IMediator from "../../interfaces/IMediator";

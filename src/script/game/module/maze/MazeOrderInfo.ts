@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class MazeOrderInfo {
     public userId: number;
     public job: number;

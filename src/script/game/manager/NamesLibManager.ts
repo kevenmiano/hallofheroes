@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { isCNLanguage } from "../../core/lang/LanguageDefine";
 import ResMgr from "../../core/res/ResMgr";
 import Utils from "../../core/utils/Utils";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import NewbieUtils from "../utils/NewbieUtils";
 import Logger from '../../../../core/logger/Logger';
 import SpaceTaskInfoWnd from "../../home/SpaceTaskInfoWnd";

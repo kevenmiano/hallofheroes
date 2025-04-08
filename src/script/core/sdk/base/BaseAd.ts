@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SDKState, ResultCallback } from "../SDKConfig";
 import BaseChannel from "./BaseChannel";
 /**

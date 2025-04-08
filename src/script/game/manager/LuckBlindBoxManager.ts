@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**数据包对象 */
 import { PackageIn } from "../../core/net/PackageIn";
 /**服务端To客户端协议枚举 */

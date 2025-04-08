@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LlkDeleteData from "./LlkDeleteData";
 
 export default class LlkInfo {

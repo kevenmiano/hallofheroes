@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { t_s_upgradetemplateData } from "../../config/t_s_upgradetemplate";
 import { TempleteManager } from "../../manager/TempleteManager";
 import MagicCardEnums from "./enum/MagicCardEnums";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardBattleRecordtem from "../../../../../fui/OutYard/FUI_OutyardBattleRecordtem";
 import LangManager from "../../../../core/lang/LangManager";
 import OutyardManager from "../../../manager/OutyardManager";

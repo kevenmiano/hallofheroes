@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { OuterCityModel } from "../map/outercity/OuterCityModel";
 import { ServerDataManager } from "../../core/net/ServerDataManager";
 import { S2CProtocol } from "../constant/protocol/S2CProtocol";

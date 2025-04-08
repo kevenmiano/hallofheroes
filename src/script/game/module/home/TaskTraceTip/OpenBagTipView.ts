@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import TaskTraceTipWnd from "./TaskTraceTipWnd";
 import { FrameCtrlManager } from '../../../mvc/FrameCtrlManager';

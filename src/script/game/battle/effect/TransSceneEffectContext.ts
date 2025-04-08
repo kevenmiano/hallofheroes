@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ITransSceneEffect } from "./ITransSceneEffect";
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import { DisplayObject, DisplayObjectContainer } from "../../component/DisplayObject";

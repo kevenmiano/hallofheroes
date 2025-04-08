@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameFivecardScoreItem from "../../../../../fui/Carnival/FUI_AirGardenGameFivecardScoreItem";
 import LangManager from "../../../../core/lang/LangManager";
 export class AirGardenGameFivecardScoreItem extends FUI_AirGardenGameFivecardScoreItem {

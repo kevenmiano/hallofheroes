@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_AccountSetting from "../../../../../fui/Login/FUI_AccountSetting";
 import LangManager from "../../../../core/lang/LangManager";

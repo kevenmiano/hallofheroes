@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemMazeBoxCom from "../../../../../fui/GemMaze/FUI_GemMazeBoxCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

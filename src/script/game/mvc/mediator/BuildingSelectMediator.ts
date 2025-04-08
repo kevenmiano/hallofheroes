@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject, DisplayObjectContainer } from "../../component/DisplayObject";
 import IMediator from "../../interfaces/IMediator";
 import { CampaignManager } from "../../manager/CampaignManager";

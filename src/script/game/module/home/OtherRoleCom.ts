@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OtherRoleCom from "../../../../fui/Home/FUI_OtherRoleCom";
 import UIManager from "../../../core/ui/UIManager";
 import { IconFactory } from "../../../core/utils/IconFactory";

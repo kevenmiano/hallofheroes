@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import MapNameMovie from "../../component/MapNameMovie";

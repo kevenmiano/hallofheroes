@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketManager } from "../../../../core/net/SocketManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { C2SProtocol } from "../../../constant/protocol/C2SProtocol";

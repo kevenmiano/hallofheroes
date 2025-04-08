@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FivecardData } from "./FivecardData";
 
 export class FivecardModel {

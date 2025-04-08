@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class RequestInfoRientation {
 	public static RECENT_CONTACT: number = 0;　//最近联系人
 	public static SHOW_INFO: number = 1;　//查看玩家信息

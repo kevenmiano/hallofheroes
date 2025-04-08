@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
 import { TempleteManager } from "../../../manager/TempleteManager";

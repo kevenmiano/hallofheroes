@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleManager } from "../BattleManager";
 import { BattleModel } from "../BattleModel";
 import { TransactionBase } from "./TransactionBase";

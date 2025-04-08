@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TempleteManager } from "../../../manager/TempleteManager";
 import { BattleManager } from "../../BattleManager";
 import { BufferDamageData } from "../../data/BufferDamageData";

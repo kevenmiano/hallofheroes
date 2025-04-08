@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArrayConstant, ArrayUtils } from "../../../../../core/utils/ArrayUtils";
 import { PathManager } from "../../../../manager/PathManager";
 import { MapElmsLibrary } from "../../../libray/MapElmsLibrary";

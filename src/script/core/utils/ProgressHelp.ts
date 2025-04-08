@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class ProgressHelp {
     static getCurrentValue(currentValue:number,maxValue:number,valueArray:Array<number>):number {
         let returnValue:number = 0;

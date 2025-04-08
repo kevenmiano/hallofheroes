@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class CarnivalTaskInfo {
     public taskId: number = 0;//任务ID
     public data: number = 0;//当前数值

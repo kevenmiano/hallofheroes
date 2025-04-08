@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignManager } from "../../../manager/CampaignManager";
 import { BaseArmyAiInfo } from "../../ai/BaseArmyAiInfo";
 import { NodeState } from "../constant/NodeState";

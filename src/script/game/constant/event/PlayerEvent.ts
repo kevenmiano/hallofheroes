@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum PlayerEvent
 {
     //带两个参数

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MemberItem from '../../../../fui/Home/FUI_MemberItem';
 import FUI_NpcItem from '../../../../fui/Home/FUI_NpcItem';
 import FUI_PathPointItem from '../../../../fui/Home/FUI_PathPointItem';

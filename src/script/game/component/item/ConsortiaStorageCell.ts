@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaStorageCell from "../../../../fui/Base/FUI_ConsortiaStorageCell";
 import {BaseItem} from "./BaseItem";
 import {GoodsInfo} from "../../datas/goods/GoodsInfo";

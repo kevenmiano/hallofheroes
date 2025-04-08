@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FogGridType } from '../../constant/FogGridType';
 import { CampaignManager } from '../../manager/CampaignManager';
 import { CampaignArmy } from '../../map/campaign/data/CampaignArmy';

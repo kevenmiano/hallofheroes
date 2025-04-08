@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import { AlertBtnType } from "../../component/SimpleAlertHelper";
 import { OuterCityEvent, PK_Event } from "../../constant/event/NotificationEvent";

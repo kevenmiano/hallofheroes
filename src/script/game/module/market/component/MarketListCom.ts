@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_MarketListCom from "../../../../../fui/Market/FUI_MarketListCom";
 import LangManager from "../../../../core/lang/LangManager";

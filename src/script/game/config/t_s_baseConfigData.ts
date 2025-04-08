@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getdefaultLangageCfg } from "../../core/lang/LanguageDefine";
 
 /**

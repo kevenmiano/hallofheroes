@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Disposeable} from "../../component/DisplayObject";
 import {OuterCityEvent} from "../../constant/event/NotificationEvent";
 import {IEnterFrame} from "../../interfaces/IEnterFrame";

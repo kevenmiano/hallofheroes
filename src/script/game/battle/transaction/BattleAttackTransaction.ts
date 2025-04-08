@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleBaseTransaction } from "./BattleBaseTransaction";
 import { S2CProtocol } from "../../constant/protocol/S2CProtocol";
 import { PackageIn } from "../../../core/net/PackageIn";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { GAME_LANG } from "../../../../core/lang/LanguageDefine";
 import Logger from "../../../../core/logger/Logger";

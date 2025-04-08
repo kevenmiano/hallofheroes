@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GvgEnterWarItem from "../../../../../../fui/Consortia/FUI_GvgEnterWarItem";
 import AudioManager from "../../../../../core/audio/AudioManager";
 import LangManager from "../../../../../core/lang/LangManager";

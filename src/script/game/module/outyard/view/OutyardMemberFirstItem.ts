@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardMemberFirstItem from "../../../../../fui/OutYard/FUI_OutyardMemberFirstItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

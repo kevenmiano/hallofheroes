@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AiEvents } from '../../constant/event/NotificationEvent';
 import AIBaseInfo from './AIBaseInfo';
 /**

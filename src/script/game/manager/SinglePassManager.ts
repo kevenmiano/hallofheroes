@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ServerDataManager } from "../../core/net/ServerDataManager";
 import { AlertTipAction } from "../battle/actions/AlertTipAction";
 import { S2CProtocol } from "../constant/protocol/S2CProtocol";

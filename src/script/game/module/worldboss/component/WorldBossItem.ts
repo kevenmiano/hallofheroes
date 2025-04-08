@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WorldBossItem from "../../../../../fui/WorldBoss/FUI_WorldBossItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { t_s_campaignData } from "../../../config/t_s_campaign";

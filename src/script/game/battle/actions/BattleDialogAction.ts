@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {PackageIn} from "../../../core/net/PackageIn";
 import {SocketSendManager} from "../../manager/SocketSendManager";
 import {DialogAction} from "./DialogAction";

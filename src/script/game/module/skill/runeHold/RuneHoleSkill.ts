@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneHoleSkill from "../../../../../fui/Skill/FUI_RuneHoleSkill";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { CommonConstant } from "../../../constant/CommonConstant";

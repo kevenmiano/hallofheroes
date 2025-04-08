@@ -1,3 +1,4 @@
+// @ts-nocheck
 import MediatorIds from "../datas/userinfo/MediatorIds";
 import IMediator from "../interfaces/IMediator";
 

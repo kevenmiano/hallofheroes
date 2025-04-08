@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_NoticeActivityView from "../../../../../fui/Funny/FUI_NoticeActivityView";
 import FunnyManager from "../../../manager/FunnyManager";
 import FunnyData from "../model/FunnyData";

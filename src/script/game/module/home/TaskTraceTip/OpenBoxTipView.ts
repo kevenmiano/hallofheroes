@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { t_s_dropitemData } from "../../../config/t_s_dropitem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";

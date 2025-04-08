@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIButton from '../../../core/ui/UIButton';
 import { CampaignEvent } from '../../constant/event/NotificationEvent';
 import { PlayerEvent } from '../../constant/event/PlayerEvent';

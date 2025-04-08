@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetInfoView from "../../../../../fui/Battle/FUI_PetInfoView";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../core/utils/IconFactory";

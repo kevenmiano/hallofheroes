@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import UIButton from "../../../../core/ui/UIButton";
 import {WildLand} from "../../../map/data/WildLand";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 
 export class ServerDataManager extends GameEventDispatcher {

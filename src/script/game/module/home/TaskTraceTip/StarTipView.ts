@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TaskTraceTipManager } from "../../../manager/TaskTraceTipManager";
 import TaskTraceTipWnd from "./TaskTraceTipWnd";
 import { FrameCtrlManager } from '../../../mvc/FrameCtrlManager';

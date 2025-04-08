@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import Utils from "../../../core/utils/Utils";
 import { NotificationEvent } from "../../constant/event/NotificationEvent";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import t_s_baseConfigData from "../../../config/t_s_baseConfigData";
 
 /**

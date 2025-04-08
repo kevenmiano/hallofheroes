@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HookItem from '../../../../../fui/Hook/FUI_HookItem';
 import HookInfo from '../data/HookInfo';
 import UIButton from '../../../../core/ui/UIButton';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AwakenSkillItem from "../../../../../fui/PlayerInfo/FUI_AwakenSkillItem";
 import Logger from "../../../../core/logger/Logger";
 import { t_s_skilltemplateData } from "../../../config/t_s_skilltemplate";

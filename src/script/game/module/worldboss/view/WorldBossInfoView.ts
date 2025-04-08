@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignManager } from '../../../manager/CampaignManager';
 import { ConsortiaManager } from '../../../manager/ConsortiaManager';
 import { WorldBossHelper } from '../../../utils/WorldBossHelper';

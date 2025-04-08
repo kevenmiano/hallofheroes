@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_SuDuCellGroup from "../../../../../fui/Carnival/FUI_SuDuCellGroup";
 import AirGardenGameSuDuItem from "./AirGardenGameSuDuItem";

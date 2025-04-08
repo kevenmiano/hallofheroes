@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetArtifactItem from "../../../../../fui/Pet/FUI_PetArtifactItem";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseFguiCom from "../../../../core/ui/Base/BaseFguiCom";

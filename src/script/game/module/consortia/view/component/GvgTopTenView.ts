@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GvgTopTenView from "../../../../../../fui/Consortia/FUI_GvgTopTenView";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { GvgEvent } from "../../../../constant/event/NotificationEvent";

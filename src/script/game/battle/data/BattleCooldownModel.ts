@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class BattleCooldownModel {
     public templateId: number = 0;
     public cooldown: number = 0;

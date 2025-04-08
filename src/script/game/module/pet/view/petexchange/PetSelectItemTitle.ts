@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PetSelectItemTitle from "../../../../../../fui/Pet/FUI_PetSelectItemTitle";
 
 /**

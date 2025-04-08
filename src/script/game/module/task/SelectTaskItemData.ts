@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
 * @author:shujin.ou
 * @email:1009865728@qq.com

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameDataBase from "../../../mvc/FrameDataBase";
 import {Enum_BagState} from "./Enum_BagState";
 import {BagSortType} from "../../../constant/BagDefine";

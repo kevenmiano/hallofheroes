@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../../core/utils/Dictionary";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";

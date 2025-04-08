@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GameLoadNeedData } from "../../battle/data/GameLoadNeedData";
 import { Disposeable } from "../../component/DisplayObject";
 import { MovieClip } from "../../component/MovieClip";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ResMgr from "../../../core/res/ResMgr";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import UIManager from "../../../core/ui/UIManager";

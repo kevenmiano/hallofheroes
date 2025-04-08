@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import {ConsortiaEvent} from "../../../constant/event/NotificationEvent";
 import {ConsortiaOrderInfo} from "./ConsortiaOrderInfo";

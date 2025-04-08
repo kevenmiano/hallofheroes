@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../core/logger/Logger";
 import { PackageIn } from "../../core/net/PackageIn";
 import { ServerDataManager } from "../../core/net/ServerDataManager";

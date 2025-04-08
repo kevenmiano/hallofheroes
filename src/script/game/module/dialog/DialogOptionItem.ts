@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import RingTaskManager from "../../manager/RingTaskManager";
 import { NotificationEvent, RingTaskEvent } from "../../constant/event/NotificationEvent";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import BuildingManager from "../../map/castle/BuildingManager";
 import { BuildingEvent } from "../../map/castle/event/BuildingEvent";

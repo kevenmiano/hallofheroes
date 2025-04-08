@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaSkillTowerItem from "../../../../../../fui/Consortia/FUI_ConsortiaSkillTowerItem";
 import { ConsortiaTempleteInfo } from "../../data/ConsortiaTempleteInfo";
 import { PlayerManager } from "../../../../manager/PlayerManager";

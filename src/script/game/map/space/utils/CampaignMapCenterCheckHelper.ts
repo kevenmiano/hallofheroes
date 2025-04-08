@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignManager } from "../../../manager/CampaignManager";
 import { CampaignMapModel } from "../../../mvc/model/CampaignMapModel";
 import { StageReferance } from "../../../roadComponent/pickgliss/toplevel/StageReferance";

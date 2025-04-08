@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {OuterCityEvent} from "../../constant/event/NotificationEvent";
 import IMediator from "../../interfaces/IMediator";
 import Sprite = Laya.Sprite;

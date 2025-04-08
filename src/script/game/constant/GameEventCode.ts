@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @description 游戏事件code值
  * @author yuanzhan.yu

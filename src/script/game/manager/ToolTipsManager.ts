@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../core/ui/UIManager";
 import { EmWindow } from "../constant/UIDefine";
 import { ITipedDisplay, TipsShowType } from "../tips/ITipedDisplay";

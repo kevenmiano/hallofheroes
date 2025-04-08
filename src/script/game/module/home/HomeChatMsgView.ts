@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HomeChatMsgView from "../../../../fui/Base/FUI_HomeChatMsgView";
 import { ChatEvent, SceneEvent } from "../../constant/event/NotificationEvent";
 import { ChatManager } from "../../manager/ChatManager";

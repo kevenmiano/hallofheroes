@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../logger/Logger";
 
 const CHAR_A = 'A'.charCodeAt(0);

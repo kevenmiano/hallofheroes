@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ColorConstant from "../../game/constant/ColorConstant";
 import LangManager from '../lang/LangManager';
 

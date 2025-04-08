@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SinglePassRankItem from "../../../../../fui/SinglePass/FUI_SinglePassRankItem";
 import LangManager from '../../../../core/lang/LangManager';
 import SinglePassOrderInfo from "../model/SinglePassOrderInfo";

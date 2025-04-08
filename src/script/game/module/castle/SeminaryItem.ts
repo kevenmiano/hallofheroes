@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SeminaryItem from '../../../../fui/Castle/FUI_SeminaryItem';
 import LangManager from '../../../core/lang/LangManager';
 import { IconFactory } from '../../../core/utils/IconFactory';

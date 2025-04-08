@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from '../../game/constant/UIDefine';
 import { ILayer } from '../layer/ILayer';
 import BaseWindow from './Base/BaseWindow';

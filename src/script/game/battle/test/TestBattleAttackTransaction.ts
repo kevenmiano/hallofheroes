@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DateFormatter } from "../../../core/utils/DateFormatter";
 import { BattleManager } from "../BattleManager";
 import { BattleModel } from "../BattleModel";

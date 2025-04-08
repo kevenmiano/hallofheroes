@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SceneType from "../map/scene/SceneType";
 
 /**

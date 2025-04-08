@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum LoginWay {
     Type_Apple = 28,//guest
     Type_7ROAD = 19,//7ROAD

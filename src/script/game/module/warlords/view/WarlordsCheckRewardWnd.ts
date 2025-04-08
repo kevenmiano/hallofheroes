@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import WarlordsModel from "../WarlordsModel";

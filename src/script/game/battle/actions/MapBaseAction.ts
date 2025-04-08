@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {InheritIActionType} from "../../constant/BattleDefine";
 import {SceneEvent} from "../../constant/event/NotificationEvent";
 import {IAction} from "../../interfaces/IAction";

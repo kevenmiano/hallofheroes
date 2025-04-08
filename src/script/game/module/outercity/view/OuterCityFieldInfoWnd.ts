@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Dialog2 from "../../../../../fui/Base/FUI_Dialog2";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

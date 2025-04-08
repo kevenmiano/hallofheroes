@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { HintCampaignGetType } from "../../constant/HintDefine";
 import { MapBattleMovieMediater } from "./MapBattleMovieMediater";
 

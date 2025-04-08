@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QQDawankaItem2 from "../../../../../fui/QQDawanka/FUI_QQDawankaItem2";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

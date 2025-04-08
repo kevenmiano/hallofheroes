@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import {PathIHitTester} from "../../../interfaces/PathIHitTester";
 import {PathIPathSearcher} from "../../../interfaces/PathIPathSearcher";

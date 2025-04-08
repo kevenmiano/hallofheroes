@@ -1,7 +1,1 @@
-{
-  "proName": "HallofHeroes",
-  "engineType": 0,
-  "proType": 1,
-  "layaProType": 0,
-  "version": "2.1.13-beta"
-}
+{"proName":"HallofHeroes","engineType":0,"proType":1,"layaProType":1,"version":"2.1.0"}

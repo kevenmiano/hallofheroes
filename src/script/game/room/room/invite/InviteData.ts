@@ -4,53 +4,51 @@
  * @Date: 2021-04-19 19:39:07
  * @LastEditTime: 2021-04-30 16:43:46
  * @LastEditors: jeremy.xu
- * @Description: 
+ * @Description:
  */
 
-import GTabIndex from "../../../constant/GTabIndex"
-import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo"
-import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo"
-import { ArmyManager } from "../../../manager/ArmyManager"
-import { PlayerManager } from "../../../manager/PlayerManager"
-import { RoomManager } from "../../../manager/RoomManager"
-import FrameDataBase from "../../../mvc/FrameDataBase"
-import { RoomInfo } from "../../../mvc/model/room/RoomInfo"
+import GTabIndex from "../../../constant/GTabIndex";
+import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
+import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
+import { ArmyManager } from "../../../manager/ArmyManager";
+import { PlayerManager } from "../../../manager/PlayerManager";
+import { RoomManager } from "../../../manager/RoomManager";
+import FrameDataBase from "../../../mvc/FrameDataBase";
+import { RoomInfo } from "../../../mvc/model/room/RoomInfo";
 
 export default class InviteData extends FrameDataBase {
-    public static BeingInvite_AutoExitTime = 15
-    
-    public static TabIndex = {
-        Friend: Math.floor(GTabIndex.Invite_Friend / 1000),
-        Guild: Math.floor(GTabIndex.Invite_Guild / 1000),
-        Hall: Math.floor(GTabIndex.Invite_Hall / 1000),
-    }
+  public static BeingInvite_AutoExitTime = 15;
 
-    public quickInviteFlag: boolean;
-    public cacheList: ThaneInfo[] = [];
+  public static TabIndex = {
+    Friend: Math.floor(GTabIndex.Invite_Friend / 1000),
+    Guild: Math.floor(GTabIndex.Invite_Guild / 1000),
+    Hall: Math.floor(GTabIndex.Invite_Hall / 1000),
+  };
 
-    show(){
-        super.show()
-    }
+  public quickInviteFlag: boolean;
+  public cacheList: ThaneInfo[] = [];
 
-    hide(){
-        super.hide()
-    }
+  show() {
+    super.show();
+  }
 
-    dispose(){
-        super.dispose()
-    }
+  hide() {
+    super.hide();
+  }
 
-    public static get playerInfo():PlayerInfo
-    {
-        return PlayerManager.Instance.currentPlayerModel.playerInfo;
-    }
-    
-    public static get thane(): ThaneInfo {
-        return ArmyManager.Instance.thane;
-    }
+  dispose() {
+    super.dispose();
+  }
 
-    public static get roomInfo():RoomInfo
-    {
-        return RoomManager.Instance.roomInfo;
-    }
+  public static get playerInfo(): PlayerInfo {
+    return PlayerManager.Instance.currentPlayerModel.playerInfo;
+  }
+
+  public static get thane(): ThaneInfo {
+    return ArmyManager.Instance.thane;
+  }
+
+  public static get roomInfo(): RoomInfo {
+    return RoomManager.Instance.roomInfo;
+  }
 }

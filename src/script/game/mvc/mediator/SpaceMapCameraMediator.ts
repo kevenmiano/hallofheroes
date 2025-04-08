@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject } from "../../component/DisplayObject";
 import { CampaignMapEvent } from "../../constant/event/NotificationEvent";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";

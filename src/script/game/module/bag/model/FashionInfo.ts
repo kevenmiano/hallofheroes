@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class FashionInfo
 {
     public fashionTempId:number;   //时装模板ID

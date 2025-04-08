@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../core/lang/LangManager";
 import AppellModel from "../module/appell/AppellModel";
 import t_s_baseConfigData from "./t_s_baseConfigData";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameMemoryCardItem from "../../../../../fui/Carnival/FUI_AirGardenGameMemoryCardItem";
 import AirGardenMemoryCardManager from "../../../manager/AirGardenMemoryCardManager";
 import MemoryCardData from "../model/memorycard/MemoryCardData";

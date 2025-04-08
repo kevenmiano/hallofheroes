@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardFigureStatusItem from "../../../../../fui/OutYard/FUI_OutyardFigureStatusItem";
 export default class OutyardFigureStatusItem extends FUI_OutyardFigureStatusItem {
     private _count: number = 0;

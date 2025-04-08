@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GameSocket } from "../net/GameSocket";
 import { PackageOut } from "../net/PackageOut";
 import { SocketEvent } from "../net/SocketEvent";

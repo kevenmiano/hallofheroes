@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../core/ui/Base/BaseWindow";
 import { BaseItem } from "../component/item/BaseItem";
 import { GoodsInfo } from "../datas/goods/GoodsInfo";

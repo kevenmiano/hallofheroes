@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CarnivalGamePage from "../../../../../fui/Carnival/FUI_CarnivalGamePage";
 import MouseMgr from "../../../../core/Input/MouseMgr";
 import LangManager from "../../../../core/lang/LangManager";

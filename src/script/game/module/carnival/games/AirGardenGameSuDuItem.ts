@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AirGardenGameSuDuItem from "../../../../../fui/Carnival/FUI_AirGardenGameSuDuItem";
 
 export default class AirGardenGameSuDuItem extends FUI_AirGardenGameSuDuItem {

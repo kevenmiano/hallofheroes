@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import ObjectPool from "../../../../core/pool/ObjectPool";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";

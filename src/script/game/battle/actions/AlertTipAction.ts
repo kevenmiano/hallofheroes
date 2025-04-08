@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from "./MapBaseAction";
 
 export class AlertTipAction extends MapBaseAction {

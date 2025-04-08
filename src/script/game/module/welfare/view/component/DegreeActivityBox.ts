@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DegreeActivityBox from '../../../../../../fui/Welfare/FUI_DegreeActivityBox';
 import AudioManager from '../../../../../core/audio/AudioManager';
 import { SoundIds } from '../../../../constant/SoundIds';

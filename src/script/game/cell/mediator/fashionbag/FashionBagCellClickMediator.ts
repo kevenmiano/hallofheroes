@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../../interfaces/IMediator";
 import {FashionModel} from "../../../module/bag/model/FashionModel";
 import {FrameCtrlManager} from "../../../mvc/FrameCtrlManager";

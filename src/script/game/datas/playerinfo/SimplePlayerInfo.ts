@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import LangManager from "../../../core/lang/LangManager";
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";

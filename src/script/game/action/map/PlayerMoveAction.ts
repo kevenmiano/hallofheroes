@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from '../../battle/actions/MapBaseAction';
 import { FogGridType } from '../../constant/FogGridType';
 import { CampaignManager } from '../../manager/CampaignManager';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RemotePetOrderItemView from "../../../../../fui/RemotePet/FUI_RemotePetOrderItemView";
 import { EmPackName } from "../../../constant/UIDefine";

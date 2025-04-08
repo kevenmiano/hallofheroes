@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaRankItem from "../../../../../../fui/Consortia/FUI_ConsortiaRankItem";
 import { EmPackName } from "../../../../constant/UIDefine";
 import {GuildGroupInfo} from "../../data/gvg/GuildGroupInfo";

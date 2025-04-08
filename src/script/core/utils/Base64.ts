@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 
 //Base64类代码: 

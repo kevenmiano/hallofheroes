@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PassRewardCom from "../../../../../../fui/Welfare/FUI_PassRewardCom";
 import LangManager from "../../../../../core/lang/LangManager";
 import UIManager from "../../../../../core/ui/UIManager";

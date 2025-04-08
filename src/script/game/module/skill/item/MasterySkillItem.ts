@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MasterySkillItem from "../../../../../fui/Skill/FUI_MasterySkillItem";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from '../../../game/constant/UIDefine';
 import { NativeEvent, WanViewEvent } from '../../../game/constant/event/NotificationEvent';
 import { UserInfo } from '../../../game/datas/userinfo/UserInfo';

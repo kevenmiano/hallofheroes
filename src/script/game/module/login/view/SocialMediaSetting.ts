@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SocialMediaSetting from "../../../../../fui/Login/FUI_SocialMediaSetting";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

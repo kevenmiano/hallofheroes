@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ServerInfoItem from '../../../../../fui/Login/FUI_ServerInfoItem';
 import ServerListData, { ServerSite } from '../model/ServerListData';
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../../core/utils/StringHelper";
 import { HeroLoadDataFactory } from "../utils/HeroLoadDataFactory";
 

@@ -4,7 +4,7 @@
  * @Email: 760139307@qq.com
  * @LastEditors: jeremy.xu
  * @LastEditTime: 2024-01-26 11:38:21
- * @Description: 
+ * @Description:
  */
 
 import LayerMgr from "../../core/layer/LayerMgr";
@@ -21,9 +21,9 @@ import { FrameCtrlManager } from "../mvc/FrameCtrlManager";
 export default class UIHelper {
     /**
      * 移除多个界面 默认不移除主界面, 和任务界面
-     * @param emWindows 
-     * @param reverse 
-     * @param isDispose 
+     * @param emWindows
+     * @param reverse
+     * @param isDispose
      */
     static closeWindows(emWindows: EmWindow[] = [], reverse: boolean = true, dispose: boolean = true) {
         if (emWindows.length == 0) {
@@ -60,15 +60,15 @@ export default class UIHelper {
          * 移除正在加载中的界面
          */
         LoadingUIMgr.Instance.forceHide()
-        // 
+        //
         NewbieBaseActionMediator.cleanAll();
 
     }
 
     /**
      * 移除单个界面
-     * @param type 
-     * @param dispose 
+     * @param type
+     * @param dispose
      */
     static closeWindow(type: EmWindow, dispose: boolean = true) {
         let ctrl = FrameCtrlManager.Instance.getCtrl(type)
@@ -87,7 +87,7 @@ export default class UIHelper {
             UIManager.Instance.ShowWind(type, param)
         }
     }
-    
+
     static searchBaseWindow(node: Laya.Node | fgui.GComponent) {
         if (!node.parent) {
             return false;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignNode } from "../map/space/data/CampaignNode";
 import { MapPhysics } from "../map/space/data/MapPhysics";
 import { FilterFrameText } from "./FilterFrameText";

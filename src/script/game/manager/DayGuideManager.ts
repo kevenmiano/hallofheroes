@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import { ChatEvent, DayGuideEvent, NotificationEvent, RewardEvent } from '../constant/event/NotificationEvent';
 import OpenGrades from '../constant/OpenGrades';

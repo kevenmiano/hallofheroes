@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MailAttachItem from '../../../../fui/Mail/FUI_MailAttachItem';
 import LangManager from '../../../core/lang/LangManager';
 import Logger from '../../../core/logger/Logger';

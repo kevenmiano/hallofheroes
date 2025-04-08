@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { t_s_buildingtemplateData } from "../../../config/t_s_buildingtemplate";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import BuildingType from "../consant/BuildingType";

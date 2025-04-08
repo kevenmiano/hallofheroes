@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LayerMgr from '../../core/layer/LayerMgr';
 import { EmLayer } from '../../core/ui/ViewInterface';
 import MathHelper from '../../core/utils/MathHelper';

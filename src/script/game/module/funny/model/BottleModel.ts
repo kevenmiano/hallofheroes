@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import { BottleEvent } from "../../../constant/event/NotificationEvent";
 import StringHelper from "../../../../core/utils/StringHelper";

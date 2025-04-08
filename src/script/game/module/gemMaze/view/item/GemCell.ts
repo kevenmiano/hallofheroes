@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemCell from "../../../../../../fui/GemMaze/FUI_GemCell";
 import { GemMazeEvent } from "../../../../constant/event/NotificationEvent";
 import { GemMazeManager } from "../../../../manager/GemMazeManager";

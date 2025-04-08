@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneHole from "../../../../../fui/Skill/FUI_RuneHole";
 import FUI_RuneHoleGem from "../../../../../fui/Skill/FUI_RuneHoleGem";
 import LangManager from "../../../../core/lang/LangManager";

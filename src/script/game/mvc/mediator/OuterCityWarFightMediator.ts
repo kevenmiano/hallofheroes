@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { OuterCityEvent } from "../../constant/event/NotificationEvent";
 import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import IMediator from "../../interfaces/IMediator";

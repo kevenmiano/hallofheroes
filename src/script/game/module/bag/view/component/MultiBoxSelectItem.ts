@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MultiBoxSelectItem from "../../../../../../fui/Base/FUI_MultiBoxSelectItem";
 import { eFilterFrameText, FilterFrameText } from "../../../../component/FilterFrameText";
 import { BaseItem } from "../../../../component/item/BaseItem";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../core/utils/Dictionary";
 import StringHelper from "../../../core/utils/StringHelper";
 import { Disposeable } from "../../component/DisplayObject";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MarketMineItem from "../../../../../fui/Market/FUI_MarketMineItem";
 import LangManager from "../../../../core/lang/LangManager";
 import IMarketOrderMsg = com.road.yishi.proto.market.IMarketOrderMsg;

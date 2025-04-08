@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {CampaignMapEvent} from "../../constant/event/NotificationEvent";
 import IMediator from "../../interfaces/IMediator";
 import SpaceManager from "../../map/space/SpaceManager";

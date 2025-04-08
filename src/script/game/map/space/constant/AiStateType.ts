@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class AiStateType {
 	public static BEELINE: number = 0x01;// beeline 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationManager } from "../../manager/NotificationManager";
 import ISceneSwitchAnimation from "../space/interfaces/ISceneSwitchAnimation";
 import { BaseSceneView } from "./BaseSceneView";

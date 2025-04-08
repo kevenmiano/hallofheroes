@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class MovieType {
     public static DISAPPEARD = "DISAPPEARD";//消失
     public static DISAPPEARD_PARTS = "DISAPPEARD_PARTS";

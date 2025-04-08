@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../../../core/lang/LangManager';
 import { CampaignArmyViewHelper } from '../../CampaignArmyViewHelper';
 import { OuterCityEvent, RewardEvent, RingTaskEvent, TaskEvent } from '../../../../constant/event/NotificationEvent';

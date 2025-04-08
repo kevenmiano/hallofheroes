@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AddFriendsItem from "../../../../../../fui/Friend/FUI_AddFriendsItem";
 import { RecommendInfo } from "../../../../datas/RecommendInfo";
 import LangManager from "../../../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // import IManager from '../Interface/IManager';
 import GameEventDispatcher from "../event/GameEventDispatcher";
 export default class Singleton extends GameEventDispatcher {

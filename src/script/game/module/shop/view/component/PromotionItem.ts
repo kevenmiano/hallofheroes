@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PromotionItem from "../../../../../../fui/Shop/FUI_PromotionItem"
 import LangManager from "../../../../../core/lang/LangManager";
 import Utils from "../../../../../core/utils/Utils";

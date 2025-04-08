@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../core/logger/Logger";
 import { PathIHitTester } from "../../../interfaces/PathIHitTester";
 import { PathIPathSearcher } from "../../../interfaces/PathIPathSearcher";

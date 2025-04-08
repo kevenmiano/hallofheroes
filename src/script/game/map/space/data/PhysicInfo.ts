@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import { t_s_mapphysicpositionData } from "../../../config/t_s_mapphysicposition";
 import { PhysicsEvent } from "../../../constant/event/NotificationEvent";

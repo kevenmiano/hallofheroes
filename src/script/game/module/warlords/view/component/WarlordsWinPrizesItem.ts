@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_WarlordsWinPrizesItem from "../../../../../../fui/Warlords/FUI_WarlordsWinPrizesItem";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";

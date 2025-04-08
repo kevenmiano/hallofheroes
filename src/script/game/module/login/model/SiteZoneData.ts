@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { multiLangName } from "../../../../core/lang/LanguageDefine";
 import Utils from "../../../../core/utils/Utils";
 

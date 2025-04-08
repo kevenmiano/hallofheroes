@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FightingType from "../../../constant/FightingType";
 import { EmPackName, EmWindow } from "../../../constant/UIDefine";

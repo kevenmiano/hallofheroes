@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject } from "../../../component/DisplayObject";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";

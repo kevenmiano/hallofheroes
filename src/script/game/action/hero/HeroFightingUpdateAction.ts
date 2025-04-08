@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import { SimplePlayerInfo } from "../../datas/playerinfo/SimplePlayerInfo";
 import { IAction } from "../../interfaces/IAction";

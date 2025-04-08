@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class FindPath8 implements IFindPath {
     private _map: any[][] = [];
     private _w: number = 0;

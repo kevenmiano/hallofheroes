@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OfferRewardItem from '../../../../fui/Space/FUI_OfferRewardItem';
 import { ThaneInfo } from '../../datas/playerinfo/ThaneInfo';
 import { ArmyManager } from '../../manager/ArmyManager';

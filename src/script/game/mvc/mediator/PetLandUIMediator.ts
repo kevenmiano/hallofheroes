@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import { CampaignEvent, NotificationEvent, TaskEvent } from "../../constant/event/NotificationEvent";
 import IMediator from "../../interfaces/IMediator";

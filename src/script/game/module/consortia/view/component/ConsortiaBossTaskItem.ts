@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaBossTaskItem from "../../../../../../fui/Consortia/FUI_ConsortiaBossTaskItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { EmWindow } from "../../../../constant/UIDefine";

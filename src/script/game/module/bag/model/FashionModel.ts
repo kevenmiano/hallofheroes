@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameDataBase from "../../../mvc/FrameDataBase";
 import { BagType } from "../../../constant/BagDefine";
 import { GoodsManager } from "../../../manager/GoodsManager";

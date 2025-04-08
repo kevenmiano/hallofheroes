@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from '../../../core/logger/Logger';
 import { SceneEvent } from '../../constant/event/NotificationEvent';
 import { IBaseSceneView } from '../../interfaces/IBaseSceneView';

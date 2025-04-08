@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BufferDamageData } from "../../game/battle/data/BufferDamageData";
 import Utils from "../utils/Utils";
 

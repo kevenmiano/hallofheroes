@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { ServiceReplyInfo } from "../../../../core/utils/ServiceReplyInfo";
 import CustomerServiceManager from "../../../manager/CustomerServiceManager";

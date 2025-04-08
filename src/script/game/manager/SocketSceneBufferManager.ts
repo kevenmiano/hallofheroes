@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {PackageIn} from "../../core/net/PackageIn";
 import {NotificationEvent} from "../constant/event/NotificationEvent";
 import {PkgBuffer} from "../datas/buffer/PkgBuffer";

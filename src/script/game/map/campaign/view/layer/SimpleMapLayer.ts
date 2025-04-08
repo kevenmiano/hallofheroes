@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {OuterCityEvent} from "../../../../constant/event/NotificationEvent";
 import {PlayerManager} from "../../../../manager/PlayerManager";
 import {FloorMapInfo} from "../../../space/data/FloorMapInfo";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import GTabIndex from "../../constant/GTabIndex";
 

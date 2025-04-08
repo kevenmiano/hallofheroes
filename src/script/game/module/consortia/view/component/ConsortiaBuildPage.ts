@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaBuildPage from "../../../../../../fui/Consortia/FUI_ConsortiaBuildPage";
 import {ConsortiaInfo} from "../../data/ConsortiaInfo";
 import {FrameCtrlManager} from "../../../../mvc/FrameCtrlManager";

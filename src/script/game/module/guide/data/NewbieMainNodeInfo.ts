@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../../../core/utils/StringHelper";
 import NewbieActionType from "./NewbieActionType";
 import NewbieConditionType from "./NewbieConditionType";

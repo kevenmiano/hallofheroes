@@ -1,122 +1,505 @@
 import SceneType from "../../map/scene/SceneType";
 import { SocketDataProxyModel } from "../data/SocketDataProxyModel";
 import { BaseSceneSocketDataProxy } from "./BaseSceneSocketDataProxy";
-import { ServerDataManager } from '../../../core/net/ServerDataManager';
-import { S2CProtocol } from '../../constant/protocol/S2CProtocol';
+import { ServerDataManager } from "../../../core/net/ServerDataManager";
+import { S2CProtocol } from "../../constant/protocol/S2CProtocol";
 import Logger from "../../../core/logger/Logger";
-import {SLGSocketEvent} from "../../constant/event/NotificationEvent";
+import { SLGSocketEvent } from "../../constant/event/NotificationEvent";
 
 export class CampaignSocketDataProxy extends BaseSceneSocketDataProxy {
-    constructor($model: SocketDataProxyModel) {
-        super($model);
-    }
+  constructor($model: SocketDataProxyModel) {
+    super($model);
+  }
 
-    protected proxyStart() {
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_NODE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_FOG, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_LEFT_WEARY, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_NODE_ADD, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_NPC_MOVE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_NODE_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_REPORT, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_FINISH, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_LOGIN_IN, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_LOGIN_OUT, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_EXIT, this, this.__onDataHandler);
+  protected proxyStart() {
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_NODE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_FOG,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_LEFT_WEARY,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_NODE_ADD,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_NPC_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_NODE_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_REPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_FINISH,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_LOGIN_IN,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_LOGIN_OUT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_EXIT,
+      this,
+      this.__onDataHandler
+    );
 
-        ServerDataManager.Instance.addEventListener(SLGSocketEvent.U_PLAY_MOVIE, this.__onDataHandler, this);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMERA_MOVE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_NODE_SUCCESS, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_FOG_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_LIST, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_INVITE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_ESCORT_NPC_FOLLOW, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_SEND_STANDPOS, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_SYNC_BOSS_HP, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_PLAYER_DIE_STATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_MULTI_HPSYNC, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_ARMY_POS_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_ARMYPOS_BROAD, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_PLAYER_HANGUPSTATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_WARFIELD_INFO, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_WARREPORT, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_ORDERREQUEST, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_NODEPOS_REFERSH, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_BROADBUFFER, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_TIME_JUDGE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_GUILDWAR_SCORE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_GUILDWAR_BUFFER, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_NODE_HP, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CAMPIAGN_OPEN_MV, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_GUILDWAR_OPEN_LEFTTIME, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_GUILDWAR_JOIN_PLAYER_COUNT, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_GUILDWAR_WOUND, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_ALTARNPC_MOVE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_TOWER_DIED, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_HERO_TRIAL_IFNO, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_BATTLE_REPORT, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CROSS_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_NPC_LOCK, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CONSORTIA_BOSS_SYNC_HP, this, this.__onDataHandler);
-        ServerDataManager.listen(S2CProtocol.U_C_CONSORTIA_BOSS_STATE, this, this.__onDataHandler);
-    }
+    ServerDataManager.Instance.addEventListener(
+      SLGSocketEvent.U_PLAY_MOVIE,
+      this.__onDataHandler,
+      this
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMERA_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_NODE_SUCCESS,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_FOG_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_LIST,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_INVITE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ESCORT_NPC_FOLLOW,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_SEND_STANDPOS,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_SYNC_BOSS_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_PLAYER_DIE_STATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_MULTI_HPSYNC,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ARMY_POS_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ARMYPOS_BROAD,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_PLAYER_HANGUPSTATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_WARFIELD_INFO,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_WARREPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ORDERREQUEST,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_NODEPOS_REFERSH,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_BROADBUFFER,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_TIME_JUDGE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_GUILDWAR_SCORE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_GUILDWAR_BUFFER,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_NODE_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CAMPIAGN_OPEN_MV,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_GUILDWAR_OPEN_LEFTTIME,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_GUILDWAR_JOIN_PLAYER_COUNT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_GUILDWAR_WOUND,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ALTARNPC_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_TOWER_DIED,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_HERO_TRIAL_IFNO,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_BATTLE_REPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CROSS_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_NPC_LOCK,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CONSORTIA_BOSS_SYNC_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.listen(
+      S2CProtocol.U_C_CONSORTIA_BOSS_STATE,
+      this,
+      this.__onDataHandler
+    );
+  }
 
-    protected proxyOver() {
+  protected proxyOver() {
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_NODE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_FOG,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_LEFT_WEARY,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_NODE_ADD,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_NPC_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_NODE_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_REPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_FINISH,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_LOGIN_IN,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_LOGIN_OUT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_EXIT,
+      this,
+      this.__onDataHandler
+    );
 
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_NODE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_FOG, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_LEFT_WEARY, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_NODE_ADD, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_NPC_MOVE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_NODE_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_REPORT, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_FINISH, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_LOGIN_IN, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_LOGIN_OUT, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_EXIT, this, this.__onDataHandler);
+    ServerDataManager.Instance.removeEventListener(
+      SLGSocketEvent.U_PLAY_MOVIE,
+      this.__onDataHandler,
+      this
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMERA_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_NODE_SUCCESS,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_FOG_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_LIST,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_INVITE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ESCORT_NPC_FOLLOW,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_SEND_STANDPOS,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_SYNC_BOSS_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_PLAYER_DIE_STATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_MULTI_HPSYNC,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ARMY_POS_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ARMYPOS_BROAD,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_PLAYER_HANGUPSTATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_WARFIELD_INFO,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_WARREPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ORDERREQUEST,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_NODEPOS_REFERSH,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_BROADBUFFER,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_TIME_JUDGE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_GUILDWAR_SCORE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_GUILDWAR_BUFFER,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_NODE_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CAMPIAGN_OPEN_MV,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_GUILDWAR_OPEN_LEFTTIME,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_GUILDWAR_JOIN_PLAYER_COUNT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_GUILDWAR_WOUND,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ALTARNPC_MOVE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_TOWER_DIED,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_HERO_TRIAL_IFNO,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_BATTLE_REPORT,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CROSS_ARMY_UPDATE,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_NPC_LOCK,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CONSORTIA_BOSS_SYNC_HP,
+      this,
+      this.__onDataHandler
+    );
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_CONSORTIA_BOSS_STATE,
+      this,
+      this.__onDataHandler
+    );
+  }
 
-        ServerDataManager.Instance.removeEventListener(SLGSocketEvent.U_PLAY_MOVIE, this.__onDataHandler, this);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMERA_MOVE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_NODE_SUCCESS, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_FOG_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_LIST, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPAIGN_BOSS_ARMY_INVITE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_ESCORT_NPC_FOLLOW, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_SEND_STANDPOS, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_SYNC_BOSS_HP, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_PLAYER_DIE_STATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_MULTI_HPSYNC, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_ARMY_POS_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_ARMYPOS_BROAD, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_PLAYER_HANGUPSTATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_WARFIELD_INFO, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_WARREPORT, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_ORDERREQUEST, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_NODEPOS_REFERSH, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_BROADBUFFER, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_TIME_JUDGE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_GUILDWAR_SCORE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_GUILDWAR_BUFFER, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_NODE_HP, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CAMPIAGN_OPEN_MV, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_GUILDWAR_OPEN_LEFTTIME, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_GUILDWAR_JOIN_PLAYER_COUNT, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_GUILDWAR_WOUND, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_ALTARNPC_MOVE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_TOWER_DIED, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_HERO_TRIAL_IFNO, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_BATTLE_REPORT, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CROSS_ARMY_UPDATE, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_NPC_LOCK, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CONSORTIA_BOSS_SYNC_HP, this, this.__onDataHandler);
-        ServerDataManager.cancel(S2CProtocol.U_C_CONSORTIA_BOSS_STATE, this, this.__onDataHandler);
-    }
-
-    public get sceneType(): string {
-        return SceneType.CAMPAIGN_MAP_SCENE;
-    }
+  public get sceneType(): string {
+    return SceneType.CAMPAIGN_MAP_SCENE;
+  }
 }

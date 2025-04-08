@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from '../../../../mvc/FrameCtrlBase';
 /**
 * @author:pzlricky

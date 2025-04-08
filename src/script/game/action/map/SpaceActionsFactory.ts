@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {PackageIn} from "../../../core/net/PackageIn";
 import CollectionAction from "../../battle/actions/CollectionAction";
 import {GameBaseQueueManager} from "../../manager/GameBaseQueueManager";

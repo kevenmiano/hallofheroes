@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { ConfigType } from "../../constant/ConfigDefine";

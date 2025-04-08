@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RemotePetTurnDownView from "../../../../../fui/RemotePet/FUI_RemotePetTurnDownView";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";

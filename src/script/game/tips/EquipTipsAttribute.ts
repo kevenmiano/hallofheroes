@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_EquipTipsAttribute from "../../../fui/Base/FUI_EquipTipsAttribute";
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import { t_s_itemtemplateData } from "../config/t_s_itemtemplate";

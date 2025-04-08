@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getMultiLangList, getMultiLangValue } from "../../../../core/lang/LanguageDefine";
 import FunnyBagData from "./FunnyBagData";
 

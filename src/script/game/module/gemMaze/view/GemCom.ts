@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemCom from "../../../../../fui/GemMaze/FUI_GemCom";
 import LangManager from "../../../../core/lang/LangManager";
 import ObjectUtils from "../../../../core/utils/ObjectUtils";

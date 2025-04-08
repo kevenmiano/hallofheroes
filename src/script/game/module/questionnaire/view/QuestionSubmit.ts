@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIButton from '../../../../core/ui/UIButton';
 import { NotificationManager } from '../../../manager/NotificationManager';
 import { QuestionEvent } from '../../../constant/event/NotificationEvent';

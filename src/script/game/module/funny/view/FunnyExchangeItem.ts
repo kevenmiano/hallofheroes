@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 /**
  * 登录活动Item

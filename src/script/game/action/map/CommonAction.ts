@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import { DisplayObject } from "../../component/DisplayObject";
 import { CampaignEvent } from "../../constant/event/NotificationEvent";

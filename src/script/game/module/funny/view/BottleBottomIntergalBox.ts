@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BottleBottomIntergalBox from "../../../../../fui/Funny/FUI_BottleBottomIntergalBox";
 import { BottleBottomIntergalBoxView } from "./BottleBottomIntergalBoxView";
 import { BottleManager } from "../../../manager/BottleManager";

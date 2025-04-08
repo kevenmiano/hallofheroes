@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_PetEuipBag from "../../../../../../fui/Pet/FUI_PetEuipBag";
 import { SocketManager } from "../../../../../core/net/SocketManager";

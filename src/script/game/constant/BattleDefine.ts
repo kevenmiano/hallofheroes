@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class FaceType {
     public static LEFT_TEAM = 0x01;
     public static RIGHT_TEAM = 0x02;

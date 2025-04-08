@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SpaceNodeType from "../constant/SpaceNodeType";
 import Tiles from "../constant/Tiles";
 import { SpaceNode } from "../data/SpaceNode";

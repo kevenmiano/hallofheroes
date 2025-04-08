@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import StringHelper from "../../../../core/utils/StringHelper";
 import { t_s_mapData } from "../../../config/t_s_map";

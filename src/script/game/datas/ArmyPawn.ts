@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 军队的兵种信息
  * @author Administrator

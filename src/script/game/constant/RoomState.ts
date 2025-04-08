@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../core/lang/LangManager';
 export class RoomState {
     public static STATE_UNUSE: number = 0;// 未使用

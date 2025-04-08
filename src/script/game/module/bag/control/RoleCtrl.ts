@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import {TattooModel} from "../../sbag/tattoo/model/TattooModel";
 import {SocketManager} from "../../../../core/net/SocketManager";

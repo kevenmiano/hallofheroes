@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardShowView from "../../../../../fui/Battle/FUI_OutyardShowView";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

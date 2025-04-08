@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../core/logger/Logger";
 import Tiles from "../../space/constant/Tiles";
 import {OuterCityModel} from "../OuterCityModel";

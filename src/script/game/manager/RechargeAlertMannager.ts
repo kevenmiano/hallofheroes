@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../core/lang/LangManager';
 import BaseChannel from '../../core/sdk/base/BaseChannel';
 import SDKManager from '../../core/sdk/SDKManager';

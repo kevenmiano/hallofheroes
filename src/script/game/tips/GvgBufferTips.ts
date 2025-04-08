@@ -10,65 +10,68 @@ import BaseTips from "./BaseTips";
  * @ver 1.0
  */
 export class GvgBufferTips extends BaseTips {
-    public bg: fgui.GLoader;
-    public _title1: fgui.GTextField;
-    public _cooldown1: fgui.GTextField;
-    public _cost1: fgui.GTextField;
-    public _describe1: fgui.GRichTextField;
+  public bg: fgui.GLoader;
+  public _title1: fgui.GTextField;
+  public _cooldown1: fgui.GTextField;
+  public _cost1: fgui.GTextField;
+  public _describe1: fgui.GRichTextField;
 
-    private _tipData: GvgWarBufferInfo;
+  private _tipData: GvgWarBufferInfo;
 
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+  public OnInitWind() {
+    super.OnInitWind();
+
+    this.initData();
+    this.initView();
+    this.addEvent();
+    this.updateView();
+  }
+
+  private initData() {
+    [this._tipData] = this.params;
+  }
+
+  private initView() {}
+
+  private addEvent() {}
+
+  private updateView() {
+    if (this._tipData) {
+      this._title1.text = this._tipData.bufferNameLang;
+      this._cooldown1.text = LangManager.Instance.GetTranslation(
+        "yishi.view.tips.goods.SkillTips.cooldown01",
+        this._tipData.maxCdTimer
+      );
+      this._cost1.text = LangManager.Instance.GetTranslation(
+        "yishi.view.tips.goods.Gvgbuffercost",
+        Math.abs(this._tipData.needPay)
+      );
+      this._describe1.text = this._tipData.DescriptionLang;
     }
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
+  public OnShowWind() {
+    super.OnShowWind();
+  }
 
-        this.initData();
-        this.initView();
-        this.addEvent()
-        this.updateView();
-    }
+  private removeEvent() {}
 
-    private initData() {
-        [this._tipData] = this.params;
-    }
+  protected OnClickModal() {
+    this.OnBtnClose();
+  }
 
-    private initView() {
-    }
+  public OnHideWind() {
+    super.OnHideWind();
 
-    private addEvent() {
-    }
+    this.removeEvent();
+  }
 
-    private updateView() {
-        if (this._tipData) {
-            this._title1.text = this._tipData.bufferNameLang;
-            this._cooldown1.text = LangManager.Instance.GetTranslation("yishi.view.tips.goods.SkillTips.cooldown01", this._tipData.maxCdTimer);
-            this._cost1.text = LangManager.Instance.GetTranslation("yishi.view.tips.goods.Gvgbuffercost", Math.abs(this._tipData.needPay));
-            this._describe1.text = this._tipData.DescriptionLang;
-        }
-    }
-
-    public OnShowWind() {
-        super.OnShowWind();
-    }
-
-    private removeEvent() {
-    }
-
-    protected OnClickModal() {
-        this.OnBtnClose();
-    }
-
-    public OnHideWind() {
-        super.OnHideWind();
-
-        this.removeEvent();
-    }
-
-    dispose(dispose?: boolean) {
-        this._tipData = null;
-        super.dispose(dispose);
-    }
+  dispose(dispose?: boolean) {
+    this._tipData = null;
+    super.dispose(dispose);
+  }
 }

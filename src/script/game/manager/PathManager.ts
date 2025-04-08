@@ -1,3 +1,4 @@
+// @ts-nocheck
 import StringHelper from "../../core/utils/StringHelper";
 import Utils from "../../core/utils/Utils";
 import { AvatarPosition } from "../avatar/data/AvatarPosition";

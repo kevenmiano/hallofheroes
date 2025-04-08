@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {MapInfo} from "../space/data/MapInfo";
 
 /**

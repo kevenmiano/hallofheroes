@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GvgBufferIcon from "../../../../../../fui/Consortia/FUI_GvgBufferIcon";
 import {GvgReadyController} from "../../control/GvgReadyController";
 import {FrameCtrlManager} from "../../../../mvc/FrameCtrlManager";

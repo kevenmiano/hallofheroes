@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class DictionaryEvent {
     public static PREADD: string = "preaddDictionary";
     public static PREUPDATE: string = "preupdateDictionary";

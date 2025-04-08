@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum StoreRatingsType {
     /**
      * 1、首次通关迷宫100层, 关闭奖励总览的界面时

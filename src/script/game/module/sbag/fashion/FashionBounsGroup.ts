@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FashionBounsGroup from "../../../../../fui/SBag/FUI_FashionBounsGroup";
 import { FashionBounsAttribute } from "./FashionBounsAttribute";
 

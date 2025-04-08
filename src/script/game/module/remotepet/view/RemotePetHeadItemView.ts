@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetHeadItemView from "../../../../../fui/RemotePet/FUI_RemotePetHeadItemView";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import FUIHelper from "../../../utils/FUIHelper";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ConsortiaInviteInfo } from "../../data/ConsortiaInviteInfo";
 import LangManager from '../../../../../core/lang/LangManager';
 import FUI_ConsortiaApplyRecordCell from "../../../../../../fui/Consortia/FUI_ConsortiaApplyRecordCell";

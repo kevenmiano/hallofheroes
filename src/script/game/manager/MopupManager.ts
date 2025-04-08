@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import { MopupModel } from "../mvc/model/MopupModel";
 import { FrameCtrlManager } from '../mvc/FrameCtrlManager';

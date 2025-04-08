@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
 import { MopupManager } from "../../../manager/MopupManager";

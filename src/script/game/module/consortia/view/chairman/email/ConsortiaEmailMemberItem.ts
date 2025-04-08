@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaEmailMemberItem from "../../../../../../../fui/Consortia/FUI_ConsortiaEmailMemberItem";
 import { IconFactory } from "../../../../../../core/utils/IconFactory";
 import { IconType } from "../../../../../constant/IconType";

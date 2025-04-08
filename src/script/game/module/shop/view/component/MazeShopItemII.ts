@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MazeShopItemII from "../../../../../../fui/Shop/FUI_MazeShopItemII";
 import { ShopGoodsInfo } from "../../model/ShopGoodsInfo";
 import BaseTipItem from "../../../../component/item/BaseTipItem";

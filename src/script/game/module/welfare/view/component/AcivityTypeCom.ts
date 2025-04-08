@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AcivityTypeCom from "../../../../../../fui/Welfare/FUI_AcivityTypeCom";
 import LangManager from "../../../../../core/lang/LangManager";
 import { t_s_activityscheduleData } from "../../../../config/t_s_activityschedule";

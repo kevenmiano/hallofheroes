@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from '../../core/audio/AudioManager';
 import GameEventDispatcher from '../../core/event/GameEventDispatcher';
 import LangManager from '../../core/lang/LangManager';

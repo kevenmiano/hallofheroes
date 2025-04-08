@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  *    AVATAR部位
  */

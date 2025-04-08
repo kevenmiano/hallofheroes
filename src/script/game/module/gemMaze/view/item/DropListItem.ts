@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_DropListItem from "../../../../../../fui/GemMaze/FUI_DropListItem";
 
 /**

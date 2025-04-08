@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../core/lang/LangManager';
 import {SNSModel} from './model/SNSModel';
 import {SNSManager} from '../manager/SNSManager';

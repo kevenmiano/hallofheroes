@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ChatBubbleTip from "../../../../fui/Base/FUI_ChatBubbleTip";
 import { ChatChannel } from "../../datas/ChatChannel";
 

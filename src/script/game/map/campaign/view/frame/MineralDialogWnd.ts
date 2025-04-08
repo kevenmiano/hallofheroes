@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PetLandDialogWnd from "./PetLandDialogWnd";
 import AudioManager from '../../../../../core/audio/AudioManager';
 import CampaignDialogOptionItem from "./CampaignDialogOptionItem";

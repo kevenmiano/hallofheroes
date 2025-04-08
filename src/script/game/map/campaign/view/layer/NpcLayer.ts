@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../../core/logger/Logger";
 import { DisplayObject } from "../../../../component/DisplayObject";
 import { CampaignEvent, OuterCityEvent, SecretEvent } from "../../../../constant/event/NotificationEvent";

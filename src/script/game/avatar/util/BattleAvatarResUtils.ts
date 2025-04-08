@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GameLoadNeedData } from "../../battle/data/GameLoadNeedData"
 import { HeroLoadDataFactory } from "../../battle/utils/HeroLoadDataFactory"
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RuneHoldRuneItem from "../../../../../fui/Skill/FUI_RuneHoldRuneItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";

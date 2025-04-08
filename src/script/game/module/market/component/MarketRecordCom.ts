@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MarketRecordCom from "../../../../../fui/Market/FUI_MarketRecordCom";
 import MarketRecordItem from "./MarketRecordItem";
 

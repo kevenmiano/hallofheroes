@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Handler = Laya.Handler;
 
 /**

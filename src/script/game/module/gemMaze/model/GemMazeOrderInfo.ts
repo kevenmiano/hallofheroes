@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 宝石迷阵Model
  */

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MountPropertyItem from '../../../../fui/Mount/FUI_MountPropertyItem';
 import { MountInfo } from './model/MountInfo';
 import { PropertyInfo } from './model/PropertyInfo';

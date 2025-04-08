@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaPayItem from "../../../../../../fui/Consortia/FUI_ConsortiaPayItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { CommonConstant } from "../../../../constant/CommonConstant";

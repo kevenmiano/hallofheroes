@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneHoldComponet from "../../../../../fui/Skill/FUI_RuneHoldComponet";
 import { BagEvent } from "../../../constant/event/NotificationEvent";
 import { PlayerEvent } from "../../../constant/event/PlayerEvent";

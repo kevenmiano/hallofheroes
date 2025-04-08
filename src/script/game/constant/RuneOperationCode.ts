@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 符文相关该操作的操作码
  * @author alan

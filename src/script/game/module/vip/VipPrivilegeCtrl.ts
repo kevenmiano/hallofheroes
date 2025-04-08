@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketManager } from '../../../core/net/SocketManager';
 import { t_s_vipprerogativetemplateData } from '../../config/t_s_vipprerogativetemplate';
 import { C2SProtocol } from '../../constant/protocol/C2SProtocol';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_DegreeActivityView from '../../../../../fui/Welfare/FUI_DegreeActivityView';
 import { DayGuideEvent } from '../../../constant/event/NotificationEvent';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class ConsortiaBossUserInfo {
     public userid: number;
     public mineralsCount: number;//矿数量

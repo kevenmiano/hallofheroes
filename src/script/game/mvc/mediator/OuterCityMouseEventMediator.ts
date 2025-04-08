@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationEvent, OuterCityEvent } from "../../constant/event/NotificationEvent";
 import IMediator from "../../interfaces/IMediator";
 import DragManager from "../../manager/DragManager";

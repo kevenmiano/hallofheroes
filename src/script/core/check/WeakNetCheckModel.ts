@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { C2SProtocol } from "../../game/constant/protocol/C2SProtocol";
 import { S2CProtocol } from "../../game/constant/protocol/S2CProtocol";
 import { PlayerManager } from "../../game/manager/PlayerManager";

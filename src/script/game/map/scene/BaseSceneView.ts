@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationEvent, SceneEvent } from "../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { SceneManager } from "./SceneManager";

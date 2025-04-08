@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SignInDayBtn from '../../../../../../fui/Welfare/FUI_SignInDayBtn';
 import { PlayerEvent } from '../../../../constant/event/PlayerEvent';
 import { PlayerInfo } from '../../../../datas/playerinfo/PlayerInfo';

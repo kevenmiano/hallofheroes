@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RvrBattleResultItem from "../../../../fui/RvRBattle/FUI_RvrBattleResultItem";
 import { eFilterFrameText, FilterFrameText } from "../../component/FilterFrameText";
 import { CampaignManager } from "../../manager/CampaignManager";

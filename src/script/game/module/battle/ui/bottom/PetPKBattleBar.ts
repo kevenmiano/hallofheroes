@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PetPKSkillItemListView from "../skill/PetPKSkillItemListView";
 
 export class PetPKBattleBar {

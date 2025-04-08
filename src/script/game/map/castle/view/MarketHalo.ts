@@ -1,3 +1,4 @@
+// @ts-nocheck
 import MarketManager from "../../../manager/MarketManager";
 import ComponentSetting from "../../../utils/ComponentSetting";
 

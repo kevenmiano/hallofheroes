@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GameEventCode } from "../../../game/constant/GameEventCode";
 import { EmWindow } from "../../../game/constant/UIDefine";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";

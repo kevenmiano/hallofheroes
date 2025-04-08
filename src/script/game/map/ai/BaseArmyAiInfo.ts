@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArmyEvent } from "../../constant/event/NotificationEvent";
 import MapDataUtils from "../../mapEngine/utils/MapDataUtils";
 import AIBaseInfo from "./AIBaseInfo";

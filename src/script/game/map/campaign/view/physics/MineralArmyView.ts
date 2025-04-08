@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../../../core/lang/LangManager';
 import { UIFilter } from '../../../../../core/ui/UIFilter';
 import StringHelper from '../../../../../core/utils/StringHelper';

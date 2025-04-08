@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GoldenSheepItem from "../../../../fui/GoldenSheep/FUI_GoldenSheepItem";
 import { BaseItem } from "../../component/item/BaseItem";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";

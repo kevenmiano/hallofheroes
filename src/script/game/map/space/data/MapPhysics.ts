@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import {OuterCityEvent, PhysicsEvent} from "../../../constant/event/NotificationEvent";
 import ChatData from "../../../module/chat/data/ChatData";

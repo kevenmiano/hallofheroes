@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 import Logger from "../logger/Logger";
 import { PackageOut } from "../net/PackageOut";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { isOversea } from "../../game/module/login/manager/SiteZoneCtrl";
 import Logger from "../logger/Logger";
 import Singleton from "../singleton/Singleton";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../../../core/event/GameEventDispatcher';
 import { t_s_leedtemplateData } from '../../../config/t_s_leedtemplate';
 import { DayGuideEvent } from '../../../constant/event/NotificationEvent';

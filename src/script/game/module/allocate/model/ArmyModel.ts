@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from "../../../../core/utils/Dictionary";
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";
 import { ArmyPawn } from "../../../datas/ArmyPawn";

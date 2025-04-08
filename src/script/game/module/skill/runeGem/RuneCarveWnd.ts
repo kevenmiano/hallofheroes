@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PropTip from "../../../../../fui/Skill/FUI_PropTip";
 import FUI_RuneHole from "../../../../../fui/Skill/FUI_RuneHole";
 import LangManager from "../../../../core/lang/LangManager";

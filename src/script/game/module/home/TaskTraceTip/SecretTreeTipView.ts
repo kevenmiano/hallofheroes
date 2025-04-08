@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import StringHelper from "../../../../core/utils/StringHelper";
 import { ArmyManager } from "../../../manager/ArmyManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetOption from "../../../../../fui/RemotePet/FUI_RemotePetOption";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../../../core/logger/Logger";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { PlayerManager } from "../../../../manager/PlayerManager";

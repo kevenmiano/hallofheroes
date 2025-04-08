@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_Dialog2 from "../../../../fui/Base/FUI_Dialog2";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

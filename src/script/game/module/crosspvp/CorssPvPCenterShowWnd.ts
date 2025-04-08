@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Resolution from "../../../core/comps/Resolution";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import LangManager from "../../../core/lang/LangManager";

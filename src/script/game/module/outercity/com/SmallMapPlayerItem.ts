@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SmallMapPlayerItem from "../../../../../fui/OuterCity/FUI_SmallMapPlayerItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import Utils from "../../../../core/utils/Utils";

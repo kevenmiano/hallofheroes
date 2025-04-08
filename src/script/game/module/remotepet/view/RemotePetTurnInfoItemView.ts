@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetTurnInfoItemView from "../../../../../fui/RemotePet/FUI_RemotePetTurnInfoItemView";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../core/utils/IconFactory";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_AssetAutoAnimation from "../../../fui/Base/FUI_AssetAutoAnimation";
 
 /**

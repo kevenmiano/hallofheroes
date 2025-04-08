@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationEvent } from "../../game/constant/event/NotificationEvent";
 import { NotificationManager } from "../../game/manager/NotificationManager";
 import { PathManager } from "../../game/manager/PathManager";

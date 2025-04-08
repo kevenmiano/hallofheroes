@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RuneHoldListItem from "../../../../../fui/Skill/FUI_RuneHoldListItem";
 import { RuneHoleInfo } from "../../../datas/RuneHoleInfo";

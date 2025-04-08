@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetChapterFold from "../../../../../fui/RemotePet/FUI_RemotePetChapterFold";
 
 export class RemotePetChapterFold extends FUI_RemotePetChapterFold {

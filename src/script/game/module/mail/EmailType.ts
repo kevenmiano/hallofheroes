@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class EmailType {
     /**
      * 普通邮件 

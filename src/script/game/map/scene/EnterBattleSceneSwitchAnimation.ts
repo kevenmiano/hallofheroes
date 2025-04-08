@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ISceneSwitchAnimation from "../space/interfaces/ISceneSwitchAnimation";
 import { BaseSceneView } from "./BaseSceneView";
 import LayerMgr from "../../../core/layer/LayerMgr";

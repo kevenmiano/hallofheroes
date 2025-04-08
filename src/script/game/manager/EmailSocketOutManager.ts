@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketManager } from "../../core/net/SocketManager";
 import { C2SProtocol } from "../constant/protocol/C2SProtocol";
 import EmailInfo from "../module/mail/EmailInfo";

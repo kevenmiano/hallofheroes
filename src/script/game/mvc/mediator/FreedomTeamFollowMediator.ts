@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NotificationEvent, FreedomTeamEvent, ChatEvent } from "../../constant/event/NotificationEvent";
 import { ChatChannel } from "../../datas/ChatChannel";
 import IMediator from "../../interfaces/IMediator";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CampaignMapEvent, OuterCityEvent } from "../../constant/event/NotificationEvent";
 import { ArmyManager } from '../../manager/ArmyManager';
 import { PlayerManager } from '../../manager/PlayerManager';

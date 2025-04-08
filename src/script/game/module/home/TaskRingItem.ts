@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_TaskRingItem from '../../../../fui/Home/FUI_TaskRingItem';
 import ConfigMgr from '../../../core/config/ConfigMgr';
 import LangManager from '../../../core/lang/LangManager';

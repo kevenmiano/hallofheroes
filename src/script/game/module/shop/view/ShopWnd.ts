@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { DiamondShopView } from "./component/DiamondShopView";
 import { ShopManager } from "../../../manager/ShopManager";

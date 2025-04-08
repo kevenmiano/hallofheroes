@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_TabBrown3 from "../../../../fui/Base/FUI_TabBrown3";
 import LangManager from "../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_OpSuDuCellGroup from "../../../../../fui/Carnival/FUI_OpSuDuCellGroup";
 

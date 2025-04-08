@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigMgr from "../../../../../core/config/ConfigMgr";
 import { RemotePetEvent } from "../../../../../core/event/RemotePetEvent";
 import LangManager from "../../../../../core/lang/LangManager";

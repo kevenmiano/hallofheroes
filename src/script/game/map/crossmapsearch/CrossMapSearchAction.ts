@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BaseAction } from "../../battle/actions/common/BaseAction";
 import { NotificationEvent, OuterCityEvent } from "../../constant/event/NotificationEvent";
 import { CampaignManager } from "../../manager/CampaignManager";

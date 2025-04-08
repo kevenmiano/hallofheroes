@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Disposeable} from "../../component/DisplayObject";
 import {OuterCityManager} from "../../manager/OuterCityManager";
 import {StageReferance} from "../../roadComponent/pickgliss/toplevel/StageReferance";

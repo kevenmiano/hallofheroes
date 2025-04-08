@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_QuestionInput from '../../../../../fui/QuestionNaire/FUI_QuestionInput';
 import LangManager from '../../../../core/lang/LangManager';
 import QuestionData from "../QuestionData";

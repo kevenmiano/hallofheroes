@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RemotePetTurnSingleItemView from "../../../../../fui/RemotePet/FUI_RemotePetTurnSingleItemView";
 import { UIFilter } from "../../../../core/ui/UIFilter";

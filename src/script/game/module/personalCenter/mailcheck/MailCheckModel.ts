@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
 import { ArmyManager } from "../../../manager/ArmyManager";
 import FrameDataBase from "../../../mvc/FrameDataBase";

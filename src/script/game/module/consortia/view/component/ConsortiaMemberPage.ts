@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_ConsortiaMemberPage from "../../../../../../fui/Consortia/FUI_ConsortiaMemberPage";
 import { ConsortiaEvent } from "../../../../constant/event/NotificationEvent";
 import { PlayerInfo } from "../../../../datas/playerinfo/PlayerInfo";

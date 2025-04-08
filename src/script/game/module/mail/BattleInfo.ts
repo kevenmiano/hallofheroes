@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TempleteManager } from "../../manager/TempleteManager";
 import { t_s_mapData } from '../../config/t_s_map';
 

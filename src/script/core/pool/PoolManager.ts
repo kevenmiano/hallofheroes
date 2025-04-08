@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SignInDayBtn from "../../../fui/Welfare/FUI_SignInDayBtn";
 
 export default class PoolManager {

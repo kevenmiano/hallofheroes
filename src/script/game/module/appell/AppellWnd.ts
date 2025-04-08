@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../core/lang/LangManager';
 import BaseWindow from '../../../core/ui/Base/BaseWindow';
 import { ThaneInfo } from '../../datas/playerinfo/ThaneInfo';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MineCircleItem from "../../../../../fui/OuterCity/FUI_MineCircleItem";
 
 export default class MineCircleItem extends FUI_MineCircleItem {

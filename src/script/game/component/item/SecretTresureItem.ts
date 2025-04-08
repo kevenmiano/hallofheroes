@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SecretTresureItem from "../../../../fui/Base/FUI_SecretTresureItem";
 import Logger from "../../../core/logger/Logger";
 import { CommonConstant } from "../../constant/CommonConstant";

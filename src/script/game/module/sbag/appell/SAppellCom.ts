@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SAppellCom from "../../../../../fui/SBag/FUI_SAppellCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

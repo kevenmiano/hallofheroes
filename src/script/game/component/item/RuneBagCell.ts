@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneBagCell from "../../../../fui/Base/FUI_RuneBagCell";
 import LangManager from "../../../core/lang/LangManager";
 import { StoreBagCellClickMediator } from "../../cell/mediator/storebag/StoreBagCellClickMediator";

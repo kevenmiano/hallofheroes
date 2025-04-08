@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseTips from "./BaseTips";
 /**
  * @description

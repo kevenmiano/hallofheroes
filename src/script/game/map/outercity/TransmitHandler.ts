@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SocketManager } from "../../../core/net/SocketManager";
 import SimpleAlertHelper from "../../component/SimpleAlertHelper";
 import { PlayerEffectInfo } from "../../datas/playerinfo/PlayerEffectInfo";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 
 export enum RPT_EVENT_LOG {

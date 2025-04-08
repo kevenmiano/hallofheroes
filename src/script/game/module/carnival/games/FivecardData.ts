@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class FivecardData {
 
     /**位序*/

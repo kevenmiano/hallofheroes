@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Main } from "../../../../../Main";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

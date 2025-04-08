@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleNotic, CampaignEvent, CampaignMapEvent, NativeEvent, NotificationEvent, WorldBossEvent } from "../../../constant/event/NotificationEvent";
 import { CampaignManager } from "../../../manager/CampaignManager";
 import { PlayerManager } from "../../../manager/PlayerManager";

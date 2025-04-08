@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RuneGemItem from "../../../../../fui/Skill/FUI_RuneGemItem";
 import FUI_RuneHoleHelpItem from "../../../../../fui/Skill/FUI_RuneHoleHelpItem";
 import FUI_RuneHole_s from "../../../../../fui/Skill/FUI_RuneHole_s";

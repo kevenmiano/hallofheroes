@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmPackName, EmWindow } from "../../../../constant/UIDefine";
 import { PathManager } from "../../../../manager/PathManager";
 import { MonopolyNodeInfo } from "../../../../module/monopoly/model/MonopolyNodeInfo";

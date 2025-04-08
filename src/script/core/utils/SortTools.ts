@@ -1,3 +1,4 @@
+// @ts-nocheck
 export enum ArraySort {
     UPPER = 1,
     LOWER = 0

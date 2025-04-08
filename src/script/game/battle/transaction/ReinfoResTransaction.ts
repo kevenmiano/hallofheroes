@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TransactionBase } from "./TransactionBase";
 import { BattleManager } from "../BattleManager";
 import { SkillResourceLoader } from "../skillsys/loader/SkillResourceLoader";

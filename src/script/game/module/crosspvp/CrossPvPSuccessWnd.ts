@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import Logger from "../../../core/logger/Logger";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

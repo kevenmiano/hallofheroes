@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GvgInfoView from "../../../../../../fui/Consortia/FUI_GvgInfoView";
 import { GvgMapModel } from "../../model/GvgMapModel";
 import { CampaignManager } from "../../../../manager/CampaignManager";

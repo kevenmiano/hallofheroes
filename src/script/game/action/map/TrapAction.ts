@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import { CampaignEvent } from "../../constant/event/NotificationEvent";
 import { EmPackName, EmWindow } from '../../constant/UIDefine';

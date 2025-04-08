@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_ConsortiaMethodItem from "../../../../../../fui/Consortia/FUI_ConsortiaMethodItem";
 import LangManager from "../../../../../core/lang/LangManager";

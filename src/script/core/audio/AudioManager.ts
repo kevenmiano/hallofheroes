@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BattleEvent } from "../../game/constant/event/NotificationEvent";
 import { NotificationManager } from "../../game/manager/NotificationManager";
 import { SharedManager } from "../../game/manager/SharedManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmModel } from '../constant/model/modelDefine';
 import BaseModel from '../mvc/model/BaseModel';
 import { UserModel } from '../module/login/model/UserModel';

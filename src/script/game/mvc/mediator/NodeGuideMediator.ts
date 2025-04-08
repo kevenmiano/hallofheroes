@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DisplayObject } from "../../component/DisplayObject";
 import { MovieClip } from "../../component/MovieClip";
 import { NotificationEvent } from "../../constant/event/NotificationEvent";

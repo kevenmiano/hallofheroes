@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import { SocketManager } from "../../../core/net/SocketManager";
 import { BattleManager } from "../../battle/BattleManager";

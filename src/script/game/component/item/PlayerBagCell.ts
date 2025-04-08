@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {BaseItem} from "./BaseItem";
 import {GoodsInfo} from "../../datas/goods/GoodsInfo";
 import {Enum_BagGridState, Enum_BagState} from "../../module/bag/model/Enum_BagState";

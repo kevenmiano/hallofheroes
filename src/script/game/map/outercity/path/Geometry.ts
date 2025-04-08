@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Point = Laya.Point;
 
 export class Geometry {

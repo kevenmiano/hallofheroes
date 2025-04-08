@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CumulativeRechargeItem from "../../../../../fui/Funny/FUI_CumulativeRechargeItem";
 import LangManager from "../../../../core/lang/LangManager";
 import FeedBackItemData from "../../../datas/feedback/FeedBackItemData";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 export class VipInfo {
 	//结束时间

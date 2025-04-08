@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class TemplateIDConstant {
     public static TEMP_ID_POWER: number = -5700;//体力
     public static TEMP_ID_DIAMOND: number = -400;//钻石

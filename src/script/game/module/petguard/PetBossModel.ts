@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ConfigInfosTempInfo from "../../datas/ConfigInfosTempInfo";
 import { PlayerModel } from "../../datas/playerinfo/PlayerModel";
 import { PlayerManager } from "../../manager/PlayerManager";

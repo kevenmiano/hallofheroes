@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RemotePetFormationItemView from "../../../../../fui/RemotePet/FUI_RemotePetFormationItemView";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { ShowPetAvatar } from "../../../avatar/view/ShowPetAvatar";

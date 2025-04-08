@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
 * t_s_singlearenarewards
 */

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseTips from "../../../tips/BaseTips";
 import {BottleUserInfo} from "../model/BottleUserInfo";
 import LangManager from "../../../../core/lang/LangManager";

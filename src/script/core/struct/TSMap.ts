@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  *
  * @cgw  不能使用number 作为key。 

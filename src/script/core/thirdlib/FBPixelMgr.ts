@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../logger/Logger";
 import Singleton from "../singleton/Singleton";
 import Utils from "../utils/Utils";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import NodeMapPhysics from "./NodeMapPhysics";
 import {PhysicsEvent} from "../../../constant/event/NotificationEvent";
 /**

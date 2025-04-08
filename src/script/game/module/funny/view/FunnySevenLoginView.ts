@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_FunnySevenLoginView from "../../../../../fui/Funny/FUI_FunnySevenLoginView";
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

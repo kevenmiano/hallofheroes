@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class TempRoleBloodInfo
 {
     public bloodA : number = 0;

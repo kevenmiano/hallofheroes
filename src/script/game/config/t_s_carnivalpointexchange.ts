@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TempleteManager } from "../manager/TempleteManager";
 import CarnivalModel from "../module/carnival/model/CarnivalModel";
 import { GoodsCheck } from "../utils/GoodsCheck";

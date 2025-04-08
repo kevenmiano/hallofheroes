@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 
 import FUI_titleBtn from "../../../../fui/QQDawanka/FUI_titleBtn";

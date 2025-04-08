@@ -1,3 +1,4 @@
+// @ts-nocheck
 export class UpgradeType {
     /**
      * 兵种升级

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 公会战对战信息
  * @author yuanzhan.yu

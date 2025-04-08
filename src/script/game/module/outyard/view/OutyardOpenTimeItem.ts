@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OutyardOpenTimeItem from "../../../../../fui/OutYard/FUI_OutyardOpenTimeItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

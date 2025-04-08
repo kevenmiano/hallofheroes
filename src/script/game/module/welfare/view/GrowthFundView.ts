@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GrowthFundView from "../../../../../fui/Welfare/FUI_GrowthFundView";
 import LangManager from '../../../../core/lang/LangManager';
 import { NotificationEvent } from "../../../constant/event/NotificationEvent";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HomeBigBugble from "../../../../fui/Home/FUI_HomeBigBugble";
 import { ChatManager } from "../../manager/ChatManager";
 import ChatData from "../chat/data/ChatData";

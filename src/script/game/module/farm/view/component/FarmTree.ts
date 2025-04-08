@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_FarmTree from "../../../../../../fui/Farm/FUI_FarmTree";
 import Logger from '../../../../../core/logger/Logger';

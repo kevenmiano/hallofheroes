@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from "../../../core/logger/Logger";
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import {MovieClip} from "../../component/MovieClip";

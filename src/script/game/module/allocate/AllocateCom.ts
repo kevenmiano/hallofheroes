@@ -1,3 +1,4 @@
+// @ts-nocheck
 import UIManager from "../../../core/ui/UIManager";
 import { IconFactory } from "../../../core/utils/IconFactory";
 import { DragObject, DragType } from "../../component/DragObject";

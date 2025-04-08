@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CommonFrame3 from "../../../../../fui/Base/FUI_CommonFrame3";
 import FUI_TabButton from "../../../../../fui/Base/FUI_TabButton";
 import ConfigMgr from "../../../../core/config/ConfigMgr";

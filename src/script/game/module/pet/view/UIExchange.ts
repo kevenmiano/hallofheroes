@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseFguiCom from "../../../../core/ui/Base/BaseFguiCom";
 
 import FUIHelper from "../../../utils/FUIHelper";

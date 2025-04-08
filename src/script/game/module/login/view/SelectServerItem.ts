@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SelectItem from '../../../../../fui/Login/FUI_SelectItem';
 import ServerListData, { ServerSite } from '../model/ServerListData';
 

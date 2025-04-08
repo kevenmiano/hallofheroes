@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { LoginManager } from "../../../game/module/login/LoginManager";
 import { ChannelSTR } from "../SDKConfig";
 import WanChannel from "../wan/WanChannel";

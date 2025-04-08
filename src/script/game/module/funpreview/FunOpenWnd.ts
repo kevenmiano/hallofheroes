@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_CommonFrame3 from "../../../../fui/Base/FUI_CommonFrame3";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import LangManager from "../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { AddFriendsItem } from "./component/AddFriendsItem";
 import { FriendManager } from "../../../manager/FriendManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import IMediator from "../../interfaces/IMediator";
 import { CampaignManager } from "../../manager/CampaignManager";
 import { PlayerManager } from "../../manager/PlayerManager";

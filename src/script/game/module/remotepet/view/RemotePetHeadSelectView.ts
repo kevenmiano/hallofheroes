@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_RemotePetHeadSelectView from "../../../../../fui/RemotePet/FUI_RemotePetHeadSelectView";
 import LangManager from "../../../../core/lang/LangManager";

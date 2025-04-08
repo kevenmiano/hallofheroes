@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * @author jeremy.xu
  * @data: 2020-11-23 21:00

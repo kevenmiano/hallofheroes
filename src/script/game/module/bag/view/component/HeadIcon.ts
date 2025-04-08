@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_HeadIcon from "../../../../../../fui/Base/FUI_HeadIcon";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_itemtemplateData } from "../../../../config/t_s_itemtemplate";

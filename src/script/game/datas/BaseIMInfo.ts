@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ChatData from "../module/chat/data/ChatData";
 
 /**

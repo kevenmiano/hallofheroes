@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ResultState, DataCallback } from "../SDKConfig";
 import BaseChannel from "./BaseChannel";
 

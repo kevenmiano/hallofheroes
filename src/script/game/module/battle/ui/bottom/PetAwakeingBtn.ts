@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_petAwakeingBtn from '../../../../../../fui/BattleDynamic/FUI_petAwakeingBtn';
 /**
 * @author:pzlricky

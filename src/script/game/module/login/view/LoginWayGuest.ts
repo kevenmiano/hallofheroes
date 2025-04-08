@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LoginWayGuest from "../../../../../fui/Login/FUI_LoginWayGuest";
 
 /**

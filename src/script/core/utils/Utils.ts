@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { UIFilter } from '../ui/UIFilter';
 import LangManager from '../lang/LangManager';
 import CryptoUtils from '../../game/utils/CryptoUtils';

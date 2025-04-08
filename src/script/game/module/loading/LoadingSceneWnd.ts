@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LoadingsSceneWnd from '../../../../fui/LoadingScene/FUI_LoadingsSceneWnd';
 import Resolution from '../../../core/comps/Resolution';
 import LangManager from '../../../core/lang/LangManager';

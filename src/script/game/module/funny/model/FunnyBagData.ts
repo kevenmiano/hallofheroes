@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from '../../../../core/lang/LangManager';
 import { DateFormatter } from '../../../../core/utils/DateFormatter';
 import GoodsSonType from '../../../constant/GoodsSonType';

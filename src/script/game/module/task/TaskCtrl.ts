@@ -1,3 +1,4 @@
+// @ts-nocheck
 import OfferRewardManager from '../../manager/OfferRewardManager';
 import { TaskManage } from '../../manager/TaskManage';
 import { TaskSocketManager } from '../../manager/TaskSocketManager';

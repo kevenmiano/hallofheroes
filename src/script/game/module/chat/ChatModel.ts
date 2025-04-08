@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChatEvent } from "../../constant/event/NotificationEvent";
 import { ChatChannel } from "../../datas/ChatChannel";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";

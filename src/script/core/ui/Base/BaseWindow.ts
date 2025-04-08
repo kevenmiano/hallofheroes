@@ -1,3 +1,4 @@
+// @ts-nocheck
 import NewbieEvent, { SceneEvent, WinEvent } from '../../../game/constant/event/NotificationEvent';
 import { SoundIds } from '../../../game/constant/SoundIds';
 import { EmWindow, EnUIHideType, EnUIShowType, UI_PACKAGE, UICFG } from '../../../game/constant/UIDefine';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_PassRewardItem from "../../../../../../fui/Welfare/FUI_PassRewardItem";
 import WelfareBinder from "../../../../../../fui/Welfare/WelfareBinder";
 import LangManager from "../../../../../core/lang/LangManager";

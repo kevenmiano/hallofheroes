@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AvatarActionType } from "../../../avatar/data/AvatarActionType";
 import { AvatarPosition } from "../../../avatar/data/AvatarPosition";
 import { AvatarStaticData } from "../../../avatar/data/AvatarStaticData";

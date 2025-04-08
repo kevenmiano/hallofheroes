@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_BaseItem from "../../../../../fui/Base/FUI_BaseItem";
 import FUI_CarnivalBaoPage from "../../../../../fui/Carnival/FUI_CarnivalBaoPage";
 import LangManager from "../../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";
 

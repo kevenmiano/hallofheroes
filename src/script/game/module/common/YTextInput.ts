@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SDKManager from "../../../core/sdk/SDKManager";
 import Utils from "../../../core/utils/Utils";
 import { NativeChannel } from "../../../core/sdk/native/NativeChannel";

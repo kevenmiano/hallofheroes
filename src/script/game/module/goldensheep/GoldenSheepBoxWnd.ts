@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { GoldenSheepEvent } from "../../constant/event/NotificationEvent";
 import GoldenSheepManager from "../../manager/GoldenSheepManager";

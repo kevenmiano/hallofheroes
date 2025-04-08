@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_OuterCityShopItem from "../../../../../fui/Base/FUI_OuterCityShopItem";
 import FUI_ExchangeRandom from "../../../../../fui/OutCityShop/FUI_ExchangeRandom";
 import LangManager from "../../../../core/lang/LangManager";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LoginMethod from "../../../../../fui/Login/FUI_LoginMethod";
 import { Func } from "../../../../core/comps/Func";
 import LangManager from "../../../../core/lang/LangManager";

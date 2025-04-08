@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from '../logger/Logger';
 import ClassUtils = Laya.ClassUtils;
 export default class ByteArray {

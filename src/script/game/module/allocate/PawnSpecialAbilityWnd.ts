@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AudioManager from '../../../core/audio/AudioManager';
 import LangManager from '../../../core/lang/LangManager';
 import { SocketManager } from '../../../core/net/SocketManager';

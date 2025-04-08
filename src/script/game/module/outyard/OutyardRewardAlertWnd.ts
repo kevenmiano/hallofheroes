@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { ArrayUtils, ArrayConstant } from "../../../core/utils/ArrayUtils";
 import Utils from "../../../core/utils/Utils";

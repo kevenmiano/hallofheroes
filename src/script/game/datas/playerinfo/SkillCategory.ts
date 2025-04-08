@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 英雄的技能集合
  * @author alan

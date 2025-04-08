@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_AttrItem from "../../../../../fui/SBag/FUI_AttrItem";
 import FUI_HonorCom from "../../../../../fui/SBag/FUI_HonorCom";

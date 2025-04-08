@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from '../../../core/event/GameEventDispatcher';
 import { SimpleDictionary } from '../../../core/utils/SimpleDictionary';
 import { ServiceReceiveEvent, FriendUpdateEvent, NotificationEvent, ArmyEvent, RuneEvent, TaskEvent, DictionaryEvent, ConsortiaEvent } from '../../constant/event/NotificationEvent';

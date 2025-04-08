@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SmallMapBossItem from "../../../../../fui/OuterCity/FUI_SmallMapBossItem";
 import Utils from "../../../../core/utils/Utils";
 import { EmWindow } from "../../../constant/UIDefine";

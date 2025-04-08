@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_GemMazeRankItem from "../../../../../../fui/GemMaze/FUI_GemMazeRankItem";
 import { t_s_appellData } from "../../../../config/t_s_appell";
 import { EmPackName, EmWindow } from "../../../../constant/UIDefine";

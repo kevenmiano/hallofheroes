@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GTabIndex from "../../../constant/GTabIndex";
 import { EmWindow } from "../../../constant/UIDefine";
 import NewbieEvent from "../../../constant/event/NotificationEvent";

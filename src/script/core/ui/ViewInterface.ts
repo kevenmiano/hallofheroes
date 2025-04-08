@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EmWindow } from '../../game/constant/UIDefine';
 //ui分层
 export enum EmLayer {

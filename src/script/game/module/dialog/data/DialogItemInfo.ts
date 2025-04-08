@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default  class DialogItemInfo{
     public type:number = 0;
     public title:string = "";

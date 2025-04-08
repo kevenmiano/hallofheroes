@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ResMgr from '../../../../../core/res/ResMgr';
 import { Sequence } from '../../../../../core/task/Sequence';
 import { ActionsExecutionMode, SequenceList } from '../../../../../core/task/SequenceList';

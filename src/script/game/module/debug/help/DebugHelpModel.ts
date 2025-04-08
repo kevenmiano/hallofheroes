@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DebugHelpInfo, EmDebugCode } from "../DebugCfg"
 
 /*

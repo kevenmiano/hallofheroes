@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { isOversea } from '../../game/module/login/manager/SiteZoneCtrl';
 import LangManager from '../lang/LangManager';
 

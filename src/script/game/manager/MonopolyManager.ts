@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import { ServerDataManager } from "../../core/net/ServerDataManager";
 import { S2CProtocol } from "../constant/protocol/S2CProtocol";

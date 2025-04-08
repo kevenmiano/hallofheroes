@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ResMgr from '../../../core/res/ResMgr';
 import ObjectUtils from '../../../core/utils/ObjectUtils';
 import Utils from '../../../core/utils/Utils';

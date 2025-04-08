@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_RunesItem from "../../../../../fui/Skill/FUI_RunesItem";
 import { RuneInfo } from "../../../datas/RuneInfo";
 import { IconFactory } from "../../../../core/utils/IconFactory";

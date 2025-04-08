@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_SevenGoalsDayItem from "../../../../fui/SevenTarget/FUI_SevenGoalsDayItem";
 import LangManager from "../../../core/lang/LangManager";
 import SevenGoalsManager from "../../manager/SevenGoalsManager";

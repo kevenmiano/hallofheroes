@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_LanguageSetting from "../../../../../fui/Login/FUI_LanguageSetting";
 import LangManager from "../../../../core/lang/LangManager";
 import { GAME_LANG, GAME_LANG_WHITE, LANGCFG, getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";

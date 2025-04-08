@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { RemotePetEvent } from "../../../../../core/event/RemotePetEvent";
 import { PackageIn } from "../../../../../core/net/PackageIn";

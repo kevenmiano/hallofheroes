@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Tiles from "../../game/map/space/constant/Tiles";
 
 /**

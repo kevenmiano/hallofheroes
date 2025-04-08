@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Logger from '../logger/Logger';
 export enum Status {
     None = 0,

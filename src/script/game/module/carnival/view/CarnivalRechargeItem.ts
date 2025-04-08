@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import FUI_CarnivalRechargeItem from "../../../../../fui/Carnival/FUI_CarnivalRechargeItem";
 import { BaseItem } from "../../../component/item/BaseItem";

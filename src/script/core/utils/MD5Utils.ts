@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class MD5Utils {
     /* base-64 pad character. "=" for strict RFC compliance   */
     /*

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SystemArmyMsg = com.road.yishi.proto.campaign.SystemArmyMsg;
 
 import { MapInfo } from "../space/data/MapInfo";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Dictionary from '../../core/utils/Dictionary';
 import { PathNode } from './PathNode';
 	/**

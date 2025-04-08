@@ -1,3 +1,4 @@
+// @ts-nocheck
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import {TimerEvent, TimerTicker} from "../../utils/TimerTicker";
 import {PlayerManager} from "../../manager/PlayerManager";

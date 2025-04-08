@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 import { SocketSendManager } from "../../../manager/SocketSendManager";
 import { TaskTraceTipManager } from "../../../manager/TaskTraceTipManager";

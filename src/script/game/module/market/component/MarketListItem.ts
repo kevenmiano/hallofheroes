@@ -1,3 +1,4 @@
+// @ts-nocheck
 import FUI_MarketListItem from "../../../../../fui/Market/FUI_MarketListItem";
 import MarketItemInfoMsg = com.road.yishi.proto.market.IMarketItemInfoMsg;
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
