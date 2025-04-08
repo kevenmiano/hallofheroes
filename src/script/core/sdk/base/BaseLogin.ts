@@ -2,21 +2,15 @@ import { DataCallback, ResultCallback } from "../SDKConfig";
 import BaseChannel from "./BaseChannel";
 
 export default class BaseLogin {
-    protected channel: BaseChannel;
+  protected channel: BaseChannel;
 
-    constructor(channel: BaseChannel) {
-        this.channel = channel;
-    }
+  constructor(channel: BaseChannel) {
+    this.channel = channel;
+  }
 
-    login(account: string, func: ResultCallback) {
+  login(account: string, func: ResultCallback) {}
 
-    }
+  getUserInfo(withCredentials: string, lang: string, func: DataCallback) {}
 
-    getUserInfo(withCredentials: string, lang: string, func: DataCallback) {
-
-    }
-
-    checkSession(callback: ResultCallback) {
-
-    }
+  checkSession(callback: ResultCallback) {}
 }

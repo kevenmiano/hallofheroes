@@ -361,7 +361,7 @@ export default class BaseChannel {
             "roleLevel": ArmyManager.Instance.thane.grades,
             "vipLevel": playerInfo.vipGrade//VIPManager.Instance.model.vipInfo ? VIPManager.Instance.model.vipInfo.VipGrade : 0
         };
-        Logger.yyz("trackEvent:" + `type:${type}, node:${node}, roleInfo:${JSON.stringify(roleInfo)}, 
+        Logger.yyz("trackEvent:" + `type:${type}, node:${node}, roleInfo:${JSON.stringify(roleInfo)},
         eventName:${eventName}, eventDescribe:${eventDescribe}, pageName:${pageName}, pageDescribe:${pageDescribe}`);
     }
 
@@ -513,7 +513,7 @@ export default class BaseChannel {
 
     /**
      * 语音登录
-     * 在游戏中需要使用语音功能的地方调用voiceLogin(string userId, string password, string token)方法进行登录, 
+     * 在游戏中需要使用语音功能的地方调用voiceLogin(string userId, string password, string token)方法进行登录,
      * userId、password、token字段可由游戏自行定义, token 可传空
      * */
     voiceLogin(userId: string, password: string, token: string) {

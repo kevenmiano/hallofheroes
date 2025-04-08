@@ -109,7 +109,7 @@ import MarketCtrl from "../module/market/MarketCtrl";
  * @LastEditors: jeremy.xu
  * @Description: UI控制器的管理器 负责UI模块的注册、显示、隐藏
  */
-export class FrameCtrlManager implements IManager {
+export class FrameCtrlManager {
   static _ins: FrameCtrlManager;
   static get Instance(): FrameCtrlManager {
     if (!this._ins) this._ins = new FrameCtrlManager();

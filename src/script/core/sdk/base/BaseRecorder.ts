@@ -1,44 +1,39 @@
 import { SDKState } from "../SDKConfig";
 
-
-
 export default class BaseRecorder {
+  protected recorder: any;
 
+  protected videoPath: string = null;
 
-    protected recorder: any;
+  protected state: SDKState = SDKState.close;
+  start(obj?: any) {}
+  pause() {}
+  resume() {}
+  stop(isSave: boolean = true) {}
+  //记录精彩的视频片段
+  recordClip(object) {}
 
-    protected videoPath: string = null;
+  changeState(s) {
+    this.state = s;
+  }
 
-    protected state: SDKState = SDKState.close
-    start(obj?: any) { }
-    pause() { }
-    resume() { }
-    stop(isSave: boolean = true) { }
-    //记录精彩的视频片段
-    recordClip(object) { }
+  getVideoPath() {
+    return this.videoPath;
+  }
 
-    changeState(s) {
-        this.state = s;
-    }
+  clear() {
+    this.videoPath = null;
+  }
 
-    getVideoPath() {
-        return this.videoPath;
-    }
+  isOpen() {
+    return this.state == SDKState.open;
+  }
 
-    clear() {
-        this.videoPath = null;
-    }
+  isClose() {
+    return this.state == SDKState.close;
+  }
 
-    isOpen() {
-        return this.state == SDKState.open;
-    }
-
-    isClose() {
-        return this.state == SDKState.close;
-    }
-
-    getState() {
-        return this.state;
-    }
-
+  getState() {
+    return this.state;
+  }
 }

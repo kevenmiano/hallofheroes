@@ -1,37 +1,31 @@
 export default class BaseNativeAdItemModel {
-    getID() {
+  getID() {}
+
+  getTitle(): string {
+    return "";
+  }
+
+  getIcon() {
+    let list = this.getIconList();
+    if (list && list.length > 0) {
+      return list[0];
     }
+    return null;
+  }
 
-    getTitle(): string {
-        return ''
-    }
+  getDesc() {}
 
-    getIcon() {
-        let list = this.getIconList();
-        if (list && list.length > 0) {
-            return list[0]
-        }
-        return null;
-    }
+  getIconList(): string[] {
+    return [];
+  }
 
+  getImgList(): string[] {
+    return [];
+  }
 
-    getDesc() {
+  getButtonText() {}
 
-    }
-
-    getIconList(): string[] {
-        return [];
-    }
-
-    getImgList(): string[] {
-        return [];
-    }
-
-    getButtonText() {
-
-    }
-
-    getShowImageList() {
-        return []
-    }
+  getShowImageList() {
+    return [];
+  }
 }

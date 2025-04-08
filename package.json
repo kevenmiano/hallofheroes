@@ -3,17 +3,31 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:compile": "npx layaair2-cmd compile .",
+    "watch:serve": "live-server bin/index.html --port=3000 --no-browser",
+    "dev": "concurrently \"npm run watch:compile\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "rollup": "^2.79.2",
-    "rollup-plugin-glsl": "^1.0.0",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "typescript": "^5.8.3"
+    "@types/jszip": "^3.4.1",
+    "concurrently": "^9.1.2",
+    "gulp": "3.9.1",
+    "live-server": "^1.2.2",
+    "rollup": "^1.25.2",
+    "rollup-plugin-glsl": "1.3.0",
+    "rollup-plugin-typescript2": "0.24.3",
+    "typescript": "3.2.2"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "layaair2-cmd": "^1.6.15",
+    "npm-force-resolutions": "0.0.10"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }

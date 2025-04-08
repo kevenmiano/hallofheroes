@@ -2,7 +2,7 @@ import { SDKState, ResultCallback } from "../SDKConfig";
 import BaseChannel from "./BaseChannel";
 /**
  * 所有广告的父类
- * 
+ *
  */
 export default abstract class BaseAd {
     //广告状态
