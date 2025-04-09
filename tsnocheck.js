@@ -11,8 +11,8 @@ function addNoCheck(dir) {
       addNoCheck(fullPath);
     } else if (file.endsWith(".ts") || file.endsWith(".tsx")) {
       const content = fs.readFileSync(fullPath, "utf-8");
-      if (!content.startsWith("// @ts-nocheck")) {
-        const updated = `// @ts-nocheck\n${content}`;
+      if (!content.startsWith(" // m")) {
+        const updated = ` // m\n${content}`;
         fs.writeFileSync(fullPath, updated, "utf-8");
         console.log(`Atualizado: ${fullPath}`);
       }
