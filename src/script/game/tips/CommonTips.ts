@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BaseTips from "./BaseTips";
 /**
  * @description
@@ -8,53 +7,54 @@ import BaseTips from "./BaseTips";
  *
  */
 export class CommonTips extends BaseTips {
-    public img_bg: fgui.GImage;
-    public txt_content_copy: fgui.GRichTextField;
-    public txt_content: fgui.GRichTextField;
+  public img_bg: fgui.GImage;
+  public txt_content_copy: fgui.GRichTextField;
+  public txt_content: fgui.GRichTextField;
 
-    private _content: string = "";
+  private _content: string = "";
 
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+  public OnInitWind() {
+    super.OnInitWind();
+
+    this._content = this.params[0];
+    this.txt_content_copy.text = this._content;
+    if (this.txt_content_copy.width >= this.txt_content.maxWidth) {
+      //超出最大宽度, 更改适配方式
+      this.txt_content.autoSize = 2;
+      this.txt_content.width = this.txt_content.maxWidth;
+    } else {
+      this.txt_content.autoSize = 1;
     }
+    this.txt_content.text = this._content;
+    this.contentPane.ensureBoundsCorrect();
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
+  protected onClickEvent() {
+    this.onInitClick();
+  }
 
-        this._content = this.params[0];
-        this.txt_content_copy.text = this._content;
-        if (this.txt_content_copy.width >= this.txt_content.maxWidth) {//超出最大宽度, 更改适配方式
-            this.txt_content.autoSize = 2;
-            this.txt_content.width = this.txt_content.maxWidth;
-        } else {
-            this.txt_content.autoSize = 1;
-        }
-        this.txt_content.text = this._content;
-        this.contentPane.ensureBoundsCorrect();
-    }
+  createModel() {
+    super.createModel();
+    this.modelMask.alpha = 0;
+  }
 
-    protected onClickEvent() {
-        this.onInitClick();
-    }
+  public OnShowWind() {
+    super.OnShowWind();
+  }
 
-    createModel() {
-        super.createModel();
-        this.modelMask.alpha = 0;
-    }
+  protected OnClickModal() {
+    super.OnClickModal();
+  }
 
-    public OnShowWind() {
-        super.OnShowWind();
-    }
+  public OnHideWind() {
+    super.OnHideWind();
+  }
 
-    protected OnClickModal() {
-        super.OnClickModal();
-    }
-
-    public OnHideWind() {
-        super.OnHideWind();
-    }
-
-    dispose(dispose?: boolean) {
-        super.dispose(dispose);
-    }
+  dispose(dispose?: boolean) {
+    super.dispose(dispose);
+  }
 }
