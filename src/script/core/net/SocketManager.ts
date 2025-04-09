@@ -1,4 +1,3 @@
-// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from '../Interface/IManager';
 import Logger from "../logger/Logger";

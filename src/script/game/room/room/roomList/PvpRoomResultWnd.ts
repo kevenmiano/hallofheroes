@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
@@ -13,56 +12,63 @@ import PvpRewardsItem from "./item/PvpRewardsItem";
 import RankStarItem from "./item/RankStarItem";
 
 export default class PvpRoomResultWnd extends BaseWindow {
-    public cWin:fgui.Controller;
-	public rankItem:RankStarItem;
-	public txtClose:fgui.GTextField;
-	public txtTitle:fgui.GTextField;
-	public txtScore:fgui.GTextField;
-	public txtChange:fgui.GTextField;
-    constructor() {
-        super();
-    }
+  public cWin: fgui.Controller;
+  public rankItem: RankStarItem;
+  public txtClose: fgui.GTextField;
+  public txtTitle: fgui.GTextField;
+  public txtScore: fgui.GTextField;
+  public txtChange: fgui.GTextField;
+  constructor() {
+    super();
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter();
-        this.initText();
-        if (this.frameData) {
-            this.getController('cWin').selectedIndex = this.frameData.win ? 1 : 0;
-            
-            this.txtChange.color = this.frameData.win ? ColorConstant.GREEN_COLOR : ColorConstant.RED_COLOR;
-            this.txtChange.text = (this.frameData.win ? '+' : '-') + this.frameData.change;
-        }
-        this.txtScore.text = this.playerInfo.mulSportScore + '';
-        this.rankItem.setInfo(this.playerInfo.segmentId);
-        this.addEvent();
-    }
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+    this.initText();
+    if (this.frameData) {
+      this.getController("cWin").selectedIndex = this.frameData.win ? 1 : 0;
 
-    initText() {
-        this.txtClose.text = LangManager.Instance.GetTranslation('RoomList.pvp.result.txt1');
-        this.txtTitle.text = LangManager.Instance.GetTranslation('RoomList.pvp.result.txt2');
+      this.txtChange.color = this.frameData.win
+        ? ColorConstant.GREEN_COLOR
+        : ColorConstant.RED_COLOR;
+      this.txtChange.text =
+        (this.frameData.win ? "+" : "-") + this.frameData.change;
     }
+    this.txtScore.text = this.playerInfo.mulSportScore + "";
+    this.rankItem.setInfo(this.playerInfo.segmentId);
+    this.addEvent();
+  }
 
-    private get playerInfo(): PlayerInfo {
-        return PlayerManager.Instance.currentPlayerModel.playerInfo;
-    }
+  initText() {
+    this.txtClose.text = LangManager.Instance.GetTranslation(
+      "RoomList.pvp.result.txt1"
+    );
+    this.txtTitle.text = LangManager.Instance.GetTranslation(
+      "RoomList.pvp.result.txt2"
+    );
+  }
 
-    private addEvent() {
-        this.on(Laya.Event.CLICK, this, this.OnBtnClose);
-    }
+  private get playerInfo(): PlayerInfo {
+    return PlayerManager.Instance.currentPlayerModel.playerInfo;
+  }
 
-    private offEvent() {
-        this.off(Laya.Event.CLICK, this, this.OnBtnClose);
-    }
+  private addEvent() {
+    this.on(Laya.Event.CLICK, this, this.OnBtnClose);
+  }
 
-    /**界面打开 */
-    OnShowWind() {
-        super.OnShowWind();
-    }
+  private offEvent() {
+    this.off(Laya.Event.CLICK, this, this.OnBtnClose);
+  }
 
-    /**关闭界面 */
-    OnHideWind() {
-        super.OnHideWind();
-        this.offEvent();
-    }
+  /**界面打开 */
+  OnShowWind() {
+    super.OnShowWind();
+  }
+
+  /**关闭界面 */
+  OnHideWind() {
+    super.OnHideWind();
+    this.offEvent();
+  }
 }

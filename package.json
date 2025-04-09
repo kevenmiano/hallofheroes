@@ -23,6 +23,9 @@
     "typescript": "3.2.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.3",
     "jszip": "^3.10.1",
     "layaair2-cmd": "^1.6.15",
     "npm-force-resolutions": "0.0.10"

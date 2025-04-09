@@ -1,181 +1,242 @@
 <!DOCTYPE html>
 
 
-
 <head>
-    <title>Wartune</title>
-    <meta charset='utf-8' />
-    <meta name='renderer' content='webkit' />
-    <meta name='viewport'
-        content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' />
-    <meta name='apple-mobile-web-app-capable' content='yes' />
-    <meta name='full-screen' content='true' />
-    <meta name='x5-fullscreen' content='true' />
-    <meta name='360-fullscreen' content='true' />
-    <meta name='laya' screenorientation='landscape' />
-    <meta http-equiv='expires' content='0' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
-    <meta http-equiv='expires' content='0' />
-    <meta http-equiv='Cache-Control' content='no-siteapp' />
-    <link rel="stylesheet" href="/public/7road/warp.css" type="text/css" />
+  <title>Wartune</title>
+  <meta charset='utf-8' />
+  <meta name='renderer' content='webkit' />
+  <meta name='viewport'
+    content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta name='full-screen' content='true' />
+  <meta name='x5-fullscreen' content='true' />
+  <meta name='360-fullscreen' content='true' />
+  <meta name='laya' screenorientation='landscape' />
+  <meta http-equiv='expires' content='0' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+  <meta http-equiv='expires' content='0' />
+  <meta http-equiv='Cache-Control' content='no-siteapp' />
+  <link rel="stylesheet" href="/public/7road/warp.css" type="text/css" />
+  <script type="application/javascript">
+    !function (t, e, a, r, n, s, d, l, o, i, u) { t.Adjust = t.Adjust || {}, t.Adjust_q = t.Adjust_q || []; for (var c = 0; c < l.length; c++)o(t.Adjust, t.Adjust_q, l[c]); i = e.createElement(a), u = e.getElementsByTagName(a)[0], i.async = !0, i.src = "https://cdn.adjust.com/adjust-latest.min.js", i.onload = function () { for (var e = 0; e < t.Adjust_q.length; e++)t.Adjust[t.Adjust_q[e][0]].apply(t.Adjust, t.Adjust_q[e][1]); t.Adjust_q = [] }, u.parentNode.insertBefore(i, u) }(window, document, "script", 0, 0, 0, 0, ["initSdk", "getAttribution", "getWebUUID", "setReferrer", "trackEvent", "addGlobalCallbackParameters", "addGlobalPartnerParameters", "removeGlobalCallbackParameter", "removeGlobalPartnerParameter", "clearGlobalCallbackParameters", "clearGlobalPartnerParameters", "switchToOfflineMode", "switchBackToOnlineMode", "stop", "restart", "gdprForgetMe", "disableThirdPartySharing", "initSmartBanner", "showSmartBanner", "hideSmartBanner"], (function (t, e, a) { t[a] = function () { e.push([a, arguments]) } }));
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-303222529"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-303222529');
+  </script>
+  <!-- Event snippet for 充值金额 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script> function gtag_report_conversion(url) { var callback = function () { if (typeof (url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-303222529/rX9yCOXO1YQYEIGey5AB', 'value': 0.0, 'currency': 'USD', 'transaction_id': '', 'event_callback': callback }); return false; } </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3347395428911328');
+    fbq('track', 'PageView');
+  </script>
 
+
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3347395428911328&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 
 <body>
-    <div class="LoginBg" id="LoginBg"><img src="/public/7road/Img_Login_Bg.jpg"> </div>
-    <div class="loading" id="loading">
-        <h4 class="loadingtext" id="text">Loading...</h4>
-    </div>
-    <div class="guide" id="guide"><img src="guide.jpg"> </div>
+  <div class="LoginBg" id="LoginBg"><img src="Img_Login_Bg.jpg"> </div>
+  <div class="loading" id="loading">
+    <h4 class="loadingtext" id="text">Loading...</h4>
+  </div>
+  <div class="guide" id="guide"><img src="guide.jpg"> </div>
 
-    <div id="360Tag"
-        style="position: absolute;width: 1334px;height: 750px;margin: auto;top: 0;bottom: 0;left: 0;right: 0;visibility: hidden;">
-        <img src="microApp_Img.jpg">
-        <div style="width:244px;height: 71px;position: relative;top:-170px;left:970px">
-            <a href="https://yxdt.game.keniub.com/weiduan/sq-360.exe" target="_blank"
-                style="width:244px;height: 71px;display: block;">&nbsp;</a>
-        </div>
+  <div id="360Tag"
+    style="position: absolute;width: 1334px;height: 750px;margin: auto;top: 0;bottom: 0;left: 0;right: 0;visibility: hidden;">
+    <img src="microApp_Img.jpg">
+    <div style="width:244px;height: 71px;position: relative;top:-170px;left:970px">
+      <a href="https://yxdt.game.keniub.com/weiduan/sq-360.exe" target="_blank"
+        style="width:244px;height: 71px;display: block;">&nbsp;</a>
     </div>
+  </div>
 
+  <div>
     <div>
-        <div>
-            <script type="text/javascript">
-                // 禁止通过	ctrl + +/- 和 	ctrl + 滚轮 对页面进行缩放
-                disableBrowserZoom = (() => {
-                    document.addEventListener('keydown', function (event) {
-                        if ((event.ctrlKey === true || event.metaKey === true) &&
-                            (event.which === 61 || event.which === 107 ||
-                                event.which === 173 || event.which === 109 ||
-                                event.which === 187 || event.which === 189)) {
-                            event.preventDefault()
-                        }
-                    }, false)
-                    // Chrome IE 360
-                    window.addEventListener('mousewheel', function (event) {
-                        if (event.ctrlKey === true || event.metaKey) {
-                            event.preventDefault()
-                        }
-                    }, {
-                        passive: false
-                    })
+      <script type="text/javascript">
+        // 禁止通过	ctrl + +/- 和 	ctrl + 滚轮 对页面进行缩放
+        disableBrowserZoom = (() => {
+          document.addEventListener('keydown', function (event) {
+            if ((event.ctrlKey === true || event.metaKey === true) &&
+              (event.which === 61 || event.which === 107 ||
+                event.which === 173 || event.which === 109 ||
+                event.which === 187 || event.which === 189)) {
+              event.preventDefault()
+            }
+          }, false)
+          // Chrome IE 360
+          window.addEventListener('mousewheel', function (event) {
+            if (event.ctrlKey === true || event.metaKey) {
+              event.preventDefault()
+            }
+          }, {
+            passive: false
+          })
 
-                    // firefox
-                    window.addEventListener('DOMMouseScroll', function (event) {
-                        if (event.ctrlKey === true || event.metaKey) {
-                            event.preventDefault()
-                        }
-                    }, {
-                        passive: false
-                    })
-                })();
+          // firefox
+          window.addEventListener('DOMMouseScroll', function (event) {
+            if (event.ctrlKey === true || event.metaKey) {
+              event.preventDefault()
+            }
+          }, {
+            passive: false
+          })
+        })();
 
-                var focusWindow = (function () {
-                    window.focus();
-                })();
+        var focusWindow = (function () {
+          window.focus();
+        })();
 
-                document.onmousemove = function () {
-                    let layacanvas = document.getElementById('layaCanvas');
-                    if (!layacanvas) return;
-                    // var ctx = layacanvas.getContext("2d");
-                    // ctx.translate(1, 0, 0, 1, 0, 0);
-                }
+        document.onmousemove = function () {
+          let layacanvas = document.getElementById('layaCanvas');
+          if (!layacanvas) return;
+          // var ctx = layacanvas.getContext("2d");
+          // ctx.translate(1, 0, 0, 1, 0, 0);
+        }
 
-                //获取url里面的参数
-                function GetQueryString(name) {
-                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                    var r = window.location.search.substr(1).match(reg);
-                    if (r != null) return unescape(r[2]); return null;
-                }
+        //获取url里面的参数
+        function GetQueryString(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return unescape(r[2]); return null;
+        }
 
-                var is360 = (function () {
-                    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-                    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
-                    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
-                    var is360URL = GetQueryString("channelId") == 30040;
-                    if (is360URL && (isIE || isIE11)) {
-                        document.getElementById('360Tag').style.visibility = "visible";
-                        return;
-                    } else {
-                        document.getElementById('360Tag').style.visibility = "hidden";
-                    }
-                })();
+        var is360 = (function () {
+          var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+          var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+          var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+          var is360URL = GetQueryString("channelId") == 30040;
+          if (is360URL && (isIE || isIE11)) {
+            document.getElementById('360Tag').style.visibility = "visible";
+            return;
+          } else {
+            document.getElementById('360Tag').style.visibility = "hidden";
+          }
+        })();
 
-                var checkisIE = (function () {
-                    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-                    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
-                    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
-                    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
-                    var isFF = userAgent.indexOf('Firefox') > -1;
-                    if (isIE || isIE11 || isFF) {
-                        console.log("ie")
-                        document.getElementById('guide').style.visibility = "visible";
-                        return;
-                    } else {
-                        console.log("not ie")
-                        document.getElementById('guide').style.visibility = "hidden";
-                        return;
-                    }
-                    if (!!window.ActiveXObject || "ActiveXObject" in window) {
-                        console.log("is IE");
-                        document.getElementById('text').style.visibility = "visible";
-                    } else {
-                        console.log("no");
-                        document.getElementById('guide').style.visibility = "hidden";
-                    }
-                })();
+        var checkisIE = (function () {
+          var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+          var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+          var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+          var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+          var isFF = userAgent.indexOf('Firefox') > -1;
+          if (isIE || isIE11 || isFF) {
+            console.log("ie")
+            document.getElementById('guide').style.visibility = "visible";
+            return;
+          } else {
+            console.log("not ie")
+            document.getElementById('guide').style.visibility = "hidden";
+            return;
+          }
+          if (!!window.ActiveXObject || "ActiveXObject" in window) {
+            console.log("is IE");
+            document.getElementById('text').style.visibility = "visible";
+          } else {
+            console.log("no");
+            document.getElementById('guide').style.visibility = "hidden";
+          }
+        })();
 
-                var maxCount = 0;
-                var finishCount = 0;
+        var maxCount = 0;
+        var finishCount = 0;
 
-                function loadLib(url, cb) {
+        function loadLib(url, cb) {
+          maxCount += 1;
+          document.getElementById('loading').style.visibility = "visible";
+          var script = document.createElement("script");
+          script.async = false;
+          script.src = url;
+
+          script.onload = function () {
+            finishCount += 1;
+            if (finishCount < maxCount) {
+              document.getElementById('text').innerHTML = "Loading..." + Math.ceil((finishCount /
+                maxCount) *
+                100) + "%";
+            } else {
+              document.getElementById('loading').style.visibility = "hidden";
+              document.getElementById('LoginBg').style.visibility = "hidden";
+            }
+            if (cb) cb();
+            console.log('加载完成数量:', finishCount, maxCount)
+          }
+          script.zoom = 2;
+          document.body.appendChild(script);
+        }
+
+        function receiveWebViewData(info) {
+          window["__webViewInfo__"] = info;
+          if (window['receiveWebViewInfo'])
+            receiveWebViewInfo(info);
+        }
+
+        const callPay = () => {
 
 
-                    maxCount += 1;
-                    document.getElementById('loading').style.visibility = "visible";
-                    var script = document.createElement("script");
-                    script.async = false;
-                    script.src = url;
+          const url = 'http://localhost:3000/proxy/gameDataSync/doSyncInitRegister';
 
-                    script.onload = function () {
-                        finishCount += 1;
-                        if (finishCount < maxCount) {
-                            document.getElementById('text').innerHTML = "Loading..." + Math.ceil((finishCount /
-                                maxCount) *
-                                100) + "%";
-                        } else {
-                            document.getElementById('loading').style.visibility = "hidden";
-                            document.getElementById('LoginBg').style.visibility = "hidden";
-                        }
-                        if (cb) cb();
-                        console.log('加载完成数量:', finishCount, maxCount)
-                    }
-                    script.zoom = 2;
-                    document.body.appendChild(script);
-                }
+          const formData = new FormData();
 
-                function receiveWebViewData(info) {
-                    window["__webViewInfo__"] = info;
-                    if (window['receiveWebViewInfo'])
-                        receiveWebViewInfo(info);
-                }
+          formData.append('sid', '2397');
+          formData.append('receive_time', '1744166487868');
+          formData.append('user', '60000_1880102431191097344');
+          formData.append('param[area]', '1');
+          formData.append('param[user]', '60000_1880102431191097347344');
+          formData.append('param[time]', '1744166487868');
+          formData.append('param[type]', '3');
 
-                function callPay(param) {
-                    window.top.postMessage(param, "*");
-                }
-            </script>
-            <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-            <script>
-                // VConsole 会自动挂载到 `window.VConsole`
-                var vConsole = new window.VConsole(); -->
-            </script>
-            <script type="text/javascript">
-                document.write('<script src="index.js?timestamp=' + new Date().getTime() +
-                    '" type="text/javascript" charset="utf-8"><\/script>');
-                document.write('<script src="/public/7road/nodebug.js?timestamp=' + new Date().getTime() +
-                    '" type="text/javascript" charset="utf-8"><\/script>');
-            </script>
-        </div>
+          const xhr = new XMLHttpRequest();
+
+          xhr.open('POST', url, true);
+          xhr.setRequestHeader('accept', '*/*');
+          xhr.setRequestHeader('accept-language', 'pt-BR,pt;q=0.5');
+          xhr.setRequestHeader("Acesss-Control-Allow-Origin", "*");
+
+          xhr.send(formData);
+
+          //handle the response
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                console.log('Success:', xhr.responseText);
+              } else {
+                console.error('Error:', xhr.statusText);
+              }
+            }
+          };
+
+
+
+
+
+        }
+      </script>
+      <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+      <script>
+        var vConsole = new window.VConsole();
+      </script> -->
+      <script type="text/javascript">
+        document.write('<script src="index.js?timestamp=' + new Date().getTime() +
+          '" type="text/javascript" charset="utf-8"><\/script>');
+      </script>
+    </div>
 
 </body>
 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_AirGardenGameSuDuItem from "./FUI_AirGardenGameSuDuItem";

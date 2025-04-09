@@ -1,4 +1,3 @@
-// @ts-nocheck
 export class MultipleDictionaryInfo
 {
     private _data:Array<Map<string, string>>;

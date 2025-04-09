@@ -1,8 +1,7 @@
-// @ts-nocheck
 /**
 * @author:pzlricky
 * @data: 2021-07-19 21:00
-* @description *** 
+* @description ***
 */
 export default class WorldRewardVO {
 
