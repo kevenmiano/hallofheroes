@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { MapBaseAction } from "../../battle/actions/MapBaseAction";
 import { CampaignManager } from "../../manager/CampaignManager";
 import { CampaignArmy } from "../../map/campaign/data/CampaignArmy";

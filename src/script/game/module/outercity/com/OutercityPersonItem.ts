@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OutercityPersonItem from "../../../../../fui/OuterCity/FUI_OutercityPersonItem";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
 import { JobType } from "../../../constant/JobType";

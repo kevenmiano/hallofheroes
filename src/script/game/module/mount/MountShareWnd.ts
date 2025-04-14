@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ResMgr from "../../../core/res/ResMgr";
 import SDKManager from "../../../core/sdk/SDKManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

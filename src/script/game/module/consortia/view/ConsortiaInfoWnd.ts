@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-07-20 20:31:46

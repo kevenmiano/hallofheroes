@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_InlayCom from "../../../../../fui/SBag/FUI_InlayCom";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";

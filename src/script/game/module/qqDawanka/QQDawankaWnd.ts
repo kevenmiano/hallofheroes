@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_titleBtn from "../../../../fui/QQDawanka/FUI_titleBtn";
 import AudioManager from "../../../core/audio/AudioManager";
 import LangManager from "../../../core/lang/LangManager";

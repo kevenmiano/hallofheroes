@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RewardMsgItem from "../../../../../fui/Funny/FUI_RewardMsgItem";
 import { ITipedDisplay } from "../../../tips/ITipedDisplay";
 import { EmWindow } from "../../../constant/UIDefine";

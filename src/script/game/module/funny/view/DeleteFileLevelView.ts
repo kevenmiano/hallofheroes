@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DeleteFileLevelView from "../../../../../fui/Funny/FUI_DeleteFileLevelView";
 import FunnyManager from "../../../manager/FunnyManager";
 import FunnyData from "../model/FunnyData";

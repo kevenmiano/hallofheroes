@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DragIconCom from "../../../../../fui/Skill/FUI_DragIconCom";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { DragObject, DragType } from "../../../component/DragObject";

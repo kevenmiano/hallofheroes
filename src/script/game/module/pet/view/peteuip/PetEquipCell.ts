@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetEquipCell from "../../../../../../fui/Base/FUI_PetEquipCell";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { ItemSelectState } from "../../../../constant/Const";

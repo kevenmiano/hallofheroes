@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_BottleIntergalBoxView from "../../../../../fui/Funny/FUI_BottleIntergalBoxView";
 import { BottleManager } from "../../../manager/BottleManager";
 import { ITipedDisplay, TipsShowType } from "../../../tips/ITipedDisplay";

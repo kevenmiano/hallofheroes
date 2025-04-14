@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { EmWindow } from "../../../constant/UIDefine";
 import { RoleCtrl } from "../../bag/control/RoleCtrl";

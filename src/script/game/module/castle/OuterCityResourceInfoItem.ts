@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OuterCityResourceInfoItem from "../../../../fui/Castle/FUI_OuterCityResourceInfoItem";
 import SimpleAlertHelper from "../../component/SimpleAlertHelper";
 import { PlayerManager } from "../../manager/PlayerManager";

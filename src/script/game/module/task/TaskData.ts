@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { TaskType } from "../../constant/TaskType";
 import OfferRewardManager from "../../manager/OfferRewardManager";
 import RingTaskManager from "../../manager/RingTaskManager";

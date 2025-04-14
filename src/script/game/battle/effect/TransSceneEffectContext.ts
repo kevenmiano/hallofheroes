@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { ITransSceneEffect } from "./ITransSceneEffect";
 import ObjectUtils from "../../../core/utils/ObjectUtils";
 import {

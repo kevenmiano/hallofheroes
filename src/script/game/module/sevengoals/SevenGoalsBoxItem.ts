@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SevenGoalsBoxItem from "../../../../fui/SevenTarget/FUI_SevenGoalsBoxItem";
 import AudioManager from "../../../core/audio/AudioManager";
 import StringHelper from "../../../core/utils/StringHelper";

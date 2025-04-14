@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import { PackageIn } from "../../../core/net/PackageIn";
 import { ServerDataManager } from "../../../core/net/ServerDataManager";

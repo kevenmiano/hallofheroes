@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MazeRankItem from "../../../../../fui/Maze/FUI_MazeRankItem";
 import MazeOrderInfo from "../MazeOrderInfo";
 export default class MazeRankItem extends FUI_MazeRankItem {

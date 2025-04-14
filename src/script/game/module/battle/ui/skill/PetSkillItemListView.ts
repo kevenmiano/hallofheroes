@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetSkillItemListView from "../../../../../../fui/Battle/FUI_PetSkillItemListView";
 import { BattleManager } from "../../../../battle/BattleManager";
 import { BattleModel } from "../../../../battle/BattleModel";

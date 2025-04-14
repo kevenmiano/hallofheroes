@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ChatAirBubbleItemCell from "../../../../fui/ChatAirBubble/FUI_ChatAirBubbleItemCell";
 import LangManager from "../../../core/lang/LangManager";
 import { t_s_chatbubbleData } from "../../config/t_s_chatbubble";

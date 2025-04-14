@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_NpcItem from "../../../../fui/Home/FUI_NpcItem";
 import FUI_TransferItem from "../../../../fui/Home/FUI_TransferItem";
 import Dictionary from "../../../core/utils/Dictionary";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";
 import Dictionary from "../../../../core/utils/Dictionary";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetPotencyItem from "../../../../../fui/Pet/FUI_PetPotencyItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

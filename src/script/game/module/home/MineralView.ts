@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import UIButton from "../../../core/ui/UIButton";
 import { CampaignEvent } from "../../constant/event/NotificationEvent";
 import { PlayerEvent } from "../../constant/event/PlayerEvent";

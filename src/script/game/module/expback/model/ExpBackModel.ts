@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FrameDataBase from "../../../mvc/FrameDataBase";
 
 export default class ExpBackModel extends FrameDataBase {

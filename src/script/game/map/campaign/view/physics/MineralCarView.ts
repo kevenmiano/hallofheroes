@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import StringHelper from "../../../../../core/utils/StringHelper";
 import { PlayerInfo } from "../../../../datas/playerinfo/PlayerInfo";
 import { CampaignManager } from "../../../../manager/CampaignManager";

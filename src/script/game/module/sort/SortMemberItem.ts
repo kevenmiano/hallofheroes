@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SortRankItemCell from "../../../../fui/Sort/FUI_SortRankItemCell";
 import LangManager from "../../../core/lang/LangManager";
 import { JobType } from "../../constant/JobType";

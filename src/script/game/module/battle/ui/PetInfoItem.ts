@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetInfoItem from "../../../../../fui/Battle/FUI_PetInfoItem";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../core/utils/IconFactory";

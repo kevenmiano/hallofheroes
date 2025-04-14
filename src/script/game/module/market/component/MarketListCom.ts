@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MarketListCom from "../../../../../fui/Market/FUI_MarketListCom";
 import LangManager from "../../../../core/lang/LangManager";
 import MarketListItem from "./MarketListItem";

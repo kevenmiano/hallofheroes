@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { ThaneInfo } from "../../datas/playerinfo/ThaneInfo";
 import WarlordsModel from "./WarlordsModel";
 

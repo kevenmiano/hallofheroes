@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_FarmShopItem from "../../../../../../fui/Farm/FUI_FarmShopItem";
 import { t_s_itemtemplateData } from "../../../../config/t_s_itemtemplate";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";

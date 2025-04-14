@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { t_s_outcityshopData } from "../../../config/t_s_outcityshop";
 import { TempleteManager } from "../../../manager/TempleteManager";
 

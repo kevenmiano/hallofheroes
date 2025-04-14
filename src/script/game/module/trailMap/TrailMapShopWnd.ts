@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -16,6 +15,7 @@ import { S2CProtocol } from "../../constant/protocol/S2CProtocol";
 import { CampaignManager } from "../../manager/CampaignManager";
 import TrailMapShopCellItem from "./TrailMapShopCellItem";
 
+//@ts-expect-error: External dependencies
 import TrialInfoMsg = com.road.yishi.proto.battle.TrialInfoMsg;
 
 export default class TrialMapShopWnd extends BaseWindow {

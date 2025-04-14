@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import { SimpleDictionary } from "../../../core/utils/SimpleDictionary";
 import { ConfigManager } from "../../manager/ConfigManager";

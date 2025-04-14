@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export enum PetCampaignEvent {
   //ui副本列表选择
   PET_CAMPAIGN_TREE_SELECT = "PET_CAMPAIGN_TREE_SELECT",

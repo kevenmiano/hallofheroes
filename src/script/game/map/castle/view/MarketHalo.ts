@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import MarketManager from "../../../manager/MarketManager";
 import ComponentSetting from "../../../utils/ComponentSetting";
 

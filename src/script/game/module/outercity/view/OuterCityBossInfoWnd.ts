@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import Utils from "../../../../core/utils/Utils";
 import { OuterCityEvent } from "../../../constant/event/NotificationEvent";

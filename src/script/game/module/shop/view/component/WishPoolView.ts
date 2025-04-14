@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WishPoolView from "../../../../../../fui/Shop/FUI_WishPoolView";
 import ConfigMgr from "../../../../../core/config/ConfigMgr";
 import LangManager from "../../../../../core/lang/LangManager";

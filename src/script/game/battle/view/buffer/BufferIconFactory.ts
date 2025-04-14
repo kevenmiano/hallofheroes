@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { BattleEffect } from "../../skillsys/effect/BattleEffect";
 import { SkillEffect } from "../../skillsys/effect/SkillEffect";
 

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SJewelCom from "../../../../fui/SBag/FUI_SJewelCom";
 import LangManager from "../../../core/lang/LangManager";
 import { SocketManager } from "../../../core/net/SocketManager";

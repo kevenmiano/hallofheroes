@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LuckyExchangeRareItem from "../../../../../fui/Funny/FUI_LuckyExchangeRareItem";
 import { BaseItem } from "../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";

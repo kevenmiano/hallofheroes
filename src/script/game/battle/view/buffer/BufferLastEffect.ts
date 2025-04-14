@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { TempleteManager } from "../../../manager/TempleteManager";
 import { BattleManager } from "../../BattleManager";
 import { BufferDamageData } from "../../data/BufferDamageData";

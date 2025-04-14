@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export default class OutyardGuildInfo {
   public guildUid: string = "";
   public guildName: string = "";

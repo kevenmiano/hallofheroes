@@ -1,6 +1,7 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneGemItem from "../../../../../fui/Skill/FUI_RuneGemItem";
 import FUI_RuneHoleHelpItem from "../../../../../fui/Skill/FUI_RuneHoleHelpItem";
+
+//@ts-expect-error: External dependencies
 import FUI_RuneHole_s from "../../../../../fui/Skill/FUI_RuneHole_s";
 import LangManager from "../../../../core/lang/LangManager";
 import { BaseItem } from "../../../component/item/BaseItem";

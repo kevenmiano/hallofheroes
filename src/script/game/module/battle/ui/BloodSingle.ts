@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_BloodSingle from "../../../../../fui/Battle/FUI_BloodSingle";
 import { HeroRoleInfo } from "../../../battle/data/objects/HeroRoleInfo";
 import { PawnRoleInfo } from "../../../battle/data/objects/PawnRoleInfo";

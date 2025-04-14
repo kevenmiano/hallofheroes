@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PayItem from "../../../../../../fui/Shop/FUI_PayItem";
 import { t_s_rechargeData } from "../../../../config/t_s_recharge";
 import LangManager from "../../../../../core/lang/LangManager";

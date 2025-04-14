@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HomePrivate from "../../../../fui/Home/FUI_HomePrivate";
 import { IconFactory } from "../../../core/utils/IconFactory";
 import { IconType } from "../../constant/IconType";

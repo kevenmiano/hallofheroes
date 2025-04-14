@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import SimpleBuildingFilter from "../../../castle/filter/SimpleBuildingFilter";
 import NodeResourceType from "../../constant/NodeResourceType";
 import SpaceNodeType from "../../constant/SpaceNodeType";

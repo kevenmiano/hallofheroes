@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Dictionary from "../../../core/utils/Dictionary";
 import { Disposeable } from "../../component/DisplayObject";
 import { OuterCityEvent } from "../../constant/event/NotificationEvent";

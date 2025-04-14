@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import LoadingSceneWnd from "../../../module/loading/LoadingSceneWnd";
 import { BattleManager } from "../../BattleManager";

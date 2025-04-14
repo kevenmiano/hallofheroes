@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { t_s_configData } from "../../../../config/t_s_config";
 import { TattooHole } from "./TattooHole";
 import { TattooHoleInfoII } from "./TattooHoleInfoII";

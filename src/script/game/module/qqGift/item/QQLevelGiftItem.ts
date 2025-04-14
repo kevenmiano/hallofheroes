@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_QQLevelGiftItem from "../../../../../fui/QQGift/FUI_QQLevelGiftItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 七日目标特惠礼包数据
  */

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetEquipSuccinctItem from "../../../../../../fui/Pet/FUI_PetEquipSuccinctItem";
 import FUI_StrenAtrriItem1 from "../../../../../../fui/Pet/FUI_StrenAtrriItem1";
 import ConfigMgr from "../../../../../core/config/ConfigMgr";

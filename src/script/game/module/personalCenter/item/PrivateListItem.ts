@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PrivateListItem from "../../../../../fui/PersonalCenter/FUI_PrivateListItem";
 import SettingData from "../../setting/SettingData";
 import LangManager from "../../../../core/lang/LangManager";

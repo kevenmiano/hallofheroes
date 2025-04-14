@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { DisplayObject } from "../../../../component/DisplayObject";
 
 export class MapBaseLayer extends Laya.Sprite {

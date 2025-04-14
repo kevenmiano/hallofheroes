@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -23,6 +22,7 @@ import { PlayerManager } from "../../manager/PlayerManager";
 import RechargeAlertMannager from "../../manager/RechargeAlertMannager";
 import FUIHelper from "../../utils/FUIHelper";
 
+//@ts-expect-error: External dependencies
 import TrialInfoMsg = com.road.yishi.proto.battle.TrialInfoMsg;
 
 export default class TrailMapShopCellItem extends fgui.GComponent {

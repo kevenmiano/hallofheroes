@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LookReplyCom from "../../../../../fui/PersonalCenter/FUI_LookReplyCom";
 import CustomerServiceManager from "../../../manager/CustomerServiceManager";
 

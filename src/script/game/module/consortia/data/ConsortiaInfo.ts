@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import { ConsortiaEvent } from "../../../constant/event/NotificationEvent";
 import { ConsortiaOrderInfo } from "./ConsortiaOrderInfo";

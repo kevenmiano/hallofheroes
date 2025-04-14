@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Utils from "../../../../../core/utils/Utils";
 import FUIHelper from "../../../../utils/FUIHelper";
 

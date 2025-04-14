@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { PointUtils } from "../../../../core/utils/PointUtils";
 import { DisplayObject } from "../../../component/DisplayObject";
 import { t_s_mapData } from "../../../config/t_s_map";

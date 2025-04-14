@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SAppellCellItem from "../../../../../fui/SBag/FUI_SAppellCellItem";
 import { t_s_appellData } from "../../../config/t_s_appell";
 import AppellManager from "../../../manager/AppellManager";

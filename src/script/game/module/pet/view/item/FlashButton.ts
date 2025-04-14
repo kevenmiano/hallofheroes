@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_TabButton3 from "../../../../../../fui/Base/FUI_TabButton3";
 import { UIFilter } from "../../../../../core/ui/UIFilter";
 

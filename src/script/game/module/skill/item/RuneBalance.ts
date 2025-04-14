@@ -1,4 +1,4 @@
-//@ts-expect-error: External dependencies
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 import FUI_RuneBalance from "../../../../../fui/Skill/FUI_RuneBalance";
 import { FormularySets } from "../../../../core/utils/FormularySets";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

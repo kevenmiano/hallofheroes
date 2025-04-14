@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import t_s_baseConfigData from "../../../config/t_s_baseConfigData";
 
 /**

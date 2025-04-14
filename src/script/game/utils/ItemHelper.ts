@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ItemInfoMsg = com.road.yishi.proto.item.ItemInfoMsg;
 //@ts-expect-error: External dependencies
 import SimpleItemInfoMsg = com.road.yishi.proto.simple.SimpleItemInfoMsg;

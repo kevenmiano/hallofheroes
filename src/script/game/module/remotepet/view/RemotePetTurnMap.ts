@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetTurnMap from "../../../../../fui/RemotePet/FUI_RemotePetTurnMap";
 import FUIHelper from "../../../utils/FUIHelper";
 

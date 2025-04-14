@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import Resolution from "../../../../core/comps/Resolution";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

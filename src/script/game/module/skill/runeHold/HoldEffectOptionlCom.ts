@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HoldEffectOptionlCom from "../../../../../fui/Skill/FUI_HoldEffectOptionlCom";
 import BaseTipItem from "../../../component/item/BaseTipItem";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

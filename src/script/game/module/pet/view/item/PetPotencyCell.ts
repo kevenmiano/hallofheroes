@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetPotencyCell from "../../../../../../fui/Pet/FUI_PetPotencyCell";
 import { UIFilter } from "../../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../../core/utils/IconFactory";

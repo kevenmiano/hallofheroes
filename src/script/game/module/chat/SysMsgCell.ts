@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SystemMsgCell from "../../../../fui/Chat/FUI_SystemMsgCell";
 import ChatData from "./data/ChatData";
 import { ChatChannel } from "../../datas/ChatChannel";

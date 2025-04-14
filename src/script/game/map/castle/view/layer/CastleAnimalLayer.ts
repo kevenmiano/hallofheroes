@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ResMgr from "../../../../../core/res/ResMgr";
 import { Sequence } from "../../../../../core/task/Sequence";
 import {

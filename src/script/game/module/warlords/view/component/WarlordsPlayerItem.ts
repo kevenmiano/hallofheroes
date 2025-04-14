@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WarlordsPlayerItem from "../../../../../../fui/Warlords/FUI_WarlordsPlayerItem";
 import { ShowAvatar } from "../../../../avatar/view/ShowAvatar";
 import { ThaneInfo } from "../../../../datas/playerinfo/ThaneInfo";

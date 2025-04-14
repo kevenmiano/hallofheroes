@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { RemotePetEvent } from "../../../../../core/event/RemotePetEvent";
 import { PackageIn } from "../../../../../core/net/PackageIn";
 import { ServerDataManager } from "../../../../../core/net/ServerDataManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WarlordsPrelimReportItem from "../../../../../../fui/Warlords/FUI_WarlordsPrelimReportItem";
 import { JobType } from "../../../../constant/JobType";
 import WarlordsPlayerInfo from "../../WarlordsPlayerInfo";

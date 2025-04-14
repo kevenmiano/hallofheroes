@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import SwitchInfoMsg = com.road.yishi.proto.switches.SwitchInfoMsg;
 
 export class SwitchInfo {

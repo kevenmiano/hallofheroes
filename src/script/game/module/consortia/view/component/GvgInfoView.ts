@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_GvgInfoView from "../../../../../../fui/Consortia/FUI_GvgInfoView";
 import LangManager from "../../../../../core/lang/LangManager";
 import { t_s_campaignbufferData } from "../../../../config/t_s_campaignbuffer";

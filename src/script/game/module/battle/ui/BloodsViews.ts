@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_BloodsViews from "../../../../../fui/Battle/FUI_BloodsViews";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";

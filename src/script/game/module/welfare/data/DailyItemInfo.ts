@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 日常活动节点数据
  * */

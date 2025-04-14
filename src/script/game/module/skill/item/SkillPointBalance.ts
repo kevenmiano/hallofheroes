@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SkillBalance from "../../../../../fui/Skill/FUI_SkillBalance";
 import LangManager from "../../../../core/lang/LangManager";
 import { FormularySets } from "../../../../core/utils/FormularySets";

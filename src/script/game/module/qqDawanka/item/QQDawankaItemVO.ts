@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import { t_s_qqgradeprivilegeData } from "../../../config/t_s_qqgradeprivilege";
 import QQDawankaManager from "../../../manager/QQDawankaManager";

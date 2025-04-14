@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ByteArray from "../../../../core/net/ByteArray";
 import BitArray from "../../../../core/utils/BitArray";
 /**

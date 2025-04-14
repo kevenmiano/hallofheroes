@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RingTaskRewardItem from "../../../../fui/Dialog/FUI_RingTaskRewardItem";
 import RingTaskRewardInfo from "./data/RingTaskRewardInfo";
 

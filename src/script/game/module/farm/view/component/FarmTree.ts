@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_FarmTree from "../../../../../../fui/Farm/FUI_FarmTree";
 import Logger from "../../../../../core/logger/Logger";
 import { PackageIn } from "../../../../../core/net/PackageIn";

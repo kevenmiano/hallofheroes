@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ConsortiaPrizeAllotItem from "../../../../../../fui/Consortia/FUI_ConsortiaPrizeAllotItem";
 import { NumericStepper } from "../../../../component/NumericStepper";
 import { EmWindow } from "../../../../constant/UIDefine";

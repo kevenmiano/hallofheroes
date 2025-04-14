@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HoldValueOptionCom from "../../../../../fui/Skill/FUI_HoldValueOptionCom";
 import LangManager from "../../../../core/lang/LangManager";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

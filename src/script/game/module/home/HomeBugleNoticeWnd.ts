@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HomeBugleNoticeWnd from "../../../../fui/Home/FUI_HomeBugleNoticeWnd";
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetHeadSelectItemView from "../../../../../fui/RemotePet/FUI_RemotePetHeadSelectItemView";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { CommonConstant } from "../../../constant/CommonConstant";

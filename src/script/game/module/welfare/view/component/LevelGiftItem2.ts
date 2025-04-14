@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LevelGiftItem2 from "../../../../../../fui/Welfare/FUI_LevelGiftItem2";
 import { PlayerInfo } from "../../../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../../../manager/PlayerManager";

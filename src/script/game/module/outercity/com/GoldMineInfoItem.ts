@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_GoldMineInfoItem from "../../../../../fui/OuterCity/FUI_GoldMineInfoItem";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

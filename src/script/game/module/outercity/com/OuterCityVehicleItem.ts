@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OuterCityVehicleItem from "../../../../../fui/OuterCity/FUI_OuterCityVehicleItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

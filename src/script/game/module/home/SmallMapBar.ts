@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseFguiCom from "../../../core/ui/Base/BaseFguiCom";
 import UIButton from "../../../core/ui/UIButton";
 import { SceneManager } from "../../map/scene/SceneManager";

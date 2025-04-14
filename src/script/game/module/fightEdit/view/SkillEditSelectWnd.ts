@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_CommonFrame3 from "../../../../../fui/Base/FUI_CommonFrame3";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";

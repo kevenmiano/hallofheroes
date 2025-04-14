@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { ArmyPawn } from "../../datas/ArmyPawn";

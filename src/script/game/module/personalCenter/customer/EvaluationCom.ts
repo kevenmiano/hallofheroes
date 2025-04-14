@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 
 import FUI_EvaluationCom from "../../../../../fui/PersonalCenter/FUI_EvaluationCom";

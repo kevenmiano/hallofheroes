@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
 import UIButton from "../../../../core/ui/UIButton";

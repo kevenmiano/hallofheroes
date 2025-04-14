@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import UIButton from "../../../../core/ui/UIButton";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import { QuestionEvent } from "../../../constant/event/NotificationEvent";

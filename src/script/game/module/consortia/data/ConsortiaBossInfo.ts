@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { t_s_consortiabossData } from "../../../config/t_s_consortiaboss";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import ConsortiaBossUserInfo from "./ConsortiaBossUserInfo";

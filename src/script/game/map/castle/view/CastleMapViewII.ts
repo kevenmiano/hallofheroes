@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Resolution from "../../../../core/comps/Resolution";
 import MouseMgr from "../../../../core/Input/MouseMgr";
 import Logger from "../../../../core/logger/Logger";

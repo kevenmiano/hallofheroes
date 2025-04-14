@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import SinglePassCardInfo from "./model/SinglePassCardInfo";
 import SinglePassCardItem from "./item/SinglePassCardItem";

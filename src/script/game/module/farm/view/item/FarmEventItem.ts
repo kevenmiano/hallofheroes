@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_FarmEventItem from "../../../../../../fui/Farm/FUI_FarmEventItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../../core/utils/DateFormatter";

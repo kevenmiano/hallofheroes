@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LanguageSetting from "../../../../../fui/Login/FUI_LanguageSetting";
 import LangManager from "../../../../core/lang/LangManager";
 import {

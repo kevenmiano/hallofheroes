@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_GameSetCom from "../../../../../fui/PersonalCenter/FUI_GameSetCom";
 import {
   BattleEvent,

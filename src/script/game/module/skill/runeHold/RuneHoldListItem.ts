@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneHoldListItem from "../../../../../fui/Skill/FUI_RuneHoldListItem";
 import { RuneHoleInfo } from "../../../datas/RuneHoleInfo";
 import { RuneHoldEffectLock } from "./RuneHoldEffectLock";

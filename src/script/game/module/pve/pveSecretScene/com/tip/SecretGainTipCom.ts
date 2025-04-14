@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SecretGainTipCom from "../../../../../../../fui/PveSecretScene/FUI_SecretGainTipCom";
 import LangManager from "../../../../../../core/lang/LangManager";
 import { SecretType } from "../../../../../datas/secret/SecretConst";

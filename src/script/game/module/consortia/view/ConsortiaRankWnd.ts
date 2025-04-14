@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { GvgEvent } from "../../../constant/event/NotificationEvent";
 import { GvgReadyController } from "../control/GvgReadyController";

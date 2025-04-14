@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Resolution from "../../../core/comps/Resolution";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import UIManager from "../../../core/ui/UIManager";

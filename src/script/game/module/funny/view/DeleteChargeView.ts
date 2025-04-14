@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DeleteChargeView from "../../../../../fui/Funny/FUI_DeleteChargeView";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

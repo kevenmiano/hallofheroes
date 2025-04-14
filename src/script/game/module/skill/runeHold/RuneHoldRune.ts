@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneHoldRune from "../../../../../fui/Skill/FUI_RuneHoldRune";
 import LangManager from "../../../../core/lang/LangManager";
 import { EmWindow } from "../../../constant/UIDefine";

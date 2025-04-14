@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MineralShopItem from "../../../../fui/Mineral/FUI_MineralShopItem";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";

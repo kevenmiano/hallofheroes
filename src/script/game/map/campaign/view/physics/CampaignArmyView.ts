@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import AudioManager from "../../../../../core/audio/AudioManager";
 import LangManager from "../../../../../core/lang/LangManager";
 import Logger from "../../../../../core/logger/Logger";

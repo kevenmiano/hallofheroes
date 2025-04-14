@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ChatMsgCell from "../../../../fui/Chat/FUI_ChatMsgCell";
 import FUI_VoiceMsgCell from "../../../../fui/Chat/FUI_VoiceMsgCell";
 import AudioManager from "../../../core/audio/AudioManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SinglePassBugleItem from "../../../../../fui/SinglePass/FUI_SinglePassBugleItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { BaseItem } from "../../../component/item/BaseItem";

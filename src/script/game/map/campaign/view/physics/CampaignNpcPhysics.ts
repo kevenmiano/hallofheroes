@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../../core/logger/Logger";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { NpcAttackHelper } from "../../../../utils/NpcAttackHelper";

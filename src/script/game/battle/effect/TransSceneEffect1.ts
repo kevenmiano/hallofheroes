@@ -1,9 +1,13 @@
-//@ts-expect-error: External dependencies
-import { ITransSceneEffect } from "./ITransSceneEffect";
+// import { ITransSceneEffect } from "./ITransSceneEffect";
 import { CellEffectUtils } from "./CellEffectUtils";
 import { Func } from "../../../core/comps/Func";
 import Logger from "../../../core/logger/Logger";
 import { DisplayObject } from "../../component/DisplayObject";
+
+interface ITransSceneEffect {
+  effectType(type: number): void;
+  start(complete: Func): void;
+}
 
 /**
  * 进入战斗时的切换效果1.

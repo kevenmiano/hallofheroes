@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RvrBattleResultItem from "../../../../fui/RvRBattle/FUI_RvrBattleResultItem";
 import {
   eFilterFrameText,

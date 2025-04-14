@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneBagCom from "../../../../../fui/Skill/FUI_RuneBagCom";
 import LangManager from "../../../../core/lang/LangManager";
 import Logger from "../../../../core/logger/Logger";

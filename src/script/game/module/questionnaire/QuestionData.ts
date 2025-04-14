@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 问卷调查数据
  */

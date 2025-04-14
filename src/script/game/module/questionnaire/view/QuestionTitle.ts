@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_QuestionTitle from "../../../../../fui/QuestionNaire/FUI_QuestionTitle";
 import QuestionData from "../QuestionData";
 

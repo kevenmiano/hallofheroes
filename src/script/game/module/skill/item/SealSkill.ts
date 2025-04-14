@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SealSkill from "../../../../../fui/Skill/FUI_SealSkill";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";

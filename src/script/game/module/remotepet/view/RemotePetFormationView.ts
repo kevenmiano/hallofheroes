@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetFormationView from "../../../../../fui/RemotePet/FUI_RemotePetFormationView";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";
 import { RemotePetManager } from "../../../manager/RemotePetManager";

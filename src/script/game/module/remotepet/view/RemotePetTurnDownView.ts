@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetTurnDownView from "../../../../../fui/RemotePet/FUI_RemotePetTurnDownView";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";
 import LangManager from "../../../../core/lang/LangManager";

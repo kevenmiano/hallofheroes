@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Dictionary from "../../../../core/utils/Dictionary";
 import { ConfigManager } from "../../../manager/ConfigManager";
 import DailyItemInfo from "./DailyItemInfo";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MountRefiningItem from "../../../../fui/Mount/FUI_MountRefiningItem";
 import { t_s_mounttemplateData } from "../../config/t_s_mounttemplate";
 import LangManager from "../../../core/lang/LangManager";

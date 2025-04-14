@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import LangManager from "../../../core/lang/LangManager";
 import { ArrayConstant, ArrayUtils } from "../../../core/utils/ArrayUtils";

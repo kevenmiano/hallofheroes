@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Dictionary from "../../../../core/utils/Dictionary";
 import { OuterCityEvent } from "../../../constant/event/NotificationEvent";
 import { MapUtils } from "../utils/MapUtils";

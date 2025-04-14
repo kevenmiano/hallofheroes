@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
 import CustomerServiceManager from "../../../manager/CustomerServiceManager";

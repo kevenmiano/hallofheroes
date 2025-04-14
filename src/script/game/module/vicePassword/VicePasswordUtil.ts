@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-11-25 14:27:26
@@ -11,7 +10,10 @@
 import { SocketManager } from "../../../core/net/SocketManager";
 import { C2SProtocol } from "../../constant/protocol/C2SProtocol";
 
+//@ts-expect-error: External dependencies
 import LockAndUnlockMsg = com.road.yishi.proto.player.LockAndUnlockMsg;
+
+//@ts-expect-error: External dependencies
 import VicePasswordMsg = com.road.yishi.proto.player.VicePasswordMsg;
 
 export class VicePasswordUtil {

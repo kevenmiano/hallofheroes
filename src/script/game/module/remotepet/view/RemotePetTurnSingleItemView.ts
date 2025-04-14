@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetTurnSingleItemView from "../../../../../fui/RemotePet/FUI_RemotePetTurnSingleItemView";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { BaseItem } from "../../../component/item/BaseItem";

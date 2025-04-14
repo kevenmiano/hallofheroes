@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LuckBlindBoxView from "../../../../../fui/Funny/FUI_LuckBlindBoxView";
 
 import UIManager from "../../../../core/ui/UIManager";

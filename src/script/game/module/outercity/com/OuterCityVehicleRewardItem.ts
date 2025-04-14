@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OuterCityVehicleRewardItem from "../../../../../fui/OuterCity/FUI_OuterCityVehicleRewardItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { CommonConstant } from "../../../constant/CommonConstant";

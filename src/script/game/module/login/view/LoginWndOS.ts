@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import ByteArray from "../../../../core/net/ByteArray";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";

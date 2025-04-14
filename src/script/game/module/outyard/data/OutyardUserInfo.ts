@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { StateType } from "../../../constant/StateType";
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
 

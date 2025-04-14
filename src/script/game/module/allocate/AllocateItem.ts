@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import UIManager from "../../../core/ui/UIManager";
 import { DragObject, DragType } from "../../component/DragObject";
 import { EmWindow } from "../../constant/UIDefine";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -19,6 +18,7 @@ import { ServerDataManager } from "../../../core/net/ServerDataManager";
 import { S2CProtocol } from "../../constant/protocol/S2CProtocol";
 import { PackageIn } from "../../../core/net/PackageIn";
 
+//@ts-expect-error: External dependencies
 import StarShopMsg = com.road.yishi.proto.star.StarShopMsg;
 import { ChatEvent } from "../../constant/event/NotificationEvent";
 import { ChatChannel } from "../../datas/ChatChannel";

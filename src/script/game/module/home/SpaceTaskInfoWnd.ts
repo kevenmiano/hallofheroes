@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_QueueItem from "../../../../fui/Home/FUI_QueueItem";
 import FUI_TaskRingItem from "../../../../fui/Home/FUI_TaskRingItem";
 import AudioManager from "../../../core/audio/AudioManager";

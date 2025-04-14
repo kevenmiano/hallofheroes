@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { MapPhysicsBase } from "./MapPhysicsBase";
 import { EmWindow } from "../../../../constant/UIDefine";
 

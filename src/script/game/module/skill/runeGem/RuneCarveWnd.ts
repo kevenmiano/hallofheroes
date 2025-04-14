@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PropTip from "../../../../../fui/Skill/FUI_PropTip";
 //@ts-expect-error: External dependencies
 

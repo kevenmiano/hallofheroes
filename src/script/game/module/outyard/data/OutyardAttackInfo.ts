@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export default class OutyardAttackInfo {
   public fromPos: number = 0;
   public toPos: number = 0;

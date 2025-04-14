@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 公会战一个公会3轮比赛信息
  *

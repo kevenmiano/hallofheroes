@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { SocketManager } from "../../../core/net/SocketManager";
 import { t_s_vipprerogativetemplateData } from "../../config/t_s_vipprerogativetemplate";
 import { C2SProtocol } from "../../constant/protocol/C2SProtocol";
@@ -6,6 +5,8 @@ import { TempleteManager } from "../../manager/TempleteManager";
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 import StringUtils from "../../utils/StringUtils";
 import PrivilegeItemData from "./PrivilegeItemData";
+
+//@ts-expect-error: External dependencies
 
 import OpenGiftReq = com.road.yishi.proto.vip.OpenGiftReq;
 

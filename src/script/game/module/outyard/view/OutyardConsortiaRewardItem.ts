@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OutyardConsortiaRewardItem from "../../../../../fui/OutYard/FUI_OutyardConsortiaRewardItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SinglePassCardItem from "../../../../../fui/SinglePass/FUI_SinglePassCardItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { t_s_campaigndataData } from "../../../config/t_s_campaigndata";

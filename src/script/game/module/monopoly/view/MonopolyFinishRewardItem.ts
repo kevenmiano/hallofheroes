@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MonopolyFinishRewardItem from "../../../../../fui/Monopoly/FUI_MonopolyFinishRewardItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import TempMsg = com.road.yishi.proto.campaign.TempMsg;

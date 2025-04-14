@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MarketMineCom from "../../../../../fui/Market/FUI_MarketMineCom";
 import LangManager from "../../../../core/lang/LangManager";
 import MarketMineItem from "./MarketMineItem";

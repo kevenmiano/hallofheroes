@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { BaseArmy } from "../../map/space/data/BaseArmy";
 import MagicCardFightInfo from "../card/MagicCardFightInfo";
 import { PetData } from "../pet/data/PetData";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OutyardChangeItem from "../../../../../fui/OutYard/FUI_OutyardChangeItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

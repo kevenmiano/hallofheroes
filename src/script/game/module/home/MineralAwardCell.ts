@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import { ShopGoodsInfo } from "../shop/model/ShopGoodsInfo";
 import FUI_MineralAwardCell from "../../../../fui/Home/FUI_MineralAwardCell";

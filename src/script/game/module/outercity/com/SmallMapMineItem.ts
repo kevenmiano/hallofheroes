@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SmallMapMineItem from "../../../../../fui/OuterCity/FUI_SmallMapMineItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

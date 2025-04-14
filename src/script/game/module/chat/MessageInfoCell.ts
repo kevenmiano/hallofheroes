@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MessageCellInfo from "../../../../fui/Base/FUI_MessageCellInfo";
 
 /**

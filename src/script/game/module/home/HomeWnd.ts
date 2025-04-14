@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Resolution from "../../../core/comps/Resolution";
 import LangManager from "../../../core/lang/LangManager";
 import LayerMgr from "../../../core/layer/LayerMgr";

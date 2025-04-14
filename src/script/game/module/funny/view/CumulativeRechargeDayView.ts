@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_CumulativeRechargeDayView from "../../../../../fui/Funny/FUI_CumulativeRechargeDayView";
 import LangManager from "../../../../core/lang/LangManager";
 import Logger from "../../../../core/logger/Logger";

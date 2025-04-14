@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DiscountItem from "../../../../../fui/Shop/FUI_DiscountItem";
 import FUI_DiscountTitleItem from "../../../../../fui/Shop/FUI_DiscountTitleItem";
 import LangManager from "../../../../core/lang/LangManager";

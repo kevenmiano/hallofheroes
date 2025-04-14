@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import { DragObject, DragType } from "../../../component/DragObject";
 import { RuneEvent } from "../../../constant/event/NotificationEvent";

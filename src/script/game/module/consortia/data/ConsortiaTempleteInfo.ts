@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { ConsortiaEvent } from "../../../constant/event/NotificationEvent";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import { ConsortiaUpgradeType } from "../../../constant/ConsortiaUpgradeType";

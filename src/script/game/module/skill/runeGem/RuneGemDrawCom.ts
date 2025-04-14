@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneDrawCom from "../../../../../fui/Skill/FUI_RuneDrawCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { PackageIn } from "../../../../core/net/PackageIn";
@@ -24,6 +23,7 @@ import UIManager from "../../../../core/ui/UIManager";
 import BaseTipItem from "../../../component/item/BaseTipItem";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";
 
+//@ts-expect-error: External dependencies
 import LotteryRuneRspMsg = com.road.yishi.proto.army.LotteryRuneRspMsg;
 /**
  * 符文石抽取面板

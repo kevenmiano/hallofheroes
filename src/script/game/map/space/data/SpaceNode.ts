@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { SpaceModel } from "../SpaceModel";
 import NodeMapPhysics from "./NodeMapPhysics";
 

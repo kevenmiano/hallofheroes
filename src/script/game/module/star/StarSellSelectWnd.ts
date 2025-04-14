@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { StarEvent } from "../../constant/StarDefine";
 import { NotificationManager } from "../../manager/NotificationManager";

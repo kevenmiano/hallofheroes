@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetPKSkillItemListView from "../../../../../../fui/Battle/FUI_PetPKSkillItemListView";
 import Logger from "../../../../../core/logger/Logger";
 import Dictionary from "../../../../../core/utils/Dictionary";

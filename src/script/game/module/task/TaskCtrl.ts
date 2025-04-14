@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import OfferRewardManager from "../../manager/OfferRewardManager";
 import { TaskManage } from "../../manager/TaskManage";
 import { TaskSocketManager } from "../../manager/TaskSocketManager";

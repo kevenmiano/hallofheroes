@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export default class OutyardReportInfo {
   public sourceGuildName: string = ""; //进攻方公会名
   public sourceUserNickName: string = ""; //进攻方玩家名

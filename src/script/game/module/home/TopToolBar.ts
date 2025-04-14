@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../core/lang/LangManager";
 import Logger from "../../../core/logger/Logger";
 import { PackageIn } from "../../../core/net/PackageIn";

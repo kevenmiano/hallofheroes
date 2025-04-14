@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../core/utils/IconFactory";

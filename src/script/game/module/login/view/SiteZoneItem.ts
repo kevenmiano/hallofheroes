@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SiteZoneItem from "../../../../../fui/Login/FUI_SiteZoneItem";
 import { getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";
 import SiteZoneData from "../model/SiteZoneData";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import { ServiceReplyInfo } from "../../../../core/utils/ServiceReplyInfo";
 import { CustomerServiceEvent } from "../../../constant/event/NotificationEvent";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import { WarlordsEvent } from "../../../../constant/event/NotificationEvent";
 import { JobType } from "../../../../constant/JobType";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_BuyHpItem from "../../../../fui/Home/FUI_BuyHpItem";
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";

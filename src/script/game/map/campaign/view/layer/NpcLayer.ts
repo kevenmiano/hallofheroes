@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../../core/logger/Logger";
 import { DisplayObject } from "../../../../component/DisplayObject";
 import {

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HoldOptionlCom from "../../../../../fui/Skill/FUI_HoldOptionlCom";
 import FUI_HolePropertyItem from "../../../../../fui/Skill/FUI_HolePropertyItem";
 import LangManager from "../../../../core/lang/LangManager";

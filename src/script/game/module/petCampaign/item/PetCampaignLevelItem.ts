@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetCampaignLevelItem from "../../../../../fui/PetCampaign/FUI_PetCampaignLevelItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { t_s_mounttemplateData } from "../../../config/t_s_mounttemplate";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import { TempleteManager } from "../../../manager/TempleteManager";

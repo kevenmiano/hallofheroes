@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  *  公会战贡献信息
  *

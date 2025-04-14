@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ConditionContentItem from "../../../../fui/Task/FUI_ConditionContentItem";
 
 export default class ConditionContentItem extends FUI_ConditionContentItem {

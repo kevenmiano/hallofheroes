@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import { ArmyEvent } from "../../../constant/event/NotificationEvent";

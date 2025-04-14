@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ShortCutItem from "../../../../../fui/Battle/FUI_ShortCutItem";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";

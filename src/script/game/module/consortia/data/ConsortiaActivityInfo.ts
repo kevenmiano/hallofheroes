@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * @author yuanzhan.yu
  */

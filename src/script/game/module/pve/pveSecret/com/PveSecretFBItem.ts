@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PveSecretFBItem from "../../../../../../fui/PveSecret/FUI_PveSecretFBItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { t_s_secretData } from "../../../../config/t_s_secret";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SFashionComposeView from "../../../../../fui/SBag/FUI_SFashionComposeView";
 import LangManager from "../../../../core/lang/LangManager";
 import { PackageIn } from "../../../../core/net/PackageIn";

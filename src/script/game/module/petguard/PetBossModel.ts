@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ConfigInfosTempInfo from "../../datas/ConfigInfosTempInfo";
 import { PlayerModel } from "../../datas/playerinfo/PlayerModel";
 import { PlayerManager } from "../../manager/PlayerManager";

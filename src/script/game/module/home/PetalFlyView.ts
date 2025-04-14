@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LayerMgr from "../../../core/layer/LayerMgr";
 import { EmLayer } from "../../../core/ui/ViewInterface";
 import FlyPetal from "./FlyPetal";

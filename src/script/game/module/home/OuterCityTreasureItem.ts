@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_OuterCityTreasureItem from "../../../../fui/Home/FUI_OuterCityTreasureItem";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import LangManager from "../../../core/lang/LangManager";

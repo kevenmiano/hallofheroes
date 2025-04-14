@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import FUI_Dialog2 from "../../../../../fui/Base/FUI_Dialog2";
 import UIButton from "../../../../core/ui/UIButton";

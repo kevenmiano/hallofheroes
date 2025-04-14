@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 精彩活动
  */

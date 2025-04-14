@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ConsortiaTreasureItem from "../../../../../../fui/Consortia/FUI_ConsortiaTreasureItem";
 import ConfigMgr from "../../../../../core/config/ConfigMgr";
 import LangManager from "../../../../../core/lang/LangManager";

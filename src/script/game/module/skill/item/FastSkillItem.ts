@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import { DragObject, DragType } from "../../../component/DragObject";
@@ -269,6 +268,8 @@ export default class FastSkillItem
       alpha: 0.2,
       repeat: -1,
       yoyo: true,
+
+      //@ts-expect-error: External dependencies
       ease: Sine.easeInOut,
     });
   }

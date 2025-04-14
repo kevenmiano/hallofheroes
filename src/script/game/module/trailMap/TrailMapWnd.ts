@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -8,6 +7,7 @@
  * @Description: 试炼之塔
  */
 
+import WXAdapt from "@/script/core/sdk/wx/adapt/WXAdapt";
 import Resolution from "../../../core/comps/Resolution";
 import LangManager from "../../../core/lang/LangManager";
 import Logger from "../../../core/logger/Logger";
@@ -15,13 +15,18 @@ import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import UIManager from "../../../core/ui/UIManager";
 import Utils from "../../../core/utils/Utils";
 import { UIAlignType } from "../../constant/UIAlignType";
+// import WXAdapt from "../../../core/adapt/WXAdapt"; // Import WXAdapt
 import { EmWindow } from "../../constant/UIDefine";
+import UIButton from "@/script/core/ui/UIButton";
 
 export default class TrailMapWnd extends BaseWindow {
   protected resizeContent: boolean = true;
   // private btnInOut: fgui.GButton;//弹出按钮
   private trailMapPanel: fgui.GComponent; //试炼之塔Panel窗口
-  private rTxtContent: fgui.GRichTextField;
+  // private isMoving: boolean = false;
+  private btnSetting: fgui.GButton | null = null; // Define btnSetting property
+  private btnShop: fgui.GButton | null = null; // Define btnShop property
+  private rTxtContent: fgui.GRichTextField | null = null; // Define rTxtContent property
   // private isMoving: boolean = false;
 
   public OnInitWind() {
@@ -39,11 +44,17 @@ export default class TrailMapWnd extends BaseWindow {
 
     this.rTxtContent.text =
       LangManager.Instance.GetTranslation("TrailMapWnd.Tip");
-    Resolution.addWidget(this, UIAlignType.RIGHT);
+    if (this.btnShop) {
+      WXAdapt.Instance.wxMenuAdapt(this.btnShop as unknown as UIButton); // Ensure valid statement
+    }
     if (Utils.isWxMiniGame()) {
-      this.btnShop && WXAdapt.Instance.wxMenuAdapt(this.btnShop);
+      if (this.btnShop) {
+        WXAdapt.Instance.wxMenuAdapt(this.btnShop as unknown as UIButton);
+      }
 
-      this.btnSetting && WXAdapt.Instance.wxMenuAdapt(this.btnSetting);
+      if (this.btnSetting) {
+        WXAdapt.Instance.wxMenuAdapt(this.btnSetting as unknown as UIButton);
+      }
     }
   }
 

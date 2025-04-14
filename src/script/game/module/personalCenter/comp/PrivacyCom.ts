@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PrivacyCom from "../../../../../fui/PersonalCenter/FUI_PrivacyCom";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import SettingData from "../../setting/SettingData";

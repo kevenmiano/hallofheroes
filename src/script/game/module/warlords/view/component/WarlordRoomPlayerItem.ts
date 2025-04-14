@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WarlordRoomPlayerItem from "../../../../../../fui/Warlords/FUI_WarlordRoomPlayerItem";
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import { ShowAvatar } from "../../../../avatar/view/ShowAvatar";

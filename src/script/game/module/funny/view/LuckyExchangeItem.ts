@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LuckyExchangeItem from "../../../../../fui/Funny/FUI_LuckyExchangeItem";
 import LangManager from "../../../../core/lang/LangManager";
 import Utils from "../../../../core/utils/Utils";

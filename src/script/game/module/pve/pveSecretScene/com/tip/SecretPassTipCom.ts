@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SecretPassTipCom from "../../../../../../../fui/PveSecretScene/FUI_SecretPassTipCom";
 import { SecretType } from "../../../../../datas/secret/SecretConst";
 import { ArmyManager } from "../../../../../manager/ArmyManager";

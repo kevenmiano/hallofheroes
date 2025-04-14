@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { BgTileInfo } from "../BgTileInfo";
 import Logger from "../../../../core/logger/Logger";
 import { SceneManager } from "../../scene/SceneManager";

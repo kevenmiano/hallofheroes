@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ShortCutInput from "../../../../../fui/Battle/FUI_ShortCutInput";
 import { TempleteManager } from "../../../manager/TempleteManager";
 /**

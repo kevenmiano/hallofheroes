@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RechargeLotteryView from "../../../../../fui/Funny/FUI_RechargeLotteryView";
 import { ChargeLotteryManager } from "../../../manager/ChargeLotteryManager";
 import { NotificationManager } from "../../../manager/NotificationManager";

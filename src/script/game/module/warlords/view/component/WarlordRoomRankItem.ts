@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WarlordRoomRankItem from "../../../../../../fui/Warlords/FUI_WarlordRoomRankItem";
 import WarlordsPlayerInfo from "../../WarlordsPlayerInfo";
 

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WarlordsCheckRewardItem from "../../../../../../fui/Warlords/FUI_WarlordsCheckRewardItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_mounttemplateData } from "../../../../config/t_s_mounttemplate";

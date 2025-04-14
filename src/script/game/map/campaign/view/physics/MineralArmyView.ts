@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../../core/lang/LangManager";
 import { UIFilter } from "../../../../../core/ui/UIFilter";
 import StringHelper from "../../../../../core/utils/StringHelper";

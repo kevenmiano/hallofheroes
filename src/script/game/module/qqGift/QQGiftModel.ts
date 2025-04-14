@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { QQ_HALL_EVENT } from "../../constant/event/NotificationEvent";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import { ArmyManager } from "../../manager/ArmyManager";

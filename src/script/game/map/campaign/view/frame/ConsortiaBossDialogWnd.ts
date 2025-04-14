@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { MapSocketOuterManager } from "../../../../manager/MapSocketOuterManager";
 import { WorldBossHelper } from "../../../../utils/WorldBossHelper";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { PackageIn } from "../../../core/net/PackageIn";
 import { ServerDataManager } from "../../../core/net/ServerDataManager";
 import { SocketManager } from "../../../core/net/SocketManager";

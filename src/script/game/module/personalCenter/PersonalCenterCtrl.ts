@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { SharedManager } from "../../manager/SharedManager";
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 import { AthorzieType } from "./comp/PrivacyCom";

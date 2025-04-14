@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SecretItem from "../../../../../../fui/PveSecretScene/FUI_SecretItem";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import SecretTresureItem from "../../../../component/item/SecretTresureItem";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemoteSkillView from "../../../../../fui/RemotePet/FUI_RemoteSkillView";
 import { RemotePetEvent } from "../../../../core/event/RemotePetEvent";
 import { SkillInfo } from "../../../datas/SkillInfo";

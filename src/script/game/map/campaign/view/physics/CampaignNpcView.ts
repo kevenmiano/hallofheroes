@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { CampaignArmyViewHelper } from "../../CampaignArmyViewHelper";
 import { DisplayObject } from "../../../../component/DisplayObject";
 import {

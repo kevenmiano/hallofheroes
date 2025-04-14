@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SFashionSwitchItem from "../../../../../fui/SBag/FUI_SFashionSwitchItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { getDefaultLanguageIndex } from "../../../../core/lang/LanguageDefine";

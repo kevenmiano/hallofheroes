@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_EditTalentItem from "../../../../../../fui/SkillEdit/FUI_EditTalentItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_skilltemplateData } from "../../../../config/t_s_skilltemplate";

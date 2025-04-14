@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetSkillLevelUpItem from "../../../../../fui/RemotePet/FUI_RemotePetSkillLevelUpItem";
 import SoundManager from "../../../../core/audio/SoundManager";
 import LangManager from "../../../../core/lang/LangManager";

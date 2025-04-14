@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_BottleIntergalBox from "../../../../../fui/Funny/FUI_BottleIntergalBox";
 import { BottleIntergalBoxView } from "./BottleIntergalBoxView";
 import { BottleUserInfo } from "../model/BottleUserInfo";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import { t_s_uiplaybaseData } from "../../config/t_s_uiplaybase";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import Logger from "../../../core/logger/Logger";
 import UIManager from "../../../core/ui/UIManager";

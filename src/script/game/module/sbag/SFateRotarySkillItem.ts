@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SFotruneHead from "../../../../fui/SBag/FUI_SFotruneHead";
 import SoundManager from "../../../core/audio/SoundManager";
 import LangManager from "../../../core/lang/LangManager";

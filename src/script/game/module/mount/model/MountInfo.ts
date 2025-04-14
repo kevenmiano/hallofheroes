@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import Dictionary from "../../../../core/utils/Dictionary";
 import { t_s_upgradetemplateData } from "../../../config/t_s_upgradetemplate";

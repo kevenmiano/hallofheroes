@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * @description 职业专精
  */

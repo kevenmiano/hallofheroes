@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 登录活动Item
  */

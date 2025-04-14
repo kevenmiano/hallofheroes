@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 副本数据的缓存<br/>
  * 每次离开副本时保存当前副本的id, 及地表bitmap <br/>

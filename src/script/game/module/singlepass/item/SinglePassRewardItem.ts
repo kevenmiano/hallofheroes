@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SinglePassRewardItem from "../../../../../fui/SinglePass/FUI_SinglePassRewardItem";
 import { EmWindow } from "../../../constant/UIDefine";
 import SinglePassManager from "../../../manager/SinglePassManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../core/lang/LangManager";
 import RingTaskManager from "../../manager/RingTaskManager";
 import {

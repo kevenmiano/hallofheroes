@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { ShopModel } from "../model/ShopModel";
 import { BaseItem } from "../../../component/item/BaseItem";

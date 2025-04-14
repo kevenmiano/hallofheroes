@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_AccountSetting from "../../../../../fui/Login/FUI_AccountSetting";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LimitShopItem from "../../../../../../fui/Shop/FUI_LimitShopItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import {

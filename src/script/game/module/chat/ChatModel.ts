@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { ChatEvent } from "../../constant/event/NotificationEvent";
 import { ChatChannel } from "../../datas/ChatChannel";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";

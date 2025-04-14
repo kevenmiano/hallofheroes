@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../core/lang/LangManager";
 import Logger from "../../../core/logger/Logger";
 import { SocketManager } from "../../../core/net/SocketManager";
@@ -11,14 +10,31 @@ import { ArmySocketOutManager } from "../../manager/ArmySocketOutManager";
 import { TempleteManager } from "../../manager/TempleteManager";
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 
+//@ts-expect-error: External dependencies
 import PayTypeMsg = com.road.yishi.proto.player.PayTypeMsg;
+
+//@ts-expect-error: External dependencies
 import HeroSkillChangeMsg = com.road.yishi.proto.army.HeroSkillChangeMsg;
+
+//@ts-expect-error: External dependencies
 import RuneMosReqMsg = com.road.yishi.proto.army.RuneMosReqMsg;
+
+//@ts-expect-error: External dependencies
 import RuneResolveReqMsg = com.road.yishi.proto.army.RuneResolveReqMsg;
+
+//@ts-expect-error: External dependencies
 import RuneStoneUpReqMsg = com.road.yishi.proto.army.RuneStoneUpReqMsg;
+
+//@ts-expect-error: External dependencies
 import RuneUnloadReqMsg = com.road.yishi.proto.army.RuneUnloadReqMsg;
+
+//@ts-expect-error: External dependencies
 import LotteryRuneReqMsg = com.road.yishi.proto.army.LotteryRuneReqMsg;
+
+//@ts-expect-error: External dependencies
 import HeroTalentReq = com.road.yishi.proto.army.HeroTalentReq;
+
+//@ts-expect-error: External dependencies
 import RuneHoleOpMsg = com.road.yishi.proto.army.RuneHoleOpMsg;
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";
 import { t_s_runeactivationData } from "../../config/t_s_runeactivation";

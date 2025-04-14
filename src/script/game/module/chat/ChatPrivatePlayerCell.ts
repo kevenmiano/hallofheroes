@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PriviatePlayerCell from "../../../../fui/Chat/FUI_PriviatePlayerCell";
 import { IconFactory } from "../../../core/utils/IconFactory";
 import { ChatEvent } from "../../constant/event/NotificationEvent";

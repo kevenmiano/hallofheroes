@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetChapterItem from "../../../../../fui/RemotePet/FUI_RemotePetChapterItem";
 import LangManager from "../../../../core/lang/LangManager";
 

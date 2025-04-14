@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DeleteFileLevelItem from "../../../../../fui/Funny/FUI_DeleteFileLevelItem";
 import Utils from "../../../../core/utils/Utils";
 import { PlayerModel } from "../../../datas/playerinfo/PlayerModel";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_CumulativeRechargeView from "../../../../../fui/Funny/FUI_CumulativeRechargeView";
 import { FeedBackEvent } from "../../../constant/event/NotificationEvent";
 import FeedBackManager from "../../../manager/FeedBackManager";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetformationItem from "../../../../../../fui/Pet/FUI_PetformationItem";
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { PetData } from "../../data/PetData";

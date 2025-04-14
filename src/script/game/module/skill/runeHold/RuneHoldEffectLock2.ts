@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RuneHoldEffectLock2 from "../../../../../fui/Skill/FUI_RuneHoldEffectLock2";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { CommonConstant } from "../../../constant/CommonConstant";

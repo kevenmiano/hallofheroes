@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import DegreeActivityBox from "../view/component/DegreeActivityBox";
 /**
  * @author:pzlricky

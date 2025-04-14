@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ColosseumBox from "../../../../../fui/Pvp/FUI_ColosseumBox";
 import AudioManager from "../../../../core/audio/AudioManager";
 import Logger from "../../../../core/logger/Logger";

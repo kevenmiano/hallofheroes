@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_VipTitle from "../../../../fui/Shop/FUI_VipTitle";
 import UIButton from "../../../core/ui/UIButton";
 import { BaseItem } from "../../component/item/BaseItem";

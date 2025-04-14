@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ShopCommonView from "../../../../../../fui/Shop/FUI_ShopCommonView";
 import { BaseItem } from "../../../../component/item/BaseItem";
 import { ShopModel } from "../../model/ShopModel";

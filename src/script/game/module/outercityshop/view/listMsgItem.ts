@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_listMsgItem from "../../../../../fui/OutCityShop/FUI_listMsgItem";
 import Logger from "../../../../core/logger/Logger";
 import { EmWindow } from "../../../constant/UIDefine";

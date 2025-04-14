@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RoomPlayerItemMenu from "../../../../fui/BaseRoom/FUI_RoomPlayerItemMenu";
 import LangManager from "../../../core/lang/LangManager";
 import LayerMgr from "../../../core/layer/LayerMgr";

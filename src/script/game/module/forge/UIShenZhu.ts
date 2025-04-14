@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_starCom from "../../../../fui/Forge/FUI_starCom";
 import LangManager from "../../../core/lang/LangManager";
 import { PackageIn } from "../../../core/net/PackageIn";

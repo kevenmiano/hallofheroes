@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import { MountsEvent } from "../../../constant/event/NotificationEvent";
 import { TempleteManager } from "../../../manager/TempleteManager";

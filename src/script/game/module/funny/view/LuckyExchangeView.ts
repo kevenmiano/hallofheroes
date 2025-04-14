@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_LuckyExchangeView from "../../../../../fui/Funny/FUI_LuckyExchangeView";
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";

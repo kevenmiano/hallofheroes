@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ChatInputBox from "../../../../fui/Chat/FUI_ChatInputBox";
 import { TempleteManager } from "../../manager/TempleteManager";
 import { YTextInput } from "../common/YTextInput";

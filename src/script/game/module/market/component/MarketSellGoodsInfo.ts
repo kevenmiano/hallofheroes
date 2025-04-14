@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { t_s_itempricelimitData } from "../../../config/t_s_itempricelimit";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 

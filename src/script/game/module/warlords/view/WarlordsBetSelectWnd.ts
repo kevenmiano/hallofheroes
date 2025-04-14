@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import WarlordsManager from "../../../manager/WarlordsManager";
 import WarlordsModel from "../WarlordsModel";

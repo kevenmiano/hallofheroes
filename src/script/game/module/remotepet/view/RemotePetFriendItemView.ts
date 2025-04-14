@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetFriendItemView from "../../../../../fui/RemotePet/FUI_RemotePetFriendItemView";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { TempleteManager } from "../../../manager/TempleteManager";

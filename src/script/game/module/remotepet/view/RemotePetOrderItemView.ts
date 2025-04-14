@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_RemotePetOrderItemView from "../../../../../fui/RemotePet/FUI_RemotePetOrderItemView";
 import { EmPackName } from "../../../constant/UIDefine";
 import { RemotePetOrderInfo } from "../../../mvc/model/remotepet/RemotePetOrderInfo";

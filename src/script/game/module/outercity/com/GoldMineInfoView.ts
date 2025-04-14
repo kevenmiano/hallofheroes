@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_GoldMineInfoView from "../../../../../fui/OuterCity/FUI_GoldMineInfoView";
 import Utils from "../../../../core/utils/Utils";
 import {

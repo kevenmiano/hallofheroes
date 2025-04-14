@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_QQDawankaItem1 from "../../../../../fui/QQDawanka/FUI_QQDawankaItem1";
 import LangManager from "../../../../core/lang/LangManager";
 import SDKManager from "../../../../core/sdk/SDKManager";

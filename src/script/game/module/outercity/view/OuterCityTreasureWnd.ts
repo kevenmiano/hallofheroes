@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";
 import ResMgr from "../../../../core/res/ResMgr";

@@ -1,4 +1,4 @@
-//@ts-expect-error: External dependencies
+/* eslint-disable @typescript-eslint/no-this-alias */
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com

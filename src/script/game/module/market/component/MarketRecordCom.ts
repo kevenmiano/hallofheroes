@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MarketRecordCom from "../../../../../fui/Market/FUI_MarketRecordCom";
 import MarketRecordItem from "./MarketRecordItem";
 

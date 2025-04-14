@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SmallMapVehicleItem from "../../../../../fui/OuterCity/FUI_SmallMapVehicleItem";
 import Utils from "../../../../core/utils/Utils";
 import { EmWindow } from "../../../constant/UIDefine";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseFguiCom from "../../../core/ui/Base/BaseFguiCom";
 import { DateFormatter } from "../../../core/utils/DateFormatter";
 import { GoldenSheepEvent } from "../../constant/event/NotificationEvent";

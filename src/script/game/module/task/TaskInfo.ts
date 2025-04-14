@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 export class TaskInfo extends GameEventDispatcher {
   public userId: number = 0;

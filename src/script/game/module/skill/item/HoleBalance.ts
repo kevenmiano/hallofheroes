@@ -1,4 +1,4 @@
-//@ts-expect-error: External dependencies
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 import FUI_HoleBalance from "../../../../../fui/Skill/FUI_HoleBalance";
 import { CommonConstant } from "../../../constant/CommonConstant";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";

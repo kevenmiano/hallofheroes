@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Logger from "../../../../../core/logger/Logger";
 import { OuterCityEvent } from "../../../../constant/event/NotificationEvent";
 import MediatorMananger from "../../../../manager/MediatorMananger";

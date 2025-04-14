@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { UIFilter } from "../../../core/ui/UIFilter";
 import Utils from "../../../core/utils/Utils";
 import { EmWindow } from "../../constant/UIDefine";

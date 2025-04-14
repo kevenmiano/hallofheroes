@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 /**
  * 战场排名信息
  */

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { BaseItem } from "../../component/item/BaseItem";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_HeroInfoView from "../../../../../../fui/BaseCommon/FUI_HeroInfoView";
 
 /**

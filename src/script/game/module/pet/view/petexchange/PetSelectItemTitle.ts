@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_PetSelectItemTitle from "../../../../../../fui/Pet/FUI_PetSelectItemTitle";
 
 /**

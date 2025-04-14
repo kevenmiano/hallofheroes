@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export class OuterCityWarBuildBuffInfo {
   buildId?: number;
   buffId?: number;

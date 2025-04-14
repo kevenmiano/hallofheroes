@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 export default class SinglePassOrderInfo {
   public userId: number = 0;
   public job: number = 0;

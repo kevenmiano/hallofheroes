@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_WildSoulItem from "../../../../fui/Mount/FUI_WildSoulItem";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import LangManager from "../../../core/lang/LangManager";

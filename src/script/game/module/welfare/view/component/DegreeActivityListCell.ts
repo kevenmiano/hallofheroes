@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DegreeActivityListCell from "../../../../../../fui/Welfare/FUI_DegreeActivityListCell";
 import { VIPManager } from "../../../../manager/VIPManager";
 import LeedInfo from "../../data/LeedInfo";

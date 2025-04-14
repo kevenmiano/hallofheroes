@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import PetLandDialogWnd from "./PetLandDialogWnd";
 import AudioManager from "../../../../../core/audio/AudioManager";
 import CampaignDialogOptionItem from "./CampaignDialogOptionItem";

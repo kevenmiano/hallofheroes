@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import { SpaceNode } from "../../map/space/data/SpaceNode";
 import SpaceManager from "../../map/space/SpaceManager";

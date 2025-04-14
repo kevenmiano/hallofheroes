@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import IBuildingFilter from "../../../space/interfaces/IBuildingFilter";
 import { BuildInfo } from "../../data/BuildInfo";
 import SimpleBuildingFilter from "../../filter/SimpleBuildingFilter";

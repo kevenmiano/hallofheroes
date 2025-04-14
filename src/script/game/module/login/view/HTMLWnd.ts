@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import Resolution from "../../../../core/comps/Resolution";
 import { getdefaultLangageCfg } from "../../../../core/lang/LanguageDefine";
 import ResMgr from "../../../../core/res/ResMgr";

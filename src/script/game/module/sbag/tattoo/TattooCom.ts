@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_TattooCom from "../../../../../fui/SBag/FUI_TattooCom";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import { ArmyEvent } from "../../../constant/event/NotificationEvent";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import StringHelper from "../../../core/utils/StringHelper";
 import { NotificationEvent } from "../../constant/event/NotificationEvent";

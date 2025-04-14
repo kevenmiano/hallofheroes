@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { TaskConditionType } from "../../constant/TaskConditionType";
 import { TaskSocketManager } from "../../manager/TaskSocketManager";
 import { TaskTemplate } from "./TaskTemplate";
@@ -17,7 +16,10 @@ import { C2SProtocol } from "../../constant/protocol/C2SProtocol";
 import StringHelper from "../../../core/utils/StringHelper";
 import FUI_TaskPhoneView from "../../../../fui/Task/FUI_TaskPhoneView";
 
+//@ts-expect-error: External dependencies
 import UserPin = com.road.yishi.proto.player.UserPin;
+
+//@ts-expect-error: External dependencies
 import CheckSend = com.road.yishi.proto.player.CheckSend;
 
 export default class TaskPhoneView extends FUI_TaskPhoneView {

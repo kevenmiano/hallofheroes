@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";
 
 export default class WarlordsRewardInfo {

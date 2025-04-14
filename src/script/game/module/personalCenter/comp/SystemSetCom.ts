@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_SystemSetCom from "../../../../../fui/PersonalCenter/FUI_SystemSetCom";
 import AudioManager from "../../../../core/audio/AudioManager";
 import LangManager from "../../../../core/lang/LangManager";

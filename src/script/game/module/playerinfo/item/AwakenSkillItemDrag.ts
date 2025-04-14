@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_AwakenSkillItemDrag from "../../../../../fui/PlayerInfo/FUI_AwakenSkillItemDrag";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import { DragObject } from "../../../component/DragObject";

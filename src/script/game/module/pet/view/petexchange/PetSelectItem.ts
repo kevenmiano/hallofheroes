@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { EmPetItem, EmPetItemState, PetItem } from "../item/PetItem";
 import { PetData } from "../../data/PetData";
 import FUI_PetSelectItem from "../../../../../../fui/Pet/FUI_PetSelectItem";

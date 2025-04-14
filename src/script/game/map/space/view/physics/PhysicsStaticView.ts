@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { PathManager } from "../../../../manager/PathManager";
 import { PosType } from "../../constant/PosType";
 import { CampaignNode } from "../../data/CampaignNode";

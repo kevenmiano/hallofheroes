@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { ClassFactory } from "../../../../core/utils/ClassFactory";
 
 /**

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ArtifactCell from "../../../../../../fui/Base/FUI_ArtifactCell";
 import LangManager from "../../../../../core/lang/LangManager";
 import { IconFactory } from "../../../../../core/utils/IconFactory";

@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { RemotePetEvent } from "../../../core/event/RemotePetEvent";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

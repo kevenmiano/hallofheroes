@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import BaseFguiCom from "../../../../core/ui/Base/BaseFguiCom";
 import UIButton from "../../../../core/ui/UIButton";

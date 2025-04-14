@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_GvgTop10Item from "../../../../../../fui/Consortia/FUI_GvgTop10Item";
 import { GvgContributionInfo } from "../../data/gvg/GvgContributionInfo";
 import { EmWindow } from "../../../../constant/UIDefine";

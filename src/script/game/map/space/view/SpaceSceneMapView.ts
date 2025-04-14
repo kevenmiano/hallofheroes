@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { SpaceModel } from "../SpaceModel";
 import SpaceScene from "../../../scene/SpaceScene";
 import SpaceManager from "../SpaceManager";

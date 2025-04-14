@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_ExcSvrItem from "../../../../../fui/Funny/FUI_ExcSvrItem";
 import LangManager from "../../../../core/lang/LangManager";
 import { EmWindow } from "../../../constant/UIDefine";

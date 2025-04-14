@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_DiscountItem from "../../../../../../fui/Shop/FUI_DiscountItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../../core/utils/DateFormatter";

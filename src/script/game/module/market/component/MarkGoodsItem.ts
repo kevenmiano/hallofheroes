@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import FUI_MarkGoodsItem from "../../../../../fui/Market/FUI_MarkGoodsItem";
 import { BaseItem } from "../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";

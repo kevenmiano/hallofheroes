@@ -1,4 +1,3 @@
-//@ts-expect-error: External dependencies
 import { EmWindow } from "../../../constant/UIDefine";
 import { QuickOpenFrameInfo } from "../DebugCfg";
 
