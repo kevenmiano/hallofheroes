@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message RelationPlayerMsg {
+  int32 relation = 1;
+  int32 friendRp = 2;
+  int32 friendGrade = 3;
+  int32 groupId = 4;
+  string player = 5;
+  string snsInfo = 6;
+  int32 from = 7;
+  int32 isVip = 8;
+  int32 tarRelation = 9;
+}

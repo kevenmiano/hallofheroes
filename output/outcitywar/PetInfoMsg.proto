@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message PetInfoMsg {
+  int32 petId = 1;
+  int32 templateId = 2;
+  int32 quality = 3;
+  int32 fightingCapacity = 4;
+}

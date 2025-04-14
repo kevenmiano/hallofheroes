@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message RankerOtherInfoRes {
+  int32 entityId = 1;
+  string fight = 2;
+  int32 level = 3;
+  int32 headId = 4;
+  string entityName = 5;
+  string leagueName = 6;
+}

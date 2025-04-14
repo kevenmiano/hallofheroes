@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message NPCChaseMsg {
+  int32 nodeId = 1;
+  int32 armyId = 2;
+  int32 curPosX = 3;
+  int32 curPosY = 4;
+  string serverName = 5;
+}

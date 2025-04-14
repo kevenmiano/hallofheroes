@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildChallengeInfoMsg {
+  bool isExist = 1;
+  string startTime = 2;
+  string endTime = 3;
+  int32 attackGuildId = 4;
+  int32 defencGuildId = 5;
+  string attackName = 6;
+  string defencName = 7;
+}

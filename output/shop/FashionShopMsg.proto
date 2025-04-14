@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message FashionShopMsg {
+  repeated int32 buyInfos = 1;
+  bool result = 2;
+  int32 payType = 3;
+}

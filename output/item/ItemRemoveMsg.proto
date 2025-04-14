@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemRemoveMsg {
+  int32 bagType = 1;
+  int32 pos = 2;
+}

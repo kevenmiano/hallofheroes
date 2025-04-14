@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message ShopMsg {
+  string buyInfo = 1;
+  repeated int32 hasDataInfo = 2;
+  string refreshDate = 3;
+  int32 payType = 4;
+  repeated int32 weeklyDataInfo = 5;
+  int32 discountTempId = 6;
+}

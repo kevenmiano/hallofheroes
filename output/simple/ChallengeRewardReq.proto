@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message ChallengeRewardReq {
+  int32 rewardId = 1;
+}

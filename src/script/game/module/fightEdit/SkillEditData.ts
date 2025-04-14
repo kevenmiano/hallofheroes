@@ -1,19 +1,19 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FrameDataBase from "../../mvc/FrameDataBase";
 
 /**
  * 技能编辑数据
  */
-export class SkillEditData{
-    job:number = 1; //职业id
+export class SkillEditData {
+  job: number = 1; //职业id
 
-    percent:number = 50;//血量比例
+  percent: number = 50; //血量比例
 
-    defaultSkill:number = 107; //默认技能
+  defaultSkill: number = 107; //默认技能
 
-    petId:number = 0; //英灵id
+  petId: number = 0; //英灵id
 
-    normalSkill:string = ''; //常规技能
+  normalSkill: string = ""; //常规技能
 
-    specialSkill:string = ''; //特殊技能
+  specialSkill: string = ""; //特殊技能
 }

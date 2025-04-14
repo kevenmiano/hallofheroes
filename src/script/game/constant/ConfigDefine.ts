@@ -1,4 +1,3 @@
-// @ts-nocheck
 import language from "../config/language";
 import t_s_action from "../config/t_s_action";
 import t_s_activetemplate from "../config/t_s_activetemplate";

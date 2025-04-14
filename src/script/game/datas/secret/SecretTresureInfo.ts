@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { t_s_secrettreasureData } from "../../config/t_s_secrettreasure";
 import { ConfigType } from "../../constant/ConfigDefine";
@@ -12,18 +11,21 @@ import { ConfigType } from "../../constant/ConfigDefine";
  * @Description: 秘宝信息
  */
 export class SecretTresureInfo {
-    count: number = 0;
-    template:t_s_secrettreasureData
-    private _templateId: number = 0;
-    set templateId(v:number){
-        this._templateId = v
-        this.template = ConfigMgr.Instance.getTemplateByID(ConfigType.t_s_secrettreasure, v)
-    }
-    get templateId(): number{
-        return this._templateId
-    }
+  count: number = 0;
+  template: t_s_secrettreasureData;
+  private _templateId: number = 0;
+  set templateId(v: number) {
+    this._templateId = v;
+    this.template = ConfigMgr.Instance.getTemplateByID(
+      ConfigType.t_s_secrettreasure,
+      v,
+    );
+  }
+  get templateId(): number {
+    return this._templateId;
+  }
 
-    constructor(id?: number) {
-        this.templateId = id
-    }
+  constructor(id?: number) {
+    this.templateId = id;
+  }
 }

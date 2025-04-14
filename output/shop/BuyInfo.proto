@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message BuyInfo {
+  bool isDiscount = 1;
+  int32 goodId = 2;
+  int32 count = 3;
+  int32 receiveId = 4;
+  int32 result = 5;
+  int32 type = 6;
+}

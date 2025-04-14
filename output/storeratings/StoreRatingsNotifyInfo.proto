@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.storeratings;
+
+message StoreRatingsNotifyInfo {
+  int32 conditionType = 1;
+}

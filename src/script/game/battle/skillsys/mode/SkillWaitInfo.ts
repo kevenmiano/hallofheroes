@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * @author:jeremy.xu
  * @data: 2020-11-23 10:00
@@ -8,28 +7,26 @@
  * 详见SkillSystem.
  **/
 
-export class SkillWaitInfo
-{
-    public roleId : number = 0;
-    public count : number = 0;
-    
-    private _completeFun : Function;
+export class SkillWaitInfo {
+  public roleId: number = 0;
+  public count: number = 0;
 
-    /**
-     * 启动倒计时. 
-     * @param completeFun
-     */		
-    countDown(completeFun : Function)
-    {
-        this._completeFun = completeFun;
-        Laya.timer.once(300, this, this.onComplete);
-    }
+  private _completeFun: Function;
 
-    onComplete(){
-        this._completeFun(this);
-    }
+  /**
+   * 启动倒计时.
+   * @param completeFun
+   */
+  countDown(completeFun: Function) {
+    this._completeFun = completeFun;
+    Laya.timer.once(300, this, this.onComplete);
+  }
 
-    clear(){
-        Laya.timer.clear(this, this.onComplete);
-    }
+  onComplete() {
+    this._completeFun(this);
+  }
+
+  clear() {
+    Laya.timer.clear(this, this.onComplete);
+  }
 }

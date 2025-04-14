@@ -1,35 +1,31 @@
-// @ts-nocheck
-
 //拖拽类型
 export enum DragType {
-    SKILL = 0x000001,
-    BAG,
-    ALLOCATE,
-    RUNE,
-    PET_AWAKEN_SKILL,
-    TALENT,
+  SKILL = 0x000001,
+  BAG,
+  ALLOCATE,
+  RUNE,
+  PET_AWAKEN_SKILL,
+  TALENT,
 }
 
 /**
-* @author:pzlricky
-* @data: 2021-03-01 12:17
-* @description 拖拽对象
-*/
+ * @author:pzlricky
+ * @data: 2021-03-01 12:17
+ * @description 拖拽对象
+ */
 export interface DragObject {
+  dragType: DragType;
+  dragEnable: boolean;
 
-    dragType: DragType;
-    dragEnable: boolean;
-    
-    getDragType():DragType;
+  getDragType(): DragType;
 
-    setDragType(value:DragType);
+  setDragType(value: DragType);
 
-    getDragEnable(): boolean;
+  getDragEnable(): boolean;
 
-    setDragEnable(value: boolean);
+  setDragEnable(value: boolean);
 
-    getDragData():any;
+  getDragData(): any;
 
-    setDragData(value:any);
-
+  setDragData(value: any);
 }

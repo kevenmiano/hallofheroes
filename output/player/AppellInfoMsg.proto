@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message AppellInfoMsg {
+  int32 appellId = 1;
+  bool isGet = 2;
+  string value = 3;
+  string validDate = 4;
+}

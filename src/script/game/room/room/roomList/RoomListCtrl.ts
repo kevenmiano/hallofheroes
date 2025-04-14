@@ -1,4 +1,3 @@
-// TODO FIX
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -24,7 +23,9 @@ import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { RoomInfo } from "../../../mvc/model/room/RoomInfo";
 
+//@ts-expect-error: External dependencies
 import RoomMsg = com.road.yishi.proto.room.RoomMsg;
+//@ts-expect-error: External dependencies
 import RoomListRspMsg = com.road.yishi.proto.room.RoomListRspMsg;
 
 export default class RoomListCtrl extends FrameCtrlBase {
@@ -42,7 +43,7 @@ export default class RoomListCtrl extends FrameCtrlBase {
     ServerDataManager.listen(
       S2CProtocol.U_C_CAMPAIGN_ROOM_LIST,
       this,
-      this.__onRefreshRoomList
+      this.__onRefreshRoomList,
     );
   }
 
@@ -50,7 +51,7 @@ export default class RoomListCtrl extends FrameCtrlBase {
     ServerDataManager.cancel(
       S2CProtocol.U_C_CAMPAIGN_ROOM_LIST,
       this,
-      this.__onRefreshRoomList
+      this.__onRefreshRoomList,
     );
   }
 
@@ -59,12 +60,12 @@ export default class RoomListCtrl extends FrameCtrlBase {
     ServerDataManager.listen(
       S2CProtocol.U_C_ROOM_SEND,
       this,
-      this.__onRefreshRoomState
+      this.__onRefreshRoomState,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ROOM_FIND_RESULT,
       this,
-      this.__onSearchRoom
+      this.__onSearchRoom,
     );
   }
 
@@ -73,12 +74,12 @@ export default class RoomListCtrl extends FrameCtrlBase {
     ServerDataManager.cancel(
       S2CProtocol.U_C_ROOM_SEND,
       this,
-      this.__onRefreshRoomState
+      this.__onRefreshRoomState,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ROOM_FIND_RESULT,
       this,
-      this.__onSearchRoom
+      this.__onSearchRoom,
     );
   }
 
@@ -146,7 +147,9 @@ export default class RoomListCtrl extends FrameCtrlBase {
     if (this._loadDataFlag) {
       super.preLoadDataComplete();
     } else {
-      this.view && this.view.refresh();
+      if (this.view) {
+        this.view.refresh();
+      }
     }
   }
 
@@ -178,7 +181,7 @@ export default class RoomListCtrl extends FrameCtrlBase {
     if (this.roomSceneType == RoomSceneType.PVE)
       RoomListSocketOutManager.requestRoomList(
         RoomType.NORMAL,
-        this.data.selCampaignID
+        this.data.selCampaignID,
       );
     else RoomListSocketOutManager.requestRoomList(RoomType.MATCH);
   }
@@ -193,7 +196,7 @@ export default class RoomListCtrl extends FrameCtrlBase {
     roomType: RoomType,
     roomId: number,
     pwd: string,
-    isInvite: boolean
+    isInvite: boolean,
   ) {
     RoomListSocketOutManager.addRoomById(roomType, roomId, pwd, isInvite);
   }

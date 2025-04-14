@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message RoomBossInfoMsg {
+  int32 bossId = 1;
+  int32 bossType = 2;
+  string curHp = 3;
+  string totalHp = 4;
+  string currentMillis = 5;
+  repeated int32 woundInfo = 6;
+}

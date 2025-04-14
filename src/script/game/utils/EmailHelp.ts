@@ -1,4 +1,3 @@
-// TODO FIX
 import { PlayerModel } from "../datas/playerinfo/PlayerModel";
 import { GoodsManager } from "../manager/GoodsManager";
 import { MessageTipManager } from "../manager/MessageTipManager";
@@ -6,6 +5,7 @@ import { PlayerManager } from "../manager/PlayerManager";
 import EmailInfo from "../module/mail/EmailInfo";
 import LangManager from "../../core/lang/LangManager";
 
+//@ts-expect-error: External dependencies
 import MailInfoMsg = com.road.yishi.proto.mail.MailInfoMsg;
 import { StarManager } from "../manager/StarManager";
 import { StarBagType } from "../constant/StarDefine";
@@ -17,7 +17,7 @@ export default class EmailHelp {
     EmailHelp.BagNewCount = GoodsManager.Instance.getEmputyPosCount();
     if (!EmailHelp.BagNewCount) {
       var str: string = LangManager.Instance.GetTranslation(
-        "emailII.help.EmailHelp.command01"
+        "emailII.help.EmailHelp.command01",
       );
       MessageTipManager.Instance.show(str);
       return -1;
@@ -33,7 +33,7 @@ export default class EmailHelp {
       PlayerModel.ORIGINAL_OPEN_BAG_COUNT + starBagCount - playerStarNum;
     if (!count) {
       var str: string = LangManager.Instance.GetTranslation(
-        "emailII.help.EmailHelp.command02"
+        "emailII.help.EmailHelp.command02",
       );
       MessageTipManager.Instance.show(str);
       return -1;

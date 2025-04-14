@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -22,40 +22,56 @@ import { EmWindow } from "../../../constant/UIDefine";
 import RoomMsg = com.road.yishi.proto.room.RoomMsg;
 
 export default class PveMultiCampaignCtrl extends FrameCtrlBase {
-	show() {
-		super.show();
-	}
+  show() {
+    super.show();
+  }
 
-	hide() {
-		super.hide();
-	}
+  hide() {
+    super.hide();
+  }
 
-	protected addEventListener() {
-		super.addEventListener();
-		ServerDataManager.listen(S2CProtocol.U_C_ROOM_FIND_RESULT, this, this.__onSearchRoom);
-	}
+  protected addEventListener() {
+    super.addEventListener();
+    ServerDataManager.listen(
+      S2CProtocol.U_C_ROOM_FIND_RESULT,
+      this,
+      this.__onSearchRoom,
+    );
+  }
 
-	protected delEventListener() {
-		super.delEventListener();
-		ServerDataManager.cancel(S2CProtocol.U_C_ROOM_FIND_RESULT, this, this.__onSearchRoom);
-	}
+  protected delEventListener() {
+    super.delEventListener();
+    ServerDataManager.cancel(
+      S2CProtocol.U_C_ROOM_FIND_RESULT,
+      this,
+      this.__onSearchRoom,
+    );
+  }
 
-	public sendCreateRoom() {
-		RoomListSocketOutManager.sendCreateRoom(1, RoomType.NORMAL, "");
-	}
+  public sendCreateRoom() {
+    RoomListSocketOutManager.sendCreateRoom(1, RoomType.NORMAL, "");
+  }
 
-	//return: S2CProtocol.U_C_CAMPAIGN_ROOM_CREATE
-	public sendEnterRoom(roomType: RoomType, roomId: number, pwd: string, isInvite: boolean) {
-		RoomListSocketOutManager.addRoomById(roomType, roomId, pwd, isInvite);
-	}
+  //return: S2CProtocol.U_C_CAMPAIGN_ROOM_CREATE
+  public sendEnterRoom(
+    roomType: RoomType,
+    roomId: number,
+    pwd: string,
+    isInvite: boolean,
+  ) {
+    RoomListSocketOutManager.addRoomById(roomType, roomId, pwd, isInvite);
+  }
 
-	private __onSearchRoom(pkg: PackageIn) {
-		let msg = pkg.readBody(RoomMsg) as RoomMsg;
-		Logger.xjy("[PveRoomListCtrl]__onSearchRoom", msg);
-		if (msg.isSetPassword) {
-			FrameCtrlManager.Instance.open(EmWindow.RoomPwd, { roomId: msg.roomId, roomSceneType: RoomSceneType.PVE });
-		} else {
-			this.sendEnterRoom(RoomType.NORMAL, msg.roomId, "", false);
-		}
-	}
+  private __onSearchRoom(pkg: PackageIn) {
+    let msg = pkg.readBody(RoomMsg) as RoomMsg;
+    Logger.xjy("[PveRoomListCtrl]__onSearchRoom", msg);
+    if (msg.isSetPassword) {
+      FrameCtrlManager.Instance.open(EmWindow.RoomPwd, {
+        roomId: msg.roomId,
+        roomSceneType: RoomSceneType.PVE,
+      });
+    } else {
+      this.sendEnterRoom(RoomType.NORMAL, msg.roomId, "", false);
+    }
+  }
 }

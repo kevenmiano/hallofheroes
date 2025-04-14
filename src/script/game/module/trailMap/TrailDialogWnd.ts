@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -10,46 +10,43 @@
 
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 
-
 export default class TrailDialogWnd extends BaseWindow {
-    public txtName:fgui.GLabel;
-    public txtContent:fgui.GLabel;
-    private _mapId:number;
-    private _nodeId:number;
-    private _callBack:Function;
-    
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter();
-    }
+  public txtName: fgui.GLabel;
+  public txtContent: fgui.GLabel;
+  private _mapId: number;
+  private _nodeId: number;
+  private _callBack: Function;
 
-    /**界面打开 */
-    OnShowWind() {
-        super.OnShowWind();
-        if(this.frameData){
-            this.txtName.text = this.frameData.title
-            this.txtContent.text = this.frameData.content
-            this._mapId = this.frameData.mapId
-            this._nodeId = this.frameData.nodeId
-            this._callBack = this.frameData.callBack
-        }
-        
-    }
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+  }
 
-    /**关闭界面 */
-    OnHideWind() {
-        super.OnHideWind();
+  /**界面打开 */
+  OnShowWind() {
+    super.OnShowWind();
+    if (this.frameData) {
+      this.txtName.text = this.frameData.title;
+      this.txtContent.text = this.frameData.content;
+      this._mapId = this.frameData.mapId;
+      this._nodeId = this.frameData.nodeId;
+      this._callBack = this.frameData.callBack;
     }
+  }
 
+  /**关闭界面 */
+  OnHideWind() {
+    super.OnHideWind();
+  }
 
-    btnConfirmClick(){
-        if(this._callBack){
-            this._callBack(true, this._mapId, this._nodeId)
-        }
-        this.OnBtnClose()
+  btnConfirmClick() {
+    if (this._callBack) {
+      this._callBack(true, this._mapId, this._nodeId);
     }
+    this.OnBtnClose();
+  }
 
-    btnCancelClick(){
-        this.OnBtnClose()
-    }
+  btnCancelClick() {
+    this.OnBtnClose();
+  }
 }

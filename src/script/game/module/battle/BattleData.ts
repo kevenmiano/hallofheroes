@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -12,11 +11,11 @@ import Logger from "../../../core/logger/Logger";
 import FrameDataBase from "../../mvc/FrameDataBase";
 
 export default class BattleData extends FrameDataBase {
-    constructor() {
-        super()
-    }
+  constructor() {
+    super();
+  }
 
-    calculateHeroHp(num1: number, num2: number): number {
-        return num1 + num2
-    }
+  calculateHeroHp(num1: number, num2: number): number {
+    return num1 + num2;
+  }
 }

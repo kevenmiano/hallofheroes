@@ -1,4 +1,3 @@
-// TODO FIX
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -20,7 +19,9 @@ import { SocketSendManager } from "../../../manager/SocketSendManager";
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import InviteWnd from "./InviteWnd";
 
+//@ts-expect-error: External dependencies
 import RoomPlayerListMsg = com.road.yishi.proto.room.RoomPlayerListMsg;
+//@ts-expect-error: External dependencies
 import RoomPlayerMsg = com.road.yishi.proto.room.RoomPlayerMsg;
 
 export default class InviteCtrl extends FrameCtrlBase {
@@ -37,12 +38,12 @@ export default class InviteCtrl extends FrameCtrlBase {
     ServerDataManager.listen(
       S2CProtocol.U_C_INVITE_PLAYER_LIST,
       this,
-      this.__getHallListHandler
+      this.__getHallListHandler,
     );
     NotificationManager.Instance.addEventListener(
       NotificationEvent.INVITE_SUCCESS,
       this.__inviteSuccessHandler,
-      this
+      this,
     );
   }
 
@@ -51,12 +52,12 @@ export default class InviteCtrl extends FrameCtrlBase {
     ServerDataManager.cancel(
       S2CProtocol.U_C_INVITE_PLAYER_LIST,
       this,
-      this.__getHallListHandler
+      this.__getHallListHandler,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.INVITE_SUCCESS,
       this.__inviteSuccessHandler,
-      this
+      this,
     );
   }
 

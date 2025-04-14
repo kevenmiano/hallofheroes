@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomEnterMsg {
+  int32 result = 1;
+  repeated int32 player = 2;
+  repeated int32 userIds = 3;
+}

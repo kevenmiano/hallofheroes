@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetEquipRefreshRspMsg {
+  int32 op = 1;
+  bool result = 2;
+  int32 bagType = 3;
+  int32 pos = 4;
+  int32 objectId = 5;
+  string masterAttr = 6;
+  string sonAttr = 7;
+  int32 petSuitId = 8;
+}

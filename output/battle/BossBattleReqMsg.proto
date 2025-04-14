@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BossBattleReqMsg {
+  string serverName = 1;
+  int32 heroJob = 2;
+  int32 sex = 3;
+  int32 armyId = 4;
+  int32 templatedId_1 = 5;
+  int32 templatedId_2 = 6;
+  int32 bossId = 7;
+}

@@ -1,5 +1,5 @@
-// TODO FIX
 import FUI_SkillItemCom from "../../../fui/Skill/FUI_SkillItemCom";
+//@ts-expect-error: External dependencies
 import FUI_scollText from "../../../fui/Skill/FUI_scollText";
 import LangManager from "../../core/lang/LangManager";
 import Logger from "../../core/logger/Logger";
@@ -124,16 +124,16 @@ export class RuneItemTips extends BaseTips {
   public OnInitWind() {
     super.OnInitWind();
     this.studyBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnStudy"
+      "armyII.viewII.skill.btnStudy",
     );
     this.upgradeBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnUpgrade"
+      "armyII.viewII.skill.btnUpgrade",
     );
     this.upProgressLabel.text = LangManager.Instance.GetTranslation(
-      "armyII.viewII.rune.RuneUpgradeView.ProgressTxt"
+      "armyII.viewII.rune.RuneUpgradeView.ProgressTxt",
     );
     this.upCostLabel.text = LangManager.Instance.GetTranslation(
-      "ExchangeRandom.costTxt"
+      "ExchangeRandom.costTxt",
     );
     this.txt_look.text =
       "[" +
@@ -158,7 +158,7 @@ export class RuneItemTips extends BaseTips {
     if (this.stepper.value == 0) return;
     var goodsTemplate: t_s_itemtemplateData =
       TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-        RunesUpgradeWnd.LOW_RUNE_TEMPID
+        RunesUpgradeWnd.LOW_RUNE_TEMPID,
       );
     this.addExp = goodsTemplate.Property2;
     let cfgValue = 2;
@@ -204,7 +204,7 @@ export class RuneItemTips extends BaseTips {
   private get canStudy(): boolean {
     var arr: Array<GoodsInfo> =
       GoodsManager.Instance.getGeneralBagGoodsBySonType(
-        GoodsSonType.SONTYPE_PASSIVE_SKILL
+        GoodsSonType.SONTYPE_PASSIVE_SKILL,
       );
     var gInfo: GoodsInfo = null;
     this._runeGInfo = null;
@@ -239,12 +239,12 @@ export class RuneItemTips extends BaseTips {
     this._selectRuneData = runeData;
     RunesPanel.curRuneId = this._selectRuneData.runeId;
     this.runeSkillInfo = TempleteManager.Instance.getSkillTemplateInfoById(
-      runeData.templateInfo.SkillTemplateId
+      runeData.templateInfo.SkillTemplateId,
     );
     var nextTemp: t_s_runetemplateData = runeData.nextTemplateInfo;
     if (nextTemp) {
       nextRuneSkillInfo = TempleteManager.Instance.getSkillTemplateInfoById(
-        nextTemp.SkillTemplateId
+        nextTemp.SkillTemplateId,
       );
     }
     this.runeName.text = this.skillName2.text =
@@ -254,12 +254,12 @@ export class RuneItemTips extends BaseTips {
       this.bePassiveSkillLabel3.text =
         this.getSkillType(this.runeSkillInfo); //被动效果
     this.selectRuneItem.icon = IconFactory.getTecIconByIcon(
-      runeData.templateInfo.Icon
+      runeData.templateInfo.Icon,
     ); //图标
     //当前等级效果
     this.runeLevel.text = LangManager.Instance.GetTranslation(
       "public.level3",
-      runeData.templateInfo.RuneGrade.toString()
+      runeData.templateInfo.RuneGrade.toString(),
     ); //等级
     // this.needGradeTxt.text = "";
     //按钮状态
@@ -273,17 +273,17 @@ export class RuneItemTips extends BaseTips {
       if (nextRuneSkillInfo && nextRuneSkillInfo.PropCoolDown > 0) {
         this.runeCold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          Math.ceil(this.runeSkillInfo.PropCoolDown * 0.001)
+          Math.ceil(this.runeSkillInfo.PropCoolDown * 0.001),
         );
       }
       if (nextTemp && nextTemp.UseCount > 0) {
         this.runeCost.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.RuneTips.userCount",
-          nextTemp.UseCount
+          nextTemp.UseCount,
         );
       }
       this.txt1.text = LangManager.Instance.GetTranslation(
-        "ConsortiaSkillTowerWnd.n70"
+        "ConsortiaSkillTowerWnd.n70",
       );
       this.runeEffect.getChild("content").text =
         nextRuneSkillInfo.DescriptionLang;
@@ -296,13 +296,13 @@ export class RuneItemTips extends BaseTips {
       if (this.runeSkillInfo.PropCoolDown > 0) {
         this.runeCold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          Math.ceil(this.runeSkillInfo.PropCoolDown * 0.001)
+          Math.ceil(this.runeSkillInfo.PropCoolDown * 0.001),
         );
       }
       if (runeData.templateInfo.UseCount > 0) {
         this.runeCost.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.RuneTips.userCount",
-          runeData.templateInfo.UseCount
+          runeData.templateInfo.UseCount,
         );
       }
       this.runeEffect.getChild("content").text =
@@ -311,28 +311,28 @@ export class RuneItemTips extends BaseTips {
         if (nextRuneSkillInfo.PropCoolDown > 0) {
           this.nextSkillCold.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            Math.ceil(nextRuneSkillInfo.PropCoolDown * 0.001)
+            Math.ceil(nextRuneSkillInfo.PropCoolDown * 0.001),
           );
         }
         if (nextTemp.UseCount > 0) {
           this.nextSkillCost.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.RuneTips.userCount",
-            nextTemp.UseCount
+            nextTemp.UseCount,
           );
         }
         this.nextSkillEffect.getChild("content").text =
           nextRuneSkillInfo.DescriptionLang;
 
         this.item2.icon = IconFactory.getTecIconByIcon(
-          runeData.templateInfo.Icon
+          runeData.templateInfo.Icon,
         ); //图标
         this.txt_lv1.text = LangManager.Instance.GetTranslation(
           "public.level3",
-          runeData.templateInfo.RuneGrade.toString()
+          runeData.templateInfo.RuneGrade.toString(),
         ); //等级
         this.txt_lv2.text = LangManager.Instance.GetTranslation(
           "public.level3",
-          runeData.templateInfo.RuneGrade + 1
+          runeData.templateInfo.RuneGrade + 1,
         ); //等级
         this.nextSubBox.visible = true;
         this.nextBox.visible = true;
@@ -356,19 +356,19 @@ export class RuneItemTips extends BaseTips {
           this.box3.visible = false;
           this.txt1.text =
             LangManager.Instance.GetTranslation(
-              "yishi.view.tips.goods.SkillTips.need"
+              "yishi.view.tips.goods.SkillTips.need",
             ) + ":";
           this.studyBtn.enabled = false;
           this._requireGoodsList.push(runeData.nextTemplateInfo.NeedGrade);
           this.list.numItems = this._requireGoodsList.length;
           this.studyBtn.title = LangManager.Instance.GetTranslation(
-            "armyII.viewII.skill.btnUpgrade"
+            "armyII.viewII.skill.btnUpgrade",
           );
         }
         this.nextBox.visible = !this.isMax;
         this.txt_active_tip.visible = true;
         let text = LangManager.Instance.GetTranslation(
-          "consortia.view.myConsortia.skill.ConsortiaSkillItem.tip.title2"
+          "consortia.view.myConsortia.skill.ConsortiaSkillItem.tip.title2",
         );
         if (
           !this.isMax &&
@@ -378,7 +378,7 @@ export class RuneItemTips extends BaseTips {
         ) {
           text = LangManager.Instance.GetTranslation(
             "SeminaryFrameRightView.command10",
-            runeData.nextTemplateInfo.NeedGrade
+            runeData.nextTemplateInfo.NeedGrade,
           );
         }
       }
@@ -395,7 +395,7 @@ export class RuneItemTips extends BaseTips {
     if (runeData.grade == 0) this.setRuneGoodsInfo(runeData);
 
     let tempMax = (this.ownNum = GoodsManager.Instance.getGoodsNumByTempId(
-      RunesUpgradeWnd.LOW_RUNE_TEMPID
+      RunesUpgradeWnd.LOW_RUNE_TEMPID,
     ));
     this._max = tempMax ? tempMax : 1;
     if (isinit) {
@@ -406,7 +406,7 @@ export class RuneItemTips extends BaseTips {
         this._max,
         0,
         1,
-        Laya.Handler.create(this, this.__textChangeHandler, null, false)
+        Laya.Handler.create(this, this.__textChangeHandler, null, false),
       );
     } else {
       this.stepper.resetStepper(this._max);
@@ -436,22 +436,22 @@ export class RuneItemTips extends BaseTips {
     let maxRune: t_s_runetemplateData =
       TempleteManager.Instance.getRuneTemplateInfoByRuneTypeAndLevel(
         this._selectRuneData.templateInfo.RuneType,
-        maxLv
+        maxLv,
       );
     if (maxRune) {
       let maxInfo = TempleteManager.Instance.getSkillTemplateInfoById(
-        maxRune.SkillTemplateId
+        maxRune.SkillTemplateId,
       );
       if (maxInfo.PropCoolDown > 0) {
         this.txt_coldmax.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          Math.ceil(maxInfo.PropCoolDown * 0.001)
+          Math.ceil(maxInfo.PropCoolDown * 0.001),
         );
       }
       if (maxRune.UseCount > 0) {
         this.txt_costmax.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.RuneTips.userCount",
-          maxRune.UseCount
+          maxRune.UseCount,
         );
       }
       this.maxSkillEffect.getChild("content").text = maxInfo.DescriptionLang;
@@ -479,12 +479,12 @@ export class RuneItemTips extends BaseTips {
 
   /**获取学习符文所需物品 */
   private getRequireRuneGoodsInfo(
-    runeData: RuneInfo
+    runeData: RuneInfo,
   ): Array<t_s_itemtemplateData> {
     let templist = [];
     var goodTemplate: t_s_itemtemplateData;
     var goodTemplateslist = TempleteManager.Instance.getGoodsTemplatesBySonType(
-      GoodsSonType.SONTYPE_PASSIVE_SKILL
+      GoodsSonType.SONTYPE_PASSIVE_SKILL,
     );
     for (const key in goodTemplateslist) {
       if (Object.prototype.hasOwnProperty.call(goodTemplateslist, key)) {
@@ -506,18 +506,18 @@ export class RuneItemTips extends BaseTips {
     NotificationManager.Instance.addEventListener(
       RuneEvent.RUNE_UPGRADE,
       this.__runeRefreshHandler,
-      this
+      this,
     );
     this.studyBtn.onClick(this, this._onStudySkill);
     this.list.itemRenderer = Laya.Handler.create(
       this,
       this.onRender,
       null,
-      false
+      false,
     );
     this.txt_active_tip.text = LangManager.Instance.GetTranslation(
       "runeGem.str18",
-      10
+      10,
     );
   }
 
@@ -531,7 +531,7 @@ export class RuneItemTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       RuneEvent.RUNE_UPGRADE,
       this.__runeRefreshHandler,
-      this
+      this,
     );
   }
   private get thane(): ThaneInfo {
@@ -548,11 +548,11 @@ export class RuneItemTips extends BaseTips {
       } else {
         item.icon = IconFactory.getPlayerIcon(
           ArmyManager.Instance.thane.snsInfo.headId,
-          IconType.HEAD_ICON
+          IconType.HEAD_ICON,
         );
         item.txt_name.text = LangManager.Instance.GetTranslation(
           "buildings.BaseBuildFrame.gradeValue",
-          itemData
+          itemData,
         );
         if (this.thane.grades < itemData) {
           item.txt_name.color = "#ff0000";
@@ -582,7 +582,7 @@ export class RuneItemTips extends BaseTips {
       if (this._selectRuneData && this._runeGInfo)
         this.controler.sendStudyRune(
           this._selectRuneData.runeId,
-          this._runeGInfo.pos
+          this._runeGInfo.pos,
         );
     }
   }
@@ -596,114 +596,114 @@ export class RuneItemTips extends BaseTips {
       return (
         "[" +
         LangManager.Instance.GetTranslation(
-          "yishi.datas.templates.SkillTempInfo.UseWay02"
+          "yishi.datas.templates.SkillTempInfo.UseWay02",
         ) +
         "]"
       );
     switch (temp.AcceptObject) {
       case 1:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type01"
+          "yishi.view.tips.goods.SkillTips.Type01",
         );
         break;
       case 2:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type02"
+          "yishi.view.tips.goods.SkillTips.Type02",
         );
         break;
       case 3:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type03"
+          "yishi.view.tips.goods.SkillTips.Type03",
         );
         break;
       case 4:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type04"
+          "yishi.view.tips.goods.SkillTips.Type04",
         );
         break;
       case 5:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type05"
+          "yishi.view.tips.goods.SkillTips.Type05",
         );
         break;
       case 6:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type06"
+          "yishi.view.tips.goods.SkillTips.Type06",
         );
         break;
       case 7:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type07"
+          "yishi.view.tips.goods.SkillTips.Type07",
         );
         break;
       case 8:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type08"
+          "yishi.view.tips.goods.SkillTips.Type08",
         );
         break;
       case 9:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type09"
+          "yishi.view.tips.goods.SkillTips.Type09",
         );
         break;
       case 10:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type10"
+          "yishi.view.tips.goods.SkillTips.Type10",
         );
         break;
       case 11:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type11"
+          "yishi.view.tips.goods.SkillTips.Type11",
         );
         break;
       case 12:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type12"
+          "yishi.view.tips.goods.SkillTips.Type12",
         );
         break;
       case 13:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type13"
+          "yishi.view.tips.goods.SkillTips.Type13",
         );
         break;
       case 14:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type14"
+          "yishi.view.tips.goods.SkillTips.Type14",
         );
         break;
       case 15:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type15"
+          "yishi.view.tips.goods.SkillTips.Type15",
         );
         break;
       case 16:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type16"
+          "yishi.view.tips.goods.SkillTips.Type16",
         );
         break;
       case 17:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type17"
+          "yishi.view.tips.goods.SkillTips.Type17",
         );
         break;
       case 18:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type18"
+          "yishi.view.tips.goods.SkillTips.Type18",
         );
         break;
       case 19:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type19"
+          "yishi.view.tips.goods.SkillTips.Type19",
         );
         break;
       case 20:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type20"
+          "yishi.view.tips.goods.SkillTips.Type20",
         );
         break;
       case 21:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type21"
+          "yishi.view.tips.goods.SkillTips.Type21",
         );
         break;
     }
@@ -717,12 +717,12 @@ export class RuneItemTips extends BaseTips {
       //英灵技能觉醒值消耗
       str = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown03",
-        num
+        num,
       );
     } else {
       str = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown02",
-        num
+        num,
       );
     }
     return str;
@@ -794,7 +794,7 @@ export class RuneItemTips extends BaseTips {
       if (!value || value == 0 || this._max > this.ownNum) {
         let info: ShopGoodsInfo =
           TempleteManager.Instance.getShopTempInfoByItemId(
-            RunesUpgradeWnd.LOW_RUNE_TEMPID
+            RunesUpgradeWnd.LOW_RUNE_TEMPID,
           );
         FrameCtrlManager.Instance.open(EmWindow.BuyFrameI, {
           info: info,
@@ -815,7 +815,7 @@ export class RuneItemTips extends BaseTips {
             this._selectRuneData.nextTemplateInfo.NeedGp
         ) {
           str = LangManager.Instance.GetTranslation(
-            "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt2"
+            "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt2",
           );
           MessageTipManager.Instance.show(str);
         } else {
@@ -824,7 +824,7 @@ export class RuneItemTips extends BaseTips {
         }
       } else {
         str = LangManager.Instance.GetTranslation(
-          "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt3"
+          "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt3",
         );
         MessageTipManager.Instance.show(str);
       }
@@ -851,7 +851,7 @@ export class RuneItemTips extends BaseTips {
             this._selectRuneData.nextTemplateInfo.NeedGp
         ) {
           str = LangManager.Instance.GetTranslation(
-            "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt2"
+            "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt2",
           );
           MessageTipManager.Instance.show(str);
         } else {
@@ -859,7 +859,7 @@ export class RuneItemTips extends BaseTips {
         }
       } else {
         str = LangManager.Instance.GetTranslation(
-          "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt3"
+          "armyII.viewII.rune.RuneUpgradeView.UpgradeTipTxt3",
         );
         MessageTipManager.Instance.show(str);
       }

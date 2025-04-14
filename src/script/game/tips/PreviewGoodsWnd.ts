@@ -21,10 +21,10 @@ export default class PreviewGoodsWnd extends BaseWindow {
       this,
       this.onGoodsRenderer,
       null,
-      false
+      false,
     );
     let dropItems = TempleteManager.Instance.getDropItemssByDropId(
-      this._mainGoods.templateId
+      this._mainGoods.templateId,
     );
     this._getedGoods = [];
     let goods: GoodsInfo = null;

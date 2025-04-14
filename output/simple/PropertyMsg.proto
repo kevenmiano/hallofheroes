@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message PropertyMsg {
+  int32 param1 = 1;
+  int32 param2 = 2;
+  int32 param3 = 3;
+  string param4 = 4;
+  string param5 = 5;
+  string param6 = 6;
+  bool param7 = 7;
+  bool param8 = 8;
+  bool param9 = 9;
+  int32 param10 = 10;
+  int32 param11 = 11;
+  string param12 = 12;
+}

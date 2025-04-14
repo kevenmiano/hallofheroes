@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaEventListRspMsg {
+  repeated int32 eventInfo = 1;
+}

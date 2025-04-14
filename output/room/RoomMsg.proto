@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomMsg {
+  int32 roomId = 1;
+  int32 campaignId = 2;
+  int32 masterId = 3;
+  string name = 4;
+  int32 count = 5;
+  int32 capacity = 6;
+  int32 roomState = 7;
+  int32 roomType = 8;
+  bool isSetPassword = 9;
+  repeated int32 roomPlayer = 10;
+  string masterServerName = 11;
+}

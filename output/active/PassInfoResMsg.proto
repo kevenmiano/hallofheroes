@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PassInfoResMsg {
+  int32 leftTime = 1;
+  string baseReward = 2;
+  string advancedReward = 3;
+  int32 exp = 4;
+  int32 grade = 5;
+  bool isPay = 6;
+  int32 state = 7;
+  int32 passIndex = 8;
+  int32 rewardGrade = 9;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LuckExchangeInfoMsg {
+  string exchangeId = 1;
+  int32 currentLuckValue = 2;
+}

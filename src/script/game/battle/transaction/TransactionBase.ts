@@ -1,54 +1,48 @@
-// @ts-nocheck
-import {PackageIn} from "../../../core/net/PackageIn";
-import {ISocketTransaction} from "../../interfaces/ISocketTransaction";
+import { PackageIn } from "../../../core/net/PackageIn";
+// import { ISocketTransaction } from "../../interfaces/ISocketTransaction";
 
-export class TransactionBase implements ISocketTransaction
-{
-    protected _pkg:PackageIn;
+interface ISocketTransaction {
+  disposeWhenComplete(): boolean;
+  isHandleInQueue(): boolean;
+  getCode(): number;
+  handlePackage(): void;
+  execute(param?: object): void;
+  configure(param: object): void;
+  finish(): void;
+  isFinished: boolean;
+  dispose(): void;
+}
 
-    constructor()
-    {
-    }
+export class TransactionBase implements ISocketTransaction {
+  protected _pkg: PackageIn;
 
-    public disposeWhenComplete():boolean
-    {
-        return false;
-    }
+  constructor() {}
 
-    public isHandleInQueue():boolean
-    {
-        return false;
-    }
+  public disposeWhenComplete(): boolean {
+    return false;
+  }
 
-    public getCode():number
-    {
-        return 0;
-    }
+  public isHandleInQueue(): boolean {
+    return false;
+  }
 
-    public handlePackage()
-    {
+  public getCode(): number {
+    return 0;
+  }
 
-    }
+  public handlePackage() {}
 
-    public execute(param:Object = null)
-    {
-    }
+  public execute(param: object = null) {}
 
-    public configure(param:Object)
-    {
-        this._pkg = param as PackageIn;
-    }
+  public configure(param: object) {
+    this._pkg = param as PackageIn;
+  }
 
-    public finish()
-    {
-    }
+  public finish() {}
 
-    public get isFinished():boolean
-    {
-        return false;
-    }
+  public get isFinished(): boolean {
+    return false;
+  }
 
-    public dispose()
-    {
-    }
+  public dispose() {}
 }

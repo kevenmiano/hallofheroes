@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableReqMsg {
+  int32 opType = 1;
+  int32 turntableId = 2;
+  int32 drawType = 3;
+  int32 payType = 4;
+}

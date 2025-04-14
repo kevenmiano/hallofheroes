@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.building;
+
+message BuildingInfoMsg {
+  int32 userId = 1;
+  int32 buildingId = 2;
+  int32 castleId = 3;
+  string createdDate = 4;
+  bool isExist = 5;
+  int32 templateId = 6;
+  int32 sonType = 7;
+  int32 propterty1 = 8;
+  int32 propterty2 = 9;
+  int32 levyNum = 10;
+}

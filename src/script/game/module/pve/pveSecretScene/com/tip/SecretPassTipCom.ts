@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_SecretPassTipCom from "../../../../../../../fui/PveSecretScene/FUI_SecretPassTipCom";
 import { SecretType } from "../../../../../datas/secret/SecretConst";
 import { ArmyManager } from "../../../../../manager/ArmyManager";
@@ -15,49 +15,54 @@ import SecretItem from "../SecretItem";
  * @Description: 通关提示视图
  */
 export class SecretPassTipCom extends FUI_SecretPassTipCom {
-    private _type: SecretType;
-    get type(): SecretType {
-        return this._type;
-    }
+  private _type: SecretType;
+  get type(): SecretType {
+    return this._type;
+  }
 
-    set type(value: SecretType) {
-        this._type = value;
+  set type(value: SecretType) {
+    this._type = value;
+  }
+  private _info: SecretTipData;
+  get info(): SecretTipData {
+    return this._info;
+  }
 
+  set info(value: SecretTipData) {
+    this._info = value;
+    if (value) {
+      this.list.numItems = this._info.infoList.length;
+    } else {
     }
-    private _info: SecretTipData;
-    get info(): SecretTipData {
-        return this._info;
-    }
+  }
 
-    set info(value: SecretTipData) {
-        this._info = value;
-        if (value) {
-            this.list.numItems = this._info.infoList.length
-        } else {
+  protected onConstruct() {
+    super.onConstruct();
+    this.list.itemRenderer = Laya.Handler.create(
+      this,
+      this.onRenderItem,
+      null,
+      false,
+    );
+    this.btnConfirm.onClick(this, this.btnConfirmClick);
+  }
 
-        }
-    }
+  protected onRenderItem(index: number, item: SecretItem) {
+    let info = this._info.infoList[index];
+    item.info = info;
+  }
 
-    protected onConstruct() {
-        super.onConstruct()
-        this.list.itemRenderer = Laya.Handler.create(this, this.onRenderItem, null, false)
-        this.btnConfirm.onClick(this, this.btnConfirmClick)
-    }
+  private btnConfirmClick() {
+    CampaignSocketOutManager.Instance.sendReturnCampaignRoom(
+      this.currentArmyId,
+    );
+  }
 
-    protected onRenderItem(index: number, item: SecretItem) {
-        let info = this._info.infoList[index]
-        item.info = info
+  private get currentArmyId(): number {
+    var bArmy: any = ArmyManager.Instance.army;
+    if (bArmy) {
+      return bArmy.id;
     }
-
-    private btnConfirmClick() {
-        CampaignSocketOutManager.Instance.sendReturnCampaignRoom(this.currentArmyId);
-    }
-
-    private get currentArmyId(): number {
-        var bArmy: any = ArmyManager.Instance.army;
-        if (bArmy) {
-            return bArmy.id;
-        }
-        return 0;
-    }
+    return 0;
+  }
 }

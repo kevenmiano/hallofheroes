@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message NewActiveClientReq {
+  int32 activeId = 1;
+  int32 op = 2;
+  int32 param1 = 3;
+  int32 param2 = 4;
+  int32 param3 = 5;
+}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2021-06-03 15:21:40
@@ -9,81 +8,89 @@
  */
 
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
-import { Disposeable, DisplayObject } from '../../../component/DisplayObject';
+import { Disposeable, DisplayObject } from "../../../component/DisplayObject";
 import { EmPackName } from "../../../constant/UIDefine";
 
-
 export class NoviceArrowView extends DisplayObject implements Disposeable {
-	public static RIGHT: number = 1;
-	public static DOWN: number = 2;
-	public static LEFT: number = 3;
-	public static UP: number = 4;
+  public static RIGHT: number = 1;
+  public static DOWN: number = 2;
+  public static LEFT: number = 3;
+  public static UP: number = 4;
 
-	private _view: fgui.GButton;
-	private _direction: number;  //箭头方向
-	private _tip: string;  		 //指引内容
-	private mc: fgui.Transition;
-	private txtAutoClickTip: fgui.GTextField;
+  private _view: fgui.GButton;
+  private _direction: number; //箭头方向
+  private _tip: string; //指引内容
+  private mc: fgui.Transition;
+  private txtAutoClickTip: fgui.GTextField;
 
-	constructor(direction: number = NoviceArrowView.RIGHT, tip: string = "", showInLayer: boolean = true, callFun: Function = null) {
-		super()
-		this._direction = direction;
-		this._tip = tip;
-		this.initView();
-		this.mouseEnabled = false;
-		this.mouseThrough = true;
-	}
+  constructor(
+    direction: number = NoviceArrowView.RIGHT,
+    tip: string = "",
+    showInLayer: boolean = true,
+    callFun: Function = null,
+  ) {
+    super();
+    this._direction = direction;
+    this._tip = tip;
+    this.initView();
+    this.mouseEnabled = false;
+    this.mouseThrough = true;
+  }
 
-	private initView() {
-		this._view = fgui.UIPackage.createObject(EmPackName.Newbie, "NoviceArrowGuide") as fgui.GButton
-		this.addChild(this._view.displayObject);
+  private initView() {
+    this._view = fgui.UIPackage.createObject(
+      EmPackName.Newbie,
+      "NoviceArrowGuide",
+    ) as fgui.GButton;
+    this.addChild(this._view.displayObject);
 
-		this._view.title = this._tip;
-		// let ctr = this._view.getController("dir")
-		// ctr.selectedIndex = this._direction;
+    this._view.title = this._tip;
+    // let ctr = this._view.getController("dir")
+    // ctr.selectedIndex = this._direction;
 
-		let cArrow = this._view.getChild("arrow").asCom
-		this.mc = cArrow.getTransition("arrowAni")
-		this.txtAutoClickTip = this._view.getChild("txtAutoClickTip").asTextField
-	}
+    let cArrow = this._view.getChild("arrow").asCom;
+    this.mc = cArrow.getTransition("arrowAni");
+    this.txtAutoClickTip = this._view.getChild("txtAutoClickTip").asTextField;
+  }
 
-	public setAutoClickTip(str:string) {
-		this.txtAutoClickTip.text = str;
-	}
+  public setAutoClickTip(str: string) {
+    this.txtAutoClickTip.text = str;
+  }
 
-	public showAutoClickTip(b:boolean) {
-		this.txtAutoClickTip.visible = b;
-	}
+  public showAutoClickTip(b: boolean) {
+    this.txtAutoClickTip.visible = b;
+  }
 
-	public set visible(v:boolean) {
-		super.visible = v;
-	}
+  public set visible(v: boolean) {
+    super.visible = v;
+  }
 
-	public get visible():boolean {
-		return super.visible;
-	}
+  public get visible(): boolean {
+    return super.visible;
+  }
 
-	public showTween(time: number = 0.3) {
-		this.alpha = 0;
-		this.scaleX = this.scaleY = 0.1;
-		TweenMax.to(this, time, { scaleX: 1, scaleY: 1, alpha: 1 });
-	}
+  public showTween(time: number = 0.3) {
+    this.alpha = 0;
+    this.scaleX = this.scaleY = 0.1;
+    TweenMax.to(this, time, { scaleX: 1, scaleY: 1, alpha: 1 });
+  }
 
-	public playEffect() {
-		this.mc.play(null, -1)
-	}
+  public playEffect() {
+    this.mc.play(null, -1);
+  }
 
-	public stopEffect() {
-		this.mc.stop()
-	}
+  public stopEffect() {
+    this.mc.stop();
+  }
 
-	public set tip(tip: string) {
-		this._tip = tip;
-		this._view.title = this._tip;
-	}
+  public set tip(tip: string) {
+    this._tip = tip;
+    this._view.title = this._tip;
+  }
 
-	public dispose() {
-		TweenMax.killTweensOf(this);
-		ObjectUtils.disposeObject(this._view); this._view = null;
-	}
+  public dispose() {
+    TweenMax.killTweensOf(this);
+    ObjectUtils.disposeObject(this._view);
+    this._view = null;
+  }
 }

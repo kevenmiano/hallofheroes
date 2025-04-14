@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2024-03-07 09:43:49
@@ -16,43 +16,49 @@ import { SecretTipData } from "../../model/SecretTipData";
 import SecretItem from "../SecretItem";
 
 export class SecretLoseTipCom extends FUI_SecretLoseTipCom {
-    private _type: SecretType;
-    get type(): SecretType {
-        return this._type;
+  private _type: SecretType;
+  get type(): SecretType {
+    return this._type;
+  }
+
+  set type(value: SecretType) {
+    this._type = value;
+  }
+  private _info: SecretTipData;
+  get info(): SecretTipData {
+    return this._info;
+  }
+
+  set info(value: SecretTipData) {
+    this._info = value;
+    if (value) {
+      this.list.numItems = this._info.infoList.length;
+    } else {
     }
+  }
 
-    set type(value: SecretType) {
-        this._type = value;
+  protected onConstruct() {
+    super.onConstruct();
+    this.txtTitle.text = LangManager.Instance.GetTranslation(
+      "Pve.secretScene.title.lose",
+    );
+    this.btnContinue.text =
+      LangManager.Instance.GetTranslation("public.continue");
+    this.list.itemRenderer = Laya.Handler.create(
+      this,
+      this.onRenderItem,
+      null,
+      false,
+    );
+    this.btnContinue.onClick(this, this.btnContinueClick);
+  }
 
-    }  
-    private _info: SecretTipData;
-    get info(): SecretTipData {
-        return this._info;
-    }
+  protected onRenderItem(index: number, item: SecretItem) {
+    let info = this._info.infoList[index];
+    item.info = info;
+  }
 
-    set info(value: SecretTipData) {
-        this._info = value;
-        if (value) {
-            this.list.numItems = this._info.infoList.length
-        } else {
-            
-        }
-    }  
-
-    protected onConstruct() {
-        super.onConstruct()
-        this.txtTitle.text = LangManager.Instance.GetTranslation("Pve.secretScene.title.lose")
-        this.btnContinue.text = LangManager.Instance.GetTranslation("public.continue")
-        this.list.itemRenderer = Laya.Handler.create(this, this.onRenderItem, null, false) 
-        this.btnContinue.onClick(this, this.btnContinueClick)
-    }
-
-    protected onRenderItem(index: number, item: SecretItem) {
-        let info = this._info.infoList[index]
-        item.info = info
-    }
-
-    private btnContinueClick() {
-        NotificationManager.Instance.dispatchEvent(SecretEvent.GAIN_TRESURE)
-    }
+  private btnContinueClick() {
+    NotificationManager.Instance.dispatchEvent(SecretEvent.GAIN_TRESURE);
+  }
 }

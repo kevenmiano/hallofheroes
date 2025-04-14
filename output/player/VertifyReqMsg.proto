@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message VertifyReqMsg {
+  int32 type = 1;
+  int32 op = 2;
+  bool agree = 3;
+}

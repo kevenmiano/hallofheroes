@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerOpMsg {
+  int32 op = 1;
+  int32 type = 2;
+  int32 payType = 3;
+  int32 count = 4;
+  int32 id = 5;
+  int32 index = 6;
+  int32 userId = 7;
+  int32 templateId = 8;
+  int32 campaignId = 9;
+  int32 nodeId = 10;
+  int32 chapterId = 11;
+  string uuid = 12;
+  int32 value1 = 13;
+  int32 value2 = 14;
+  string param1 = 15;
+  string param2 = 16;
+  bool flag1 = 17;
+  bool flag2 = 18;
+  int32 pos = 19;
+  repeated int32 ids = 20;
+}

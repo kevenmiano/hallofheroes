@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DepositActiveMsg {
+  string activeId = 1;
+  string title = 2;
+  string contents = 3;
+  int32 activeType = 4;
+  string description = 5;
+  string actionTimeContent = 6;
+  int32 consortia = 7;
+  int32 grades = 8;
+  string setStartDate = 9;
+  string setEndDate = 10;
+  string getStartDate = 11;
+  string getEndDate = 12;
+  int32 depositLevel = 13;
+  string depositTime = 14;
+  int32 opType = 15;
+  int32 opParam = 16;
+  repeated int32 harvestedInfos = 17;
+  repeated int32 activeParams = 18;
+  repeated int32 logs = 19;
+}

@@ -43,7 +43,7 @@ export class StringUtil {
   public static replaceWord(
     text: string,
     rep: string = "7road",
-    to: string = "S"
+    to: string = "S",
   ): string {
     if (text.indexOf(rep) != -1) {
       return text.replace(rep, to);
@@ -63,7 +63,7 @@ export class StringUtil {
   public static isDouble(char: string): boolean {
     char = StringUtil.trim(char);
     var pattern: RegExp = /^[-\+]?\d+(\.\d+)?$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -76,7 +76,7 @@ export class StringUtil {
     }
     char = StringUtil.trim(char);
     var pattern: RegExp = /^[-\+]?\d+$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -89,7 +89,7 @@ export class StringUtil {
     }
     char = StringUtil.trim(char);
     var pattern: RegExp = /^[A-Za-z]+$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -102,7 +102,7 @@ export class StringUtil {
     }
     char = StringUtil.trim(char);
     var pattern: RegExp = /^[\u0391-\uFFE5]+$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -115,7 +115,7 @@ export class StringUtil {
     }
     char = StringUtil.trim(char);
     var pattern: RegExp = /^[^\x00-\xff]+$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -129,7 +129,7 @@ export class StringUtil {
     }
     char = StringUtil.trim(char);
     var pattern: RegExp = /[^\x00-\xff]/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -146,9 +146,9 @@ export class StringUtil {
     char = StringUtil.trim(char);
     var pattern: RegExp = new RegExp(
       "^[a-zA-Z0-9][a-zA-Z0-9_-]{0," + len + "}$",
-      ""
+      "",
     );
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -162,7 +162,7 @@ export class StringUtil {
     char = StringUtil.trim(char).toLowerCase();
     var pattern: RegExp =
       /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
-    var result: Object = pattern.exec(char);
+    var result: object = pattern.exec(char);
     if (result == null) {
       return false;
     }
@@ -243,14 +243,14 @@ export class StringUtil {
   public static replace(
     char: string,
     replace: string,
-    replaceWith: string
+    replaceWith: string,
   ): string {
     return char.split(replace).join(replaceWith);
   }
 
   //utf16转utf8编码;
   public static utf16to8(char: string): string {
-    var out: any[] = new Array();
+    var out: any[] = [];
     var len: number = char.length;
     for (var i: number = 0; i < len; i++) {
       var c: number = char.charCodeAt(i);
@@ -260,12 +260,12 @@ export class StringUtil {
         out[i] = String.fromCharCode(
           0xe0 | ((c >> 12) & 0x0f),
           0x80 | ((c >> 6) & 0x3f),
-          0x80 | ((c >> 0) & 0x3f)
+          0x80 | ((c >> 0) & 0x3f),
         );
       } else {
         out[i] = String.fromCharCode(
           0xc0 | ((c >> 6) & 0x1f),
-          0x80 | ((c >> 0) & 0x3f)
+          0x80 | ((c >> 0) & 0x3f),
         );
       }
     }
@@ -274,7 +274,7 @@ export class StringUtil {
 
   //utf8转utf16编码;
   public static utf8to16(char: string): string {
-    var out: any[] = new Array();
+    var out: any[] = [];
     var len: number = char.length;
     var i: number = 0;
     var char2: number, char3: number;
@@ -297,7 +297,7 @@ export class StringUtil {
           // 110x xxxx   10xx xxxx
           char2 = char.charCodeAt(i++);
           out[out.length] = String.fromCharCode(
-            ((c & 0x1f) << 6) | (char2 & 0x3f)
+            ((c & 0x1f) << 6) | (char2 & 0x3f),
           );
           break;
         case 14:
@@ -305,7 +305,7 @@ export class StringUtil {
           char2 = char.charCodeAt(i++);
           char3 = char.charCodeAt(i++);
           out[out.length] = String.fromCharCode(
-            ((c & 0x0f) << 12) | ((char2 & 0x3f) << 6) | ((char3 & 0x3f) << 0)
+            ((c & 0x0f) << 12) | ((char2 & 0x3f) << 6) | ((char3 & 0x3f) << 0),
           );
           break;
       }

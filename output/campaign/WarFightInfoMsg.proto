@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WarFightInfoMsg {
+  int32 teamId = 1;
+  int32 score = 2;
+  int32 order = 3;
+  int32 geste = 4;
+  int32 hitCount = 5;
+  int32 leftTime = 6;
+  int32 oneCount = 7;
+  int32 twoCount = 8;
+  int32 oneScore = 9;
+  int32 twoScore = 10;
+}

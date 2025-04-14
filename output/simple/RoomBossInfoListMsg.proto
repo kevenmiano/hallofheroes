@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message RoomBossInfoListMsg {
+  int32 castleRoomId = 1;
+  int32 campaignId = 2;
+  int32 nodeId = 3;
+  repeated int32 roomBoss = 4;
+}

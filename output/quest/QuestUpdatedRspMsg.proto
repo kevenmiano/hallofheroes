@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.quest;
+
+message QuestUpdatedRspMsg {
+  repeated int32 quest = 1;
+  int32 statesLength = 2;
+  string states = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GetRewardBoxMsg {
+  int32 boxId = 1;
+}

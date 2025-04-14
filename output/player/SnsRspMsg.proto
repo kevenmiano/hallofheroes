@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message SnsRspMsg {
+  int32 type = 1;
+  string data = 2;
+  string md5 = 3;
+  string site = 4;
+}

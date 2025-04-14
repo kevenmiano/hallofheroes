@@ -7,7 +7,7 @@
  * @Description:
  */
 
-import BaseWindow from "../../core/ui/Base/BaseWindow";
+// import BaseWindow from "../../core/ui/Base/BaseWindow";
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import GoodsSonType from "../constant/GoodsSonType";
 import { t_s_itemtemplateData } from "../config/t_s_itemtemplate";
@@ -97,13 +97,13 @@ export class ForgePropTip extends BaseTips {
         break;
       case ForgeData.TabIndex.XQ: //镶嵌
         equipOnStr = LangManager.Instance.GetTranslation(
-          "Forge.TabTitle.Inlay"
+          "Forge.TabTitle.Inlay",
         ); //镶嵌
         equipOffStr = LangManager.Instance.GetTranslation("public.unEquip");
         break;
       case ForgeData.TabIndex.ZH: //转换
         equipOnStr = LangManager.Instance.GetTranslation(
-          "Forge.TabTitle.Switch"
+          "Forge.TabTitle.Switch",
         ); //转换
         equipOffStr = LangManager.Instance.GetTranslation("public.unEquip");
         break;
@@ -115,14 +115,13 @@ export class ForgePropTip extends BaseTips {
       this.btn_lock.visible = !this.isEquiped;
     }
     this.btn_lock.title = LangManager.Instance.GetTranslation(
-      this.isLocked ? "public.unLock" : "public.lock"
+      this.isLocked ? "public.unLock" : "public.lock",
     );
     switch (selectTab) {
       case ForgeData.TabIndex.QH: //强化
         this.btn_equip.title = this.isEquiped ? equipOffStr : equipOnStr;
         break;
       case ForgeData.TabIndex.XQ: //镶嵌
-        //@ts-ignore   镶嵌仅有
         isInlay = this._info.isInlay;
         if (!this.forgeControler.view) {
           this.btn_equip.title = isInlay ? equipOffStr : equipOnStr;
@@ -144,7 +143,7 @@ export class ForgePropTip extends BaseTips {
       this.item.text = "";
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.txt_name.color = GoodsSonType.getColorByProfile(
-        this._info.templateInfo.Profile
+        this._info.templateInfo.Profile,
       );
       this.txt_type.text = this.getGoodsTypeName(this._info.templateInfo);
       ToolTipsManager.Instance.setMountActiveTxt(this._info, this.txt_bind);
@@ -158,13 +157,13 @@ export class ForgePropTip extends BaseTips {
       if (this._info.templateInfo.NeedGrades > 1) {
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.grade",
-          this._info.templateInfo.NeedGrades
+          this._info.templateInfo.NeedGrades,
         );
         if (
           !GoodsCheck.isGradeFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_useLevel.color = "#FF0000";
@@ -189,18 +188,18 @@ export class ForgePropTip extends BaseTips {
       let timeStr: string;
       if (this._info.leftTime == -1) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr01"
+          "yishi.view.tips.goods.EquipTip.timeStr01",
         );
       } else if (this._info.leftTime < 0) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr02"
+          "yishi.view.tips.goods.EquipTip.timeStr02",
         );
       } else {
         timeStr = DateFormatter.getFullDateString(this._info.leftTime);
       }
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.time.text"
+          "yishi.view.tips.goods.EquipTip.time.text",
         ) +
         ":" +
         timeStr;
@@ -211,11 +210,11 @@ export class ForgePropTip extends BaseTips {
     switch (temp.SonType) {
       case GoodsSonType.SONTYPE_TASK:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.SONTYPE_TASK"
+          "yishi.view.tips.goods.PropTips.SONTYPE_TASK",
         );
       case GoodsSonType.SONTYPE_COMPOSE_MATERIAL:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL"
+          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL",
         );
     }
     return "";
@@ -236,14 +235,13 @@ export class ForgePropTip extends BaseTips {
       //魂器镶嵌
       NotificationManager.Instance.dispatchEvent(
         ExtraJobEvent.CLICK_INLAY,
-        this._info
+        this._info,
       );
       this.hide();
       return;
     }
     switch (this.forgeModel.curTabIndex) {
       case ForgeData.TabIndex.XQ:
-        //@ts-ignore
         if (this.isEquiped && this._info.isInlay) {
           if (this._info.templateInfo.SonType == GoodsSonType.SONTYPE_MOUNT) {
             let pos = this._info.pos;
@@ -262,6 +260,7 @@ export class ForgePropTip extends BaseTips {
             // });
           }
         } else {
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           this.isMountJewel;
         }
         this.hide();
@@ -271,7 +270,7 @@ export class ForgePropTip extends BaseTips {
           let count = GoodsManager.Instance.getBagCountByTempIdAndPos(
             BagType.Hide,
             this._info.templateId,
-            this._info.pos
+            this._info.pos,
           );
           this.moveBagToBag(
             this._info.bagType,
@@ -280,7 +279,7 @@ export class ForgePropTip extends BaseTips {
             BagType.Player,
             0,
             0,
-            count
+            count,
           );
           this.hide();
         } else {
@@ -288,8 +287,8 @@ export class ForgePropTip extends BaseTips {
           if (forgeWnd.uiQiangHua.equipMaxGrade) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "buildings.BaseBuildFrame.maxGrade"
-              )
+                "buildings.BaseBuildFrame.maxGrade",
+              ),
             );
             this.hide();
             return;
@@ -299,8 +298,8 @@ export class ForgePropTip extends BaseTips {
           if (!info) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "cell.mediator.storebag.StoreBagCellDropMediator.command01"
-              )
+                "cell.mediator.storebag.StoreBagCellDropMediator.command01",
+              ),
             );
             this.hide();
             return;
@@ -315,7 +314,7 @@ export class ForgePropTip extends BaseTips {
             moveCnt = GoodsManager.Instance.getBagCountByTempIdAndPos(
               BagType.Player,
               this._info.templateId,
-              this._info.pos
+              this._info.pos,
             );
           }
           this.moveBagToBag(
@@ -325,7 +324,7 @@ export class ForgePropTip extends BaseTips {
             BagType.Hide,
             0,
             to_pos,
-            moveCnt
+            moveCnt,
           );
           this.hide();
           return;
@@ -340,15 +339,15 @@ export class ForgePropTip extends BaseTips {
             BagType.Player,
             0,
             0,
-            1
+            1,
           );
           this.hide();
         } else {
           if (this._info.isLock) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "store.view.compose.ComposeMatetialView.sendComposeTip05"
-              )
+                "store.view.compose.ComposeMatetialView.sendComposeTip05",
+              ),
             );
             this.hide();
           } else {
@@ -356,7 +355,7 @@ export class ForgePropTip extends BaseTips {
             let ownCount = GoodsManager.Instance.getBagCountByTempIdAndPos(
               BagType.Player,
               this._info.templateId,
-              this._info.pos
+              this._info.pos,
             );
             if (ownCount > 1) {
               UIManager.Instance.ShowWind(EmWindow.QuantitySelector, {
@@ -375,7 +374,7 @@ export class ForgePropTip extends BaseTips {
                 BagType.Hide,
                 0,
                 0,
-                1
+                1,
               );
             }
             this.hide();
@@ -396,7 +395,7 @@ export class ForgePropTip extends BaseTips {
         BagType.Hide,
         0,
         0,
-        count
+        count,
       );
     }
   }
@@ -413,11 +412,11 @@ export class ForgePropTip extends BaseTips {
           if (info["join" + i] > 0) {
             let temp: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
               ConfigType.t_s_itemtemplate,
-              Number(info["join" + i])
+              Number(info["join" + i]),
             );
             if (temp.Property1 == this._info.templateInfo.Property1) {
               let str: string = LangManager.Instance.GetTranslation(
-                "cell.mediator.storebag.StoreBagCellClickMediator.command03"
+                "cell.mediator.storebag.StoreBagCellClickMediator.command03",
               );
               MessageTipManager.Instance.show(str);
               this.hide();
@@ -429,19 +428,19 @@ export class ForgePropTip extends BaseTips {
         }
         if (emptyPos.length <= 0) {
           let str = LangManager.Instance.GetTranslation(
-            "cell.mediator.storebag.StoreBagCellClickMediator.command04"
+            "cell.mediator.storebag.StoreBagCellClickMediator.command04",
           );
           MessageTipManager.Instance.show(str);
         } else {
           this.forgeControler.sendItemMount(
             emptyPos[0],
             this._info.pos,
-            this._info.bagType
+            this._info.bagType,
           );
         }
       } else {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.mediator.storebag.StoreBagCellDropMediator.command01"
+          "cell.mediator.storebag.StoreBagCellDropMediator.command01",
         );
         MessageTipManager.Instance.show(str);
       }
@@ -453,7 +452,7 @@ export class ForgePropTip extends BaseTips {
 
   private btn_lockClick() {
     MessageTipManager.Instance.show(
-      LangManager.Instance.GetTranslation("public.unopen")
+      LangManager.Instance.GetTranslation("public.unopen"),
     );
     return;
     if (!this._info) return;
@@ -502,7 +501,7 @@ export class ForgePropTip extends BaseTips {
     endBagType: number,
     endObjectId: number,
     endPos: number,
-    count: number
+    count: number,
   ) {
     AudioManager.Instance.playSound(SoundIds.BAG_EQUIP_SOUND);
     PlayerManager.Instance.moveBagToBag(
@@ -512,7 +511,7 @@ export class ForgePropTip extends BaseTips {
       endBagType,
       endObjectId,
       endPos,
-      count
+      count,
     );
   }
 
@@ -524,7 +523,7 @@ export class ForgePropTip extends BaseTips {
     // 如果是镶嵌->宝石tip 另外判断
     if (this.forgeModel.curTabIndex == ForgeData.TabIndex.XQ) {
       let arr: GoodsInfo[] = GoodsManager.Instance.getGoodsByBagType(
-        BagType.Hide
+        BagType.Hide,
       );
       for (let i = 0; i < arr.length; i++) {
         const goods: GoodsInfo = arr[i];
@@ -538,7 +537,7 @@ export class ForgePropTip extends BaseTips {
       return false;
     } else {
       let arr: GoodsInfo[] = GoodsManager.Instance.getGoodsByBagType(
-        BagType.Hide
+        BagType.Hide,
       );
       for (let i = 0; i < arr.length; i++) {
         const goods: GoodsInfo = arr[i];

@@ -72,7 +72,7 @@ export class ForgeEquipTip extends BaseTips {
     NotificationManager.Instance.addEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 
@@ -80,7 +80,7 @@ export class ForgeEquipTip extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 
@@ -88,10 +88,10 @@ export class ForgeEquipTip extends BaseTips {
     this.cEquiped = this.getController("cEquiped");
     this.cEquiped.selectedIndex = this.isEquiped ? 1 : 0;
     this.btnLock.title = LangManager.Instance.GetTranslation(
-      this.isLocked ? "public.unLock" : "public.lock"
+      this.isLocked ? "public.unLock" : "public.lock",
     );
     this.btnEquip.title = LangManager.Instance.GetTranslation(
-      this.isEquiped ? "public.unEquip" : "public.putIn"
+      this.isEquiped ? "public.unEquip" : "public.putIn",
     );
     if (!ComponentSetting.PROP_LOCK) {
       this.btnLock.visible = false;
@@ -100,7 +100,7 @@ export class ForgeEquipTip extends BaseTips {
 
   private btnLockClick() {
     MessageTipManager.Instance.show(
-      LangManager.Instance.GetTranslation("public.unopen")
+      LangManager.Instance.GetTranslation("public.unopen"),
     );
     return;
     if (!this._info) return;
@@ -130,7 +130,7 @@ export class ForgeEquipTip extends BaseTips {
         BagType.Player,
         0,
         0,
-        1
+        1,
       );
     } else {
       // if (this.forgeModel.curTabIndex == ForgeData.TabIndex.FJ) {
@@ -158,7 +158,7 @@ export class ForgeEquipTip extends BaseTips {
         BagType.Hide,
         0,
         0,
-        1
+        1,
       );
       // }
     }
@@ -172,7 +172,7 @@ export class ForgeEquipTip extends BaseTips {
     endBagType: number,
     endObjectId: number,
     endPos: number,
-    count: number
+    count: number,
   ) {
     AudioManager.Instance.playSound(SoundIds.BAG_EQUIP_SOUND);
     PlayerManager.Instance.moveBagToBag(
@@ -182,13 +182,13 @@ export class ForgeEquipTip extends BaseTips {
       endBagType,
       endObjectId,
       endPos,
-      count
+      count,
     );
   }
 
   private showResolveAlert(): boolean {
     let preDate: Date = new Date(
-      SharedManager.Instance.resolveStrengthenCheckDate
+      SharedManager.Instance.resolveStrengthenCheckDate,
     );
     let now: Date = new Date();
     let outdate: boolean = false;
@@ -213,7 +213,7 @@ export class ForgeEquipTip extends BaseTips {
     }
 
     let arr: GoodsInfo[] = GoodsManager.Instance.getGoodsByBagType(
-      BagType.Hide
+      BagType.Hide,
     );
     for (let i = 0; i < arr.length; i++) {
       const goods: GoodsInfo = arr[i];

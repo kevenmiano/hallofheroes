@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableReceiveResp {
+  int32 ItemId = 1;
+  int32 Count = 2;
+}

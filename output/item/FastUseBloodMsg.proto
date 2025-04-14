@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message FastUseBloodMsg {
+  int32 result = 1;
+  int32 templateId = 2;
+}

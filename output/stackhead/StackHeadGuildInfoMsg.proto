@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadGuildInfoMsg {
+  string guildUid = 1;
+  string guildName = 2;
+  string site = 3;
+  int32 currentScore = 4;
+  string battleFieldUid = 5;
+  int32 crossServerId = 6;
+  int32 attackBuffLevel = 7;
+  int32 defenceBuffLevel = 8;
+  string serverName = 9;
+  int32 pos = 10;
+  int32 defenceArmyAlive = 11;
+  int32 defenceArmyTotal = 12;
+  repeated int32 seniorGeneralList = 13;
+  string totalFightCapacity = 14;
+}

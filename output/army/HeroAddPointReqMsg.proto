@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroAddPointReqMsg {
+  int32 powerPoint = 1;
+  int32 agilityPoint = 2;
+  int32 intellectPoint = 3;
+  int32 captainPoint = 4;
+  int32 physiquePoint = 5;
+  int32 skillTempId = 6;
+  int32 type = 7;
+  int32 subType = 8;
+}

@@ -11,7 +11,7 @@ export default class FUI_PetChallengeAdjustFormationItem extends fgui.GComponent
     return <FUI_PetChallengeAdjustFormationItem>(
       fgui.UIPackage.createObject(
         "PetChallenge",
-        "PetChallengeAdjustFormationItem"
+        "PetChallengeAdjustFormationItem",
       )
     );
   }

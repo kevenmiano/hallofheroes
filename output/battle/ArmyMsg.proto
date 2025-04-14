@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ArmyMsg {
+  int32 id = 1;
+  int32 userId = 2;
+  string name = 3;
+  int32 type = 4;
+  int32 side = 5;
+  int32 formation = 6;
+  repeated int32 hero = 7;
+  repeated int32 soldier = 8;
+  int32 result = 9;
+  bool isJoin = 10;
+  int32 armyType = 11;
+  bool isRobot = 12;
+  int32 failedCount = 13;
+  string serverName = 14;
+  string armyPlayerInfo = 15;
+  int32 curWave = 16;
+  repeated int32 pet = 17;
+}

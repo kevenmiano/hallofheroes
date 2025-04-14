@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaBossMsg {
+  int32 grade = 1;
+  string spirit = 2;
+  int32 state = 3;
+  string endTime = 4;
+  string totalHp = 5;
+  int32 callGrade = 6;
+}

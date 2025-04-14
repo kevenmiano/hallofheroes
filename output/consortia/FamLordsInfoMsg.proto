@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message FamLordsInfoMsg {
+  bool isCanCall = 1;
+  int32 order = 2;
+  string expairtDate = 3;
+  bool isOpenLordsNode = 4;
+  int32 currentTurns = 5;
+  int32 leftTime = 6;
+  repeated int32 userIds = 7;
+}

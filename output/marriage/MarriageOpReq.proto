@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageOpReq {
+  int32 op = 1;
+  int32 engageId = 2;
+  string msg = 3;
+  int32 replyEngageId = 4;
+  bool isAgree = 5;
+  int32 templateId = 6;
+  int32 mateId = 7;
+  int32 marryTimeId = 8;
+  int32 payType = 9;
+  string userKey = 10;
+  bool agreeDivorces = 11;
+  int32 count = 12;
+  int32 happyTemplateId = 13;
+  int32 skillId = 14;
+  int32 giftId = 15;
+}

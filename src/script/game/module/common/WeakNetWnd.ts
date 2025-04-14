@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 /**
  * @description
@@ -7,36 +6,35 @@ import BaseWindow from "../../../core/ui/Base/BaseWindow";
  * @ver 1.0
  */
 export class WeakNetWnd extends BaseWindow {
-    public bg: fgui.GImage;
-    public txt_hint: fgui.GTextField;
+  public bg: fgui.GImage;
+  public txt_hint: fgui.GTextField;
 
-    private _info: string;
+  private _info: string;
 
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter();
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
 
-        this._info = this.params;
-    }
+    this._info = this.params;
+  }
 
-    protected OnClickModal() {
-    }
+  protected OnClickModal() {}
 
-    public OnShowWind() {
-        super.OnShowWind();
-        if (this.txt_hint && !this.txt_hint.isDisposed)
-            this.txt_hint.text = this._info;
-    }
+  public OnShowWind() {
+    super.OnShowWind();
+    if (this.txt_hint && !this.txt_hint.isDisposed)
+      this.txt_hint.text = this._info;
+  }
 
-    public OnHideWind() {
-        super.OnHideWind();
-    }
+  public OnHideWind() {
+    super.OnHideWind();
+  }
 
-    dispose(dispose?: boolean) {
-        super.dispose(dispose);
-    }
+  dispose(dispose?: boolean) {
+    super.dispose(dispose);
+  }
 }

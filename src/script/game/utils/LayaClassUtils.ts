@@ -193,7 +193,7 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("CreateGameTransaction", CreateGameTransaction);
     Laya.ClassUtils.regClass(
       "CampaignOverTransaction",
-      CampaignOverTransaction
+      CampaignOverTransaction,
     );
     Laya.ClassUtils.regClass("CrossMapSearchAction", CrossMapSearchAction);
     Laya.ClassUtils.regClass("ThaneInfo", ThaneInfo);
@@ -219,13 +219,13 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("VipRechargeTipView", VipRechargeTipView);
     Laya.ClassUtils.regClass(
       "VipMountActivityTipView",
-      VipMountActivityTipView
+      VipMountActivityTipView,
     );
     Laya.ClassUtils.regClass("VipMountLoseTipView", VipMountLoseTipView);
     Laya.ClassUtils.regClass("SecretTreeTipView", SecretTreeTipView);
     Laya.ClassUtils.regClass(
       "PawnCharacteristicsTipView",
-      PawnCharacteristicsTipView
+      PawnCharacteristicsTipView,
     );
     Laya.ClassUtils.regClass("MountOpenTipView", MountOpenTipView);
     Laya.ClassUtils.regClass("DemonOpenTipView", DemonOpenTipView);
@@ -240,7 +240,7 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("VIPCustomTipView", VIPCustomTipView);
     Laya.ClassUtils.regClass(
       "SinglepassHasBugleYipsView",
-      SinglepassHasBugleYipsView
+      SinglepassHasBugleYipsView,
     );
     Laya.ClassUtils.regClass("OpenBoxTipView", OpenBoxTipView);
   }
@@ -325,11 +325,11 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("t_s_shop", t_s_shop); //商店
     Laya.ClassUtils.regClass(
       "t_s_skillbuffertemplate",
-      t_s_skillbuffertemplate
+      t_s_skillbuffertemplate,
     ); //技能buff
     Laya.ClassUtils.regClass(
       "t_s_skillpropertytemplate",
-      t_s_skillpropertytemplate
+      t_s_skillpropertytemplate,
     ); //技能属性
     Laya.ClassUtils.regClass("t_s_skilltemplate", t_s_skilltemplate); //技能
     // Laya.ClassUtils.regClass("t_s_skytrialevent",t_s_skytrialevent);//天穹之径事件
@@ -340,26 +340,26 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("t_s_suitetemplate", t_s_suitetemplate); //套装
     Laya.ClassUtils.regClass(
       "t_s_talenteffecttemplate",
-      t_s_talenteffecttemplate
+      t_s_talenteffecttemplate,
     ); //天赋
     // Laya.ClassUtils.regClass("t_s_titan",t_s_titan);//泰坦
     Laya.ClassUtils.regClass("t_s_transformtemplate", t_s_transformtemplate); //转换
     Laya.ClassUtils.regClass("t_s_upgradetemplate", t_s_upgradetemplate); //升级
     Laya.ClassUtils.regClass(
       "t_s_vehiclebufftemplate",
-      t_s_vehiclebufftemplate
+      t_s_vehiclebufftemplate,
     ); //载具buff
     Laya.ClassUtils.regClass(
       "t_s_vehicleobjecttemplate",
-      t_s_vehicleobjecttemplate
+      t_s_vehicleobjecttemplate,
     ); //载具
     Laya.ClassUtils.regClass(
       "t_s_vehicleskilltemplate",
-      t_s_vehicleskilltemplate
+      t_s_vehicleskilltemplate,
     ); //载具技能
     Laya.ClassUtils.regClass(
       "t_s_vipprerogativetemplate",
-      t_s_vipprerogativetemplate
+      t_s_vipprerogativetemplate,
     ); //VIP
     // Laya.ClassUtils.regClass("t_s_crossguildnode",t_s_crossguildnode);//跨服公会战节点模板
     // Laya.ClassUtils.regClass("t_s_consortiatreasure",t_s_consortiatreasure);//公会宝藏
@@ -370,7 +370,7 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("t_s_powcardtemplate", t_s_powcardtemplate); //
     Laya.ClassUtils.regClass(
       "t_s_powcardsuitetemplate",
-      t_s_powcardsuitetemplate
+      t_s_powcardsuitetemplate,
     );
     Laya.ClassUtils.regClass("t_s_firstpay", t_s_firstpay); //首充送豪礼
     Laya.ClassUtils.regClass("t_s_fund", t_s_fund); //成长基金
@@ -413,12 +413,12 @@ export class LayaClassUtils {
 
     Laya.ClassUtils.regClass(
       "t_s_carnivaldailychallenge",
-      t_s_carnivaldailychallenge
+      t_s_carnivaldailychallenge,
     ); //嘉年华 每日挑战
     Laya.ClassUtils.regClass("t_s_carnivalluckdraw", t_s_carnivalluckdraw); //嘉年华 每日挑战
     Laya.ClassUtils.regClass(
       "t_s_carnivalpointexchange",
-      t_s_carnivalpointexchange
+      t_s_carnivalpointexchange,
     ); //嘉年华 每日挑战
     Laya.ClassUtils.regClass("t_s_wishingpool", t_s_wishingpool); //嘉年华 每日挑战
     Laya.ClassUtils.regClass("t_s_mapphysicposition", t_s_mapphysicposition); //外城地图节点配置
@@ -427,21 +427,21 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("t_s_itempricelimit", t_s_itempricelimit); //
     Laya.ClassUtils.regClass(
       "t_s_petartifactproperty",
-      t_s_petartifactproperty
+      t_s_petartifactproperty,
     ); //
     Laya.ClassUtils.regClass(
       "t_s_castlebattlebuilding",
-      t_s_castlebattlebuilding
+      t_s_castlebattlebuilding,
     ); //
     Laya.ClassUtils.regClass(
       "t_s_castlebattlebuildingskill",
-      t_s_castlebattlebuildingskill
+      t_s_castlebattlebuildingskill,
     ); //
     Laya.ClassUtils.regClass("t_s_extrajob", t_s_extrajob); //
     Laya.ClassUtils.regClass("t_s_extrajobequip", t_s_extrajobequip); //
     Laya.ClassUtils.regClass(
       "t_s_extrajobequipstrengthen",
-      t_s_extrajobequipstrengthen
+      t_s_extrajobequipstrengthen,
     ); //
     Laya.ClassUtils.regClass("t_s_secret", t_s_secret); //
     Laya.ClassUtils.regClass("t_s_secretevent", t_s_secretevent); //
@@ -450,7 +450,7 @@ export class LayaClassUtils {
     Laya.ClassUtils.regClass("t_s_consortiatask", t_s_consortiatask); //
     Laya.ClassUtils.regClass(
       "t_s_consortiataskreward",
-      t_s_consortiataskreward
+      t_s_consortiataskreward,
     ); //
     Laya.ClassUtils.regClass("t_s_activityschedule", t_s_activityschedule); //
   }

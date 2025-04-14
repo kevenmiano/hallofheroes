@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FarmLandInfoMsg {
+  int32 userId = 1;
+  int32 type = 2;
+  int32 pos = 3;
+  int32 itemTemplateId = 4;
+  string plantingTime = 5;
+  string matureTime = 6;
+  int32 cropState = 7;
+  int32 accelerateCount = 8;
+  int32 stolenCount = 9;
+  bool isWormParam1 = 10;
+  bool isWormParam2 = 11;
+  bool isGrassParam1 = 12;
+  bool isGrassParam2 = 13;
+  repeated int32 stolenUsers = 14;
+  int32 rewardCount = 15;
+  int32 opType = 16;
+  int32 result = 17;
+  string param1 = 18;
+  string param2 = 19;
+  string originMatureTime = 20;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarRandRspMsg {
+  repeated int32 starRand = 1;
+  repeated int32 site = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadGuildUserMsg {
+  string userUid = 1;
+  string nickName = 2;
+  bool defenceAlive = 3;
+  int32 defenceDebuffLevel = 4;
+  int32 fightCapacity = 5;
+  int32 grade = 6;
+  int32 transGrade = 7;
+  int32 changeBranch = 8;
+  int32 job = 9;
+  int32 userid = 10;
+}

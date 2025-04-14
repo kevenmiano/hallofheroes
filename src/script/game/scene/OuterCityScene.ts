@@ -1,4 +1,3 @@
-// TODO FIX
 import { BaseSceneView } from "../map/scene/BaseSceneView";
 import { OuterCityModel } from "../map/outercity/OuterCityModel";
 import { OuterCityMap } from "../map/outercity/OuterCityMap";
@@ -65,20 +64,35 @@ import FaceSlapManager from "../manager/FaceSlapManager";
 import { SharedManager } from "../manager/SharedManager";
 import OutCityNodeTypeConstant from "../map/outercity/OutCityNodeTypeConstant";
 import OutCityMineNode from "../map/outercity/OutCityMineNode";
+//@ts-expect-error: External dependencies
 import ArmyPositionMsg = com.road.yishi.proto.army.ArmyPositionMsg;
+//@ts-expect-error: External dependencies
 import ArmyRemoveMsg = com.road.yishi.proto.army.ArmyRemoveMsg;
+//@ts-expect-error: External dependencies
 import PosMoveMsg = com.road.yishi.proto.worldmap.PosMoveMsg;
+//@ts-expect-error: External dependencies
 import RouteMsg = com.road.yishi.proto.worldmap.RouteMsg;
+//@ts-expect-error: External dependencies
 import PhysicListUpdateMsg = com.road.yishi.proto.army.PhysicListUpdateMsg;
+//@ts-expect-error: External dependencies
 import WildLandMsg = com.road.yishi.proto.army.WildLandMsg;
+//@ts-expect-error: External dependencies
 import BaseCastleMsg = com.road.yishi.proto.army.BaseCastleMsg;
+//@ts-expect-error: External dependencies
 import ArmyUpdatedGridMsg = com.road.yishi.proto.army.ArmyUpdatedGridMsg;
+//@ts-expect-error: External dependencies
 import ArmyMsg = com.road.yishi.proto.army.ArmyMsg;
+//@ts-expect-error: External dependencies
 import CastleDefenseRspMsg = com.road.yishi.proto.outercity.CastleDefenseRspMsg;
+//@ts-expect-error: External dependencies
 import OutercityRspMsg = com.road.yishi.proto.outercity.OutercityRspMsg;
+//@ts-expect-error: External dependencies
 import OutCityAllInfoMsg = com.road.yishi.proto.army.OutCityAllInfoMsg;
+//@ts-expect-error: External dependencies
 import OneMineInfoMsg = com.road.yishi.proto.army.OneMineInfoMsg;
+//@ts-expect-error: External dependencies
 import OutCityNodeInfoMsg = com.road.yishi.proto.army.OutCityNodeInfoMsg;
+//@ts-expect-error: External dependencies
 import OutCityGoldNodeInfoMsg = com.road.yishi.proto.army.OutCityGoldNodeInfoMsg;
 import OutCityOneMineInfo from "../map/outercity/OutCityOneMineInfo";
 import { OuterCityMapCameraMediator } from "../mvc/mediator/OuterCityMapCameraMediator";
@@ -99,17 +113,17 @@ import OutercityVehicleArmyView from "../map/campaign/view/physics/OutercityVehi
 export class OuterCityScene extends BaseSceneView {
   private _model: OuterCityModel;
   private _view: OuterCityMap;
-  private _parms: Object;
+  private _parms: object;
   private _preLoadingOver: boolean = false;
-  private _showLoadingTimeId: number = 0;
-  private _updateNodeVisibleUint: number = 0;
+  private _showLoadingTimeId: ReturnType<typeof setInterval> | null = null;
+  private _updateNodeVisibleUint: ReturnType<typeof setInterval> | null = null;
   private _preSceneData: any;
   /**
    * 距离自己的城堡、英雄可见的像素
    */
   public CAN_SEE_LONG: number = 850;
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     return new Promise((resolve) => {
       this._parms = data;
       if (PlayerManager.Instance.currentPlayerModel.mInfo) {
@@ -137,7 +151,7 @@ export class OuterCityScene extends BaseSceneView {
         this._preLoadingOver = false;
         this._showLoadingTimeId = setInterval(
           this.showLoading.bind(this),
-          1500
+          1500,
         );
       }
 
@@ -148,7 +162,7 @@ export class OuterCityScene extends BaseSceneView {
     });
   }
 
-  private initData(data: Object): void {
+  private initData(data: object): void {
     if (data instanceof MapInitData) {
       let mI: MapInitData = <MapInitData>data;
       this._model.targetPoint = mI.targetPoint;
@@ -174,10 +188,10 @@ export class OuterCityScene extends BaseSceneView {
   }
 
   private showLoading(): void {
-    if (this._showLoadingTimeId > 0) {
+    if (this._showLoadingTimeId !== null) {
       clearInterval(this._showLoadingTimeId);
     }
-    this._showLoadingTimeId = 0;
+    this._showLoadingTimeId = null;
     if (!this._preLoadingOver) {
       LoadingSceneWnd.Instance.Show();
     }
@@ -188,7 +202,7 @@ export class OuterCityScene extends BaseSceneView {
     super.preLoadingOver();
     this._updateNodeVisibleUint = setInterval(
       this.updateNodeVisible.bind(this),
-      200
+      200,
     );
   }
 
@@ -291,7 +305,7 @@ export class OuterCityScene extends BaseSceneView {
                   //BOSS
                   if (
                     VIPManager.Instance.model.isOpenPrivilege(
-                      VipPrivilegeType.OUTCITY_BOSS_COORDINATE
+                      VipPrivilegeType.OUTCITY_BOSS_COORDINATE,
                     )
                   ) {
                     //vip等级满足
@@ -458,7 +472,7 @@ export class OuterCityScene extends BaseSceneView {
           this._view.denseFogLayer.addArmyHole(
             c.userId,
             c.curPosX * 20,
-            c.curPosY * 20
+            c.curPosY * 20,
           );
           continue;
         }
@@ -538,12 +552,12 @@ export class OuterCityScene extends BaseSceneView {
     return b;
   }
 
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     return new Promise((resolve) => {
       this._model.addEventListener(
         OuterCityEvent.NINE_SLICE_SCALING,
         this.__nineSliceScalingHandler,
-        this
+        this,
       );
       this.addSocketEvent();
       this._view = new OuterCityMap(this, this._model);
@@ -553,22 +567,22 @@ export class OuterCityScene extends BaseSceneView {
       NotificationManager.Instance.addEventListener(
         OuterCityEvent.START_MOVE,
         this.__startMoveHandler,
-        this
+        this,
       );
       NotificationManager.Instance.addEventListener(
         OuterCityEvent.MOVE_OVER,
         this.__moveOverHandler,
-        this
+        this,
       );
       NotificationManager.Instance.addEventListener(
         NotificationEvent.ARMY_SYSC_CALL,
         this.__syscArmyHandler,
-        this
+        this,
       );
       NotificationManager.Instance.addEventListener(
         NotificationEvent.OPEN_CAMPAIGN_FRAME,
         this.__armyStopHanlder,
-        this
+        this,
       );
 
       OuterCityManager.Instance.getBossInfo(this._model.mapId);
@@ -588,7 +602,7 @@ export class OuterCityScene extends BaseSceneView {
     if (!this._attacking) {
       this._attacking = fgui.UIPackage.createObject(
         EmWindow.OuterCity,
-        "ComAttackingAsset2"
+        "ComAttackingAsset2",
       ).asMovieClip;
     }
     this._attacking.x = -55;
@@ -601,10 +615,10 @@ export class OuterCityScene extends BaseSceneView {
       if (!HomeWnd.Instance.isShowing) {
         await HomeWnd.Instance.instShow();
         HomeWnd.Instance.getSmallMapBar().switchSmallMapState(
-          SmallMapBar.OUTERCITY_SMALL_MAP_STATE
+          SmallMapBar.OUTERCITY_SMALL_MAP_STATE,
         );
         let center: Laya.Point = MapViewHelper.targetSolveCenter(
-          this._model.targetPoint
+          this._model.targetPoint,
         );
         HomeWnd.Instance.getSmallMapBar().iconContainerX =
           center.x / UIConstant.SMALL_MAP_SCALE;
@@ -668,7 +682,7 @@ export class OuterCityScene extends BaseSceneView {
   private sendComplete(): void {
     NotificationManager.Instance.dispatchEvent(
       SceneViewEvent.ADD_TO_STAGE,
-      SceneType.OUTER_CITY_SCENE
+      SceneType.OUTER_CITY_SCENE,
     );
   }
 
@@ -698,22 +712,22 @@ export class OuterCityScene extends BaseSceneView {
       NotificationManager.Instance.removeEventListener(
         OuterCityEvent.START_MOVE,
         this.__startMoveHandler,
-        this
+        this,
       );
       NotificationManager.Instance.removeEventListener(
         OuterCityEvent.MOVE_OVER,
         this.__moveOverHandler,
-        this
+        this,
       );
       NotificationManager.Instance.removeEventListener(
         NotificationEvent.ARMY_SYSC_CALL,
         this.__syscArmyHandler,
-        this
+        this,
       );
       NotificationManager.Instance.removeEventListener(
         NotificationEvent.OPEN_CAMPAIGN_FRAME,
         this.__armyStopHanlder,
-        this
+        this,
       );
       clearInterval(this._updateNodeVisibleUint);
       if (this._model) {
@@ -721,7 +735,7 @@ export class OuterCityScene extends BaseSceneView {
         this._model.removeEventListener(
           OuterCityEvent.NINE_SLICE_SCALING,
           this.__nineSliceScalingHandler,
-          this
+          this,
         );
         this._model.dispose();
       }
@@ -761,14 +775,14 @@ export class OuterCityScene extends BaseSceneView {
     if (this._model.walkTargerData) {
       let targer: Laya.Point = new Laya.Point(
         this._model.walkTargerData.x,
-        this._model.walkTargerData.y
+        this._model.walkTargerData.y,
       );
       Logger.xjy(
         "[OuterCityScene]__moveOverHandler",
         curr.x,
         curr.y,
         targer.x,
-        targer.y
+        targer.y,
       );
       if (curr.distance(targer.x, targer.y) <= 132) {
         let data = this._model.walkTargerData;
@@ -778,7 +792,7 @@ export class OuterCityScene extends BaseSceneView {
           } else {
             Logger.info(
               "外城进入可争夺城堡 清理之前的数据",
-              data.info.nodeName
+              data.info.nodeName,
             );
             OuterCityWarManager.Instance.model.clear();
             OuterCityWarManager.Instance.model.castleInfo = data;
@@ -795,47 +809,47 @@ export class OuterCityScene extends BaseSceneView {
             case PosType.RESOURCE:
               UIManager.Instance.ShowWind(
                 EmWindow.OuterCityFieldInfoWnd,
-                this._model.walkTargerData
+                this._model.walkTargerData,
               );
               break;
             case PosType.TREASURE:
               FrameCtrlManager.Instance.open(
                 EmWindow.OutercityGoldMineWnd,
-                this._model.walkTargerData
+                this._model.walkTargerData,
               );
               break;
             case PosType.TREASURE_MINERAL:
               FrameCtrlManager.Instance.open(
                 EmWindow.OuterCityTreasureWnd,
-                this._model.walkTargerData
+                this._model.walkTargerData,
               );
               break;
             case PosType.OUTERCITY_VEHICLE:
               if (
                 OuterCityManager.Instance.model.checkAllInFighting(
-                  this._model.walkTargerData
+                  this._model.walkTargerData,
                 )
               ) {
                 MessageTipManager.Instance.show(
                   LangManager.Instance.GetTranslation(
-                    "outercityVehicle.checkCanAttackVehicle.tips"
-                  )
+                    "outercityVehicle.checkCanAttackVehicle.tips",
+                  ),
                 );
               } else if (
                 OuterCityManager.Instance.model.checkTeamInFight(
-                  this._model.walkTargerData
+                  this._model.walkTargerData,
                 ) ||
                 OuterCityManager.Instance.model.checkCanAttackVehicle(
-                  this._model.walkTargerData
+                  this._model.walkTargerData,
                 )
               ) {
                 OuterCityManager.Instance.vehicleAttck(
-                  this._model.walkTargerData.templateId
+                  this._model.walkTargerData.templateId,
                 );
               } else {
                 FrameCtrlManager.Instance.open(
                   EmWindow.OuterCityVehicleInfoWnd,
-                  this._model.walkTargerData
+                  this._model.walkTargerData,
                 );
               }
               break;
@@ -846,7 +860,7 @@ export class OuterCityScene extends BaseSceneView {
                 // data.info.type != 20 新手占领金矿依然使用之前的攻击方式
                 let msg: string = LangManager.Instance.GetTranslation(
                   "map.outercity.view.bossinfo.attackMsg",
-                  this._model.walkTargerData.tempInfo.NameLang
+                  this._model.walkTargerData.tempInfo.NameLang,
                 );
                 let confirm: string =
                   LangManager.Instance.GetTranslation("public.confirm");
@@ -861,7 +875,7 @@ export class OuterCityScene extends BaseSceneView {
                   msg,
                   confirm,
                   cancel,
-                  this.onOuterCityAttack.bind(this)
+                  this.onOuterCityAttack.bind(this),
                 );
               }
               break;
@@ -869,7 +883,7 @@ export class OuterCityScene extends BaseSceneView {
         } else if (this._model.walkTargerData instanceof TreasureInfo) {
           FrameCtrlManager.Instance.open(
             EmWindow.OuterCityTreasureWnd,
-            this._model.walkTargerData
+            this._model.walkTargerData,
           );
         } else {
           this._model.walkTargerData = null;
@@ -921,18 +935,18 @@ export class OuterCityScene extends BaseSceneView {
       Logger.xjy(
         "外城移动, 人物坐标 x==",
         this.selfAvatarView.x + " y==",
-        this.selfAvatarView.y
+        this.selfAvatarView.y,
       );
     }
     this._model.isWalkIng = true;
     if (!this.selfArmy && this.selfArmy.mapId != this._model.mapId) {
       let str: string = LangManager.Instance.GetTranslation(
-        "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command01"
+        "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command01",
       );
       MessageTipManager.Instance.show(str);
       NotificationManager.Instance.dispatchEvent(
         NotificationEvent.ARMY_SYSC_CALL,
-        null
+        null,
       );
       return;
     }
@@ -954,7 +968,7 @@ export class OuterCityScene extends BaseSceneView {
       this._model.walkTargerData = CopyNodeDataHelper.cloneMapPhysics(temp);
       next = new Laya.Point(
         this._model.walkTargerData.x,
-        this._model.walkTargerData.y + 40
+        this._model.walkTargerData.y + 40,
       );
       if (temp.nodeView) {
         let mapPhysicsCastle: MapPhysicsCastle =
@@ -1016,7 +1030,7 @@ export class OuterCityScene extends BaseSceneView {
     }
     let curr: Laya.Point = new Laya.Point(
       Math.floor(this.selfAvatarView.x),
-      Math.floor(this.selfAvatarView.y)
+      Math.floor(this.selfAvatarView.y),
     );
     let paths = [];
     if (this._model.isFlying(ArmyManager.Instance.army.mountTemplateId)) {
@@ -1046,7 +1060,7 @@ export class OuterCityScene extends BaseSceneView {
 
   public get selfAvatarView(): OuterCityArmyView {
     let aInfo: BaseArmy = this._model.getWorldArmyByUserId(
-      this.playerInfo.userId
+      this.playerInfo.userId,
     );
     if (aInfo) {
       return aInfo.armyView as OuterCityArmyView;
@@ -1079,7 +1093,7 @@ export class OuterCityScene extends BaseSceneView {
     if (ArmyManager.Instance.army && ArmyManager.Instance.army.armyView) {
       this._model.oldPoint = new Laya.Point(
         ArmyManager.Instance.army.armyView.x,
-        ArmyManager.Instance.army.armyView.y
+        ArmyManager.Instance.army.armyView.y,
       );
     }
     this.sendRefreshScreen(MapUtils.getFilesIds(arr));
@@ -1095,7 +1109,7 @@ export class OuterCityScene extends BaseSceneView {
     }
     OuterCitySocketOutManager.sendCurrentScreen(
       this.getCurrent9Screens(),
-      this._model.mapId
+      this._model.mapId,
     );
     OuterCitySocketOutManager.sendGetArmyByGrid(this._model.mapId, files);
     OuterCitySocketOutManager.sendGetWildLandByGrid(this._model.mapId, files);
@@ -1131,87 +1145,87 @@ export class OuterCityScene extends BaseSceneView {
     ServerDataManager.listen(
       S2CProtocol.U_C_BROAD_POS,
       this,
-      this.__broadPosHandler
+      this.__broadPosHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ARMY_UPDATE_GRID,
       this,
-      this.__updateScreenArmysHandler
+      this.__updateScreenArmysHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ARMY_RETURNHOME,
       this,
-      this.__returnHomeHandler
+      this.__returnHomeHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_CASTLE_DEFENSE,
       this,
-      this.__updateStatusHandler
+      this.__updateStatusHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PHYSIC_LIST_UPDATE,
       this,
-      this.__physicListByBridHandler
+      this.__physicListByBridHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ARMY_REMOVE,
       this,
-      this.__armyExitOuterCityHandler
+      this.__armyExitOuterCityHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ARMYPOS_SEND,
       this,
-      this.__syncArmyPosHandler
+      this.__syncArmyPosHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ARMY_POSATION,
       this,
-      this.__transferPosationHandler
+      this.__transferPosationHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_OUTCITY_NODE_INFO,
       this,
-      this.onAllNodeInfo
+      this.onAllNodeInfo,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_OUTCITY_SON_NODE_INFO,
       this,
-      this._threeNodeInfoUpdate
+      this._threeNodeInfoUpdate,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_OUTCITY_ONE_NODE_UPDATE_INFO,
       this,
-      this._secondNodeInfoUpdate
+      this._secondNodeInfoUpdate,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_OUTCITY_ONE_NODE_INFO,
       this,
-      this._secondAllNodeInfo
+      this._secondAllNodeInfo,
     );
     ServerDataManager.Instance.addEventListener(
       SLGSocketEvent.UPDATE_CASTLE,
       this.__updateCastleHandler,
-      this
+      this,
     );
     ServerDataManager.Instance.addEventListener(
       SLGSocketEvent.UPDATE_WILDLAND,
       this.__updateWildLandHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NotificationEvent.UPDTAE_ARMY,
       this.__updateArmyHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.UPDATE_CHAT_VIEW,
       this.__playerChatHandler,
-      this
+      this,
     );
     BuildingManager.Instance.addEventListener(
       BuildingEvent.U_UNOCCPWILDLAND,
       this.__unoccupyHandler,
-      this
+      this,
     );
   }
 
@@ -1219,87 +1233,87 @@ export class OuterCityScene extends BaseSceneView {
     ServerDataManager.cancel(
       S2CProtocol.U_C_BROAD_POS,
       this,
-      this.__broadPosHandler
+      this.__broadPosHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ARMY_UPDATE_GRID,
       this,
-      this.__updateScreenArmysHandler
+      this.__updateScreenArmysHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ARMY_RETURNHOME,
       this,
-      this.__returnHomeHandler
+      this.__returnHomeHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_CASTLE_DEFENSE,
       this,
-      this.__updateStatusHandler
+      this.__updateStatusHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PHYSIC_LIST_UPDATE,
       this,
-      this.__physicListByBridHandler
+      this.__physicListByBridHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ARMY_REMOVE,
       this,
-      this.__armyExitOuterCityHandler
+      this.__armyExitOuterCityHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ARMYPOS_SEND,
       this,
-      this.__syncArmyPosHandler
+      this.__syncArmyPosHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ARMY_POSATION,
       this,
-      this.__transferPosationHandler
+      this.__transferPosationHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_OUTCITY_NODE_INFO,
       this,
-      this.onAllNodeInfo
+      this.onAllNodeInfo,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_OUTCITY_SON_NODE_INFO,
       this,
-      this._threeNodeInfoUpdate
+      this._threeNodeInfoUpdate,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_OUTCITY_ONE_NODE_UPDATE_INFO,
       this,
-      this._secondNodeInfoUpdate
+      this._secondNodeInfoUpdate,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_OUTCITY_ONE_NODE_INFO,
       this,
-      this._secondAllNodeInfo
+      this._secondAllNodeInfo,
     );
     ServerDataManager.Instance.removeEventListener(
       SLGSocketEvent.UPDATE_CASTLE,
       this.__updateCastleHandler,
-      this
+      this,
     );
     ServerDataManager.Instance.removeEventListener(
       SLGSocketEvent.UPDATE_WILDLAND,
       this.__updateWildLandHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.UPDTAE_ARMY,
       this.__updateArmyHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.UPDATE_CHAT_VIEW,
       this.__playerChatHandler,
-      this
+      this,
     );
     BuildingManager.Instance.removeEventListener(
       BuildingEvent.U_UNOCCPWILDLAND,
       this.__unoccupyHandler,
-      this
+      this,
     );
   }
 
@@ -1324,7 +1338,7 @@ export class OuterCityScene extends BaseSceneView {
         //是我的好友
         NotificationManager.Instance.dispatchEvent(
           OuterCityEvent.UPDATE_MEMBER_POSITION,
-          msg
+          msg,
         );
       }
     }
@@ -1352,7 +1366,7 @@ export class OuterCityScene extends BaseSceneView {
    * */
   private __physicListByBridHandler(pkg: PackageIn): void {
     let msg: PhysicListUpdateMsg = pkg.readBody(
-      PhysicListUpdateMsg
+      PhysicListUpdateMsg,
     ) as PhysicListUpdateMsg;
     let list: any[] = [];
     for (let i = 0, len = msg.wildLand.length; i < len; i++) {
@@ -1377,7 +1391,7 @@ export class OuterCityScene extends BaseSceneView {
     castleInfo = this._model.getCastleByIdXY(
       cInfo.id,
       cInfo.posX * Tiles.WIDTH,
-      cInfo.posY * Tiles.HEIGHT
+      cInfo.posY * Tiles.HEIGHT,
     );
     if (!castleInfo) {
       castleInfo = this._model.popCastleInfo();
@@ -1413,7 +1427,7 @@ export class OuterCityScene extends BaseSceneView {
 
   private __updateScreenArmysHandler(pkg: PackageIn): void {
     let msg: ArmyUpdatedGridMsg = pkg.readBody(
-      ArmyUpdatedGridMsg
+      ArmyUpdatedGridMsg,
     ) as ArmyUpdatedGridMsg;
     let armyList: any[] = [];
     let army: BaseArmy;
@@ -1455,7 +1469,7 @@ export class OuterCityScene extends BaseSceneView {
         point = GetWalkStartPointHelper.getStartPoint(
           army.curPosX * 20,
           army.curPosY * 20,
-          this._model
+          this._model,
         );
       }
       if (army.baseHero) {
@@ -1479,12 +1493,12 @@ export class OuterCityScene extends BaseSceneView {
       let point: Laya.Point = GetWalkStartPointHelper.getFirstPoint(
         army.curPosX * 20,
         army.curPosY * 20,
-        this._model
+        this._model,
       );
       if (point) {
         OuterCityManager.Instance.changePlayerPosition(
           parseInt((point.x / 20).toString()),
-          parseInt((point.y / 20).toString())
+          parseInt((point.y / 20).toString()),
         );
       }
     } else {
@@ -1496,7 +1510,7 @@ export class OuterCityScene extends BaseSceneView {
 
   private __updateStatusHandler(pkg: PackageIn): void {
     let msg: CastleDefenseRspMsg = pkg.readBody(
-      CastleDefenseRspMsg
+      CastleDefenseRspMsg,
     ) as CastleDefenseRspMsg;
     this.mapNodeInfo.defenceLeftTime = msg.leftTime;
 
@@ -1567,14 +1581,14 @@ export class OuterCityScene extends BaseSceneView {
 
       let p: Laya.Point = new Laya.Point(
         army.curPosX * 20 - StageReferance.stageWidth / 2,
-        army.curPosY * 20 - StageReferance.stageHeight / 2
+        army.curPosY * 20 - StageReferance.stageHeight / 2,
       );
       this._view.motionTo(p);
       this._view.worldWalkLayer.outSceneMovies();
     }
   }
 
-  private timeid: number = 0;
+  private timeid: ReturnType<typeof setTimeout> | null = null;
 
   private __transferPosationHandler(pkg: PackageIn): void {
     let msg: ArmyPositionMsg = pkg.readBody(ArmyPositionMsg) as ArmyPositionMsg;
@@ -1621,7 +1635,7 @@ export class OuterCityScene extends BaseSceneView {
    */
   private onAllNodeInfo(pkg: PackageIn): void {
     let msg: OutCityAllInfoMsg = pkg.readBody(
-      OutCityAllInfoMsg
+      OutCityAllInfoMsg,
     ) as OutCityAllInfoMsg;
     if (msg.allInfo) {
       Logger.xjy("外城节点数据 0x01B4 ==", msg);
@@ -1631,12 +1645,12 @@ export class OuterCityScene extends BaseSceneView {
         let type: number = (msg.allInfo[i] as WildLandMsg).type;
         if (type == OutCityNodeTypeConstant.TYPE_CASTLE) {
           let baseCastle: BaseCastle = this._model.readCastle(
-            msg.allInfo[i] as WildLandMsg
+            msg.allInfo[i] as WildLandMsg,
           );
           this._model.addCastle(baseCastle);
         } else {
           let wildLand: WildLand = this._model.readWildLand(
-            msg.allInfo[i] as WildLandMsg
+            msg.allInfo[i] as WildLandMsg,
           );
           if (wildLand.types == OutCityNodeTypeConstant.TYPE_MINE) {
             //金矿
@@ -1666,7 +1680,7 @@ export class OuterCityScene extends BaseSceneView {
       this._model.allMinNode.push(wild);
       NotificationManager.Instance.dispatchEvent(
         OuterCityEvent.UPDATE_THREE_NODE_DATA,
-        msg.posId
+        msg.posId,
       );
     }
   }
@@ -1676,11 +1690,11 @@ export class OuterCityScene extends BaseSceneView {
    */
   private _secondNodeInfoUpdate(pkg: PackageIn) {
     let msg: OutCityNodeInfoMsg = pkg.readBody(
-      OutCityNodeInfoMsg
+      OutCityNodeInfoMsg,
     ) as OutCityNodeInfoMsg;
     if (msg) {
       let wlInfo: WildLand = this._model.getWildLandByXY(
-        msg.posX * Tiles.WIDTH + "," + msg.posY * Tiles.HEIGHT
+        msg.posX * Tiles.WIDTH + "," + msg.posY * Tiles.HEIGHT,
       );
       let arr: Array<OutCityMineNode> = wlInfo.allNodeInfo;
       let outCityMineNode: OutCityMineNode;
@@ -1701,12 +1715,12 @@ export class OuterCityScene extends BaseSceneView {
       if (needRefresh) {
         NotificationManager.Instance.dispatchEvent(
           OuterCityEvent.UPDATE_SECOND_NODE_SELE_DATA,
-          wlInfo
+          wlInfo,
         );
       }
       NotificationManager.Instance.dispatchEvent(
         OuterCityEvent.UPDATE_SECOND_NODE_DATA,
-        [msg.posId, wlInfo]
+        [msg.posId, wlInfo],
       );
     }
   }
@@ -1715,11 +1729,11 @@ export class OuterCityScene extends BaseSceneView {
   private recvNodeCnt: number = 0;
   private _secondAllNodeInfo(pkg: PackageIn) {
     let msg: OutCityGoldNodeInfoMsg = pkg.readBody(
-      OutCityGoldNodeInfoMsg
+      OutCityGoldNodeInfoMsg,
     ) as OutCityGoldNodeInfoMsg;
     if (msg) {
       let wlInfo: WildLand = this._model.getWildLandByXY(
-        msg.posX * Tiles.WIDTH + "," + msg.posY * Tiles.HEIGHT
+        msg.posX * Tiles.WIDTH + "," + msg.posY * Tiles.HEIGHT,
       );
       let allNodeInfoArr: Array<OutCityMineNode> = wlInfo.allNodeInfo;
       let outCityMineNode: OutCityMineNode;
@@ -1757,7 +1771,7 @@ export class OuterCityScene extends BaseSceneView {
             outCityOneMineInfo.guildId = oneMineInfoMsg.guildId;
             outCityMineNode.nodeAllMineInfoDic.set(
               oneMineInfoMsg.sonNodeId,
-              outCityOneMineInfo
+              outCityOneMineInfo,
             );
           }
           break;
@@ -1767,7 +1781,7 @@ export class OuterCityScene extends BaseSceneView {
         this.recvNodeCnt = 0;
         NotificationManager.Instance.dispatchEvent(
           OuterCityEvent.INIT_SECOND_NODE_DATA,
-          targetInfo
+          targetInfo,
         );
       }
     }
@@ -1788,12 +1802,12 @@ export class OuterCityScene extends BaseSceneView {
     let str: string = "";
     if (this.selfArmy.mapId != this._model.mapId) {
       str = LangManager.Instance.GetTranslation(
-        "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command01"
+        "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command01",
       );
       MessageTipManager.Instance.show(str);
       NotificationManager.Instance.dispatchEvent(
         NotificationEvent.ARMY_SYSC_CALL,
-        null
+        null,
       );
       return false;
     }
@@ -1805,15 +1819,15 @@ export class OuterCityScene extends BaseSceneView {
     if (armyView) {
       let armyPoint: Laya.Point = new Laya.Point(
         Number(armyView.x / 20),
-        Number(armyView.y / 20)
+        Number(armyView.y / 20),
       );
       let castlePoint: Laya.Point = new Laya.Point(
         this.mapNodeInfo.info.posX,
-        this.mapNodeInfo.info.posY
+        this.mapNodeInfo.info.posY,
       );
       if (castlePoint.distance(armyPoint.x, armyPoint.y) < 12) {
         str = LangManager.Instance.GetTranslation(
-          "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command03"
+          "map.outercity.mediator.mapview.OuterCitySmallMapMediator.command03",
         );
         MessageTipManager.Instance.show(str);
         return false;
@@ -1862,7 +1876,7 @@ export class OuterCityScene extends BaseSceneView {
     msg.armyId = ArmyManager.Instance.army.id;
     msg.gridStr = MapDataUtils.getTitleFileName(
       this.selfAvatarView.x,
-      this.selfAvatarView.y
+      this.selfAvatarView.y,
     );
     msg.mapId = this._model.mapId;
     OuterCitySocketOutManager.sendMovePaths(msg);

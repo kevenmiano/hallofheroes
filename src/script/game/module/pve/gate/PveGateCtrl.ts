@@ -1,11 +1,11 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
  * @Date: 2021-05-10 10:31:36
  * @LastEditTime: 2024-02-20 10:43:55
  * @LastEditors: jeremy.xu
- * @Description: 
+ * @Description:
  */
 
 import Logger from "../../../../core/logger/Logger";
@@ -18,24 +18,20 @@ import { RoomListSocketOutManager } from "../../../manager/RoomListSocketOutMana
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 
-
 export default class PveGateCtrl extends FrameCtrlBase {
+  show() {
+    super.show();
+  }
 
-    show() {
-        super.show()
-        
-    }
+  hide() {
+    super.hide();
+  }
 
-    hide() {
-        super.hide()
+  protected addEventListener() {
+    super.addEventListener();
+  }
 
-    }
-    
-    protected addEventListener() {
-        super.addEventListener()
-    }
-
-    protected delEventListener() {
-        super.delEventListener()
-    }
+  protected delEventListener() {
+    super.delEventListener();
+  }
 }

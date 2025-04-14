@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaOfferReqMsg {
+  int32 pageIndex = 1;
+  bool isHistory = 2;
+}

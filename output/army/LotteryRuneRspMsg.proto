@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message LotteryRuneRspMsg {
+  int32 powerPointNum = 1;
+  int32 runeChipNum = 2;
+  int32 runePointNum = 3;
+  int32 leftTime = 4;
+}

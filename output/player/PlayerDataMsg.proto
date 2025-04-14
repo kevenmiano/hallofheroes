@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerDataMsg {
+  bool user = 1;
+  bool castle = 2;
+  bool army = 3;
+  bool quest = 4;
+  bool build = 5;
+  bool tree = 6;
+  bool aas = 7;
+  bool smith = 8;
+  bool bag = 9;
+  bool leed = 10;
+  bool star = 11;
+  bool friend = 12;
+  bool effect = 13;
+  bool sys = 14;
+  bool offline = 15;
+  bool reward = 16;
+  bool tower = 17;
+  bool shop = 18;
+  bool challReward = 19;
+  bool snsReq = 20;
+  bool active = 21;
+  bool switches = 22;
+  bool sweep = 23;
+  bool questionnarie = 24;
+  bool kingContract = 25;
+  bool rebateCharge = 26;
+  bool rebateConsum = 27;
+  bool sumActive = 28;
+  bool crossScoreReward = 29;
+  bool appell = 30;
+  bool bottle = 31;
+  bool petChallengeReward = 32;
+  bool powcardInfo = 33;
+  bool christmas = 34;
+}

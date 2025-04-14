@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import FUI_ReinforceWaveBall from "../../../../../../fui/Battle/FUI_ReinforceWaveBall";
 
@@ -26,7 +25,7 @@ export default class ReinforceWaveBall extends FUI_ReinforceWaveBall {
         Laya.Handler.create(this, () => {
           this.mc1.playing = this.mc1.visible = false;
           this.mc2.playing = this.mc2.visible = false;
-        })
+        }),
       );
     }
   }

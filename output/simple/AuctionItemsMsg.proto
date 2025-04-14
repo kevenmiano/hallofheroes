@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message AuctionItemsMsg {
+  int32 pageIdx = 1;
+  int32 pageCount = 2;
+  repeated int32 itemBuy = 3;
+  repeated int32 sellItem = 4;
+}

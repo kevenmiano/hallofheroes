@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroTalentReq {
+  int32 seal1 = 1;
+  int32 seal2 = 2;
+  int32 seal3 = 3;
+}

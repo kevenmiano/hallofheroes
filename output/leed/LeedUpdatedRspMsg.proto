@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message LeedUpdatedRspMsg {
+  repeated int32 leed = 1;
+  int32 leedProcess = 2;
+  int32 totalNum = 3;
+  int32 weekActive = 4;
+  int32 state = 5;
+  int32 opType = 6;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message QteMsg {
+  string battleId = 1;
+  string serverName = 2;
+}

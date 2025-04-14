@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_ChatMsgCell from "../../../../fui/Chat/FUI_ChatMsgCell";
 import FUI_VoiceMsgCell from "../../../../fui/Chat/FUI_VoiceMsgCell";
 import AudioManager from "../../../core/audio/AudioManager";
@@ -170,7 +170,7 @@ export default class ChatWnd extends BaseWindow {
     let channel = SDKManager.Instance.getChannel();
     if (channel instanceof NativeChannel) {
       let isGranted = channel.checkPermission(
-        "android.permission.RECORD_AUDIO"
+        "android.permission.RECORD_AUDIO",
       );
       if (isGranted != 1) {
         let confirm: string =
@@ -180,7 +180,7 @@ export default class ChatWnd extends BaseWindow {
         let prompt: string =
           LangManager.Instance.GetTranslation("public.prompt");
         let content: string = LangManager.Instance.GetTranslation(
-          "permissions.request.RECORD_AUDIO"
+          "permissions.request.RECORD_AUDIO",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.SIMPLE_ALERT,
@@ -189,19 +189,19 @@ export default class ChatWnd extends BaseWindow {
           content,
           confirm,
           cancel,
-          this.openPersonalCenter.bind(this)
+          this.openPersonalCenter.bind(this),
         );
       }
     }
     this.voice.displayObject.on(
       InteractiveEvent.LONG_PRESS,
       this,
-      this.onLongPress
+      this.onLongPress,
     );
     this.voice.displayObject.on(
       InteractiveEvent.LONG_PRESS_END,
       this,
-      this.onLongPressEnd
+      this.onLongPressEnd,
     );
     LongPressManager.Instance.enableLongPress(this.voice.displayObject);
   }
@@ -212,7 +212,7 @@ export default class ChatWnd extends BaseWindow {
         FrameCtrlManager.Instance.open(EmWindow.PersonalCenter, { page: 4 });
       else if (Utils.isPC())
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("web.permission.RECORD_AUDIO")
+          LangManager.Instance.GetTranslation("web.permission.RECORD_AUDIO"),
         );
     }
   }
@@ -253,7 +253,7 @@ export default class ChatWnd extends BaseWindow {
             "",
             1,
             extraText,
-            this.startRecordCallback.bind(this)
+            this.startRecordCallback.bind(this),
           );
           break;
         case ChatChannel.WORLD:
@@ -261,7 +261,7 @@ export default class ChatWnd extends BaseWindow {
             YM_DEF.WORLD_ROOM,
             2,
             extraText,
-            this.startRecordCallback.bind(this)
+            this.startRecordCallback.bind(this),
           );
           break;
         case ChatChannel.CONSORTIA:
@@ -270,7 +270,7 @@ export default class ChatWnd extends BaseWindow {
               PlayerManager.Instance.currentPlayerModel.playerInfo.consortiaID,
             2,
             extraText,
-            this.startRecordCallback.bind(this)
+            this.startRecordCallback.bind(this),
           );
           break;
         case ChatChannel.TEAM:
@@ -279,14 +279,14 @@ export default class ChatWnd extends BaseWindow {
               YM_DEF.TEAM_ROOM + RoomManager.Instance.roomInfo.id,
               2,
               extraText,
-              this.startRecordCallback.bind(this)
+              this.startRecordCallback.bind(this),
             );
           } else {
             channel.startRecord(
               YM_DEF.TEAM + FreedomTeamManager.Instance.model.teamId,
               2,
               extraText,
-              this.startRecordCallback.bind(this)
+              this.startRecordCallback.bind(this),
             );
           }
           break;
@@ -325,7 +325,7 @@ export default class ChatWnd extends BaseWindow {
             NativeChannel.CONSORTIA_ROOM +
               PlayerManager.Instance.currentPlayerModel.playerInfo.consortiaID,
             2,
-            extraText
+            extraText,
           );
           break;
         case ChatChannel.TEAM:
@@ -333,13 +333,13 @@ export default class ChatWnd extends BaseWindow {
             channel.startRecordAudio(
               NativeChannel.TEAM_ROOM + RoomManager.Instance.roomInfo.id,
               2,
-              extraText
+              extraText,
             );
           } else {
             channel.startRecordAudio(
               NativeChannel.TEAM + FreedomTeamManager.Instance.model.teamId,
               2,
-              extraText
+              extraText,
             );
           }
           break;
@@ -359,7 +359,7 @@ export default class ChatWnd extends BaseWindow {
   startRecordCallback(isok: boolean) {
     if (!isok) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("notFoundRecorder")
+        LangManager.Instance.GetTranslation("notFoundRecorder"),
       );
       return;
     }
@@ -485,7 +485,7 @@ export default class ChatWnd extends BaseWindow {
           this.__onChangeSelect(this.paramData);
           NotificationManager.Instance.sendNotification(
             ChatEvent.ADD_PRIVATE_CHAT,
-            this.paramData
+            this.paramData,
           );
         }
       }
@@ -584,29 +584,29 @@ export default class ChatWnd extends BaseWindow {
     //Tab文本
     // (this.chatTabTexts[ChatChannel.CURRENT]) = LangManager.Instance.GetTranslation("chatII.datas.getChatChannelName.AllChannel");
     this.chatTabTexts[ChatChannel.WORLD] = LangManager.Instance.GetTranslation(
-      "chatII.datas.getChatChannelName.WorldChannel"
+      "chatII.datas.getChatChannelName.WorldChannel",
     );
     this.chatTabTexts[ChatChannel.BIGBUGLE] =
       LangManager.Instance.GetTranslation(
-        "chat.datas.getChatChannelName.BIGBUGLE"
+        "chat.datas.getChatChannelName.BIGBUGLE",
       );
     this.chatTabTexts[ChatChannel.TEAM] = LangManager.Instance.GetTranslation(
-      "chatII.datas.getChatChannelName.TeamChannel"
+      "chatII.datas.getChatChannelName.TeamChannel",
     );
     this.chatTabTexts[ChatChannel.CONSORTIA] =
       LangManager.Instance.GetTranslation(
-        "chatII.datas.getChatChannelName.consortiaChannel"
+        "chatII.datas.getChatChannelName.consortiaChannel",
       );
     this.chatTabTexts[ChatChannel.PERSONAL] =
       LangManager.Instance.GetTranslation(
-        "chatII.datas.getChatChannelName.PersonChannel"
+        "chatII.datas.getChatChannelName.PersonChannel",
       );
     this.chatTabTexts[ChatChannel.SYSTEM] = LangManager.Instance.GetTranslation(
-      "chatII.datas.getChatChannelName.SystemChannel"
+      "chatII.datas.getChatChannelName.SystemChannel",
     );
     this.chatSendBtn.title = LangManager.Instance.GetTranslation("public.send");
     this.tips.text = LangManager.Instance.GetTranslation(
-      "ChatWnd.notsend.tips"
+      "ChatWnd.notsend.tips",
     );
   }
 
@@ -669,42 +669,42 @@ export default class ChatWnd extends BaseWindow {
       this,
       this.renderChannelListItem,
       null,
-      false
+      false,
     );
     this.chatMsglist.itemProvider = Laya.Handler.create(
       this,
       this.getListItemResource,
       null,
-      false
+      false,
     );
     this.chatMsglist.itemRenderer = Laya.Handler.create(
       this,
       this.renderMessageListItem,
       null,
-      false
+      false,
     );
     this.privateChatList.itemProvider = Laya.Handler.create(
       this,
       this.getPrivateListItemResource,
       null,
-      false
+      false,
     );
     this.privateChatList.itemRenderer = Laya.Handler.create(
       this,
       this.renderPrivateMessageListItem,
       null,
-      false
+      false,
     );
     this.privateChatList.setVirtual();
     this.chatTablist.on(
       fairygui.Events.CLICK_ITEM,
       this,
-      this.__onChannelSelect
+      this.__onChannelSelect,
     );
     this.chatInput.inputmsg.displayObject.on(
       Laya.Event.ENTER,
       this,
-      this.sendChatMessage
+      this.sendChatMessage,
     );
     // if(Utils.isApp()){
     // this.chatInput.inputmsg.on(Laya.Event.FOCUS, this, this.onFocusIn);
@@ -724,59 +724,59 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       ChatEvent.CHAT_EMJOY_CLICK,
       this.__addEmjoyHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.UPDATE_CHAT_VIEW,
       this.__updateChatViewHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.CHAT_CHANNEL_CHANGE,
       this.__channelChangeHandler,
-      this
+      this,
     );
 
     NotificationManager.Instance.addEventListener(
       ChatEvent.SEND_GOODS,
       this.__sendGoodsinfoHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.SEND_STAR,
       this.__sendstarInfoHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.SEND_CARD,
       this.__sendCardInfoHandler,
-      this
+      this,
     );
     ArmyManager.Instance.thane.addEventListener(
       PlayerEvent.SMALL_BUGLE_FREE_COUNT,
       this.__smallBugleFreeCountHandler,
-      this
+      this,
     );
 
     NotificationManager.Instance.addEventListener(
       ChatEvent.CHANNEL_CLICK,
       this.__onChannelSelect,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.PLAYER_NAME_CLICK,
       this.__playerNameClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.CONSORTIA_CLICK,
       this.__consortiaClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.ROOM_CLICK,
       this.__roomClickHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.addEventListener(ChatEvent.STAR_CLICK, this.__starClickHandler, this);
     // NotificationManager.Instance.addEventListener(ChatEvent.EQUIP_CLICK, this.__equipClickHandler, this);
@@ -784,17 +784,17 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       ChatEvent.VIP_LINK_CLICK,
       this.__vipLinkClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.APPELL_LINK_CLICK,
       this.__appellLinkClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       ChatEvent.ROSE_BACK_CLICK,
       this.__roseBackClickHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.addEventListener(ChatEvent.REINFORCE_CLICK, this.__reinforceClickHandler, this);
     // NotificationManager.Instance.addEventListener(ChatEvent.SEEK_LINK_CLICK, this.__seekLinkClickHandler, this);
@@ -804,39 +804,39 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       ChatEvent.CHAT_MESSAGE,
       this.__onChangeSelect,
-      this
+      this,
     );
     // IMManager.Instance.addEventListener(IMEvent.MSG_SEND_RESPONSE, this.__sendMsgResponseHandler, this);
     IMManager.Instance.addEventListener(
       IMEvent.RECEIVE_MSG,
       this.__receiveMsgHandler,
-      this
+      this,
     );
     IMManager.Instance.addEventListener(
       IMEvent.RECEIVE_VOICE_MSG,
       this.addVoiceItem,
-      this
+      this,
     );
 
     NotificationManager.Instance.addEventListener(
       ChatEvent.UPDATE_SELECTED_PRIVATECHAT,
       this.refreshPrivateChatList,
-      this
+      this,
     );
     IMManager.Instance.addEventListener(
       IMEvent.MSG_LIST_DEL,
       this.__imFrameUpdateHandler,
-      this
+      this,
     );
     IMManager.Instance.addEventListener(
       IMFrameEvent.REMOVE,
       this.__imFrameUpdateHandler,
-      this
+      this,
     );
     IMManager.Instance.addEventListener(
       IMEvent.TRANSLATE_MSG,
       this.__refreshTranslate,
-      this
+      this,
     );
   }
 
@@ -872,7 +872,7 @@ export default class ChatWnd extends BaseWindow {
     if (this.model.privateData) {
       this.chatPrivateMessages = [];
       let arr = IMManager.Instance.getIMHistoryList(
-        this.model.privateData.userId
+        this.model.privateData.userId,
       );
       if (arr) {
         for (let i = 0; i < arr.length; i++) {
@@ -912,7 +912,7 @@ export default class ChatWnd extends BaseWindow {
               "count",
               count > this.maxUnreadCount
                 ? this.maxUnreadCount + "+"
-                : count + ""
+                : count + "",
             )
             .flushVars();
           this.unreadGroup.visible = count > 0;
@@ -973,7 +973,7 @@ export default class ChatWnd extends BaseWindow {
       this.unreadLab
         .setVar(
           "count",
-          count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + ""
+          count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + "",
         )
         .flushVars();
       this.unreadGroup.visible = count > 0;
@@ -1034,7 +1034,7 @@ export default class ChatWnd extends BaseWindow {
       chatData.serverId = msg.serverId;
     } else {
       chatData.msg = ChatManager.Instance.analyzeExpressionForIMChat(
-        chatData.msg
+        chatData.msg,
       );
       chatData.commit();
     }
@@ -1050,7 +1050,7 @@ export default class ChatWnd extends BaseWindow {
   private sendChatFace() {
     if (!UIManager.Instance.isShowing(EmWindow.ChatFaceWnd)) {
       let globalPos = this.localToGlobal(
-        new Laya.Point(this.btn_face.x, this.btn_face.y)
+        new Laya.Point(this.btn_face.x, this.btn_face.y),
       );
       UIManager.Instance.ShowWind(EmWindow.ChatFaceWnd, globalPos);
     }
@@ -1104,7 +1104,7 @@ export default class ChatWnd extends BaseWindow {
   private sendChatMessage() {
     if (PlayerManager.Instance.currentPlayerModel.checkChatForbidIsOpen()) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("chat_forbiden_text")
+        LangManager.Instance.GetTranslation("chat_forbiden_text"),
       );
       return;
     }
@@ -1125,13 +1125,13 @@ export default class ChatWnd extends BaseWindow {
     if (allLowstring.indexOf("/") == 0) {
       for (i = 0; i < ChatChannel.chanel_key_set.length; i++) {
         var index: number = allLowstring.indexOf(
-          "/" + ChatChannel.chanel_key_set[i]
+          "/" + ChatChannel.chanel_key_set[i],
         );
         if (index == 0) {
           chatStr = chatStr.substring(2, chatStr.length);
           NotificationManager.Instance.sendNotification(
             ChatEvent.CHAT_CHANNEL_CHANGE,
-            ChatChannel.channels[i]
+            ChatChannel.channels[i],
           );
         }
       }
@@ -1152,7 +1152,7 @@ export default class ChatWnd extends BaseWindow {
             if (info.templateInfo.TemplateNameLang == name) {
               var itemMsg: ChatItemInfoMsg = ItemHelper.createChatItemInfoMsg(
                 info,
-                name
+                name,
               );
               itemList.push(itemMsg);
               break;
@@ -1220,11 +1220,11 @@ export default class ChatWnd extends BaseWindow {
       let content: string =
         LangManager.Instance.GetTranslation("Chat.Bigbugle");
       var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ShopGoodsInfo.BIG_BUGLE_TEMP_ID
+        ShopGoodsInfo.BIG_BUGLE_TEMP_ID,
       );
       let goodsCount: string = LangManager.Instance.GetTranslation(
         "chatwnd.goodsCount.text",
-        num
+        num,
       );
       UIManager.Instance.ShowWind(EmWindow.UseGoodsAlert, {
         content: content,
@@ -1238,7 +1238,7 @@ export default class ChatWnd extends BaseWindow {
         this._currentChatStr,
         itemList,
         starList,
-        cardList
+        cardList,
       );
       return;
     } else if (this.getCurrentChannel() == ChatChannel.CROSS_BIGBUGLE) {
@@ -1246,7 +1246,7 @@ export default class ChatWnd extends BaseWindow {
         this._currentChatStr,
         itemList,
         starList,
-        cardList
+        cardList,
       );
       return;
     } else if (this.getCurrentChannel() == ChatChannel.SYSTEM) {
@@ -1256,23 +1256,23 @@ export default class ChatWnd extends BaseWindow {
     if (this.getCurrentChannel() == ChatChannel.PERSONAL) {
       if (!this.model.privateData) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("chat.personal.tip")
+          LangManager.Instance.GetTranslation("chat.personal.tip"),
         );
         return;
       }
       //先判断对方是否是好友
       if (
         !FriendManager.getInstance().checkIsFriend(
-          this.model.privateData.userId
+          this.model.privateData.userId,
         )
       ) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("chat.notfriend")
+          LangManager.Instance.GetTranslation("chat.notfriend"),
         );
       } else {
         IMManager.Instance.sendIMMsg(
           this.model.privateData.userId,
-          this._currentChatStr
+          this._currentChatStr,
         );
       }
     } else {
@@ -1282,7 +1282,7 @@ export default class ChatWnd extends BaseWindow {
         "",
         itemList,
         starList,
-        cardList
+        cardList,
       );
     }
     this.chatInput.clearText();
@@ -1298,30 +1298,30 @@ export default class ChatWnd extends BaseWindow {
     if (!this._flag) {
       let item: t_s_itemtemplateData =
         TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-          ShopGoodsInfo.BIG_BUGLE_TEMP_ID
+          ShopGoodsInfo.BIG_BUGLE_TEMP_ID,
         );
       if (item) {
         if (item.NeedGrades > ArmyManager.Instance.thane.grades) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
               "chatWnd.bigBugle.tips",
-              item.NeedGrades
-            )
+              item.NeedGrades,
+            ),
           );
           return;
         }
       }
       var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ShopGoodsInfo.BIG_BUGLE_TEMP_ID
+        ShopGoodsInfo.BIG_BUGLE_TEMP_ID,
       );
       if (num == 0) {
         var command: string = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(command);
         var data: ShopGoodsInfo =
           TempleteManager.Instance.getShopTempInfoByItemId(
-            ShopGoodsInfo.BIG_BUGLE_TEMP_ID
+            ShopGoodsInfo.BIG_BUGLE_TEMP_ID,
           );
         let obj = {
           info: data,
@@ -1340,7 +1340,7 @@ export default class ChatWnd extends BaseWindow {
         this._currentChatStr,
         itemList,
         starList,
-        cardList
+        cardList,
       );
       this.chatInput.setInputText("");
       this._flag = false;
@@ -1351,16 +1351,16 @@ export default class ChatWnd extends BaseWindow {
   private crossBugleHandler(str: string, itemList, starList, cardList) {
     if (!this._flag) {
       var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ShopGoodsInfo.CROSS_BUGLE_TEMP_ID
+        ShopGoodsInfo.CROSS_BUGLE_TEMP_ID,
       );
       if (num == 0) {
         var command: string = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(command);
         var data: ShopGoodsInfo =
           TempleteManager.Instance.getShopTempInfoByItemId(
-            ShopGoodsInfo.CROSS_BUGLE_TEMP_ID
+            ShopGoodsInfo.CROSS_BUGLE_TEMP_ID,
           );
         let obj = {
           info: data,
@@ -1382,7 +1382,7 @@ export default class ChatWnd extends BaseWindow {
   }
 
   private _smallBulgeFlag: boolean;
-  private _smallBugleCache: Object;
+  private _smallBugleCache: object;
   private smallBugleHandler(str: string, itemList, starList, cardList) {
     this._smallBugleCache = new Object();
     this._smallBugleCache["str"] = str;
@@ -1391,17 +1391,17 @@ export default class ChatWnd extends BaseWindow {
     this._smallBugleCache["cardList"] = cardList;
     if (!this._flag) {
       var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+        ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
       );
       if (num == 0) {
         if (ArmyManager.Instance.thane.smallBugleFreeCount <= 0) {
           var command: string = LangManager.Instance.GetTranslation(
-            "chat.view.ChatInputView.command06"
+            "chat.view.ChatInputView.command06",
           );
           MessageTipManager.Instance.show(command);
           var data: ShopGoodsInfo =
             TempleteManager.Instance.getShopTempInfoByItemId(
-              ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+              ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
             );
           let obj = {
             info: data,
@@ -1438,18 +1438,18 @@ export default class ChatWnd extends BaseWindow {
     var cardList = this._smallBugleCache["cardList"];
     if (!this._flag) {
       var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+        ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
       );
       if (num == 0) {
         if (ArmyManager.Instance.thane.smallBugleFreeCount <= 0) {
           var command: string = LangManager.Instance.GetTranslation(
-            "chat.view.ChatInputView.command06"
+            "chat.view.ChatInputView.command06",
           );
           MessageTipManager.Instance.show(command);
 
           var data: ShopGoodsInfo =
             TempleteManager.Instance.getShopTempInfoByItemId(
-              ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+              ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
             );
           let obj = {
             info: data,
@@ -1479,7 +1479,7 @@ export default class ChatWnd extends BaseWindow {
   // buyFrame.callback = this.shopBugleBack.bind(this);
   // }
 
-  private shopBugleBack(flag: boolean, data: Object) {
+  private shopBugleBack(flag: boolean, data: object) {
     if (flag) {
       this._flag = true;
       var itemId: number = Number(data[0]);
@@ -1488,21 +1488,21 @@ export default class ChatWnd extends BaseWindow {
           this._currentChatStr,
           data[1],
           data[2],
-          data[3]
+          data[3],
         );
       } else if (itemId == ShopGoodsInfo.BIG_BUGLE_TEMP_ID) {
         ChatManager.Instance.chatByBugle(
           this._currentChatStr,
           data[1],
           data[2],
-          data[3]
+          data[3],
         );
       } else if (itemId == ShopGoodsInfo.CROSS_BUGLE_TEMP_ID) {
         ChatManager.Instance.chatByCross(
           this._currentChatStr,
           data[1],
           data[2],
-          data[3]
+          data[3],
         );
       }
       this.chatInput.setInputText("");
@@ -1582,7 +1582,7 @@ export default class ChatWnd extends BaseWindow {
       this.unreadLab
         .setVar(
           "count",
-          count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + ""
+          count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + "",
         )
         .flushVars();
       this.unreadGroup.visible = count > 0;
@@ -1604,7 +1604,9 @@ export default class ChatWnd extends BaseWindow {
         this.unreadLab
           .setVar(
             "count",
-            count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + ""
+            count > this.maxUnreadCount
+              ? this.maxUnreadCount + "+"
+              : count + "",
           )
           .flushVars();
         this.unreadGroup.visible = count > 0;
@@ -1614,7 +1616,7 @@ export default class ChatWnd extends BaseWindow {
 
   private renderPrivateMessageListItem(
     index: number,
-    item: ChatMsgCell | VoiceMsgCell
+    item: ChatMsgCell | VoiceMsgCell,
   ) {
     if (item) {
       item.chatData = this.chatPrivateMessages[index];
@@ -1778,7 +1780,9 @@ export default class ChatWnd extends BaseWindow {
         this.unreadLab
           .setVar(
             "count",
-            count > this.maxUnreadCount ? this.maxUnreadCount + "+" : count + ""
+            count > this.maxUnreadCount
+              ? this.maxUnreadCount + "+"
+              : count + "",
           )
           .flushVars();
         this.unreadGroup.visible = count > 0;
@@ -1850,7 +1854,7 @@ export default class ChatWnd extends BaseWindow {
       }
       if (!isCross) {
         var str: string = LangManager.Instance.GetTranslation(
-          "chatII.datas.getChatChannelName.NotSameServer"
+          "chatII.datas.getChatChannelName.NotSameServer",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -1860,7 +1864,7 @@ export default class ChatWnd extends BaseWindow {
     if (this.playerInfo.consortiaID > 0) {
       showConsortia = (
         FrameCtrlManager.Instance.getCtrl(
-          EmWindow.Consortia
+          EmWindow.Consortia,
         ) as ConsortiaControler
       ).getRightsByIndex(ConsortiaDutyInfo.PASSINVITE);
       showConsortia = showConsortia && cellData.consortiaId <= 0;
@@ -1880,7 +1884,7 @@ export default class ChatWnd extends BaseWindow {
     name: string,
     id: number,
     showConsortia: boolean,
-    servername: string = null
+    servername: string = null,
   ) {
     var showInvite: boolean = FreedomTeamManager.Instance.canInviteMember(id);
     let point: Laya.Point = new Laya.Point(menuX, menuY);
@@ -1892,7 +1896,7 @@ export default class ChatWnd extends BaseWindow {
       false,
       false,
       showInvite,
-      point
+      point,
     );
   }
 
@@ -1903,7 +1907,7 @@ export default class ChatWnd extends BaseWindow {
       data.consortiaId == this.playerInfo.consortiaID
     ) {
       var str: string = LangManager.Instance.GetTranslation(
-        "chat.view.ChatView.command01"
+        "chat.view.ChatView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -2001,7 +2005,7 @@ export default class ChatWnd extends BaseWindow {
     var str: string = "";
     if (ArmyManager.Instance.thane.grades < 30) {
       str = LangManager.Instance.GetTranslation(
-        "chat.view.ChatOutputViewII.AppellLinkClickTipTxt2"
+        "chat.view.ChatOutputViewII.AppellLinkClickTipTxt2",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -2016,7 +2020,7 @@ export default class ChatWnd extends BaseWindow {
       appellInfo.Job != ThaneInfoHelper.getJob(ArmyManager.Instance.thane.job)
     ) {
       str = LangManager.Instance.GetTranslation(
-        "chat.view.ChatOutputViewII.AppellLinkClickTipTxt3"
+        "chat.view.ChatOutputViewII.AppellLinkClickTipTxt3",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -2147,7 +2151,7 @@ export default class ChatWnd extends BaseWindow {
     let maxCount = TempleteManager.Instance.CfgMaxWordCount;
     if (len > maxCount)
       this.chatInput.setInputText(
-        this.chatInput.getInputText().substring(0, maxCount)
+        this.chatInput.getInputText().substring(0, maxCount),
       );
   }
 
@@ -2171,7 +2175,7 @@ export default class ChatWnd extends BaseWindow {
       this.chatTablist.off(
         fairygui.Events.CLICK_ITEM,
         this,
-        this.__onChannelSelect
+        this.__onChannelSelect,
       );
     }
     if (this.chatMsglist) {
@@ -2187,7 +2191,7 @@ export default class ChatWnd extends BaseWindow {
       this.chatInput.inputmsg.displayObject.off(
         Laya.Event.ENTER,
         this,
-        this.sendChatMessage
+        this.sendChatMessage,
       );
     }
     if (this.chatSendBtn) {
@@ -2206,59 +2210,59 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       ChatEvent.CHAT_EMJOY_CLICK,
       this.__addEmjoyHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.UPDATE_CHAT_VIEW,
       this.__updateChatViewHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.CHAT_CHANNEL_CHANGE,
       this.__channelChangeHandler,
-      this
+      this,
     );
 
     NotificationManager.Instance.removeEventListener(
       ChatEvent.SEND_GOODS,
       this.__sendGoodsinfoHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.SEND_STAR,
       this.__sendstarInfoHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.SEND_CARD,
       this.__sendCardInfoHandler,
-      this
+      this,
     );
     ArmyManager.Instance.thane.removeEventListener(
       PlayerEvent.SMALL_BUGLE_FREE_COUNT,
       this.__smallBugleFreeCountHandler,
-      this
+      this,
     );
 
     NotificationManager.Instance.removeEventListener(
       ChatEvent.CHANNEL_CLICK,
       this.__onChannelSelect,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.PLAYER_NAME_CLICK,
       this.__playerNameClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.CONSORTIA_CLICK,
       this.__consortiaClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.ROOM_CLICK,
       this.__roomClickHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.removeEventListener(ChatEvent.STAR_CLICK, this.__starClickHandler, this);
     // NotificationManager.Instance.removeEventListener(ChatEvent.EQUIP_CLICK, this.__equipClickHandler, this);
@@ -2266,17 +2270,17 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       ChatEvent.VIP_LINK_CLICK,
       this.__vipLinkClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.APPELL_LINK_CLICK,
       this.__appellLinkClickHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       ChatEvent.ROSE_BACK_CLICK,
       this.__roseBackClickHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.removeEventListener(ChatEvent.REINFORCE_CLICK, this.__reinforceClickHandler, this);
     // NotificationManager.Instance.removeEventListener(ChatEvent.SEEK_LINK_CLICK, this.__seekLinkClickHandler, this);
@@ -2286,45 +2290,45 @@ export default class ChatWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       ChatEvent.CHAT_MESSAGE,
       this.__onChangeSelect,
-      this
+      this,
     );
     // IMManager.Instance.removeEventListener(IMEvent.MSG_SEND_RESPONSE, this.__sendMsgResponseHandler, this);
     IMManager.Instance.removeEventListener(
       IMEvent.RECEIVE_MSG,
       this.__receiveMsgHandler,
-      this
+      this,
     );
     IMManager.Instance.removeEventListener(
       IMEvent.RECEIVE_VOICE_MSG,
       this.addVoiceItem,
-      this
+      this,
     );
 
     NotificationManager.Instance.removeEventListener(
       ChatEvent.UPDATE_SELECTED_PRIVATECHAT,
       this.refreshPrivateChatList,
-      this
+      this,
     );
     IMManager.Instance.removeEventListener(
       IMEvent.MSG_LIST_DEL,
       this.__imFrameUpdateHandler,
-      this
+      this,
     );
     IMManager.Instance.removeEventListener(
       IMFrameEvent.REMOVE,
       this.__imFrameUpdateHandler,
-      this
+      this,
     );
     if (this.voice && this.voice.displayObject) {
       this.voice.displayObject.off(
         InteractiveEvent.LONG_PRESS,
         this,
-        this.onLongPress
+        this.onLongPress,
       );
       this.voice.displayObject.off(
         InteractiveEvent.LONG_PRESS_END,
         this,
-        this.onLongPressEnd
+        this.onLongPressEnd,
       );
     }
     if (this.voice_tip.visible) {

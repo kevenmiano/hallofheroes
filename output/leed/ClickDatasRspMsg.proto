@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message ClickDatasRspMsg {
+  repeated int32 info = 1;
+}

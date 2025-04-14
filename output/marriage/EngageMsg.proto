@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message EngageMsg {
+  repeated int32 engageInfos = 1;
+}

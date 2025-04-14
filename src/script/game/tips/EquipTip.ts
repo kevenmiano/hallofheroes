@@ -55,7 +55,7 @@ export class EquipTip extends BaseTips {
     NotificationManager.Instance.addEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 
@@ -67,7 +67,7 @@ export class EquipTip extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 

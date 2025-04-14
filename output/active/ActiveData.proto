@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ActiveData {
+  repeated int32 packdata = 1;
+  int32 value = 2;
+  string activeId = 3;
+  bool isShow = 4;
+  int32 type = 5;
+  int32 activeCharge = 6;
+  repeated int32 consumeMsg = 7;
+  int32 state = 8;
+}

@@ -1,7 +1,6 @@
-// @ts-nocheck
 import FrameDataBase from "../../../mvc/FrameDataBase";
-import {Enum_BagState} from "./Enum_BagState";
-import {BagSortType} from "../../../constant/BagDefine";
+import { Enum_BagState } from "./Enum_BagState";
+import { BagSortType } from "../../../constant/BagDefine";
 
 /**
  * @description
@@ -10,14 +9,12 @@ import {BagSortType} from "../../../constant/BagDefine";
  * @ver 1.0
  *
  */
-export class BagModel extends FrameDataBase
-{
-    public static bag_state:number = Enum_BagState.Default;
-    public static lastBagSortType:number = BagSortType.Default;
-    public static MaxGridNum:number = 999;
+export class BagModel extends FrameDataBase {
+  public static bag_state: number = Enum_BagState.Default;
+  public static lastBagSortType: number = BagSortType.Default;
+  public static MaxGridNum: number = 999;
 
-    constructor()
-    {
-        super();
-    }
+  constructor() {
+    super();
+  }
 }

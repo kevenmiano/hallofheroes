@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message AllExchangeItemInfoMsg {
+  int32 index = 1;
+  int32 itemId = 2;
+  int32 itemCount = 3;
+  int32 randomType = 4;
+}

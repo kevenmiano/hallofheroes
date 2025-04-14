@@ -35,7 +35,7 @@ export class PreLoadTask extends Sequence {
           }
         },
         null,
-        Laya.Loader.IMAGE
+        Laya.Loader.IMAGE,
       );
     } else if (this.resType == Laya.Loader.ATLAS) {
       ResMgr.Instance.loadRes(
@@ -49,7 +49,7 @@ export class PreLoadTask extends Sequence {
           }
         },
         null,
-        Laya.Loader.ATLAS
+        Laya.Loader.ATLAS,
       );
     }
   }
@@ -83,7 +83,7 @@ export default class ResPreLoader {
   constructor(
     res: Array<any>,
     model: ActionsExecutionMode = ActionsExecutionMode.RunInParallel,
-    callback: Func = null
+    callback: Func = null,
   ) {
     this._pathArray = this._resources;
     this._loadMode = model;
@@ -104,13 +104,17 @@ export default class ResPreLoader {
       .setComplete(
         Laya.Handler.create(this, () => {
           Logger.log("任务完成");
-          this._callback && this._callback.Invoke();
-        })
+          if (this._callback) {
+            this._callback.Invoke();
+          }
+        }),
       )
       .execute(null);
   }
 
   dispose() {
-    this.downLoadList && this.downLoadList.clear();
+    if (this.downLoadList) {
+      this.downLoadList.clear();
+    }
   }
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message SpacePlayerMoveMsg {
+  repeated int32 players = 1;
+  int32 isVisualFollow = 2;
+}

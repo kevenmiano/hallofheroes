@@ -1,4 +1,3 @@
-// TODO FIX
 import LangManager from "../../core/lang/LangManager";
 import Logger from "../../core/logger/Logger";
 import { WalkRectScanUtils } from "../../core/utils/WalkRectScanUtils";
@@ -8,7 +7,7 @@ import {
   SceneEvent,
   SpaceEvent,
 } from "../constant/event/NotificationEvent";
-import { IBaseSceneView } from "../interfaces/IBaseSceneView";
+import { IBaseSceneView } from "../interfaces/BaseSceneView";
 import { ArmyManager } from "../manager/ArmyManager";
 import { MopupManager } from "../manager/MopupManager";
 import { NotificationManager } from "../manager/NotificationManager";
@@ -53,6 +52,7 @@ import { MapPhysicsBase } from "../map/space/view/physics/MapPhysicsBase";
 import { SpaceWalkLayer } from "../map/space/view/layer/SpaceWalkLayer";
 import { SpaceBuildingLayer } from "../map/space/view/layer/SpaceBuildingLayer";
 import { SharedManager } from "../manager/SharedManager";
+//@ts-expect-error: Expected error
 import BattleReportMsg = com.road.yishi.proto.battle.BattleReportMsg;
 import { SpaceSocketOutManager } from "../map/space/SpaceSocketOutManager";
 import { PetCampaignManager } from "../manager/PetCampaignManager";
@@ -97,7 +97,7 @@ export default class SpaceScene
     this.autoSize = true;
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     Logger.log("preload start");
     NotificationManager.Instance.dispatchEvent(SceneEvent.LOCK_SCENE, true);
     // SceneManager.Instance.lockScene = true;
@@ -105,7 +105,7 @@ export default class SpaceScene
       let preLoadingOver = () => {
         this._preLoadingOver = true;
         NotificationManager.Instance.dispatchEvent(
-          NotificationEvent.UI_ENTER_SCENE
+          NotificationEvent.UI_ENTER_SCENE,
         );
         Logger.log("preload finish");
         LoadingSceneWnd.Instance.Hide();
@@ -141,7 +141,7 @@ export default class SpaceScene
         } else {
           this._showLoadingTimeId = setInterval(
             this.showLoading.bind(this),
-            1500
+            1500,
           );
         }
         // this._time = new Date().getTime();
@@ -151,7 +151,7 @@ export default class SpaceScene
     });
   }
 
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     return new Promise(async (resolve) => {
       ResRefCountManager.resCache.forEach((element, url) => {
         if (element.refCount > 0) {
@@ -171,7 +171,7 @@ export default class SpaceScene
         h,
         this._model.mapTielsData,
         false,
-        true
+        true,
       );
       this._currentFindPath = this._findPath;
       this._algUtils = new AcorrsLineGrid(this._currentFindPath, this._model);
@@ -234,14 +234,14 @@ export default class SpaceScene
             .data as BattleReportMsg;
           FrameCtrlManager.Instance.open(
             EmWindow.SinglepassResultWnd,
-            battleReportMsg
+            battleReportMsg,
           );
         } else if (this._preSceneData.isOpenPetCampaignBattleResult) {
           let battleReportMsg: BattleReportMsg = this._preSceneData
             .data as BattleReportMsg;
           FrameCtrlManager.Instance.open(
             EmWindow.PetCampaignResultWnd,
-            battleReportMsg
+            battleReportMsg,
           );
         } else if (this._preSceneData.isOpenPetCampaign) {
           FrameCtrlManager.Instance.open(EmWindow.PetCampaignWnd, {
@@ -254,13 +254,13 @@ export default class SpaceScene
       if (!HomeWnd.Instance.isShowing) {
         await HomeWnd.Instance.instShow();
         HomeWnd.Instance.getSmallMapBar().switchSmallMapState(
-          SmallMapBar.SPACE_SMALL_MAP_STATE
+          SmallMapBar.SPACE_SMALL_MAP_STATE,
         );
       }
       await UIManager.Instance.ShowWind(EmWindow.SpaceTaskInfoWnd);
       if (this._view) {
         let rect: Laya.Rectangle = SpaceMapViewHelper.getCurrentMapRect(
-          this._view
+          this._view,
         );
         this.moveMapCallBack(rect);
       }
@@ -325,9 +325,15 @@ export default class SpaceScene
       }
       SpaceManager.Instance.mapView = null;
       // FootprintItems.dispose();
-      this._findPath && this._findPath.dispose();
-      this._currentFindPath && this._currentFindPath.dispose();
-      this._flyFindPath && this._flyFindPath.dispose();
+      if (this._findPath) {
+        this._findPath.dispose();
+      }
+      if (this._currentFindPath) {
+        this._currentFindPath.dispose();
+      }
+      if (this._flyFindPath) {
+        this._flyFindPath.dispose();
+      }
       this._findPath = null;
       this._currentFindPath = null;
       this._flyFindPath = null;
@@ -359,22 +365,22 @@ export default class SpaceScene
     NotificationManager.Instance.on(
       SpaceEvent.FIND_NODE,
       this.__findNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.on(
       SpaceEvent.SELECT_NODE,
       this.__selectNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.on(
       SpaceEvent.HIDE_OTHERS,
       this.__onHideOthers,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       FreedomTeamEvent.TEAM_INFO_UPDATE,
       this.__teamInfoUpdateHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.on(SpaceEvent.HIDE_OTHER_NAME, this.__onHideOtherName, this);
   }
@@ -403,22 +409,22 @@ export default class SpaceScene
     NotificationManager.Instance.off(
       SpaceEvent.FIND_NODE,
       this.__findNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.off(
       SpaceEvent.SELECT_NODE,
       this.__selectNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.off(
       SpaceEvent.HIDE_OTHERS,
       this.__onHideOthers,
-      this
+      this,
     );
     NotificationManager.Instance.off(
       FreedomTeamEvent.TEAM_INFO_UPDATE,
       this.__teamInfoUpdateHandler,
-      this
+      this,
     );
     // NotificationManager.Instance.off(SpaceEvent.HIDE_OTHER_NAME, this.__onHideOtherName, this);
   }
@@ -462,8 +468,8 @@ export default class SpaceScene
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
               "store.view.StoreFrame.command01",
-              level
-            )
+              level,
+            ),
           );
           return;
         }
@@ -517,23 +523,23 @@ export default class SpaceScene
   public moveArmyByPos(
     endX: number,
     endY: number,
-    isCheckRect: boolean = false
+    isCheckRect: boolean = false,
   ): boolean {
     NotificationManager.Instance.sendNotification(
       NotificationEvent.LOCK_TEAM_FOLLOW_TARGET,
-      0
+      0,
     );
     let str: string = "";
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       // MessageTipManager.Instance.show(str);
       return false;
     }
     let nodeInfo: SpaceNode = SpaceManager.Instance.model.getHandlerNode(
       parseInt((endX / 20).toString()),
-      parseInt((endY / 20).toString())
+      parseInt((endY / 20).toString()),
     );
     if (
       nodeInfo &&
@@ -543,7 +549,7 @@ export default class SpaceScene
     ) {
       if (nodeInfo.handlerRangePoints.length != 0) {
         let index: number = parseInt(
-          (Math.random() * nodeInfo.handlerRangePoints.length).toString()
+          (Math.random() * nodeInfo.handlerRangePoints.length).toString(),
         );
         if (index == nodeInfo.handlerRangePoints.length) {
           index = 0;
@@ -581,7 +587,7 @@ export default class SpaceScene
       end = this._rectScanUtils.walkRectScan(
         end,
         new Laya.Point(start.x / 20, start.y / 20),
-        current
+        current,
       );
     }
     if (end) {
@@ -592,11 +598,11 @@ export default class SpaceScene
         paths = [
           new Laya.Point(
             parseInt((start.x / 20).toString()),
-            parseInt((start.y / 20).toString())
+            parseInt((start.y / 20).toString()),
           ),
           new Laya.Point(
             parseInt((end.x / 20).toString()),
-            parseInt((end.y / 20).toString())
+            parseInt((end.y / 20).toString()),
           ),
         ];
       } else {
@@ -605,12 +611,12 @@ export default class SpaceScene
         paths = this._currentFindPath.find(
           new Laya.Point(
             parseInt((start.x / 20).toString()),
-            parseInt((start.y / 20).toString())
+            parseInt((start.y / 20).toString()),
           ),
           new Laya.Point(
             parseInt((end.x / 20).toString()),
-            parseInt((end.y / 20).toString())
-          )
+            parseInt((end.y / 20).toString()),
+          ),
         );
         // paths = [new Laya.Point(parseInt((start.x/20).toString()),parseInt((start.y/20).toString())), new Laya.Point(parseInt((end.x/20).toString()),parseInt((end.y/20).toString()))];
       }
@@ -644,7 +650,7 @@ export default class SpaceScene
   private getFlyStartPoint(
     curX: number,
     curY: number,
-    nextPoint: Laya.Point
+    nextPoint: Laya.Point,
   ): Laya.Point {
     if (curX < 0) {
       curX = 0;
@@ -670,7 +676,7 @@ export default class SpaceScene
   private getStartPoint(
     curX: number,
     curY: number,
-    nextPoint: Laya.Point
+    nextPoint: Laya.Point,
   ): Laya.Point {
     if (this.getWalkable(curX / 20, curY / 20)) {
       return new Laya.Point(curX, curY);
@@ -698,7 +704,7 @@ export default class SpaceScene
 
   public searchPath(
     beginPoint: Laya.Point,
-    endPoint: Laya.Point
+    endPoint: Laya.Point,
   ): Laya.Point[] {
     if (this._currentFindPath && this._algUtils) {
       let army: SpaceArmy = this._model.selfArmy;
@@ -715,7 +721,7 @@ export default class SpaceScene
         this._currentFindPath = this._findPath;
         this._algUtils.findPath8 = this._currentFindPath;
         path = this._algUtils.getPsnode(
-          this._currentFindPath.find(beginPoint, endPoint)
+          this._currentFindPath.find(beginPoint, endPoint),
         );
       }
       return path;
@@ -745,7 +751,7 @@ export default class SpaceScene
   //     return ArmyManager.Instance.thane;
   // }
 
-  public getArmyView(aInfo: any): Object {
+  public getArmyView(aInfo: any): object {
     if (!aInfo) {
       return null;
     }
@@ -792,7 +798,7 @@ export default class SpaceScene
     }
   }
 
-  public getNpcView(node: SpaceNode): Object {
+  public getNpcView(node: SpaceNode): object {
     if (!this._npcList) return null;
     for (let npc of this._npcList) {
       if (npc.nodeInfo == node) {

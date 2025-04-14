@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message MultiLanParamMsg {
+  int32 lan = 1;
+  string param = 2;
+}

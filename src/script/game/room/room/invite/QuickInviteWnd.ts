@@ -65,7 +65,7 @@ export default class QuickInviteWnd extends BaseWindow {
     this.chatDataPool = new ObjectPool("chatDataPool");
 
     this.txtFrameTitle.text = LangManager.Instance.GetTranslation(
-      "room.view.invite.QuickInviteFrame.title"
+      "room.view.invite.QuickInviteFrame.title",
     );
     this.tfInputPrefix.touchable = false;
     this.tfInputSuffix.on(Laya.Event.INPUT, this, this.__onTxtChange);
@@ -84,14 +84,14 @@ export default class QuickInviteWnd extends BaseWindow {
 
   private initInviteContent() {
     this._defaultContentSuffix = LangManager.Instance.GetTranslation(
-      "QuickInviteWnd.InviteTipSuffix"
+      "QuickInviteWnd.InviteTipSuffix",
     );
 
     if (this.roomSceneType == RoomSceneType.PVP) {
       this._defaultContentPrefix =
         LangManager.Instance.GetTranslation(
           "QuickInviteWnd.PvpInviteTipPrefix",
-          this.roomInfo.id
+          this.roomInfo.id,
         ) + LangManager.Instance.GetTranslation("welcomeTojoin");
     } else {
       if (this.roomInfo.campaignId == GlobalConfig.CampaignID.AncientRuins) {
@@ -99,8 +99,8 @@ export default class QuickInviteWnd extends BaseWindow {
           LangManager.Instance.GetTranslation(
             "QuickInviteWnd.AncientRuinsInviteTipPrefix",
             this.roomInfo.mapName,
-            this.roomInfo.id
-          )
+            this.roomInfo.id,
+          ),
         );
       } else {
         let mapName: string = "";
@@ -114,12 +114,12 @@ export default class QuickInviteWnd extends BaseWindow {
             "public.level5",
             "",
             templateInfo.MinLevel,
-            templateInfo.MaxLevel
+            templateInfo.MaxLevel,
           );
           if (templateInfo.MinLevel == templateInfo.MaxLevel) {
             lvstr = LangManager.Instance.GetTranslation(
               "public.level3",
-              templateInfo.MinLevel
+              templateInfo.MinLevel,
             );
           }
         }
@@ -128,29 +128,29 @@ export default class QuickInviteWnd extends BaseWindow {
           //||templateInfo.isTrailTower
           difficultyGrade =
             KingTowerManager.Instance.kingTowerInfo.difficultyStep(
-              templateInfo.DifficutlyGrade
+              templateInfo.DifficutlyGrade,
             );
           mapName =
             templateInfo.CampaignNameLang +
             lvstr +
             LangManager.Instance.GetTranslation(
               "public.parentheses1",
-              difficultyGrade
+              difficultyGrade,
             );
         } else {
           if (templateInfo.SonTypes != 0) {
             if (templateInfo.isTaila) {
               difficultyGrade = LangManager.Instance.GetTranslation(
-                "selectcampaign.view.weekCampaign"
+                "selectcampaign.view.weekCampaign",
               );
             } else {
               difficultyGrade = LangManager.Instance.GetTranslation(
-                "room.view.invite.QuickInviteFrame.difficultyGrade3"
+                "room.view.invite.QuickInviteFrame.difficultyGrade3",
               );
             }
           } else if (templateInfo.DifficutlyGrade == 1) {
             difficultyGrade = LangManager.Instance.GetTranslation(
-              "room.view.invite.QuickInviteFrame.difficultyGrade1"
+              "room.view.invite.QuickInviteFrame.difficultyGrade1",
             );
           } else {
             //difficultyGrade = LangManager.Instance.GetTranslation("room.view.invite.QuickInviteFrame.difficultyGrade2");
@@ -158,7 +158,7 @@ export default class QuickInviteWnd extends BaseWindow {
           if (difficultyGrade && !templateInfo.isTaila) {
             difficultyGrade = LangManager.Instance.GetTranslation(
               "public.parentheses1",
-              difficultyGrade
+              difficultyGrade,
             );
           }
           if (!templateInfo.isTaila) {
@@ -170,19 +170,19 @@ export default class QuickInviteWnd extends BaseWindow {
         }
         if (this.roomInfo.campaignId == 0) {
           mapName = LangManager.Instance.GetTranslation(
-            "chat.view.ChatView.NullMap"
+            "chat.view.ChatView.NullMap",
           );
         }
         if (templateInfo.isKingTower || templateInfo.isTrailTower) {
           let activity: string = LangManager.Instance.GetTranslation(
-            "room.view.invite.QuickInviteFrame.difficultyGrade3"
+            "room.view.invite.QuickInviteFrame.difficultyGrade3",
           );
           this._defaultContentPrefix =
             activity +
             LangManager.Instance.GetTranslation(
               "QuickInviteWnd.activity",
               mapName,
-              this.roomInfo.id
+              this.roomInfo.id,
             );
         } else {
           if (templateInfo.isTaila) {
@@ -191,13 +191,13 @@ export default class QuickInviteWnd extends BaseWindow {
               LangManager.Instance.GetTranslation(
                 "QuickInviteWnd.activity",
                 mapName,
-                this.roomInfo.id
+                this.roomInfo.id,
               );
           } else {
             this._defaultContentPrefix = LangManager.Instance.GetTranslation(
               "QuickInviteWnd.PveInviteTipPrefix1",
               mapName,
-              this.roomInfo.id
+              this.roomInfo.id,
             );
           }
         }
@@ -215,12 +215,12 @@ export default class QuickInviteWnd extends BaseWindow {
 
   private btnConfirmClick() {
     let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
     );
     if (num == 0) {
       if (this.thane.smallBugleFreeCount <= 0) {
         var command = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(command);
 
@@ -255,7 +255,7 @@ export default class QuickInviteWnd extends BaseWindow {
     InviteData.thane.inviteContent = str;
     let tempContent: string = this.getSendStr(ChatHelper.parasMsgs(str));
     tempContent = this._defaultContentPrefix + ChatHelper.parasMsgs(str);
-    let contents: any[] = new Array();
+    let contents: any[] = [];
     if (!ChatHelper.checkCanSend(tempContent, ChatChannel.WORLD)) {
       return;
     }
@@ -311,7 +311,7 @@ export default class QuickInviteWnd extends BaseWindow {
 
   private btnShelterClick() {
     MessageTipManager.Instance.show(
-      LangManager.Instance.GetTranslation("chat_forbiden_text")
+      LangManager.Instance.GetTranslation("chat_forbiden_text"),
     );
   }
 

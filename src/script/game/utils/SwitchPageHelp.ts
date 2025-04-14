@@ -63,10 +63,10 @@ export class SwitchPageHelp {
   public static skipPageByTaskCondictionType(
     data: any,
     func: Function,
-    target: any
+    target: any,
   ) {
     let str: string = LangManager.Instance.GetTranslation(
-      "yishi.SwitchPageHelp.taskNotFinish"
+      "yishi.SwitchPageHelp.taskNotFinish",
     );
     if (data instanceof TaskTemplate) {
       let conTask: any[] = (<TaskTemplate>data).conditionList;
@@ -94,7 +94,7 @@ export class SwitchPageHelp {
             SceneManager.Instance.currentType != SceneType.OUTER_CITY_SCENE
           ) {
             MessageTipManager.Instance.show(
-              LangManager.Instance.GetTranslation("tip.outercity")
+              LangManager.Instance.GetTranslation("tip.outercity"),
             ); //
           }
           break;
@@ -105,7 +105,7 @@ export class SwitchPageHelp {
             SceneManager.Instance.currentType != SceneType.OUTER_CITY_SCENE
           ) {
             MessageTipManager.Instance.show(
-              LangManager.Instance.GetTranslation("tip.outercity")
+              LangManager.Instance.GetTranslation("tip.outercity"),
             );
           }
           break;
@@ -178,7 +178,7 @@ export class SwitchPageHelp {
         case 32: //收集任务
           if (SwitchPageHelp.checkCollectCampaign)
             SwitchPageHelp.walkNext(
-              SwitchPageHelp.getCollectNodeIdByGoodId(Number(conTask[0].Para1))
+              SwitchPageHelp.getCollectNodeIdByGoodId(Number(conTask[0].Para1)),
             );
           else SwitchPageHelp.gotoCollectScene(data);
           break;
@@ -192,7 +192,9 @@ export class SwitchPageHelp {
           this.gotoStarFrame();
           break;
         case 37: //所在地图
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
         case 38: //无限塔
           SwitchPageHelp.gotoMazeFrame();
@@ -221,7 +223,9 @@ export class SwitchPageHelp {
           SwitchPageHelp.gotoStoreFrame(GTabIndex.Forge_XL);
           break;
         case 48: //手机验证
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
         case 49: //物品上缴
           MessageTipManager.Instance.show(str);
@@ -291,11 +295,13 @@ export class SwitchPageHelp {
           SwitchPageHelp.challengeSelf((<TaskTemplate>data).TemplateId);
           break;
         default:
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
       }
     } else if (data instanceof BaseOfferReward) {
-      let conOffer: any[] = (<BaseOfferReward>data).conditionList;
+      let conOffer = (<BaseOfferReward>data).conditionList;
       switch (conOffer[0].CondictionType) {
         case 1: //招募兵种
           SwitchPageHelp.gotoCasernFrame();
@@ -309,7 +315,7 @@ export class SwitchPageHelp {
         case 4: //采集
           if (SwitchPageHelp.checkCollectCampaign)
             SwitchPageHelp.walkNext(
-              SwitchPageHelp.getCollectNodeIdByGoodId(conOffer[0].Para1)
+              SwitchPageHelp.getCollectNodeIdByGoodId(conOffer[0].Para1),
             );
           else SwitchPageHelp.gotoCollectScene(data);
           break;
@@ -330,8 +336,8 @@ export class SwitchPageHelp {
           ) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "dayGuide.DayGuideManager.command05"
-              )
+                "dayGuide.DayGuideManager.command05",
+              ),
             );
             return;
           }
@@ -354,11 +360,13 @@ export class SwitchPageHelp {
           // CheckUIModuleUtil.Instance.tryCall(UIModuleTypes.HAMSTER, showHamster, [data]);
           break;
         default:
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
       }
     } else if (data instanceof RingTask) {
-      let conRing: any[] = (<RingTask>data).conditionList;
+      let conRing = (<RingTask>data).conditionList;
       let ringtask: RingTask = RingTaskManager.Instance.getRingTask();
       switch (conRing[0].CondictionType) {
         case RewardConditionType.GIVE_PAWNS: //缴兵
@@ -372,7 +380,7 @@ export class SwitchPageHelp {
           break;
         case RewardConditionType.COLLECTION: //采集
           NotificationManager.Instance.dispatchEvent(
-            NotificationEvent.DISPOSEVIEW
+            NotificationEvent.DISPOSEVIEW,
           );
           SwitchPageHelp.walkToCrossMapTarget(conRing[0].Para4); //"10000,5"
           break;
@@ -390,8 +398,8 @@ export class SwitchPageHelp {
           ) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "dayGuide.DayGuideManager.command05"
-              )
+                "dayGuide.DayGuideManager.command05",
+              ),
             );
             return;
           }
@@ -411,19 +419,19 @@ export class SwitchPageHelp {
           break;
         case RewardConditionType.TALKTASK: //送信、对话
           NotificationManager.Instance.dispatchEvent(
-            NotificationEvent.DISPOSEVIEW
+            NotificationEvent.DISPOSEVIEW,
           );
           SwitchPageHelp.walkToCrossMapTarget(conRing[0].Para4); //"10000,5|20001,2000149"
           break;
         case RewardConditionType.KILLPETMONSTER: //击杀宠物岛英灵
           NotificationManager.Instance.dispatchEvent(
-            NotificationEvent.DISPOSEVIEW
+            NotificationEvent.DISPOSEVIEW,
           );
           SwitchPageHelp.walkToCrossMapTarget(conRing[0].Para4); //"10000,5"
           break;
         case RewardConditionType.KILLDUPLICATEMONSTER: //击杀副本怪物
           NotificationManager.Instance.dispatchEvent(
-            NotificationEvent.DISPOSEVIEW
+            NotificationEvent.DISPOSEVIEW,
           );
           SwitchPageHelp.gotoCampaignById(ringtask.currTask.condition_2);
           break;
@@ -436,7 +444,7 @@ export class SwitchPageHelp {
         case RewardConditionType.RESIDENTTASK:
           if (MopupManager.Instance.model.isMopup) {
             let str2: string = LangManager.Instance.GetTranslation(
-              "mopup.MopupManager.mopupTipData01"
+              "mopup.MopupManager.mopupTipData01",
             );
             MessageTipManager.Instance.show(str2);
             return;
@@ -444,11 +452,13 @@ export class SwitchPageHelp {
           SwitchPageHelp.walkToCrossMapTarget("10000,17"); //conRing[0].Para4
           break;
         default:
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
       }
     } else if (data instanceof OfferRewardTemplate) {
-      let conOffer: any[] = data.conditionList;
+      let conOffer = data.conditionList;
       switch (conOffer[0].CondictionType) {
         case 1: //招募兵种
           SwitchPageHelp.gotoCasernFrame();
@@ -462,7 +472,7 @@ export class SwitchPageHelp {
         case 4: //采集
           if (SwitchPageHelp.checkCollectCampaign)
             SwitchPageHelp.walkNext(
-              SwitchPageHelp.getCollectNodeIdByGoodId(conOffer[0].Para1)
+              SwitchPageHelp.getCollectNodeIdByGoodId(conOffer[0].Para1),
             );
           else SwitchPageHelp.gotoCollectScene(data);
           break;
@@ -483,8 +493,8 @@ export class SwitchPageHelp {
           ) {
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "dayGuide.DayGuideManager.command05"
-              )
+                "dayGuide.DayGuideManager.command05",
+              ),
             );
             return;
           }
@@ -507,7 +517,9 @@ export class SwitchPageHelp {
           // CheckUIModuleUtil.Instance.tryCall(UIModuleTypes.HAMSTER, showHamster, [data]);
           break;
         default:
-          func && func.call(target); //任务面板对应页
+          if (func) {
+            func.call(target); //任务面板对应页
+          }
           break;
       }
     }
@@ -534,7 +546,7 @@ export class SwitchPageHelp {
       case SceneType.PVE_ROOM_SCENE:
       case SceneType.PVP_ROOM_SCENE:
         let str: string = LangManager.Instance.GetTranslation(
-          "task.TaskFrameII.command01"
+          "task.TaskFrameII.command01",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -557,21 +569,21 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.CAMPAIGN_MAP_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "mainBar.MainToolBar.command01"
+        "mainBar.MainToolBar.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.SPACE_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -593,7 +605,7 @@ export class SwitchPageHelp {
       case SceneType.PVE_ROOM_SCENE:
       case SceneType.PVP_ROOM_SCENE:
         let str: string = LangManager.Instance.GetTranslation(
-          "task.TaskFrameII.command02"
+          "task.TaskFrameII.command02",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -607,7 +619,7 @@ export class SwitchPageHelp {
     if (conditionList) {
       OfferRewardManager.Instance.sendRewardArrest(
         conditionList[0].CondictionType,
-        conditionList[0].Para1
+        conditionList[0].Para1,
       );
     }
   }
@@ -688,13 +700,13 @@ export class SwitchPageHelp {
     }
     if (ArmyManager.Instance.army.onVehicle) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips")
+        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips"),
       );
       return;
     }
     let campaignTemp: t_s_campaignData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_campaign,
-      info.NeedFightId
+      info.NeedFightId,
     );
     WorldBossSocketOutManager.sendWorldBossCmd(campaignTemp.CampaignId);
   }
@@ -706,14 +718,14 @@ export class SwitchPageHelp {
     // AudioManager.Instance.playSound(SoundIds.MAINTOOLBAR_CLICK_SOUND);
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -730,7 +742,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -738,7 +750,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.PVE_CAMPAIGN) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.PVE_CAMPAIGN
+        OpenGrades.PVE_CAMPAIGN,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -756,14 +768,14 @@ export class SwitchPageHelp {
     if (nodeId == 0) {
       if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
         let str: string = LangManager.Instance.GetTranslation(
-          "emailII.view.ReadBattleReportView.command01"
+          "emailII.view.ReadBattleReportView.command01",
         );
         MessageTipManager.Instance.show(str);
         return;
       }
       NotificationManager.Instance.dispatchEvent(
         NotificationEvent.WORK_NEXT_NODE,
-        null
+        null,
       );
     } else {
       if (!SwitchPageHelp.mapModel) return;
@@ -774,13 +786,13 @@ export class SwitchPageHelp {
       if (!mapView) return;
       SwitchPageHelp.mapModel.selectNode = targetNode;
       let targetView: DisplayObject = mapView.getNpcNodeById(
-        targetNode.info.id
+        targetNode.info.id,
       );
       CampaignManager.Instance.controller.moveArmyByPos(
         targetView.x,
         targetView.y,
         false,
-        true
+        true,
       );
     }
   }
@@ -792,7 +804,7 @@ export class SwitchPageHelp {
    */
   public static walkToCrossMapTarget(
     target: string,
-    position: Laya.Point = null
+    position: Laya.Point = null,
   ) {
     CrossMapSearchActionQueue.Instance.clean();
     let mapArr: any[] = target.split("|");
@@ -830,11 +842,11 @@ export class SwitchPageHelp {
     if (fromMapId != targetNode.mapId) {
       let p: any[] = CrossMapSearchActionQueue.Instance.searchPath(
         fromMapId,
-        targetNode.mapId
+        targetNode.mapId,
       );
       if (!p) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("task.TaskFrameII.command01")
+          LangManager.Instance.GetTranslation("task.TaskFrameII.command01"),
         );
         return;
       }
@@ -848,7 +860,7 @@ export class SwitchPageHelp {
     path.push(targetNode);
     for (let j: number = 0; j < path.length; j++) {
       let crossMapSearchAction = Laya.ClassUtils.getClass(
-        "CrossMapSearchAction"
+        "CrossMapSearchAction",
       );
       let action = new crossMapSearchAction();
       action.mapId = parseInt(path[j].mapId);
@@ -876,7 +888,7 @@ export class SwitchPageHelp {
     if (MopupManager.Instance.model.isMopup) {
       //扫荡中。返回
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -910,8 +922,8 @@ export class SwitchPageHelp {
       if (ArmyManager.Instance.thane.grades < currentTem.MinLevel) {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "yishi.SwitchPageHelp.gotoCampaignById.levelLimit"
-          )
+            "yishi.SwitchPageHelp.gotoCampaignById.levelLimit",
+          ),
         );
         return;
       }
@@ -946,7 +958,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -965,7 +977,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.CONSORTIA) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.CONSORTIA
+        OpenGrades.CONSORTIA,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -992,13 +1004,14 @@ export class SwitchPageHelp {
    * 打开占星
    *
    */
-  public static gotoStarFrame() { //跳转到占星
+  public static gotoStarFrame() {
+    //跳转到占星
     // AudioManager.Instance.playSound(SoundIds.MAINTOOLBAR_CLICK_SOUND);
     let str: string;
     if (ArmyManager.Instance.thane.grades < OpenGrades.STAR) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.STAR
+        OpenGrades.STAR,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1010,13 +1023,13 @@ export class SwitchPageHelp {
    *
    */
   public static gotoShopFrame(
-    pageIndex: number = 0 //跳转到商城
+    pageIndex: number = 0, //跳转到商城
   ) {
     // AudioManager.Instance.playSound(SoundIds.MAINTOOLBAR_CLICK_SOUND);
     if (ArmyManager.Instance.thane.grades < OpenGrades.SHOP) {
       let str: string = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.SHOP
+        OpenGrades.SHOP,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1040,7 +1053,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1048,7 +1061,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.WORLD_BOSS) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.WORLD_BOSS
+        OpenGrades.WORLD_BOSS,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1056,7 +1069,7 @@ export class SwitchPageHelp {
     if (!this.checkScene()) return;
     if (!this.playerInfo.worldbossState) {
       str = LangManager.Instance.GetTranslation(
-        "YiShi.SwitchPageHelp.WorldBoss"
+        "YiShi.SwitchPageHelp.WorldBoss",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1072,7 +1085,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1080,7 +1093,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.RVR) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.RVR
+        OpenGrades.RVR,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1088,7 +1101,7 @@ export class SwitchPageHelp {
     if (!this.checkScene()) return;
     if (!this.worldFightState) {
       str = LangManager.Instance.GetTranslation(
-        "YiShi.SwitchPageHelp.warFight"
+        "YiShi.SwitchPageHelp.warFight",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1117,25 +1130,26 @@ export class SwitchPageHelp {
    * 打开日常活动
    *
    */
-  private static gotoDayGuideFrame() { //跳转活跃度
+  private static gotoDayGuideFrame() {
+    //跳转活跃度
     // AudioManager.Instance.playSound(SoundIds.MAINTOOLBAR_CLICK_SOUND);
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (ArmyManager.Instance.thane.grades < OpenGrades.WELFARE) {
       str = LangManager.Instance.GetTranslation(
-        "mainBar.TopToolsBar.dayGuideBtn.underLevel"
+        "mainBar.TopToolsBar.dayGuideBtn.underLevel",
       );
       MessageTipManager.Instance.show(str);
     } else {
       FrameCtrlManager.Instance.open(EmWindow.Welfare, {
         str: LangManager.Instance.GetTranslation(
-          "welfareWnd.tabTitle.DegreeActivity"
+          "welfareWnd.tabTitle.DegreeActivity",
         ),
       });
     }
@@ -1183,7 +1197,7 @@ export class SwitchPageHelp {
         if (ArmyManager.Instance.thane.grades < OpenGrades.INTENSIFY) {
           str = LangManager.Instance.GetTranslation(
             "dayGuide.DayGuideManager.command02",
-            OpenGrades.INTENSIFY
+            OpenGrades.INTENSIFY,
           );
           MessageTipManager.Instance.show(str);
           return;
@@ -1199,7 +1213,7 @@ export class SwitchPageHelp {
         if (ArmyManager.Instance.thane.grades < OpenGrades.INSERT) {
           str = LangManager.Instance.GetTranslation(
             "dayGuide.DayGuideManager.command02",
-            OpenGrades.INSERT
+            OpenGrades.INSERT,
           );
           MessageTipManager.Instance.show(str);
           return;
@@ -1224,7 +1238,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1232,14 +1246,14 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.OFFER_REWARD) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.OFFER_REWARD
+        OpenGrades.OFFER_REWARD,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1256,7 +1270,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1264,14 +1278,14 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.MYSTERIOUS) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.MYSTERIOUS
+        OpenGrades.MYSTERIOUS,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1289,13 +1303,13 @@ export class SwitchPageHelp {
     // if (!SwitchPageHelp.checkScene()) return;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     let bInfo: BuildInfo = BuildingManager.Instance.getBuildingInfoBySonType(
-      BuildingType.OFFICEAFFAIRS
+      BuildingType.OFFICEAFFAIRS,
     );
     if (bInfo.property2 > bInfo.property1) {
       SwitchPageHelp.openBuildFrame(bInfo);
@@ -1310,7 +1324,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1318,13 +1332,13 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.ARMY) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.ARMY
+        OpenGrades.ARMY,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     let bInfo: BuildInfo = BuildingManager.Instance.getBuildingInfoBySonType(
-      BuildingType.CASERN
+      BuildingType.CASERN,
     );
     SwitchPageHelp.openBuildFrame(bInfo);
   }
@@ -1337,7 +1351,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1345,14 +1359,14 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.SEMINARY) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.SEMINARY
+        OpenGrades.SEMINARY,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (!SwitchPageHelp.checkScene()) return;
     let bInfo: BuildInfo = BuildingManager.Instance.getBuildingInfoBySonType(
-      BuildingType.SEMINARY
+      BuildingType.SEMINARY,
     );
     SwitchPageHelp.openBuildFrame(bInfo);
   }
@@ -1381,7 +1395,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1389,7 +1403,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < 23) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        23
+        23,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1406,7 +1420,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1423,7 +1437,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1431,14 +1445,14 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.PVP_COLOSSEUM) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.PVP_COLOSSEUM
+        OpenGrades.PVP_COLOSSEUM,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1454,7 +1468,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1462,14 +1476,14 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.CHALLENGE) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.CHALLENGE
+        OpenGrades.CHALLENGE,
       );
       MessageTipManager.Instance.show(str);
       return;
     }
     if (SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE) {
       str = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1487,7 +1501,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.STAR) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.STAR
+        OpenGrades.STAR,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1504,7 +1518,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1520,7 +1534,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1532,7 +1546,7 @@ export class SwitchPageHelp {
       (sonType >= 2304 && sonType < 2446)
     ) {
       bInfo = BuildingManager.Instance.getBuildingInfoBySonType(
-        BuildingType.SEMINARY
+        BuildingType.SEMINARY,
       );
     } else {
       bInfo = BuildingManager.Instance.getBuildingInfoBySonType(sonType);
@@ -1596,7 +1610,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.SOULMAKE) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.SOULMAKE
+        OpenGrades.SOULMAKE,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1620,7 +1634,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.ALCHEMY) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.ALCHEMY
+        OpenGrades.ALCHEMY,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1643,7 +1657,7 @@ export class SwitchPageHelp {
     let str: string;
     if (MopupManager.Instance.model.isMopup) {
       str = LangManager.Instance.GetTranslation(
-        "mopup.MopupManager.mopupTipData01"
+        "mopup.MopupManager.mopupTipData01",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1651,7 +1665,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.FARM) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.FARM
+        OpenGrades.FARM,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1674,7 +1688,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < 0) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        0
+        0,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1697,7 +1711,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < 0) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        0
+        0,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1726,7 +1740,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < 32) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        32
+        32,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1750,7 +1764,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.VEHICEL) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.VEHICEL
+        OpenGrades.VEHICEL,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1772,7 +1786,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.VEHICEL) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.VEHICEL
+        OpenGrades.VEHICEL,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1797,7 +1811,7 @@ export class SwitchPageHelp {
     if (ArmyManager.Instance.thane.grades < OpenGrades.MOUNT) {
       str = LangManager.Instance.GetTranslation(
         "dayGuide.DayGuideManager.command02",
-        OpenGrades.MOUNT
+        OpenGrades.MOUNT,
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1816,7 +1830,7 @@ export class SwitchPageHelp {
     if (this.checkInBattle()) return false;
     if (ArmyManager.Instance.army.onVehicle) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips")
+        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips"),
       );
       return false;
     }
@@ -1872,16 +1886,16 @@ export class SwitchPageHelp {
   }
 
   public static returnToSpace(
-    data: Object = null,
+    data: object = null,
     isForce: boolean = false,
-    showLoader: boolean = false
+    showLoader: boolean = false,
   ) {
     if (
       this.returnScene == SceneType.SPACE_SCENE &&
       SpaceManager.Instance.exit
     ) {
       Logger.info(
-        "SwitchPageHelp.returnToSpace 返回天空之城失败 天空之城已销毁"
+        "SwitchPageHelp.returnToSpace 返回天空之城失败 天空之城已销毁",
       );
       return;
     }
@@ -1896,13 +1910,13 @@ export class SwitchPageHelp {
       SceneManager.Instance.currentType == SceneType.OUTER_CITY_SCENE
     ) {
       let str: string = LangManager.Instance.GetTranslation(
-        "emailII.view.ReadBattleReportView.command01"
+        "emailII.view.ReadBattleReportView.command01",
       );
       MessageTipManager.Instance.show(str);
       return;
     } else if (ArmyManager.Instance.thane.grades < OpenGrades.ENTER_SPACE) {
       let str: string = LangManager.Instance.GetTranslation(
-        "mainBar.SmallMapBar.spaceBtnNotOpen"
+        "mainBar.SmallMapBar.spaceBtnNotOpen",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -1924,7 +1938,7 @@ export class SwitchPageHelp {
     if (roomInfo) {
       let player = roomInfo.getPlayerByUserId(
         DataCommonManager.thane.userId,
-        DataCommonManager.thane.serviceName
+        DataCommonManager.thane.serviceName,
       );
       let isInTeam = Boolean(player);
       return !isInTeam;
@@ -2137,11 +2151,11 @@ export class SwitchPageHelp {
       });
     } else if (type == ShopGoodsInfo.FASHION_ALL_BUY) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("SwitchPageHelp.openTips1")
+        LangManager.Instance.GetTranslation("SwitchPageHelp.openTips1"),
       );
     } else if (type == ShopGoodsInfo.FASHION_LOOK) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("TopToolBar.openTips")
+        LangManager.Instance.GetTranslation("TopToolBar.openTips"),
       );
     } else if (type == ShopGoodsInfo.WARLORDS_SHOP) {
       FrameCtrlManager.Instance.open(EmWindow.ShopCommWnd, {
@@ -2167,8 +2181,8 @@ export class SwitchPageHelp {
       if (showTip) {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "dayGuide.DayGuideManager.command03"
-          )
+            "dayGuide.DayGuideManager.command03",
+          ),
         );
       }
       return true;
@@ -2182,8 +2196,8 @@ export class SwitchPageHelp {
       if (showTip) {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "worldboss.helper.WorldBossHelper.tip12"
-          )
+            "worldboss.helper.WorldBossHelper.tip12",
+          ),
         );
       }
       return true;

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message OneGuildBuildMsg {
+  int32 buildId = 1;
+  int32 buffId = 2;
+  int32 buffType = 3;
+  int32 buffCondition = 4;
+}

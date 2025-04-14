@@ -195,10 +195,10 @@ export class CampaignMapModel extends FloorMapInfo {
     }
   }
 
-  protected sloveRectData(id: string): Object {
+  protected sloveRectData(id: string): object {
     let start: Laya.Point = MapUtils.getStartPoint(id);
     let key: string = start.x + "," + start.y;
-    let data: Object = new Object();
+    let data: object = new Object();
     data["floor"] = this.floorData[id];
     if (this.topsData) data["tops"] = this.topsData[key];
     if (this.moviesData) data["movies"] = this.moviesData[key];
@@ -252,7 +252,7 @@ export class CampaignMapModel extends FloorMapInfo {
   public attackBossTeam(
     dic: Map<number, ThaneInfo>,
     time: number,
-    boss: ThaneInfo
+    boss: ThaneInfo,
   ) {
     this._attackBossTeamList = dic;
     this._leftFightTime = time;
@@ -267,7 +267,7 @@ export class CampaignMapModel extends FloorMapInfo {
     inviteName: string,
     boss: ThaneInfo,
     time: number,
-    pos: Laya.Point
+    pos: Laya.Point,
   ) {
     this.dispatchEvent(CampaignMapEvent.ATTACK_BOSS_INVITE, {
       inviteName: inviteName,
@@ -283,7 +283,7 @@ export class CampaignMapModel extends FloorMapInfo {
   public get campaignTemplate(): t_s_campaignData {
     if (!this.mapTempInfo) return;
     return TempleteManager.Instance.getCampaignTemplateByID(
-      this.mapTempInfo.CampaignId
+      this.mapTempInfo.CampaignId,
     );
   }
 
@@ -302,15 +302,15 @@ export class CampaignMapModel extends FloorMapInfo {
   public aStarPathFinder(
     $start: Laya.Point,
     $end: Laya.Point,
-    off: number = 25
+    off: number = 25,
   ): any[] {
     let startPoint: Laya.Point = new Laya.Point(
       parseInt(($start.x / 20).toString()),
-      parseInt(($start.y / 20).toString())
+      parseInt(($start.y / 20).toString()),
     );
     let endPoint: Laya.Point = new Laya.Point(
       parseInt(($end.x / 20).toString()),
-      parseInt(($end.y / 20).toString())
+      parseInt(($end.y / 20).toString()),
     );
     if (!this._pathFinder) {
       this._pathFinder = new AStarPathFinder(this.mapTielsData);
@@ -321,7 +321,7 @@ export class CampaignMapModel extends FloorMapInfo {
   public checkWalkable($pt: Laya.Point): boolean {
     let startPoint: Laya.Point = new Laya.Point(
       parseInt(($pt.x / 20).toString()),
-      parseInt(($pt.y / 20).toString())
+      parseInt(($pt.y / 20).toString()),
     );
     if (!this._pathFinder) {
       this._pathFinder = new AStarPathFinder(this.mapTielsData);
@@ -374,7 +374,7 @@ export class CampaignMapModel extends FloorMapInfo {
     let p: Laya.Point;
     p = new Laya.Point(
       parseInt((posX + CampaignMapModel.fogUnitWidth / 2).toString()),
-      parseInt((posY + CampaignMapModel.fogUnitHeight / 2).toString())
+      parseInt((posY + CampaignMapModel.fogUnitHeight / 2).toString()),
     );
     let tempY: number = p.y % CampaignMapModel.fogUnitHeight;
     let vy: number = ((p.y - tempY) / CampaignMapModel.fogUnitHeight) % 2;
@@ -426,14 +426,14 @@ export class CampaignMapModel extends FloorMapInfo {
   private _noteFogArr: any[] = [];
   private noteFog(vx: number, vy: number, byte: number) {
     let col: number = Math.ceil(
-      this.mapTempInfo.Width / CampaignMapModel.fogUnitWidth
+      this.mapTempInfo.Width / CampaignMapModel.fogUnitWidth,
     );
     let index: number = vx * col + vy;
     this._noteFogArr.push({ index: index, value: byte });
     if (this._noteFogArr.length >= 3) {
       CampaignSocketOutManager.Instance.sendUpdateFogData(
         this._noteFogArr,
-        this.mapId
+        this.mapId,
       );
       this._noteFogArr.splice(0, this._noteFogArr.length);
     }
@@ -530,7 +530,7 @@ export class CampaignMapModel extends FloorMapInfo {
       this.dispatchEvent(OuterCityEvent.ADD_GARRISON, army);
       if (this.isCross)
         NotificationManager.Instance.dispatchEvent(
-          NotificationEvent.CROSS_ADD_GOONBTN
+          NotificationEvent.CROSS_ADD_GOONBTN,
         );
       return;
     }
@@ -558,7 +558,7 @@ export class CampaignMapModel extends FloorMapInfo {
     let selfServerName: string = this.playerInfo.serviceName;
     if (this.isCross) {
       return Boolean(
-        army.userId == userId && army.baseHero.serviceName == selfServerName
+        army.userId == userId && army.baseHero.serviceName == selfServerName,
       );
     } else {
       return Boolean(army.userId == userId);
@@ -573,11 +573,11 @@ export class CampaignMapModel extends FloorMapInfo {
 
   public removeBaseArmyByArmyId(
     armyId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (!this.isCross || serverName == null) serverName = "";
     let army = this._userArmyList.get(
-      serverName + "_" + armyId
+      serverName + "_" + armyId,
     ) as CampaignArmy;
     if (army) {
       if (this.isSelfArmy(army)) {
@@ -590,7 +590,7 @@ export class CampaignMapModel extends FloorMapInfo {
       this.dispatchEvent(OuterCityEvent.REMOVE_ARMY, army);
       if (this.isCross)
         NotificationManager.Instance.dispatchEvent(
-          NotificationEvent.CROSS_ADD_GOONBTN
+          NotificationEvent.CROSS_ADD_GOONBTN,
         );
     }
     return army;
@@ -602,7 +602,7 @@ export class CampaignMapModel extends FloorMapInfo {
 
   public getBaseArmyByArmyId(
     armyId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (!this.isCross || serverName == null) serverName = "";
     return this._userArmyList.get(serverName + "_" + armyId);
@@ -610,7 +610,7 @@ export class CampaignMapModel extends FloorMapInfo {
 
   public getBaseArmyByUserId(
     userId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (!this.isCross || serverName == null) serverName = "";
 
@@ -630,7 +630,7 @@ export class CampaignMapModel extends FloorMapInfo {
 
   public getUserArmyByUserId(
     userId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (!this.isCross || serverName == null) serverName = "";
     let values = this._userArmyList.values();
@@ -964,10 +964,10 @@ export class CampaignMapModel extends FloorMapInfo {
             if (element.attackTypes == 1) {
               if (WorldBossHelper.checkPvp(this.mapId)) continue;
               this._checkNodePoint.x = Math.floor(
-                element.nodeView.x / Tiles.WIDTH
+                element.nodeView.x / Tiles.WIDTH,
               );
               this._checkNodePoint.y = Math.floor(
-                element.nodeView.y / Tiles.HEIGHT
+                element.nodeView.y / Tiles.HEIGHT,
               );
               if (element.info.state == NodeState.FIGHTING) break;
             } else {
@@ -977,10 +977,10 @@ export class CampaignMapModel extends FloorMapInfo {
               ) {
                 if (element.info.state == NodeState.FIGHTING) continue;
                 this._checkNodePoint.x = Math.floor(
-                  element.nodeView.x / Tiles.WIDTH
+                  element.nodeView.x / Tiles.WIDTH,
                 );
                 this._checkNodePoint.y = Math.floor(
-                  element.nodeView.y / Tiles.HEIGHT
+                  element.nodeView.y / Tiles.HEIGHT,
                 );
               }
             }
@@ -1013,10 +1013,10 @@ export class CampaignMapModel extends FloorMapInfo {
             )
               continue;
             this._checkNodePoint.x = Math.floor(
-              element.nodeView.x / Tiles.WIDTH
+              element.nodeView.x / Tiles.WIDTH,
             );
             this._checkNodePoint.y = Math.floor(
-              element.nodeView.y / Tiles.HEIGHT
+              element.nodeView.y / Tiles.HEIGHT,
             );
             break;
           case PosType.TREASURE_HUNTER:
@@ -1026,7 +1026,7 @@ export class CampaignMapModel extends FloorMapInfo {
 
         let leng: number = this._checkTempPoint.distance(
           this._checkNodePoint.x,
-          this._checkNodePoint.y
+          this._checkNodePoint.y,
         );
         if (leng <= attackDis) {
           let tempElement = this.checkPassNode(element);
@@ -1076,7 +1076,7 @@ export class CampaignMapModel extends FloorMapInfo {
             this._checkNodePoint.y = tempElement.posY;
             dis = this._checkTempPoint.distance(
               this._checkNodePoint.x,
-              this._checkNodePoint.y
+              this._checkNodePoint.y,
             );
             // 战场拉矿防拉扯
             if (
@@ -1113,7 +1113,7 @@ export class CampaignMapModel extends FloorMapInfo {
           let disNew = this._checkTempPoint.distance(node.posX, node.posY);
           let disMin = this._checkTempPoint.distance(
             minLenNode.posX,
-            minLenNode.posY
+            minLenNode.posY,
           );
           if (disNew < disMin) {
             minLenNode = node;
@@ -1144,7 +1144,7 @@ export class CampaignMapModel extends FloorMapInfo {
     // 打死残暴血蹄, 重新进游戏 经过该事件点不应该触发
     if (mapModel && WorldBossHelper.checkIsNoviceMapLayer2(mapModel.mapId)) {
       let nodeTemp = mapModel.getMapNodeByNodeId(
-        GlobalConfig.CampaignNodeID.Node_1000205
+        GlobalConfig.CampaignNodeID.Node_1000205,
       );
       if (!nodeTemp) return false;
       if (
@@ -1184,7 +1184,7 @@ export class CampaignMapModel extends FloorMapInfo {
   public getMapNodesByPoint(p: Laya.Point): CampaignNode {
     let temp: Laya.Point = new Laya.Point(
       p.x * Tiles.WIDTH,
-      p.y * Tiles.HEIGHT
+      p.y * Tiles.HEIGHT,
     );
     this._mapNodesData.forEach((element) => {
       if (element.x == temp.x && element.y == temp.y) return element;
@@ -1271,7 +1271,7 @@ export class CampaignMapModel extends FloorMapInfo {
     if (SceneManager.Instance.currentType != SceneType.CAMPAIGN_MAP_SCENE) {
       let uArmy: CampaignArmy = this.getBaseArmyByArmyId(
         msg.armyId,
-        msg.serverName
+        msg.serverName,
       );
       if (uArmy) {
         uArmy.curPosX = msg.routes[0].x / 20;
@@ -1306,7 +1306,7 @@ export class CampaignMapModel extends FloorMapInfo {
   public gotoPosArmy(msg: any) {
     let aInfo: CampaignArmy = this.getBaseArmyByArmyId(
       msg.armyId,
-      msg.serverName
+      msg.serverName,
     );
     if (
       aInfo &&

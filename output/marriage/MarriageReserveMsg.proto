@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageReserveMsg {
+  int32 templateId = 1;
+  int32 userIdA = 2;
+  int32 userIdB = 3;
+  string nickNameA = 4;
+  string nickNameB = 5;
+  int32 specTemplateId = 6;
+}

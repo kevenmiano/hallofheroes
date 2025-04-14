@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.goldenroad;
+
+message GoldenRoadMsg {
+  string playerStatue = 1;
+  string score = 2;
+  repeated int32 cellInfo = 3;
+}

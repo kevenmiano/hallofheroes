@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_SignInDayBtn from "../../../fui/Welfare/FUI_SignInDayBtn";
 
 export default class PoolManager {
@@ -52,10 +51,8 @@ export default class PoolManager {
         this.pool.returnObject(obj);
       }
     }
-    if (this.callback)
-      this.callback();
+    if (this.callback) this.callback();
     this.initSplit();
-
   }
 
   initSplit() {
@@ -67,8 +64,7 @@ export default class PoolManager {
   private initPool(url: string, count: number) {
     let pool = new fgui.GObjectPool();
     url = fgui.UIPackage.normalizeURL(url);
-    if (url == null)
-      return null;
+    if (url == null) return null;
     for (let i = 0; i < count; i++) {
       let obj = fgui.UIPackage.createObjectFromURL(url);
       pool.returnObject(obj);
@@ -79,12 +75,11 @@ export default class PoolManager {
   initItemList(url: string, count: number) {
     this.list = [];
     url = fgui.UIPackage.normalizeURL(url);
-    if (url == null)
-      return null;
+    if (url == null) return null;
     for (let i = 0; i < count; i++) {
       let obj = fgui.UIPackage.createObjectFromURL(url);
-      obj.dispose = () => { };
-      obj.displayObject.destroy = () => { };
+      obj.dispose = () => {};
+      obj.displayObject.destroy = () => {};
       this.list.push(obj);
     }
   }
@@ -100,51 +95,57 @@ export default class PoolManager {
   private clonePool(pool: fairygui.GObjectPool) {
     return this.deepClone(pool, null);
 
-    let newPool = new fgui.GObjectPool();
-    //@ts-ignore
-    pool = pool._pool;
-    for (const key in pool) {
-      if (Object.prototype.hasOwnProperty.call(pool, key)) {
-        const arr = pool[key];
-        var cnt = arr.length;
-        for (var i = 0; i < cnt; i++)
-          newPool.returnObject(arr[i]);
-      }
-    }
-    return newPool;
+    // let newPool = new fgui.GObjectPool();
+    // pool = pool._pool;
+    // for (const key in pool) {
+    //   if (Object.prototype.hasOwnProperty.call(pool, key)) {
+    //     const arr = pool[key];
+    //     var cnt = arr.length;
+    //     for (var i = 0; i < cnt; i++) newPool.returnObject(arr[i]);
+    //   }
+    // }
+    // return newPool;
   }
 
   deepClone(source, cache) {
     if (!cache) {
-      cache = new Map()
+      cache = new Map();
     }
-    if (source instanceof Object) { // 不考虑跨 iframe
-      if (cache.get(source)) { return cache.get(source) }
-      let result
+    if (source instanceof Object) {
+      // 不考虑跨 iframe
+      if (cache.get(source)) {
+        return cache.get(source);
+      }
+      let result;
       if (source instanceof Function) {
-        if (source.prototype) { // 有 prototype 就是普通函数
-          result = function () { return source.apply(this, arguments) }
+        if (source.prototype) {
+          // 有 prototype 就是普通函数
+          result = function () {
+            return source.apply(this, arguments);
+          };
         } else {
-          result = (...args) => { return source.call(undefined, ...args) }
+          result = (...args) => {
+            return source.call(undefined, ...args);
+          };
         }
       } else if (source instanceof Array) {
-        result = []
+        result = [];
         //   } else if(source instanceof Date) {
         //     result = new Date(source - 0)
       } else if (source instanceof RegExp) {
-        result = new RegExp(source.source, source.flags)
+        result = new RegExp(source.source, source.flags);
       } else {
-        result = {}
+        result = {};
       }
-      cache.set(source, result)
+      cache.set(source, result);
       for (let key in source) {
         if (source.hasOwnProperty(key)) {
-          result[key] = this.deepClone(source[key], cache)
+          result[key] = this.deepClone(source[key], cache);
         }
       }
-      return result
+      return result;
     } else {
-      return source
+      return source;
     }
   }
 }

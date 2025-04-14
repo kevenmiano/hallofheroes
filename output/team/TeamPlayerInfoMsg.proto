@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.team;
+
+message TeamPlayerInfoMsg {
+  int32 count = 1;
+  bool hasLeftForNow = 2;
+  int32 heroId = 3;
+  int32 playerId = 4;
+  int32 grades = 5;
+  string nickName = 6;
+  int32 sex = 7;
+  int32 templateId = 8;
+  string arm = 9;
+  string cloth = 10;
+  int32 armyId = 11;
+  int32 fightingCapacity = 12;
+  int32 curPosX = 13;
+  int32 curPosY = 14;
+  int32 campaignId = 15;
+  bool onlineState = 16;
+  int32 consortiaId = 17;
+  string consortiaName = 18;
+  int32 changeShapeId = 19;
+  int32 armyState = 20;
+  int32 teamId = 21;
+  int32 bufferTempId = 22;
+  int32 geste = 23;
+  int32 headId = 24;
+  bool isVip = 25;
+  int32 vipType = 26;
+  int32 mountTempId = 27;
+  int32 mountGrade = 28;
+  string wing = 29;
+  string serverName = 30;
+  string hat = 31;
+  string fashionArm = 32;
+  string fashionCloth = 33;
+  bool hide = 34;
+  int32 appellid = 35;
+  int32 vehicleTemplateId = 36;
+  string fateSkills = 37;
+  int32 petTemplateId = 38;
+  int32 petQuqlity = 39;
+  string petName = 40;
+  int32 hp = 41;
+  int32 maxHp = 42;
+  int32 job = 43;
+  int32 frameId = 44;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadRequestMsg {
+  int32 op = 1;
+  int32 pos = 2;
+  string seniorGeneral = 3;
+  string notice = 4;
+  int32 param1 = 5;
+}

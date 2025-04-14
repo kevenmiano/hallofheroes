@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message MemoryCard {
+  int32 index = 1;
+  int32 type = 2;
+}

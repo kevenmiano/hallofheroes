@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CrossScoreListMsg {
+  repeated int32 info = 1;
+}

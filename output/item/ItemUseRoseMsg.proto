@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemUseRoseMsg {
+  int32 playerId = 1;
+  int32 friendId = 2;
+  int32 favoraCount = 3;
+  int32 addCharm = 4;
+  int32 noticeType = 5;
+  int32 itemCount = 6;
+  string itemName = 7;
+  string friendNameXml = 8;
+  string msg = 9;
+}

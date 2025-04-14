@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroEquUpdatedMsg {
+  int32 playerId = 1;
+  string armStr = 2;
+  string clothStr = 3;
+  string wing = 4;
+  string hat = 5;
+  string fashionArm = 6;
+  string fashionCloth = 7;
+  bool hide = 8;
+  int32 appellId = 9;
+}

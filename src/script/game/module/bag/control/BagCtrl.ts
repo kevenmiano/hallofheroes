@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 
 /**
@@ -8,30 +7,24 @@ import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
  * @ver 1.0
  *
  */
-export class BagCtrl extends FrameCtrlBase
-{
-    constructor()
-    {
-        super();
-    }
+export class BagCtrl extends FrameCtrlBase {
+  constructor() {
+    super();
+  }
 
-    protected show()
-    {
-        super.show();
-    }
+  protected show() {
+    super.show();
+  }
 
-    protected hide()
-    {
-        super.hide();
-    }
+  protected hide() {
+    super.hide();
+  }
 
-    protected addEventListener()
-    {
-        super.addEventListener();
-    }
+  protected addEventListener() {
+    super.addEventListener();
+  }
 
-    protected delEventListener()
-    {
-        super.delEventListener();
-    }
+  protected delEventListener() {
+    super.delEventListener();
+  }
 }

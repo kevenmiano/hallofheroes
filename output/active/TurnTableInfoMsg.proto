@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableInfoMsg {
+  repeated int32 turnTables = 1;
+}

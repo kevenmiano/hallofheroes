@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message DamageMsg {
+  int32 livingId = 1;
+  int32 damageType = 2;
+  bool hasIcon = 3;
+  bool isHarmful = 4;
+  int32 damageValue = 5;
+  int32 leftValue = 6;
+  int32 extraData = 7;
+  bool parry = 8;
+  repeated int32 dropInfos = 9;
+  int32 order = 10;
+  int32 hpLimit = 11;
+  int32 resistValue = 12;
+  int32 resistType = 13;
+  int32 resistPercent = 14;
+  int32 hp2 = 15;
+  int32 hp3 = 16;
+}

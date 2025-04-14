@@ -15,7 +15,7 @@ export default class WarlordsRoomScene extends BaseSceneView {
     super();
   }
 
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     return new Promise((resolve) => {
       WarlordsManager.Instance.reqEnterWarlordsRoom();
       resolve();

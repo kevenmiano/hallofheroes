@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleDetailMsg {
+  int32 battleId = 1;
+  int32 bossId = 2;
+  int32 bossHp = 3;
+  repeated int32 fightPlayer = 4;
+}

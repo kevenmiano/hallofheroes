@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message ChallengeRankRewardMsg {
+  bool isTake = 1;
+  int32 param1 = 2;
+  int32 param2 = 3;
+  int32 param3 = 4;
+  int32 param4 = 5;
+}

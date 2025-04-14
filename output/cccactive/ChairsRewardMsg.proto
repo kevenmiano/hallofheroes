@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ChairsRewardMsg {
+  string cCCActiveUUID = 1;
+  string uUID = 2;
+  int32 userId = 3;
+  string tokenChairs = 4;
+  int32 rewardTypes = 5;
+  int32 rewardState = 6;
+  string serverName = 7;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FarmLogReq {
+  int32 playerId = 1;
+  int32 operUserId = 2;
+  string operNickName = 3;
+  string desc = 4;
+  string operDate = 5;
+  int32 operCount = 6;
+  bool isAddFavGp = 7;
+}

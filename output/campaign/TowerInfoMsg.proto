@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message TowerInfoMsg {
+  int32 enterCount = 1;
+  int32 totalGp = 2;
+  int32 towerIndex = 3;
+  int32 maxIndex = 4;
+  int32 order = 5;
+  int32 maxEnterCount = 6;
+  string itemTempIds = 7;
+  int32 freeEnterCount = 8;
+  int32 campaignId = 9;
+  int32 index = 10;
+  int32 firstHitId = 11;
+  string firstHitName = 12;
+  int32 passIndex = 13;
+  int32 pass = 14;
+}

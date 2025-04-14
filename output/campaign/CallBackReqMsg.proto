@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CallBackReqMsg {
+  int32 mapId = 1;
+  int32 nodeId = 2;
+  int32 cmd = 3;
+  string serverName = 4;
+}

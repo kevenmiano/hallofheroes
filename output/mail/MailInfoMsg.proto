@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailInfoMsg {
+  int32 id = 1;
+  int32 mailType = 2;
+  int32 sendId = 3;
+  string sendNickName = 4;
+  int32 receiveId = 5;
+  string receiveNickName = 6;
+  string sendDate = 7;
+  string readDate = 8;
+  string title = 9;
+  string contents = 10;
+  string removeDate = 11;
+  int32 validityDate = 12;
+  int32 annex1 = 13;
+  int32 annex1Name = 14;
+  int32 annex1Count = 15;
+  bool isAnnex1 = 16;
+  int32 annex2 = 17;
+  int32 annex2Name = 18;
+  int32 annex2Count = 19;
+  bool isAnnex2 = 20;
+  int32 annex3 = 21;
+  int32 annex3Name = 22;
+  int32 annex3Count = 23;
+  bool isAnnex3 = 24;
+  int32 annex4 = 25;
+  int32 annex4Name = 26;
+  int32 annex4Count = 27;
+  bool isAnnex4 = 28;
+  int32 annex5 = 29;
+  int32 annex5Name = 30;
+  int32 annex5Count = 31;
+  bool isAnnex5 = 32;
+  bool isExist = 33;
+  int32 sendType = 34;
+  int32 sendPlayerGrades = 35;
+  string params = 36;
+  int32 annex1Grade = 37;
+  int32 annex2Grade = 38;
+  int32 annex3Grade = 39;
+  int32 annex4Grade = 40;
+  int32 annex5Grade = 41;
+}

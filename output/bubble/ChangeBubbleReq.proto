@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.bubble;
+
+message ChangeBubbleReq {
+  int32 bubbleId = 1;
+  int32 op = 2;
+}

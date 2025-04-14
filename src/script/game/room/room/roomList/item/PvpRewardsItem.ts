@@ -15,7 +15,6 @@ export default class PvpRewardsItem extends FUI_PvpRewardsItem {
   }
 
   setInfo(info: t_s_pluralpvpsegmentData) {
-    //@ts-ignore
     this.rankStarItem.setInfo(info.Id);
     this.txtTitle.text = info.Segment;
     this.txtDes.text = this.getDes(info.Scoreinterval);
@@ -24,7 +23,7 @@ export default class PvpRewardsItem extends FUI_PvpRewardsItem {
       this,
       this.renderListItem,
       null,
-      false
+      false,
     );
     this.itemList.numItems = this.goodsArr.length;
   }
@@ -40,12 +39,12 @@ export default class PvpRewardsItem extends FUI_PvpRewardsItem {
       ret = LangManager.Instance.GetTranslation(
         "RoomList.pvp.rewards.item.txt1",
         arrs[0],
-        arrs[1]
+        arrs[1],
       );
     } else if (arrs.length == 1) {
       ret = LangManager.Instance.GetTranslation(
         "RoomList.pvp.rewards.item.txt2",
-        arrs[0]
+        arrs[0],
       );
     }
     return ret;

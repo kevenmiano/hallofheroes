@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message KingContractBuyMsg {
+  repeated int32 ids = 1;
+  bool use = 2;
+  int32 friendId = 3;
+  string friendname = 4;
+}

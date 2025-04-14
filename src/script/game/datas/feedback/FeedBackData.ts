@@ -1,4 +1,3 @@
-// @ts-nocheck
 export default class FeedBackData {
   public id: string; //充值/消费活动ID
   public startTime: number; //开始日期

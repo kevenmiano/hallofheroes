@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message ReceiveMailMsg {
+  repeated int32 mailInfos = 1;
+}

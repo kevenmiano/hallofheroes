@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageGuestsRes {
+  repeated int32 guests = 1;
+}

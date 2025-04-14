@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.lottery;
+
+message LotteryMsg {
+  int32 payedPoint = 1;
+  int32 totalCount = 2;
+  int32 leftCount = 3;
+  int32 dayMaxCount = 4;
+  int32 onceNeedPoint = 5;
+  string leftMillis = 6;
+  bool isOpen = 7;
+  string property1 = 8;
+  string property2 = 9;
+  repeated int32 property3 = 10;
+  repeated int32 property4 = 11;
+  int32 dayAddCount = 12;
+}

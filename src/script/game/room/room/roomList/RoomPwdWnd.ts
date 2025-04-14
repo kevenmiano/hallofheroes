@@ -60,10 +60,10 @@ export default class RoomPwdWnd extends BaseWindow {
 
   private initView() {
     this.txtDesc.text = LangManager.Instance.GetTranslation(
-      "yishi.view.RoomPasswordFrame.warmTxt.text"
+      "yishi.view.RoomPasswordFrame.warmTxt.text",
     );
     this.txtFrameTitle.text = LangManager.Instance.GetTranslation(
-      "yishi.view.RoomPasswordFrame.titleTxt"
+      "yishi.view.RoomPasswordFrame.titleTxt",
     );
     if (this.frameData && this.frameData.roomSceneType) {
       this._roomSceneType = this.frameData.roomSceneType;
@@ -105,8 +105,8 @@ export default class RoomPwdWnd extends BaseWindow {
       if (!hasPwd && this.tfCount.text == "") {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "yishi.view.RoomPasswordFrame.AlertContent"
-          )
+            "yishi.view.RoomPasswordFrame.AlertContent",
+          ),
         );
         return;
       }
@@ -118,8 +118,8 @@ export default class RoomPwdWnd extends BaseWindow {
       if (this.tfCount.text == "") {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "yishi.view.RoomPasswordFrame.AlertContent"
-          )
+            "yishi.view.RoomPasswordFrame.AlertContent",
+          ),
         );
         return;
       }
@@ -129,7 +129,7 @@ export default class RoomPwdWnd extends BaseWindow {
           : RoomType.MATCH,
         this._roomId,
         this.tfCount.text,
-        false
+        false,
       );
     }
     this.OnBtnClose();
@@ -144,7 +144,7 @@ export default class RoomPwdWnd extends BaseWindow {
     roomType: RoomType,
     roomId: number,
     pwd: string,
-    isInvite: boolean
+    isInvite: boolean,
   ) {
     RoomListSocketOutManager.addRoomById(roomType, roomId, pwd, isInvite);
   }

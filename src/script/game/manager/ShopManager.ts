@@ -1,4 +1,3 @@
-// TODO FIX
 import LangManager from "../../core/lang/LangManager";
 import Logger from "../../core/logger/Logger";
 import { PackageIn } from "../../core/net/PackageIn";
@@ -25,16 +24,27 @@ import { NotificationManager } from "./NotificationManager";
 import { PlayerManager } from "./PlayerManager";
 import { TaskTraceTipManager } from "./TaskTraceTipManager";
 import { TempleteManager } from "./TempleteManager";
+//@ts-expect-error: External dependencies
 import ShopMsg = com.road.yishi.proto.shop.ShopMsg;
+//@ts-expect-error: External dependencies
 import MainDiscountInfo = com.road.yishi.proto.shop.MainDiscountInfo;
+//@ts-expect-error: External dependencies
 import ShopMainRspMsg = com.road.yishi.proto.shop.ShopMainRspMsg;
+//@ts-expect-error: External dependencies
 import HasDataInfo = com.road.yishi.proto.shop.HasDataInfo;
+//@ts-expect-error: External dependencies
 import CheckNickMsg = com.road.yishi.proto.player.CheckNickMsg;
+//@ts-expect-error: External dependencies
 import BuyInfo = com.road.yishi.proto.shop.BuyInfo;
+//@ts-expect-error: External dependencies
 import FashionShopMsg = com.road.yishi.proto.shop.FashionShopMsg;
+//@ts-expect-error: External dependencies
 import FastUseBloodMsg = com.road.yishi.proto.item.FastUseBloodMsg;
+//@ts-expect-error: External dependencies
 import ChargeOrderReq = com.road.yishi.proto.mall.ChargeOrderReq;
+//@ts-expect-error: External dependencies
 import ChargeOrderStatus = com.road.yishi.proto.mall.ChargeOrderStatus;
+//@ts-expect-error: External dependencies
 import ChargeOrderRsp = com.road.yishi.proto.mall.ChargeOrderRsp;
 import GoodsSonType from "../constant/GoodsSonType";
 import { GoodsManager } from "./GoodsManager";
@@ -113,37 +123,37 @@ export class ShopManager {
     ServerDataManager.listen(
       S2CProtocol.U_C_SHOP_MAIN,
       this,
-      this.__shopHandler
+      this.__shopHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_SHOP_DISCOUNT,
       this,
-      this.__shopDiscountHandler
+      this.__shopDiscountHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_SHOP_HASBUY,
       this,
-      this.__getBuyDataInfosSuccess
+      this.__getBuyDataInfosSuccess,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_BUY_DISCOUNT,
       this,
-      this.__shopBuyDiscount
+      this.__shopBuyDiscount,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_FLASHSALE_FRESH,
       this,
-      this.__refreshTimeBuyHandler
+      this.__refreshTimeBuyHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_SHOP_BUY,
       this,
-      this.__shoppingHandler
+      this.__shoppingHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_CHARGE_ORDER,
       this,
-      this.__chargeOrderRsp
+      this.__chargeOrderRsp,
     );
   }
 
@@ -193,7 +203,7 @@ export class ShopManager {
   private __shopDiscountHandler(pkg: PackageIn) {
     this._requestBuyState = false;
     let msg: MainDiscountInfo = pkg.readBody(
-      MainDiscountInfo
+      MainDiscountInfo,
     ) as MainDiscountInfo;
     let timeBuyList: any[] = this.model.getTimeBuyList();
     let len: number = timeBuyList.length;
@@ -208,7 +218,7 @@ export class ShopManager {
         shopInfo.maxCurrentDate =
           DateFormatter.parse(
             msg.maxCurrentDate,
-            "YYYY-MM-DD hh:mm:ss"
+            "YYYY-MM-DD hh:mm:ss",
           ).getTime() / 1000;
         shopInfo.beginDate =
           DateFormatter.parse(msg.beginDate, "YYYY-MM-DD hh:mm:ss").getTime() /
@@ -249,7 +259,7 @@ export class ShopManager {
     this.model.mainNewList = msg.goodInfo;
     this.model.mainUrlList = msg.urlInfo;
     NotificationManager.Instance.dispatchEvent(
-      NotificationEvent.SHOPHOMEPAGE_UPDATA
+      NotificationEvent.SHOPHOMEPAGE_UPDATA,
     );
     if (vipTimeBuyHasChange || normalTimeBuyHasChange) {
       //商城限时限购物品刷新时弹出提示
@@ -294,14 +304,14 @@ export class ShopManager {
     if (weekInfoLen == 0) {
       this.model.resetWeekBuyList();
       NotificationManager.Instance.dispatchEvent(
-        NotificationEvent.SHOP_TIME_BUY_REFRESH
+        NotificationEvent.SHOP_TIME_BUY_REFRESH,
       );
     } else {
       //周限购
       for (let i = 0; i < weekInfoLen; i++) {
         const element = this.weeklyDataInfo[i];
         let goods: ShopGoodsInfo = this.model.getShopTempInfoById(
-          element.itemId
+          element.itemId,
         );
         if (goods) {
           goods.weekCount = element.counts;
@@ -311,7 +321,7 @@ export class ShopManager {
 
     if (flag) {
       NotificationManager.Instance.dispatchEvent(
-        NotificationEvent.SHOP_TIME_BUY_REFRESH
+        NotificationEvent.SHOP_TIME_BUY_REFRESH,
       );
       flag = false;
     }
@@ -336,7 +346,7 @@ export class ShopManager {
     ServerDataManager.listen(
       S2CProtocol.U_C_CHECK_NICK,
       this,
-      this.__checkNicknameBack
+      this.__checkNicknameBack,
     );
     ShopManager.Instance.getUserId(this.model.giftInfo.nickname);
   }
@@ -345,7 +355,7 @@ export class ShopManager {
     ServerDataManager.cancel(
       S2CProtocol.U_C_CHECK_NICK,
       this,
-      this.__checkNicknameBack
+      this.__checkNicknameBack,
     );
 
     let msg: CheckNickMsg = pkg.readBody(CheckNickMsg) as CheckNickMsg;
@@ -362,7 +372,7 @@ export class ShopManager {
         PlayerManager.Instance.currentPlayerModel.playerInfo.userId
       ) {
         let str: string = LangManager.Instance.GetTranslation(
-          "shop.ShopControler.command01"
+          "shop.ShopControler.command01",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -371,11 +381,11 @@ export class ShopManager {
         this.model.giftInfo.goodId,
         this.model.giftInfo.count,
         msg.playerId,
-        this.model.giftInfo.isDiscount
+        this.model.giftInfo.isDiscount,
       );
     } else {
       let str: string = LangManager.Instance.GetTranslation(
-        "consortia.view.myConsortia.chairmanPath.ConsortiaTransferFrame.command06"
+        "consortia.view.myConsortia.chairmanPath.ConsortiaTransferFrame.command06",
       );
       MessageTipManager.Instance.show(str);
     }
@@ -399,7 +409,7 @@ export class ShopManager {
     isDiscount: boolean = false,
     code: number = 0x1422,
     useBind: boolean = true,
-    discountTempId: number = 0
+    discountTempId: number = 0,
   ) {
     if (this.isCannotUsePoint) {
       return;
@@ -500,7 +510,7 @@ export class ShopManager {
       1000;
     let str: string =
       TempleteManager.Instance.getConfigInfoByConfigName(
-        "FreshSeconds"
+        "FreshSeconds",
       ).ConfigValue;
     Logger.log(str);
     this.timeBuyDesc = beginTime + parseInt(str);
@@ -556,7 +566,7 @@ export class ShopManager {
   public disEvent() {
     NotificationManager.Instance.dispatchEvent(
       NotificationEvent.SHOP_TIME_BUY_REFRESH,
-      null
+      null,
     );
   }
 
@@ -569,12 +579,12 @@ export class ShopManager {
   public sendShopingBloo(
     goodsId: number,
     count: number = 1,
-    useBind: boolean = true
+    useBind: boolean = true,
   ) {
     ServerDataManager.listen(
       S2CProtocol.U_C_FAST_USE_BLOOD,
       this,
-      this.__shoppingBlooHandler
+      this.__shoppingBlooHandler,
     );
 
     let receiveId: number =
@@ -595,7 +605,7 @@ export class ShopManager {
     ServerDataManager.cancel(
       S2CProtocol.U_C_FAST_USE_BLOOD,
       this,
-      this.__shoppingBlooHandler
+      this.__shoppingBlooHandler,
     );
 
     let msg: FastUseBloodMsg = pkg.readBody(FastUseBloodMsg) as FastUseBloodMsg;
@@ -644,6 +654,7 @@ export class ShopManager {
    * @param id
    * @param count
    */
+  //TODO - SOLICITA ORDER ID
   public requestChargeOrderId(id: any, count: number = 1) {
     let msg: ChargeOrderReq = new ChargeOrderReq();
     msg.productId = id;
@@ -669,11 +680,11 @@ export class ShopManager {
       NotificationManager.Instance.dispatchEvent(
         NotificationEvent.CHARGE_ORDER_RSP,
         msg.orderId,
-        msg.productId
+        msg.productId,
       );
     } else {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("ShopManager.tip1")
+        LangManager.Instance.GetTranslation("ShopManager.tip1"),
       );
     }
   }
@@ -699,18 +710,18 @@ export class ShopManager {
           // str = LangManager.Instance.GetTranslation("shop.utils.ShopingHelper.command01");
         } else if (this.isHandsel == 1) {
           str = LangManager.Instance.GetTranslation(
-            "shop.utils.ShopingHelper.command13"
+            "shop.utils.ShopingHelper.command13",
           );
         }
         break;
       case 2:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command02"
+          "shop.utils.ShopingHelper.command02",
         );
         break;
       case 3:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command03"
+          "shop.utils.ShopingHelper.command03",
         );
         break;
       case 4:
@@ -719,91 +730,91 @@ export class ShopManager {
         break;
       case 5:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command05"
+          "shop.utils.ShopingHelper.command05",
         );
         break;
       case 6:
         if (this.isHandsel == 0) {
           if (this.getCountById(buyInfoID) == -1) {
             str = LangManager.Instance.GetTranslation(
-              "shop.utils.ShopingHelper.command06"
+              "shop.utils.ShopingHelper.command06",
             );
           } else {
             if (this.getCountById(buyInfoID) > 0) {
               str = LangManager.Instance.GetTranslation(
-                "shop.utils.ShopingHelper.command06"
+                "shop.utils.ShopingHelper.command06",
               );
             } else {
               str = LangManager.Instance.GetTranslation(
-                "shop.view.frame.BuyFrame.sellOver"
+                "shop.view.frame.BuyFrame.sellOver",
               );
             }
           }
         } else if (this.isHandsel == 1) {
           //						str = LangManager.Instance.GetTranslation("shop.utils.ShopingHelper.command13");
           str = LangManager.Instance.GetTranslation(
-            "shop.utils.ShopingHelper.command14"
+            "shop.utils.ShopingHelper.command14",
           );
         }
         break;
       case 7:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command07"
+          "shop.utils.ShopingHelper.command07",
         );
         break;
       case 8:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command08"
+          "shop.utils.ShopingHelper.command08",
         );
         break;
       case 9:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command09"
+          "shop.utils.ShopingHelper.command09",
         );
         break;
       case 10:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command10"
+          "shop.utils.ShopingHelper.command10",
         );
         break;
       case 11:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command11"
+          "shop.utils.ShopingHelper.command11",
         );
         break;
       case 12:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command12"
+          "shop.utils.ShopingHelper.command12",
         );
         break;
       case 15:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command15"
+          "shop.utils.ShopingHelper.command15",
         );
         break;
       case 17:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command17"
+          "shop.utils.ShopingHelper.command17",
         );
         break;
       case 18:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command18"
+          "shop.utils.ShopingHelper.command18",
         );
         break;
       case 19:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command19"
+          "shop.utils.ShopingHelper.command19",
         );
         break;
       case 20:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command20"
+          "shop.utils.ShopingHelper.command20",
         );
         break;
       case 21:
         str = LangManager.Instance.GetTranslation(
-          "shop.utils.ShopingHelper.command21"
+          "shop.utils.ShopingHelper.command21",
         );
         break;
     }
@@ -922,7 +933,7 @@ export class ShopManager {
    */
   public getDiscountData(moneyCount: number): any[] {
     let goods = GoodsManager.Instance.getGeneralBagGoodsBySonType(
-      GoodsSonType.SONTYPE_DISCOUNT
+      GoodsSonType.SONTYPE_DISCOUNT,
     );
     let listData = [];
     if (this.goodsMap) {
@@ -1035,7 +1046,7 @@ export class ShopManager {
   get isCannotUsePoint(): boolean {
     if (PlayerManager.Instance.currentPlayerModel.playerInfo.point < 0) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("ShopManager.ConsumeError")
+        LangManager.Instance.GetTranslation("ShopManager.ConsumeError"),
       );
       return true;
     }

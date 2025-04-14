@@ -49,7 +49,7 @@ export class SocketDataProxyManager extends GameEventDispatcher {
     pkg: PackageIn,
     sceneType: string,
     event: string,
-    isSave: boolean = true
+    isSave: boolean = true,
   ) {
     this.chekckVehicle(pkg, sceneType, event, isSave);
   }
@@ -81,7 +81,7 @@ export class SocketDataProxyManager extends GameEventDispatcher {
     pkg: PackageIn,
     sceneType: string,
     event: string,
-    isSave: boolean
+    isSave: boolean,
   ) {
     if (
       pkg.code == S2CProtocol.U_C_CAMPAIGN_CREATE ||
@@ -98,7 +98,7 @@ export class SocketDataProxyManager extends GameEventDispatcher {
       if (isSave) {
         this._model.addSocketData(
           new SocketDataProxyInfo(pkg, event),
-          sceneType
+          sceneType,
         );
       }
       if (sceneType == SceneType.CAMPAIGN_MAP_SCENE) {

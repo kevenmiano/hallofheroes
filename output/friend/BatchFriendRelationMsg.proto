@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message BatchFriendRelationMsg {
+  int32 relation = 1;
+  repeated int32 otherId = 2;
+}

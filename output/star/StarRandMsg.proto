@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarRandMsg {
+  int32 dropSite = 1;
+  string starInfo = 2;
+}

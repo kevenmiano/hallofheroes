@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ActiveInfoPB {
+  string uuid = 1;
+  int32 type = 2;
+  string startTime = 3;
+  string endTime = 4;
+  string showTime = 5;
+  int32 param1 = 6;
+  int32 param2 = 7;
+  int32 param3 = 8;
+  int32 param4 = 9;
+  string param5 = 10;
+  string param6 = 11;
+  string desc = 12;
+  repeated int32 awardTemp = 13;
+}

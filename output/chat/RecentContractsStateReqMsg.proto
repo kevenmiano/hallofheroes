@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message RecentContractsStateReqMsg {
+  repeated int32 userId = 1;
+}

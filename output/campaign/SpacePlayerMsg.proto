@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message SpacePlayerMsg {
+  int32 playerId = 1;
+  int32 state = 2;
+  repeated int32 path = 3;
+  repeated int32 receivers = 4;
+}

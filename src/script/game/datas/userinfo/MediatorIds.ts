@@ -1,12 +1,8 @@
-// @ts-nocheck
-export default class MediatorIds{
+export default class MediatorIds {
+  constructor() {}
 
-    constructor() {
-    }
-
-    private static  ids : number = 0;
-	public static  get id() : number
-	{
-		return this.ids ++;
-	}
+  private static ids: number = 0;
+  public static get id(): number {
+    return this.ids++;
+  }
 }

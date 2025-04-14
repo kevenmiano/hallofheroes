@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GroupBuyMsg {
+  int32 op = 1;
+  bool isOpen = 2;
+  string openTime = 3;
+  string stopTime = 4;
+  string stopTimeStamp = 5;
+  repeated int32 giftMsg = 6;
+  int32 orderId = 7;
+  string giftInfo = 8;
+  string giftId = 9;
+  int32 buyNum = 10;
+}

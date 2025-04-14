@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.novice;
+
+message NoviceReqMsgMsg {
+  int32 noviceProcess = 1;
+  int32 armyId = 2;
+  int32 type = 3;
+  int32 armsId = 4;
+  int32 goodsId = 5;
+  string gradeProcess = 6;
+  int32 sonNoviceProcess = 7;
+  int32 newNoviceProcess = 8;
+}

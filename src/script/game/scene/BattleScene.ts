@@ -36,7 +36,7 @@ export default class BattleScene extends BaseSceneView {
     super();
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     return new Promise((resolve) => {
       NotificationManager.Instance.dispatchEvent(SceneEvent.LOCK_SCENE, true);
       // SceneManager.Instance.lockScene = true;
@@ -45,7 +45,7 @@ export default class BattleScene extends BaseSceneView {
     });
   }
 
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     return new Promise(async (resolve) => {
       resolve();
     });
@@ -62,7 +62,7 @@ export default class BattleScene extends BaseSceneView {
         SoundIds.BATTLE_RESULT_WIN,
         Laya.Handler.create(this, function () {
           Logger.log("战斗胜利资源预加载完成");
-        })
+        }),
       );
       LayerMgr.Instance.clearnStageDynamic();
       LayerMgr.Instance.clearGameMenuLayer();
@@ -81,7 +81,7 @@ export default class BattleScene extends BaseSceneView {
       await HomeWnd.Instance.instHide();
       EnterFrameManager.Instance.registeEnterFrame(this);
       NotificationManager.Instance.dispatchEvent(
-        BattleEvent.ENTER_BATTLE_SCENE
+        BattleEvent.ENTER_BATTLE_SCENE,
       );
       resolve();
     });
@@ -98,7 +98,7 @@ export default class BattleScene extends BaseSceneView {
       Logger.yyz(
         "leaving战斗场景:  :  ",
         SceneManager.Instance.currentType,
-        SceneManager.Instance.nextScene.SceneName
+        SceneManager.Instance.nextScene.SceneName,
       );
       NotificationManager.Instance.dispatchEvent(SceneEvent.LOCK_SCENE, false);
       // SceneManager.Instance.lockScene = false;
@@ -115,7 +115,7 @@ export default class BattleScene extends BaseSceneView {
       LayerMgr.Instance.clearGameMenuLayer();
       BattleManager.Instance.disposeBattle(
         SceneManager.Instance.nextScene.SceneName ==
-          SceneType.CAMPAIGN_MAP_SCENE
+          SceneType.CAMPAIGN_MAP_SCENE,
       );
 
       resolve();

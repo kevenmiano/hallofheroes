@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_GvgManageView from "../../../../../../fui/Consortia/FUI_GvgManageView";
 import AudioManager from "../../../../../core/audio/AudioManager";
 import { ConsortiaSocketOutManager } from "../../../../manager/ConsortiaSocketOutManager";
@@ -35,14 +35,14 @@ export class GvgManageView extends FUI_GvgManageView {
       this,
       this.onListItemRender,
       null,
-      false
+      false,
     );
     this._manageBtn.onClick(this, this.__openManagerHandler);
 
     CampaignManager.Instance.gvgModel.addEventListener(
       CampaignEvent.UPDATE_GVG_INFO,
       this.__updateGvgInfoHandler,
-      this
+      this,
     );
   }
 
@@ -73,7 +73,7 @@ export class GvgManageView extends FUI_GvgManageView {
     CampaignManager.Instance.gvgModel.removeEventListener(
       CampaignEvent.UPDATE_GVG_INFO,
       this.__updateGvgInfoHandler,
-      this
+      this,
     );
   }
 

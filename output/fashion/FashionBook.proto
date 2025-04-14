@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fashion;
+
+message FashionBook {
+  int32 tempId = 1;
+  bool isSwitch = 2;
+  int32 appraisalSkill = 3;
+}

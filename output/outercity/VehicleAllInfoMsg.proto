@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message VehicleAllInfoMsg {
+  repeated int32 allVehicleInfo = 1;
+}

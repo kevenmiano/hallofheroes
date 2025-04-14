@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message RankRewardMsg {
+  int32 type = 1;
+  int32 status = 2;
+  int32 rank = 3;
+  int32 opType = 4;
+}

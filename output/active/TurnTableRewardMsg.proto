@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableRewardMsg {
+  int32 turntableId = 1;
+  int32 bingo1 = 2;
+  int32 bingo2 = 3;
+  int32 bingo3 = 4;
+}

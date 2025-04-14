@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaAltarInfoMsg {
+  int32 op = 1;
+  int32 type = 2;
+  repeated int32 altarItemList = 3;
+  int32 altarCount = 4;
+  int32 freshCount = 5;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignFogMsg {
+  int32 row = 1;
+  int32 col = 2;
+  repeated int32 forArray = 3;
+  int32 mapTempId = 4;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaUserInviteInfoMsg {
+  int32 id = 1;
+  int32 consortiaId = 2;
+  string consortiaName = 3;
+  string createDate = 4;
+  int32 userId = 5;
+  string userNickname = 6;
+  int32 inviteId = 7;
+  string inviteNickname = 8;
+  string chairmanNickname = 9;
+  string inviteDate = 10;
+  bool fromType = 11;
+  bool isexist = 12;
+  int32 consortiaLevels = 13;
+  int32 consortiaCount = 14;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleBuffStateMsg {
+  string id = 1;
+  string buffId = 2;
+  string state = 3;
+  string playerId = 4;
+  string effectValue = 5;
+  string serverName = 6;
+}

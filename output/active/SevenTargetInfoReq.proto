@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SevenTargetInfoReq {
+  int32 day = 1;
+}

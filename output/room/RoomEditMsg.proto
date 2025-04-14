@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomEditMsg {
+  int32 roomId = 1;
+  string roomPwd = 2;
+  string roomName = 3;
+}

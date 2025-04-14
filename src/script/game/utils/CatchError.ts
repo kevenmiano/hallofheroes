@@ -19,7 +19,7 @@ export class CatchError {
         // console.log(e.reason.stack);
         // e.preventDefault();  /* 阻止异常向上抛出*/
         return true;
-      }
+      },
     );
   }
 }

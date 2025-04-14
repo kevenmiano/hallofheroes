@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimplePowCardFightInfoMsg {
+  int32 op = 1;
+  int32 userid = 2;
+  int32 CampType = 3;
+  int32 add = 4;
+}

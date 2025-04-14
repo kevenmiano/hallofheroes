@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WorldBossInfoStateMsg {
+  int32 campaignId = 1;
+  int32 state = 2;
+}

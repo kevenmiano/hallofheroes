@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadFullMsg {
+  int32 op = 1;
+  string battleField = 2;
+  string notice = 3;
+}

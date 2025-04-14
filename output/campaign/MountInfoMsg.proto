@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message MountInfoMsg {
+  int32 mountTempId = 1;
+  int32 power = 2;
+  int32 intellect = 3;
+  int32 physique = 4;
+  int32 agility = 5;
+  int32 speed = 6;
+  int32 powerGp = 7;
+  int32 intellectGp = 8;
+  int32 physiqueGp = 9;
+  int32 agilityGp = 10;
+  int32 mountTotalGp = 11;
+  int32 levelMax = 12;
+  int32 discount = 13;
+}

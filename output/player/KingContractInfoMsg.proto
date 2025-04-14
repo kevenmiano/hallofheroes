@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message KingContractInfoMsg {
+  int32 contractId = 1;
+  string endData = 2;
+}

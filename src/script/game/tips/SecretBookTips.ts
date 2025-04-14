@@ -55,14 +55,14 @@ export class SecretBookTips extends BaseTips {
     // this.upgradeBtn.title = LangManager.Instance.GetTranslation('armyII.viewII.skill.btnUpgrade');
     this.txt_condition.text = LangManager.Instance.GetTranslation(
       "Mastery.activeCount",
-      1
+      1,
     );
     this.txt_condition.text = LangManager.Instance.GetTranslation(
       "Mastery.activeCount",
-      1
+      1,
     );
     this.txt_desc.text = LangManager.Instance.GetTranslation(
-      "Mastery.jobtypeDesc"
+      "Mastery.jobtypeDesc",
     );
     this.addEvent();
     this._info = this.params;
@@ -79,11 +79,11 @@ export class SecretBookTips extends BaseTips {
     if (info) {
       this.iconLoader.url = this.getJobIcon(info.jobType);
       this.txt_name.text = LangManager.Instance.GetTranslation(
-        "Mastery.jobtype" + info.jobType
+        "Mastery.jobtype" + info.jobType,
       );
       this.txt_level.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        info.jobLevel
+        info.jobLevel,
       );
 
       //是否已激活
@@ -93,7 +93,7 @@ export class SecretBookTips extends BaseTips {
         var nextInfo: t_s_extrajobData =
           TempleteManager.Instance.getExtrajobCfg(
             info.jobType,
-            info.jobLevel + 1
+            info.jobLevel + 1,
           );
         if (nextInfo) {
           //玩家未满足升级条件时，显示升级条件，
@@ -104,7 +104,7 @@ export class SecretBookTips extends BaseTips {
             this._nextLevelNeedCoin = nextInfo.CostGold;
             let ownProp = GoodsManager.Instance.getBagCountByTempId(
               BagType.Player,
-              nextInfo.CostItemId
+              nextInfo.CostItemId,
             );
             let ownStr = ownProp.toString();
             if (ownProp < nextInfo.CostItemCount) {
@@ -117,11 +117,11 @@ export class SecretBookTips extends BaseTips {
             this.needProp.text = LangManager.Instance.GetTranslation(
               "fish.FishFrame.countText",
               ownStr,
-              nextInfo.CostItemCount
+              nextInfo.CostItemCount,
             );
             this.upCostGoldNumber.text = FormularySets.toStringSelf(
               this._nextLevelNeedCoin,
-              GeniusPanel.STEP
+              GeniusPanel.STEP,
             );
             if (
               ResourceManager.Instance.gold.count >= this._nextLevelNeedCoin
@@ -138,7 +138,7 @@ export class SecretBookTips extends BaseTips {
           this.txt_condition.visible = true;
           this.levelupBox.visible = false;
           this.txt_condition.text = LangManager.Instance.GetTranslation(
-            "buildings.water.view.PlayerTreeExpView.msg01"
+            "buildings.water.view.PlayerTreeExpView.msg01",
           );
         }
         this.btn_active.visible = false;
@@ -167,12 +167,12 @@ export class SecretBookTips extends BaseTips {
     let str = "";
     var cfg: t_s_extrajobData = TempleteManager.Instance.getExtrajobCfg(
       this._info.jobType,
-      this._info.jobLevel + 1
+      this._info.jobLevel + 1,
     );
     //升级条件：红色文本显示
     str = LangManager.Instance.GetTranslation(
       "Mastery.needPlayerLevel",
-      cfg.NeedPlayerLevel
+      cfg.NeedPlayerLevel,
     );
     if (this.thane.grades < cfg.NeedPlayerLevel) {
       result = false;
@@ -182,7 +182,7 @@ export class SecretBookTips extends BaseTips {
         "<br>" +
         LangManager.Instance.GetTranslation(
           "Mastery.needTotalJobLevel",
-          cfg.NeedTotalJobLevel
+          cfg.NeedTotalJobLevel,
         );
     }
     if (ExtraJobModel.instance.totalLevel < cfg.NeedTotalJobLevel) {
@@ -220,7 +220,7 @@ export class SecretBookTips extends BaseTips {
     NotificationManager.Instance.addEventListener(
       ExtraJobEvent.LEVEL_UP,
       this.levelupGrade,
-      this
+      this,
     );
   }
 
@@ -230,7 +230,7 @@ export class SecretBookTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       ExtraJobEvent.LEVEL_UP,
       this.levelupGrade,
-      this
+      this,
     );
     // NotificationManager.Instance.removeEventListener(TalentEvent.SELECT_TALENT, this.__talenSelectHanler, this);
   }

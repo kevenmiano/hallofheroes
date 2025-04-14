@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarMoveReqMsg {
+  int32 beginStarType = 1;
+  int32 beginPos = 2;
+  int32 endStarType = 3;
+  int32 endPos = 4;
+  int32 count = 5;
+  bool eat = 6;
+}

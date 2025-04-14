@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowCardSuiteMsg {
+  int32 suiteId = 1;
+  repeated int32 bufInfos = 2;
+  repeated int32 cardInfos = 3;
+}

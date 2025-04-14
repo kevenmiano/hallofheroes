@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PropertyUpdatedMsg {
+  int32 propertyType = 1;
+  int32 value = 2;
+}

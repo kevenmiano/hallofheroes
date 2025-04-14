@@ -1,4 +1,3 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 export default class FUI_MessageCellInfo extends fgui.GComponent {
@@ -6,6 +5,7 @@ export default class FUI_MessageCellInfo extends fgui.GComponent {
   public hasContent: fgui.Controller;
   public emojiIcon: fgui.GLoader;
   public content: fgui.GRichTextField;
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://og5jeos3n9eii3q";
 

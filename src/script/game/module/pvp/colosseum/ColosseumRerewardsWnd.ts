@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
@@ -11,63 +11,80 @@ import ColosseumRewardsItem from "./ColosseumRewardsItem";
 import ColosseumCtrl from "./ColosseumCtrl";
 
 export default class ColosseumRewardsWnd extends BaseWindow {
-    public frame: fgui.GLabel;
-    public txt1:fgui.GTextField;
-	public itemList:fgui.GList;
-	public txtMyScoreTitle:fgui.GTextField;
-	public txtMyScore:fgui.GTextField;
-	public txtTitle1:fgui.GTextField;
-	public txtTitle2:fgui.GTextField;
+  public frame: fgui.GLabel;
+  public txt1: fgui.GTextField;
+  public itemList: fgui.GList;
+  public txtMyScoreTitle: fgui.GTextField;
+  public txtMyScore: fgui.GTextField;
+  public txtTitle1: fgui.GTextField;
+  public txtTitle2: fgui.GTextField;
 
-    rewardList: any;
-    constructor() {
-        super();
-    }
+  rewardList: any;
+  constructor() {
+    super();
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter();
-        this.initText();
-        this.rewardList = this.getList();
-        this.itemList.setVirtual();
-        this.itemList.itemRenderer = Laya.Handler.create(this, this.renderListItem, null, false);
-        this.itemList.numItems = this.rewardList.length;
-    }
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+    this.initText();
+    this.rewardList = this.getList();
+    this.itemList.setVirtual();
+    this.itemList.itemRenderer = Laya.Handler.create(
+      this,
+      this.renderListItem,
+      null,
+      false,
+    );
+    this.itemList.numItems = this.rewardList.length;
+  }
 
-    initText() {
-        this.txt1.text = LangManager.Instance.GetTranslation('RoomList.pvp.colosseum.rewards.txt1');
-        this.frame.title = LangManager.Instance.GetTranslation('godarrive.GodArriveFrame.rewardBtn');
-        this.txtTitle1.text = LangManager.Instance.GetTranslation('RvrBattleResultWnd.roleScoreTxt');
-        this.txtTitle2.text = LangManager.Instance.GetTranslation('mainBar.TopToolsBar.dayGuideBtnTipData');
-        this.txtMyScoreTitle.text = LangManager.Instance.GetTranslation('RvrBattleMapRightWnd.myScoreTxt');
-        this.txtMyScore.text = (FrameCtrlManager.Instance.getCtrl(EmWindow.Colosseum) as ColosseumCtrl).data.curScore + '';
-    }
+  initText() {
+    this.txt1.text = LangManager.Instance.GetTranslation(
+      "RoomList.pvp.colosseum.rewards.txt1",
+    );
+    this.frame.title = LangManager.Instance.GetTranslation(
+      "godarrive.GodArriveFrame.rewardBtn",
+    );
+    this.txtTitle1.text = LangManager.Instance.GetTranslation(
+      "RvrBattleResultWnd.roleScoreTxt",
+    );
+    this.txtTitle2.text = LangManager.Instance.GetTranslation(
+      "mainBar.TopToolsBar.dayGuideBtnTipData",
+    );
+    this.txtMyScoreTitle.text = LangManager.Instance.GetTranslation(
+      "RvrBattleMapRightWnd.myScoreTxt",
+    );
+    this.txtMyScore.text =
+      (FrameCtrlManager.Instance.getCtrl(EmWindow.Colosseum) as ColosseumCtrl)
+        .data.curScore + "";
+  }
 
-    getList(): t_s_singlearenarewardsData[] {
-        let obj = ConfigMgr.Instance.getDicSync(ConfigType.t_s_singlearenarewards);
-        let arrs = [];
-        if (obj && obj['Type1']) {
-            for (const i in obj['Type1']) {
-                if (Object.prototype.hasOwnProperty.call(obj['Type1'], i)) {
-                    arrs.push(obj['Type1'][i]);
-                }
-            }
+  getList(): t_s_singlearenarewardsData[] {
+    let obj = ConfigMgr.Instance.getDicSync(ConfigType.t_s_singlearenarewards);
+    let arrs = [];
+    if (obj && obj["Type1"]) {
+      for (const i in obj["Type1"]) {
+        if (Object.prototype.hasOwnProperty.call(obj["Type1"], i)) {
+          arrs.push(obj["Type1"][i]);
         }
-        
-        return arrs;
+      }
     }
 
-    renderListItem(index: number, item: ColosseumRewardsItem) {
-        item.setInfo(this.rewardList[index]);
-    }
+    return arrs;
+  }
 
-    /**界面打开 */
-    OnShowWind() {
-        super.OnShowWind();
-    }
+  renderListItem(index: number, item: ColosseumRewardsItem) {
+    item.setInfo(this.rewardList[index]);
+  }
 
-    /**关闭界面 */
-    OnHideWind() {
-        super.OnHideWind();
-    }
+  /**界面打开 */
+  OnShowWind() {
+    super.OnShowWind();
+  }
+
+  /**关闭界面 */
+  OnHideWind() {
+    super.OnHideWind();
+  }
 }

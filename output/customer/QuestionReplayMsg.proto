@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.customer;
+
+message QuestionReplayMsg {
+  string questionId = 1;
+  int32 type = 2;
+  int32 userId = 3;
+  string title = 4;
+  string content = 5;
+  string replayContent = 6;
+  string commitTime = 7;
+  string replayUserName = 8;
+  int32 employ = 9;
+  int32 stopReply = 10;
+}

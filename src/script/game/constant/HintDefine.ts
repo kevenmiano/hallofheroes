@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -10,9 +9,9 @@
 
 // 1积分, 2荣誉, 3黄金, 4经验, 5战魂
 export enum HintCampaignGetType {
-    Integral = 1,
-    Honor,
-    Gold,
-    Exp,
-    Soul,
+  Integral = 1,
+  Honor,
+  Gold,
+  Exp,
+  Soul,
 }

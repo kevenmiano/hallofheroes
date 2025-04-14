@@ -40,7 +40,7 @@ export class RemotePetTurnInfo {
   }
   public get totalPage(): number {
     let total: number = Math.ceil(
-      (this.maxTurn + 1) / RemotePetTurnInfo.TOTAL_NUM
+      (this.maxTurn + 1) / RemotePetTurnInfo.TOTAL_NUM,
     );
     if (total < 1) total = 1;
     return total;

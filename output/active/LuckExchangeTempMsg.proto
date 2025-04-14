@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LuckExchangeTempMsg {
+  string id = 1;
+  string name = 2;
+  int32 consumeItemId = 3;
+  int32 consumeItemCount = 4;
+  int32 luckValue = 5;
+  string startTime = 6;
+  string endTime = 7;
+  repeated int32 dropItems = 8;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.extrajob;
+
+message ExtraJobMsg {
+  int32 op = 1;
+  repeated int32 activeList = 2;
+}

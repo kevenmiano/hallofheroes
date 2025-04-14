@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ArmyPositionMsg {
+  int32 posX = 1;
+  int32 posY = 2;
+  int32 mapId = 3;
+  int32 payType = 4;
+  int32 leftEnergy = 5;
+}

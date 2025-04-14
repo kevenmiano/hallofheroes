@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message SearchConditionMsg {
+  int32 pageIndex = 1;
+  string consortiaName = 2;
+  bool isNewOpen = 3;
+}

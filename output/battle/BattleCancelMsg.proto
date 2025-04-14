@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleCancelMsg {
+  string battleId = 1;
+  string serverName = 2;
+  int32 armyId = 3;
+}

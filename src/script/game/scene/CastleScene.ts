@@ -35,7 +35,7 @@ export default class CastleScene extends BaseSceneView {
   /**
    * 进入场景
    */
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     return new Promise(async (resolve) => {
       this.castleMap = new CastleMapViewII();
       this.addChild(this.castleMap);
@@ -67,7 +67,7 @@ export default class CastleScene extends BaseSceneView {
     this.castleMap.dragingCallBack();
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     PlayerManager.Instance.currentPlayerModel.inOutCity = false;
     return super.preLoadingStart(data);
   }
@@ -80,7 +80,7 @@ export default class CastleScene extends BaseSceneView {
       if (!HomeWnd.Instance.isShowing) {
         await HomeWnd.Instance.instShow();
         HomeWnd.Instance.getSmallMapBar().switchSmallMapState(
-          SmallMapBar.CASTLE_SMALL_MAP_STATE
+          SmallMapBar.CASTLE_SMALL_MAP_STATE,
         );
       }
       await UIManager.Instance.ShowWind(EmWindow.SpaceTaskInfoWnd);

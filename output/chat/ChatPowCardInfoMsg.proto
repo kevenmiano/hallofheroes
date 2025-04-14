@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message ChatPowCardInfoMsg {
+  int32 id = 1;
+  int32 templateId = 2;
+  int32 userId = 3;
+  int32 objectId = 4;
+  int32 pos = 5;
+  bool exist = 6;
+  int32 bagType = 7;
+  int32 grade = 8;
+  int32 gp = 9;
+  bool isLock = 10;
+  string powcardName = 11;
+  int32 buffId = 12;
+  int32 sonType = 13;
+  int32 fixValue = 14;
+  int32 percent = 15;
+}

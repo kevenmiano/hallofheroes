@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetDetailMsg {
+  string petmsg = 1;
+  repeated int32 item = 2;
+}

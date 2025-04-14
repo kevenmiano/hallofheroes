@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemMoveMsg {
+  int32 beginMark = 1;
+  int32 endMark = 2;
+}

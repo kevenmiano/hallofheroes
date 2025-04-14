@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -81,10 +81,10 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
       this._bossView.roleShowInfo2.visible = this._rightIsBoss;
       this._bossView.setInfo(this._boss);
       this._bossView.setTotalHp(
-        this.battleModel.armyInfoRight.getBossesTotalHp()
+        this.battleModel.armyInfoRight.getBossesTotalHp(),
       );
       this._bossView.setCurrentHp(
-        this.battleModel.armyInfoRight.getBossesLeftHp()
+        this.battleModel.armyInfoRight.getBossesLeftHp(),
       );
     }
   }
@@ -127,7 +127,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
     this._bossView.setInfo(this._boss);
     this._bossView.setTotalHp(totalHp);
     this._bossView.setCurrentHp(
-      this.battleModel.armyInfoRight.getBossesLeftHp()
+      this.battleModel.armyInfoRight.getBossesLeftHp(),
     );
     if (this.bossBufferContainer) {
       this.bossBufferContainer.removeEvent();
@@ -178,22 +178,22 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
     this.battleModel.addEventListener(
       BattleEvent.REDUCE_WORLD_BOSS_BLOOD,
       this.onReduceWorldBossBlood,
-      this
+      this,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_SYNC_BOSS_HP,
       this,
-      this.__syncBossHpHandler
+      this.__syncBossHpHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ADD_BOSS_HP,
       this,
-      this.__addBossHpHandler
+      this.__addBossHpHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_SYNC_ROOM_BOSS_HP,
       this,
-      this.__roomBossHPSyncHandler
+      this.__roomBossHPSyncHandler,
     );
   }
 
@@ -226,7 +226,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
             "多人本房间共享血量boss变化",
             syncHp,
             bossInfo.bloodA,
-            deltaHp
+            deltaHp,
           );
           this._bossView.setCurrentHp(syncHp);
           bossInfo.updateBloodSecurity(deltaHp);
@@ -259,7 +259,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
     Logger.battle(
       "[RoleShowViewII]世界BOSS血量服务器接收==",
       msg.curHp,
-      msg.currentMillis
+      msg.currentMillis,
     );
     var time = Int64Utils.int64ToNumber(msg.currentMillis as Long);
     this.battleModel.updateWorldBossBlood(msg.curHp, time);
@@ -284,7 +284,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
       this.wnd.bottomBar.selfBloodView.updateHeroHp(
         precent,
         leftBlood,
-        maxBoold
+        maxBoold,
       );
     }
     if (this._rightIsBoss) {
@@ -297,7 +297,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
       this.battleModel.isOver = true;
       NotificationManager.Instance.sendNotification(
         BattleNotic.FORCE_SKILL_ENABLE,
-        false
+        false,
       );
     }
     if (rightBlood > 0) {
@@ -320,23 +320,23 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
       this.battleModel.removeEventListener(
         BattleEvent.REDUCE_WORLD_BOSS_BLOOD,
         this.onReduceWorldBossBlood,
-        this
+        this,
       );
     }
     ServerDataManager.cancel(
       S2CProtocol.U_C_SYNC_BOSS_HP,
       this,
-      this.__syncBossHpHandler
+      this.__syncBossHpHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ADD_BOSS_HP,
       this,
-      this.__addBossHpHandler
+      this.__addBossHpHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_SYNC_ROOM_BOSS_HP,
       this,
-      this.__roomBossHPSyncHandler
+      this.__roomBossHPSyncHandler,
     );
   }
 }

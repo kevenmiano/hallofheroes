@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message ChatStarInfoMsg {
+  int32 id = 1;
+  int32 templateId = 2;
+  int32 userId = 3;
+  int32 objectId = 4;
+  int32 pos = 5;
+  bool exist = 6;
+  int32 bagType = 7;
+  int32 grade = 8;
+  int32 gp = 9;
+  bool isLock = 10;
+  string starName = 11;
+}

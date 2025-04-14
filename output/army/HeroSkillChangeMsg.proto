@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroSkillChangeMsg {
+  int32 index = 1;
+  int32 payType = 2;
+  bool result = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message AchieveInfoMsg {
+  int32 id = 1;
+  int32 value = 2;
+  int32 status = 3;
+}

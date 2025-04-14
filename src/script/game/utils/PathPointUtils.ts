@@ -14,7 +14,7 @@ export class PathPointUtils {
    */
   public static findPoints(
     from: Laya.Point,
-    to: Laya.Point
+    to: Laya.Point,
   ): Array<Laya.Point> {
     var path: Array<Laya.Point> = [];
     var nextCol: number = from.x;

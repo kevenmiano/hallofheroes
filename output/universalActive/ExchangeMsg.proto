@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.universalActive;
+
+message ExchangeMsg {
+  repeated int32 activeInfo = 1;
+}

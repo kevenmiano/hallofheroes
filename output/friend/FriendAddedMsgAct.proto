@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message FriendAddedMsgAct {
+  int32 op = 1;
+  string reqId = 2;
+}

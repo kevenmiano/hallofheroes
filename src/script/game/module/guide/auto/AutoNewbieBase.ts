@@ -1,4 +1,3 @@
-// @ts-nocheck
 import LangManager from "../../../../core/lang/LangManager";
 
 /*
@@ -7,50 +6,46 @@ import LangManager from "../../../../core/lang/LangManager";
  * @Email: 760139307@qq.com
  * @LastEditors: jeremy.xu
  * @LastEditTime: 2023-10-30 16:41:34
- * @Description: 
+ * @Description:
  */
 export default class AutoNewbieBase {
-    public autoTime: number = 5;
-    public autoTimeMs: number = 5000;
-    public channelName: string = "";
+  public autoTime: number = 5;
+  public autoTimeMs: number = 5000;
+  public channelName: string = "";
 
-    public addEvent() {
+  public addEvent() {}
 
-    }
+  public removEvent() {}
 
-    public removEvent() {
+  public showAllTip(b: boolean) {}
 
-    }
+  public processFunc(time: number) {}
 
-    public showAllTip(b: boolean) {
+  public processEndFunc() {}
 
-    }
+  public get open() {
+    return false;
+  }
 
-    public processFunc(time: number) {
+  public get autoDialogue() {
+    return false;
+  }
 
-    }
+  public getAutoExecTip(time: number) {
+    return LangManager.Instance.GetTranslation(
+      "newbie.auto.autoExecTip",
+      time ? time : this.autoTime,
+    );
+  }
 
-    public processEndFunc() {
+  public getAutoDialogueTip(time: number) {
+    return LangManager.Instance.GetTranslation(
+      "newbie.auto.autoExecTip",
+      time ? time : this.autoTime,
+    );
+  }
 
-    }
-
-    public get open() {
-        return false;
-    }
-
-    public get autoDialogue() {
-        return false;
-    }
-
-    public getAutoExecTip(time: number) {
-        return LangManager.Instance.GetTranslation("newbie.auto.autoExecTip", time ? time : this.autoTime);
-    }
-
-    public getAutoDialogueTip(time: number) {
-        return LangManager.Instance.GetTranslation("newbie.auto.autoExecTip", time ? time : this.autoTime);
-    }
-
-    public dispose() {
-        this.removEvent()
-    }
+  public dispose() {
+    this.removEvent();
+  }
 }

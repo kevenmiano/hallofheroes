@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message AddFriendMsg {
+  int32 userId = 1;
+  int32 friendId = 2;
+  int32 relation = 3;
+}

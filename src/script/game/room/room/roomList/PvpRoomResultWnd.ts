@@ -42,10 +42,10 @@ export default class PvpRoomResultWnd extends BaseWindow {
 
   initText() {
     this.txtClose.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.result.txt1"
+      "RoomList.pvp.result.txt1",
     );
     this.txtTitle.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.result.txt2"
+      "RoomList.pvp.result.txt2",
     );
   }
 

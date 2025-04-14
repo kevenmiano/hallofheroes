@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message RoomBossReqMsg {
+  int32 castleRoomId = 1;
+  int32 nodeId = 2;
+  repeated int32 bufferId = 3;
+}

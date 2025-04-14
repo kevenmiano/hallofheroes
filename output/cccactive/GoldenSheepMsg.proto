@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message GoldenSheepMsg {
+  int32 op = 1;
+  int32 index = 2;
+  int32 myCount = 3;
+  int32 isReward = 4;
+  int32 rewardId = 5;
+  int32 totalCount = 6;
+  int32 curCount = 7;
+  repeated int32 sheepData = 8;
+  int32 isOpen = 9;
+  int32 state = 10;
+  string openTime = 11;
+  string stopTime = 12;
+  int32 count = 13;
+  int32 nextTime = 14;
+  bool isover = 15;
+}

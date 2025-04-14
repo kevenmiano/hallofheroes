@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattlePrepareMsg {
+  string battleId = 1;
+  int32 battleType = 2;
+  int32 mapTempId = 3;
+  bool needAnimation = 4;
+  int32 side = 5;
+  bool hasAssault = 6;
+  int32 useWay = 7;
+  int32 attackModel = 8;
+  int32 reinforceCount = 9;
+  int32 currentReinforce = 10;
+  int32 battleCapity = 11;
+  int32 countDown = 12;
+  int32 damageImprove = 13;
+  repeated int32 soldiers = 14;
+  repeated int32 heros = 15;
+  repeated int32 soldierTemplated = 16;
+  repeated int32 coolDown = 17;
+  int32 currentWave = 18;
+  repeated int32 pets = 19;
+  repeated int32 watchHeros = 20;
+}

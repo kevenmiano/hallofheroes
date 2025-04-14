@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketItemPurchaseInfoMsg {
+  int32 templateId = 1;
+  string sellTotal = 2;
+  string purchaseTotal = 3;
+  repeated int32 sellPriceList = 4;
+  repeated int32 purchasePriceList = 5;
+}

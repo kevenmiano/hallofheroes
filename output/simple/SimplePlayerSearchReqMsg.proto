@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimplePlayerSearchReqMsg {
+  string otherNickname = 1;
+}

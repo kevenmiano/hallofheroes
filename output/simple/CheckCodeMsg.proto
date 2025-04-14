@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message CheckCodeMsg {
+  int32 leftCount = 1;
+  int32 leftTime = 2;
+  string question = 3;
+  string option1 = 4;
+  string option2 = 5;
+  string option3 = 6;
+  string option4 = 7;
+  string msg = 8;
+  repeated int32 sites = 9;
+}

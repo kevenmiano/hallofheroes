@@ -39,7 +39,7 @@ export default class GetGoodsAlert extends BaseWindow {
     this.listData = [];
     if (this.params) {
       this.txt_content.text = LangManager.Instance.GetTranslation(
-        "petEuip.resolveTip1"
+        "petEuip.resolveTip1",
       );
       let len = this.params.goodsList.length;
 
@@ -84,7 +84,7 @@ export default class GetGoodsAlert extends BaseWindow {
       this,
       this.__renderListItem,
       null,
-      false
+      false,
     );
   }
 

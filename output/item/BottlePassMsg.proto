@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BottlePassMsg {
+  int32 passType = 1;
+  repeated int32 infos = 2;
+  int32 count = 3;
+  int32 dropId = 4;
+}

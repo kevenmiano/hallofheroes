@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message MainGoodInfo {
+  int32 id = 1;
+  int32 shopId = 2;
+  int32 templateId = 3;
+  int32 sortId = 4;
+  int32 types = 5;
+}

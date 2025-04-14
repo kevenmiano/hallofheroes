@@ -1,4 +1,3 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 export default class FUI_StarTipCom extends fgui.GComponent {
@@ -7,6 +6,8 @@ export default class FUI_StarTipCom extends fgui.GComponent {
   public txt_star: fgui.GTextField;
   public comp: fgui.GGroup;
   public list: fgui.GList;
+
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://i5djjunllbk9i3d";
 

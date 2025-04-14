@@ -1,6 +1,6 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_ButtonSwitch from "./FUI_ButtonSwitch";
 
 export default class FUI_GameSetCom extends fgui.GComponent {

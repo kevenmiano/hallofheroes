@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemInfoUpdateMsg {
+  repeated int32 gemDel = 1;
+  repeated int32 gemAdd = 2;
+  repeated int32 score = 3;
+  int32 curExp = 4;
+  int32 maxExp = 5;
+  int32 gemLevel = 6;
+  int32 scoreOrder = 7;
+  repeated int32 rewardInfo = 8;
+}

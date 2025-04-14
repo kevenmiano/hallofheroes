@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerAASReqMsg {
+  string cardName = 1;
+  string cardId = 2;
+}

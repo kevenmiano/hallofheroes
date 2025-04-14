@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DiscountMallItemInfo {
+  int32 index = 1;
+  int32 itemId = 2;
+  int32 price = 3;
+  int32 limit = 4;
+  int32 count = 5;
+  int32 buycount = 6;
+}

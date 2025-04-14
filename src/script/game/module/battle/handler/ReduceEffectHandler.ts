@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -16,51 +15,64 @@ import { BattleEvent } from "../../../constant/event/NotificationEvent";
 import FUIHelper from "../../../utils/FUIHelper";
 import BattleWnd from "../BattleWnd";
 
-
 export class ReduceEffectHandler {
-    private wnd: BattleWnd;
-    private view: fgui.GComponent;
-    constructor(wnd: BattleWnd) {
-        this.wnd = wnd;
+  private wnd: BattleWnd;
+  private view: fgui.GComponent;
+  constructor(wnd: BattleWnd) {
+    this.wnd = wnd;
 
-        if (!this.battleModel.isReduceEffect()) return;
+    if (!this.battleModel.isReduceEffect()) return;
 
-        this.initView()
-        this.addEvent()
-    }
+    this.initView();
+    this.addEvent();
+  }
 
-    private addEvent() {
-        this.battleModel.addEventListener(BattleEvent.BATTLE_NOTICE, this.refresh, this);
-    }
+  private addEvent() {
+    this.battleModel.addEventListener(
+      BattleEvent.BATTLE_NOTICE,
+      this.refresh,
+      this,
+    );
+  }
 
-    private removeEvent() {
-        this.battleModel.removeEventListener(BattleEvent.BATTLE_NOTICE, this.refresh, this);
-    }
+  private removeEvent() {
+    this.battleModel.removeEventListener(
+      BattleEvent.BATTLE_NOTICE,
+      this.refresh,
+      this,
+    );
+  }
 
-    private initView() {
-        if (!this.view) {
-            this.view = FUIHelper.createFUIInstance(EmPackName.Battle, "ReduceEffectView");
-            this.wnd.getContentPane().addChild(this.view);
-            this.view.setXY(this.wnd["topTipPos"].x, this.wnd["topTipPos"].y)
-        }
-        this.refresh()
+  private initView() {
+    if (!this.view) {
+      this.view = FUIHelper.createFUIInstance(
+        EmPackName.Battle,
+        "ReduceEffectView",
+      );
+      this.wnd.getContentPane().addChild(this.view);
+      this.view.setXY(this.wnd["topTipPos"].x, this.wnd["topTipPos"].y);
     }
+    this.refresh();
+  }
 
-    private refresh() {
-        let val = this.battleModel.battleDamageImprove
-        if (val > 0) {
-            this.view.visible = true;
-            this.view.getChild("title").text = LangManager.Instance.GetTranslation("battle.reduceEffect.text", val);
-        } else {
-            this.view.visible = false;
-        }
+  private refresh() {
+    let val = this.battleModel.battleDamageImprove;
+    if (val > 0) {
+      this.view.visible = true;
+      this.view.getChild("title").text = LangManager.Instance.GetTranslation(
+        "battle.reduceEffect.text",
+        val,
+      );
+    } else {
+      this.view.visible = false;
     }
-    
-    private get battleModel(): BattleModel {
-        return BattleManager.Instance.battleModel;
-    }
+  }
 
-    public dispose() {
-        this.removeEvent()
-    }
+  private get battleModel(): BattleModel {
+    return BattleManager.Instance.battleModel;
+  }
+
+  public dispose() {
+    this.removeEvent();
+  }
 }

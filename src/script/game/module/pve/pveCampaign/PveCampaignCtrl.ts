@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -11,17 +11,18 @@
 import { t_s_campaignData } from "../../../config/t_s_campaign";
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 
-
 export default class PveCampaignCtrl extends FrameCtrlBase {
-    protected initDataPreShow() {
-        super.initDataPreShow()
-        if (this.frameData && this.frameData["campaignData"]) {
-            this.data.taskCampaignTem = this.frameData["campaignData"] as t_s_campaignData;
-        }
+  protected initDataPreShow() {
+    super.initDataPreShow();
+    if (this.frameData && this.frameData["campaignData"]) {
+      this.data.taskCampaignTem = this.frameData[
+        "campaignData"
+      ] as t_s_campaignData;
     }
+  }
 
-    protected clearDataPreHide() {
-        super.clearDataPreHide()
-        this.data.taskCampaignTem = null;
-    }
+  protected clearDataPreHide() {
+    super.clearDataPreHide();
+    this.data.taskCampaignTem = null;
+  }
 }

@@ -1,5 +1,5 @@
-import Logger from "../../core/logger/Logger";
-import ByteArray from "../../core/net/ByteArray";
+// import Logger from "../../core/logger/Logger";
+// import ByteArray from "../../core/net/ByteArray";
 
 /**
  * @author:pzlricky
@@ -148,7 +148,7 @@ export default class StringUtils {
   public static between(
     p_string: string,
     p_start: string,
-    p_end: string
+    p_end: string,
   ): string {
     let str: string = "";
     if (p_string == null) {
@@ -188,7 +188,7 @@ export default class StringUtils {
   public static block(
     p_string: string,
     p_len: number,
-    p_delim: string = "."
+    p_delim: string = ".",
   ): Array<string> {
     let arr: Array<string> = [];
     if (p_string == null || !StringUtils.contains(p_string, p_delim)) {
@@ -235,7 +235,7 @@ export default class StringUtils {
   public static ljust(
     p_string: string,
     p_width: number,
-    p_pad: string = " "
+    p_pad: string = " ",
   ): string {
     let pad: string = p_pad.substr(0, 1);
     if (p_string.length < p_width) {
@@ -248,7 +248,7 @@ export default class StringUtils {
   public static rjust(
     p_string: string,
     p_width: number,
-    p_pad: string = " "
+    p_pad: string = " ",
   ): string {
     let pad: string = p_pad.substr(0, 1);
     if (p_string.length < p_width) {
@@ -261,7 +261,7 @@ export default class StringUtils {
   public static center(
     p_string: string,
     p_width: number,
-    p_pad: string = " "
+    p_pad: string = " ",
   ): string {
     let pad: string = p_pad.substr(0, 1);
 
@@ -355,7 +355,7 @@ export default class StringUtils {
   public static countOf(
     p_string: string,
     p_char: string,
-    p_caseSensitive: boolean = true
+    p_caseSensitive: boolean = true,
   ): number {
     if (p_string == null) {
       return 0;
@@ -428,7 +428,7 @@ export default class StringUtils {
         d[i][j] = Math.min(
           d[i - 1][j] + 1,
           d[i][j - 1] + 1,
-          d[i - 1][j - 1] + cost
+          d[i - 1][j - 1] + cost,
         );
       }
     }
@@ -554,7 +554,7 @@ export default class StringUtils {
   public static padLeft(
     p_string: string,
     p_padChar: string,
-    p_length: number
+    p_length: number,
   ): string {
     let s: string = p_string;
     while (s.length < p_length) {
@@ -581,7 +581,7 @@ export default class StringUtils {
   public static padRight(
     p_string: string,
     p_padChar: string,
-    p_length: number
+    p_length: number,
   ): string {
     let s: string = p_string;
     while (s.length < p_length) {
@@ -613,13 +613,14 @@ export default class StringUtils {
 
   public static quote(p_string: string): string {
     let regx: RegExp = /[\\"\r\\n]/g;
+    // eslint-disable-next-line quotes
     return '"' + p_string.replace(regx, StringUtils._quote) + '"';
   }
 
   public static relativePath(
     p_base: string,
     p_path: string,
-    p_delim: string = "/"
+    p_delim: string = "/",
   ): string {
     let baseUri: string = p_base;
     if (StringUtils.endsWith(p_base, "/")) {
@@ -694,7 +695,7 @@ export default class StringUtils {
   public static remove(
     p_string: string,
     p_remove: string,
-    p_caseSensitive: boolean = true
+    p_caseSensitive: boolean = true,
   ): string {
     if (p_string == null) {
       return "";
@@ -932,7 +933,7 @@ export default class StringUtils {
   public static truncate(
     p_string: string,
     p_len: number,
-    p_suffix: string = "..."
+    p_suffix: string = "...",
   ): string {
     if (p_string == null) {
       return "";
@@ -988,7 +989,9 @@ export default class StringUtils {
         return "\\r";
       case "\n":
         return "\\n";
+      // eslint-disable-next-line quotes
       case '"':
+        // eslint-disable-next-line quotes
         return '\\"';
     }
     return null;
@@ -1066,7 +1069,7 @@ export default class StringUtils {
    */
   private static _reg = new RegExp("\\{[a-zA-Z0-9]+\\}");
   public static stringFormat(input: string, ...args): string {
-    var obj: Object = this._reg.exec(input);
+    var obj: object = this._reg.exec(input);
     let index = 0;
     while (obj && index < args.length) {
       input = input.replace(this._reg, args[index]);
@@ -1087,7 +1090,7 @@ export default class StringUtils {
    * @returns
    */
   public static stringFormat2(input: string, ...args): string {
-    var obj: Object = this._reg.exec(input);
+    var obj: object = this._reg.exec(input);
     let index = 0;
     while (obj && index < args.length) {
       let data = args[index];

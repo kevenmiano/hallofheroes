@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message RuneMosReqMsg {
+  int32 runeId = 1;
+  int32 runeIndex = 2;
+  int32 runeStoneId = 3;
+  int32 beginPos = 4;
+  int32 targetRuneHoleId = 5;
+  int32 targetIndex = 6;
+}

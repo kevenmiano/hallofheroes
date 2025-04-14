@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fish;
+
+message FishInfo {
+  int32 fishId = 1;
+  int32 templateId = 2;
+  bool point = 3;
+  string beginTime = 4;
+  int32 channelId = 5;
+  int32 state = 6;
+  string now = 7;
+}

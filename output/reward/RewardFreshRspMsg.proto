@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.reward;
+
+message RewardFreshRspMsg {
+  repeated int32 templateId = 1;
+  string rewardLastdate = 2;
+  repeated int32 isIsValid = 3;
+  repeated int32 qualitys = 4;
+  int32 rewardTimes = 5;
+  int32 freeTimes = 6;
+  string additionalReward = 7;
+}

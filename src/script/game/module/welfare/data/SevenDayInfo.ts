@@ -1,6 +1,4 @@
-// @ts-nocheck
-export default class SevenDayInfo
-{
-    public day:number;
-    public isOpen:boolean;
+export default class SevenDayInfo {
+  public day: number;
+  public isOpen: boolean;
 }

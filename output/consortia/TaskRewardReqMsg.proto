@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message TaskRewardReqMsg {
+  int32 op = 1;
+  int32 index = 2;
+}

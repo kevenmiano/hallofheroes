@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DayActiveRspMsg {
+  repeated int32 dayActiveRspInfo = 1;
+}

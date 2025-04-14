@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message HasDataInfo {
+  int32 userId = 1;
+  int32 itemId = 2;
+  int32 counts = 3;
+  string buyDate = 4;
+  bool isDiscount = 5;
+}

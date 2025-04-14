@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,7 +8,6 @@
  */
 
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
-import IManager from "../../core/Interface/IManager";
 import { PackageIn } from "../../core/net/PackageIn";
 import { ServerDataManager } from "../../core/net/ServerDataManager";
 import { SimpleDictionary } from "../../core/utils/SimpleDictionary";
@@ -18,7 +16,10 @@ import { RankInfo } from "../datas/playerinfo/RankInfo";
 import { CampaignTemplateManager } from "./CampaignTemplateManager";
 import Logger from "../../core/logger/Logger";
 
+//@ts-expect-error: External dependencies
 import RankListRspMsg = com.road.yishi.proto.campaign.RankListRspMsg;
+
+//@ts-expect-error: External dependencies
 import IRankMsg = com.road.yishi.proto.campaign.IRankMsg;
 
 export class CampaignRankManager extends GameEventDispatcher {
@@ -47,7 +48,7 @@ export class CampaignRankManager extends GameEventDispatcher {
     ServerDataManager.listen(
       S2CProtocol.U_C_RANK_LIST,
       this,
-      this.__rankListHandler
+      this.__rankListHandler,
     );
   }
 

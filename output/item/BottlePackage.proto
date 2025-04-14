@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BottlePackage {
+  int32 param = 1;
+  repeated int32 item = 2;
+}

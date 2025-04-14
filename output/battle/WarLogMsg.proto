@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message WarLogMsg {
+  int32 winTeamId = 1;
+  string redUserIds = 2;
+  string blueUserIds = 3;
+  int32 blueSocre = 4;
+  int32 redScore = 5;
+  int32 blueSize = 6;
+  int32 redSize = 7;
+  int32 campaignId = 8;
+  string startMillis = 9;
+}

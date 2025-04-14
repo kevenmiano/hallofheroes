@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2024-03-29 12:19:40
@@ -11,12 +11,12 @@
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 
 export class ConsortiaTaskScoreRewardInfo {
-    score: number = 0;
-    itemList: GoodsInfo[] = [];
-    icon: string = "";
-    reachCond: boolean = false;
-    recevied: boolean = false;
-    get canRecevie(): boolean{
-        return this.reachCond && !this.recevied
-    }
+  score: number = 0;
+  itemList: GoodsInfo[] = [];
+  icon: string = "";
+  reachCond: boolean = false;
+  recevied: boolean = false;
+  get canRecevie(): boolean {
+    return this.reachCond && !this.recevied;
+  }
 }

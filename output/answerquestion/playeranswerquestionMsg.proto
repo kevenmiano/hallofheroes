@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message playeranswerquestionMsg {
+  int32 userId = 1;
+  int32 curOrder = 2;
+  int32 currentScore = 3;
+  int32 getEXP = 4;
+  int32 playerAnswerSucCount = 5;
+  int32 doubleBlessCount = 6;
+  int32 wisdomHeartCount = 7;
+  int32 choiceEyesCount = 8;
+  int32 extraEXP = 9;
+  string goDate = 10;
+}

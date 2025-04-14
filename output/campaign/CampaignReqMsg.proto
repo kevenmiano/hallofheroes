@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignReqMsg {
+  int32 paraInt1 = 1;
+  int32 paraInt2 = 2;
+  int32 paraInt3 = 3;
+  int32 paraInt4 = 4;
+  int32 paraInt5 = 5;
+  string paraString1 = 6;
+  bool paraBool1 = 7;
+  string serverName = 8;
+  string isCross = 9;
+}

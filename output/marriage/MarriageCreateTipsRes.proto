@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageCreateTipsRes {
+  int32 op = 1;
+  string campaignKey = 2;
+}

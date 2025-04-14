@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemUseStoreRspMsg {
+  bool result = 1;
+}

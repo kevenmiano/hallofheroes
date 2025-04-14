@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.temple;
+
+message TempleReceiveReq {
+  int32 pos = 1;
+}

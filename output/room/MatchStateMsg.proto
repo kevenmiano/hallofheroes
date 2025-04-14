@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message MatchStateMsg {
+  bool matchState = 1;
+  string param1 = 2;
+  string param2 = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message PreLoadResMsg {
+  int32 armyId = 1;
+  repeated int32 heroSkill = 2;
+  repeated int32 soldierTempId = 3;
+  repeated int32 soldierSkill = 4;
+}

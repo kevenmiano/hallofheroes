@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaRenameReqMsg {
+  bool same = 1;
+  string newName = 2;
+  int32 payType = 3;
+}

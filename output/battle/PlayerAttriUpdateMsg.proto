@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message PlayerAttriUpdateMsg {
+  int32 userId = 1;
+  int32 geste = 2;
+  int32 type = 3;
+  repeated int32 item = 4;
+  int32 score = 5;
+  bool isAdd = 6;
+  int32 warCampaignId = 7;
+  int32 lastFail = 8;
+  bool result = 9;
+}

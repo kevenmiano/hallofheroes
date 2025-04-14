@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LevelMsg {
+  int32 level = 1;
+  int32 sellCount = 2;
+  int32 backCount = 3;
+  bool isReward = 4;
+}

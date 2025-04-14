@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * @author:pzlricky
  * @data: 2020-11-10 18:00
@@ -69,9 +68,7 @@ import t_s_wishingpool from "../../game/config/t_s_wishingpool";
 import t_s_itemtemplate from "../../game/config/t_s_itemtemplate";
 import t_s_mapmine from "../../game/config/t_s_mapmine";
 import t_s_mapphysicposition from "../../game/config/t_s_mapphysicposition";
-import t_s_petartifactproperty, {
-  t_s_petartifactpropertyData,
-} from "../../game/config/t_s_petartifactproperty";
+import t_s_petartifactproperty from "../../game/config/t_s_petartifactproperty";
 import { SharedManager } from "../../game/manager/SharedManager";
 import t_s_extrajobequipstrengthen from "../../game/config/t_s_extrajobequipstrengthen";
 import t_s_secret from "../../game/config/t_s_secret";
@@ -269,10 +266,8 @@ export default class ConfigMgr extends GameEventDispatcher {
         Boolean(_configXml.IOS_INTERROGATION) && Laya.Browser.onIOS;
     }
     if (Utils.isApp()) {
-      //@ts-ignore
       window.useAstc = Boolean(_configXml.USE_ASTC);
     } else {
-      //@ts-ignore
       window.useAstc = false;
     }
 
@@ -307,12 +302,16 @@ export default class ConfigMgr extends GameEventDispatcher {
    */
   loadZip(cfgType: ConfigType | string, callFunc?: Function) {
     if (cfgType && this.configMap[cfgType]) {
-      callFunc && callFunc(this.configMap[cfgType]);
+      if (callFunc) {
+        callFunc(this.configMap[cfgType]);
+      }
       return;
     }
     let cfgInfo = this.getConfigInfo(cfgType);
     if (!cfgInfo) {
-      callFunc && callFunc(null);
+      if (callFunc) {
+        callFunc(null);
+      }
       return;
     }
     let url = ComponentSetting.configZipUrl + cfgInfo.url;
@@ -343,7 +342,7 @@ export default class ConfigMgr extends GameEventDispatcher {
               //解析配置表
               clsData = ObjectTranslator.toInstance(
                 jsonData[cls] || jsonData,
-                clsObj
+                clsObj,
               );
               this.configMap[cls] = clsData;
               this.parseConfigToDic(cls, clsData, jsonData[cls] || jsonData);
@@ -351,10 +350,12 @@ export default class ConfigMgr extends GameEventDispatcher {
             }
           }
         }
-        callFunc && callFunc();
+        if (callFunc) {
+          callFunc();
+        }
       },
       null,
-      Laya.Loader.BUFFER
+      Laya.Loader.BUFFER,
     );
   }
 
@@ -365,12 +366,16 @@ export default class ConfigMgr extends GameEventDispatcher {
    */
   load(cfgType: ConfigType | string, callFunc?: Function) {
     if (cfgType && this.configMap[cfgType]) {
-      callFunc && callFunc(this.configMap[cfgType]);
+      if (callFunc) {
+        callFunc(this.configMap[cfgType]);
+      }
       return;
     }
     let cfgInfo = this.getConfigInfo(cfgType);
     if (!cfgInfo) {
-      callFunc && callFunc(null);
+      if (callFunc) {
+        callFunc(null);
+      }
       return;
     }
     let url = "";
@@ -406,19 +411,21 @@ export default class ConfigMgr extends GameEventDispatcher {
             } else {
               clsData = ObjectTranslator.toInstance(
                 name ? res[name] : res,
-                clsObj
+                clsObj,
               );
             }
             this.configMap[cfgType] = clsData;
             this.parseConfigToDic(cfgType, clsData, res[name]);
           }
-          callFunc && callFunc(clsData ? clsData : res);
+          if (callFunc) {
+            callFunc(clsData ? clsData : res);
+          }
         } else {
           Logger.error("请先用 LayaClassUtils 注册该配置表:", name);
         }
       },
       null,
-      Laya.Loader.JSON
+      Laya.Loader.JSON,
     );
   }
 
@@ -440,7 +447,9 @@ export default class ConfigMgr extends GameEventDispatcher {
    */
   loadAll(cfgType: ConfigType = ConfigType.config, callFunc?: Function) {
     if (this.isLoadConfig) {
-      callFunc && callFunc(this.configMap);
+      if (callFunc) {
+        callFunc(this.configMap);
+      }
       return;
     }
     let url = ComponentSetting.CONFIG_PREFIX + ConfigUrl[cfgType].url;
@@ -457,10 +466,12 @@ export default class ConfigMgr extends GameEventDispatcher {
           }
         });
         this.isLoadConfig = true;
-        callFunc && callFunc(this.configMap);
+        if (callFunc) {
+          callFunc(this.configMap);
+        }
       },
       null,
-      Laya.Loader.JSON
+      Laya.Loader.JSON,
     );
   }
 
@@ -580,7 +591,7 @@ export default class ConfigMgr extends GameEventDispatcher {
    * @param cfgType
    * @param clsData
    */
-  parseConfigToDic(cfgType: ConfigType | string, clsData: any, list: Object[]) {
+  parseConfigToDic(cfgType: ConfigType | string, clsData: any, list: object[]) {
     if (!this.configMapDic[cfgType]) this.configMapDic[cfgType] = {};
 
     let map = this.configMapDic[cfgType];
@@ -774,7 +785,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_actionData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式
@@ -785,7 +796,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     let temp = this.handleMap[cfgType];
     temp[key] = temp[key] ? temp[key] : new ActionTemplateInfoResolveII();
     this.actionTemplate2[key] = temp[key].resolveImp(
-      element
+      element,
     ) as ActionTemplateData;
 
     if (complete) {
@@ -804,7 +815,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_campaignData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式
@@ -828,7 +839,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_outcityshopData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式
@@ -847,7 +858,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_shopData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式
@@ -893,7 +904,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_consortialevelData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式
@@ -908,7 +919,7 @@ export default class ConfigMgr extends GameEventDispatcher {
     cfgType: ConfigType | string,
     key: string,
     element: t_s_runegemData,
-    complete: boolean
+    complete: boolean,
   ) {
     let map = this.configMapDic[cfgType];
     // 处理方式1 默认处理方式

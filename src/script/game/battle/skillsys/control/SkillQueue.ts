@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * @author:jeremy.xu
  * @data: 2020-11-30 11:00
@@ -7,6 +6,7 @@
  * 只需按帧频不断调用, 即可实现技能的自动施放。
  * 通过调用start和stop方法,可以启动或停止帧频事件.
  **/
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import Logger from "../../../../core/logger/Logger";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";

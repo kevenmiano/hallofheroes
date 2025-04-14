@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageCampaignProMsg {
+  string baseInfo = 1;
+  int32 state = 2;
+  int32 heart = 3;
+  bool oathFinish = 4;
+}

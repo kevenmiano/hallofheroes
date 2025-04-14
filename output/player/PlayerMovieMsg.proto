@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerMovieMsg {
+  int32 movieTargetType = 1;
+  int32 targetId = 2;
+  string movieType = 3;
+  int32 delay = 4;
+  int32 mapId = 5;
+}

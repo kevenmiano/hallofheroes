@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageHorseMsg {
+  int32 userIdA = 1;
+  string nickNameA = 2;
+  int32 jobA = 3;
+  int32 userIdB = 4;
+  string nickNameB = 5;
+  int32 jobB = 6;
+  int32 speTemplateId = 7;
+  string path = 8;
+}

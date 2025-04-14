@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2022-05-07 12:25:47
@@ -8,9 +7,8 @@
  * @Description: }
  */
 export default class BuildSonType {
-    /**
-     * 矿场水晶
-     */
-    public static SONTYPE_2380: number = 2380;
-    
+  /**
+   * 矿场水晶
+   */
+  public static SONTYPE_2380: number = 2380;
 }

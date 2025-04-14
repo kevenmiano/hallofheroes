@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildGroupListMsg {
+  repeated int32 group = 1;
+  string orderTime = 2;
+  bool isGuildSize = 3;
+}

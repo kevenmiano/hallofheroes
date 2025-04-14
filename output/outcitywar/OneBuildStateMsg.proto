@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message OneBuildStateMsg {
+  int32 orderId = 1;
+  int32 state = 2;
+}

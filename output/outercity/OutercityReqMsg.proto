@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message OutercityReqMsg {
+  int32 mapId = 1;
+  string position = 2;
+  string files = 3;
+  repeated int32 pathArray = 4;
+  int32 type = 5;
+  int32 attackCount = 6;
+  string simpleHeroInfo = 7;
+  repeated int32 armyPawn = 8;
+  int32 fightCapaity = 9;
+}

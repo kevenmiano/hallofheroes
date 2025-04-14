@@ -73,12 +73,12 @@ export default class ChatHelper {
   public static checkCanSend(
     chatStr: string,
     channel: number,
-    isvoice?: boolean
+    isvoice?: boolean,
   ): boolean {
     if (ArmyManager.Instance.thane.grades < 6 && channel != ChatChannel.WORLD) {
       //非世界频道
       str = LangManager.Instance.GetTranslation(
-        "chat.view.ChatInputView.command05"
+        "chat.view.ChatInputView.command05",
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -90,7 +90,7 @@ export default class ChatHelper {
     ) {
       str = LangManager.Instance.GetTranslation(
         "chat.view.ChatInputView.command07",
-        worldmsgLevel
+        worldmsgLevel,
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -101,7 +101,7 @@ export default class ChatHelper {
       if (chatStr.length == 0) return false;
       if (chatStr == "") {
         str = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command01"
+          "chat.view.ChatInputView.command01",
         );
         MessageTipManager.Instance.show(str);
         return false;
@@ -132,7 +132,7 @@ export default class ChatHelper {
     ) {
       str = LangManager.Instance.GetTranslation(
         "chat.view.ChatInputView.command02",
-        ChatHelper.SEND_CD_3 * 0.001
+        ChatHelper.SEND_CD_3 * 0.001,
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -142,7 +142,7 @@ export default class ChatHelper {
       PlayerManager.Instance.currentPlayerModel.playerInfo.consortiaID == 0
     ) {
       str = LangManager.Instance.GetTranslation(
-        "chat.view.ChatInputView.command03"
+        "chat.view.ChatInputView.command03",
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -150,7 +150,7 @@ export default class ChatHelper {
     if (channel == ChatChannel.TEAM) {
       if (!ChatHelper.checkTeamChatScene()) {
         str = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command04"
+          "chat.view.ChatInputView.command04",
         );
         MessageTipManager.Instance.show(str);
         return false;
@@ -181,7 +181,7 @@ export default class ChatHelper {
     } else if (
       CampaignManager.Instance.mapModel &&
       WorldBossHelper.checkIsNoTeamChatMap(
-        CampaignManager.Instance.mapModel.mapId
+        CampaignManager.Instance.mapModel.mapId,
       )
     ) {
       canTeamChat = false;

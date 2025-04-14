@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DaysChargeRespMsg {
+  int32 plan = 1;
+  int32 type = 2;
+  int32 optype = 3;
+  int32 ret = 4;
+}

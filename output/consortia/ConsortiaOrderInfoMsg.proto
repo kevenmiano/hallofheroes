@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaOrderInfoMsg {
+  int32 consortiaId = 1;
+  int32 gradeOrder = 2;
+  int32 fightPowerOrder = 3;
+  int32 lastDayOffer = 4;
+  int32 lastDayOrder = 5;
+  int32 lastWeekOffer = 6;
+  int32 lastWeekOrder = 7;
+  int32 offer = 8;
+  string lastDayDate = 9;
+  string lastWeekDate = 10;
+}

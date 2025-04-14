@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message KingTowerInfoMsg {
+  int32 enterCount = 1;
+  int32 currentIndex = 2;
+  int32 maxIndex = 3;
+  int32 campaignId = 4;
+  int32 currentStep = 5;
+  int32 rewardCount = 6;
+}

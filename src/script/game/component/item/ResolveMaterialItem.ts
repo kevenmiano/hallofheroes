@@ -1,6 +1,5 @@
-// @ts-nocheck
-import {BaseItem} from "./BaseItem";
-import {GoodsInfo} from "../../datas/goods/GoodsInfo";
+import { BaseItem } from "./BaseItem";
+import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import FUI_ResolveMaterialItem from "../../../../fui/Base/FUI_ResolveMaterialItem";
 import { EmWindow } from "../../constant/UIDefine";
 
@@ -11,57 +10,51 @@ import { EmWindow } from "../../constant/UIDefine";
  * @ver 1.0
  *
  */
-export class ResolveMaterialItem extends FUI_ResolveMaterialItem
-{
-    public item:BaseItem;
-    private _goodsTemId:number;
-    private _bindsType:boolean;
+export class ResolveMaterialItem extends FUI_ResolveMaterialItem {
+  public item: BaseItem;
+  private _goodsTemId: number;
+  private _bindsType: boolean;
 
-    constructor()
-    {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    protected onConstruct()
-    {
-        super.onConstruct();
-        this.item.tipType = EmWindow.ForgeEquipTip;
-    }
+  protected onConstruct() {
+    super.onConstruct();
+    this.item.tipType = EmWindow.ForgeEquipTip;
+  }
 
-    public setData(goodsTemId:number, isBind:boolean = false, count:number = 1)
-    {
-        this._goodsTemId = goodsTemId;
-        this._bindsType = isBind;
-        if(this._goodsTemId > 0)
-        {
-            let goods:GoodsInfo = new GoodsInfo();
-            goods.templateId = this._goodsTemId;
-            goods.id = -1;
-            goods.isBinds = isBind;
-            goods.count = count;
-            this.item.info = goods;
-            this.txt.visible = false;
-        }
-        else
-        {
-            this.item.info = null;
-            this.txt.visible = true;
-        }
+  public setData(
+    goodsTemId: number,
+    isBind: boolean = false,
+    count: number = 1,
+  ) {
+    this._goodsTemId = goodsTemId;
+    this._bindsType = isBind;
+    if (this._goodsTemId > 0) {
+      let goods: GoodsInfo = new GoodsInfo();
+      goods.templateId = this._goodsTemId;
+      goods.id = -1;
+      goods.isBinds = isBind;
+      goods.count = count;
+      this.item.info = goods;
+      this.txt.visible = false;
+    } else {
+      this.item.info = null;
+      this.txt.visible = true;
     }
+  }
 
-    public get goodsTemId():number
-    {
-        return this._goodsTemId;
-    }
+  public get goodsTemId(): number {
+    return this._goodsTemId;
+  }
 
-    get bindsType():boolean
-    {
-        return this._bindsType;
-    }
+  get bindsType(): boolean {
+    return this._bindsType;
+  }
 
-    dispose()
-    {
-        this.item.dispose();
-        super.dispose();
-    }
+  dispose() {
+    this.item.dispose();
+    super.dispose();
+  }
 }

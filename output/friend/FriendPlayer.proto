@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message FriendPlayer {
+  int32 playerId = 1;
+  string nickName = 2;
+  int32 level = 3;
+  int32 sex = 4;
+  int32 attack = 5;
+  string mapName = 6;
+  int32 headId = 7;
+  int32 job = 8;
+  int32 frameId = 9;
+}

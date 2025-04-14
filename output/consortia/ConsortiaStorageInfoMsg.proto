@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaStorageInfoMsg {
+  repeated int32 storageInfo = 1;
+}

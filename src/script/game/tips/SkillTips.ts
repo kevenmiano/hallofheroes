@@ -64,7 +64,7 @@ export default class SkillTips extends BaseTips {
 
       this.txt_useLevel.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        this.tipData.grade
+        this.tipData.grade,
       );
       if (info.grade == 0) {
         this.txt_name.text = nextTemp.SkillTemplateName;
@@ -72,7 +72,7 @@ export default class SkillTips extends BaseTips {
         if (nextTemp.CoolDown > 0) {
           this.txt_cd.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            Math.ceil(nextTemp.CoolDown * 0.001)
+            Math.ceil(nextTemp.CoolDown * 0.001),
           );
         } else if (isPetSkill) {
           //如果是英灵技能, 此处空一行以显示英灵类型
@@ -86,7 +86,7 @@ export default class SkillTips extends BaseTips {
           nextTemp.SkillDescription,
           { key: "Parameter1", value: nextTemp.Parameter1 },
           { key: "Parameter2", value: nextTemp.Parameter2 },
-          { key: "Parameter3", value: nextTemp.Parameter3 }
+          { key: "Parameter3", value: nextTemp.Parameter3 },
         );
         this.txt_defSkill.text = effectDes;
 
@@ -103,14 +103,14 @@ export default class SkillTips extends BaseTips {
       } else if (nextTemp) {
         txt = LangManager.Instance.GetTranslation(
           "buildings.casern.view.RecruitPawnCell.command06",
-          info.templateInfo.Grades
+          info.templateInfo.Grades,
         );
         this.txt_name.text = info.templateInfo.SkillTemplateName;
 
         if (info.templateInfo.CoolDown > 0) {
           this.txt_cd.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            Math.ceil(info.templateInfo.CoolDown * 0.001)
+            Math.ceil(info.templateInfo.CoolDown * 0.001),
           );
         }
         if (Number(info.templateInfo.Cost) < 0) {
@@ -120,14 +120,14 @@ export default class SkillTips extends BaseTips {
         // _nextGrade.text = LangManager.Instance.GetTranslation("yishi.view.tips.goods.SkillTips.nextGrade");
         txt = LangManager.Instance.GetTranslation(
           "buildings.casern.view.RecruitPawnCell.command06",
-          nextTemp.Grades
+          nextTemp.Grades,
         );
         this.txt_name.text = nextTemp.SkillTemplateName + " " + txt + "</font>";
 
         if (nextTemp.CoolDown > 0) {
           this.txt_cd.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            Math.ceil(nextTemp.CoolDown * 0.001)
+            Math.ceil(nextTemp.CoolDown * 0.001),
           );
         }
         if (Number(nextTemp.Cost) < 0) {
@@ -137,7 +137,7 @@ export default class SkillTips extends BaseTips {
           nextTemp.SkillDescription,
           { key: "Parameter1", value: nextTemp.Parameter1 },
           { key: "Parameter2", value: nextTemp.Parameter2 },
-          { key: "Parameter3", value: nextTemp.Parameter3 }
+          { key: "Parameter3", value: nextTemp.Parameter3 },
         );
         this.txt_defSkill.text = nextEffectDes;
 
@@ -154,27 +154,27 @@ export default class SkillTips extends BaseTips {
       } else {
         txt = LangManager.Instance.GetTranslation(
           "buildings.casern.view.RecruitPawnCell.command06",
-          info.templateInfo.Grades
+          info.templateInfo.Grades,
         );
         this.txt_name.text = info.templateInfo.SkillTemplateName;
 
         if (info.templateInfo.CoolDown > 0) {
           this.txt_cd.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            Math.ceil(info.templateInfo.CoolDown * 0.001)
+            Math.ceil(info.templateInfo.CoolDown * 0.001),
           );
         }
         if (Number(info.templateInfo.Cost) < 0) {
           this.txt_gp.text = this.getCostString(
             isPetSkill,
-            Number(info.templateInfo.Cost)
+            Number(info.templateInfo.Cost),
           );
         }
         let effectDes: string = StringUtils.stringFormat2(
           info.templateInfo.SkillDescription,
           { key: "Parameter1", value: info.templateInfo.Parameter1 },
           { key: "Parameter2", value: info.templateInfo.Parameter2 },
-          { key: "Parameter3", value: info.templateInfo.Parameter3 }
+          { key: "Parameter3", value: info.templateInfo.Parameter3 },
         );
         this.txt_defSkill.text = effectDes;
         // _nextGrade.text = LangManager.Instance.GetTranslation("buildings.BaseBuildFrame.maxGrade");
@@ -191,12 +191,12 @@ export default class SkillTips extends BaseTips {
       if (temp.Grades > 0 && !isPetSkill)
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "public.level3",
-          temp.Grades
+          temp.Grades,
         );
       else this.txt_useLevel.text = "";
       txt = LangManager.Instance.GetTranslation(
         "buildings.casern.view.RecruitPawnCell.command06",
-        temp.Grades
+        temp.Grades,
       );
       this.txt_name.text = temp.SkillTemplateName;
 
@@ -204,7 +204,7 @@ export default class SkillTips extends BaseTips {
       if (temp.CoolDown > 0) {
         this.txt_cd.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          Math.ceil(temp.CoolDown * 0.001)
+          Math.ceil(temp.CoolDown * 0.001),
         );
       } else if (isPetSkill) {
         //如果是英灵技能, 此处空一行以显示英灵类型
@@ -219,7 +219,7 @@ export default class SkillTips extends BaseTips {
         temp.SkillDescription,
         { key: "Parameter1", value: temp.Parameter1 },
         { key: "Parameter2", value: temp.Parameter2 },
-        { key: "Parameter3", value: temp.Parameter3 }
+        { key: "Parameter3", value: temp.Parameter3 },
       );
       this.txt_defSkill.text = effectDes;
     }
@@ -236,12 +236,12 @@ export default class SkillTips extends BaseTips {
       //英灵技能觉醒值消耗
       str = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown03",
-        num
+        num,
       );
     } else {
       str = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown02",
-        num
+        num,
       );
     }
     return str;
@@ -278,114 +278,114 @@ export default class SkillTips extends BaseTips {
       return (
         "[" +
         LangManager.Instance.GetTranslation(
-          "yishi.datas.templates.SkillTempInfo.UseWay02"
+          "yishi.datas.templates.SkillTempInfo.UseWay02",
         ) +
         "]"
       );
     switch (temp.AcceptObject) {
       case 1:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type01"
+          "yishi.view.tips.goods.SkillTips.Type01",
         );
         break;
       case 2:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type02"
+          "yishi.view.tips.goods.SkillTips.Type02",
         );
         break;
       case 3:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type03"
+          "yishi.view.tips.goods.SkillTips.Type03",
         );
         break;
       case 4:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type04"
+          "yishi.view.tips.goods.SkillTips.Type04",
         );
         break;
       case 5:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type05"
+          "yishi.view.tips.goods.SkillTips.Type05",
         );
         break;
       case 6:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type06"
+          "yishi.view.tips.goods.SkillTips.Type06",
         );
         break;
       case 7:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type07"
+          "yishi.view.tips.goods.SkillTips.Type07",
         );
         break;
       case 8:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type08"
+          "yishi.view.tips.goods.SkillTips.Type08",
         );
         break;
       case 9:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type09"
+          "yishi.view.tips.goods.SkillTips.Type09",
         );
         break;
       case 10:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type10"
+          "yishi.view.tips.goods.SkillTips.Type10",
         );
         break;
       case 11:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type11"
+          "yishi.view.tips.goods.SkillTips.Type11",
         );
         break;
       case 12:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type12"
+          "yishi.view.tips.goods.SkillTips.Type12",
         );
         break;
       case 13:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type13"
+          "yishi.view.tips.goods.SkillTips.Type13",
         );
         break;
       case 14:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type14"
+          "yishi.view.tips.goods.SkillTips.Type14",
         );
         break;
       case 15:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type15"
+          "yishi.view.tips.goods.SkillTips.Type15",
         );
         break;
       case 16:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type16"
+          "yishi.view.tips.goods.SkillTips.Type16",
         );
         break;
       case 17:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type17"
+          "yishi.view.tips.goods.SkillTips.Type17",
         );
         break;
       case 18:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type18"
+          "yishi.view.tips.goods.SkillTips.Type18",
         );
         break;
       case 19:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type19"
+          "yishi.view.tips.goods.SkillTips.Type19",
         );
         break;
       case 20:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type20"
+          "yishi.view.tips.goods.SkillTips.Type20",
         );
         break;
       case 21:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type21"
+          "yishi.view.tips.goods.SkillTips.Type21",
         );
         break;
     }

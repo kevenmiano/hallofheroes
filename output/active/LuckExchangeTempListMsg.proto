@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LuckExchangeTempListMsg {
+  repeated int32 luckExchange = 1;
+}

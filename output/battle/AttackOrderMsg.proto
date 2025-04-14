@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message AttackOrderMsg {
+  string battleId = 1;
+  int32 frame = 2;
+  int32 orderId = 3;
+  bool isPassive = 4;
+  int32 livingId = 5;
+  int32 sp = 6;
+  int32 spAdded = 7;
+  repeated int32 damages = 8;
+  int32 execFrame = 9;
+  int32 frameNum = 10;
+  string attackMillis = 11;
+  repeated int32 buffers = 12;
+  repeated int32 awakenSoldiers = 13;
+  int32 attackOrderSeq = 14;
+  int32 cdTime = 15;
+  int32 awake = 16;
+  int32 awakeAdd = 17;
+  repeated int32 waitRevives = 18;
+}

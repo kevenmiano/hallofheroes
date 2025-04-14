@@ -93,7 +93,7 @@ export class MountCardTip extends BaseTips {
       this.item.text = "";
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.txt_name.color = GoodsSonType.getColorByProfile(
-        this._info.templateInfo.Profile
+        this._info.templateInfo.Profile,
       );
       this.txt_type.text = this.getGoodsTypeName(this._info.templateInfo);
       ToolTipsManager.Instance.setMountActiveTxt(this._info, this.txt_bind);
@@ -101,10 +101,10 @@ export class MountCardTip extends BaseTips {
       //附加属性
       let mountTemplate: t_s_mounttemplateData =
         TempleteManager.Instance.getMountTemplateById(
-          this._info.templateInfo.Property1
+          this._info.templateInfo.Property1,
         );
       let strArray: any[] = LangManager.Instance.GetTranslation(
-        "mounts.WildsoulItem.tips01"
+        "mounts.WildsoulItem.tips01",
       ).split("|");
       let valueArray: any[] = [];
       if (mountTemplate) {
@@ -123,14 +123,14 @@ export class MountCardTip extends BaseTips {
         if (valueArray[i] != 0 && i < strArray.length) {
           tipStr +=
             StringHelper.repHtmlTextToFguiText(
-              StringHelper.format(strArray[i], valueArray[i])
+              StringHelper.format(strArray[i], valueArray[i]),
             ) + "<br>";
         }
       }
       this.txt_addition.text = tipStr; //"智力+10<br/>体质+30<br/>体质+30<br/>体质+30";
       this.txt_score.text = LangManager.Instance.GetTranslation(
         "mountTip.soulscore",
-        mountTemplate ? mountTemplate.SoulScore : 0
+        mountTemplate ? mountTemplate.SoulScore : 0,
       );
 
       this.txt_desc.visible = mountTemplate
@@ -144,7 +144,7 @@ export class MountCardTip extends BaseTips {
       if (this.txt_desc.visible) {
         this.txt_desc.text = LangManager.Instance.GetTranslation(
           "mountTip.soulsAdd",
-          Math.ceil(mountTemplate ? mountTemplate.Power / 5 : 0)
+          Math.ceil(mountTemplate ? mountTemplate.Power / 5 : 0),
         );
       }
 
@@ -157,13 +157,13 @@ export class MountCardTip extends BaseTips {
       if (this._info.templateInfo.NeedGrades > 1) {
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.grade",
-          this._info.templateInfo.NeedGrades
+          this._info.templateInfo.NeedGrades,
         );
         if (
           !GoodsCheck.isGradeFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_useLevel.color = "#FF0000";
@@ -196,18 +196,18 @@ export class MountCardTip extends BaseTips {
       let timeStr: string;
       if (this._info.leftTime == -1) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr01"
+          "yishi.view.tips.goods.EquipTip.timeStr01",
         );
       } else if (this._info.leftTime < 0) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr02"
+          "yishi.view.tips.goods.EquipTip.timeStr02",
         );
       } else {
         timeStr = DateFormatter.getFullDateString(this._info.leftTime);
       }
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.time.text"
+          "yishi.view.tips.goods.EquipTip.time.text",
         ) +
         ":" +
         timeStr;
@@ -248,8 +248,9 @@ export class MountCardTip extends BaseTips {
 
         if (this._mountMovieClip) {
           this._mountMovieClip.stop();
-          this._mountMovieClip.parent &&
+          if (this._mountMovieClip.parent) {
             this._mountMovieClip.parent.removeChild(this._mountMovieClip);
+          }
         }
 
         if (!res) {
@@ -272,7 +273,7 @@ export class MountCardTip extends BaseTips {
           "",
           undefined,
           "",
-          AnimationManager.MapPhysicsFormatLen
+          AnimationManager.MapPhysicsFormatLen,
         );
         this._mountMovieClip = new MovieClip(this._cacheName);
         this.animationCom.displayListContainer.addChild(this._mountMovieClip);
@@ -315,7 +316,7 @@ export class MountCardTip extends BaseTips {
         this.updatePosition();
       },
       null,
-      Laya.Loader.ATLAS
+      Laya.Loader.ATLAS,
     );
   }
 
@@ -326,11 +327,11 @@ export class MountCardTip extends BaseTips {
     switch (temp.SonType) {
       case GoodsSonType.SONTYPE_TASK:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.SONTYPE_TASK"
+          "yishi.view.tips.goods.PropTips.SONTYPE_TASK",
         );
       case GoodsSonType.SONTYPE_COMPOSE_MATERIAL:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL"
+          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL",
         );
     }
     return "";
@@ -362,11 +363,11 @@ export class MountCardTip extends BaseTips {
         !GoodsCheck.isGradeFix(
           ArmyManager.Instance.thane,
           this._info.templateInfo,
-          false
+          false,
         )
       ) {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command01"
+          "cell.view.GoodsItemMenu.command01",
         );
         MessageTipManager.Instance.show(str);
         this.hide();
@@ -386,11 +387,11 @@ export class MountCardTip extends BaseTips {
       !GoodsCheck.isGradeFix(
         ArmyManager.Instance.thane,
         this._info.templateInfo,
-        false
+        false,
       )
     ) {
       let str: string = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command01"
+        "cell.view.GoodsItemMenu.command01",
       );
       MessageTipManager.Instance.show(str);
       this.hide();

@@ -92,7 +92,7 @@ export class RuneTip extends BaseTips {
       this.item.text = "";
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.txt_name.color = GoodsSonType.getColorByProfile(
-        this._info.templateInfo.Profile
+        this._info.templateInfo.Profile,
       );
       this.txt_type.text = this.getGoodsTypeName(this._info.templateInfo);
       // if (this._info.isBinds) {
@@ -126,13 +126,13 @@ export class RuneTip extends BaseTips {
       this.txt_desc.text = this._info.templateInfo.DescriptionLang;
       if (this.isRuneGem) {
         let skillCtrl = FrameCtrlManager.Instance.getCtrl(
-          EmWindow.Skill
+          EmWindow.Skill,
         ) as SkillWndCtrl;
         this.txt_desc.text = skillCtrl.addPropertyTxt(this._info);
 
         let arr = TempleteManager.Instance.getTemplatesByTypeAndId(
           200,
-          this._info.templateInfo.SonType
+          this._info.templateInfo.SonType,
         );
         //所需职业: 不限, 调整为显示: 等级: 0/40左为当前等级, 右为等级上限
         str = this._info.strengthenGrade + "/" + arr.length;
@@ -142,14 +142,14 @@ export class RuneTip extends BaseTips {
       } else {
         str =
           LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.EquipTipsContent.vocation.text"
+            "yishi.view.tips.goods.EquipTipsContent.vocation.text",
           ) + this._info.templateInfo.jobName;
         this.txt_needJob.text = str;
         if (
           !GoodsCheck.isJobFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_needJob.color = "#ee1a38";
@@ -161,13 +161,13 @@ export class RuneTip extends BaseTips {
       if (this._info.templateInfo.NeedGrades > 1) {
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.grade",
-          this._info.templateInfo.NeedGrades
+          this._info.templateInfo.NeedGrades,
         );
         if (
           !GoodsCheck.isGradeFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_useLevel.color = "#FF0000";
@@ -193,18 +193,18 @@ export class RuneTip extends BaseTips {
       let timeStr: string;
       if (this._info.leftTime == -1) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr01"
+          "yishi.view.tips.goods.EquipTip.timeStr01",
         );
       } else if (this._info.leftTime < 0) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr02"
+          "yishi.view.tips.goods.EquipTip.timeStr02",
         );
       } else {
         timeStr = DateFormatter.getFullDateString(this._info.leftTime);
       }
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.time.text"
+          "yishi.view.tips.goods.EquipTip.time.text",
         ) +
         ":" +
         timeStr;
@@ -220,10 +220,10 @@ export class RuneTip extends BaseTips {
           //符石
           if (BagHelper.OPEN_RUNE_BAG_TYPE == 1) {
             this.btn_batchUse.title = LangManager.Instance.GetTranslation(
-              "armyII.viewII.allocate.upgrade"
+              "armyII.viewII.allocate.upgrade",
             );
             this.btn_use.title = LangManager.Instance.GetTranslation(
-              "Forge.TabTitle.Resolve"
+              "Forge.TabTitle.Resolve",
             );
           } else if (BagHelper.OPEN_RUNE_BAG_TYPE == 0) {
             //镶嵌还是卸下
@@ -231,37 +231,37 @@ export class RuneTip extends BaseTips {
               this.btn_use.title =
                 LangManager.Instance.GetTranslation("public.unEquip");
               this.btn_batchUse.title = LangManager.Instance.GetTranslation(
-                "armyII.viewII.allocate.upgrade"
+                "armyII.viewII.allocate.upgrade",
               );
             } else {
               if (RuneHoleGem.selectRuneGem) {
                 this.btn_use.title = LangManager.Instance.GetTranslation(
-                  "tasktracetip.view.OpenBagTipView.btnTxt"
+                  "tasktracetip.view.OpenBagTipView.btnTxt",
                 );
               } else {
                 this.btn_use.title = LangManager.Instance.GetTranslation(
-                  "HigherGradeOpenTipView.content8"
+                  "HigherGradeOpenTipView.content8",
                 );
               }
               this.btn_batchUse.title = LangManager.Instance.GetTranslation(
-                "armyII.viewII.allocate.upgrade"
+                "armyII.viewII.allocate.upgrade",
               );
             }
           } else if (BagHelper.OPEN_RUNE_BAG_TYPE == -1) {
             if (this.isEuiped()) {
               //显示替换和升级
               this.btn_use.title = LangManager.Instance.GetTranslation(
-                "tasktracetip.view.OpenBagTipView.btnTxt"
+                "tasktracetip.view.OpenBagTipView.btnTxt",
               );
               this.btn_batchUse.title = LangManager.Instance.GetTranslation(
-                "armyII.viewII.allocate.upgrade"
+                "armyII.viewII.allocate.upgrade",
               );
             } else {
               this.btn_use.title = LangManager.Instance.GetTranslation(
-                "HigherGradeOpenTipView.content8"
+                "HigherGradeOpenTipView.content8",
               );
               this.btn_batchUse.title = LangManager.Instance.GetTranslation(
-                "armyII.viewII.allocate.upgrade"
+                "armyII.viewII.allocate.upgrade",
               );
             }
           } else {
@@ -283,11 +283,11 @@ export class RuneTip extends BaseTips {
     switch (temp.SonType) {
       case GoodsSonType.SONTYPE_TASK:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.SONTYPE_TASK"
+          "yishi.view.tips.goods.PropTips.SONTYPE_TASK",
         );
       case GoodsSonType.SONTYPE_COMPOSE_MATERIAL:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL"
+          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL",
         );
     }
     return "";
@@ -322,29 +322,29 @@ export class RuneTip extends BaseTips {
           ) {
             NotificationManager.Instance.sendNotification(
               RuneEvent.PUTOFF_RUNE_GEM,
-              this._info
+              this._info,
             );
           } else {
             NotificationManager.Instance.sendNotification(
               RuneEvent.SHOW_REPLACE_RUNE_GEM,
-              this._info
+              this._info,
             );
           }
         } else {
           if (
             this.btn_use.title ==
             LangManager.Instance.GetTranslation(
-              "tasktracetip.view.OpenBagTipView.btnTxt"
+              "tasktracetip.view.OpenBagTipView.btnTxt",
             )
           ) {
             NotificationManager.Instance.sendNotification(
               RuneEvent.REPLACE_RUNE_GEM,
-              this._info
+              this._info,
             );
           } else {
             NotificationManager.Instance.sendNotification(
               RuneEvent.INLAY_RUNE_GEM,
-              this._info
+              this._info,
             );
           }
         }
@@ -363,11 +363,11 @@ export class RuneTip extends BaseTips {
         !GoodsCheck.isGradeFix(
           ArmyManager.Instance.thane,
           this._info.templateInfo,
-          false
+          false,
         )
       ) {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command01"
+          "cell.view.GoodsItemMenu.command01",
         );
         MessageTipManager.Instance.show(str);
         this.hide();
@@ -393,7 +393,7 @@ export class RuneTip extends BaseTips {
       ) {
         NotificationManager.Instance.sendNotification(
           RuneEvent.RUNE_GEM_UPGRADE,
-          this._info
+          this._info,
         );
         this.hide();
         return;
@@ -405,11 +405,11 @@ export class RuneTip extends BaseTips {
       !GoodsCheck.isGradeFix(
         ArmyManager.Instance.thane,
         this._info.templateInfo,
-        false
+        false,
       )
     ) {
       let str: string = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command01"
+        "cell.view.GoodsItemMenu.command01",
       );
       MessageTipManager.Instance.show(str);
       this.hide();
@@ -443,7 +443,7 @@ export class RuneTip extends BaseTips {
       case 1:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip01"
+            "armyII.ThaneAttributeView.Tip01",
           ) +
           "+" +
           info.Power
@@ -451,7 +451,7 @@ export class RuneTip extends BaseTips {
       case 2:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip02"
+            "armyII.ThaneAttributeView.Tip02",
           ) +
           "+" +
           info.Agility
@@ -459,7 +459,7 @@ export class RuneTip extends BaseTips {
       case 3:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip03"
+            "armyII.ThaneAttributeView.Tip03",
           ) +
           "+" +
           info.Intellect
@@ -467,7 +467,7 @@ export class RuneTip extends BaseTips {
       case 4:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip04"
+            "armyII.ThaneAttributeView.Tip04",
           ) +
           "+" +
           info.Physique
@@ -475,7 +475,7 @@ export class RuneTip extends BaseTips {
       case 5:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip05"
+            "armyII.ThaneAttributeView.Tip05",
           ) +
           "+" +
           info.Captain
@@ -489,7 +489,7 @@ export class RuneTip extends BaseTips {
       case 1:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip01"
+            "armyII.ThaneAttributeView.Tip01",
           ) +
           "+" +
           info.templateInfo.Power
@@ -497,7 +497,7 @@ export class RuneTip extends BaseTips {
       case 2:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip02"
+            "armyII.ThaneAttributeView.Tip02",
           ) +
           "+" +
           info.templateInfo.Agility
@@ -505,7 +505,7 @@ export class RuneTip extends BaseTips {
       case 3:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip03"
+            "armyII.ThaneAttributeView.Tip03",
           ) +
           "+" +
           info.templateInfo.Intellect
@@ -513,7 +513,7 @@ export class RuneTip extends BaseTips {
       case 4:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip04"
+            "armyII.ThaneAttributeView.Tip04",
           ) +
           "+" +
           info.templateInfo.Physique
@@ -521,7 +521,7 @@ export class RuneTip extends BaseTips {
       case 5:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip05"
+            "armyII.ThaneAttributeView.Tip05",
           ) +
           "+" +
           info.templateInfo.Captain

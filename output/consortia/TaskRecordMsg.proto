@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message TaskRecordMsg {
+  string nickName = 1;
+  int32 starNum = 2;
+  int32 score = 3;
+  int32 time = 4;
+}

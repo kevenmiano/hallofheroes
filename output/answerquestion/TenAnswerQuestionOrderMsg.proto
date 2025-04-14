@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message TenAnswerQuestionOrderMsg {
+  repeated int32 tenAQ_Info = 1;
+}

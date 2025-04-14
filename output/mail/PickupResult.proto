@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message PickupResult {
+  int32 mailId = 1;
+  int32 attachIndex = 2;
+  bool result = 3;
+}

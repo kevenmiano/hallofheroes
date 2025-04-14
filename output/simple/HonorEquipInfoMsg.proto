@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message HonorEquipInfoMsg {
+  int32 level = 1;
+  int32 stage = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroRuneMsg {
+  int32 userId = 1;
+  repeated int32 runeinfo = 2;
+  string runeKey = 3;
+}

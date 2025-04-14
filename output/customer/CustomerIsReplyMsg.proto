@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.customer;
+
+message CustomerIsReplyMsg {
+  bool isreply = 1;
+}

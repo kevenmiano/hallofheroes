@@ -1,4 +1,3 @@
-// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from "../Interface/IManager";
 import { Func } from "../comps/Func";
@@ -12,7 +11,7 @@ export class MouseFunc {
   public MouseOver: Func;
   public MouseOut: Func;
 
-  constructor(data?: Object) {
+  constructor(data?: object) {
     for (let i in data) {
       this[i] = data[i];
     }
@@ -68,7 +67,7 @@ export default class MouseMgr extends GameEventDispatcher {
     mouseUp?: Function,
     mouseWheel?: Function,
     mouseOver?: Function,
-    mouseOut?: Function
+    mouseOut?: Function,
   ) {
     if (this.maps.has(target)) {
       return;

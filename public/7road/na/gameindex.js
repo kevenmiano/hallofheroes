@@ -12,6 +12,7 @@ loadLib("/public/7road/libs/laya.core.js");
 loadLib("/public/7road/libs/laya.ani.js");
 loadLib("/public/7road/libs/laya.html.js");
 loadLib("/public/7road/libs/laya.ui.js");
+// loadLib("/public/7road/libs/laya.debugtool.js");
 loadLib("/public/7road/libs/domparserinone.js");
 loadLib("/public/7road/libs/jszip.js");
 loadLib("/public/7road/libs/crypto-js.js");

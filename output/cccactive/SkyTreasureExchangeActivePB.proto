@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SkyTreasureExchangeActivePB {
+  string activeId = 1;
+  repeated int32 items = 2;
+}

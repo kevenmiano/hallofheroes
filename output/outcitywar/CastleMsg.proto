@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message CastleMsg {
+  int32 nodeId = 1;
+  int32 parentNodeId = 2;
+  int32 state = 3;
+  int32 leftTime = 4;
+  repeated int32 guildMsg = 5;
+  bool isGiveUp = 6;
+}

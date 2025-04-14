@@ -1,11 +1,11 @@
 export class CallBacker {
   private _listeners = [];
   private _singleListeners = [];
-  private _target: Object;
+  private _target: object;
 
   private _data: any;
 
-  public constructor(target: Object = null) {
+  public constructor(target: object = null) {
     this._target = target || this;
   }
   public addListener(listener: Function) {
@@ -51,7 +51,7 @@ export class CallBacker {
     this._listeners = [];
     this._singleListeners = [];
   }
-  public get target(): Object {
+  public get target(): object {
     return this._target;
   }
   public get listenerLength(): number {

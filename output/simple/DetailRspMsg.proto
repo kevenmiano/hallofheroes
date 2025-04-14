@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message DetailRspMsg {
+  int32 otherId = 1;
+  string serverName = 2;
+  repeated int32 item = 3;
+  string army = 4;
+  repeated int32 star = 5;
+  bool hideFashion = 6;
+  repeated int32 watch = 7;
+  repeated int32 powcardfight = 8;
+  repeated int32 tatooHoleInfo = 9;
+  string property = 10;
+  string fashionProperty = 11;
+}

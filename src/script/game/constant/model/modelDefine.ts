@@ -1,4 +1,3 @@
-// @ts-nocheck
 export enum EmModel {
-    USER_MODEL,
+  USER_MODEL,
 }

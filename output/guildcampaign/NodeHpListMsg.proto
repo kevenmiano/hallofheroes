@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message NodeHpListMsg {
+  int32 campaignId = 1;
+  int32 campaignType = 2;
+  repeated int32 nodeHp = 3;
+  repeated int32 userId = 4;
+}

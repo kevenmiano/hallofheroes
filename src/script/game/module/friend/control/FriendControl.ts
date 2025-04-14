@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 
 /**
@@ -8,10 +7,8 @@ import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
  * @ver 1.0
  *
  */
-export class FriendControl extends FrameCtrlBase
-{
-    constructor()
-    {
-        super();
-    }
+export class FriendControl extends FrameCtrlBase {
+  constructor() {
+    super();
+  }
 }

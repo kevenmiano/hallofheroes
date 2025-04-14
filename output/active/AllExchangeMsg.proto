@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message AllExchangeMsg {
+  string id = 1;
+  string begin = 2;
+  string end = 3;
+  bool isopen = 4;
+  int32 allPoint = 5;
+  string boxChangeCount = 6;
+  int32 allChangeCount = 7;
+  string changeNeedPoint = 8;
+  string point = 9;
+  string exchangeCount = 10;
+  string totalExchangeCount = 11;
+  string serverAwardState = 12;
+  int32 changeItemCount = 13;
+  string allPointAward = 14;
+  repeated int32 boxAward = 15;
+  repeated int32 serverAward = 16;
+  int32 changeItem = 17;
+}

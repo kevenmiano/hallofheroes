@@ -1,7 +1,7 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_BaseItem from "./FUI_BaseItem";
+//@ts-expect-error: External dependencies
 import FUI_Btn_1r from "./FUI_Btn_1r";
 import FUI_EquipTipsAttribute from "./FUI_EquipTipsAttribute";
 

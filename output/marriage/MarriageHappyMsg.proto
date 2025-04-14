@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageHappyMsg {
+  int32 happyGp = 1;
+  int32 happyGrade = 2;
+  int32 happyHelp = 3;
+}

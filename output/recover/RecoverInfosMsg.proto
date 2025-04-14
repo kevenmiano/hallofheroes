@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.recover;
+
+message RecoverInfosMsg {
+  int32 openState = 1;
+  int32 freeGp = 2;
+  int32 freeGold = 3;
+  int32 otherGp = 4;
+  int32 otherGold = 5;
+}

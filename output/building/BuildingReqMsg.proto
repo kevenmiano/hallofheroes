@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.building;
+
+message BuildingReqMsg {
+  int32 orderId = 1;
+  string position = 2;
+  int32 index = 3;
+  int32 userId = 4;
+  int32 nodeId = 5;
+  int32 sonNodeId = 6;
+}

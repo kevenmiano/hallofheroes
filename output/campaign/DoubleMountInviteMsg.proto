@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message DoubleMountInviteMsg {
+  int32 driverId = 1;
+  string nickName = 2;
+  string uniqueKey = 3;
+}

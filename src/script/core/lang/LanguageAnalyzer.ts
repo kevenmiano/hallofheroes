@@ -1,49 +1,42 @@
-// @ts-nocheck
-
 export class DataAnalyzer {
-    protected _onCompleteCall: Function;
-    public constructor(onCompleteCall: Function) {
-        this._onCompleteCall = onCompleteCall;
-    }
+  protected _onCompleteCall: Function;
+  public constructor(onCompleteCall: Function) {
+    this._onCompleteCall = onCompleteCall;
+  }
 
-    public analyze(data: any) {
-    }
-    public message: string;
-    public analyzeCompleteCall: Function;
-    public analyzeErrorCall: Function;
-    protected onAnalyzeComplete() {
-        if (this._onCompleteCall != null) this._onCompleteCall(this);
-        if (this.analyzeCompleteCall != null) this.analyzeCompleteCall();
-    }
+  public analyze(data: any) {}
+  public message: string;
+  public analyzeCompleteCall: Function;
+  public analyzeErrorCall: Function;
+  protected onAnalyzeComplete() {
+    if (this._onCompleteCall != null) this._onCompleteCall(this);
+    if (this.analyzeCompleteCall != null) this.analyzeCompleteCall();
+  }
 
-    protected onAnalyzeError() {
-        if (this.analyzeErrorCall != null) this.analyzeErrorCall();
-    }
+  protected onAnalyzeError() {
+    if (this.analyzeErrorCall != null) this.analyzeErrorCall();
+  }
 }
-
 
 /**
-* 解析Json文件
-* @author:pzlricky
-* @data: 2020-11-26 15:57
-* @description *** 
-*/
+ * 解析Json文件
+ * @author:pzlricky
+ * @data: 2020-11-26 15:57
+ * @description ***
+ */
 export default class LanguageAnalyzer extends DataAnalyzer {
-    private nAllExp: RegExp = /\\n/g;
-    public languages: { [key: string]: Object };
+  private nAllExp: RegExp = /\\n/g;
+  public languages: { [key: string]: object };
 
-    constructor(onCompleteCall: Function) {
-        super(onCompleteCall);
+  constructor(onCompleteCall: Function) {
+    super(onCompleteCall);
+  }
+
+  public analyze(data: any) {
+    if (data && data.mDataList) {
+      let list = data.mDataList;
+      this.languages = list;
     }
-
-    public analyze(data: any) {
-        if (data && data.mDataList) {
-            let list = data.mDataList;
-            this.languages = list;
-        }
-        this.onAnalyzeComplete();
-    }
-
-
+    this.onAnalyzeComplete();
+  }
 }
-

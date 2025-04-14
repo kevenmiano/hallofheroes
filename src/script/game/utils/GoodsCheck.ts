@@ -22,7 +22,7 @@ export class GoodsCheck {
   public static checkGoodsByHero(
     data: GoodsInfo,
     hero: ThaneInfo,
-    popMsg: boolean = true
+    popMsg: boolean = true,
   ): boolean {
     if (!data) {
       return false;
@@ -39,7 +39,7 @@ export class GoodsCheck {
   public static checkGoodsCanEquip(
     data: GoodsInfo,
     hero: ThaneInfo,
-    popMsg: boolean = false
+    popMsg: boolean = false,
   ): boolean {
     if (!data) {
       return false;
@@ -97,7 +97,7 @@ export class GoodsCheck {
   public static isJobFix(
     hero: ThaneInfo,
     info: t_s_itemtemplateData,
-    popMsg: boolean
+    popMsg: boolean,
   ): boolean {
     let arr: number[] = info.Job;
     for (const key in arr) {
@@ -110,7 +110,7 @@ export class GoodsCheck {
     }
     if (popMsg) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("bag.helper.GoodsCheck.command01")
+        LangManager.Instance.GetTranslation("bag.helper.GoodsCheck.command01"),
       );
     }
     return false;
@@ -119,14 +119,14 @@ export class GoodsCheck {
   public static isSexFix(
     hero: ThaneInfo,
     info: t_s_itemtemplateData,
-    popMsg: boolean
+    popMsg: boolean,
   ): boolean {
     if (info.Sexs == 2 || hero.templateInfo.Sexs == info.Sexs) {
       return true;
     }
     if (popMsg) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("bag.helper.GoodsCheck.command02")
+        LangManager.Instance.GetTranslation("bag.helper.GoodsCheck.command02"),
       );
     }
     return false;
@@ -135,7 +135,7 @@ export class GoodsCheck {
   public static isGradeFix(
     thane: ThaneInfo,
     info: t_s_itemtemplateData,
-    popMsg: boolean
+    popMsg: boolean,
   ): boolean {
     if (info.NeedGrades == 0 || thane.grades >= info.NeedGrades) {
       return true;
@@ -144,8 +144,8 @@ export class GoodsCheck {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
           "bag.helper.GoodsCheck.command03",
-          info.NeedGrades
-        )
+          info.NeedGrades,
+        ),
       );
     }
     return false;
@@ -154,7 +154,7 @@ export class GoodsCheck {
   public static checkGoodsCanEquipNotCheckGrade(
     data: GoodsInfo,
     hero: ThaneInfo,
-    popMsg: boolean = false
+    popMsg: boolean = false,
   ): boolean {
     if (!data) {
       return false;
@@ -184,7 +184,7 @@ export class GoodsCheck {
     }
     let heroBag: any[] = GoodsManager.Instance.getHeroGoodsListBySonTypeAndId(
       goods.templateInfo.SonType,
-      this.thane.id
+      this.thane.id,
     ).getList();
     let pos_arr: any[] = GoodsSonType.getSonTypePos(goods.templateInfo.SonType);
     heroBag = ArrayUtils.sortOn(heroBag, "pos", ArrayConstant.NUMERIC);
@@ -220,7 +220,7 @@ export class GoodsCheck {
     }
     let heroBag: any[] = GoodsManager.Instance.getHeroGoodsListBySonTypeAndId(
       goods.templateInfo.SonType,
-      this.thane.id
+      this.thane.id,
     ).getList();
     let pos_arr: any[] = GoodsSonType.getSonTypePos(goods.templateInfo.SonType);
     heroBag = ArrayUtils.sortOn(heroBag, "pos", ArrayConstant.NUMERIC);
@@ -309,7 +309,7 @@ export class GoodsCheck {
         (p + 1) *
         Math.pow(s + 1, 2.2) *
         5 +
-        500
+        500,
     );
   }
 
@@ -327,7 +327,7 @@ export class GoodsCheck {
     for (let i: number = 1; i <= s; i++) {
       count += Math.floor(
         Math.pow(1.5, Math.floor(g / 10) + 1) * (p + 1) * Math.pow(i, 2.2) * 5 +
-          500
+          500,
       );
     }
     return Math.floor(info.templateInfo.SellGold + 0.7 * count);
@@ -335,7 +335,7 @@ export class GoodsCheck {
 
   public static isAddToChecker(
     beginData: GoodsInfo,
-    endData: GoodsInfo
+    endData: GoodsInfo,
   ): boolean {
     if (
       ((beginData.isBinds == false && endData.isBinds == true) ||

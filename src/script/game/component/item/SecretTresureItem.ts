@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_SecretTresureItem from "../../../../fui/Base/FUI_SecretTresureItem";
 import Logger from "../../../core/logger/Logger";
 import { CommonConstant } from "../../constant/CommonConstant";
@@ -16,43 +15,46 @@ import FUIHelper from "../../utils/FUIHelper";
  * @LastEditTime: 2024-04-26 15:05:05
  * @Description: 秘宝
  */
-export default class SecretTresureItem extends FUI_SecretTresureItem implements ITipedDisplay {
-    tipType: EmWindow = EmWindow.SecretTresureTip;
-    tipData: any;
-    showType: TipsShowType = TipsShowType.onClick;
-    startPoint: Laya.Point = new Laya.Point(0, 0);
-    
-    public showName: boolean = true;
-    private _info: SecretTresureInfo;
+export default class SecretTresureItem
+  extends FUI_SecretTresureItem
+  implements ITipedDisplay
+{
+  tipType: EmWindow = EmWindow.SecretTresureTip;
+  tipData: any;
+  showType: TipsShowType = TipsShowType.onClick;
+  startPoint: Laya.Point = new Laya.Point(0, 0);
 
-    get info(): SecretTresureInfo {
-        return this._info;
-    }
+  public showName: boolean = true;
+  private _info: SecretTresureInfo;
 
-    set info(value: SecretTresureInfo) {
-        this._info = value
-        this.txtName.visible = this.showName
-        if (value) {
-            if (value.template) {
-                this.txtTitle.visible = value.count > 1
-                this.txtTitle.text = value.count.toString()
-                this.icon = value.template.iconPath
-                this.profile.url = value.template.profilePath
-                this.txtName.text = value.template.TemplateNameLang
-                this.txtName.color = value.template.profileColor
-                this.tipData = value
-                ToolTipsManager.Instance.register(this)
-            } else {
-                Logger.error("[SecretTresureItem]配置表模板不存在", value.templateId)
-            }
-        } else {
-            this.txtTitle.visible = false
-            this.icon = ""
-            ToolTipsManager.Instance.unRegister(this)
-        }
-    }
+  get info(): SecretTresureInfo {
+    return this._info;
+  }
 
-    dispose() {
-        super.dispose();
+  set info(value: SecretTresureInfo) {
+    this._info = value;
+    this.txtName.visible = this.showName;
+    if (value) {
+      if (value.template) {
+        this.txtTitle.visible = value.count > 1;
+        this.txtTitle.text = value.count.toString();
+        this.icon = value.template.iconPath;
+        this.profile.url = value.template.profilePath;
+        this.txtName.text = value.template.TemplateNameLang;
+        this.txtName.color = value.template.profileColor;
+        this.tipData = value;
+        ToolTipsManager.Instance.register(this);
+      } else {
+        Logger.error("[SecretTresureItem]配置表模板不存在", value.templateId);
+      }
+    } else {
+      this.txtTitle.visible = false;
+      this.icon = "";
+      ToolTipsManager.Instance.unRegister(this);
     }
+  }
+
+  dispose() {
+    super.dispose();
+  }
 }

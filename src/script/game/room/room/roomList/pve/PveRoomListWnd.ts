@@ -56,7 +56,7 @@ export default class PveRoomListWnd extends BaseWindow {
     this.compbo.on(
       fairygui.Events.STATE_CHANGED,
       this,
-      this.__selectedCampaignChange
+      this.__selectedCampaignChange,
     );
     this.compbo.items = this.model.getComboListNames();
     this.itemList.setVirtual();
@@ -65,13 +65,13 @@ export default class PveRoomListWnd extends BaseWindow {
       this,
       this.__renderListItem,
       null,
-      false
+      false,
     );
     this.txtEnterCountDesc.text = LangManager.Instance.GetTranslation(
-      "PveSelectCampaignWnd.enterCountTxt"
+      "PveSelectCampaignWnd.enterCountTxt",
     );
     this.frame.getChild("title").text = LangManager.Instance.GetTranslation(
-      "pveroomlist.PVERoomListFrame.title"
+      "pveroomlist.PVERoomListFrame.title",
     );
     this.refresh();
   }
@@ -82,7 +82,7 @@ export default class PveRoomListWnd extends BaseWindow {
     this.compbo.off(
       fairygui.Events.STATE_CHANGED,
       this,
-      this.__selectedCampaignChange
+      this.__selectedCampaignChange,
     );
     this.itemList.off(fgui.Events.CLICK_ITEM, this, this.__clickItem);
   }
@@ -113,7 +113,7 @@ export default class PveRoomListWnd extends BaseWindow {
 
     if (roomInfo.roomState != RoomState.STATE_USEING) {
       MessageTipManager.Instance.show(
-        RoomState.getStateNameTips(roomInfo.roomState)
+        RoomState.getStateNameTips(roomInfo.roomState),
       );
       this.itemList.selectNone();
     } else {
@@ -216,8 +216,8 @@ export default class PveRoomListWnd extends BaseWindow {
     this.compbo.text = name;
     MessageTipManager.Instance.show(
       LangManager.Instance.GetTranslation(
-        "pveroomlist.view.PVERoomSearchView.command01"
-      )
+        "pveroomlist.view.PVERoomSearchView.command01",
+      ),
     );
   }
 
@@ -241,13 +241,13 @@ export default class PveRoomListWnd extends BaseWindow {
         this.ctrl.sendSearchRoomInfo(RoomType.NORMAL, id);
       } else {
         let str = LangManager.Instance.GetTranslation(
-          "pveroomlist.view.PVERoomSearchFrame.command01"
+          "pveroomlist.view.PVERoomSearchFrame.command01",
         );
         MessageTipManager.Instance.show(str);
       }
     } else {
       let str = LangManager.Instance.GetTranslation(
-        "pveroomlist.view.PVERoomSearchFrame.selectRoom"
+        "pveroomlist.view.PVERoomSearchFrame.selectRoom",
       );
       MessageTipManager.Instance.show(str);
     }

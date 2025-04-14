@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.timer;
+
+message TimerInfoListMsg {
+  repeated int32 timerInfo = 1;
+}

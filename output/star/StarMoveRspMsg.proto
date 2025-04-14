@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarMoveRspMsg {
+  repeated int32 move = 1;
+}

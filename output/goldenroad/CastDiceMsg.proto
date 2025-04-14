@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.goldenroad;
+
+message CastDiceMsg {
+  string curPos = 1;
+  string diceNumber = 2;
+  string score = 3;
+  string tempIds = 4;
+}

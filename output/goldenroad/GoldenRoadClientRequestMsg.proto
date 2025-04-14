@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.goldenroad;
+
+message GoldenRoadClientRequestMsg {
+  string consumeType = 1;
+  string diceType = 2;
+  string refreshType = 3;
+  string requestBroadcast = 4;
+  string bagOPType = 5;
+  string isBatch = 6;
+}

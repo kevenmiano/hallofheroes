@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message FixAuctionItemRspMsg {
+  int32 result = 1;
+  int32 mallItemId = 2;
+}

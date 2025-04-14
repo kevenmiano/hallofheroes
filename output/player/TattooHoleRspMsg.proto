@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message TattooHoleRspMsg {
+  int32 opType = 1;
+  repeated int32 holeInfo = 2;
+  int32 param1 = 3;
+  int32 param2 = 4;
+  string param3 = 5;
+}

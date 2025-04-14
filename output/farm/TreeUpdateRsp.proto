@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message TreeUpdateRsp {
+  repeated int32 tree = 1;
+  repeated int32 harvestMsg = 2;
+  repeated int32 pickMsg = 3;
+  bool isUpGrade = 4;
+}

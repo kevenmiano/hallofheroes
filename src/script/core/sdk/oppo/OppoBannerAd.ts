@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Logger from "../../logger/Logger";
 import BaseAd from "../base/BaseAd";
 import { SDKState } from "../SDKConfig";

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,7 +8,7 @@
  */
 
 export class CampaignMapDifficulty {
-    public static General: number = 1;  //普通
-    public static Hero: number = 2;     //为英雄/噩梦
-    public static Hell: number = 3;    //地狱
+  public static General: number = 1; //普通
+  public static Hero: number = 2; //为英雄/噩梦
+  public static Hell: number = 3; //地狱
 }

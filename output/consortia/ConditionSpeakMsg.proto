@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConditionSpeakMsg {
+  string speak = 1;
+}

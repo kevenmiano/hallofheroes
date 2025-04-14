@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message RankerMsg {
+  int32 rankType = 1;
+  int32 entityId = 2;
+  string score = 3;
+  string time = 4;
+  int32 rank = 5;
+  string record = 6;
+  int32 activeId = 7;
+  string nick = 8;
+}

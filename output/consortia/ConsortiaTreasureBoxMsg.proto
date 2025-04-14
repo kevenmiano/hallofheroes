@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaTreasureBoxMsg {
+  int32 consortiaId = 1;
+  int32 chairmanId = 2;
+  int32 templateId = 3;
+  int32 count = 4;
+  repeated int32 playerInfo = 5;
+}

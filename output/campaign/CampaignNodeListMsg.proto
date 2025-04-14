@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodeListMsg {
+  repeated int32 node = 1;
+}

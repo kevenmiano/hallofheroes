@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildCampaignInfoMsg {
+  int32 state = 1;
+  int32 playerCamp = 2;
+  repeated int32 roadInfo = 3;
+  int32 playerRank = 4;
+  int32 startTime = 5;
+  int32 endTime = 6;
+  int32 road = 7;
+  int32 redScore = 8;
+  int32 blueScore = 9;
+  int32 playerScore = 10;
+}

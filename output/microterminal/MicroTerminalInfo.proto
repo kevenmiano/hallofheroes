@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.microterminal;
+
+message MicroTerminalInfo {
+  bool hasReward = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message PlayerVehicleListMsg {
+  repeated int32 vehicles = 1;
+}

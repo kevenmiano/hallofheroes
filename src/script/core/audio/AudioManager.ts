@@ -1,4 +1,4 @@
-// @ts-nocheck
+import { IManager } from "@/script/game/interfaces/Manager";
 import { BattleEvent } from "../../game/constant/event/NotificationEvent";
 import { NotificationManager } from "../../game/manager/NotificationManager";
 import { SharedManager } from "../../game/manager/SharedManager";
@@ -42,7 +42,7 @@ export default class AudioManager
     NotificationManager.Instance.addEventListener(
       BattleEvent.BATTLE_MUSIC_ON_OFF,
       this.onBattleMusicOnOff,
-      this
+      this,
     );
     Laya.stage.on(Laya.Event.VISIBILITY_CHANGE, this, () => {
       if (Laya.stage.isVisibility) {

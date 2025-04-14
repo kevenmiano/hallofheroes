@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SevenSignInfoRsp {
+  int32 startTime = 1;
+  int32 days = 2;
+  int32 rewardSite = 3;
+  repeated int32 rewardInfo = 4;
+}

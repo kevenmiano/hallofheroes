@@ -19,27 +19,27 @@ export class SpaceSocketDataProxy extends BaseSceneSocketDataProxy {
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_SPACE_ENTER,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_SPACE_LEAVE,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_SPACE_SYNC_POS,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_HERO_BROAD_EQUIPMENT,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_SPACE_EVENT,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
   }
 
@@ -51,27 +51,27 @@ export class SpaceSocketDataProxy extends BaseSceneSocketDataProxy {
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_SPACE_ENTER,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_SPACE_LEAVE,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_SPACE_SYNC_POS,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_HERO_BROAD_EQUIPMENT,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_SPACE_EVENT,
       this,
-      this.__onDataHandler
+      this.__onDataHandler,
     );
   }
 

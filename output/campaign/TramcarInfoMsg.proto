@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message TramcarInfoMsg {
+  repeated int32 carInfo = 1;
+  repeated int32 userIds = 2;
+  int32 activeTime = 3;
+  int32 count = 4;
+  int32 multiple = 5;
+}

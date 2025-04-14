@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message OutCityWarDeclearReq {
+  int32 nodeId = 1;
+  int32 buildId = 2;
+  int32 orderId = 3;
+}

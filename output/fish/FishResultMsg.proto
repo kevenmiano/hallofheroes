@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fish;
+
+message FishResultMsg {
+  int32 userId = 1;
+  repeated int32 results = 2;
+}

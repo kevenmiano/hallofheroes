@@ -50,7 +50,7 @@ export class ConsortiaSkillHelper {
     let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let content: string = LangManager.Instance.GetTranslation(
-      "consortia.helper.ConsortiaAltarHelper.content02"
+      "consortia.helper.ConsortiaAltarHelper.content02",
     );
     SimpleAlertHelper.Instance.Show(
       SimpleAlertHelper.SIMPLE_ALERT,
@@ -59,7 +59,7 @@ export class ConsortiaSkillHelper {
       content,
       confirm,
       cancel,
-      this.__addOfferCallBack.bind(this)
+      this.__addOfferCallBack.bind(this),
     );
   }
 
@@ -68,7 +68,7 @@ export class ConsortiaSkillHelper {
     let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let content: string = LangManager.Instance.GetTranslation(
-      "consortia.helper.ConsortiaUpgradeHelper.content"
+      "consortia.helper.ConsortiaUpgradeHelper.content",
     );
     SimpleAlertHelper.Instance.Show(
       SimpleAlertHelper.SIMPLE_ALERT,
@@ -77,7 +77,7 @@ export class ConsortiaSkillHelper {
       content,
       confirm,
       cancel,
-      this.__addOfferCallBack.bind(this)
+      this.__addOfferCallBack.bind(this),
     );
   }
 

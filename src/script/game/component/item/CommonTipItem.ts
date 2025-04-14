@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2021-05-31 10:54:31
@@ -13,33 +12,35 @@ import { EmWindow } from "../../constant/UIDefine";
 import { ToolTipsManager } from "../../manager/ToolTipsManager";
 import { ITipedDisplay, TipsShowType } from "../../tips/ITipedDisplay";
 
+export default class CommonTipItem
+  extends FUI_CommonTipItem
+  implements ITipedDisplay
+{
+  tipType: EmWindow = EmWindow.CommonTips;
+  tipData: any;
+  showType?: TipsShowType;
+  canOperate?: boolean;
+  extData?: any;
+  startPoint: Laya.Point = new Laya.Point(0, 0);
+  tipDirctions?: string;
+  tipGapV?: number;
+  tipGapH?: number;
 
-export default class CommonTipItem extends FUI_CommonTipItem implements ITipedDisplay {
-    tipType: EmWindow = EmWindow.CommonTips;
-    tipData: any;
-    showType?: TipsShowType;
-    canOperate?: boolean;
-    extData?: any;
-    startPoint: Laya.Point = new Laya.Point(0, 0);
-    tipDirctions?: string;
-    tipGapV?: number;
-    tipGapH?: number;
-
-    private _info: any;
-    public set info(data: any) {
-        this._info = data
-        if (data) {
-            ToolTipsManager.Instance.register(this);
-            this.tipData = data
-        }
+  private _info: any;
+  public set info(data: any) {
+    this._info = data;
+    if (data) {
+      ToolTipsManager.Instance.register(this);
+      this.tipData = data;
     }
+  }
 
-    public get info() {
-        return this._info
-    }
+  public get info() {
+    return this._info;
+  }
 
-    public dispose() {
-        ToolTipsManager.Instance.unRegister(this);
-        super.dispose();
-    }
+  public dispose() {
+    ToolTipsManager.Instance.unRegister(this);
+    super.dispose();
+  }
 }

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageDataMsg {
+  int32 userId = 1;
+  int32 type = 2;
+  int32 marriageState = 3;
+  string happy = 4;
+  string mateHappy = 5;
+  int32 ringLevel = 6;
+  int32 ringExp = 7;
+  int32 selectId = 8;
+  string giftRecord = 9;
+}

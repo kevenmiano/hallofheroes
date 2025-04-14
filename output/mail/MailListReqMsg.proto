@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailListReqMsg {
+  int32 reqType = 1;
+}

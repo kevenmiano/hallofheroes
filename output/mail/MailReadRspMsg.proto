@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailReadRspMsg {
+  repeated int32 mailId = 1;
+  string readDate = 2;
+  int32 validityDate = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.translate;
+
+message TranslateRespMsg {
+  string reqid = 1;
+  int32 code = 2;
+  string errorMsg = 3;
+  string content = 4;
+  string tartgetLanguage = 5;
+  string sourceLanguage = 6;
+  int32 accuracy = 7;
+  string time = 8;
+}

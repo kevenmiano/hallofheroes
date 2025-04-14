@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroRuneInfoMsg {
+  int32 runeId = 1;
+  int32 runeGp = 2;
+  int32 swallowCount = 3;
+  string runeHole = 4;
+  string tempHole = 5;
+  int32 newSkillTempId = 6;
+  string baseProperties = 7;
+}

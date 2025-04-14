@@ -110,7 +110,7 @@ export class EquipTipView extends FUI_EquipTipView {
       let isfashion: boolean = this.fashionModel.isFashion(this._info);
       this.txt_gradeCount.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.ChatEquipTips.gradeCount",
-        "[color=#01F0ED]&nbsp;&nbsp;" + scoreStr + "[/color]"
+        "[color=#01F0ED]&nbsp;&nbsp;" + scoreStr + "[/color]",
       );
       if (!isfashion) {
         this.grade_group.visible = true;
@@ -122,7 +122,7 @@ export class EquipTipView extends FUI_EquipTipView {
         this.txt_time.visible = this._info.validDate > 0;
         this.txt_time.text =
           LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.EquipTip.time.text"
+            "yishi.view.tips.goods.EquipTip.time.text",
           ) +
           ":" +
           DateFormatter.getFullDateString(this._info.validDate * 60);
@@ -136,11 +136,11 @@ export class EquipTipView extends FUI_EquipTipView {
       if (this._info.id != 0) {
         if (this._info.leftTime == -1) {
           timeStr = LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.EquipTip.timeStr01"
+            "yishi.view.tips.goods.EquipTip.timeStr01",
           );
         } else if (this._info.leftTime < 0) {
           timeStr = LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.EquipTip.timeStr02"
+            "yishi.view.tips.goods.EquipTip.timeStr02",
           );
         } else {
           timeStr = DateFormatter.getFullDateString(this._info.leftTime);
@@ -148,7 +148,7 @@ export class EquipTipView extends FUI_EquipTipView {
         if (!isfashion) {
           this.txt_time.text =
             LangManager.Instance.GetTranslation(
-              "yishi.view.tips.goods.EquipTip.time.text"
+              "yishi.view.tips.goods.EquipTip.time.text",
             ) +
             ":" +
             timeStr;
@@ -160,13 +160,13 @@ export class EquipTipView extends FUI_EquipTipView {
         if (this._info.bagType == BagType.HeroEquipment) {
           equiped = GoodsManager.Instance.isHeroGoods(
             this.thane.id,
-            this._info
+            this._info,
           );
         }
         if (this._info.bagType == BagType.Honer) {
           equiped = GoodsManager.Instance.isHonerGoods(
             this.thane.id,
-            this._info
+            this._info,
           );
         }
 
@@ -180,16 +180,16 @@ export class EquipTipView extends FUI_EquipTipView {
           this.btn_use.visible = true;
           if (this._equipType == EquipTip.EQUIPED) {
             this.btn_use.text = LangManager.Instance.GetTranslation(
-              "armyII.viewII.skill.btnEquipOff"
+              "armyII.viewII.skill.btnEquipOff",
             ); //卸下
           } else {
             if (this.fashionModel.isFashion(this.info)) {
               this.btn_use.text = LangManager.Instance.GetTranslation(
-                "tasktracetip.view.OpenBagTipView.btnTxt1"
+                "tasktracetip.view.OpenBagTipView.btnTxt1",
               ); //
             } else {
               this.btn_use.text = LangManager.Instance.GetTranslation(
-                "armyII.viewII.skill.btnEquipOn"
+                "armyII.viewII.skill.btnEquipOn",
               ); //装备
             }
           }
@@ -215,7 +215,7 @@ export class EquipTipView extends FUI_EquipTipView {
             this,
             this.onRender,
             null,
-            false
+            false,
           );
           this.list.on(fairygui.Events.CLICK_ITEM, this, this.onClickObtain);
         }
@@ -236,7 +236,7 @@ export class EquipTipView extends FUI_EquipTipView {
 
     let identitySkill: t_s_skilltemplateData =
       TempleteManager.Instance.getSkillTemplateInfoById(
-        this._info.appraisal_skill
+        this._info.appraisal_skill,
       );
     let skillTip: string =
       identitySkill == null
@@ -246,7 +246,7 @@ export class EquipTipView extends FUI_EquipTipView {
     if (this._info.appraisal_skill > 0) {
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "fashion.FashionSwitchItem.Identity"
+          "fashion.FashionSwitchItem.Identity",
         ) + ":";
       this.txt_time.color = "#ffc68f";
       if (identitySkill.Grades >= 5) {
@@ -258,7 +258,7 @@ export class EquipTipView extends FUI_EquipTipView {
           skillTip +
           LangManager.Instance.GetTranslation(
             "fashion.identity.max",
-            maxskillTip
+            maxskillTip,
           );
       }
     } else {
@@ -269,12 +269,12 @@ export class EquipTipView extends FUI_EquipTipView {
       //当未鉴定时文字为: 未鉴定（最大属性: 力量+100）
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "fashion.FashionSwitchItem.noIdentity"
+          "fashion.FashionSwitchItem.noIdentity",
         ) + ":";
       this.txt_time.color = "#666666";
       this.txt_fashionIdentity.text = LangManager.Instance.GetTranslation(
         "fashion.identity.max",
-        skillTip
+        skillTip,
       );
     }
     this.txt_fashionIdentity.visible = true;
@@ -292,13 +292,13 @@ export class EquipTipView extends FUI_EquipTipView {
         //海外增加翻译
         LangManager.Instance.GetTranslation(
           "public.fashionProfile",
-          priority[temp.Property2]
-        )
+          priority[temp.Property2],
+        ),
       );
     }
     this.txt_fashionProfile.text = pStr;
     this.txt_gradeCount.text = LangManager.Instance.GetTranslation(
-      "fashion.identity.tip"
+      "fashion.identity.tip",
     );
     this.dot.visible = true;
     this.grade_group.visible =
@@ -388,25 +388,25 @@ export class EquipTipView extends FUI_EquipTipView {
       case GoodsSonType.FASHION_WEAPON:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip01"
+            "armyII.ThaneAttributeView.Tip01",
           ) + this.addPropertyArray[info.Property2]
         );
       case GoodsSonType.FASHION_CLOTHES:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip02"
+            "armyII.ThaneAttributeView.Tip02",
           ) + this.addPropertyArray[info.Property2]
         );
       case GoodsSonType.FASHION_HEADDRESS:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip03"
+            "armyII.ThaneAttributeView.Tip03",
           ) + this.addPropertyArray[info.Property2]
         );
       case GoodsSonType.SONTYPE_WING:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip04"
+            "armyII.ThaneAttributeView.Tip04",
           ) + this.addPropertyArray[info.Property2]
         );
     }
@@ -421,25 +421,25 @@ export class EquipTipView extends FUI_EquipTipView {
       case GoodsSonType.FASHION_WEAPON:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip01"
+            "armyII.ThaneAttributeView.Tip01",
           ) + str
         );
       case GoodsSonType.FASHION_CLOTHES:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip02"
+            "armyII.ThaneAttributeView.Tip02",
           ) + str
         );
       case GoodsSonType.FASHION_HEADDRESS:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip03"
+            "armyII.ThaneAttributeView.Tip03",
           ) + str
         );
       case GoodsSonType.SONTYPE_WING:
         return (
           LangManager.Instance.GetTranslation(
-            "armyII.ThaneAttributeView.Tip04"
+            "armyII.ThaneAttributeView.Tip04",
           ) + str
         );
     }
@@ -460,12 +460,12 @@ export class EquipTipView extends FUI_EquipTipView {
     if (
       this.btn_use.title ==
       LangManager.Instance.GetTranslation(
-        "tasktracetip.view.OpenBagTipView.btnTxt1"
+        "tasktracetip.view.OpenBagTipView.btnTxt1",
       )
     ) {
       NotificationManager.Instance.dispatchEvent(
         FashionEvent.SWALLOW,
-        this._info.templateInfo.SonType
+        this._info.templateInfo.SonType,
       );
       NotificationManager.Instance.sendNotification(TipsEvent.EQUIP_TIPS_HIDE);
       return;
@@ -480,7 +480,7 @@ export class EquipTipView extends FUI_EquipTipView {
       let targetPos: number = GoodsManager.Instance.findEmputyPos();
       if (targetPos == -1) {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.mediator.consortiabag.ConsortiaCaseCellClickMediator.command01"
+          "cell.mediator.consortiabag.ConsortiaCaseCellClickMediator.command01",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -491,7 +491,7 @@ export class EquipTipView extends FUI_EquipTipView {
       let goodsInfo: GoodsInfo = this.getGoodsInfoByPos(this._info.pos);
       if (goodsInfo.existJewel()) {
         var content: string = LangManager.Instance.GetTranslation(
-          "OpenBagTipView.exchange.content"
+          "OpenBagTipView.exchange.content",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.SIMPLE_ALERT,
@@ -509,13 +509,13 @@ export class EquipTipView extends FUI_EquipTipView {
               0,
               targetPos,
               1,
-              b
+              b,
             );
-          }
+          },
         );
         Laya.timer.once(100, this, () => {
           NotificationManager.Instance.sendNotification(
-            TipsEvent.EQUIP_TIPS_HIDE
+            TipsEvent.EQUIP_TIPS_HIDE,
           );
         });
       } else {
@@ -526,7 +526,7 @@ export class EquipTipView extends FUI_EquipTipView {
           BagType.Player,
           0,
           targetPos,
-          1
+          1,
         );
       }
     } else {
@@ -549,7 +549,7 @@ export class EquipTipView extends FUI_EquipTipView {
             BagType.Battle,
             this.thane.id,
             existRunes.pos,
-            count
+            count,
           );
         } else if (this._toPos != -1) {
           AudioManager.Instance.playSound(SoundIds.BAG_EQUIP_SOUND);
@@ -560,7 +560,7 @@ export class EquipTipView extends FUI_EquipTipView {
             BagType.Battle,
             this.thane.id,
             this._toPos,
-            this._info.count
+            this._info.count,
           );
         }
       } else if (this._info.templateInfo.MasterType == GoodsType.HONER) {
@@ -576,16 +576,16 @@ export class EquipTipView extends FUI_EquipTipView {
           BagType.Honer,
           this.thane.id,
           this._toPos,
-          this._info.count
+          this._info.count,
         );
       } else {
         let heroBag: GoodsInfo[] =
           GoodsManager.Instance.getHeroGoodsListByTypeAndId(
             this._info.templateInfo.MasterType,
-            this.thane.id
+            this.thane.id,
           ).getList();
         let pos_arr: number[] = GoodsSonType.getSonTypePos(
-          this._info.templateInfo.SonType
+          this._info.templateInfo.SonType,
         );
         heroBag = ArrayUtils.sortOn(heroBag, "pos", ArrayConstant.NUMERIC);
         let t_index: number = 0;
@@ -607,7 +607,7 @@ export class EquipTipView extends FUI_EquipTipView {
             for (let i = 0, len = pos_arr.length; i < len; i++) {
               const pos = pos_arr[i];
               targetInfos.push(
-                GoodsManager.Instance.getHeroEquipByPos(this.thane.id, pos)
+                GoodsManager.Instance.getHeroEquipByPos(this.thane.id, pos),
               );
             }
             targetInfos.sort((a, b) => {
@@ -625,7 +625,7 @@ export class EquipTipView extends FUI_EquipTipView {
           if (
             this.btn_use.text ==
             LangManager.Instance.GetTranslation(
-              "armyII.viewII.skill.btnEquipExchange"
+              "armyII.viewII.skill.btnEquipExchange",
             )
           ) {
             let goodsInfo: GoodsInfo = this.getGoodsInfoByPos(this._toPos);
@@ -637,7 +637,7 @@ export class EquipTipView extends FUI_EquipTipView {
                 BagType.HeroEquipment,
                 this.thane.id,
                 this._toPos,
-                1
+                1,
               );
             } else {
               //有宝石
@@ -648,7 +648,7 @@ export class EquipTipView extends FUI_EquipTipView {
               var prompt: string =
                 LangManager.Instance.GetTranslation("public.prompt");
               var content: string = LangManager.Instance.GetTranslation(
-                "OpenBagTipView.exchange.content"
+                "OpenBagTipView.exchange.content",
               );
               SimpleAlertHelper.Instance.Show(
                 SimpleAlertHelper.SIMPLE_ALERT,
@@ -657,11 +657,11 @@ export class EquipTipView extends FUI_EquipTipView {
                 content,
                 confirm,
                 cancel,
-                this.moveConfirm.bind(this)
+                this.moveConfirm.bind(this),
               );
               Laya.timer.once(100, this, () => {
                 NotificationManager.Instance.sendNotification(
-                  TipsEvent.EQUIP_TIPS_HIDE
+                  TipsEvent.EQUIP_TIPS_HIDE,
                 );
               });
             }
@@ -673,7 +673,7 @@ export class EquipTipView extends FUI_EquipTipView {
               BagType.HeroEquipment,
               this.thane.id,
               this._toPos,
-              1
+              1,
             );
           }
         }
@@ -696,7 +696,7 @@ export class EquipTipView extends FUI_EquipTipView {
         this.thane.id,
         this._toPos,
         1,
-        true
+        true,
       );
     } else {
       this.moveBagToBag(
@@ -707,7 +707,7 @@ export class EquipTipView extends FUI_EquipTipView {
         this.thane.id,
         this._toPos,
         1,
-        false
+        false,
       );
     }
   }
@@ -717,7 +717,7 @@ export class EquipTipView extends FUI_EquipTipView {
     let dic: SimpleDictionary =
       GoodsManager.Instance.getHeroGoodsListByTypeAndId(
         GoodsType.EQUIP,
-        this.thane.id
+        this.thane.id,
       );
     for (const key in dic) {
       if (dic.hasOwnProperty(key)) {
@@ -742,10 +742,10 @@ export class EquipTipView extends FUI_EquipTipView {
     endObjectId: number,
     endPos: number,
     count: number,
-    isUnstail: boolean = false
+    isUnstail: boolean = false,
   ) {
     let roleCtrl: RoleCtrl = FrameCtrlManager.Instance.getCtrl(
-      EmWindow.SRoleWnd
+      EmWindow.SRoleWnd,
     ) as RoleCtrl;
     let wnd: SRoleWnd = roleCtrl.view as SRoleWnd;
     if (wnd && wnd.isShowing) {
@@ -766,7 +766,7 @@ export class EquipTipView extends FUI_EquipTipView {
       endObjectId,
       endPos,
       count,
-      isUnstail
+      isUnstail,
     );
     Laya.timer.once(100, this, () => {
       NotificationManager.Instance.sendNotification(TipsEvent.EQUIP_TIPS_HIDE);

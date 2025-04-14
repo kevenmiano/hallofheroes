@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleCampaignDetailMsg {
+  string campaignId = 1;
+  string campaignName = 2;
+  string redTeamScroe = 3;
+  string blueTeamScroe = 4;
+  string myScroe = 5;
+  string remainsTiem = 6;
+  string winner = 7;
+  repeated int32 scroeList = 8;
+  string myOrder = 9;
+  string myUserid = 10;
+  string hasReward = 11;
+  string myKillCount = 12;
+  string campaignStartTime = 13;
+}

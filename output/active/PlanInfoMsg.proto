@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PlanInfoMsg {
+  int32 plan = 1;
+  int32 chargeMoney = 2;
+  repeated int32 chargeTypeInfo = 3;
+}

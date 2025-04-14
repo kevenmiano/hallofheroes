@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.store;
+
+message RefreshPropertyRepMsg {
+  repeated int32 randomSkill = 1;
+  repeated int32 lockPos = 2;
+  int32 result = 3;
+}

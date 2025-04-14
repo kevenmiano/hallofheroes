@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ReqBattleOrderMsg {
+  int32 defenceUserId = 1;
+  string defenceServerName = 2;
+  int32 side = 3;
+  int32 nodeId = 4;
+  string campaignUid = 5;
+  int32 campaignId = 6;
+  int32 property1 = 7;
+  string property2 = 8;
+}

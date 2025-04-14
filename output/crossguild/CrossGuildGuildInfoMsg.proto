@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildGuildInfoMsg {
+  string guildName = 1;
+  string serverName = 2;
+  int32 guildLevel = 3;
+}

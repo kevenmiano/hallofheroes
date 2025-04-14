@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildGroupMsg {
+  int32 consortiaId = 1;
+  string consortiaName = 2;
+  int32 group1 = 3;
+  int32 group2 = 4;
+  int32 group3 = 5;
+  int32 group4 = 6;
+  int32 result1 = 7;
+  int32 result2 = 8;
+  int32 result3 = 9;
+  int32 result4 = 10;
+  int32 score = 11;
+  int32 order = 12;
+  int32 fightPower = 13;
+}

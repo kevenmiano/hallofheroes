@@ -4,7 +4,7 @@ export class PlayerEffectHelper {
   public static updatePlayerEffect(
     index: number,
     value: number,
-    effInfo: PlayerEffectInfo
+    effInfo: PlayerEffectInfo,
   ) {
     switch (index) {
       case 6: //建筑建造时间加成

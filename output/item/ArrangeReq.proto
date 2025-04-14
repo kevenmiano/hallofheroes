@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ArrangeReq {
+  bool isStackItem = 1;
+  int32 bagType = 2;
+  repeated int32 arrangeInfo = 3;
+}

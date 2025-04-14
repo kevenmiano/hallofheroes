@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ArmyFightPosEditListMsg {
+  repeated int32 armyFightPos = 1;
+  string serverName = 2;
+}

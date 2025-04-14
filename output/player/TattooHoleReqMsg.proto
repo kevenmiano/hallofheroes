@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message TattooHoleReqMsg {
+  int32 opType = 1;
+  int32 param1 = 2;
+  int32 param2 = 3;
+  int32 lockPayType = 4;
+  int32 materialPayType = 5;
+  bool refreshLockAdd = 6;
+  bool refreshLockMinus = 7;
+}

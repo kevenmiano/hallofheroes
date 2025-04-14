@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNpcMoveMsg {
+  int32 nodeId = 1;
+  int32 startX = 2;
+  int32 startY = 3;
+  int32 endX = 4;
+  int32 endY = 5;
+  string showTime = 6;
+  string uuId = 7;
+  int32 centerX = 8;
+  int32 centerY = 9;
+  bool isMove = 10;
+}

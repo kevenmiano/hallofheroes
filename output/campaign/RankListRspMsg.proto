@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message RankListRspMsg {
+  repeated int32 rankInfo = 1;
+}

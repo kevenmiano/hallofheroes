@@ -1,6 +1,6 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_OuterCityWarBuildCharacterItem from "./FUI_OuterCityWarBuildCharacterItem";
 
 export default class FUI_OuterCityWarBuildBriefInfoItem extends fgui.GComponent {
@@ -18,7 +18,7 @@ export default class FUI_OuterCityWarBuildBriefInfoItem extends fgui.GComponent 
     return <FUI_OuterCityWarBuildBriefInfoItem>(
       fgui.UIPackage.createObject(
         "OuterCityWar",
-        "OuterCityWarBuildBriefInfoItem"
+        "OuterCityWarBuildBriefInfoItem",
       )
     );
   }

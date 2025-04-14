@@ -93,14 +93,14 @@ export class CrystalTips extends BaseTips {
   private updateView() {
     if (this._info) {
       let equipOnStr = LangManager.Instance.GetTranslation(
-        "Forge.TabTitle.Inlay"
+        "Forge.TabTitle.Inlay",
       ); //镶嵌
       let equipOffStr = LangManager.Instance.GetTranslation("public.unEquip");
       this.item.info = this._info;
       this.item.text = "";
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.txt_name.color = GoodsSonType.getColorByProfile(
-        this._info.templateInfo.Profile
+        this._info.templateInfo.Profile,
       );
       this.txt_type.text = this.getGoodsTypeName(this._info.templateInfo);
       // if (this._info.isBinds) {
@@ -121,13 +121,13 @@ export class CrystalTips extends BaseTips {
       if (this._info.templateInfo.NeedGrades > 1) {
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.grade",
-          this._info.templateInfo.NeedGrades
+          this._info.templateInfo.NeedGrades,
         );
         if (
           !GoodsCheck.isGradeFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_useLevel.color = "#FF0000";
@@ -152,18 +152,18 @@ export class CrystalTips extends BaseTips {
       let timeStr: string;
       if (this._info.leftTime == -1) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr01"
+          "yishi.view.tips.goods.EquipTip.timeStr01",
         );
       } else if (this._info.leftTime < 0) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr02"
+          "yishi.view.tips.goods.EquipTip.timeStr02",
         );
       } else {
         timeStr = DateFormatter.getFullDateString(this._info.leftTime);
       }
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.time.text"
+          "yishi.view.tips.goods.EquipTip.time.text",
         ) +
         ":" +
         timeStr;
@@ -197,7 +197,7 @@ export class CrystalTips extends BaseTips {
       content,
       confirm,
       cancel,
-      this.confirmRemoveGemBack.bind(this)
+      this.confirmRemoveGemBack.bind(this),
     );
   }
 
@@ -237,11 +237,11 @@ export class CrystalTips extends BaseTips {
     switch (temp.SonType) {
       case GoodsSonType.SONTYPE_TASK:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.SONTYPE_TASK"
+          "yishi.view.tips.goods.PropTips.SONTYPE_TASK",
         );
       case GoodsSonType.SONTYPE_COMPOSE_MATERIAL:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL"
+          "yishi.view.tips.goods.PropTips.COMPOSE_MATERIAL",
         );
     }
     return "";
@@ -255,53 +255,53 @@ export class CrystalTips extends BaseTips {
         case -800:
           num = Math.floor(
             ArmyManager.Instance.thane.gloryPoint /
-              this._info.templateInfo.Property3
+              this._info.templateInfo.Property3,
           );
           break;
         case -700:
           num = Math.floor(
             ResourceManager.Instance.gold.count /
-              this._info.templateInfo.Property3
+              this._info.templateInfo.Property3,
           );
           break;
         case -600:
           num = Math.floor(
             ResourceManager.Instance.waterCrystal.count /
-              this._info.templateInfo.Property3
+              this._info.templateInfo.Property3,
           );
           break;
         case -500:
           num = Math.floor(
-            this.playerInfo.giftToken / this._info.templateInfo.Property3
+            this.playerInfo.giftToken / this._info.templateInfo.Property3,
           );
           break;
         case -400:
           num = Math.floor(
-            this.playerInfo.point / this._info.templateInfo.Property3
+            this.playerInfo.point / this._info.templateInfo.Property3,
           );
           break;
         case -300:
           num = Math.floor(
             ResourceManager.Instance.gold.count /
-              this._info.templateInfo.Property3
+              this._info.templateInfo.Property3,
           );
           break;
         case -200:
           num = Math.floor(
-            this.playerInfo.mineral / this._info.templateInfo.Property3
+            this.playerInfo.mineral / this._info.templateInfo.Property3,
           );
           break;
         case -100:
           num = Math.floor(
             ResourceManager.Instance.gold.count /
-              this._info.templateInfo.Property3
+              this._info.templateInfo.Property3,
           );
           break;
         default:
           num = Math.floor(
             GoodsManager.Instance.getGoodsNumByTempId(
-              this._info.templateInfo.Property2
-            ) / this._info.templateInfo.Property3
+              this._info.templateInfo.Property2,
+            ) / this._info.templateInfo.Property3,
           );
           break;
       }
@@ -334,11 +334,11 @@ export class CrystalTips extends BaseTips {
         !GoodsCheck.isGradeFix(
           ArmyManager.Instance.thane,
           this._info.templateInfo,
-          false
+          false,
         )
       ) {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command01"
+          "cell.view.GoodsItemMenu.command01",
         );
         MessageTipManager.Instance.show(str);
         this.hide();
@@ -372,7 +372,7 @@ export class CrystalTips extends BaseTips {
             ) {
               //荣耀水晶不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -386,7 +386,7 @@ export class CrystalTips extends BaseTips {
             ) {
               //经验不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -400,7 +400,7 @@ export class CrystalTips extends BaseTips {
             ) {
               //光晶不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -411,7 +411,7 @@ export class CrystalTips extends BaseTips {
             if (this.playerInfo.giftToken < this._info.templateInfo.Property3) {
               //绑定钻石不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -422,7 +422,7 @@ export class CrystalTips extends BaseTips {
             if (this.playerInfo.point < this._info.templateInfo.Property3) {
               //钻石不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -436,7 +436,7 @@ export class CrystalTips extends BaseTips {
             ) {
               //战魂不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -447,7 +447,7 @@ export class CrystalTips extends BaseTips {
             if (this.playerInfo.mineral < this._info.templateInfo.Property3) {
               //紫晶不足
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -460,7 +460,7 @@ export class CrystalTips extends BaseTips {
               this._info.templateInfo.Property3
             ) {
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               );
               MessageTipManager.Instance.show(str);
             } else {
@@ -470,11 +470,11 @@ export class CrystalTips extends BaseTips {
           default:
             if (
               GoodsManager.Instance.getGoodsNumByTempId(
-                this._info.templateInfo.Property2
+                this._info.templateInfo.Property2,
               ) < this._info.templateInfo.Property3
             ) {
               str = LangManager.Instance.GetTranslation(
-                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08"
+                "cell.mediator.playerbag.PlayerBagCellClickMediator.command08",
               ); //开启宝箱需要消耗的物品不足, 不能开启
               MessageTipManager.Instance.show(str);
             } else {
@@ -487,7 +487,7 @@ export class CrystalTips extends BaseTips {
       ) {
         if (MopupManager.Instance.model.isMopup) {
           str = LangManager.Instance.GetTranslation(
-            "mopup.MopupManager.mopupTipData01"
+            "mopup.MopupManager.mopupTipData01",
           );
           MessageTipManager.Instance.show(str);
           return;
@@ -508,7 +508,7 @@ export class CrystalTips extends BaseTips {
         //todo 改名界面,  略有不同,  可能
         UIManager.Instance.ShowWind(
           EmWindow.RenameWnd,
-          RoleModel.TYPE_RENAME_CARD
+          RoleModel.TYPE_RENAME_CARD,
         );
         this.hide();
         return;
@@ -528,7 +528,7 @@ export class CrystalTips extends BaseTips {
           undefined,
           null,
           "",
-          "功能开发中。。。"
+          "功能开发中。。。",
         );
         // FrameControllerManager.Instance.armyController.startFrameByType(ArmyPanelEnum.SKILL_PANEL, 1);
       } else if (
@@ -543,7 +543,7 @@ export class CrystalTips extends BaseTips {
           undefined,
           null,
           "",
-          "功能开发中。。。"
+          "功能开发中。。。",
         );
         // checkForUsePetLandTransfer(this._info);
       } else if (
@@ -558,8 +558,8 @@ export class CrystalTips extends BaseTips {
         if (!isUsed && this.isEquiped) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "PlayerManager.sendAddBattleGemTip01"
-            )
+              "PlayerManager.sendAddBattleGemTip01",
+            ),
           );
           return;
         }
@@ -577,18 +577,18 @@ export class CrystalTips extends BaseTips {
           //当前已经打开守护获取第一个空格子
           NotificationManager.Instance.sendNotification(
             NotificationEvent.DOUBLE_CLICK,
-            this._info
+            this._info,
           );
         }
       } else if (this.check()) {
         let itemBuffer: PlayerBufferInfo =
           PlayerBufferManager.Instance.getItemBufferInfo(
-            this._info.templateInfo.Property1
+            this._info.templateInfo.Property1,
           );
         if (itemBuffer) {
           if (this._info.templateInfo.Property3 < itemBuffer.grade) {
             str = LangManager.Instance.GetTranslation(
-              "cell.view.GoodsItemMenu.command02"
+              "cell.view.GoodsItemMenu.command02",
             );
             MessageTipManager.Instance.show(str);
             this.hide();
@@ -626,7 +626,7 @@ export class CrystalTips extends BaseTips {
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let itemconfig: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_itemtemplate,
-      item.templateInfo.Property2
+      item.templateInfo.Property2,
     );
     let costName: string = itemconfig.TemplateNameLang;
     let content: string = LangManager.Instance.GetTranslation(
@@ -634,7 +634,7 @@ export class CrystalTips extends BaseTips {
       1,
       item.templateInfo.TemplateNameLang,
       1 * item.templateInfo.Property3,
-      costName
+      costName,
     );
     SimpleAlertHelper.Instance.Show(
       SimpleAlertHelper.SIMPLE_ALERT,
@@ -643,7 +643,7 @@ export class CrystalTips extends BaseTips {
       content,
       confirm,
       cancel,
-      this.useBoxCallBack.bind(this)
+      this.useBoxCallBack.bind(this),
     );
   }
 
@@ -662,7 +662,7 @@ export class CrystalTips extends BaseTips {
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let content: string = LangManager.Instance.GetTranslation(
       "checkForUsePetExpBook.content02",
-      item.templateInfo.Property2
+      item.templateInfo.Property2,
     );
     SimpleAlertHelper.Instance.Show(
       SimpleAlertHelper.SIMPLE_ALERT,
@@ -671,14 +671,14 @@ export class CrystalTips extends BaseTips {
       content,
       confirm,
       cancel,
-      this.checkForUsePetExpBookBack.bind(this)
+      this.checkForUsePetExpBookBack.bind(this),
     );
   }
 
   private checkForUsePetExpBookBack(
     result: boolean,
     flag: boolean,
-    data: any[]
+    data: any[],
   ): void {
     if (!result) {
       return;
@@ -691,7 +691,7 @@ export class CrystalTips extends BaseTips {
     let msg: string;
     if (!curPet) {
       msg = LangManager.Instance.GetTranslation(
-        "this.checkForUsePetExpBook.content01"
+        "this.checkForUsePetExpBook.content01",
       );
       MessageTipManager.Instance.show(msg);
       return;
@@ -716,7 +716,7 @@ export class CrystalTips extends BaseTips {
     ) {
       //盟约之证
       str = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command07"
+        "cell.view.GoodsItemMenu.command07",
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -726,7 +726,7 @@ export class CrystalTips extends BaseTips {
       this.playerInfo.consortiaID == 0
     ) {
       str = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command03"
+        "cell.view.GoodsItemMenu.command03",
       );
       MessageTipManager.Instance.show(str);
       this.hide();
@@ -738,7 +738,7 @@ export class CrystalTips extends BaseTips {
         0
     ) {
       str = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command04"
+        "cell.view.GoodsItemMenu.command04",
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -746,21 +746,21 @@ export class CrystalTips extends BaseTips {
     if (this._info.templateInfo.SonType == GoodsSonType.SONTYPE_REWARD_CARD) {
       if (MopupManager.Instance.model.isMopup) {
         str = LangManager.Instance.GetTranslation(
-          "mopup.MopupManager.mopupTipData01"
+          "mopup.MopupManager.mopupTipData01",
         );
         MessageTipManager.Instance.show(str);
         return false;
       }
       if (this.rewardModel.baseRewardDic.getList().length >= 1) {
         str = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command05"
+          "cell.view.GoodsItemMenu.command05",
         );
         MessageTipManager.Instance.show(str);
         return false;
       }
       if (this.rewardModel.remainRewardCount <= 0) {
         str = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command06"
+          "cell.view.GoodsItemMenu.command06",
         );
         MessageTipManager.Instance.show(str);
         return false;
@@ -781,7 +781,7 @@ export class CrystalTips extends BaseTips {
   private checkWearyCanGet(
     wearyGet: number,
     pos: number,
-    count: number = 1
+    count: number = 1,
   ): boolean {
     // let wearyCanGet: number = PlayerInfo.WEARY_MAX - this.playerInfo.weary;
     // if (wearyGet > wearyCanGet) {
@@ -798,7 +798,7 @@ export class CrystalTips extends BaseTips {
   private checkWearyTodayCanGet(
     wearyGet: number,
     pos: number,
-    count: number = 1
+    count: number = 1,
   ): boolean {
     let wearyTodayCanGet: number =
       PlayerInfo.WEARY_GET_MAX - this.playerInfo.wearyLimit;
@@ -807,12 +807,12 @@ export class CrystalTips extends BaseTips {
         LangManager.Instance.GetTranslation("public.confirm");
       let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
       let prompt: string = LangManager.Instance.GetTranslation(
-        "map.campaign.view.frame.SubmitResourcesFrame.titleTextTip"
+        "map.campaign.view.frame.SubmitResourcesFrame.titleTextTip",
       );
       let content: string = LangManager.Instance.GetTranslation(
         "cell.mediator.playerbag.PlayerBagCellClickMediator.command06",
         PlayerInfo.WEARY_GET_MAX,
-        wearyTodayCanGet
+        wearyTodayCanGet,
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -821,7 +821,7 @@ export class CrystalTips extends BaseTips {
         content,
         confirm,
         cancel,
-        this.wearyTodayCanGetCallBack.bind(this)
+        this.wearyTodayCanGetCallBack.bind(this),
       );
       return false;
     }

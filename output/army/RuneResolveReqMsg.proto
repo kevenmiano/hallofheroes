@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message RuneResolveReqMsg {
+  string pos = 1;
+}

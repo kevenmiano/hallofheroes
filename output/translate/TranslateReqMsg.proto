@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.translate;
+
+message TranslateReqMsg {
+  string reqid = 1;
+  string content = 2;
+  string sourceLanguage = 3;
+  string targetLanguage = 4;
+}

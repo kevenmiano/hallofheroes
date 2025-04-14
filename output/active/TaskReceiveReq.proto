@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TaskReceiveReq {
+  int32 taskId = 1;
+}

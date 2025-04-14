@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { SDKState } from "../SDKConfig";
 
 export default class BaseRecorder {

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message registerRoleRsp {
+  string userName = 1;
+  string site = 2;
+  bool value = 3;
+  int32 type = 4;
+  string message = 5;
+  string gateIp = 6;
+  int32 port = 7;
+  int32 userId = 8;
+}

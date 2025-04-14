@@ -47,11 +47,11 @@ export default class PreviewBoxWnd extends BaseWindow {
       this,
       this.onItemRenderer,
       null,
-      false
+      false,
     );
 
     let dropItems = TempleteManager.Instance.getDropItemssByDropId(
-      this._box.templateId
+      this._box.templateId,
     );
     this._goods = [];
 
@@ -66,7 +66,7 @@ export default class PreviewBoxWnd extends BaseWindow {
     this._goods = ArrayUtils.sortOn(
       this._goods,
       "Random",
-      ArrayConstant.NUMERIC
+      ArrayConstant.NUMERIC,
     );
     this.btn_open.onClick(this, this.onComfirmHandler);
   }
@@ -93,7 +93,7 @@ export default class PreviewBoxWnd extends BaseWindow {
   private onComfirmHandler() {
     if (!this._selectItem) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("box.select.goods.not")
+        LangManager.Instance.GetTranslation("box.select.goods.not"),
       );
       return;
     }
@@ -109,11 +109,11 @@ export default class PreviewBoxWnd extends BaseWindow {
           "]" +
           this._selectItem.goods.templateInfo.TemplateNameLang +
           "[/color]",
-        (this._selectItem.goodsItem as BaseItem).text
+        (this._selectItem.goodsItem as BaseItem).text,
       ),
       LangManager.Instance.GetTranslation("public.confirm"),
       LangManager.Instance.GetTranslation("public.cancel"),
-      this.alertCallback.bind(this)
+      this.alertCallback.bind(this),
     );
   }
 
@@ -135,7 +135,7 @@ export default class PreviewBoxWnd extends BaseWindow {
         1,
         "",
         0,
-        selectItemInfos
+        selectItemInfos,
       );
       this.hide();
     }

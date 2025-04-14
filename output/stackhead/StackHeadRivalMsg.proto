@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadRivalMsg {
+  string sourceGuildUid = 1;
+  string sourceUserUid = 2;
+  string rivalGuildUid = 3;
+  string rivalUserUid = 4;
+  string rivalArmy = 5;
+  bool win = 6;
+  int32 sourceScoreChange = 7;
+  int32 rivalScoreChange = 8;
+  int32 seniorGeneral = 9;
+  int32 defenceProperty = 10;
+  int32 op = 11;
+}

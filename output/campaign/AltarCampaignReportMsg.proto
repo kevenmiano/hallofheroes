@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message AltarCampaignReportMsg {
+  int32 altarDurability = 1;
+  int32 waveNum = 2;
+  int32 monsterCount = 3;
+  int32 buffType = 4;
+  repeated int32 hurtOrder = 5;
+  int32 leftStartTime = 6;
+  int32 userBuffType = 7;
+  repeated int32 skill = 8;
+}

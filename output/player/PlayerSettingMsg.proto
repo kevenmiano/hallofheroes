@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerSettingMsg {
+  int32 optType = 1;
+  int32 result = 2;
+  string value = 3;
+}

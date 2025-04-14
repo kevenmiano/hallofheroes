@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message GuildMsg {
+  int32 guildId = 1;
+  string guildName = 2;
+  int32 guildStatus = 3;
+  int32 guildScore = 4;
+  int32 camp = 5;
+  string noticeMsg = 6;
+  int32 attendNum = 7;
+}

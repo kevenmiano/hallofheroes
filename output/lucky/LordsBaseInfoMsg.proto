@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.lucky;
+
+message LordsBaseInfoMsg {
+  int32 userId = 1;
+  string serverName = 2;
+  string nickName = 3;
+  string userKeys = 4;
+  int32 job = 5;
+  int32 sexJob = 6;
+  int32 grades = 7;
+  string fashionArm = 8;
+  string fashionWing = 9;
+  string fashionCloth = 10;
+  string fashionHair = 11;
+  string fashionHat = 12;
+  string arm = 13;
+  bool isVip = 14;
+  int32 fightPower = 15;
+  int32 readyScore = 16;
+  int32 readyOrder = 17;
+  int32 readyRewad = 18;
+  int32 finalScore = 19;
+  int32 finalOrder = 20;
+  int32 finalRewad = 21;
+  int32 readyTurn = 22;
+  int32 finalTurn = 23;
+  int32 readyWinCount = 24;
+  int32 finalWinCount = 25;
+  bool isExist = 26;
+  string property1 = 27;
+  string property2 = 28;
+  int32 battleResult = 29;
+  int32 bet_Index = 30;
+  int32 fightPowerOrder = 31;
+  int32 headId = 32;
+}

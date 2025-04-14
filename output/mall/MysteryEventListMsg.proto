@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message MysteryEventListMsg {
+  repeated int32 eventInfo = 1;
+}

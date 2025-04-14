@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.relation;
+
+message RelationAddedMsg {
+  int32 roomId = 1;
+  repeated int32 userId = 2;
+  repeated int32 propAdd = 3;
+}

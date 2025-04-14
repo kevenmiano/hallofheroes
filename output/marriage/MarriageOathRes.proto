@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageOathRes {
+  int32 speakerId = 1;
+  int32 speakerJob = 2;
+  string speakerName = 3;
+  string oathMsg = 4;
+}

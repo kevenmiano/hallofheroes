@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message FirstChargeAwardMsg {
+  repeated int32 awardInfo = 1;
+  int32 type = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GiftReceiveRsp {
+  int32 rewardSite = 1;
+  int32 giftSite = 2;
+}

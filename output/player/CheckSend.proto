@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message CheckSend {
+  int32 canSend = 1;
+}

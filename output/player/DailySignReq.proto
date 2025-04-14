@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message DailySignReq {
+  int32 op = 1;
+}

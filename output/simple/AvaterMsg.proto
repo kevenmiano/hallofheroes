@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message AvaterMsg {
+  int32 userId = 1;
+  int32 armTempId = 2;
+  int32 clothTempId = 3;
+  int32 fashionArmTempId = 4;
+  int32 fashionClothTempId = 5;
+  int32 fashionWingTempId = 6;
+  int32 fashionHeadTempId = 7;
+}

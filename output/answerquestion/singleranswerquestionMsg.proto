@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message singleranswerquestionMsg {
+  int32 id = 1;
+  string question = 2;
+  string option1 = 3;
+  string option2 = 4;
+  string option3 = 5;
+  string option4 = 6;
+  int32 answer = 7;
+}

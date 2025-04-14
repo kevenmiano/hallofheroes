@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message OpenGiftRsp {
+  int32 type = 1;
+  int32 grade = 2;
+  int32 ret = 3;
+}

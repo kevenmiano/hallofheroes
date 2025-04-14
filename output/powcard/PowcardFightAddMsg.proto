@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowcardFightAddMsg {
+  repeated int32 singlefightadd = 1;
+}

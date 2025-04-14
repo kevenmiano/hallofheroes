@@ -28,6 +28,7 @@ import RankStarItem from "./item/RankStarItem";
 import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../../manager/PlayerManager";
 
+//@ts-expect-error: External dependencies
 import RoomPlayerMsg = com.road.yishi.proto.room.RoomPlayerMsg;
 import UIManager from "../../../../core/ui/UIManager";
 import OpenGrades from "../../../constant/OpenGrades";
@@ -62,7 +63,7 @@ export default class RoomListWnd extends BaseWindow {
   public rankStarItem: RankStarItem;
 
   private _alertString: string = LangManager.Instance.GetTranslation(
-    "pveroomlist.view.PVERoomSearchFrame.alert"
+    "pveroomlist.view.PVERoomSearchFrame.alert",
   );
 
   constructor() {
@@ -84,7 +85,7 @@ export default class RoomListWnd extends BaseWindow {
       this,
       this.__renderListItem,
       null,
-      false
+      false,
     );
     this.iTxtSearch.on(Laya.Event.FOCUS, this, this.__onContentFocusIn);
     this.iTxtSearch.on(Laya.Event.BLUR, this, this.__onContentFocusOut);
@@ -92,29 +93,29 @@ export default class RoomListWnd extends BaseWindow {
     this.frame.getChild("title").text =
       LangManager.Instance.GetTranslation("pvp.PvPFrame.title");
     this.txt1.text = LangManager.Instance.GetTranslation(
-      "answer.view.rank.name"
+      "answer.view.rank.name",
     );
     this.txt2.text = LangManager.Instance.GetTranslation(
-      "answer.view.rank.score"
+      "answer.view.rank.score",
     );
     this.txt3.text = LangManager.Instance.GetTranslation(
-      "PveRoomListWnd.jobTxt"
+      "PveRoomListWnd.jobTxt",
     );
     this.txtScoreTitle.text = LangManager.Instance.GetTranslation(
-      "RvrBattleMapRightWnd.myScoreTxt"
+      "RvrBattleMapRightWnd.myScoreTxt",
     );
     this.txtEnterCountDesc.text = LangManager.Instance.GetTranslation(
-      "PveSelectCampaignWnd.enterCountTxt"
+      "PveSelectCampaignWnd.enterCountTxt",
     );
 
     this.btnSearchRoom.title = LangManager.Instance.GetTranslation(
-      "pveroomlist.view.PVERoomSearchFrame.title"
+      "pveroomlist.view.PVERoomSearchFrame.title",
     );
     this.btnCreateRoom.title = LangManager.Instance.GetTranslation(
-      "PveRoomListWnd.createRoomTxt"
+      "PveRoomListWnd.createRoomTxt",
     );
     this.btnEnterRoom.title = LangManager.Instance.GetTranslation(
-      "PveRoomListWnd.enterRoomTxt"
+      "PveRoomListWnd.enterRoomTxt",
     );
 
     this.refresh();
@@ -162,7 +163,7 @@ export default class RoomListWnd extends BaseWindow {
 
     if (roomInfo.roomState != RoomState.STATE_USEING) {
       MessageTipManager.Instance.show(
-        RoomState.getStateNameTips(roomInfo.roomState)
+        RoomState.getStateNameTips(roomInfo.roomState),
       );
       this.itemList.selectNone();
     } else {
@@ -191,7 +192,7 @@ export default class RoomListWnd extends BaseWindow {
     let content = "";
     title = LangManager.Instance.GetTranslation("public.help");
     content = LangManager.Instance.GetTranslation(
-      "room.roomList.roomHelpContent"
+      "room.roomList.roomHelpContent",
     );
     UIManager.Instance.ShowWind(EmWindow.Help, {
       title: title,
@@ -243,11 +244,11 @@ export default class RoomListWnd extends BaseWindow {
         this.ctrl.roomSceneType == RoomSceneType.PVE
           ? RoomType.NORMAL
           : RoomType.MATCH,
-        id
+        id,
       );
     } else if (id == 0) {
       let str = LangManager.Instance.GetTranslation(
-        "pveroomlist.view.PVERoomSearchFrame.command01"
+        "pveroomlist.view.PVERoomSearchFrame.command01",
       );
       MessageTipManager.Instance.show(str);
     } else {
@@ -289,13 +290,12 @@ export default class RoomListWnd extends BaseWindow {
         item.visible = false;
       }
     }
-    ``;
   }
 
   btnCreateRoomClick() {
     if (this.thane.grades < OpenGrades.CHALLENGE) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("pvp.view.PvPMultiView.command01")
+        LangManager.Instance.GetTranslation("pvp.view.PvPMultiView.command01"),
       );
       return;
     }
@@ -324,13 +324,13 @@ export default class RoomListWnd extends BaseWindow {
         this.ctrl.sendSearchRoomInfo(RoomType.MATCH, id);
       } else {
         let str = LangManager.Instance.GetTranslation(
-          "pveroomlist.view.PVERoomSearchFrame.command01"
+          "pveroomlist.view.PVERoomSearchFrame.command01",
         );
         MessageTipManager.Instance.show(str);
       }
     } else {
       let str = LangManager.Instance.GetTranslation(
-        "pveroomlist.view.PVERoomSearchFrame.selectRoom"
+        "pveroomlist.view.PVERoomSearchFrame.selectRoom",
       );
       MessageTipManager.Instance.show(str);
     }

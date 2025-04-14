@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.customer;
+
+message ReplayListMsg {
+  repeated int32 questionInfos = 1;
+}

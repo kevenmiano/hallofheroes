@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleNpcNodeListMsg {
+  repeated int32 vehicleNpcNode = 1;
+}

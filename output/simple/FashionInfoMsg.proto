@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FashionInfoMsg {
+  int32 gp = 1;
+  int32 grades = 2;
+  int32 wingAvata = 3;
+  int32 hatAvata = 4;
+  int32 armAvata = 5;
+  int32 clothAvata = 6;
+  bool isHidenWingAvata = 7;
+  bool isHidenHatAvat = 8;
+  bool isHidenArmAvata = 9;
+  bool isHidenClothAvata = 10;
+  int32 dragonWingAvata = 11;
+  int32 dragonHatAvata = 12;
+  int32 dragonArmAvata = 13;
+  int32 dragonClothAvata = 14;
+  bool isHidendDragonWingAvata = 15;
+  bool isHidenDragonHatAvat = 16;
+  bool isHidenDragonArmAvata = 17;
+  bool isHidenDragonClothAvata = 18;
+  int32 defaultFashion = 19;
+  string status = 20;
+}

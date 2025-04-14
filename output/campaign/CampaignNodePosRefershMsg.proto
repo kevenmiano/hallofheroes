@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodePosRefershMsg {
+  int32 mapId = 1;
+  int32 nodeId = 2;
+  int32 posX = 3;
+  int32 posY = 4;
+  int32 state = 5;
+}

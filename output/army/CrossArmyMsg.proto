@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message CrossArmyMsg {
+  int32 armyId = 1;
+  int32 playerId = 2;
+  int32 curPosX = 3;
+  int32 curPosY = 4;
+  int32 state = 5;
+  string serverName = 6;
+}

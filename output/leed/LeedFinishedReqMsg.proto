@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message LeedFinishedReqMsg {
+  int32 site = 1;
+}

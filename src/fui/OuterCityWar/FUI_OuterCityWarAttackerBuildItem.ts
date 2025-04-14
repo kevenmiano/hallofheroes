@@ -18,7 +18,7 @@ export default class FUI_OuterCityWarAttackerBuildItem extends fgui.GComponent {
     return <FUI_OuterCityWarAttackerBuildItem>(
       fgui.UIPackage.createObject(
         "OuterCityWar",
-        "OuterCityWarAttackerBuildItem"
+        "OuterCityWarAttackerBuildItem",
       )
     );
   }

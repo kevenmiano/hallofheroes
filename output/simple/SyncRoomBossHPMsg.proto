@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SyncRoomBossHPMsg {
+  string roomBossInfoList = 1;
+  repeated int32 castleWound = 2;
+}

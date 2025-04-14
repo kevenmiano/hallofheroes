@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FriendGroupMsg {
+  int32 groupId = 1;
+  string groupName = 2;
+  int32 result = 3;
+}

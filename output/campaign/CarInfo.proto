@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CarInfo {
+  int32 userId = 1;
+  int32 minerals = 2;
+  int32 quality = 3;
+  int32 tramcarCount = 4;
+  int32 handCount = 5;
+  int32 isOwn = 6;
+  int32 pickCount = 7;
+  int32 armyId = 8;
+}

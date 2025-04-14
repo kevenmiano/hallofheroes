@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message PlayerVehicleProfileMsg {
+  int32 exp = 1;
+  int32 score = 2;
+  int32 defaultVehicle = 3;
+}

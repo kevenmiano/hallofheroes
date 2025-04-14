@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message WaitReviveMsg {
+  string battleId = 1;
+  int32 livingId = 2;
+  int32 sp = 3;
+  int32 hp = 4;
+}

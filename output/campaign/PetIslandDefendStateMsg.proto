@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message PetIslandDefendStateMsg {
+  string leftTime = 1;
+  int32 mapId = 2;
+  int32 bossId = 3;
+  int32 peaceMiddle = 4;
+  int32 peaceHigh = 5;
+  int32 peaceBoss = 6;
+  int32 ragePoint = 7;
+}

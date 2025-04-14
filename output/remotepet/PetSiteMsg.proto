@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message PetSiteMsg {
+  string site = 1;
+  string petId = 2;
+  string skills = 3;
+}

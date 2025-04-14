@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message FiveCardPokerMsg {
+  int32 op = 1;
+  int32 curTurn = 2;
+  int32 score = 3;
+  int32 addScore = 4;
+  repeated int32 pokers = 5;
+  repeated int32 holdList = 6;
+}

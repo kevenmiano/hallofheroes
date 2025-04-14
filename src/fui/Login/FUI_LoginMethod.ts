@@ -1,9 +1,9 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 export default class FUI_LoginMethod extends fgui.GComponent {
   public list1: fgui.GList;
   public list2: fgui.GList;
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://2ydb9fb2inojsmhihj";
 

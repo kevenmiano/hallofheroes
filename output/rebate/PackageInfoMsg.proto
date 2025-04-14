@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.rebate;
+
+message PackageInfoMsg {
+  string packageId = 1;
+  int32 order = 2;
+  int32 point = 3;
+  int32 price = 4;
+  int32 itemid1 = 5;
+  int32 count1 = 6;
+  int32 itemid2 = 7;
+  int32 count2 = 8;
+  int32 itemid3 = 9;
+  int32 count3 = 10;
+  int32 itemid4 = 11;
+  int32 count4 = 12;
+  int32 itemid5 = 13;
+  int32 count5 = 14;
+  int32 itemid6 = 15;
+  int32 count6 = 16;
+  int32 itemid7 = 17;
+  int32 count7 = 18;
+  int32 itemid8 = 19;
+  int32 count8 = 20;
+}

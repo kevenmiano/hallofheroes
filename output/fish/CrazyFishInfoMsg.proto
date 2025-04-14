@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fish;
+
+message CrazyFishInfoMsg {
+  int32 fishId = 1;
+  string angle = 2;
+  int32 frame = 3;
+}

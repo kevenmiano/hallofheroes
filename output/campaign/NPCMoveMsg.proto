@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message NPCMoveMsg {
+  int32 id = 1;
+  int32 posX = 2;
+  int32 posY = 3;
+  int32 curPosX = 4;
+  int32 curPosY = 5;
+}

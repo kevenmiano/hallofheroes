@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PackageConditionMsg {
+  int32 conditionId = 1;
+  int32 conditionValue = 2;
+  int32 conditionBak = 3;
+  int32 conditionBak2 = 4;
+  int32 conditionBak3 = 5;
+  int32 conditionBak4 = 6;
+}

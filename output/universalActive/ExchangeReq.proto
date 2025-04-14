@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.universalActive;
+
+message ExchangeReq {
+  int32 bagId = 1;
+}

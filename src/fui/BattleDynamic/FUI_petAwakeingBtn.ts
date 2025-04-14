@@ -1,7 +1,9 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_Com_Awakening501 from "./FUI_Com_Awakening501";
+
+//@ts-expect-error: External dependencies
 import FUI_Com_AwakeningLine501 from "./FUI_Com_AwakeningLine501";
 
 export default class FUI_petAwakeingBtn extends fgui.GButton {

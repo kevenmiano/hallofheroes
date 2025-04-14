@@ -2,18 +2,18 @@ import LangManager from "../../core/lang/LangManager";
 import StringHelper from "../../core/utils/StringHelper";
 import XmlMgr from "../../core/xlsx/XmlMgr";
 import { t_s_appellData } from "../config/t_s_appell";
-import { t_s_campaignData } from "../config/t_s_campaign";
+// import { t_s_campaignData } from "../config/t_s_campaign";
 import { t_s_itemtemplateData } from "../config/t_s_itemtemplate";
 import { t_s_powcardtemplateData } from "../config/t_s_powcardtemplate";
 import { t_s_startemplateData } from "../config/t_s_startemplate";
 import { GlobalConfig } from "../constant/GlobalConfig";
 import { GoodsType } from "../constant/GoodsType";
-import UserType from "../constant/UserType";
+// import UserType from "../constant/UserType";
 import { ChatChannel } from "../datas/ChatChannel";
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import AppellManager from "../manager/AppellManager";
 import { CampaignManager } from "../manager/CampaignManager";
-import { KingTowerManager } from "../manager/KingTowerManager";
+// import { KingTowerManager } from "../manager/KingTowerManager";
 import { TempleteManager } from "../manager/TempleteManager";
 import MagicCardBuffInfo from "../module/card/MagicCardBuffInfo";
 import MagicCardInfo from "../module/card/MagicCardInfo";
@@ -40,7 +40,7 @@ export default class ChatFormat {
 
   public static createExtraChatCellByContent(
     srr: Array<string>,
-    chatdata: ChatData
+    chatdata: ChatData,
   ): Array<ChatCellData> {
     let i: number = 0;
     let index: number = 0;
@@ -56,7 +56,7 @@ export default class ChatFormat {
       if (index > 0) {
         cellData = ChatFormat.createGeneralCellData(
           msg.substr(0, index),
-          chatdata.channel
+          chatdata.channel,
         );
         list.push(cellData);
       }
@@ -74,8 +74,8 @@ export default class ChatFormat {
             chatdata.vipGrade,
             chatdata.channel,
             chatdata.senderName,
-            chatdata.receiverName
-          )
+            chatdata.receiverName,
+          ),
         );
       } else if (chatdata.type == 3) {
         xml = XmlMgr.Instance.decode(str);
@@ -88,7 +88,7 @@ export default class ChatFormat {
           xml.a.serverName,
           chatdata.vipGrade,
           Number(xml.a.consortiaId),
-          String(xml.a.name)
+          String(xml.a.name),
         );
         list.push(cellData);
         cellData = ChatFormat.createGeneralCellData("]", chatdata.channel);
@@ -104,8 +104,8 @@ export default class ChatFormat {
             chatdata.vipGrade,
             chatdata.channel,
             chatdata.senderName,
-            chatdata.receiverName
-          )
+            chatdata.receiverName,
+          ),
         );
       }
     }
@@ -139,7 +139,7 @@ export default class ChatFormat {
     vipGrade: number,
     channel: number,
     senderName: string,
-    receiverName: string
+    receiverName: string,
   ): Array<ChatCellData> {
     let list: Array<ChatCellData> = new Array<ChatCellData>();
     let cellData: ChatCellData;
@@ -155,7 +155,7 @@ export default class ChatFormat {
         xml.a.serverName,
         vipGrade,
         Number(xml.a.consortiaId),
-        String(xml.a.name)
+        String(xml.a.name),
       );
       list.push(cellData);
       cellData = ChatFormat.createGeneralCellData("]", channel);
@@ -186,7 +186,7 @@ export default class ChatFormat {
       cellData = ChatFormat.createRoseBackCellData(
         content,
         senderName,
-        receiverName
+        receiverName,
       );
       list.push(cellData);
     } else if (type == 12) {
@@ -226,7 +226,7 @@ export default class ChatFormat {
 
   public static createExpressionByIndex(
     eindex: string,
-    channel?: number
+    channel?: number,
   ): ChatCellData {
     let cellData: any = new ChatCellData();
     cellData.cellType = ChatCellType.EXPRESSION;
@@ -244,7 +244,7 @@ export default class ChatFormat {
 
   private static createImageCellDataBySonType(
     sonType: number,
-    channel: number
+    channel: number,
   ): ChatCellData {
     let valueTxt: string = "";
     let cfg: t_s_appellData = null;
@@ -282,7 +282,7 @@ export default class ChatFormat {
     let cellData: any = new ChatCellData();
     cellData.cellType = ChatCellType.WEB_LINK;
     cellData.text = LangManager.Instance.GetTranslation(
-      "appell.AppellFrame.AppellLink.LinkText"
+      "appell.AppellFrame.AppellLink.LinkText",
     );
     cellData.data = msg;
     return cellData;
@@ -290,7 +290,7 @@ export default class ChatFormat {
 
   public static createVipLinkCellData(
     channel: number,
-    content: string
+    content: string,
   ): ChatCellData {
     let cellData: any = new ChatCellData();
     cellData.cellType = ChatCellType.VipLink;
@@ -356,7 +356,7 @@ export default class ChatFormat {
     let skill: string = xml.a.skill;
     let tempinfo: t_s_itemtemplateData =
       TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-        Number(xml.a.tempid)
+        Number(xml.a.tempid),
       );
     if (!tempinfo) return null;
     let info: GoodsInfo = new GoodsInfo();
@@ -424,7 +424,7 @@ export default class ChatFormat {
 
   public static createGeneralCellData(
     content: string,
-    channel: number
+    channel: number,
   ): ChatCellData {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.GENERAL;
@@ -448,7 +448,7 @@ export default class ChatFormat {
 
   public static createAppellCellData(
     channel: number,
-    appellId: number
+    appellId: number,
   ): ChatCellData {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.APPELL;
@@ -463,14 +463,16 @@ export default class ChatFormat {
 
   public static createVipCellData(
     channel: number,
-    vipType: number
+    vipType: number,
   ): ChatCellData {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.VIP;
     cellData.faceLink = "asset.chatII.VipEffect";
-    vipType == 2
-      ? (cellData.faceLink = "asset.chatII.VipEffect2")
-      : (cellData.faceLink = "asset.chatII.VipEffect");
+    if (vipType == 2) {
+      cellData.faceLink = "asset.chatII.VipEffect2";
+    } else {
+      cellData.faceLink = "asset.chatII.VipEffect";
+    }
     return cellData;
   }
 
@@ -481,7 +483,7 @@ export default class ChatFormat {
     serverName: string,
     vipGrade: number,
     consortiaId: number,
-    name: string
+    name: string,
   ): ChatCellData {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.Player;
@@ -519,7 +521,7 @@ export default class ChatFormat {
 
   public static createConsortiaCellData(
     consortiaId: number,
-    consortiaName: string
+    consortiaName: string,
   ): ChatCellData {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.CONSORTIA;
@@ -529,7 +531,7 @@ export default class ChatFormat {
       consortiaName +
       "], " +
       LangManager.Instance.GetTranslation(
-        "consortia.view.myConsortia.recruit.ConsortiaRecruitFrame.command01"
+        "consortia.view.myConsortia.recruit.ConsortiaRecruitFrame.command01",
       );
     let roomData = {
       cellType: cellData.cellType,
@@ -562,7 +564,7 @@ export default class ChatFormat {
       str =
         LangManager.Instance.GetTranslation(
           "QuickInviteWnd.PvpInviteTipPrefix02",
-          rInfo.id
+          rInfo.id,
         ) + LangManager.Instance.GetTranslation("welcomeTojoin");
     } else {
       str = this.parseInviteMsg(rInfo);
@@ -583,8 +585,8 @@ export default class ChatFormat {
         LangManager.Instance.GetTranslation(
           "QuickInviteWnd.AncientRuinsInviteTipPrefix",
           roomInfo.mapName,
-          roomInfo.id
-        )
+          roomInfo.id,
+        ),
       );
     } else {
       let mapName: string = "";
@@ -595,18 +597,18 @@ export default class ChatFormat {
       if (templateInfo) {
         lvstr = LangManager.Instance.GetTranslation(
           "public.level3",
-          templateInfo.MinLevel.toString()
+          templateInfo.MinLevel.toString(),
         );
       }
       mapName = LangManager.Instance.GetTranslation(
         "public.format.concat2word",
         templateInfo.CampaignNameLang,
-        lvstr
+        lvstr,
       );
       inviteMsg = LangManager.Instance.GetTranslation(
         "QuickInviteWnd.PveInviteTipPrefix2",
         mapName,
-        roomInfo.id
+        roomInfo.id,
       );
     }
     return inviteMsg + LangManager.Instance.GetTranslation("welcomeTojoin");
@@ -625,8 +627,8 @@ export default class ChatFormat {
     let linkText = this.formatlinkData(
       linkData,
       LangManager.Instance.GetTranslation(
-        "appell.AppellFrame.AppellLink.LinkText"
-      )
+        "appell.AppellFrame.AppellLink.LinkText",
+      ),
     );
     cellData.text = linkText;
     return cellData;
@@ -635,7 +637,7 @@ export default class ChatFormat {
   public static createRoseBackCellData(
     content: string,
     senderName: string,
-    receiverName: string
+    receiverName: string,
   ): ChatCellData {
     let xml: any = XmlMgr.Instance.decode(content);
     let cellData: ChatCellData = new ChatCellData();
@@ -660,7 +662,7 @@ export default class ChatFormat {
     let cellData: ChatCellData = new ChatCellData();
     cellData.cellType = ChatCellType.REINFORCE;
     cellData.text = LangManager.Instance.GetTranslation(
-      "chat.utils.Chatformat.Reinforce"
+      "chat.utils.Chatformat.Reinforce",
     );
     cellData.userId = xml.a.userId;
     cellData.data = {
@@ -692,7 +694,7 @@ export default class ChatFormat {
     };
     let linkText = this.formatlinkData(
       linkData,
-      LangManager.Instance.GetTranslation("hunt.huntLink.gotoSeek")
+      LangManager.Instance.GetTranslation("hunt.huntLink.gotoSeek"),
     );
     cellData.text = linkText;
     return cellData;
@@ -717,19 +719,19 @@ export default class ChatFormat {
     if (srr && srr.length > 0) {
       //存在特殊字符表情等
       list = list.concat(
-        ChatFormat.createExtraChatCellByContent(srr, chatdata)
+        ChatFormat.createExtraChatCellByContent(srr, chatdata),
       );
     } else if (chatdata.type == 2) {
       //公会招收
       cellData = ChatFormat.createConsortiaCellData(
         chatdata.consortiaId,
-        chatdata.consortiaName
+        chatdata.consortiaName,
       );
       list.push(cellData);
 
       cellData = ChatFormat.createGeneralCellData(
         chatdata.msg,
-        chatdata.channel
+        chatdata.channel,
       );
       list.push(cellData);
     } else {
@@ -753,7 +755,7 @@ export default class ChatFormat {
       //     let tempmsg = msgTempArray[index];
       cellData = ChatFormat.createGeneralCellData(
         chatdata.msg,
-        chatdata.channel
+        chatdata.channel,
       );
       list.push(cellData);
       // }
@@ -792,7 +794,7 @@ export default class ChatFormat {
     return null;
   }
 
-  private static formatlinkData(data: Object, content?: string): string {
+  private static formatlinkData(data: object, content?: string): string {
     let linkText = "";
     for (let key in data) {
       if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -862,7 +864,7 @@ export default class ChatFormat {
   public static createPropCellData(jsonData: any): ChatCellData {
     let tempinfo: t_s_itemtemplateData =
       TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-        Number(jsonData.templateId)
+        Number(jsonData.templateId),
       );
     if (!tempinfo) return null;
     let info: GoodsInfo = new GoodsInfo();

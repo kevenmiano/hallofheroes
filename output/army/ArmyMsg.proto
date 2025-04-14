@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ArmyMsg {
+  int32 armyId = 1;
+  int32 playerId = 2;
+  string nickName = 3;
+  int32 mapId = 4;
+  int32 curPosX = 5;
+  int32 curPosY = 6;
+  int32 state = 7;
+  int32 type = 8;
+  repeated int32 armyPawn = 9;
+  string simpleHeroInfo = 10;
+  int32 consortiaId = 11;
+  string consortiaName = 12;
+  int32 fightingCapacity = 13;
+  int32 gpOrder = 14;
+  int32 grades = 15;
+  string arm = 16;
+  string cloth = 17;
+  int32 job = 18;
+  int32 changeSharp = 19;
+  int32 heroTempId = 20;
+  repeated int32 userIds = 21;
+  int32 geste = 22;
+  bool isVip = 23;
+  int32 vipType = 24;
+  int32 mountTempId = 25;
+  int32 mountGrade = 26;
+  string wing = 27;
+  string serverName = 28;
+  string hat = 29;
+  string fashionArm = 30;
+  string fashionCloth = 31;
+  bool hide = 32;
+  int32 appellid = 33;
+  string fateSkills = 34;
+  int32 petTempId = 35;
+  int32 petQuqlity = 36;
+  string petName = 37;
+  int32 headId = 38;
+  bool onVehicle = 39;
+}

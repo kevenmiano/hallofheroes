@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.privilege;
+
+message PrivilegeMsg {
+  bool isPrivilege = 1;
+  repeated int32 list = 2;
+  string userName = 3;
+  int32 index = 4;
+  string param1 = 5;
+  string param2 = 6;
+}

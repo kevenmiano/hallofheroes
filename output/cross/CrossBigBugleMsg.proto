@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cross;
+
+message CrossBigBugleMsg {
+  int32 serverId = 1;
+  string serverName = 2;
+  string uid = 3;
+  int32 userId = 4;
+  string nickName = 5;
+  bool isLookInfo = 6;
+  string content = 7;
+  int32 param1 = 8;
+  string param2 = 9;
+  int32 headId = 10;
+  int32 level = 11;
+  string curTime = 12;
+}

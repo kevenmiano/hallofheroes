@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerOrderMsg {
+  int32 playerId = 1;
+  int32 fightCapacityOrder = 2;
+  int32 geste_Order = 3;
+  int32 charm_Order = 4;
+  int32 soulScore_Order = 5;
+}

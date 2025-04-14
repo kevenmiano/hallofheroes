@@ -36,7 +36,7 @@ export default class RoomScene extends BaseSceneView {
     this.roomSceneType = roomSceneType;
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     return new Promise((resolve) => {
       NotificationManager.Instance.dispatchEvent(SceneEvent.LOCK_SCENE, true);
       // SceneManager.Instance.lockScene = true;
@@ -45,7 +45,7 @@ export default class RoomScene extends BaseSceneView {
     });
   }
 
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     this.data = data;
     return new Promise((resolve) => {
       if (RoomManager.Instance.exit) {

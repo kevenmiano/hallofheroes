@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailSendReqMsg {
+  repeated int32 receiverUserId = 1;
+  string title = 2;
+  string contents = 3;
+  int32 sendType = 4;
+  int32 payType = 5;
+}

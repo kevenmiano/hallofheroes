@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FriendFarmStateMsg {
+  int32 userId = 1;
+  bool isReap = 2;
+  bool isChargeEnergy = 3;
+  bool isRevive = 4;
+  bool isWorm = 5;
+  bool isGrass = 6;
+  bool isFeed = 7;
+}

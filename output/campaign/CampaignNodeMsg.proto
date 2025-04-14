@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodeMsg {
+  int32 nodeId = 1;
+  int32 campDataId = 2;
+  string nodeName = 3;
+  int32 masterType = 4;
+  int32 sonType = 5;
+  string preNodeIds = 6;
+  string nextNodeIds = 7;
+  int32 state = 8;
+  int32 refreshSpeed = 9;
+  int32 posX = 10;
+  int32 posY = 11;
+  int32 curX = 12;
+  int32 curY = 13;
+  int32 level = 14;
+  int32 styleType = 15;
+  int32 attackTypes = 16;
+  int32 nameColor = 17;
+  int32 sizeType = 18;
+  int32 toward = 19;
+  int32 resource = 20;
+  int32 resetX = 21;
+  int32 resetY = 22;
+  repeated int32 visitUserIds = 23;
+  int32 fixType = 24;
+  int32 fixX = 25;
+  int32 fixY = 26;
+  int32 heroTempId = 27;
+  int32 handlerRange = 28;
+  int32 fightCapaity = 29;
+  int32 param1 = 30;
+  int32 param2 = 31;
+  string param3 = 32;
+  string param4 = 33;
+  string param5 = 34;
+  repeated int32 visitServerName = 35;
+  int32 leftFightingTime = 36;
+}

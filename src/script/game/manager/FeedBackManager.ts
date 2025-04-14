@@ -1,4 +1,3 @@
-// @ts-nocheck
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 import { PackageIn } from "../../core/net/PackageIn";
 import { ServerDataManager } from "../../core/net/ServerDataManager";
@@ -13,9 +12,13 @@ import { PlayerManager } from "./PlayerManager";
 import { SocketSendManager } from "./SocketSendManager";
 import { TempleteManager } from "./TempleteManager";
 
+//@ts-expect-error: External dependencies
 import PackageInfoMsg = com.road.yishi.proto.rebate.PackageInfoMsg;
+//@ts-expect-error: External dependencies
 import PackageStateMsg = com.road.yishi.proto.rebate.PackageStateMsg;
+//@ts-expect-error: External dependencies
 import RebateInfoMsg = com.road.yishi.proto.rebate.RebateInfoMsg;
+//@ts-expect-error: External dependencies
 import UserRebateMsg = com.road.yishi.proto.rebate.UserRebateMsg;
 import { ArrayConstant } from "../../core/utils/ArrayUtils";
 import { PlayerModel } from "../datas/playerinfo/PlayerModel";
@@ -49,12 +52,12 @@ export default class FeedBackManager extends GameEventDispatcher {
     ServerDataManager.listen(
       S2CProtocol.U_C_REBATE_ACTIVE,
       this,
-      this.__rebateActiveHandler
+      this.__rebateActiveHandler,
     ); //总回馈活动
     ServerDataManager.listen(
       S2CProtocol.U_C_REBATE_DATA,
       this,
-      this.__rebateDataHandler
+      this.__rebateDataHandler,
     ); //用户个人的回馈信息
   }
   /**
@@ -87,7 +90,7 @@ export default class FeedBackManager extends GameEventDispatcher {
     this._itemList = [];
     for (var i: number = 0; i < msg.packages.length; i++) {
       var itemData: FeedBackItemData = this.readFeedBackItemData(
-        msg.packages[i]
+        msg.packages[i],
       );
       this._itemList.push(itemData);
     }
@@ -102,8 +105,8 @@ export default class FeedBackManager extends GameEventDispatcher {
   private readFeedBackItemData(pkg: any): FeedBackItemData {
     var itemData: FeedBackItemData = new FeedBackItemData();
     var i: number = 0;
-    var items: Array<any> = new Array();
-    var item: Object;
+    var items: Array<any> = [];
+    var item: object;
 
     for (i = 1; i <= 8; i++) {
       item = new Object();
@@ -205,7 +208,7 @@ export default class FeedBackManager extends GameEventDispatcher {
     this._itemList = ArrayUtils.sortOn(
       this._itemList,
       ["order"],
-      [ArrayConstant.NUMERIC]
+      [ArrayConstant.NUMERIC],
     );
     return this._itemList;
   }

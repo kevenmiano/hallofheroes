@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message SysAnswerQuestionStateMsg {
+  int32 sysState = 1;
+  int32 sysAnswerCount = 2;
+  int32 leftCount = 3;
+  string beginDate = 4;
+  string lastDate = 5;
+}

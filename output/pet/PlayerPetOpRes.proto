@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PlayerPetOpRes {
+  int32 petId = 1;
+  int32 opType = 2;
+  int32 result = 3;
+}

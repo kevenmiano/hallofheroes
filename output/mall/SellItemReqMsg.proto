@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message SellItemReqMsg {
+  int32 itemId = 1;
+  int32 itemPos = 2;
+  int32 count = 3;
+  int32 point = 4;
+  int32 fixPoint = 5;
+  int32 hour = 6;
+  int32 sellType = 7;
+}

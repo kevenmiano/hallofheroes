@@ -1,12 +1,10 @@
-// @ts-nocheck
 import Logger from "../logger/Logger";
 
 /**
  * 人物消散Shader
  */
 export default class ShaderMosaicDissolve extends Laya.Script {
-
-    public static vs: string = `
+  public static vs: string = `
     attribute vec4 posuv;
     attribute vec4 attribColor;
     attribute vec4 attribFlags;
@@ -59,8 +57,8 @@ export default class ShaderMosaicDissolve extends Laya.Script {
             cliped=vec2( dot(clippos,clipMatDir.xy)/clipw/clipw, dot(clippos,clipMatDir.zw)/cliph/cliph);
         }
     }`;
-    //片元着色器 --- 根据噪图 过滤掉低于阈值的颜色
-    public static ps: string = `
+  //片元着色器 --- 根据噪图 过滤掉低于阈值的颜色
+  public static ps: string = `
     #define SHADER_NAME DissolveEdgeFrag
     #if defined(GL_FRAGMENT_PRECISION_HIGH)
         precision highp float;
@@ -72,14 +70,14 @@ export default class ShaderMosaicDissolve extends Laya.Script {
     varying vec4 v_color;
     varying float v_useTex;
     varying vec2 cliped;
-    
+
     uniform sampler2D texture;
     uniform float time;
     uniform vec4 uvRect;
 
-    float s_ran(vec2 st){ 
+    float s_ran(vec2 st){
         return fract(sin(dot(st.xy,vec2(12.9898,178.233)))*43758.5453123);
-    } 
+    }
 
     void main(){
         vec4 color;
@@ -92,7 +90,7 @@ export default class ShaderMosaicDissolve extends Laya.Script {
         // float nX = v_texcoordAlpha.x - uvRect.x;
         if (time < 2.0) {
             color = texture2D(texture, vec2(v_texcoordAlpha.x - uvRect.x,v_texcoordAlpha.y));
-            
+
             // color = texture2D(texture, vec2(tX,v_texcoordAlpha.y));
             if (tX < uvRect.x) {
                 discard;
@@ -126,156 +124,162 @@ export default class ShaderMosaicDissolve extends Laya.Script {
         gl_FragColor = color;
     }`;
 
+  declare public owner: Laya.Sprite | Laya.Image;
 
-    declare public owner: Laya.Sprite | Laya.Image;
+  private shaderValue: Laya.Value2D;
+  public static SHADER_MAIN_ID: number = 9998;
+  private tex: Laya.Texture | Laya.Texture2D | Laya.RenderTexture;
+  private offsetX: number;
+  private offsetY: number;
+  private width: number;
+  private height: number;
+  private uv: ArrayLike<number>;
+  private frame: number = 0;
 
-    private shaderValue: Laya.Value2D;
-    public static SHADER_MAIN_ID: number = 9998;
-    private tex: Laya.Texture | Laya.Texture2D | Laya.RenderTexture;
-    private offsetX: number;
-    private offsetY: number;
-    private width: number;
-    private height: number;
-    private uv: ArrayLike<number>;
-    private frame: number = 0;
+  private time: number;
+  private uvRect: number[];
+  private frameIndex: number = 0;
+  private newScaleX: number = 1;
 
-    private time: number;
-    private uvRect: number[];
-    private frameIndex: number = 0;
-    private newScaleX: number = 1;
+  constructor() {
+    super();
+    this.shaderValue = new Laya.Value2D(
+      ShaderMosaicDissolve.SHADER_MAIN_ID,
+      ShaderMosaicDissolve.SHADER_MAIN_ID,
+    );
+    this.shaderValue.shader = new Laya.Shader2X(
+      ShaderMosaicDissolve.vs,
+      ShaderMosaicDissolve.ps,
+      ShaderMosaicDissolve.SHADER_MAIN_ID,
+    );
+  }
 
-    constructor() {
-        super();
-        this.shaderValue = new Laya.Value2D(ShaderMosaicDissolve.SHADER_MAIN_ID, ShaderMosaicDissolve.SHADER_MAIN_ID);
-        this.shaderValue.shader = new Laya.Shader2X(ShaderMosaicDissolve.vs, ShaderMosaicDissolve.ps, ShaderMosaicDissolve.SHADER_MAIN_ID);
+  onAwake(): void {
+    if (!this.owner) {
+      Logger.error("shader is not have owner");
+      return;
     }
+    // 设置自定义渲染
+    this.owner.customRenderEnable = true;
 
-    onAwake(): void {
-        if (!this.owner) {
-            Logger.error('shader is not have owner');
-            return;
+    // 绑定自定义渲染函数
+    this.owner.customRender = this.customRender.bind(this);
+    if (this.owner instanceof Laya.Animation) {
+      let texture = this.owner.texture;
+      if (!texture) {
+        if (!this.owner.frames) {
+          return;
         }
-        // 设置自定义渲染
-        this.owner.customRenderEnable = true;
 
-        // 绑定自定义渲染函数
-        this.owner.customRender = this.customRender.bind(this);
-        if (this.owner instanceof Laya.Animation) {
-            let texture = this.owner.texture;
-            if (!texture) {
-                if (!this.owner.frames) {
-                    return;
-                }
-                //@ts-ignore
-                this.newScaleX = this.owner.parent.scaleX * -1;
-                if (this.owner.index != undefined) {
-                    this.frame = this.owner.index;
-                }
-                let cmds = this.owner.frames[this.frame].cmds as Laya.DrawImageCmd[]
-                if (cmds) {
-                    Logger.warn("// TODO该精灵由多个纹理渲染")
-                } else {// 该精灵由单个纹理渲染
-                    let graphics = this.owner.frames[this.frame];
-                    texture = graphics["_one"].texture;
-                }
-            }
-            if (texture) {
-                this.width = texture.width;
-                this.height = texture.height;
-
-                this.uv = texture.uv;
-                this.uvRect = texture.uvrect;
-                this.shaderValue['uvRect'] = this.uvRect;
-                this.tex = texture.bitmap;
-                this.offsetX = texture.offsetX - this.owner.pivotX;
-                this.offsetY = texture.offsetY - this.owner.pivotY;
-
-            } else {
-                Logger.error('can not find texture');
-            }
-        } else if (this.owner instanceof Laya.Image) {
-            if (this.owner["_bitmap"] && this.owner["_bitmap"]["_source"]) {
-                let texture = this.owner["_bitmap"]["_source"];
-                this.width = texture.width;
-                this.height = texture.height;
-                this.uv = texture.uv;
-                this.tex = texture.bitmap;
-                this.offsetX = texture.offsetX - this.owner.pivotX;
-                this.offsetY = texture.offsetY - this.owner.pivotY;
-                this.owner.skin = "";
-            } else {
-                Logger.error('can not find texture');
-            }
-        } else if (this.owner instanceof Laya.Sprite) {
-            let texture = this.owner.texture;
-            if (!texture) {
-                let cmds = this.owner.graphics.cmds as Laya.DrawImageCmd[]
-                if (cmds) {
-                    Logger.warn("// TODO该精灵由多个纹理渲染")
-                } else {// 该精灵由单个纹理渲染
-                    let graphics = this.owner.graphics;
-                    texture = graphics["_one"].texture;
-                }
-            }
-            if (texture) {
-                this.width = texture.width;
-                this.height = texture.height;
-
-                this.uv = texture.uv;
-                this.tex = texture.bitmap;
-                this.offsetX = texture.offsetX - this.owner.pivotX;
-                this.offsetY = texture.offsetY - this.owner.pivotY;
-                // 移除旧图片
-                this.owner.texture = null;
-            } else {
-                Logger.error('can not find texture');
-            }
-
+        this.newScaleX = this.owner.parent.scaleX * -1;
+        if (this.owner.index != undefined) {
+          this.frame = this.owner.index;
         }
-    }
-
-    /** 设置时间 */
-    public setFrame(value: number) {
-        this.frame = value;
-    }
-
-    /** 设置时间 */
-    public setTime(value: number) {
-        if (this.shaderValue) {
-            this.time = value;
-            this.shaderValue['time'] = value;
-            if (value >= 2) {
-                //@ts-ignore
-                if (this.owner && this.owner.parent) {
-                    //@ts-ignore
-                    this.owner.parent.scaleX = this.newScaleX;
-                    //@ts-ignore
-                    this.owner.clear();
-                }
-            }
+        let cmds = this.owner.frames[this.frame].cmds as Laya.DrawImageCmd[];
+        if (cmds) {
+          Logger.warn("// TODO该精灵由多个纹理渲染");
+        } else {
+          // 该精灵由单个纹理渲染
+          let graphics = this.owner.frames[this.frame];
+          texture = graphics["_one"].texture;
         }
-    }
+      }
+      if (texture) {
+        this.width = texture.width;
+        this.height = texture.height;
 
-    public getTime() {
-        return this.time;
-    }
+        this.uv = texture.uv;
+        this.uvRect = texture.uvrect;
+        this.shaderValue["uvRect"] = this.uvRect;
+        this.tex = texture.bitmap;
+        this.offsetX = texture.offsetX - this.owner.pivotX;
+        this.offsetY = texture.offsetY - this.owner.pivotY;
+      } else {
+        Logger.error("can not find texture");
+      }
+    } else if (this.owner instanceof Laya.Image) {
+      if (this.owner["_bitmap"] && this.owner["_bitmap"]["_source"]) {
+        let texture = this.owner["_bitmap"]["_source"];
+        this.width = texture.width;
+        this.height = texture.height;
+        this.uv = texture.uv;
+        this.tex = texture.bitmap;
+        this.offsetX = texture.offsetX - this.owner.pivotX;
+        this.offsetY = texture.offsetY - this.owner.pivotY;
+        this.owner.skin = "";
+      } else {
+        Logger.error("can not find texture");
+      }
+    } else if (this.owner instanceof Laya.Sprite) {
+      let texture = this.owner.texture;
+      if (!texture) {
+        let cmds = this.owner.graphics.cmds as Laya.DrawImageCmd[];
+        if (cmds) {
+          Logger.warn("// TODO该精灵由多个纹理渲染");
+        } else {
+          // 该精灵由单个纹理渲染
+          let graphics = this.owner.graphics;
+          texture = graphics["_one"].texture;
+        }
+      }
+      if (texture) {
+        this.width = texture.width;
+        this.height = texture.height;
 
-    onEnable(): void {
-        this.time = 0;
+        this.uv = texture.uv;
+        this.tex = texture.bitmap;
+        this.offsetX = texture.offsetX - this.owner.pivotX;
+        this.offsetY = texture.offsetY - this.owner.pivotY;
+        // 移除旧图片
+        this.owner.texture = null;
+      } else {
+        Logger.error("can not find texture");
+      }
     }
+  }
 
-    /** 自定义渲染提交(隐藏或销毁后, 不会执行此方法) */
-    public customRender(context: Laya.Context, x: number, y: number) {
-        if (!context || !this.tex) return;
-        context.drawTarget(
-            this.tex as any,
-            x + this.offsetX,           // 渲染起点(距离舞台偏移---图片坐标x + 图片在纹理中的偏移)
-            y + this.offsetY,           // 渲染起点(距离舞台偏移)
-            this.width * 2,                 // 渲染宽度(图片宽度)
-            this.height,                // 渲染高度
-            null,
-            this.shaderValue,           // 使用的shader
-            this.uv                     // 纹理uv
-        );
+  /** 设置时间 */
+  public setFrame(value: number) {
+    this.frame = value;
+  }
+
+  /** 设置时间 */
+  public setTime(value: number) {
+    if (this.shaderValue) {
+      this.time = value;
+      this.shaderValue["time"] = value;
+      if (value >= 2) {
+        if (this.owner && this.owner.parent) {
+          this.owner.parent.scaleX = this.newScaleX;
+
+          if (this.owner instanceof Laya.Sprite) {
+            this.owner.graphics.clear();
+          }
+        }
+      }
     }
+  }
+
+  public getTime() {
+    return this.time;
+  }
+
+  onEnable(): void {
+    this.time = 0;
+  }
+
+  /** 自定义渲染提交(隐藏或销毁后, 不会执行此方法) */
+  public customRender(context: Laya.Context, x: number, y: number) {
+    if (!context || !this.tex) return;
+    context.drawTarget(
+      this.tex as any,
+      x + this.offsetX, // 渲染起点(距离舞台偏移---图片坐标x + 图片在纹理中的偏移)
+      y + this.offsetY, // 渲染起点(距离舞台偏移)
+      this.width * 2, // 渲染宽度(图片宽度)
+      this.height, // 渲染高度
+      null,
+      this.shaderValue, // 使用的shader
+      this.uv, // 纹理uv
+    );
+  }
 }

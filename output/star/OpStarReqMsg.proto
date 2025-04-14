@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message OpStarReqMsg {
+  repeated int32 itemInfo = 1;
+  int32 way = 2;
+  int32 mergePos = 3;
+  int32 beginType = 4;
+  int32 endType = 5;
+}

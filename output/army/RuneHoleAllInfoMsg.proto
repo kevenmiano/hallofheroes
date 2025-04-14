@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message RuneHoleAllInfoMsg {
+  repeated int32 info = 1;
+}

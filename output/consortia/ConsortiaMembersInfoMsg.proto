@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaMembersInfoMsg {
+  int32 job = 1;
+  string nickName = 2;
+  int32 level = 3;
+  int32 fightCapacity = 4;
+  int32 userId = 5;
+  int32 count = 6;
+  bool isReceived = 7;
+}

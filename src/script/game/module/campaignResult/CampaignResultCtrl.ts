@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -10,17 +9,15 @@
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 
 export default class CampaignResultCtrl extends FrameCtrlBase {
+  show() {
+    super.show();
+  }
 
-    show() {
-        super.show()
-    }
+  hide() {
+    super.hide();
+  }
 
-    hide() {
-        super.hide()
-
-    }
-
-    dispose(){
-        super.dispose()
-    }
+  dispose() {
+    super.dispose();
+  }
 }

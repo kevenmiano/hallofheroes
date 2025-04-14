@@ -72,11 +72,11 @@ export class VIPModel extends GameEventDispatcher {
 
   public set vipInfo(value: VipInfo) {
     let title: string;
-    let data: Object;
+    let data: object;
     if (this._vipInfo.VipGrade < value.VipGrade && this._vipInfo.VipGrade > 0) {
       this._vipInfo = value;
       title = LangManager.Instance.GetTranslation(
-        "tasktracetip.view.VipUpGradeTipView.TitleTxt"
+        "tasktracetip.view.VipUpGradeTipView.TitleTxt",
       );
       data = { type: TipMessageData.VIP_GRADE, title: title };
       this.dispatchEvent(VIPEvent.VIP_RECHARGE_TIP, data);
@@ -85,7 +85,7 @@ export class VIPModel extends GameEventDispatcher {
     }
     if (this._vipInfo.IsTakeGift && this._vipInfo.IsVipAndNoExpirt) {
       title = LangManager.Instance.GetTranslation(
-        "tasktracetip.view.VipGiftGetTipView.TitleTxt"
+        "tasktracetip.view.VipGiftGetTipView.TitleTxt",
       );
       data = { type: TipMessageData.VIP_GIFT, title: title };
       this.dispatchEvent(VIPEvent.VIP_RECHARGE_TIP, data);
@@ -107,9 +107,9 @@ export class VIPModel extends GameEventDispatcher {
 
   public vipOpenTips() {
     let title: string = LangManager.Instance.GetTranslation(
-      "tasktracetip.view.VipRechargeTipView.TitleTxt"
+      "tasktracetip.view.VipRechargeTipView.TitleTxt",
     );
-    let data: Object = { type: TipMessageData.VIP_OPEN, title: title };
+    let data: object = { type: TipMessageData.VIP_OPEN, title: title };
     this.dispatchEvent(VIPEvent.VIP_RECHARGE_TIP, data);
   }
 
@@ -141,7 +141,7 @@ export class VIPModel extends GameEventDispatcher {
       return 0;
     }
     let arr: any[] = TempleteManager.Instance.getPrivilegeTempletesByType(
-      VipPrivilegeType.FRIEND_COUNT
+      VipPrivilegeType.FRIEND_COUNT,
     );
     for (let i: number = 0; i < arr.length; i++) {
       if (this._vipInfo.VipGrade == arr[i].grade) {
@@ -202,7 +202,7 @@ export class VIPModel extends GameEventDispatcher {
 
   public isVipMount(mountId: number): boolean {
     let temples = TempleteManager.Instance.getPrivilegeTempletesByType(
-      VipPrivilegeType.MOUNT
+      VipPrivilegeType.MOUNT,
     );
     for (let index = 0; index < temples.length; index++) {
       let element = temples[index];
@@ -237,7 +237,7 @@ export class VIPModel extends GameEventDispatcher {
   public getPrivilegeParam1ByGrade(type: number, grade: number): number {
     let temp = TempleteManager.Instance.getPrivilegeTempletesByTypeLevel(
       type,
-      grade
+      grade,
     );
     if (temp) {
       return Number(temp.para1);

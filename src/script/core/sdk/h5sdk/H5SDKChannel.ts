@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ChannelID, ChannelSTR, H5SDK_CHANNEL_ID } from "../SDKConfig";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";
 import { ArmyManager } from "../../../game/manager/ArmyManager";
@@ -59,7 +58,7 @@ export default class H5SDKChannel extends BaseChannel {
       } else if (urlChannelID == H5SDK_CHANNEL_ID.QQZone) {
         libUrl = "libs/h5sdk/QQzone_7RoadGame.js" + dateStr;
       }
-      //@ts-ignore
+
       window.Road_7 = window.loadLib(libUrl, () => {
         let initData = null;
         if (param) {
@@ -69,7 +68,7 @@ export default class H5SDKChannel extends BaseChannel {
             channelParam: param.channelParam,
           };
         }
-        //@ts-ignore
+
         window.Road_7.init(initData)
           .then(async (res) => {
             // 初始化成功回调
@@ -133,7 +132,7 @@ export default class H5SDKChannel extends BaseChannel {
     count: number,
     coinType: string,
     virtualCoinType: string,
-    oExInfo?: string
+    oExInfo?: string,
   ): void {
     // let rechargeData: t_s_rechargeData = TempleteManager.Instance.getRechargeTempleteByProductID('sqh5.gem.pay6');
     let rechargeData: t_s_rechargeData =
@@ -173,7 +172,7 @@ export default class H5SDKChannel extends BaseChannel {
     };
 
     Logger.log("testRecharge", rechargeData, data);
-    //@ts-ignore
+
     window.Road_7.order(data)
       .then((res) => {
         // 支付成功回调
@@ -221,7 +220,6 @@ export default class H5SDKChannel extends BaseChannel {
     };
     Logger.log("WXPost", code, data);
     try {
-      //@ts-ignore
       window.Road_7.reportLog(code, data);
     } catch (error) {
       Logger.error(error);
@@ -232,7 +230,6 @@ export default class H5SDKChannel extends BaseChannel {
    * 获取广告参数
    */
   public getAdparams() {
-    //@ts-ignore
     window.Road_7.getAdparams().then((res) => {
       // res为上报tlog的广告参数
       // 返回数据格式为JSON对象
@@ -250,7 +247,6 @@ export default class H5SDKChannel extends BaseChannel {
    */
   getConfigItem(name?: string) {
     return new Promise<any>((resolve, reject) => {
-      //@ts-ignore
       window.Road_7.getConfigItem(name).then((res) => {
         // res为上报tlog的广告参数
         // 返回数据格式为JSON对象
@@ -266,7 +262,6 @@ export default class H5SDKChannel extends BaseChannel {
   logout(b: boolean = false) {
     //平台回退
     try {
-      //@ts-ignore
       window.Road_7.logout();
       YMWebManager.Instance.logout();
     } catch (error) {
@@ -317,7 +312,7 @@ export default class H5SDKChannel extends BaseChannel {
     chatRoomId: string,
     type: number,
     extraText: string,
-    cb: Function
+    cb: Function,
   ) {
     YMWebManager.Instance.startRecord(chatRoomId, type, extraText, cb);
   }
@@ -370,7 +365,7 @@ export default class H5SDKChannel extends BaseChannel {
     pass: string,
     site: string,
     siteId: number,
-    appData: any = null
+    appData: any = null,
   ) {
     this.platId = 5;
     if (Utils.isFromMicroApp()) {
@@ -383,7 +378,7 @@ export default class H5SDKChannel extends BaseChannel {
       siteId,
       ChannelSTR.APP,
       this.platId,
-      appData
+      appData,
     ); //请求玩家列表
   }
 
@@ -397,7 +392,6 @@ export default class H5SDKChannel extends BaseChannel {
    * 1006	特权获取说明
    * */
   jumpPrivilege(code: number) {
-    //@ts-ignore
     window.Road_7.jumpPrivilege(code);
   }
 
@@ -405,7 +399,6 @@ export default class H5SDKChannel extends BaseChannel {
    * 刷新页面（渠道方同步页面）
    */
   refresh() {
-    //@ts-ignore
     window.Road_7.refresh();
   }
 
@@ -420,7 +413,6 @@ export default class H5SDKChannel extends BaseChannel {
    *  })
    */
   getUserInfo(): Promise<any> {
-    //@ts-ignore
     return window.Road_7.getUserInfo();
   }
 }

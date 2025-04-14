@@ -77,64 +77,64 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     this.data.thane.on(
       PlayerEvent.SMALL_BUGLE_FREE_COUNT,
       this.__smallBugleFreeCountHandler,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.on(
       PlayerEvent.MUTICOPY_COUNT,
       this.__mutiCopyCount,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.on(
       PlayerEvent.TAILA_COUNT,
       this.__mutiCopyCount,
-      this
+      this,
     );
     NotificationManager.Instance.on(
       RoomHallEvent.CHANGE_CAMPAIGN,
       this.__changeCampaignHandler,
-      this
+      this,
     );
     if (this.roomInfo) {
       this.roomInfo.on(
         RoomEvent.UPDATE_ROOM_BASE_DATA,
         this.__updateRoomInfoHanlder,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.UPDATE_ROOM_PLAYER_DATA,
         this.__updateRoomInfoHanlder,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.UPDATE_ROOM_MAP,
         this.__roomMapChangeHandler,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.ADD_PLAYER_ROOM,
         this.__addPlayerHandler,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.REMOVE_PLAYER_ROOM,
         this.__removePlayerHandler,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.ROOM_HOUSEOWNER_CHANGE,
         this.__houseOwnerChangeHandler,
-        this
+        this,
       );
       this.roomInfo.on(
         RoomEvent.ROOM_PLACE_STATE_CHANGE,
         this.__placeStateChangeHandler,
-        this
+        this,
       );
     }
     NotificationManager.Instance.addEventListener(
       NotificationEvent.UPDATE_CROSS_PVE_STATUS,
       this.__updateCrossPvPInfoHanlder,
-      this
+      this,
     );
   }
 
@@ -143,64 +143,64 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     this.data.thane.off(
       PlayerEvent.SMALL_BUGLE_FREE_COUNT,
       this.__smallBugleFreeCountHandler,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.off(
       PlayerEvent.MUTICOPY_COUNT,
       this.__mutiCopyCount,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.off(
       PlayerEvent.TAILA_COUNT,
       this.__mutiCopyCount,
-      this
+      this,
     );
     NotificationManager.Instance.off(
       RoomHallEvent.CHANGE_CAMPAIGN,
       this.__changeCampaignHandler,
-      this
+      this,
     );
     if (this.roomInfo) {
       this.roomInfo.off(
         RoomEvent.UPDATE_ROOM_BASE_DATA,
         this.__updateRoomInfoHanlder,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.UPDATE_ROOM_PLAYER_DATA,
         this.__updateRoomInfoHanlder,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.UPDATE_ROOM_MAP,
         this.__roomMapChangeHandler,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.ADD_PLAYER_ROOM,
         this.__addPlayerHandler,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.REMOVE_PLAYER_ROOM,
         this.__removePlayerHandler,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.ROOM_HOUSEOWNER_CHANGE,
         this.__houseOwnerChangeHandler,
-        this
+        this,
       );
       this.roomInfo.off(
         RoomEvent.ROOM_PLACE_STATE_CHANGE,
         this.__placeStateChangeHandler,
-        this
+        this,
       );
     }
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.UPDATE_CROSS_PVE_STATUS,
       this.__updateCrossPvPInfoHanlder,
-      this
+      this,
     );
   }
 
@@ -248,12 +248,12 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     }
     this.data.quickInviteFlag = false;
     var num: number = GoodsManager.Instance.getGoodsNumByTempId(
-      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
     );
     if (num == 0) {
       if (this.data.thane.smallBugleFreeCount <= 0) {
         var command = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(command);
         this.quickBuySmallBugle();
@@ -290,7 +290,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
   }
 
   private sendInvite(str) {
-    let contents: any[] = new Array();
+    let contents: any[] = [];
     if (!ChatHelper.checkCanSend(str, ChatChannel.WORLD)) {
       return;
     }
@@ -317,8 +317,8 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     if (this.isStarting) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "activity.view.ActivityItem.command01"
-        )
+          "activity.view.ActivityItem.command01",
+        ),
       );
       return;
     }
@@ -335,7 +335,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
         0,
         null,
         this.data.isNoGet,
-        this.data.isCross
+        this.data.isCross,
       );
     }
   }
@@ -344,7 +344,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     Logger.xjy("[RoomHallCtrl]sendPlayerReady");
     RoomSocketOuterManager.sendPlayerState(
       RoomPlayerState.PLAYER_STATE_READY,
-      this.data.isNoGet
+      this.data.isNoGet,
     );
     let state =
       this.roomSceneType == RoomSceneType.PVE
@@ -366,7 +366,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
       // ResourcesBar.instance.armyBtnEnable(true);
     } else {
       RoomSocketOuterManager.sendPlayerState(
-        RoomPlayerState.PLAYER_STATE_WAITE
+        RoomPlayerState.PLAYER_STATE_WAITE,
       );
     }
     HomeWnd.Instance.getMainToolBar().switchToolsBarState(state);
@@ -397,17 +397,17 @@ export default class RoomHallCtrl extends FrameCtrlBase {
           roomInfo.campaignId,
           roomInfo.id,
           roomInfo.mapTemplate.DungeonId,
-          roomInfo.mapTemplate.CampaignId
+          roomInfo.mapTemplate.CampaignId,
         );
         RoomSocketOuterManager.updateRoomInfo(
           roomInfo.id,
           roomInfo.mapTemplate.DungeonId,
-          roomInfo.mapTemplate.CampaignId
+          roomInfo.mapTemplate.CampaignId,
         );
       } else {
         // TODO:副本或战斗中断线重进, 因为roomInfo.campaignId=0, 获取不到副本消息  先直接退出房间
         CampaignSocketOutManager.Instance.sendReturnCampaignRoom(
-          this.currentArmyId
+          this.currentArmyId,
         );
       }
     }
@@ -433,7 +433,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
       // 等级检测
       let campaignData: t_s_campaignData = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_campaign,
-        campaignId
+        campaignId,
       );
       if (!campaignData) return;
 
@@ -455,21 +455,21 @@ export default class RoomHallCtrl extends FrameCtrlBase {
         roomInfo.id,
         campaignId,
         roomInfo.mapTemplate.CampaignNameLang,
-        achieveLevel
+        achieveLevel,
       );
 
       if (achieveLevel) {
         RoomSocketOuterManager.updateRoomInfo(
           roomInfo.id,
           dungeonId,
-          campaignId
+          campaignId,
         );
         FrameCtrlManager.Instance.exit(EmWindow.PveMultiCampaignWnd);
       } else {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "room.view.pve.someoneLevelNotEnough"
-          )
+            "room.view.pve.someoneLevelNotEnough",
+          ),
         );
       }
     }
@@ -531,7 +531,7 @@ export default class RoomHallCtrl extends FrameCtrlBase {
     if (this.roomSceneType == RoomSceneType.PVP) {
       inviteConent = LangManager.Instance.GetTranslation(
         "QuickInviteWnd.PvpInviteTipPrefix02",
-        this.roomInfo.id
+        this.roomInfo.id,
       );
     } else {
       if (this.roomInfo.campaignId == GlobalConfig.CampaignID.AncientRuins) {
@@ -539,8 +539,8 @@ export default class RoomHallCtrl extends FrameCtrlBase {
           LangManager.Instance.GetTranslation(
             "QuickInviteWnd.AncientRuinsInviteTipPrefix",
             this.roomInfo.mapName,
-            this.roomInfo.id
-          )
+            this.roomInfo.id,
+          ),
         );
       } else {
         let mapName: string = "";
@@ -551,14 +551,14 @@ export default class RoomHallCtrl extends FrameCtrlBase {
         if (templateInfo) {
           lvstr = LangManager.Instance.GetTranslation(
             "public.level3",
-            templateInfo.MinLevel
+            templateInfo.MinLevel,
           );
         }
         mapName = templateInfo.CampaignNameLang + " " + lvstr;
         inviteConent = LangManager.Instance.GetTranslation(
           "QuickInviteWnd.PveInviteTipPrefix2",
           mapName,
-          this.roomInfo.id
+          this.roomInfo.id,
         );
       }
     }

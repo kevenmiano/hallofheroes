@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.uiplay;
+
+message UiPlayChallengeMsg {
+  int32 op = 1;
+  int32 playId = 2;
+  int32 levelID = 3;
+}

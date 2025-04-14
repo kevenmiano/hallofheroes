@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignTakeCardsMsg {
+  int32 playerId = 1;
+  string name = 2;
+  bool pay = 3;
+  int32 index = 4;
+  int32 templateId = 5;
+  int32 count = 6;
+  bool bind = 7;
+  int32 randomSkill_1 = 8;
+  int32 randomSkill_2 = 9;
+  int32 randomSkill_3 = 10;
+  int32 randomSkill_4 = 11;
+  int32 randomSkill_5 = 12;
+}

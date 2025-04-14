@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaVotingReqMsg {
+  int32 votingUser = 1;
+}

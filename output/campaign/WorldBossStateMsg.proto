@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WorldBossStateMsg {
+  repeated int32 worldBossInfo = 1;
+}

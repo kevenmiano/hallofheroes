@@ -51,7 +51,7 @@ export default class WorldBossModel extends FrameDataBase {
     }
   }
 
-  public getWoundInfoByNickname(name: String): WoundInfo {
+  public getWoundInfoByNickname(name: string): WoundInfo {
     for (const key in this._woundInfoList) {
       let info: WoundInfo = this._woundInfoList[key];
       if (info.nickName == name) return info;
@@ -128,12 +128,12 @@ export default class WorldBossModel extends FrameDataBase {
     this._woundInfoList = ArrayUtils.sortOn(
       this._woundInfoList,
       ["wound"],
-      [ArrayConstant.DESCENDING | ArrayConstant.NUMERIC]
+      [ArrayConstant.DESCENDING | ArrayConstant.NUMERIC],
     );
     this._allWoundInfoList = [];
     this._jobWoundInfoList = [];
     var job: number = ThaneInfoHelper.getJob(
-      PlayerManager.Instance.currentPlayerModel.playerInfo.job
+      PlayerManager.Instance.currentPlayerModel.playerInfo.job,
     );
     var i: number = 0;
     var indexAll: number = 0;

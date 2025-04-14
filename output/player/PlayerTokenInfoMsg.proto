@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerTokenInfoMsg {
+  repeated int32 tokenInfos = 1;
+}

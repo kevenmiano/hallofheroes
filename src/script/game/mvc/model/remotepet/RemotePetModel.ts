@@ -83,7 +83,7 @@ export class RemotePetModel extends GameEventDispatcher {
   public get turnInfo(): RemotePetTurnInfo {
     return this._turnInfo;
   }
-  public petChange(value: Object = null) {
+  public petChange(value: object = null) {
     this.dispatchEvent(RemotePetEvent.PET_CHANGE, value);
   }
   public commitTurnList() {
@@ -101,7 +101,7 @@ export class RemotePetModel extends GameEventDispatcher {
   public updateSkillLevelUp() {
     this.dispatchEvent(RemotePetEvent.SKILLEVELUP);
   }
-  public updateMopup(value: Object = null) {
+  public updateMopup(value: object = null) {
     this.dispatchEvent(RemotePetEvent.UPDATEMOPUP, value);
   }
   public get maxMopupTurn(): number {
@@ -109,7 +109,7 @@ export class RemotePetModel extends GameEventDispatcher {
       let temp: RemotePetTurnTemplateInfo =
         TempleteManager.Instance.getRemotePetTemplateById(
           this._turnInfo.maxTurn,
-          1
+          1,
         );
       return temp.SweepIndex;
     }

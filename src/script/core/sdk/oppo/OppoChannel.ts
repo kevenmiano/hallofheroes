@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import { ResultCallback, ResultState } from "../SDKConfig";
 import OppoRewardAd from "./OppoRewardAd";
@@ -62,9 +61,9 @@ export default class OppoChannel extends BaseChannel {
 
   vibrateShort() {
     qg.vibrateShort({
-      success: function (res) {},
-      fail: function (res) {},
-      complete: function (res) {},
+      success: function () {},
+      fail: function () {},
+      complete: function () {},
     });
   }
 
@@ -89,9 +88,9 @@ export default class OppoChannel extends BaseChannel {
 
   installShortcut(result: ResultCallback) {
     qg.installShortcut({
-      success: function (param) {
+      success: function () {
         // 执行用户创建图标奖励
-        Logger.log(" 安装成功 ", param);
+        Logger.log(" 安装成功 ");
         result(ResultState.YES);
       },
       fail: function (err) {

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message FaceImgInfoMsg {
+  string activeId = 1;
+  string activityName = 2;
+  int32 activeType = 3;
+  int32 minLevel = 4;
+  int32 maxLevel = 5;
+  string beginTime = 6;
+  string endTime = 7;
+  repeated int32 images = 8;
+  int32 order = 9;
+}

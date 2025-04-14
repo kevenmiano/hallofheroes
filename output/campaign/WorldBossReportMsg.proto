@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WorldBossReportMsg {
+  int32 campaignId = 1;
+  int32 order = 2;
+  int32 gold = 3;
+  int32 strengy = 4;
+  int32 totalWound = 5;
+  int32 type = 6;
+}

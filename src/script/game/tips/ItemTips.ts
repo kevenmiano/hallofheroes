@@ -27,7 +27,7 @@ export default class ItemTips extends BaseTips {
       this,
       this.renderItem,
       null,
-      false
+      false,
     );
   }
 

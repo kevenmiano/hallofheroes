@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CaptainSpeakMsg {
+  string cmapaignName = 1;
+  int32 roomId = 2;
+  int32 isLock = 3;
+  repeated int32 inviteContent = 4;
+}

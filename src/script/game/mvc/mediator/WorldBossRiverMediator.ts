@@ -6,7 +6,7 @@ import {
   OuterCityEvent,
 } from "../../constant/event/NotificationEvent";
 import { EmWindow } from "../../constant/UIDefine";
-// import IMediator from "../../interfaces/IMediator";
+// import { IMediator } from "@/script/game/interfaces/Mediator";
 import { CampaignManager } from "../../manager/CampaignManager";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { VIPManager } from "../../manager/VIPManager";
@@ -16,7 +16,7 @@ import { WorldBossHelper } from "../../utils/WorldBossHelper";
 import WorldBossRiverWnd from "../../module/worldboss/view/WorldBossRiverWnd";
 import { PlayerManager } from "../../manager/PlayerManager";
 import { PlayerModel } from "../../datas/playerinfo/PlayerModel";
-import { WorldBossSocketOutManager } from "../../manager/WorldBossSocketOutManager";
+// import { WorldBossSocketOutManager } from "../../manager/WorldBossSocketOutManager";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";
 import { TempleteManager } from "../../manager/TempleteManager";
 import { MessageTipManager } from "../../manager/MessageTipManager";
@@ -28,52 +28,51 @@ import LangManager from "../../../core/lang/LangManager";
  *
  */
 export default class WorldBossRiverMediator {
-  //@ts-ignore
   private _army: CampaignArmy;
 
   private _autoEnterFight: boolean = false;
 
-  public register(target: Object) {
+  public register(target: object) {
     this._army = CampaignManager.Instance.mapModel.selfMemberData;
     if (this._army) {
       this._army.addEventListener(
         CampaignMapEvent.IS_DIE,
         this.__isDieHandler,
-        this
+        this,
       );
       CampaignManager.Instance.mapModel.addEventListener(
         OuterCityEvent.CURRENT_NPC_POS,
         this.__autoHandler,
-        this
+        this,
       );
       if (this.playerModel)
         this.playerModel.addEventListener(
           CampaignEvent.WORLDBOSS_AUTO_WALK_CHANGED,
           this.__autoHandler,
-          this
+          this,
         );
       this.__autoHandler();
       this.__isDieHandler(null);
     }
   }
 
-  public unregister(target: Object) {
+  public unregister(target: object) {
     if (this._army) {
       this._army.removeEventListener(
         CampaignMapEvent.IS_DIE,
         this.__isDieHandler,
-        this
+        this,
       );
       CampaignManager.Instance.mapModel.removeEventListener(
         OuterCityEvent.CURRENT_NPC_POS,
         this.__autoHandler,
-        this
+        this,
       );
       if (this.playerModel)
         this.playerModel.removeEventListener(
           CampaignEvent.WORLDBOSS_AUTO_WALK_CHANGED,
           this.__autoHandler,
-          this
+          this,
         );
       UIManager.Instance.HideWind(EmWindow.WorldBossRiverWnd);
     }
@@ -92,7 +91,7 @@ export default class WorldBossRiverMediator {
       let type = 1;
       if (
         WorldBossHelper.checkInPetBossFloor(
-          CampaignManager.Instance.mapModel.mapId
+          CampaignManager.Instance.mapModel.mapId,
         )
       ) {
         type = WorldBossRiverWnd.PET_BOSS;
@@ -104,8 +103,8 @@ export default class WorldBossRiverMediator {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
               "WorldBossRiverMediator.tips1",
-              Math.ceil(time / 1000)
-            )
+              Math.ceil(time / 1000),
+            ),
           );
           let flag: boolean =
             PlayerManager.Instance.currentPlayerModel.wolrdBossAutoLiveCostType;
@@ -117,11 +116,11 @@ export default class WorldBossRiverMediator {
             //判断钻石够不够
             MessageTipManager.Instance.show(
               LangManager.Instance.GetTranslation(
-                "WorldBossRiverMediator.tips2"
-              )
+                "WorldBossRiverMediator.tips2",
+              ),
             );
             this.playerModel.setWorldBossAutoLive(
-              PlayerModel.WORLDBOSS_CANCEL_AUTO_LIVE
+              PlayerModel.WORLDBOSS_CANCEL_AUTO_LIVE,
             ); //取消自动
             UIManager.Instance.ShowWind(EmWindow.WorldBossRiverWnd, {
               count: Math.ceil(time / 1000),
@@ -150,7 +149,7 @@ export default class WorldBossRiverMediator {
     let flag: boolean = true;
     let autoLiveCost = parseInt(
       TempleteManager.Instance.getConfigInfoByConfigName("Live_Fight_Pay")
-        .ConfigValue
+        .ConfigValue,
     );
     if (payType) {
       //优先使用绑定钻石
@@ -186,7 +185,7 @@ export default class WorldBossRiverMediator {
     } else {
       if (this._army) {
         var armyView = CampaignManager.Instance.controller.getArmyView(
-          this._army
+          this._army,
         );
         if (armyView) armyView.aiInfo.pathInfo = [];
       }
@@ -204,7 +203,7 @@ export default class WorldBossRiverMediator {
   private workNextNode(e: Event = null) {
     NotificationManager.Instance.dispatchEvent(
       NotificationEvent.WORK_NEXT_NODE,
-      null
+      null,
     );
   }
 }

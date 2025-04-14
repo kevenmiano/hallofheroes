@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ActiveRspInfo {
+  string activeId = 1;
+  string title = 2;
+  string contents = 3;
+  string awardContent = 4;
+  string description = 5;
+  string actionTimeContent = 6;
+  int32 consortia = 7;
+  int32 grades = 8;
+  int32 sort = 9;
+  string endDate = 10;
+  string startDate = 11;
+}

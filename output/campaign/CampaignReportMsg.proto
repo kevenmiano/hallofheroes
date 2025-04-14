@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignReportMsg {
+  int32 time = 1;
+  int32 woundValue = 2;
+  int32 hurtValue = 3;
+  int32 failedCount = 4;
+  int32 woundAppraisal = 5;
+  int32 hurtAppraisal = 6;
+  int32 failedAppraisal = 7;
+  int32 totalAppraisal = 8;
+  int32 batter = 9;
+  int32 teamJoin = 10;
+  int32 friendJoin = 11;
+  int32 vipJoin = 12;
+  int32 propJoin = 13;
+  int32 otherJoin = 14;
+  int32 totalGp = 15;
+  int32 petGp = 16;
+  int32 endBossTime = 17;
+  int32 endBossAppraisal = 18;
+}

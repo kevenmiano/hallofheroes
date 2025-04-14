@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarInfoReqMsg {
+  repeated int32 id = 1;
+}

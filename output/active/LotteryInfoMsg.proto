@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LotteryInfoMsg {
+  int32 chargeNum = 1;
+  int32 maxNum = 2;
+  int32 curNum = 3;
+  int32 giveNum = 4;
+}

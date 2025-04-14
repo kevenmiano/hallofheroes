@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WarFieldAttackMsg {
+  int32 userId = 1;
+  string serverName = 2;
+  string defenceServerName = 3;
+}

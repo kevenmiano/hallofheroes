@@ -163,7 +163,7 @@ export class MopupModel extends GameEventDispatcher {
       // }
       NotificationManager.Instance.sendNotification(
         NotificationEvent.LOCK_TEAM_FOLLOW_TARGET,
-        0
+        0,
       );
     }
   }

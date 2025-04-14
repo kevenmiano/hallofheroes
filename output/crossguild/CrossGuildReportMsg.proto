@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildReportMsg {
+  string winUserNickName = 1;
+  string loseUserNickName = 2;
+  int32 winScore = 3;
+  int32 loseScore = 4;
+  int32 winCamp = 5;
+  int32 loseCamp = 6;
+  string reportTime = 7;
+  string timestamp = 8;
+  int32 road = 9;
+}

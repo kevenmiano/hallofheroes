@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageHeartReportRes {
+  int32 syncNum = 1;
+  string awardStr = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ReinforceMsg {
+  int32 side = 1;
+  repeated int32 hero = 2;
+  repeated int32 soldiers = 3;
+  int32 reinforceWave = 4;
+  repeated int32 pets = 5;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WarReportListMsg {
+  int32 oneTeamId = 1;
+  int32 twoTeamId = 2;
+  int32 thdTemaId = 3;
+  int32 tempId = 4;
+  int32 ownCount = 5;
+  int32 teamCount = 6;
+  int32 oneScore = 7;
+  int32 twoScore = 8;
+  int32 thdScore = 9;
+  repeated int32 info = 10;
+  string reportAwards = 11;
+}

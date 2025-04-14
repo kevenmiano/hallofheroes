@@ -39,9 +39,6 @@ interface CanvasContext {
    */
   closePath: () => void;
 
-  /**
-   * 创建一个圆形的渐变颜色。
-   */
   createCircularGradient: () => void;
 
   /**
@@ -223,9 +220,6 @@ interface _writeBLECharacteristicValueObject {
 }
 
 interface _writeBLECharacteristicValueSuccessObject {
-  /**
-   * 成功：ok，错误：详细信息
-   */
   errMsg: string;
 }
 
@@ -1489,15 +1483,15 @@ interface _requestPaymentObject {
   /**
    * 平台分配的游戏appId
    */
-  appId:number;
+  appId: number;
   /**
    * 游戏包名
    */
-  pkgName:string;
+  pkgName: string;
   /**
    * qg.login成功时获得的用户token
    */
-  token:string;
+  token: string;
   /**
    * 时间戳从1970年1月1日00:00:00至今的秒数,即当前的时间
    */
@@ -1505,11 +1499,11 @@ interface _requestPaymentObject {
   /**
    * 下单订单号，由统一下单接口返回
    */
-  orderNo:string;
+  orderNo: string;
   /**
    * 支付签名，CP服务端生成。注：paySign 由 CP 服务端使用 appKey (不是 appId )、orderNo、timestamp 进行签名算法生成返回。签名规则，跟"统一下单接口"的签名规则一致。
    */
-  paySign:string;
+  paySign: string;
 
   /**
    * 接口调用成功的回调函数
@@ -3543,9 +3537,9 @@ interface _downloadFileObject {
    */
   header: object;
   /**
-   * 	指定文件下载后存储的路径 
+   * 	指定文件下载后存储的路径
    */
-  filePath?:string;
+  filePath?: string;
   /**
    * 	接口调用成功的回调函
    */
@@ -3575,12 +3569,12 @@ interface _downloadFileSuccessObject {
   /**
    * 错误码
    */
-  errCode:string;
+  errCode: string;
 
   /**
-  * 错误信息
-  */
-  errMsg:number;
+   * 错误信息
+   */
+  errMsg: number;
 }
 
 interface _createBLEConnectionObject {
@@ -4594,113 +4588,113 @@ declare interface _AppOptions {
   onError?: (msg: string) => void;
 }
 
-interface _BatteryInfo{
+interface _BatteryInfo {
   /**
    * 	设备电量，范围 1 - 100
    */
-  level:number;
+  level: number;
   /**
    * 是否正在充电中
    */
-  isCharging:number;
+  isCharging: number;
 }
 
-interface _FileSystemManager{
+interface _FileSystemManager {
   /**
    * 判断文件/目录是否存在
    */
-  access:(object:any)=>void;
+  access: (object: any) => void;
   /**
    * FileSystemManager.access 的同步版本，判断文件/目录是否存在
    */
-  accessSync:(path:string)=>any;
+  accessSync: (path: string) => any;
   /**
    * 在文件结尾追加内容
    */
-  appendFile:(object:any)=>void;
+  appendFile: (object: any) => void;
   /**
    * FileSystemManager.appendFile 的同步版本，在文件结尾追加内容
    * @param 要追加内容的文件路径
    * @param 要追加的文本或二进制数据
    * @param 指定写入文件的字符编码，当前支持：utf8、binary
    */
-  appendFileSync:(filePath:string,data:any,encoding?:string)=>any;
+  appendFileSync: (filePath: string, data: any, encoding?: string) => any;
   /**
    * 复制文件异步方式
    */
-  copyFile:(object:any)=>void;
+  copyFile: (object: any) => void;
   /**
    * FileSystemManager.copyFile 的同步版本，拷贝文件
    * @param 源文件路径，只可以是普通文件
    * @param 	目标文件路径
    */
-  copyFileSync:(srcPath:string,destPath:string)=>boolean;
+  copyFileSync: (srcPath: string, destPath: string) => boolean;
   /**
    * 获取本地临时文件或本地用户文件的文件信息
    */
-  getFileInfo:(object:any) => void;
+  getFileInfo: (object: any) => void;
   /**
    * 创建目录
    */
-  mkdir:(object:any)=>void;
+  mkdir: (object: any) => void;
   /**
    * FileSystemManager.mkdir 的同步版本，创建目录
    * @param 创建的目录路径
    * @param 是否在递归创建该目录的上级目录后再创建该目录。如果对应的上级目录已经存在，则不创建该上级目录。如 dirPath 为 a/b/c/d 且 recursive 为 true，将创建 a 目录，再在 a 目录下创建 b 目录，以此类推直至创建 a/b/c 目录下的 d 目录。
    */
-  mkdirSync:(dirPath:string,recursive:string)=>any;
+  mkdirSync: (dirPath: string, recursive: string) => any;
   /**
    * 读取本地文件内容异步方式
    */
-  readFile:(object:any)=>void;
+  readFile: (object: any) => void;
   /**
    * FileSystemManager.readFile 的同步版本，读取文件
    * @param 	要读取的文件的路径
    * @param 指定读取文件的字符编码，默认为 binary
    */
-  readFileSync:(filePath:string,encoding?:string)=>any;
+  readFileSync: (filePath: string, encoding?: string) => any;
   /**
    * 重命名文件，可以把文件从 oldPath 移动到 newPath
    */
-  rename:(object:any)=>void;
+  rename: (object: any) => void;
   /**
    * FileSystemManager.rename 的同步版本，重命名文件
    */
-  renameSync:(oldPath:string,newPath:string)=>any;
+  renameSync: (oldPath: string, newPath: string) => any;
   /**
    * 删除目录
    */
-  rmdir:(object:any)=>void;
+  rmdir: (object: any) => void;
   /**
    * FileSystemManager.rmdir 的同步版本，移除目录
    * @param 要删除的目录路径
    * @param 是否递归删除目录。如果为 true，则删除该目录和该目录下的所有子目录以及文件。
    */
-  rmdirSync:(dirPath:string,recursive?:boolean)=>void;
+  rmdirSync: (dirPath: string, recursive?: boolean) => void;
   /**
    * 读取目录内文件列表
    */
-  readdir:(object:any)=>void;
+  readdir: (object: any) => void;
   /**
    * FileSystemManager.readdir 的同步版本，读取目录
    */
-  readdirSync:(dirPath:string)=>Array<any>;
+  readdirSync: (dirPath: string) => Array<any>;
   /**
    * 删除文件
    */
-  unlink:(object:any)=>void;
+  unlink: (object: any) => void;
   /**
    * FileSystemManager.unlink 的同步版本，删除文件
    */
-  unlinkSync:(filePath:string)=>any;
+  unlinkSync: (filePath: string) => any;
   /**
    * 解压文件
    */
-  unzip:(object:any)=>void;
+  unzip: (object: any) => void;
   /**
    * 写文件异步方式
    */
-  writeFile:(object:any)=>void;
+  writeFile: (object: any) => void;
   /**
    * FileSystemManager.writeFile 的同步版本，写文件
    * @param 要写入的文件路径
@@ -4708,233 +4702,237 @@ interface _FileSystemManager{
    * @param 指定写入文件的字符编码 utf8 or binary，默认值为 utf8
    * @param 默认为 false，覆盖旧文件
    */
-  writeFileSync:(filePath:string, data:any, encoding?:string, append?:boolean)=>boolean;
+  writeFileSync: (
+    filePath: string,
+    data: any,
+    encoding?: string,
+    append?: boolean,
+  ) => boolean;
   /**
    * 保存临时文件到本地。此接口会移动临时文件，因此调用成功后，tempFilePath 将不可用。
    */
-  saveFile:(object:any)=>void;
+  saveFile: (object: any) => void;
   /**
    * FileSystemManager.saveFile 的同步版本，保存临时文件到本地。
    * @param 临时存储文件路径
    * @param 要存储的文件路径
    * @returns	存储后的文件路径
    */
-  saveFileSync:(tempFilePath:string, filePath?:string)=>string;
+  saveFileSync: (tempFilePath: string, filePath?: string) => string;
   /**
    * 删除该OPPO小游戏下已保存的本地缓存文件
    */
-  removeSavedFile:(object:any )=>void;
+  removeSavedFile: (object: any) => void;
   /**
    * 获取文件 Stats 对象
    */
-  stat:(object:any)=>void;
- 
+  stat: (object: any) => void;
 }
 
-interface _LoadSubpackageTask{
+interface _LoadSubpackageTask {
   /**
    * 用于获取分包加载状态
    */
-  onProgressUpdate:(callback:Function)=>void;
+  onProgressUpdate: (callback: Function) => void;
 }
 
-interface _NativeAd{
+interface _NativeAd {
   /**
    * 获取广告数据，成功回调 onLoad，失败回调 onError
    */
-  load:()=>void;
+  load: () => void;
   /**
    * 销毁广告组件，释放资源
    */
-  destroy:()=>void;
+  destroy: () => void;
   /**
    * 上报广告曝光，一个广告只有一次上报有效，adId 为 load 方法获取的广告数据的 adId 字段
    */
-  reportAdShow:(callback:Function) => void;
+  reportAdShow: (callback: Function) => void;
   /**
    * 上报广告点击，一个广告只有一次上报有效，adId 为 load 方法获取的广告数据的 adId 字段
    */
-  reportAdClick:(callback:Function) => void;
+  reportAdClick: (callback: Function) => void;
   /**
    * 设置广告加载成功回调
    */
-  onLoad:(callback:Function)=>void;
+  onLoad: (callback: Function) => void;
   /**
    * 移除广告加载成功回调
-  */
-  offLoad:(callback:Function)=>void;
+   */
+  offLoad: (callback: Function) => void;
   /**
    * 设置出错回调
    */
-  onError:(callback:Function)=>void;
+  onError: (callback: Function) => void;
   /**
    * 移除出错回调
    */
-  offError:(callback:Function)=>void;
+  offError: (callback: Function) => void;
 }
 
-interface _InsertAd{
+interface _InsertAd {
   /**
    * 拉取插屏广告资源，成功回调 onLoad，失败回调 onError
    */
-  load:()=>void;
+  load: () => void;
   /**
    * 展示插屏广告，成功回调 onShow，失败回调 onError
    */
-  show:()=>void;
+  show: () => void;
   /**
    * 销毁组件，释放资源
    */
-  destroy:()=>void;
+  destroy: () => void;
   /**
    * 设置插屏广告加载成功回调
    */
-  onLoad:(callback:Function)=>void;
+  onLoad: (callback: Function) => void;
   /**
    * 移除插屏广告加载成功回调
    */
-  offLoad:(callback:Function)=>void;
+  offLoad: (callback: Function) => void;
   /**
    * 设置插屏广告展示成功回调
    */
-  onShow:(callback:Function)=>void;
+  onShow: (callback: Function) => void;
   /**
    * 移除banner 隐藏回调
    */
-  offShow:(callback:Function)=>void;
+  offShow: (callback: Function) => void;
   /**
    * 设置插屏广告失败回调
    */
-  onError:(callback:Function)=>void;
+  onError: (callback: Function) => void;
   /**
    * 移除插屏广告失败回调
    */
-  offError:(callback:Function)=>void;
+  offError: (callback: Function) => void;
 }
 
-interface _VideoAd{
+interface _VideoAd {
   /**
    * 手动拉取广告，成功回调 onLoad，失败回调 onError
    */
-  load:()=>void;
+  load: () => void;
   /**
    * 视频广告组件默认是隐藏的，调用 show 方法展示广告，成功回调 onVideoStart，失败回调 onError.
    * 开发者不可控制视频广告的关闭，只有用户主动点击关闭按钮才会关闭广告
    */
-  show:()=>void;
+  show: () => void;
   /**
    * 销毁组件，释放资源
    */
-  destroy:()=>void;
+  destroy: () => void;
   /**
    * 设置视频广告加载成功回调
    */
-  onLoad:(callback:Function)=>void;
+  onLoad: (callback: Function) => void;
   /**
    * 移除视频广告加载成功回调
    */
-  offLoad:(callback:Function)=>void;
+  offLoad: (callback: Function) => void;
   /**
    * 设置视频广告开始播放回调
    */
-  onVideoStart:(callback:Function)=>void;
+  onVideoStart: (callback: Function) => void;
   /**
    * 移除视频广告开始播放回调
    */
-  offVideoStart:(callback:Function)=>void;
+  offVideoStart: (callback: Function) => void;
   /**
    * 设置视频奖励发放回调
    */
-  onRewarded:(callback:Function)=>void;
+  onRewarded: (callback: Function) => void;
   /**
    * 移除视频奖励发放回调
    */
-  offRewarded:(callback:Function)=>void;
+  offRewarded: (callback: Function) => void;
   /**
    * 设置视频广告出错回调
    */
-  onError:(callback:Function)=>void;
+  onError: (callback: Function) => void;
   /**
    * 移除视频广告出错回调
    */
-  offError:(callback:Function)=>void;
+  offError: (callback: Function) => void;
 }
 
-interface _BannerAd{
+interface _BannerAd {
   /**
    * 调用 load 方法请求展示 banner，成功的时候回调 onShow，出错的时候回调 onError
    */
-  show:()=>void;
+  show: () => void;
   /**
    * 隐藏 banner，成功回调 onHide, 出错的时候回调 onError
    */
-  hide:()=>void;
+  hide: () => void;
   /**
    * 设置 banner 成功展示回调
    */
-  onShow:(callback:Function)=>void;
+  onShow: (callback: Function) => void;
   /**
    * 移除 banner 成功展示回调
    */
-  offShow:(callback:Function)=>void;
+  offShow: (callback: Function) => void;
   /**
    * 设置 banner 隐藏回调
    */
-  onHide:(callback:Function)=>void;
+  onHide: (callback: Function) => void;
   /**
    * 移除banner 隐藏回调
    */
-  offHide:(callback:Function)=>void;
+  offHide: (callback: Function) => void;
   /**
    * 设置失败回调
    */
-  onError:(callback:Function)=>void;
+  onError: (callback: Function) => void;
   /**
    * 移除失败回调
    */
-  offError:(callback:Function)=>void;
+  offError: (callback: Function) => void;
 }
 
 interface _Battle {
   /**
    * 对战初始化。初始化完成后可以获得对战信息，进行其他操作。（游戏双方都调用该方法后，才能触发success回调）
    */
-  init :(object:any) => void;
+  init: (object: any) => void;
   /**
    * 发送游戏当前的状态给平台。**注：调用postGameStatus设置游戏状态时，每个状态都只能调用一次，不要重复调用。
    */
-  postGameStatus :(object:any) =>void;
+  postGameStatus: (object: any) => void;
   /**
    * 平台通知游戏开始。平台主动调此方法触发开始逻辑。（双方都调用postGameStatus且status为1时，才会触发该方法）
    */
-  onGameStart:(callback:Function)=>void;
+  onGameStart: (callback: Function) => void;
   /**
    * 弹出确认对话框，提示是否退出对局。**注：该方法用于CP自己实现了退出按钮的通用处理逻辑，一般情况下不需要调用该方法；success回调不代表真正退出，仅将退出请求发送到服务端，退出游戏还是需要通过服务端驱动。
    */
-  quit:(object:any)=>void;
+  quit: (object: any) => void;
   /**
    * 游戏发送消息。
    */
-  postMessage:(object:any) =>void;
+  postMessage: (object: any) => void;
   /**
    * 游戏接收推送的消息。
    */
-   onMessage:(callback:Function)=>void;
-   /**
-    * 游戏传数据给游戏平台。
-    */
-   writeBlackboard:(object:any)=>void;
+  onMessage: (callback: Function) => void;
+  /**
+   * 游戏传数据给游戏平台。
+   */
+  writeBlackboard: (object: any) => void;
 }
 
 interface _DownloadTask {
   /**
    * 中断下载任务
    */
-  abort:()=>void;
+  abort: () => void;
   /**
    * 监听下载进度变化事件
    */
-  onProgressUpdate:(callback:Function)=>void;
+  onProgressUpdate: (callback: Function) => void;
 }
 
 declare function App(options: _AppOptions): void;
@@ -5048,21 +5046,21 @@ declare namespace qg {
    */
   export function canvasToTempFilePath(
     this: string,
-    object: _canvasToTempFilePathObject
+    object: _canvasToTempFilePathObject,
   ): void;
 
   /**
    * 获取设备内是否录入如指纹等生物信息的接口
    */
   export function checkIsSoterEnrolledInDevice(
-    object: _checkIsSoterEnrolledInDeviceObject
+    object: _checkIsSoterEnrolledInDeviceObject,
   ): void;
 
   /**
    * 获取本机支持的 SOTER 生物认证方式
    */
   export function checkIsSupportSoterAuthentication(
-    object: _checkIsSupportSoterAuthenticationObject
+    object: _checkIsSupportSoterAuthenticationObject,
   ): void;
 
   /**
@@ -5119,7 +5117,7 @@ declare namespace qg {
    * 关闭蓝牙模块，使其进入未初始化状态。调用该方法将断开所有已建立的链接并释放系统资源。建议在使用小程序蓝牙流程后调用，与`wx.openBluetoothAdapter`成对调用。
    */
   export function closeBluetoothAdapter(
-    object: _closeBluetoothAdapterObject
+    object: _closeBluetoothAdapterObject,
   ): void;
 
   /**
@@ -5162,7 +5160,7 @@ declare namespace qg {
    */
   export function createCanvasContext(
     this: string,
-    canvasid: string
+    canvasid: string,
   ): CanvasContext;
 
   /**
@@ -5203,20 +5201,20 @@ declare namespace qg {
   /**
    * 下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
    */
-  export function downloadFile(object: _downloadFileObject):_DownloadTask;
+  export function downloadFile(object: _downloadFileObject): _DownloadTask;
 
   /**
    * 蓝牙设备characteristic(特征值)信息
    */
   export function getBLEDeviceCharacteristics(
-    object: _getBLEDeviceCharacteristicsObject
+    object: _getBLEDeviceCharacteristicsObject,
   ): void;
 
   /**
    * 获取蓝牙设备所有 service（服务）
    */
   export function getBLEDeviceServices(
-    object: _getBLEDeviceServicesObject
+    object: _getBLEDeviceServicesObject,
   ): void;
 
   /**
@@ -5228,7 +5226,7 @@ declare namespace qg {
    * 获取后台音乐播放状态。
    */
   export function getBackgroundAudioPlayerState(
-    object: _getBackgroundAudioPlayerStateObject
+    object: _getBackgroundAudioPlayerStateObject,
   ): void;
 
   /**
@@ -5240,7 +5238,7 @@ declare namespace qg {
    * 获取本机蓝牙适配器状态
    */
   export function getBluetoothAdapterState(
-    object: _getBluetoothAdapterStateObject
+    object: _getBluetoothAdapterStateObject,
   ): void;
 
   /**
@@ -5257,7 +5255,7 @@ declare namespace qg {
    * 根据 uuid 获取处于已连接状态的设备
    */
   export function getConnectedBluetoothDevices(
-    object: _getConnectedBluetoothDevicesObject
+    object: _getConnectedBluetoothDevicesObject,
   ): void;
 
   /**
@@ -5434,7 +5432,7 @@ declare namespace qg {
    * 返回到上一个小程序，只有在当前小程序是被其他小程序打开时可以调用成功
    */
   export function navigateBackMiniProgram(
-    object: _navigateBackMiniProgramObject
+    object: _navigateBackMiniProgramObject,
   ): void;
 
   /**
@@ -5446,35 +5444,33 @@ declare namespace qg {
    * 打开同一公众号下关联的另一个小程序。**（注：必须是同一公众号下，而非同个 open 账号下）**
    */
   export function navigateToMiniProgram(
-    object: _navigateToMiniProgramObject
+    object: _navigateToMiniProgramObject,
   ): void;
 
   /**
    * 启用低功耗蓝牙设备特征值变化时的 notify 功能，订阅特征值。注意：必须设备的特征值支持`notify`或者`indicate`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function notifyBLECharacteristicValueChange(
-    object: _notifyBLECharacteristicValueChangeObject
+    object: _notifyBLECharacteristicValueChangeObject,
   ): void;
 
   /**
    * 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 `wx.stopAccelerometer` 停止监听。
    */
-  export function onAccelerometerChange(
-    callback: (x,y,z) => void
-  ): void;
+  export function onAccelerometerChange(callback: (x, y, z) => void): void;
 
   /**
    * 监听低功耗蓝牙设备的特征值变化。必须先启用`notify`接口才能接收到设备推送的notification。
    */
   export function onBLECharacteristicValueChange(
-    callback: (result: _onBLECharacteristicValueChangeCallbackResult) => void
+    callback: (result: _onBLECharacteristicValueChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听低功耗蓝牙连接的错误事件，包括设备丢失，连接异常断开等等。
    */
   export function onBLEConnectionStateChange(
-    callback: (result: _onBLEConnectionStateChangeCallbackResult) => void
+    callback: (result: _onBLEConnectionStateChangeCallbackResult) => void,
   ): void;
 
   /**
@@ -5496,63 +5492,63 @@ declare namespace qg {
    * 监听 `iBeacon` 服务的状态变化
    */
   export function onBeaconServiceChange(
-    callback: (result: _onBeaconServiceChangeCallbackResult) => void
+    callback: (result: _onBeaconServiceChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听 `iBeacon` 设备的更新事件
    */
   export function onBeaconUpdate(
-    callback: (result: _onBeaconUpdateCallbackResult) => void
+    callback: (result: _onBeaconUpdateCallbackResult) => void,
   ): void;
 
   /**
    * 监听蓝牙适配器状态变化事件
    */
   export function onBluetoothAdapterStateChange(
-    callback: (result: _onBluetoothAdapterStateChangeCallbackResult) => void
+    callback: (result: _onBluetoothAdapterStateChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听寻找到新设备的事件
    */
   export function onBluetoothDeviceFound(
-    callback: (result: _onBluetoothDeviceFoundCallbackResult) => void
+    callback: (result: _onBluetoothDeviceFoundCallbackResult) => void,
   ): void;
 
   /**
    * 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用`wx.stopCompass`停止监听。
    */
   export function onCompassChange(
-    callback: (result: _onCompassChangeCallbackResult) => void
+    callback: (result: _onCompassChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听需要评估连上的 Wi-Fi 的请求，在回调里必须返回 `confidence` 字段
    */
   export function onEvaluateWifi(
-    callback: (result: _onEvaluateWifiCallbackResult) => void
+    callback: (result: _onEvaluateWifiCallbackResult) => void,
   ): void;
 
   /**
    * 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。
    */
   export function onGetWifiList(
-    callback: (result: _onGetWifiListCallbackResult) => void
+    callback: (result: _onGetWifiListCallbackResult) => void,
   ): void;
 
   /**
    * 监听 NFC 设备的消息回调，并在回调中处理。返回参数中 `messageType` 表示消息类型，目前有如下值：
    */
   export function onHCEMessage(
-    callback: (result: _onHCEMessageCallbackResult) => void
+    callback: (result: _onHCEMessageCallbackResult) => void,
   ): void;
 
   /**
    * 监听网络状态变化。
    */
   export function onNetworkStatusChange(
-    callback: (result: _onNetworkStatusChangeCallbackResult) => void
+    callback: (result: _onNetworkStatusChangeCallbackResult) => void,
   ): void;
 
   /**
@@ -5569,7 +5565,7 @@ declare namespace qg {
    * 监听WebSocket接受到服务器的消息事件。
    */
   export function onSocketMessage(
-    callback: (result: _onSocketMessageCallbackResult) => void
+    callback: (result: _onSocketMessageCallbackResult) => void,
   ): void;
 
   /**
@@ -5581,21 +5577,21 @@ declare namespace qg {
    * 监听用户主动截屏事件，用户使用系统截屏按键截屏时触发此事件
    */
   export function onUserCaptureScreen(
-    callback: (result: _onUserCaptureScreenCallbackResult) => void
+    callback: (result: _onUserCaptureScreenCallbackResult) => void,
   ): void;
 
   /**
    * 监听连接上 Wi-Fi 的事件。
    */
   export function onWifiConnected(
-    callback: (result: _onWifiConnectedCallbackResult) => void
+    callback: (result: _onWifiConnectedCallbackResult) => void,
   ): void;
 
   /**
    * 初始化小程序蓝牙模块，生效周期为调用`wx.openBluetoothAdapter`至调用`wx.closeBluetoothAdapter`或小程序被销毁为止。
    */
   export function openBluetoothAdapter(
-    object: _openBluetoothAdapterObject
+    object: _openBluetoothAdapterObject,
   ): void;
 
   /**
@@ -5657,7 +5653,7 @@ declare namespace qg {
    * 读取低功耗蓝牙设备的特征值的二进制数据值。注意：必须设备的特征值支持`read`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function readBLECharacteristicValue(
-    object: _readBLECharacteristicValueObject
+    object: _readBLECharacteristicValueObject,
   ): void;
 
   /**
@@ -5695,7 +5691,6 @@ declare namespace qg {
    */
   export function request(object: _requestObject): void;
 
-
   /**
    * 保存文件到本地。**注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用**
    */
@@ -5705,14 +5700,14 @@ declare namespace qg {
    * 保存图片到系统相册。需要[用户授权](./authorize-index.md) scope.writePhotosAlbum
    */
   export function saveImageToPhotosAlbum(
-    object: _saveImageToPhotosAlbumObject
+    object: _saveImageToPhotosAlbumObject,
   ): void;
 
   /**
    * 保存视频到系统相册。需要[用户授权](./authorize-index.md) scope.writePhotosAlbum
    */
   export function saveVideoToPhotosAlbum(
-    object: _saveVideoToPhotosAlbumObject
+    object: _saveVideoToPhotosAlbumObject,
   ): void;
 
   /**
@@ -5754,14 +5749,14 @@ declare namespace qg {
    * wx.setNavigationBarColor({
    */
   export function setNavigationBarColor(
-    object: _setNavigationBarColorObject
+    object: _setNavigationBarColorObject,
   ): void;
 
   /**
    * 动态设置当前页面的标题。
    */
   export function setNavigationBarTitle(
-    object: _setNavigationBarTitleObject
+    object: _setNavigationBarTitleObject,
   ): void;
 
   /**
@@ -5853,14 +5848,14 @@ declare namespace qg {
    * 开始搜索附近的`iBeacon`设备
    */
   export function startBeaconDiscovery(
-    object: _startBeaconDiscoveryObject
+    object: _startBeaconDiscoveryObject,
   ): void;
 
   /**
    * 开始搜寻附近的蓝牙外围设备。注意，该操作比较耗费系统资源，请在搜索并连接到设备后调用 stop 方法停止搜索。
    */
   export function startBluetoothDevicesDiscovery(
-    object: _startBluetoothDevicesDiscoveryObject
+    object: _startBluetoothDevicesDiscoveryObject,
   ): void;
 
   /**
@@ -5877,7 +5872,7 @@ declare namespace qg {
    * 开始下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致
    */
   export function startPullDownRefresh(
-    object: _startPullDownRefreshObject
+    object: _startPullDownRefreshObject,
   ): void;
 
   /**
@@ -5889,7 +5884,7 @@ declare namespace qg {
    * 开始 SOTER 生物认证
    */
   export function startSoterAuthentication(
-    object: _startSoterAuthenticationObject
+    object: _startSoterAuthenticationObject,
   ): void;
 
   /**
@@ -5916,7 +5911,7 @@ declare namespace qg {
    * 停止搜寻附近的蓝牙外围设备。若已经找到需要的蓝牙设备并不需要继续搜索时，建议调用该接口停止蓝牙搜索。
    */
   export function stopBluetoothDevicesDiscovery(
-    object: _stopBluetoothDevicesDiscoveryObject
+    object: _stopBluetoothDevicesDiscoveryObject,
   ): void;
 
   /**
@@ -5977,35 +5972,35 @@ declare namespace qg {
   /***
    * 监听主域发送的消息
    */
-  export function onMessage(callback:Function):void;
+  export function onMessage(callback: Function): void;
   /**
    * 拉取当前用户所有同玩好友的托管数据。该接口只可在开放数据域下使用
    */
-  export function getFriendCloudStorage(object):void;
+  export function getFriendCloudStorage(object): void;
   /**
    * 对用户托管数据进行写数据操作。允许同时写多组 KV 数据。
-   * @param object 
+   * @param object
    */
-  export function setUserCloudStorage(object):void;
+  export function setUserCloudStorage(object): void;
   /**
    * 向低功耗蓝牙设备特征值中写入二进制数据。注意：必须设备的特征值支持`write`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function writeBLECharacteristicValue(
-    object: _writeBLECharacteristicValueObject
+    object: _writeBLECharacteristicValueObject,
   ): void;
   /**
    * 获取一个对战对象
    */
-  export function getBattle():_Battle;
+  export function getBattle(): _Battle;
   /**
    * 设置游戏加载进度页面。如果游戏加载起来后3秒内没有调用setLoadingProgress，会自动关闭游戏加载进度页面。为了用户体验统一，务必在游戏加载后第一时间调用setLoadingProgress({progress: 0})，随后再传回真实的加载进度。
    */
-  export function setLoadingProgress(object:any):void;
+  export function setLoadingProgress(object: any): void;
   /**
    * 支持最低平台版本号'1031' (minPlatformVersion>='1031')
    * 隐藏游戏加载进度页面
    */
-  export function loadingComplete(object:any):void;
+  export function loadingComplete(object: any): void;
   /**
    * 发起微信支付。
    */
@@ -6017,102 +6012,120 @@ declare namespace qg {
   /**
    * 初始化广告服务，在应用生命周期中，只需要初始化一次，在这里可以指定是否打开广告组件 Log，传入分配的广告 AppId
    */
-  export function initAdService(object:any):void;
+  export function initAdService(object: any): void;
   /**
    * 创建 Banner 广告组件，如果已经创建过 Banner 广告组件，则会使用已创建的广告组件对象
    */
-  export function createBannerAd(object:any):_BannerAd;
+  export function createBannerAd(object: any): _BannerAd;
   /**
    * **确保广告服务已经初始化完毕**
    * 创建激励视频广告组件，同一个 posId，如果已经创建，并且未 destroy，会复用之前的对象
    */
-  export function  createRewardedVideoAd(object:any):_VideoAd;
+  export function createRewardedVideoAd(object: any): _VideoAd;
   /**
    * **确保广告服务已经初始化完毕**
    * 创建插屏广告组件，同一个 posId，如果已经创建，并且未 destroy，会复用之前的对象
    */
-  export function createInsertAd(object:any):_InsertAd;
+  export function createInsertAd(object: any): _InsertAd;
   /**
    * **确保广告服务已经初始化完毕**
    * 原生广告是 cp 通过封装好的接口获取广告数据，根据实际场景自由选择绘制和展示方式的广告，更加灵活。 需要注意的是，每个原生广告组件对象只有一次有效曝光，一次有效点击。 同一个 posId，如果已经创建，并且未 destroy，会复用之前的对象。
    */
-  export function createNativeAd(object:any):_NativeAd;
+  export function createNativeAd(object: any): _NativeAd;
   /**
    * 加载游戏子包。注意：主包或子包不能引用未加载的包中的模块。
    */
-  export function loadSubpackage(object:any):_LoadSubpackageTask;
+  export function loadSubpackage(object: any): _LoadSubpackageTask;
   /**
    * 文件系统是小游戏提供的一套以小游戏和用户维度隔离的存储以及一套相应的管理接口。cp 使用文件系统来保存数据不必关心数据实际保存在硬盘(或者光盘)的地址为多少的数据块上。只需记住这个文件的所属目录和文件名。通过 qg.getFileSystemManager() 获取全局唯一的文件管理器，返回的是 FileSystemManager 文件管理器对象,所有的文件系统的管理操作通过 FileSystemManager (文件管理器对象)来调用。
    */
-  export function getFileSystemManager():_FileSystemManager;
+  export function getFileSystemManager(): _FileSystemManager;
   /**
    * 获取设备电量
    */
-  export function getBatteryInfo(object:any):void;
+  export function getBatteryInfo(object: any): void;
   /**
    * getBatteryInfo() 的同步版本，获取设备电量。
    */
-  export function getBatteryInfoSync(object:any):_BatteryInfo;
-   /**
+  export function getBatteryInfoSync(object: any): _BatteryInfo;
+  /**
    * 监听音频中断结束，在收到 onAudioInterruptionBegin 事件之后，OPPO小游戏内所有音频会暂停，收到此事件之后才可再次播放成功
    */
-  export function onAudioInterruptionEnd(callback:Function):void;
+  export function onAudioInterruptionEnd(callback: Function): void;
   /**
    * 取消监听音频中断结束，在收到 onAudioInterruptionBegin 事件之后，OPPO小游戏内所有音频会暂停，收到此事件之后才可再次播放成功
    */
-  export function offAudioInterruptionEnd(callback:Function):void;
+  export function offAudioInterruptionEnd(callback: Function): void;
   /**
    * 监听音频因为受到系统占用而被中断开始，以下场景会触发此事件：闹钟、电话、FaceTime 通话。此事件触发后，OPPO小游戏内所有音频会暂停。
    */
-  export function onAudioInterruptionBegin(callback:Function):void;
+  export function onAudioInterruptionBegin(callback: Function): void;
   /**
    * 取消监听音频因为受到系统占用而被中断开始，以下场景会触发此事件：闹钟、电话、FaceTime 通话。此事件触发后，OPPO小游戏内所有音频会暂停。
    */
-  export function offAudioInterruptionBegin(callback:Function):void;
+  export function offAudioInterruptionBegin(callback: Function): void;
   /**
    * 监听全局错误事件
    */
-  export function onError(callback:Function):void;
+  export function onError(callback: Function): void;
   /**
    * 取消监听全局错误事件
    */
-  export function offError(callback:Function):void;
+  export function offError(callback: Function): void;
   /**
    * 退出当前 OPPO 小游戏
    */
-  export function exitApplication(object:any):void;
+  export function exitApplication(object: any): void;
   /**
    * 返回 OPPO 小游戏启动参数
    */
-  export function getLaunchOptionsSync():any;
+  export function getLaunchOptionsSync(): any;
   /**
    * 监听 OPPO 小游戏隐藏到后台事件。锁屏、按 HOME 键退到桌面等操作会触发此事件。
    */
-  export function onHide(callback:Function):any;
+  export function onHide(callback: Function): any;
   /**
    * 取消监听 OPPO 小游戏隐藏到后台事件。锁屏、按 HOME 键退到桌面、显示在聊天顶部等操作会触发此事件。
    */
-  export function offHide(callback:Function):any;
+  export function offHide(callback: Function): any;
   /**
    * 监听 OPPO 小游戏回到前台的事件
    */
-  export function onShow(callback:Function):any;
+  export function onShow(callback: Function): any;
   /**
    * 取消监听 OPPO 小游戏回到前台的事件
    */
-  export function offShow(callback:Function):any;
-  /** 
+  export function offShow(callback: Function): any;
+  /**
    * 获取性能管理器
    */
-  export function getPerformance():any;
+  export function getPerformance(): any;
   /**
    * 加快触发 JavaScript VM 进行（垃圾回收），GC 时机是由 JavaScript VM 来控制的，并不能保证调用后马上触发 GC。
    */
-  export function triggerGC():void;
+  export function triggerGC(): void;
   /**
    * 获取一行文本的行高
    */
-  export function getTextLineHeight(object:any):void;
+  export function getTextLineHeight(object: any): void;
 
+  export function installShortcut(arg0: {
+    success: () => void;
+    fail: (err: any) => void;
+    complete: () => void;
+  }): void;
+
+  export function navigateToMiniGame(arg0: {
+    pkgName: string;
+    success: () => void;
+    fail: (res: any) => void;
+  }): void;
+
+  export function saveImageTempSync(data: any): string;
+
+  export function hasShortcutInstalled(arg0: {
+    success: (res: any) => void;
+    fail: (err: any) => void;
+    complete: () => void;
+  }): void;
 }
-

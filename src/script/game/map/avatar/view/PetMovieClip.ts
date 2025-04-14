@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2021-11-04 10:07:28
@@ -21,6 +20,7 @@ import { ResourceLoaderInfo } from "../data/ResourceLoaderInfo";
 import { AvatarActions } from "../../../avatar/data/AvatarActions";
 import ResMgr from "../../../../core/res/ResMgr";
 import Logger from "../../../../core/logger/Logger";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 
 export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
   protected _urlKey: string;
@@ -109,7 +109,7 @@ export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
       this._url,
       [],
       [],
-      AvatarPosition.PET
+      AvatarPosition.PET,
     );
     ResMgr.Instance.loadRes(
       this._url,
@@ -121,7 +121,7 @@ export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
       null,
       null,
       null,
-      args
+      args,
     );
   }
 
@@ -129,7 +129,7 @@ export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
     url: string,
     sornStand: any[],
     sornWalk: any[],
-    position: string
+    position: string,
   ): ResourceLoaderInfo {
     let loadInfo: ResourceLoaderInfo = new ResourceLoaderInfo();
     loadInfo.packageName = "";
@@ -187,7 +187,7 @@ export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
           destPoint.x,
           destPoint.y,
           texture.width,
-          texture.height
+          texture.height,
         );
     }
   }
@@ -215,7 +215,7 @@ export class PetMovieClip extends Laya.Sprite implements IEnterFrame {
           destPoint.x,
           destPoint.y,
           texture.width,
-          texture.height
+          texture.height,
         );
     }
   }

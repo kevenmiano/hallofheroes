@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ResMgr from "../../../core/res/ResMgr";
 import DataAnalyzer from "../DataAnalyzer";
 import ConfigMgr from "../../../core/config/ConfigMgr";

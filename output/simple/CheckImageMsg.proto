@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message CheckImageMsg {
+  int32 leftCount = 1;
+  int32 leftTime = 2;
+  string images1 = 3;
+  string images2 = 4;
+  string images3 = 5;
+  string images4 = 6;
+  string result = 7;
+  string property1 = 8;
+  string property2 = 9;
+}

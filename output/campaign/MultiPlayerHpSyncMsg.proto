@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message MultiPlayerHpSyncMsg {
+  int32 armyId = 1;
+  int32 curHp = 2;
+  int32 totalHp = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipGiftState {
+  int32 vipGrade = 1;
+  int32 dayGiftState = 2;
+  string dayGiftTime = 3;
+  bool isFreeGift = 4;
+  bool isPayGift = 5;
+}

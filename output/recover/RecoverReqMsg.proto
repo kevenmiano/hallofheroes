@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.recover;
+
+message RecoverReqMsg {
+  int32 type = 1;
+  int32 way = 2;
+  int32 payType = 3;
+}

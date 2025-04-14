@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message TollgateMsg {
+  int32 type = 1;
+  int32 userId = 2;
+  string endTime = 3;
+  int32 order = 4;
+  int32 score = 5;
+  int32 remainCount = 6;
+  int32 remainTime = 7;
+  repeated int32 challengeInfo = 8;
+  repeated int32 scoreInfo = 9;
+  bool isOpen = 10;
+  int32 curTollgateId = 11;
+  string luckyReward = 12;
+  int32 remainBuyCount = 13;
+  string startTime = 14;
+  int32 addTimeCount = 15;
+}

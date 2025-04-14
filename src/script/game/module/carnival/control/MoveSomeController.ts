@@ -1,4 +1,4 @@
-// @ts-nocheck
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import { DisplayObject } from "../../../component/DisplayObject";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
@@ -57,7 +57,7 @@ export default class MoveSomeController
     $lessRun: number,
     $initSpeed: number,
     $initBackSpeed: number,
-    $callBack: Function = null
+    $callBack: Function = null,
   ) {
     super();
     this._itemList = $itemList;
@@ -232,7 +232,7 @@ export default class MoveSomeController
       0.1,
       Laya.Ease.quintInOut,
       null,
-      delay
+      delay,
     );
     // TweenMax.to(this, delay, { speed: this._initBackSpeed, ease: Quint.easeInOut });
   }

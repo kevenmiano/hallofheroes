@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildGroupScheduleInfoMsg {
+  string groupInfo1 = 1;
+  string groupInfo2 = 2;
+}

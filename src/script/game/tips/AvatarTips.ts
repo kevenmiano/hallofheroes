@@ -46,7 +46,7 @@ export default class AvatarTips extends BaseTips {
       this,
       this.renderItem,
       null,
-      false
+      false,
     );
   }
 
@@ -77,7 +77,7 @@ export default class AvatarTips extends BaseTips {
     for (let i = 0; i < this.rewardData.length; i++) {
       let info: t_s_itemtemplateData =
         TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-          this.rewardData[i].templateId
+          this.rewardData[i].templateId,
         );
       if (!info) {
         return;
@@ -128,7 +128,7 @@ export default class AvatarTips extends BaseTips {
           this._honerView = new AppellView(
             appellInfo.ImgWidth,
             appellInfo.ImgHeight,
-            appellInfo.TemplateId
+            appellInfo.TemplateId,
           );
           this._honerView.x = 180;
           this._honerView.y = 70;

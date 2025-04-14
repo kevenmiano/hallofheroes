@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.rebate;
+
+message RebateInfoMsg {
+  string id = 1;
+  string beginDate = 2;
+  string endDate = 3;
+  int32 type = 4;
+  repeated int32 packages = 5;
+}

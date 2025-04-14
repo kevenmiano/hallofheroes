@@ -71,7 +71,7 @@ export default class ArtifactTips extends BaseTips {
     this.isInbag = this.getController("isInbag");
     if (this._info) {
       this._templateData = TempleteManager.Instance.getArtifactTemplate(
-        this._info.templateId
+        this._info.templateId,
       );
       if (this._fromeType == ArtifactTips.OTHER_TYPE) {
         //从背包和其他地方打开的
@@ -99,16 +99,16 @@ export default class ArtifactTips extends BaseTips {
   private initView() {
     if (this._info && this._info.templateInfo) {
       this.desctxt1.text = LangManager.Instance.GetTranslation(
-        "ArtifactCell.descTxt"
+        "ArtifactCell.descTxt",
       );
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.levelTxt.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        this._templateData.Level
+        this._templateData.Level,
       );
       let res = CommonConstant.QUALITY_RES[this._info.templateInfo.Profile - 1];
       this.goodsIcon.icon = IconFactory.getGoodsIconByTID(
-        this._info.templateInfo.TemplateId
+        this._info.templateInfo.TemplateId,
       );
       this.profile.icon = fgui.UIPackage.getItemURL(EmPackName.Base, res);
       this.txt_name.color = this._info.templateInfo.profileColor;
@@ -163,7 +163,7 @@ export default class ArtifactTips extends BaseTips {
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let content: string = LangManager.Instance.GetTranslation(
       "ArtifactTips.alertTxt",
-      this._templateData.ActiveGold
+      this._templateData.ActiveGold,
     );
     SimpleAlertHelper.Instance.Show(
       SimpleAlertHelper.SIMPLE_ALERT,
@@ -180,7 +180,7 @@ export default class ArtifactTips extends BaseTips {
           ) {
             //黄金不够，提示
             MessageTipManager.Instance.show(
-              LangManager.Instance.GetTranslation("public.gold")
+              LangManager.Instance.GetTranslation("public.gold"),
             );
             return;
           }
@@ -189,7 +189,7 @@ export default class ArtifactTips extends BaseTips {
       },
       AlertBtnType.OC,
       false,
-      true
+      true,
     );
   }
 
@@ -209,7 +209,7 @@ export default class ArtifactTips extends BaseTips {
       let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
       let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
       let content: string = LangManager.Instance.GetTranslation(
-        "ArtifactTips.selectTips"
+        "ArtifactTips.selectTips",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -222,7 +222,7 @@ export default class ArtifactTips extends BaseTips {
           if (b) {
             NotificationManager.Instance.dispatchEvent(
               NotificationEvent.ARTIFACT_SELECT_GOODS_UPDATE,
-              this._info
+              this._info,
             );
             this.hide();
           }
@@ -230,12 +230,12 @@ export default class ArtifactTips extends BaseTips {
         },
         AlertBtnType.OC,
         true,
-        true
+        true,
       );
     } else {
       NotificationManager.Instance.dispatchEvent(
         NotificationEvent.ARTIFACT_SELECT_GOODS_UPDATE,
-        this._info
+        this._info,
       );
       this.hide();
     }
@@ -245,7 +245,7 @@ export default class ArtifactTips extends BaseTips {
   onCancelClick() {
     NotificationManager.Instance.dispatchEvent(
       NotificationEvent.ARTIFACT_CANCEL_GOODS_UPDATE,
-      this._info
+      this._info,
     );
     this.hide();
   }
@@ -255,7 +255,7 @@ export default class ArtifactTips extends BaseTips {
     let targetPos: number = this.getPos();
     if (targetPos == -1) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("ArtifactTips.equipTips")
+        LangManager.Instance.GetTranslation("ArtifactTips.equipTips"),
       );
       this.hide();
       return;
@@ -267,7 +267,7 @@ export default class ArtifactTips extends BaseTips {
       BagType.PET_EQUIP_BAG,
       0,
       targetPos,
-      1
+      1,
     );
     this.hide();
   }
@@ -277,7 +277,7 @@ export default class ArtifactTips extends BaseTips {
     let endPos: number = GoodsManager.Instance.findEmputyPos();
     if (endPos == -1) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("Artifact.moveTips")
+        LangManager.Instance.GetTranslation("Artifact.moveTips"),
       );
       return;
     }
@@ -288,7 +288,7 @@ export default class ArtifactTips extends BaseTips {
       BagType.Player,
       0,
       endPos,
-      1
+      1,
     );
     this.hide();
   }
@@ -311,7 +311,7 @@ export default class ArtifactTips extends BaseTips {
     let hasSix: boolean = false;
     let hasSeven: boolean = false;
     let equipArr = GoodsManager.Instance.getGoodsByBagType(
-      BagType.PET_EQUIP_BAG
+      BagType.PET_EQUIP_BAG,
     );
     for (let i = 0; i < equipArr.length; i++) {
       let goodsInfo = equipArr[i];
@@ -347,13 +347,13 @@ export default class ArtifactTips extends BaseTips {
           str +=
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle1",
-              info.randomSkill1
+              info.randomSkill1,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle1",
-              info.randomSkill1
+              info.randomSkill1,
             ) + "<br/>";
         }
       }
@@ -362,13 +362,13 @@ export default class ArtifactTips extends BaseTips {
           str +=
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle2",
-              info.randomSkill2
+              info.randomSkill2,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle2",
-              info.randomSkill2
+              info.randomSkill2,
             ) + "<br/>";
         }
       }
@@ -377,13 +377,13 @@ export default class ArtifactTips extends BaseTips {
           str +=
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle3",
-              info.randomSkill3
+              info.randomSkill3,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle3",
-              info.randomSkill3
+              info.randomSkill3,
             ) + "<br/>";
         }
       }
@@ -392,13 +392,13 @@ export default class ArtifactTips extends BaseTips {
           str +=
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle4",
-              info.randomSkill4
+              info.randomSkill4,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle4",
-              info.randomSkill4
+              info.randomSkill4,
             ) + "<br/>";
         }
       }
@@ -406,12 +406,12 @@ export default class ArtifactTips extends BaseTips {
         if (!StringHelper.isNullOrEmpty(str)) {
           str += LangManager.Instance.GetTranslation(
             "ArtifactTips.itemTitle5",
-            info.randomSkill5
+            info.randomSkill5,
           );
         } else {
           str = LangManager.Instance.GetTranslation(
             "ArtifactTips.itemTitle5",
-            info.randomSkill5
+            info.randomSkill5,
           );
         }
       }
@@ -429,14 +429,14 @@ export default class ArtifactTips extends BaseTips {
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle6",
               this._templateData.MinAtk,
-              this._templateData.MaxAtk
+              this._templateData.MaxAtk,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle6",
               this._templateData.MinAtk,
-              this._templateData.MaxAtk
+              this._templateData.MaxAtk,
             ) + "<br/>";
         }
       }
@@ -446,14 +446,14 @@ export default class ArtifactTips extends BaseTips {
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle7",
               this._templateData.MinMat,
-              this._templateData.MaxMat
+              this._templateData.MaxMat,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle7",
               this._templateData.MinMat,
-              this._templateData.MaxMat
+              this._templateData.MaxMat,
             ) + "<br/>";
         }
       }
@@ -463,14 +463,14 @@ export default class ArtifactTips extends BaseTips {
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle8",
               this._templateData.MinDef,
-              this._templateData.MaxDef
+              this._templateData.MaxDef,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle8",
               this._templateData.MinDef,
-              this._templateData.MaxDef
+              this._templateData.MaxDef,
             ) + "<br/>";
         }
       }
@@ -480,14 +480,14 @@ export default class ArtifactTips extends BaseTips {
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle9",
               this._templateData.MinMdf,
-              this._templateData.MaxMdf
+              this._templateData.MaxMdf,
             ) + "<br/>";
         } else {
           str =
             LangManager.Instance.GetTranslation(
               "ArtifactTips.itemTitle9",
               this._templateData.MinMdf,
-              this._templateData.MaxMdf
+              this._templateData.MaxMdf,
             ) + "<br/>";
         }
       }
@@ -496,13 +496,13 @@ export default class ArtifactTips extends BaseTips {
           str += LangManager.Instance.GetTranslation(
             "ArtifactTips.itemTitle10",
             this._templateData.MinHp,
-            this._templateData.MaxHp
+            this._templateData.MaxHp,
           );
         } else {
           str = LangManager.Instance.GetTranslation(
             "ArtifactTips.itemTitle10",
             this._templateData.MinHp,
-            this._templateData.MaxHp
+            this._templateData.MaxHp,
           );
         }
       }

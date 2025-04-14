@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message CarnivalTaskMsg {
+  int32 taskId = 1;
+  int32 data = 2;
+  bool isReward = 3;
+}

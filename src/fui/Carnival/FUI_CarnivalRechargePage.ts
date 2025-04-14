@@ -1,8 +1,11 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_CarnivalInfoItem from "./FUI_CarnivalInfoItem";
+
+//@ts-expect-error: External dependencies
 import FUI_OutItemGroup from "./FUI_OutItemGroup";
+
+//@ts-expect-error: External dependencies
 import FUI_InItemGroup from "./FUI_InItemGroup";
 
 export default class FUI_CarnivalRechargePage extends fgui.GComponent {

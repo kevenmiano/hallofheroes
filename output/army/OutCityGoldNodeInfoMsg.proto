@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message OutCityGoldNodeInfoMsg {
+  int32 posId = 1;
+  int32 nodeId = 2;
+  int32 posX = 3;
+  int32 posY = 4;
+  repeated int32 nodeMineInfo = 5;
+  int32 count = 6;
+}

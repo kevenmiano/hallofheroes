@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerMoveCameraMsg {
+  string scene = 1;
+  int32 targetX = 2;
+  int32 targetY = 3;
+  int32 delay = 4;
+}

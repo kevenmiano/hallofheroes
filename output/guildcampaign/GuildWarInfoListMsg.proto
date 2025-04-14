@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildWarInfoListMsg {
+  repeated int32 guildWarInfos = 1;
+  repeated int32 userIds = 2;
+}

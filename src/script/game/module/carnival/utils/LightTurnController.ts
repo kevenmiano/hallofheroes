@@ -1,5 +1,5 @@
-// @ts-nocheck
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";
 
 import { CarnivalRechargeItem } from "../view/CarnivalRechargeItem";
@@ -36,7 +36,7 @@ export class LightTurnController implements IEnterFrame {
     $avSpeed: number,
     target: any,
     $callBack: Function,
-    $stopLgihtTimes: number = 0
+    $stopLgihtTimes: number = 0,
   ) {
     this._itemList = $itemList;
     this._itemLen = this._itemList.length;
@@ -104,6 +104,8 @@ export class LightTurnController implements IEnterFrame {
     let delay = this._needRun / 1000;
     TweenMax.to(this, delay, {
       tweenSpeed: this._avSpeed,
+      //@ts-expect-error: External dependencies
+
       ease: Quint.easeInOut,
     });
     EnterFrameManager.Instance.registeEnterFrame(this);

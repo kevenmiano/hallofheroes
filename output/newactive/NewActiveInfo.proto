@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message NewActiveInfo {
+  int32 activeId = 1;
+  int32 state = 2;
+  string startTime = 3;
+  string endTime = 4;
+  int32 stage = 5;
+}

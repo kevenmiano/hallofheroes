@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaAltarOpenRspMsg {
+  int32 consortiaId = 1;
+  int32 chairmanId = 2;
+  string chairmanName = 3;
+  int32 result = 4;
+  string altarDate = 5;
+  bool pop = 6;
+}

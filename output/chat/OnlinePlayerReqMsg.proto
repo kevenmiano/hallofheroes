@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message OnlinePlayerReqMsg {
+  repeated int32 playerId = 1;
+}

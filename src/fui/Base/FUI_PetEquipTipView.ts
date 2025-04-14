@@ -1,8 +1,11 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_PetEquipCell from "./FUI_PetEquipCell";
+
+//@ts-expect-error: External dependencies
 import FUI_PetEquipAttriItem from "./FUI_PetEquipAttriItem";
+
+//@ts-expect-error: External dependencies
 import FUI_Btn_Oth_3 from "./FUI_Btn_Oth_3";
 
 export default class FUI_PetEquipTipView extends fgui.GComponent {

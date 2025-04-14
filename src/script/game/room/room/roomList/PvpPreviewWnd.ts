@@ -4,6 +4,7 @@ import { RoomEvent } from "../../../constant/RoomDefine";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import PvpPreviewItem from "./item/PvpPreviewItem";
 
+//@ts-expect-error: External dependencies
 import HeroMsg = com.road.yishi.proto.battle.HeroMsg;
 import { BattleModel } from "../../../battle/BattleModel";
 import { BattleManager } from "../../../battle/BattleManager";
@@ -39,7 +40,7 @@ export default class PvpPreviewWnd extends BaseWindow {
   renderListItem() {
     if (this.frameData) {
       NotificationManager.Instance.dispatchEvent(
-        RoomEvent.HIDE_PVP_ROOM_LEFT_TIME
+        RoomEvent.HIDE_PVP_ROOM_LEFT_TIME,
       );
       let selfIdx: number = 0;
       let list: HeroMsg[] = this.frameData;

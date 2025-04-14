@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketOrderReqMsg {
+  int32 op = 1;
+  string orderId = 2;
+  int32 type = 3;
+  int32 templateId = 4;
+  int32 count = 5;
+  int32 point = 6;
+}

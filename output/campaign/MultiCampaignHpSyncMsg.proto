@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message MultiCampaignHpSyncMsg {
+  string proxyId = 1;
+  int32 mapId = 2;
+  int32 nodeId = 3;
+  int32 nodeHp = 4;
+  int32 nodeTotalHp = 5;
+  repeated int32 playerHp = 6;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroSkillInfoMsg {
+  int32 skillPoint = 1;
+  string skillScript = 2;
+  repeated int32 skillSet = 3;
+}

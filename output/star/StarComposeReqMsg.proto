@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarComposeReqMsg {
+  int32 pos = 1;
+  int32 bagType = 2;
+}

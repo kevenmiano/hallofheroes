@@ -28,7 +28,7 @@ export default class LoginScene extends BaseSceneView {
     super();
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     return super.preLoadingStart(data);
   }
 
@@ -37,7 +37,7 @@ export default class LoginScene extends BaseSceneView {
       NotificationManager.Instance.addEventListener(
         NativeEvent.GAME_ENTER_OVER,
         this.gameEnterOverBack,
-        this
+        this,
       );
 
       //有site的则为玩平台入口,玩平台不需要登录, 直接加载
@@ -115,7 +115,7 @@ export default class LoginScene extends BaseSceneView {
       NotificationManager.Instance.removeEventListener(
         NativeEvent.GAME_ENTER_OVER,
         this.gameEnterOverBack,
-        this
+        this,
       );
       resolve();
     });

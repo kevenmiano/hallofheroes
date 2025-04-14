@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message UseSkillMsg {
+  string battleId = 1;
+  int32 heroId = 2;
+  int32 skillId = 3;
+}

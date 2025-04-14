@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gamebox;
+
+message MoleGameStopRes {
+  repeated int32 items = 1;
+}

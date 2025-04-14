@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message WishPoolRespMsg {
+  int32 optype = 1;
+  bool wishResult = 2;
+  repeated int32 items = 3;
+}

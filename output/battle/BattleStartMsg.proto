@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleStartMsg {
+  int32 frame = 1;
+  int32 mainType = 2;
+  int32 countDown = 3;
+}

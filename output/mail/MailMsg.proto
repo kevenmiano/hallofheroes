@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailMsg {
+  int32 playerId = 1;
+  int32 mailId = 2;
+  repeated int32 position = 3;
+  repeated int32 mailsIdArray = 4;
+  int32 reqType = 5;
+}

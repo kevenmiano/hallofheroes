@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.uiplay;
+
+message UserUiPlayInfoMsg {
+  int32 playId = 1;
+  int32 levelSort = 2;
+  string lastTime = 3;
+  repeated int32 firstRewardSet = 4;
+  int32 uiPlayRewardCount = 5;
+  bool itemAdd = 6;
+}

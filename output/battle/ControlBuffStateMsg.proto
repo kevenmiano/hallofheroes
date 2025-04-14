@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ControlBuffStateMsg {
+  bool controled = 1;
+  int32 livingId = 2;
+  int32 side = 3;
+  int32 pos = 4;
+  int32 controllerLivingId = 5;
+}

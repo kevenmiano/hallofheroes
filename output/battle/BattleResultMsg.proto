@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleResultMsg {
+  string proxyId = 1;
+  int32 combatResult = 2;
+  repeated int32 army = 3;
+  int32 castleRoomId = 4;
+  int32 beatNum = 5;
+  string startTime = 6;
+  string recordUri = 7;
+  string remoteKills = 8;
+}

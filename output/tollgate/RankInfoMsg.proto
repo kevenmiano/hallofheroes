@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message RankInfoMsg {
+  int32 index = 1;
+  int32 rank = 2;
+}

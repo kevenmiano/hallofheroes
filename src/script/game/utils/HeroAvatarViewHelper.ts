@@ -11,7 +11,7 @@ export class HeroAvatarViewHelper {
     px: number,
     py: number,
     ex: number,
-    ey: number
+    ey: number,
   ): number {
     //计算两个点之间的角度
     var vx: number = px - ex;
@@ -27,7 +27,7 @@ export class HeroAvatarViewHelper {
   public static directionMove(
     direction: string,
     speed: number,
-    target: DisplayObject
+    target: DisplayObject,
   ) {
     //指定方向上的移动
     var bevelSpeed: number = Math.sqrt((speed * speed) / 2) + 1;
@@ -62,7 +62,7 @@ export class HeroAvatarViewHelper {
         break;
       default:
         var errorTip: string = LangManager.Instance.GetTranslation(
-          "map.internals.view.hero.helper.HeroAvatarViewHelper.errorTip"
+          "map.internals.view.hero.helper.HeroAvatarViewHelper.errorTip",
         );
         throw new Error(errorTip);
     }
@@ -70,7 +70,7 @@ export class HeroAvatarViewHelper {
   public static checkDirectionBySetup(
     setup: number,
     next: Laya.Point,
-    info: AIBaseInfo
+    info: AIBaseInfo,
   ): number {
     //按步长得出角度
     var off: number = setup - (info.walkIndex % setup);
@@ -83,19 +83,19 @@ export class HeroAvatarViewHelper {
     index = info.walkIndex + 1;
     var prePoint: Laya.Point = new Laya.Point(
       info.pathInfo[index].x * 20,
-      info.pathInfo[index].y * 20
+      info.pathInfo[index].y * 20,
     );
     return HeroAvatarViewHelper.twoPointAngle(
       next.x,
       next.y,
       prePoint.x,
-      prePoint.y
+      prePoint.y,
     );
   }
   public static intervalPoint(
     setup: number,
     next: Laya.Point,
-    info: AIBaseInfo
+    info: AIBaseInfo,
   ): Laya.Point {
     //按步长得出角度
     var off: number = setup - (info.walkIndex % setup);
@@ -105,14 +105,14 @@ export class HeroAvatarViewHelper {
         : info.pathInfo.length - 1;
     return new Laya.Point(
       info.pathInfo[index].x * 20,
-      info.pathInfo[index].y * 20
+      info.pathInfo[index].y * 20,
     );
   }
 
   public static getNextPoint(
     pre: Laya.Point,
     cur: Laya.Point,
-    next: Laya.Point
+    next: Laya.Point,
   ): Laya.Point {
     //下一个达到的点
     cur = PointUtils.scaleTransformII(cur, Tiles.WIDTH, Tiles.HEIGHT);

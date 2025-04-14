@@ -3,6 +3,7 @@ import LangManager from "../../../../../core/lang/LangManager";
 import { JobType } from "../../../../constant/JobType";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";
 
+//@ts-expect-error: External dependencies
 import HeroMsg = com.road.yishi.proto.battle.HeroMsg;
 import { getdefaultLangageCfg } from "../../../../../core/lang/LanguageDefine";
 
@@ -17,7 +18,6 @@ export default class PvpPreviewItem extends FUI_PvpPreviewItem {
   }
 
   setInfo(info: HeroMsg, index: number) {
-    //@ts-ignore
     this.rankStarItem.setInfo(info.segmentId);
     this.cPos.selectedIndex = index < 3 ? 0 : 1;
     this.imgIcon.icon = JobType.getJobIcon(info.job);
@@ -40,7 +40,7 @@ export default class PvpPreviewItem extends FUI_PvpPreviewItem {
     }
     this.txtName.text = nameStr;
     this.txtPower.text = LangManager.Instance.GetTranslation(
-      "public.playerInfo.ap"
+      "public.playerInfo.ap",
     );
     this.txtValue.text = info.fightCapacity + "";
   }

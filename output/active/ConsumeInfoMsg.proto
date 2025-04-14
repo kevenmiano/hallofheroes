@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ConsumeInfoMsg {
+  int32 userId = 1;
+  int32 order = 2;
+  int32 point = 3;
+  string nickName = 4;
+  bool isVip = 5;
+}

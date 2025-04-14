@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodeUpdateMsg {
+  int32 nodeId = 1;
+  int32 nodeState = 2;
+  int32 userId = 3;
+  repeated int32 visitUserIds = 4;
+  repeated int32 userIds = 5;
+  string uuId = 6;
+  int32 param1 = 7;
+  int32 sonType = 8;
+  repeated int32 visitServerName = 9;
+  int32 leftFightingTime = 10;
+}

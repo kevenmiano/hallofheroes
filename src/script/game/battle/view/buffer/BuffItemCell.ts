@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-07-15 16:49:08
@@ -62,7 +62,7 @@ export default class BuffItemCell
     let tempId = bufferData.templateId;
     let bufferTempInfo = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_skillbuffertemplate,
-      tempId.toString()
+      tempId.toString(),
     ) as t_s_skillbuffertemplateData;
     if (!bufferTempInfo) return;
 
@@ -90,7 +90,7 @@ export default class BuffItemCell
     if (this._cellData.AttackType == 34) {
       tipsText = tipsText.replace(
         "0",
-        this._cellData.getBuffTargetRole().bloodB + ""
+        this._cellData.getBuffTargetRole().bloodB + "",
       );
     }
     //流血数值
@@ -114,13 +114,13 @@ export default class BuffItemCell
     if (bufferData.currentTurn > 0) {
       turnText =
         LangManager.Instance.GetTranslation(
-          "battle.view.buffer.BufferListItemTip.turnText02"
+          "battle.view.buffer.BufferListItemTip.turnText02",
         ) + bufferData.currentTurn;
     }
     if (bufferData.countWay > 0) {
       countWayText =
         LangManager.Instance.GetTranslation(
-          "battle.view.buffer.BufferListItemTip.turnText01"
+          "battle.view.buffer.BufferListItemTip.turnText01",
         ) + bufferData.countWay;
     }
 
@@ -147,7 +147,7 @@ export default class BuffItemCell
         bufferData.templateId,
         bufferData.countWay,
         bufferData.currentTurn,
-        tipsText
+        tipsText,
       );
     }
     this.tipData = tipsText;

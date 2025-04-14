@@ -20,9 +20,7 @@ import { GoodsManager } from "../manager/GoodsManager";
  *
  */
 export class EquipTipsContent extends FUI_EquipTipsContent {
-  // @ts-ignore
   public item: BaseItem;
-  // @ts-ignore
   public attributeInfo: EquipTipsAttribute;
   constructor() {
     super();
@@ -62,13 +60,13 @@ export class EquipTipsContent extends FUI_EquipTipsContent {
       // this.txt_fashionLevel.visible = true;
       if (this.getFashionLevelByInfo(info) == 9) {
         this.txt_fashionLevel.text = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTipsContent.fashionFullLevel"
+          "yishi.view.tips.goods.EquipTipsContent.fashionFullLevel",
         );
       } else {
         this.txt_fashionLevel.text =
           this.getFashionLevelByInfo(info) +
           LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.EquipTipsContent.fashionLevel"
+            "yishi.view.tips.goods.EquipTipsContent.fashionLevel",
           );
       }
       //去除显示阶
@@ -85,7 +83,7 @@ export class EquipTipsContent extends FUI_EquipTipsContent {
     this.txt_type.text = temp.sonTypeName;
     this.txt_grade.text = LangManager.Instance.GetTranslation(
       "public.level4_space2",
-      temp.NeedGrades
+      temp.NeedGrades,
     );
     if (!GoodsCheck.isGradeFix(this.thane, temp, false)) {
       this.txt_grade.color = "#FF0000";
@@ -93,7 +91,7 @@ export class EquipTipsContent extends FUI_EquipTipsContent {
     ToolTipsManager.Instance.setMountActiveTxt(info, this.txt_bind);
   }
 
-  private getStrengthenGrade(gInfo: GoodsInfo): Object {
+  private getStrengthenGrade(gInfo: GoodsInfo): string {
     return gInfo.strengthenGrade > 0 ? "+" + gInfo.strengthenGrade : "";
   }
 
@@ -128,7 +126,7 @@ export class EquipTipsContent extends FUI_EquipTipsContent {
       if (info.templateInfo.TemplateId in booklist) {
         // if (booklist[info.templateInfo.TemplateId] == true) {
         this.txt_bind.text = LangManager.Instance.GetTranslation(
-          "growthFundview.btn_active.title2"
+          "growthFundview.btn_active.title2",
         );
         this.txt_bind.color = "#39A82D";
         this.txt_bind.visible = true;
@@ -137,7 +135,8 @@ export class EquipTipsContent extends FUI_EquipTipsContent {
     }
   }
 
-  private isFashion(temp: t_s_itemtemplateData): boolean { //检测是否属于时装
+  private isFashion(temp: t_s_itemtemplateData): boolean {
+    //检测是否属于时装
     if (!temp) {
       return false;
     }

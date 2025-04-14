@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.treasuremine;
+
+message TreasureMineMsg {
+  int32 state = 1;
+  int32 stateEndTime = 2;
+  int32 failCount = 3;
+  int32 skipCount = 4;
+  int32 sumCD = 5;
+  bool isDeath = 6;
+  repeated int32 minerals = 7;
+  repeated int32 consortiaMinerals = 8;
+}

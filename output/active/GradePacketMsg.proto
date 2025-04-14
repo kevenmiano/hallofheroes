@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GradePacketMsg {
+  int32 grade = 1;
+  string packet = 2;
+  string preferPacket = 3;
+  int32 price = 4;
+  int32 discount = 5;
+  int32 id = 6;
+}

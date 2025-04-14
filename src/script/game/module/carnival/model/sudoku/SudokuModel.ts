@@ -1,5 +1,1 @@
-// @ts-nocheck
-
-export default class SudokuModel {
-
-}
+export default class SudokuModel {}

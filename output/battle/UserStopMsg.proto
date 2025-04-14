@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message UserStopMsg {
+  int32 type = 1;
+  int32 order = 2;
+}

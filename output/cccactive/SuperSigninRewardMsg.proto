@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SuperSigninRewardMsg {
+  string CardPrice = 1;
+  string ReSigninPrice = 2;
+  repeated int32 temp = 3;
+  string TotalValue = 4;
+}

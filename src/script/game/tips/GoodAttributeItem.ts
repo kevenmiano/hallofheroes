@@ -20,7 +20,7 @@ export class GoodAttributeItem extends FUI_GoodAttributeItem {
     value: number | string,
     addValue: number = 0,
     newAddValue: number = 0,
-    objectId: number = 0
+    objectId: number = 0,
   ) {
     this.txt_attributeName.text = property;
     this.txt_attributeValue.text = value + "";
@@ -34,7 +34,7 @@ export class GoodAttributeItem extends FUI_GoodAttributeItem {
       let addValue2: number = this.getConciseValue(addValue, objectId);
       let addValueStr2: string = addValue2 > 0 ? "  +" + addValue2 : "";
       let newAddValue2: number = this.getConciseValue(newAddValue, objectId);
-      let newAddValueStr2: String =
+      let newAddValueStr2: string =
         newAddValue2 > 0 ? "  +" + newAddValue2 : "";
       if (addValueStr2.length > 0) {
         addValueStr2 += "\n";
@@ -45,7 +45,7 @@ export class GoodAttributeItem extends FUI_GoodAttributeItem {
       // this.txt_attributeAdd.text = LangManager.Instance.GetTranslation("yishi.view.tips.goods.GoodAttributeItem.text01")+ " +"+addValue + "<font color='#00fffc'>"+addValueStr2 + "</font>" +
       this.txt_attributeAdd.text += LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.GoodAttributeItem.text03",
-        newAddValue
+        newAddValue,
       );
     }
   }
@@ -55,7 +55,7 @@ export class GoodAttributeItem extends FUI_GoodAttributeItem {
     if (objectId == ArmyManager.Instance.thane.id) {
       addValue = GoodsHelp.getConciseValue(
         value,
-        ArmyManager.Instance.thane.conciseGrades
+        ArmyManager.Instance.thane.conciseGrades,
       );
     } else {
     }

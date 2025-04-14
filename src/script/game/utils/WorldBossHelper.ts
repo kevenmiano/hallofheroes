@@ -6,7 +6,7 @@ import { CampaignMapModel } from "../mvc/model/CampaignMapModel";
 import { PosType } from "../map/space/constant/PosType";
 import { FrameCtrlManager } from "../mvc/FrameCtrlManager";
 import { EmWindow } from "../constant/UIDefine";
-import { CampaignMapView } from "../map/campaign/view/CampaignMapView";
+// import { CampaignMapView } from "../map/campaign/view/CampaignMapView";
 
 export class WorldBossHelper {
   constructor() {}
@@ -55,7 +55,7 @@ export class WorldBossHelper {
   }
 
   public static checkShowRoomTeam(): boolean {
-    let currentScene: String = SceneManager.Instance.currentType;
+    let currentScene: string = SceneManager.Instance.currentType;
     let mapModel: CampaignMapModel = CampaignManager.Instance.mapModel;
     if (
       (currentScene == SceneType.CAMPAIGN_MAP_SCENE &&
@@ -344,18 +344,18 @@ export class WorldBossHelper {
   /**
    * 英灵岛boss战
    */
-  public static checkInPetBossFloor(mapId: number): Boolean {
+  public static checkInPetBossFloor(mapId: number): boolean {
     return (
       mapId == CampaignManager.Instance.petBossModel.mapId &&
       CampaignManager.Instance.petBossModel.isOpen
     );
   }
 
-  public static checkInOuterCityWarMap(): Boolean {
+  public static checkInOuterCityWarMap(): boolean {
     return FrameCtrlManager.Instance.isOpen(EmWindow.OuterCityWarWnd);
   }
 
-  public static checkInConsortiaScretTree(mapId: number): Boolean {
+  public static checkInConsortiaScretTree(mapId: number): boolean {
     return mapId == 7501;
   }
 
@@ -369,47 +369,47 @@ export class WorldBossHelper {
     let mapId: number = CampaignManager.Instance.mapModel.mapId;
     if (WorldBossHelper.checkCrystal(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip01"
+        "worldboss.helper.WorldBossHelper.tip01",
       );
     } else if (WorldBossHelper.checkHoodRoom(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip02"
+        "worldboss.helper.WorldBossHelper.tip02",
       );
     } else if (WorldBossHelper.checkMaze(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip03"
+        "worldboss.helper.WorldBossHelper.tip03",
       );
     } else if (WorldBossHelper.checkWorldBoss(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip04"
+        "worldboss.helper.WorldBossHelper.tip04",
       );
     } else if (WorldBossHelper.checkPvp(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip05"
+        "worldboss.helper.WorldBossHelper.tip05",
       );
     } else if (WorldBossHelper.checkGvg(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip07"
+        "worldboss.helper.WorldBossHelper.tip07",
       );
     } else if (WorldBossHelper.checkConsortiaSecretLand(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip08"
+        "worldboss.helper.WorldBossHelper.tip08",
       );
     } else if (WorldBossHelper.checkConsortiaDemon(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip09"
+        "worldboss.helper.WorldBossHelper.tip09",
       );
     } else if (WorldBossHelper.checkMineral(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip10"
+        "worldboss.helper.WorldBossHelper.tip10",
       );
     } else if (WorldBossHelper.checkSecret(mapId)) {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip11"
+        "worldboss.helper.WorldBossHelper.tip11",
       );
     } else {
       tip = LangManager.Instance.GetTranslation(
-        "worldboss.helper.WorldBossHelper.tip06"
+        "worldboss.helper.WorldBossHelper.tip06",
       );
     }
 

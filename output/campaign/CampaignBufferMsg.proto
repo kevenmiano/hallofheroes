@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignBufferMsg {
+  int32 armyId = 1;
+  repeated int32 bufferInfo = 2;
+  int32 property1 = 3;
+  int32 property2 = 4;
+  int32 property3 = 5;
+}

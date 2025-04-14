@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BaseChannel from "../base/BaseChannel";
 import QQVideoAd from "./QQVideoAd";
 import QQBanner from "./QQBanner";
@@ -27,7 +26,7 @@ export default class QQChannel extends BaseChannel {
     }
     if (qq.createBannerAd) {
       this.bannerAd = new QQBanner(this);
-}
+    }
 
     if (qq.createAppBox) {
       this.appBoxAd = new QQAppBoxAd(this);

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.questionnarie;
+
+message QuestionInfoMsg {
+  int32 id = 1;
+  string title = 2;
+  int32 type = 3;
+  int32 contenType = 4;
+  string a = 5;
+  string b = 6;
+  string c = 7;
+  string d = 8;
+  string e = 9;
+  string f = 10;
+  string g = 11;
+  string h = 12;
+  string i = 13;
+  string j = 14;
+}

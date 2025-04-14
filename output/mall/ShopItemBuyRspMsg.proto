@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message ShopItemBuyRspMsg {
+  int32 result = 1;
+  int32 buyCount = 2;
+  int32 score = 3;
+}

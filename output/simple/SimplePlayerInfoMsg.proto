@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimplePlayerInfoMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 isExist = 3;
+  int32 sexs = 4;
+  int32 pics = 5;
+  int32 camp = 6;
+  int32 state = 7;
+  int32 consortiaID = 8;
+  string strategy = 9;
+  string consortiaName = 10;
+  int32 consortiaOffer = 11;
+  int32 claimId = 12;
+  string claimName = 13;
+  int32 grades = 14;
+  int32 gp = 15;
+  int32 repute = 16;
+  string logOutTime = 17;
+  int32 dutyId = 18;
+  int32 parameter1 = 19;
+  int32 gpOrder = 20;
+  int32 fightingCapacity = 21;
+  int32 matchWin = 22;
+  int32 matchFailed = 23;
+  int32 right = 24;
+  int32 challengeRank = 25;
+  int32 job = 26;
+  int32 consortiaTotalOffer = 27;
+  int32 storeGrade = 28;
+  int32 storeGp = 29;
+  bool isTeamPlayer = 30;
+  int32 role = 31;
+  bool isVip = 32;
+  int32 vipType = 33;
+  int32 isInwar = 34;
+  int32 headId = 35;
+  int32 appellId = 36;
+  string serverName = 37;
+  int32 vipGrade = 38;
+  int32 challengeScore = 39;
+  int32 heroTempId = 40;
+  int32 talentGrade = 41;
+  int32 meritorGrade = 42;
+  int32 honorGrade = 43;
+  int32 devourGrade = 44;
+  int32 frameId = 45;
+  int32 consortiaBuild = 46;
+  int32 consortiaTotalBuild = 47;
+  int32 marState = 48;
+  string mateName = 49;
+  int32 ringLevel = 50;
+}

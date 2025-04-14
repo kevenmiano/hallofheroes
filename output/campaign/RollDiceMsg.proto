@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message RollDiceMsg {
+  int32 type = 1;
+  int32 point = 2;
+  int32 normalPoint = 3;
+  int32 warFlag = 4;
+  int32 resultPoint = 5;
+  int32 position = 6;
+  repeated int32 nodeInfo = 7;
+  int32 buyMagicDiceCount = 8;
+  int32 freeSlotmachineCount = 9;
+}

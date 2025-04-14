@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message PlayerMoveMsg {
+  int32 userId = 1;
+  int32 mapId = 2;
+  int32 tarX = 3;
+  int32 tarY = 4;
+  bool ismoveCamera = 5;
+}

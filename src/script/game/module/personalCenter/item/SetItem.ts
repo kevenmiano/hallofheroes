@@ -1,8 +1,8 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_SetItem from "../../../../../fui/PersonalCenter/FUI_SetItem";
 
-export default class SetItem extends FUI_SetItem  {
-    onConstruct() {
-        super.onConstruct();
-    }
+export default class SetItem extends FUI_SetItem {
+  onConstruct() {
+    super.onConstruct();
+  }
 }

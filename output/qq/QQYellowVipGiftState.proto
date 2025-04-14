@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.qq;
+
+message QQYellowVipGiftState {
+  int32 grade = 1;
+  bool isDayGift = 2;
+}

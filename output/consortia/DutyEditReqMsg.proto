@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message DutyEditReqMsg {
+  int32 level = 1;
+  string dutyName = 2;
+}

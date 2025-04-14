@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message DropInfoMsg {
+  int32 dropId = 1;
+  int32 dropCount = 2;
+  repeated int32 winnerIds = 3;
+  int32 param1 = 4;
+  int32 param2 = 5;
+}

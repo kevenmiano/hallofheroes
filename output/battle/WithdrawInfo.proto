@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message WithdrawInfo {
+  int32 userId = 1;
+  int32 opt = 2;
+}

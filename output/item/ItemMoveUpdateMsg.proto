@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemMoveUpdateMsg {
+  int32 changeType = 1;
+  int32 changeObjId = 2;
+  int32 changePos = 3;
+  string item = 4;
+}

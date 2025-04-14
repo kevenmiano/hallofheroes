@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SkyTreasureLotteryPB {
+  string activeId = 1;
+  string freshTime = 2;
+  int32 times = 3;
+}

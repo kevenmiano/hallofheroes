@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message WorldBossInfoMsg {
+  int32 curHp = 1;
+  int32 totalNum = 2;
+  int32 campaignId = 3;
+  repeated int32 woundInfo = 4;
+  int32 totalHp = 5;
+  int32 myWound = 6;
+  int32 grades = 7;
+  string currentMillis = 8;
+  repeated int32 castleWound = 9;
+  int32 bufferGrade = 10;
+}

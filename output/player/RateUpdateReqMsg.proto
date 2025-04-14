@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message RateUpdateReqMsg {
+  int32 rate = 1;
+  int32 beginTime = 2;
+  int32 endTime = 3;
+  string beginDay = 4;
+  string endDay = 5;
+  int32 bufferType = 6;
+  string param1 = 7;
+  string param2 = 8;
+  string rateName = 9;
+  string rateDesc = 10;
+}

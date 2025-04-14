@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message HeroOrderMsg {
+  string battleId = 1;
+  int32 heroIndexId = 2;
+  int32 skillId = 3;
+  int32 result = 4;
+  int32 castTime = 5;
+  int32 qteTime = 6;
+  repeated int32 targetIndexs = 7;
+}

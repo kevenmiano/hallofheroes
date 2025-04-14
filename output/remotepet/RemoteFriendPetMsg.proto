@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message RemoteFriendPetMsg {
+  repeated int32 pets = 1;
+}

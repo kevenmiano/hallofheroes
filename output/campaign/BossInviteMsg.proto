@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message BossInviteMsg {
+  string nickName = 1;
+  string bossNick = 2;
+  int32 level = 3;
+  int32 templateId = 4;
+  int32 leftFightTime = 5;
+  int32 posX = 6;
+  int32 posY = 7;
+}

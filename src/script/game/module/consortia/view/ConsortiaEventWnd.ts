@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-07-20 20:31:46
@@ -18,68 +18,93 @@ import { PlayerEvent } from "../../../constant/event/PlayerEvent";
 import { DataCommonManager } from "../../../manager/DataCommonManager";
 
 export class ConsortiaEventWnd extends BaseWindow {
+  private _contorller: ConsortiaControler;
+  private _data: ConsortiaModel;
+  private list: fgui.GList;
 
-    private _contorller: ConsortiaControler;
-    private _data: ConsortiaModel;
-    private list: fgui.GList;
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+    this.initData();
+    this.initEvent();
+    this.initView();
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter();
-        this.initData();
-        this.initEvent();
-        this.initView();
+  private initEvent() {
+    this._data.addEventListener(
+      ConsortiaEvent.UPDA_CONSORTIA_EVENT_LIST,
+      this.__onEventListUpdate,
+      this,
+    );
+    DataCommonManager.playerInfo.addEventListener(
+      PlayerEvent.CONSORTIA_CHANGE,
+      this.__existConsortiaHandler,
+      this,
+    );
+  }
+
+  private initData() {
+    this._contorller = FrameCtrlManager.Instance.getCtrl(
+      EmWindow.Consortia,
+    ) as ConsortiaControler;
+    this._data = this._contorller.model;
+  }
+
+  private initView() {
+    this.list.itemRenderer = Laya.Handler.create(
+      this,
+      this.__renderListItem,
+      null,
+      false,
+    );
+    this._contorller.getConsortiaEventInfos();
+  }
+
+  public OnHideWind() {
+    super.OnHideWind();
+    this.removeEvent();
+  }
+
+  private __renderListItem(index: number, item: ConsortiaEventItem) {
+    let eventList = this._data.consortiaEventList;
+    let data = eventList[index];
+    if (data) {
+      item.info = data;
+    } else {
+      item.info = null;
     }
+  }
 
-    private initEvent() {
-        this._data.addEventListener(ConsortiaEvent.UPDA_CONSORTIA_EVENT_LIST, this.__onEventListUpdate, this);
-        DataCommonManager.playerInfo.addEventListener(PlayerEvent.CONSORTIA_CHANGE, this.__existConsortiaHandler, this);
-    }
+  private __onEventListUpdate() {
+    let eventList = this._data.consortiaEventList;
+    let length: number =
+      eventList.length > ConsortiaModel.CONSORTIA_EVENT_LIST_NUM
+        ? eventList.length
+        : ConsortiaModel.CONSORTIA_EVENT_LIST_NUM;
+    this.list.setVirtual();
+    this.list.numItems = length;
+  }
 
-    private initData() {
-        this._contorller = FrameCtrlManager.Instance.getCtrl(EmWindow.Consortia) as ConsortiaControler;
-        this._data = this._contorller.model;
+  private __existConsortiaHandler() {
+    if (DataCommonManager.playerInfo.consortiaID == 0) {
+      this.hide();
     }
+  }
 
-    private initView() {
-        this.list.itemRenderer = Laya.Handler.create(this, this.__renderListItem, null, false);
-        this._contorller.getConsortiaEventInfos();
-    }
+  private removeEvent() {
+    this._data.removeEventListener(
+      ConsortiaEvent.UPDA_CONSORTIA_EVENT_LIST,
+      this.__onEventListUpdate,
+      this,
+    );
+    DataCommonManager.playerInfo.removeEventListener(
+      PlayerEvent.CONSORTIA_CHANGE,
+      this.__existConsortiaHandler,
+      this,
+    );
+  }
 
-    public OnHideWind() {
-        super.OnHideWind();
-        this.removeEvent();
-    }
-
-    private __renderListItem(index: number, item: ConsortiaEventItem) {
-        let eventList = this._data.consortiaEventList;
-        let data = eventList[index]
-        if(data){
-            item.info = data
-        }else{
-            item.info = null;
-        }
-    }
-
-    private __onEventListUpdate() {
-        let eventList = this._data.consortiaEventList;
-        let length: number = eventList.length > ConsortiaModel.CONSORTIA_EVENT_LIST_NUM ? eventList.length : ConsortiaModel.CONSORTIA_EVENT_LIST_NUM;
-        this.list.setVirtual();
-        this.list.numItems = length;
-    }
-
-    private __existConsortiaHandler() {
-        if (DataCommonManager.playerInfo.consortiaID == 0) {
-            this.hide();
-        }
-    }
-
-    private removeEvent() {
-        this._data.removeEventListener(ConsortiaEvent.UPDA_CONSORTIA_EVENT_LIST, this.__onEventListUpdate, this);
-        DataCommonManager.playerInfo.removeEventListener(PlayerEvent.CONSORTIA_CHANGE, this.__existConsortiaHandler, this);
-    }
-
-    dispose(dispose?: boolean) {
-        super.dispose(dispose);
-    }
+  dispose(dispose?: boolean) {
+    super.dispose(dispose);
+  }
 }

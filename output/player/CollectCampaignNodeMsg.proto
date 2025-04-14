@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message CollectCampaignNodeMsg {
+  int32 mastType = 1;
+  int32 item = 2;
+  int32 campaignDataId = 3;
+  int32 sonType = 4;
+  string name = 5;
+}

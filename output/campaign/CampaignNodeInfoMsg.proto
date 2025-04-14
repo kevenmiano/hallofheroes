@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodeInfoMsg {
+  int32 type = 1;
+  int32 normalTimes = 2;
+  bool isMail = 3;
+  repeated int32 nodeInfo = 4;
+  int32 gameType = 5;
+  int32 freeSlotmachineCount = 6;
+}

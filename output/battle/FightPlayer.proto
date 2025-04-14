@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message FightPlayer {
+  int32 playerId = 1;
+  string nickName = 2;
+  int32 hitHpCount = 3;
+}

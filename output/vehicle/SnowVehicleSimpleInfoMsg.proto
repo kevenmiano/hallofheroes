@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message SnowVehicleSimpleInfoMsg {
+  string matchOrCancel = 1;
+  string curNum = 2;
+  string userId = 3;
+  string groupId = 4;
+  string serverName = 5;
+  string status = 6;
+}

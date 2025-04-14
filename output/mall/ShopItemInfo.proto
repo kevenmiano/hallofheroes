@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message ShopItemInfo {
+  int32 itemId = 1;
+  bool isBuy = 2;
+  int32 needGold = 3;
+  string buyDate = 4;
+  int32 repeatBuy = 5;
+}

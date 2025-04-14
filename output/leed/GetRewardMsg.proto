@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message GetRewardMsg {
+  int32 day = 1;
+}

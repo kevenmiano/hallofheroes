@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildBufferMsg {
+  int32 templateId = 1;
+  int32 consortiaId = 2;
+  string bufferName = 3;
+  int32 curreCount = 4;
+  int32 maxCdTimer = 5;
+  int32 objectData = 6;
+  int32 needPay = 7;
+  string descr = 8;
+  string param1 = 9;
+}

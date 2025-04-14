@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SumActiveinfoMsg {
+  string activeId = 1;
+  string beginDate = 2;
+  string endDate = 3;
+  string title = 4;
+  string detail = 5;
+  string conditionDetail = 6;
+  int32 getway = 7;
+  repeated int32 packages = 8;
+  int32 activeType = 9;
+  string startTime = 10;
+  string stopTime = 11;
+  int32 order = 12;
+  string appendParam = 13;
+}

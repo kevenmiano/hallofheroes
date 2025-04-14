@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message PlayerInfoNoticeMsg {
+  int32 affectGeste = 1;
+  int32 score = 2;
+  bool isAdd = 3;
+  int32 playerState = 4;
+  bool isTips = 5;
+  string serverName = 6;
+  bool manualExit = 7;
+  int32 mountTemplateId = 8;
+  int32 mountGrade = 9;
+  string wing = 10;
+  string arm = 11;
+  string cloth = 12;
+  int32 changeShapeId = 13;
+  string hat = 14;
+  string fashionArm = 15;
+  string fashionCloth = 16;
+  bool hide = 17;
+  int32 crossScore = 18;
+  int32 gesteJoin = 19;
+  int32 appellId = 20;
+  int32 petTemplateId = 21;
+  string petName = 22;
+  int32 petQuality = 23;
+  int32 gestePowcardJoin = 24;
+}

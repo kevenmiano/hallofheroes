@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaQuitReqMsg {
+  int32 clear_CDType = 1;
+  int32 payType = 2;
+}

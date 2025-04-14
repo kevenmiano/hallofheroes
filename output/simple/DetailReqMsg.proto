@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message DetailReqMsg {
+  int32 userId = 1;
+  string serverName = 2;
+  int32 otherId = 3;
+  string otherName = 4;
+  bool itemInfo = 5;
+  bool armyInfo = 6;
+  bool heroInfo = 7;
+  bool pawnInfo = 8;
+}

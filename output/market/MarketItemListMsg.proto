@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketItemListMsg {
+  repeated int32 list = 1;
+}

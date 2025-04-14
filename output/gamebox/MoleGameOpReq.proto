@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gamebox;
+
+message MoleGameOpReq {
+  int32 op = 1;
+  int32 x = 2;
+  int32 y = 3;
+  int32 round = 4;
+  int32 awardId = 5;
+  int32 count = 6;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowcardUseReq {
+  int32 op = 1;
+  int32 cardId = 2;
+  int32 oldbagType = 3;
+  int32 oldpos = 4;
+  int32 newbagType = 5;
+  int32 newpos = 6;
+}

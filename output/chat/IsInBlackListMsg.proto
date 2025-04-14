@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message IsInBlackListMsg {
+  int32 otherId = 1;
+  bool isInBlackList = 2;
+}

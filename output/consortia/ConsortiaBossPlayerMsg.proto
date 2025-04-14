@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaBossPlayerMsg {
+  int32 userid = 1;
+  int32 collectCount = 2;
+  int32 missionItemCount = 3;
+}

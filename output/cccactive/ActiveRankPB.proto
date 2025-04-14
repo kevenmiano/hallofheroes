@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ActiveRankPB {
+  string userName = 1;
+  int32 score = 2;
+  int32 rank = 3;
+  string activeId = 4;
+  string site = 5;
+  string nickName = 6;
+}

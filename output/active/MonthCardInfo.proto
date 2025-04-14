@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message MonthCardInfo {
+  int32 cardType = 1;
+  bool isPay = 2;
+  bool isReceive = 3;
+  int32 leftDays = 4;
+}

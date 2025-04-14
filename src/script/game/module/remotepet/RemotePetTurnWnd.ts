@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import { RemotePetEvent } from "../../../core/event/RemotePetEvent";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
@@ -14,76 +14,88 @@ import { RemotePetTurnMap } from "./view/RemotePetTurnMap";
 import { RemotePetTurnUpView } from "./view/RemotePetTurnUpView";
 
 export class RemotePetTurnWnd extends BaseWindow {
+  public bg: fgui.GImage;
+  public bg01: fgui.GImage;
+  public bg02: fgui.GImage;
+  public cbg: fgui.GGroup;
+  public closeBtn: fgui.GButton;
+  // public _sylph2: fgui.GTextField;
+  // public _sylph1: fgui.GTextField;
+  public sylph2: fgui.GImage;
+  public sylph1: fgui.GImage;
+  public helpBtn: fgui.GButton;
+  public title: fgui.GTextField;
 
-    public bg: fgui.GImage;
-    public bg01: fgui.GImage;
-    public bg02: fgui.GImage;
-    public cbg: fgui.GGroup;
-    public closeBtn: fgui.GButton;
-    // public _sylph2: fgui.GTextField;
-    // public _sylph1: fgui.GTextField;
-    public sylph2: fgui.GImage;
-    public sylph1: fgui.GImage;
-    public helpBtn: fgui.GButton;
-    public title: fgui.GTextField;
+  public _mapView: RemotePetTurnMap;
+  public _upView: RemotePetTurnUpView;
+  public _downView: RemotePetTurnDownView;
 
-    public _mapView: RemotePetTurnMap;
-    public _upView: RemotePetTurnUpView;
-    public _downView: RemotePetTurnDownView;
+  public resizeContent = true;
+  public OnInitWind() {
+    this.addEvent();
+    RemotePetController.Instance.initTurnsData();
+    // this.updateView();
+  }
 
+  private updateView() {
+    // let count = GoodsManager.Instance.getGoodsNumByTempId(ShopGoodsInfo.REMOTEPET_TEMPID);
+    // let count2 = GoodsManager.Instance.getGoodsNumByTempId(ShopGoodsInfo.REMOTEPET_TEMPID2);
+    // this._sylph1.text = count + "";
+    // this._sylph2.text = count2 + "";
+    this._upView.freshItemView();
+    this._downView.commitHandler();
+  }
 
-    public resizeContent = true;
-    public OnInitWind() {
-        this.addEvent();
-        RemotePetController.Instance.initTurnsData();
-        // this.updateView();
-    }
+  private updateMap() {
+    this._mapView.setFrame(this.model.turnInfo.currPage);
+  }
 
+  private addEvent() {
+    this.model.addEventListener(RemotePetEvent.COMMIT, this.updateView, this);
+    this.model.addEventListener(
+      RemotePetEvent.PAGE_UPDATE,
+      this.updateMap,
+      this,
+    );
+    this.helpBtn.onClick(this, this.onHelpTap);
+  }
 
-    private updateView() {
-        // let count = GoodsManager.Instance.getGoodsNumByTempId(ShopGoodsInfo.REMOTEPET_TEMPID);
-        // let count2 = GoodsManager.Instance.getGoodsNumByTempId(ShopGoodsInfo.REMOTEPET_TEMPID2);
-        // this._sylph1.text = count + "";
-        // this._sylph2.text = count2 + "";
-        this._upView.freshItemView();
-       this. _downView.commitHandler();
-    }
+  private removeEvent() {
+    this.model.removeEventListener(
+      RemotePetEvent.COMMIT,
+      this.updateView,
+      this,
+    );
+    this.model.removeEventListener(
+      RemotePetEvent.PAGE_UPDATE,
+      this.updateMap,
+      this,
+    );
+    this.helpBtn.onClick(this, this.onHelpTap);
+  }
 
-    private updateMap() {
-        this._mapView.setFrame(this.model.turnInfo.currPage);
-    }
+  public get model(): RemotePetModel {
+    return RemotePetManager.Instance.model;
+  }
 
-    private addEvent() {
-        this.model.addEventListener(RemotePetEvent.COMMIT, this.updateView, this);
-        this.model.addEventListener(RemotePetEvent.PAGE_UPDATE, this.updateMap, this);
-        this.helpBtn.onClick(this, this.onHelpTap);
-    }
+  private onHelpTap() {
+    let title = LangManager.Instance.GetTranslation("public.help");
+    let content = LangManager.Instance.GetTranslation("remotepet.help");
+    UIManager.Instance.ShowWind(EmWindow.Help, {
+      title: title,
+      content: content,
+    });
+  }
 
-    private removeEvent() {
-        this.model.removeEventListener(RemotePetEvent.COMMIT, this.updateView, this);
-        this.model.removeEventListener(RemotePetEvent.PAGE_UPDATE, this.updateMap, this);
-        this.helpBtn.onClick(this, this.onHelpTap);
-    }
+  public OnHideWind(): void {
+    this.removeEvent();
+  }
 
-    public get model(): RemotePetModel {
-        return RemotePetManager.Instance.model;
-    }
-
-    private onHelpTap() {
-        let title = LangManager.Instance.GetTranslation("public.help");
-        let content = LangManager.Instance.GetTranslation("remotepet.help");
-        UIManager.Instance.ShowWind(EmWindow.Help, { title: title, content: content });
-    }
-
-    public OnHideWind(): void {
-        this.removeEvent();
-    }
-
-    public dispose(dispose?: boolean): void {
-        super.dispose(dispose);
-        this.removeEvent();
-        this._upView.dispose();
-        this._downView.dispose();
-        // this._mapView.dispose();
-    }
+  public dispose(dispose?: boolean): void {
+    super.dispose(dispose);
+    this.removeEvent();
+    this._upView.dispose();
+    this._downView.dispose();
+    // this._mapView.dispose();
+  }
 }

@@ -1,14 +1,11 @@
-// @ts-nocheck
-import GameEventDispatcher from "../event/GameEventDispatcher";
+import GameEventDispatcher from "../event/GameEventDispatcher.js";
 // import IManager from '../Interface/IManager';
-import LanguageAnalyzer from "./LanguageAnalyzer";
-import { getdefaultLangageCfg } from "./LanguageDefine";
+import LanguageAnalyzer from "./LanguageAnalyzer.js";
+import { getdefaultLangageCfg } from "./LanguageDefine.js";
 
-export default class LangManager
-  extends GameEventDispatcher
-  implements IManager
-{
-  private _dic: { [key: string]: Object }[] = [];
+export default class LangManager extends GameEventDispatcher {
+  // implements IManager
+  private _dic: { [key: string]: object }[] = [];
 
   private _reg: RegExp = new RegExp("\\{(\\d+)\\}");
 
@@ -56,7 +53,7 @@ export default class LangManager
       let langCfg = getdefaultLangageCfg();
       input = translationObj[langCfg.key];
     }
-    var obj: Object = this._reg.exec(input);
+    var obj: object = this._reg.exec(input);
     while (obj && args.length > 0) {
       var id: number = Number(obj[1]);
       if (id >= 0 && id < args.length) {
@@ -87,7 +84,7 @@ export default class LangManager
     if (translationObj) {
       input = translationObj[lang];
     }
-    var obj: Object = this._reg.exec(input);
+    var obj: object = this._reg.exec(input);
     while (obj && args.length > 0) {
       var id: number = Number(obj[1]);
       if (id >= 0 && id < args.length) {

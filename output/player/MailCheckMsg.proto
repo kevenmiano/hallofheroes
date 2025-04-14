@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message MailCheckMsg {
+  int32 op = 1;
+  int32 state = 2;
+  int32 pin = 3;
+  string mail = 4;
+  int32 type = 5;
+  bool isFirstOpen = 6;
+  bool agree = 7;
+}

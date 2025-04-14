@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message MoveFriendReqMsg {
+  int32 firendId = 1;
+  int32 groupId = 2;
+  int32 result = 3;
+}

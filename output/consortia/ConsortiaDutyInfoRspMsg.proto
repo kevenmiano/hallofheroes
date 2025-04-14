@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaDutyInfoRspMsg {
+  int32 levels = 1;
+  string dutyName = 2;
+  string rights = 3;
+}

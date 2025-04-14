@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gameplot;
+
+message PlotInfoMsg {
+  int32 index = 1;
+  int32 direction = 2;
+  int32 roleId = 3;
+  string roleName = 4;
+  string event = 5;
+  string param = 6;
+  string text = 7;
+  int32 delayTime = 8;
+}

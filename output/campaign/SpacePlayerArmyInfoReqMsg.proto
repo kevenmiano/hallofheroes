@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message SpacePlayerArmyInfoReqMsg {
+  repeated int32 userList = 1;
+}

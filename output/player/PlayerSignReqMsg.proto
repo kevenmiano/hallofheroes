@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerSignReqMsg {
+  int32 optType = 1;
+  int32 prizeSite = 2;
+  int32 payType = 3;
+  int32 index = 4;
+}

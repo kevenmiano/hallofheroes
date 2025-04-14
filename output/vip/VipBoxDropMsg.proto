@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipBoxDropMsg {
+  string weekGiftDate = 1;
+}

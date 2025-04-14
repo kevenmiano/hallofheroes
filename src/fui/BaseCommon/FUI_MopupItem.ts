@@ -6,6 +6,8 @@ export default class FUI_MopupItem extends fgui.GComponent {
   public gTitleBar: fgui.GGroup;
   public txtGetExp: fgui.GTextField;
   public list: fgui.GList;
+
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://4x3i47txqzu4rt";
 

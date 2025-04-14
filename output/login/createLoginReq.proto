@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message createLoginReq {
+  string userName = 1;
+  string pass = 2;
+  string site = 3;
+  string from = 4;
+  int32 appId = 5;
+  int32 packageId = 6;
+  string channelId = 7;
+  string channelName = 8;
+  string token = 9;
+  string deviceId = 10;
+  string clientVersion = 11;
+  string systemSoftware = 12;
+  string systemHardware = 13;
+  string telecomOper = 14;
+  string network = 15;
+  int32 screenWidth = 16;
+  int32 screenHight = 17;
+  int32 density = 18;
+  string cpuHardware = 19;
+  int32 memory = 20;
+  string glRender = 21;
+  string glVersion = 22;
+  int32 platId = 23;
+  int32 siteId = 24;
+  string clientIp = 25;
+  string medium = 26;
+  string serverName = 27;
+  int32 clientLan = 28;
+  int32 area = 29;
+}

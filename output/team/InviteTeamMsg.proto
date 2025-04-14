@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.team;
+
+message InviteTeamMsg {
+  int32 teamId = 1;
+  int32 inviterId = 2;
+  string inviterName = 3;
+}

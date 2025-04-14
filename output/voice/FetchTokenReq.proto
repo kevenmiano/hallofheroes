@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.voice;
+
+message FetchTokenReq {
+  string userId = 1;
+}

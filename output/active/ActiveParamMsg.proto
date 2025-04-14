@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ActiveParamMsg {
+  int32 level = 1;
+  int32 costDiamond = 2;
+  int32 costContract = 3;
+  int32 getBindingDia = 4;
+  int32 harvestCount = 5;
+  repeated int32 itemInfos = 6;
+  repeated int32 getInfos = 7;
+}

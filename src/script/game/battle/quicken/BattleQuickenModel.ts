@@ -1,11 +1,8 @@
-// @ts-nocheck
 export default class BattleQuickenModel {
-    /**
-     * 战斗加速的速度 
-     */
-    public speed: number = 1;
-    
-    constructor() {
+  /**
+   * 战斗加速的速度
+   */
+  public speed: number = 1;
 
-    }
+  constructor() {}
 }

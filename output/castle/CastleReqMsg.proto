@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.castle;
+
+message CastleReqMsg {
+  int32 magId = 1;
+  int32 posX = 2;
+  int32 posY = 3;
+  int32 leftTime = 4;
+  int32 leftEnergy = 5;
+  int32 payType = 6;
+  bool isTransfer = 7;
+}

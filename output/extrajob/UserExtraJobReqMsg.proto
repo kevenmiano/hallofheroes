@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.extrajob;
+
+message UserExtraJobReqMsg {
+  int32 targetUserid = 1;
+}

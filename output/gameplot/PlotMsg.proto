@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gameplot;
+
+message PlotMsg {
+  bool loop = 1;
+  int32 sceneType = 2;
+  repeated int32 info = 3;
+}

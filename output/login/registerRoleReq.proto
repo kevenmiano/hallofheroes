@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message registerRoleReq {
+  int32 userId = 1;
+  string userName = 2;
+  string nickName = 3;
+  int32 sex = 4;
+  int32 camp = 5;
+  int32 icon = 6;
+  string site = 7;
+  string md5Password = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildMsg {
+  int32 param1 = 1;
+  int32 param2 = 2;
+  string param3 = 3;
+  string param4 = 4;
+  bool param5 = 5;
+  bool param6 = 6;
+}

@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_BottleBottomIntergalBoxView from "../../../../../fui/Funny/FUI_BottleBottomIntergalBoxView";
 import { ITipedDisplay, TipsShowType } from "../../../tips/ITipedDisplay";
 import { EmWindow } from "../../../constant/UIDefine";
@@ -15,56 +15,61 @@ import { FunnyContent } from "./FunnyContent";
  * @ver 1.0
  */
 
-export class BottleBottomIntergalBoxView extends FUI_BottleBottomIntergalBoxView implements ITipedDisplay {
-    tipData: any;
-    tipType: EmWindow;
-    showType: TipsShowType;
-    startPoint: Laya.Point = new Laya.Point(0, 0);
+export class BottleBottomIntergalBoxView
+  extends FUI_BottleBottomIntergalBoxView
+  implements ITipedDisplay
+{
+  tipData: any;
+  tipType: EmWindow;
+  showType: TipsShowType;
+  startPoint: Laya.Point = new Laya.Point(0, 0);
 
-    private _index: number = -1;//0--4
+  private _index: number = -1; //0--4
 
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+  protected onConstruct() {
+    super.onConstruct();
+    this.tipType = EmWindow.BottleBottomIntergalBoxTips;
+  }
+
+  public set boxIndex(index: number) {
+    ToolTipsManager.Instance.register(this);
+
+    this._index = index;
+    this.txt_floor.text = StringUtils.getRomanNumber(index + 1);
+    this.tipData = this.bottleModel.countRewardArr[this._index];
+  }
+
+  public refreshStatus(): void {
+    this.showType = TipsShowType.onClick;
+    if (this.bottleModel.countRewardArr.length <= 0) {
+      return;
     }
-
-    protected onConstruct() {
-        super.onConstruct();
-        this.tipType = EmWindow.BottleBottomIntergalBoxTips;
+    if (
+      this.bottleModel.openCount >=
+      this.bottleModel.countRewardArr[this._index].param
+    ) {
+      if (this.bottleModel.boxMarkArr[this._index] == 0) {
+        //可领取但是未领取
+        this.canAward.selectedIndex = 1;
+        this.showType = TipsShowType.onLongPress;
+      } else if (this.bottleModel.boxMarkArr[this._index] == 1) {
+        //已经领取
+        this.canAward.selectedIndex = 2;
+      }
     }
+  }
 
-    public set boxIndex(index: number) {
-        ToolTipsManager.Instance.register(this);
+  private get bottleModel(): BottleModel {
+    return BottleManager.Instance.model;
+  }
 
-        this._index = index;
-        this.txt_floor.text = StringUtils.getRomanNumber(index + 1);
-        this.tipData = this.bottleModel.countRewardArr[this._index];
-    }
-
-    public refreshStatus(): void {
-        this.showType = TipsShowType.onClick;
-        if (this.bottleModel.countRewardArr.length <= 0) {
-            return;
-        }
-        if (this.bottleModel.openCount >= this.bottleModel.countRewardArr[this._index].param) {
-            if (this.bottleModel.boxMarkArr[this._index] == 0)//可领取但是未领取
-            {
-                this.canAward.selectedIndex = 1;
-                this.showType = TipsShowType.onLongPress;
-            }
-            else if (this.bottleModel.boxMarkArr[this._index] == 1)//已经领取
-            {
-                this.canAward.selectedIndex = 2;
-            }
-        }
-    }
-
-    private get bottleModel(): BottleModel {
-        return BottleManager.Instance.model;
-    }
-
-    dispose() {
-        ToolTipsManager.Instance.unRegister(this);
-        this.tipData = null;
-        super.dispose();
-    }
+  dispose() {
+    ToolTipsManager.Instance.unRegister(this);
+    this.tipData = null;
+    super.dispose();
+  }
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaSearchRspMsg {
+  int32 totalRows = 1;
+  repeated int32 consortiaInfo = 2;
+  bool isReset = 3;
+}

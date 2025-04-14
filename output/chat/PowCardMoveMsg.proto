@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message PowCardMoveMsg {
+  int32 changeType = 1;
+  int32 changePos = 2;
+  string powcard_Info = 3;
+}

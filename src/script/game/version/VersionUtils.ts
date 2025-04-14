@@ -31,7 +31,7 @@ export default class VersionUtils {
       "preDate:",
       preDateValue,
       "nowDateValue:",
-      nowDateValue
+      nowDateValue,
     );
     if (!downLoadAppClick || now.getDate() != preDate.getDate()) {
       needUpdate = true;
@@ -62,7 +62,7 @@ export default class VersionUtils {
             }
           }
         },
-        AlertBtnType.OC
+        AlertBtnType.OC,
       );
       return true;
     }

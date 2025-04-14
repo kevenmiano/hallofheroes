@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableRecord {
+  int32 consumeType = 1;
+  int32 consumeItemId = 2;
+  int32 consumeCount = 3;
+  int32 rewardId = 4;
+  int32 rewardCount = 5;
+  int32 magnification = 6;
+  int32 TurnTime = 7;
+}

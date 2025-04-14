@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.reward;
+
+message RewardFinishedReqMsg {
+  int32 templateId = 1;
+  int32 rewardItemId = 2;
+  bool isPass = 3;
+}

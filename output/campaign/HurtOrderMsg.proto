@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message HurtOrderMsg {
+  int32 userId = 1;
+  int32 hurt = 2;
+  bool isInAltar = 3;
+}

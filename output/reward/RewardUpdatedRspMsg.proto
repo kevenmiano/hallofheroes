@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.reward;
+
+message RewardUpdatedRspMsg {
+  repeated int32 reward = 1;
+  int32 statesLength = 2;
+  string states = 3;
+}

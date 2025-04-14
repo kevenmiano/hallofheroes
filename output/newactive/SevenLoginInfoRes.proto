@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message SevenLoginInfoRes {
+  int32 loginDays = 1;
+  repeated int32 awardRecord = 2;
+  int32 stage = 3;
+}

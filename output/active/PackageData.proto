@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PackageData {
+  string packId = 1;
+  int32 status = 2;
+  int32 countDown = 3;
+  bool isShow = 4;
+  string param1 = 5;
+  int32 finishValue = 6;
+  int32 getCount = 7;
+}

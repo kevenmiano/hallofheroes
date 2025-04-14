@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WorldBossWoundRewardMsg {
+  int32 campaignId = 1;
+  int32 rewardid = 2;
+  string woundmsg = 3;
+  string rewardmsg = 4;
+  int32 state = 5;
+}

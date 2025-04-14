@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message AllTaskInfoMsg {
+  int32 score = 1;
+  int32 finishNum = 2;
+  string rewardStatus = 3;
+  string oneTask = 4;
+  repeated int32 recoredInfo = 5;
+  int32 update = 6;
+}

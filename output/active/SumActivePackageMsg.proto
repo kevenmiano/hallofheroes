@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SumActivePackageMsg {
+  string packageId = 1;
+  int32 order = 2;
+  repeated int32 items = 3;
+  repeated int32 conditions = 4;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message playerLoginRsp {
+  string userName = 1;
+  string site = 2;
+  bool result = 3;
+  string message = 4;
+  int32 userId = 5;
+  string gateIp = 6;
+  int32 port = 7;
+  bool todayFirstLogin = 8;
+}

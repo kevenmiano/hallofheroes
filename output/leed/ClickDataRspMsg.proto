@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message ClickDataRspMsg {
+  string keys = 1;
+  int32 keyData = 2;
+  string changeTime = 3;
+}

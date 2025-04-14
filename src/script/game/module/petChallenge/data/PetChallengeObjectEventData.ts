@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-11-09 12:16:27
@@ -10,14 +10,13 @@
 
 import { PetData } from "../../pet/data/PetData";
 
- export class PetChallengeObjectEventData
- {
-     public userId:number;
-     public tarUserId:number;
-     public tarNickName:string;
-     public result:number;
-     public isAttack:boolean;
-     public logDate:string;
-     public score:number;
-     public tarPets:PetData[] = [];
- }
+export class PetChallengeObjectEventData {
+  public userId: number;
+  public tarUserId: number;
+  public tarNickName: string;
+  public result: number;
+  public isAttack: boolean;
+  public logDate: string;
+  public score: number;
+  public tarPets: PetData[] = [];
+}

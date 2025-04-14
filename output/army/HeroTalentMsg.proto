@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroTalentMsg {
+  int32 userId = 1;
+  int32 talentPoint = 2;
+  int32 talentGrade = 3;
+  string talentSkill = 4;
+  repeated int32 sealOrder = 5;
+  int32 currentBranch = 6;
+  bool isActiveSecond = 7;
+  int32 talentIndex = 8;
+}

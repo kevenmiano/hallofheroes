@@ -1,6 +1,9 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_BattleSkillItemCircle from "./FUI_BattleSkillItemCircle";
+
+//@ts-expect-error: External dependencies
 import FUI_BattleSkillItemRect from "./FUI_BattleSkillItemRect";
 
 export default class FUI_PetPKSkillItemListView extends fgui.GComponent {

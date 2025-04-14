@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { FormularySets } from "../../../../core/utils/FormularySets";
@@ -53,7 +53,7 @@ export default class ExchangeWnd extends BaseWindow {
     super.OnInitWind();
     this.setCenter();
     this.frame.getChild("title").text = LangManager.Instance.GetTranslation(
-      "yishi.view.frame.NumBuyFrame.title"
+      "yishi.view.frame.NumBuyFrame.title",
     );
     this.addEvent();
     this.initData();
@@ -75,25 +75,25 @@ export default class ExchangeWnd extends BaseWindow {
       this,
       this.renderGoodsListItem1,
       null,
-      false
+      false,
     );
     this.exchangeList2.itemRenderer = Laya.Handler.create(
       this,
       this.renderGoodsListItem2,
       null,
-      false
+      false,
     );
     this.exchangeList1.itemProvider = Laya.Handler.create(
       this,
       this.getListItemResource1,
       null,
-      false
+      false,
     );
     this.exchangeList2.itemProvider = Laya.Handler.create(
       this,
       this.getListItemResource2,
       null,
-      false
+      false,
     );
   }
 
@@ -107,7 +107,7 @@ export default class ExchangeWnd extends BaseWindow {
     this.progressSlider.off(
       fairygui.Events.STATE_CHANGED,
       this,
-      this.onChanged
+      this.onChanged,
     );
   }
 
@@ -180,7 +180,7 @@ export default class ExchangeWnd extends BaseWindow {
       ownCount = ResourceManager.Instance.gold.count;
       countVlaue = FormularySets.toStringSelf(
         ResourceManager.Instance.gold.count,
-        HomeWnd.STEP
+        HomeWnd.STEP,
       ).toString();
     } else {
       ownCount = FunnyHelper.getBagCount(infoData.templateId);
@@ -324,23 +324,23 @@ export default class ExchangeWnd extends BaseWindow {
     if (this._exchangeNumber > this._canExchangeNumber) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "funny.datas.ExchangeWnd.exchangeOver"
-        )
+          "funny.datas.ExchangeWnd.exchangeOver",
+        ),
       );
       return;
     }
     if (this._exchangeNumber <= 0) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "funny.datas.ExchangeWnd.exchangeNone"
-        )
+          "funny.datas.ExchangeWnd.exchangeNone",
+        ),
       );
       return;
     }
     FunnyManager.Instance.sendGetBag(
       2,
       this._exchangeData.exchangeId,
-      this._exchangeNumber
+      this._exchangeNumber,
     );
     this.OnBtnClose();
   }

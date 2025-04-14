@@ -1,14 +1,9 @@
-// @ts-nocheck
 /**
- * 
+ *
  */
-export class MonopolyItemInfo{
-    public templateId:number;
-    public count:number;
-    
-    public MonopolyNodeInfo()
-    {
-    }
+export class MonopolyItemInfo {
+  public templateId: number;
+  public count: number;
 
-
+  public MonopolyNodeInfo() {}
 }

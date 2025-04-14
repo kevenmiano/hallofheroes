@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 
 /*
@@ -6,6 +6,4 @@ import FrameCtrlBase from "../../mvc/FrameCtrlBase";
  * @Date: 2021-11-11 10:20
  * @Description: 藏宝图控制器
  */
-export default class TreasureMapCtrl extends FrameCtrlBase {
-
-}
+export default class TreasureMapCtrl extends FrameCtrlBase {}

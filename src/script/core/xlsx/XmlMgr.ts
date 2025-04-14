@@ -1,11 +1,9 @@
-// @ts-nocheck
 import { XMLType, XmlURL } from "../../game/constant/XmlDefine";
 import ComponentSetting from "../../game/utils/ComponentSetting";
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from "../Interface/IManager";
 import ResMgr from "../res/ResMgr";
-import { IParserConfiguration } from "./interfaces";
-import { XmlParser } from "./xmlParser";
+import { IParserConfiguration, XmlParser } from "./xmlParser";
 
 /**
  * @author:pzlricky
@@ -56,7 +54,7 @@ export default class XmlMgr extends GameEventDispatcher {
    * 获取XML
    * @param xmlType XML类型 XMLType
    */
-  getXML(xmlType: XMLType): Object {
+  getXML(xmlType: XMLType): object {
     return this.xmlMaps.get(xmlType);
   }
 

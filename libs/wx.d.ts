@@ -2297,6 +2297,8 @@ interface _makePhoneCallObject {
   complete: () => void;
 }
 interface _loginObject {
+  force: boolean;
+
   /**
    * 接口调用成功的回调函数
    */
@@ -4687,21 +4689,21 @@ declare namespace wx {
    */
   export function canvasToTempFilePath(
     this: string,
-    object: _canvasToTempFilePathObject
+    object: _canvasToTempFilePathObject,
   ): void;
 
   /**
    * 获取设备内是否录入如指纹等生物信息的接口
    */
   export function checkIsSoterEnrolledInDevice(
-    object: _checkIsSoterEnrolledInDeviceObject
+    object: _checkIsSoterEnrolledInDeviceObject,
   ): void;
 
   /**
    * 获取本机支持的 SOTER 生物认证方式
    */
   export function checkIsSupportSoterAuthentication(
-    object: _checkIsSupportSoterAuthenticationObject
+    object: _checkIsSupportSoterAuthenticationObject,
   ): void;
 
   /**
@@ -4758,7 +4760,7 @@ declare namespace wx {
    * 关闭蓝牙模块，使其进入未初始化状态。调用该方法将断开所有已建立的链接并释放系统资源。建议在使用小程序蓝牙流程后调用，与`wx.openBluetoothAdapter`成对调用。
    */
   export function closeBluetoothAdapter(
-    object: _closeBluetoothAdapterObject
+    object: _closeBluetoothAdapterObject,
   ): void;
 
   /**
@@ -4801,7 +4803,7 @@ declare namespace wx {
    */
   export function createCanvasContext(
     this: string,
-    canvasid: string
+    canvasid: string,
   ): CanvasContext;
 
   /**
@@ -4848,14 +4850,14 @@ declare namespace wx {
    * 蓝牙设备characteristic(特征值)信息
    */
   export function getBLEDeviceCharacteristics(
-    object: _getBLEDeviceCharacteristicsObject
+    object: _getBLEDeviceCharacteristicsObject,
   ): void;
 
   /**
    * 获取蓝牙设备所有 service（服务）
    */
   export function getBLEDeviceServices(
-    object: _getBLEDeviceServicesObject
+    object: _getBLEDeviceServicesObject,
   ): void;
 
   /**
@@ -4867,7 +4869,7 @@ declare namespace wx {
    * 获取后台音乐播放状态。
    */
   export function getBackgroundAudioPlayerState(
-    object: _getBackgroundAudioPlayerStateObject
+    object: _getBackgroundAudioPlayerStateObject,
   ): void;
 
   /**
@@ -4879,7 +4881,7 @@ declare namespace wx {
    * 获取本机蓝牙适配器状态
    */
   export function getBluetoothAdapterState(
-    object: _getBluetoothAdapterStateObject
+    object: _getBluetoothAdapterStateObject,
   ): void;
 
   /**
@@ -4896,7 +4898,7 @@ declare namespace wx {
    * 根据 uuid 获取处于已连接状态的设备
    */
   export function getConnectedBluetoothDevices(
-    object: _getConnectedBluetoothDevicesObject
+    object: _getConnectedBluetoothDevicesObject,
   ): void;
 
   /**
@@ -5073,7 +5075,7 @@ declare namespace wx {
    * 返回到上一个小程序，只有在当前小程序是被其他小程序打开时可以调用成功
    */
   export function navigateBackMiniProgram(
-    object: _navigateBackMiniProgramObject
+    object: _navigateBackMiniProgramObject,
   ): void;
 
   /**
@@ -5085,35 +5087,35 @@ declare namespace wx {
    * 打开同一公众号下关联的另一个小程序。**（注：必须是同一公众号下，而非同个 open 账号下）**
    */
   export function navigateToMiniProgram(
-    object: _navigateToMiniProgramObject
+    object: _navigateToMiniProgramObject,
   ): void;
 
   /**
    * 启用低功耗蓝牙设备特征值变化时的 notify 功能，订阅特征值。注意：必须设备的特征值支持`notify`或者`indicate`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function notifyBLECharacteristicValueChange(
-    object: _notifyBLECharacteristicValueChangeObject
+    object: _notifyBLECharacteristicValueChangeObject,
   ): void;
 
   /**
    * 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 `wx.stopAccelerometer` 停止监听。
    */
   export function onAccelerometerChange(
-    callback: (result: _onAccelerometerChangeCallbackResult) => void
+    callback: (result: _onAccelerometerChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听低功耗蓝牙设备的特征值变化。必须先启用`notify`接口才能接收到设备推送的notification。
    */
   export function onBLECharacteristicValueChange(
-    callback: (result: _onBLECharacteristicValueChangeCallbackResult) => void
+    callback: (result: _onBLECharacteristicValueChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听低功耗蓝牙连接的错误事件，包括设备丢失，连接异常断开等等。
    */
   export function onBLEConnectionStateChange(
-    callback: (result: _onBLEConnectionStateChangeCallbackResult) => void
+    callback: (result: _onBLEConnectionStateChangeCallbackResult) => void,
   ): void;
 
   /**
@@ -5135,63 +5137,63 @@ declare namespace wx {
    * 监听 `iBeacon` 服务的状态变化
    */
   export function onBeaconServiceChange(
-    callback: (result: _onBeaconServiceChangeCallbackResult) => void
+    callback: (result: _onBeaconServiceChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听 `iBeacon` 设备的更新事件
    */
   export function onBeaconUpdate(
-    callback: (result: _onBeaconUpdateCallbackResult) => void
+    callback: (result: _onBeaconUpdateCallbackResult) => void,
   ): void;
 
   /**
    * 监听蓝牙适配器状态变化事件
    */
   export function onBluetoothAdapterStateChange(
-    callback: (result: _onBluetoothAdapterStateChangeCallbackResult) => void
+    callback: (result: _onBluetoothAdapterStateChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听寻找到新设备的事件
    */
   export function onBluetoothDeviceFound(
-    callback: (result: _onBluetoothDeviceFoundCallbackResult) => void
+    callback: (result: _onBluetoothDeviceFoundCallbackResult) => void,
   ): void;
 
   /**
    * 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用`wx.stopCompass`停止监听。
    */
   export function onCompassChange(
-    callback: (result: _onCompassChangeCallbackResult) => void
+    callback: (result: _onCompassChangeCallbackResult) => void,
   ): void;
 
   /**
    * 监听需要评估连上的 Wi-Fi 的请求，在回调里必须返回 `confidence` 字段
    */
   export function onEvaluateWifi(
-    callback: (result: _onEvaluateWifiCallbackResult) => void
+    callback: (result: _onEvaluateWifiCallbackResult) => void,
   ): void;
 
   /**
    * 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。
    */
   export function onGetWifiList(
-    callback: (result: _onGetWifiListCallbackResult) => void
+    callback: (result: _onGetWifiListCallbackResult) => void,
   ): void;
 
   /**
    * 监听 NFC 设备的消息回调，并在回调中处理。返回参数中 `messageType` 表示消息类型，目前有如下值：
    */
   export function onHCEMessage(
-    callback: (result: _onHCEMessageCallbackResult) => void
+    callback: (result: _onHCEMessageCallbackResult) => void,
   ): void;
 
   /**
    * 监听网络状态变化。
    */
   export function onNetworkStatusChange(
-    callback: (result: _onNetworkStatusChangeCallbackResult) => void
+    callback: (result: _onNetworkStatusChangeCallbackResult) => void,
   ): void;
 
   /**
@@ -5208,7 +5210,7 @@ declare namespace wx {
    * 监听WebSocket接受到服务器的消息事件。
    */
   export function onSocketMessage(
-    callback: (result: _onSocketMessageCallbackResult) => void
+    callback: (result: _onSocketMessageCallbackResult) => void,
   ): void;
 
   /**
@@ -5220,21 +5222,21 @@ declare namespace wx {
    * 监听用户主动截屏事件，用户使用系统截屏按键截屏时触发此事件
    */
   export function onUserCaptureScreen(
-    callback: (result: _onUserCaptureScreenCallbackResult) => void
+    callback: (result: _onUserCaptureScreenCallbackResult) => void,
   ): void;
 
   /**
    * 监听连接上 Wi-Fi 的事件。
    */
   export function onWifiConnected(
-    callback: (result: _onWifiConnectedCallbackResult) => void
+    callback: (result: _onWifiConnectedCallbackResult) => void,
   ): void;
 
   /**
    * 初始化小程序蓝牙模块，生效周期为调用`wx.openBluetoothAdapter`至调用`wx.closeBluetoothAdapter`或小程序被销毁为止。
    */
   export function openBluetoothAdapter(
-    object: _openBluetoothAdapterObject
+    object: _openBluetoothAdapterObject,
   ): void;
 
   /**
@@ -5296,7 +5298,7 @@ declare namespace wx {
    * 读取低功耗蓝牙设备的特征值的二进制数据值。注意：必须设备的特征值支持`read`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function readBLECharacteristicValue(
-    object: _readBLECharacteristicValueObject
+    object: _readBLECharacteristicValueObject,
   ): void;
 
   /**
@@ -5348,14 +5350,14 @@ declare namespace wx {
    * 保存图片到系统相册。需要[用户授权](./authorize-index.md) scope.writePhotosAlbum
    */
   export function saveImageToPhotosAlbum(
-    object: _saveImageToPhotosAlbumObject
+    object: _saveImageToPhotosAlbumObject,
   ): void;
 
   /**
    * 保存视频到系统相册。需要[用户授权](./authorize-index.md) scope.writePhotosAlbum
    */
   export function saveVideoToPhotosAlbum(
-    object: _saveVideoToPhotosAlbumObject
+    object: _saveVideoToPhotosAlbumObject,
   ): void;
 
   /**
@@ -5397,14 +5399,14 @@ declare namespace wx {
    * wx.setNavigationBarColor({
    */
   export function setNavigationBarColor(
-    object: _setNavigationBarColorObject
+    object: _setNavigationBarColorObject,
   ): void;
 
   /**
    * 动态设置当前页面的标题。
    */
   export function setNavigationBarTitle(
-    object: _setNavigationBarTitleObject
+    object: _setNavigationBarTitleObject,
   ): void;
 
   /**
@@ -5496,14 +5498,14 @@ declare namespace wx {
    * 开始搜索附近的`iBeacon`设备
    */
   export function startBeaconDiscovery(
-    object: _startBeaconDiscoveryObject
+    object: _startBeaconDiscoveryObject,
   ): void;
 
   /**
    * 开始搜寻附近的蓝牙外围设备。注意，该操作比较耗费系统资源，请在搜索并连接到设备后调用 stop 方法停止搜索。
    */
   export function startBluetoothDevicesDiscovery(
-    object: _startBluetoothDevicesDiscoveryObject
+    object: _startBluetoothDevicesDiscoveryObject,
   ): void;
 
   /**
@@ -5520,7 +5522,7 @@ declare namespace wx {
    * 开始下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致
    */
   export function startPullDownRefresh(
-    object: _startPullDownRefreshObject
+    object: _startPullDownRefreshObject,
   ): void;
 
   /**
@@ -5532,7 +5534,7 @@ declare namespace wx {
    * 开始 SOTER 生物认证
    */
   export function startSoterAuthentication(
-    object: _startSoterAuthenticationObject
+    object: _startSoterAuthenticationObject,
   ): void;
 
   /**
@@ -5559,7 +5561,7 @@ declare namespace wx {
    * 停止搜寻附近的蓝牙外围设备。若已经找到需要的蓝牙设备并不需要继续搜索时，建议调用该接口停止蓝牙搜索。
    */
   export function stopBluetoothDevicesDiscovery(
-    object: _stopBluetoothDevicesDiscoveryObject
+    object: _stopBluetoothDevicesDiscoveryObject,
   ): void;
 
   /**
@@ -5620,20 +5622,91 @@ declare namespace wx {
   /***
    * 监听主域发送的消息
    */
-  export function onMessage(callback:Function):void;
+  export function onMessage(callback: Function): void;
   /**
    * 拉取当前用户所有同玩好友的托管数据。该接口只可在开放数据域下使用
    */
-  export function getFriendCloudStorage(object):void;
+  export function getFriendCloudStorage(object): void;
   /**
    * 对用户托管数据进行写数据操作。允许同时写多组 KV 数据。
-   * @param object 
+   * @param object
    */
-  export function setUserCloudStorage(object):void;
+  export function setUserCloudStorage(object): void;
   /**
    * 向低功耗蓝牙设备特征值中写入二进制数据。注意：必须设备的特征值支持`write`才可以成功调用，具体参照 characteristic 的 properties 属性
    */
   export function writeBLECharacteristicValue(
-    object: _writeBLECharacteristicValueObject
+    object: _writeBLECharacteristicValueObject,
   ): void;
+
+  export function getMenuButtonBoundingClientRect(): any;
+
+  export function onShow(callback: Function): void;
+
+  export function onShareAppMessage(callback: Function): void;
+
+  export const restartMiniProgram: boolean;
+
+  export function restartMiniProgram(): void;
+
+  export const createBannerAd;
+
+  export const createRewardedVideoAd;
+
+  export const shareAppMessage;
+
+  export function getOpenDataContext(): any;
+
+  export function loadSubpackage(arg0: {
+    name: string;
+    success: (res: any) => void;
+    fail: (res: any) => void;
+  }): { onProgressUpdate?: (res: any) => void };
+
+  interface BannerAd {
+    onLoad: (res: any) => void;
+    onError: (res: any) => void;
+    onResize: (res: any) => void;
+    onClose: (res: any) => void;
+    offLoad: (res: any) => void;
+    offError: (res: any) => void;
+    offResize: (res: any) => void;
+    offClose: (res: any) => void;
+    destroy: () => void;
+    show: () => void;
+    hide: () => void;
+  }
+
+  interface RewardedVideoAd {
+    show: () => Promise<any>;
+
+    offLoad: (callback: () => void) => void;
+
+    offError: (callback: (result: _onErrorCallbackResult) => void) => void;
+
+    offClose: (callback: (result: _onCloseCallbackResult) => void) => void;
+
+    onLoad: (callback: () => void) => void;
+
+    onError: (callback: (result: _onErrorCallbackResult) => void) => void;
+
+    destroy: () => void;
+
+    load: () => Promise<any>;
+
+    /**
+     * 用户点击关闭按钮时触发
+     */
+    onClose: (callback: (result: _onCloseCallbackResult) => void) => void;
+
+    /**
+     * 视频广告加载成功时触发
+     */
+    onLoad: (callback: () => void) => void;
+
+    /**
+     * 视频广告加载失败时触发
+     */
+    onError: (callback: (result: _onErrorCallbackResult) => void) => void;
+  }
 }

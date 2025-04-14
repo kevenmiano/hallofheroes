@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message PlayerVehicleMsg {
+  string id = 1;
+  string templateId = 2;
+  string hp = 3;
+  string team = 4;
+  repeated int32 buffState = 5;
+  string grade = 6;
+  string name = 7;
+  string head = 8;
+  string x = 9;
+  string y = 10;
+  string playerId = 11;
+  string consortia = 12;
+  string vip = 13;
+  string appellId = 14;
+  string rebornTime = 15;
+  string npcNodeId = 16;
+  string serverName = 17;
+  string vipType = 18;
+  string isBackPlayer = 19;
+  string maxHp = 20;
+  string defaultSkills = 21;
+  string isHoldKey = 22;
+}

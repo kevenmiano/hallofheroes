@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.worldmap;
+
+message RouteMsg {
+  int32 x = 1;
+  int32 y = 2;
+  int32 param1 = 3;
+}

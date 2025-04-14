@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SNSUpdatedMsg {
+  string snsInfo = 1;
+  int32 result = 2;
+}

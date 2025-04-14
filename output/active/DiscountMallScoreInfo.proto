@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DiscountMallScoreInfo {
+  int32 score = 1;
+  int32 itemId = 2;
+  int32 count = 3;
+  bool isTake = 4;
+}

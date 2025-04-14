@@ -13,7 +13,7 @@ export default class PointUtils {
   public static localToGlobal(
     target: any,
     point: Laya.Point,
-    createNewPoint: boolean = false
+    createNewPoint: boolean = false,
   ): Laya.Point {
     //if (!_displayedInStage || !point) return point;
     if (createNewPoint === true) {
@@ -39,7 +39,7 @@ export default class PointUtils {
   public static globalToLocal(
     target: any,
     point: Laya.Point,
-    createNewPoint: boolean = false
+    createNewPoint: boolean = false,
   ): Laya.Point {
     //if (!_displayedInStage || !point) return point;
     if (createNewPoint) {

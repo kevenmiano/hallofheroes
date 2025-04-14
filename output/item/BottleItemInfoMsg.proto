@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BottleItemInfoMsg {
+  int32 tempId = 1;
+  int32 count = 2;
+  bool isShow = 3;
+  bool isNewItems = 4;
+}

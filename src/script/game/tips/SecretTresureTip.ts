@@ -44,7 +44,7 @@ export class SecretTresureTip extends BaseTips {
       this.txt_type.text = LangManager.Instance.GetTranslation(
         this._info.template.Type == 1
           ? "Pve.secretScene.buffType01"
-          : "Pve.secretScene.buffType02"
+          : "Pve.secretScene.buffType02",
       );
     }
   }

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.watch;
+
+message WatchInfoMsg {
+  int32 gridType = 1;
+  int32 gridPos = 2;
+  int32 jion1 = 3;
+  int32 jion2 = 4;
+  int32 jion3 = 5;
+  int32 jion4 = 6;
+}

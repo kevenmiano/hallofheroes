@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   EmPackName,
   EmWindow,
@@ -41,7 +40,7 @@ export default class ResMgr {
     group?: string | null,
     ignoreCache?: boolean,
     useWorkerLoader?: boolean,
-    args?: any
+    args?: any,
   ) {
     if (!type && url && url.indexOf(".json") != -1) {
       type = Laya.Loader.ATLAS;
@@ -49,8 +48,12 @@ export default class ResMgr {
 
     let res: any = Laya.loader.getRes(url);
     if (res) {
-      progress && progress(1);
-      complete && complete(res, args);
+      if (progress) {
+        progress(1);
+      }
+      if (complete) {
+        complete(res, args);
+      }
       return;
     }
 
@@ -61,30 +64,38 @@ export default class ResMgr {
     Laya.loader.load(
       url,
       Laya.Handler.create(this, (res) => {
-        complete && complete(res, args);
+        if (complete) {
+          complete(res, args);
+        }
       }),
       Laya.Handler.create(this, (prog) => {
-        progress && progress(prog);
+        if (progress) {
+          progress(prog);
+        }
       }),
       type,
       priority,
       cache,
       group,
       ignoreCache,
-      useWorkerLoader
+      useWorkerLoader,
     );
   }
 
   /**加载传类型资源 */
   public loadResItem(
-    loadItem: Laya.loadItem,
+    loadItem: { url: string; type: string },
     complete: Function = null,
     progress: Function = null,
-    type?: string
+    type?: string,
   ) {
     if (UnExistRes.isExist(loadItem.url)) {
-      progress && progress(1);
-      complete && complete(true);
+      if (progress) {
+        progress(1);
+      }
+      if (complete) {
+        complete(true);
+      }
       return;
     }
 
@@ -94,12 +105,16 @@ export default class ResMgr {
     Laya.loader.load(
       temp,
       Laya.Handler.create(this, (res) => {
-        complete && complete(res);
+        if (complete) {
+          complete(res);
+        }
       }),
       Laya.Handler.create(this, (prog) => {
-        progress && progress(prog);
+        if (progress) {
+          progress(prog);
+        }
       }),
-      type
+      type,
     );
   }
 
@@ -141,8 +156,8 @@ export default class ResMgr {
               callback.call(thisObject);
             }
           },
-          [fontName, bitmapFont]
-        )
+          [fontName, bitmapFont],
+        ),
       );
     }
 
@@ -166,7 +181,7 @@ export default class ResMgr {
         null,
         Laya.Loader.TTF,
         0,
-        true
+        true,
       );
     });
     return loadFunc;
@@ -186,7 +201,7 @@ export default class ResMgr {
         url,
         Laya.Handler.create(this, (res) => {
           resolve(res);
-        })
+        }),
       );
     });
     return loadFunc;
@@ -207,22 +222,18 @@ export default class ResMgr {
     group?: string | null,
     ignoreCache?: boolean,
     useWorkerLoader?: boolean,
-    args?: any
+    args?: any,
   ) {
     let count = resArr.length;
     for (let index = 0; index < count; index++) {
       let element = resArr[index];
-      //@ts-ignore
+
       if (typeof element == "object") {
-        //@ts-ignore
         if (UnExistRes.isExist(element.url)) {
-          //@ts-ignore
           element.url = UnExistRes.BlankURL;
         }
       } else if (typeof element == "string") {
-        //@ts-ignore
         if (UnExistRes.isExist(element)) {
-          //@ts-ignore
           element = UnExistRes.BlankURL;
         }
       }
@@ -230,22 +241,26 @@ export default class ResMgr {
     Laya.loader.load(
       resArr,
       Laya.Handler.create(this, (res) => {
-        complete && complete(res);
+        if (complete) {
+          complete(res);
+        }
       }),
       Laya.Handler.create(
         this,
         (prog) => {
-          progress && progress(prog);
+          if (progress) {
+            progress(prog);
+          }
         },
         null,
-        false
+        false,
       ),
       type,
       priority,
       cache,
       group,
       ignoreCache,
-      useWorkerLoader
+      useWorkerLoader,
     );
   }
 
@@ -256,14 +271,14 @@ export default class ResMgr {
    */
   public async loadGroupAsync(
     group: string[] | Laya.loadItem[],
-    groupKey: string
+    groupKey: string,
   ): Promise<boolean> {
     const loadFunc = new Promise<boolean>((resolve) => {
       Laya.loader.load(
         group,
         Laya.Handler.create(this, (res) => {
           resolve(res);
-        })
+        }),
       );
     });
     return loadFunc;
@@ -276,14 +291,14 @@ export default class ResMgr {
    */
   public async loadAnimAsync(
     anim: Laya.Animation,
-    animAddress: string
+    animAddress: string,
   ): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
       anim.loadAnimation(
         animAddress,
         Laya.Handler.create(this, () => {
           resolve(true);
-        })
+        }),
       );
     });
   }
@@ -295,10 +310,12 @@ export default class ResMgr {
     Laya.loader.load(
       url,
       Laya.Handler.create(this, (res) => {
-        callFunc && callFunc(res);
+        if (callFunc) {
+          callFunc(res);
+        }
       }),
       null,
-      Laya.Loader.BUFFER
+      Laya.Loader.BUFFER,
     );
   }
 
@@ -382,7 +399,7 @@ export default class ResMgr {
     progressFunc: Function = undefined,
     type: string = undefined,
     priority: number = 0,
-    cache?: boolean
+    cache?: boolean,
   ) {
     let temp: any;
     if (Array.isArray(packName)) {
@@ -397,13 +414,15 @@ export default class ResMgr {
       temp,
       Laya.Handler.create(this, (res) => {
         //加载完成
-        callFunc && callFunc(res);
+        if (callFunc) {
+          callFunc(res);
+        }
         if (!res || (Array.isArray(res) && res.length == 0)) {
           if (fgui.UIPackage.getByName(temp)) {
             fgui.UIPackage.removePackage(temp); //加载失败, 移除对应包
           }
           MessageTipManager.Instance.show(
-            LangManager.Instance.GetTranslation("ResMgr.loadPackage")
+            LangManager.Instance.GetTranslation("ResMgr.loadPackage"),
           );
         }
       }),
@@ -426,11 +445,13 @@ export default class ResMgr {
         (prog) => {
           //加载进度
           // Logger.xjy('loadFairyGui :', uiType, '---', res);
-          progressFunc && progressFunc(prog);
+          if (progressFunc) {
+            progressFunc(prog);
+          }
         },
         null,
-        false
-      )
+        false,
+      ),
     );
   }
 
@@ -474,7 +495,9 @@ export default class ResMgr {
       // 还没加载好.fui
       if (!descData || descData.byteLength == 0) {
         let resInfo = Laya.LoaderManager["_resMap"][fuiUrl];
-        resInfo && resInfo.offAll();
+        if (resInfo) {
+          resInfo.offAll();
+        }
         ResMgr.Instance.cancelLoadByUrl(fuiUrl);
         // Logger.info("[ResMgr]取消.fui加载", fuiUrl)
       } else {
@@ -489,7 +512,9 @@ export default class ResMgr {
             if (pi.type == fgui.PackageItemType.Atlas) {
               let url = pi.file;
               let resInfo = Laya.LoaderManager["_resMap"][url];
-              resInfo && resInfo.offAll();
+              if (resInfo) {
+                resInfo.offAll();
+              }
               ResMgr.Instance.cancelLoadByUrl(url);
               // Logger.info("[ResMgr]取消FUI纹理资源加载", url, resInfo)
             }

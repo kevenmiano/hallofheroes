@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_BaseIcon from "../../../fui/Base/FUI_BaseIcon";
 
 /**
@@ -8,20 +7,16 @@ import FUI_BaseIcon from "../../../fui/Base/FUI_BaseIcon";
  * @ver 1.0
  *
  */
-export class BaseIcon extends FUI_BaseIcon
-{
-    constructor()
-    {
-        super();
-    }
+export class BaseIcon extends FUI_BaseIcon {
+  constructor() {
+    super();
+  }
 
-    public setIcon(url:string)
-    {
-        this.icon = url;
-    }
+  public setIcon(url: string) {
+    this.icon = url;
+  }
 
-    dispose()
-    {
-        super.dispose();
-    }
+  dispose() {
+    super.dispose();
+  }
 }

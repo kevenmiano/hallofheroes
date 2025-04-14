@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LotteryItemMsg {
+  int32 templateId = 1;
+  int32 count = 2;
+  int32 templateType = 3;
+  int32 pos = 4;
+  string randomShow = 5;
+}

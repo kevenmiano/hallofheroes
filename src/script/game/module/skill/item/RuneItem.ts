@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_RunesItem from "../../../../../fui/Skill/FUI_RunesItem";
 import { RuneInfo } from "../../../datas/RuneInfo";
 import { IconFactory } from "../../../../core/utils/IconFactory";
@@ -118,7 +118,7 @@ export default class RuneItem
         dragCom.setDragType(DragType.RUNE);
         DragManager.Instance.registerDragObject(
           dragCom,
-          this.onDragComplete.bind(this)
+          this.onDragComplete.bind(this),
         );
       } else {
         this.isDraging = false;
@@ -145,7 +145,7 @@ export default class RuneItem
           NotificationManager.Instance.sendNotification(
             RuneEvent.PEPLACE,
             sourTarget.getDragData(),
-            dropTarget
+            dropTarget,
           );
           this.setSkillItemPos();
           return;
@@ -187,7 +187,7 @@ export default class RuneItem
           NotificationManager.Instance.sendNotification(
             RuneEvent.SET_FAST_KEY,
             selfDragData,
-            dropTarget
+            dropTarget,
           );
         }
       } else {
@@ -267,7 +267,7 @@ export default class RuneItem
     this.txt_name.text = this._itemData.templateInfo.TemplateNameLang;
     // this.shouCount.selectedIndex = this._itemData.grade > 0 ? 0 : 1;
     this.runeIcon.icon = IconFactory.getTecIconByIcon(
-      this._itemData.templateInfo.Icon
+      this._itemData.templateInfo.Icon,
     );
     this.upgrade.selectedIndex = 0;
     this.checkCondition();
@@ -381,7 +381,7 @@ export default class RuneItem
    */
   private get canStudy(): boolean {
     var arr: Array<any> = GoodsManager.Instance.getGeneralBagGoodsBySonType(
-      GoodsSonType.SONTYPE_PASSIVE_SKILL
+      GoodsSonType.SONTYPE_PASSIVE_SKILL,
     );
     var gInfo: GoodsInfo;
     this._runeGInfo = null;
@@ -407,7 +407,7 @@ export default class RuneItem
 
   private hasRuneGoods(): boolean {
     var arr: Array<any> = GoodsManager.Instance.getGeneralBagGoodsBySonType(
-      GoodsSonType.SONTYPE_PASSIVE_SKILL
+      GoodsSonType.SONTYPE_PASSIVE_SKILL,
     );
     return arr.length > 0 ? true : false;
   }
@@ -435,7 +435,7 @@ export default class RuneItem
       if (this.hasOwnProperty(key) && this[key] != null) {
         (this[key] as fgui.GLoader).url = fgui.UIPackage.getItemURL(
           EmPackName.Base,
-          CommonConstant.RUNEGEM_ITEMS_RES[0]
+          CommonConstant.RUNEGEM_ITEMS_RES[0],
         );
         (this[key] as fgui.GLoader).visible = true;
       }
@@ -462,7 +462,7 @@ export default class RuneItem
           (this["inlayItem" + (index + 1)] as fgui.GLoader).url =
             fgui.UIPackage.getItemURL(
               "Base",
-              CommonConstant.RUNEGEM_ITEMS_RES[goodsInfo.templateInfo.Profile]
+              CommonConstant.RUNEGEM_ITEMS_RES[goodsInfo.templateInfo.Profile],
             );
           (this["inlayItem" + (index + 1)] as fgui.GLoader).visible = true;
         }

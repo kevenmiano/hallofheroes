@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BaseNativeAdItemModel from "./base/BaseNativeAdItemModel";
 export function isNull(obj: any): boolean {
   return obj == undefined || obj == null;

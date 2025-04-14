@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import LangManager from "../../../../core/lang/LangManager";
 import { GAME_LANG } from "../../../../core/lang/LanguageDefine";
 import Logger from "../../../../core/logger/Logger";
@@ -15,59 +15,66 @@ import { SocialMediaSetting } from "./SocialMediaSetting";
  * 登陆设置
  */
 export default class LoginSettingWndOS extends BaseWindow {
+  private frame: fgui.GComponent;
 
-    private frame: fgui.GComponent;
+  private tabIndex: fgui.Controller;
 
-    private tabIndex: fgui.Controller;
+  private tab_language: UIButton;
+  private tab_audio: UIButton;
+  private tab_social: UIButton;
+  private tab_account: UIButton;
 
-    private tab_language: UIButton;
-    private tab_audio: UIButton;
-    private tab_social: UIButton;
-    private tab_account: UIButton;
+  private language: LanguageSetting;
+  private audio: AudioSetting;
+  private account: AccountSetting;
+  private socialmedia: SocialMediaSetting;
 
+  constructor() {
+    super();
+    this.resizeContent = true;
+  }
 
-    private language: LanguageSetting;
-    private audio: AudioSetting;
-    private account: AccountSetting;
-    private socialmedia: SocialMediaSetting;
+  public OnInitWind(): void {
+    super.OnInitWind();
 
+    this.tabIndex = this.getController("tabIndex");
 
-    constructor() {
-        super();
-        this.resizeContent = true;
-    }
+    Logger.info("LoginSettingWnd---");
+    this.setTitleKey("Login.LoginSeeting.title");
 
-    public OnInitWind(): void {
-        super.OnInitWind();
+    let cfgLanguages = GAME_LANG;
+    this.tab_language.visible =
+      cfgLanguages.length > 1 ||
+      PlayerManager.Instance.currentPlayerModel.userInfo.isWhiteUser ||
+      DisplayLoader.isDebug;
 
-        this.tabIndex = this.getController("tabIndex");
+    this.tabIndex.selectedIndex = this.tab_language.visible ? 0 : 3;
 
-        Logger.info("LoginSettingWnd---");
-        this.setTitleKey("Login.LoginSeeting.title");
+    this.onInitTab();
+    this.onInitContent();
+  }
 
-        let cfgLanguages = GAME_LANG;
-        this.tab_language.visible = cfgLanguages.length > 1 || PlayerManager.Instance.currentPlayerModel.userInfo.isWhiteUser || DisplayLoader.isDebug;
+  /**页签设置 */
+  private onInitTab() {
+    this.tab_language.title = LangManager.Instance.GetTranslation(
+      "Login.LoginSeeting.Language",
+    );
+    this.tab_audio.title = LangManager.Instance.GetTranslation(
+      "Login.LoginSeeting.Audio",
+    );
+    this.tab_social.title = LangManager.Instance.GetTranslation(
+      "Login.LoginSeeting.SocialMedia",
+    );
+    this.tab_account.title = LangManager.Instance.GetTranslation(
+      "Login.LoginSeeting.Account",
+    );
+  }
 
-        this.tabIndex.selectedIndex = this.tab_language.visible ? 0 : 3;
-
-        this.onInitTab();
-        this.onInitContent();
-    }
-
-    /**页签设置 */
-    private onInitTab() {
-        this.tab_language.title = LangManager.Instance.GetTranslation("Login.LoginSeeting.Language");
-        this.tab_audio.title = LangManager.Instance.GetTranslation("Login.LoginSeeting.Audio");
-        this.tab_social.title = LangManager.Instance.GetTranslation("Login.LoginSeeting.SocialMedia");
-        this.tab_account.title = LangManager.Instance.GetTranslation("Login.LoginSeeting.Account");
-    }
-
-    /**内容窗体 */
-    private onInitContent() {
-        if (this.language) this.language.onInit();
-        if (this.audio) this.audio.onInit();
-        if (this.account) this.account.onInit();
-        if (this.socialmedia) this.socialmedia.onInit();
-    }
-
+  /**内容窗体 */
+  private onInitContent() {
+    if (this.language) this.language.onInit();
+    if (this.audio) this.audio.onInit();
+    if (this.account) this.account.onInit();
+    if (this.socialmedia) this.socialmedia.onInit();
+  }
 }

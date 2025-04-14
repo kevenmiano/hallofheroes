@@ -40,25 +40,25 @@ export class InlayItem extends FUI_InlayItem {
       "Base",
       this._resArr[
         value == -1 ? 9 : value == 0 ? 10 : this.getColorByType(value)
-      ]
+      ],
     );
     this.txt.color = this._txtColors[value == -1 ? 1 : value == 0 ? 2 : 3];
     this.txt.text =
       value == -1
         ? LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.InlayItem.value01"
+            "yishi.view.tips.goods.InlayItem.value01",
           )
         : value == 0
-        ? LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.InlayItem.value02"
-          )
-        : this.getDiscription(value, objectId);
+          ? LangManager.Instance.GetTranslation(
+              "yishi.view.tips.goods.InlayItem.value02",
+            )
+          : this.getDiscription(value, objectId);
   }
 
   private getDiscription(value: number, objectId: number): string {
     let temp: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_itemtemplate,
-      value
+      value,
     );
     if (!temp) {
       return "";
@@ -67,7 +67,7 @@ export class InlayItem extends FUI_InlayItem {
       let addValue: number = Math.floor(
         (temp.totalAttribute *
           GoodsHelp.getJewelEffecyByGrade(this.thane.jewelGrades)) /
-          100
+          100,
       );
       if (addValue == 0) {
         return temp.DescriptionLang;
@@ -82,7 +82,7 @@ export class InlayItem extends FUI_InlayItem {
   private getColorByType(value: number): number {
     let temp: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_itemtemplate,
-      value
+      value,
     );
     return temp.Property1;
   }

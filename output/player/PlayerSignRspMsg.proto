@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerSignRspMsg {
+  string signDate = 1;
+  int32 signTimes = 2;
+  int32 signSite = 3;
+  int32 reissueNum = 4;
+  string rewardState = 5;
+}

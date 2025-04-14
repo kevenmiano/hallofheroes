@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetChallengeLogList {
+  repeated int32 challengeLog = 1;
+}

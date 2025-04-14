@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.timer;
+
+message TimerInfoMsg {
+  int32 type = 1;
+  int32 index = 2;
+  string name = 3;
+  string readyOpen = 4;
+  string readyStop = 5;
+  string finalOpen = 6;
+  string finalStop = 7;
+  string param1 = 8;
+  string param2 = 9;
+  string param3 = 10;
+  string signupTime = 11;
+}

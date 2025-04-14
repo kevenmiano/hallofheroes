@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message ShopFreshRspMsg {
+  repeated int32 itemId = 1;
+  string freshLastdate = 2;
+  repeated int32 isCanBuy = 3;
+  int32 buyCount = 4;
+  int32 maxBuyCount = 5;
+}

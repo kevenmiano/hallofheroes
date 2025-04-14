@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message SweepResult {
+  int32 type = 1;
+  int32 gold = 2;
+  int32 gp = 3;
+  int32 campaignId = 4;
+  int32 time = 5;
+  repeated int32 items = 6;
+  int32 cIndex = 7;
+  int32 eIndex = 8;
+  int32 finishCount = 9;
+  int32 count = 10;
+  int32 mailIn = 11;
+  int32 level = 12;
+}

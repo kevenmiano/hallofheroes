@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SuperSigninCardReqMsg {
+  string opType = 1;
+  string date = 2;
+}

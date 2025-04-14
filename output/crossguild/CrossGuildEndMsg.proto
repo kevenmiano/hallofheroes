@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildEndMsg {
+  int32 redScore = 1;
+  int32 blueScore = 2;
+  string redName = 3;
+  string blueName = 4;
+  bool isWin = 5;
+  repeated int32 redRankList = 6;
+  repeated int32 blueRankList = 7;
+  int32 rank = 8;
+}

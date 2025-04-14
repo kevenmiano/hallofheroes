@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message VersionMsg {
+  bool openVersion = 1;
+  int32 versionId = 2;
+  bool openStory = 3;
+  int32 module = 4;
+}

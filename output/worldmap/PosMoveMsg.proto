@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.worldmap;
+
+message PosMoveMsg {
+  int32 mapId = 1;
+  int32 armyId = 2;
+  repeated int32 routes = 3;
+  string gridStr = 4;
+  repeated int32 userId = 5;
+  string serverName = 6;
+  repeated int32 userStates = 7;
+  int32 armyState = 8;
+  int32 moveType = 9;
+  int32 armyUserId = 10;
+  int32 headId = 11;
+}

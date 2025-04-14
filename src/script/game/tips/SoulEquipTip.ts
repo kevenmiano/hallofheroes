@@ -64,7 +64,7 @@ export class SoulEquipTip extends BaseTips {
     NotificationManager.Instance.addEventListener(
       ExtraJobEvent.STAGE_UP,
       this.onStageUp,
-      this
+      this,
     );
   }
 
@@ -72,7 +72,7 @@ export class SoulEquipTip extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       ExtraJobEvent.STAGE_UP,
       this.onStageUp,
-      this
+      this,
     );
   }
 
@@ -83,7 +83,7 @@ export class SoulEquipTip extends BaseTips {
 
   private initView() {
     this.txt_name.text = LangManager.Instance.GetTranslation(
-      "Mastery.soulEquip" + this._info.equipType
+      "Mastery.soulEquip" + this._info.equipType,
     );
 
     if (!this.isLocked) {
@@ -94,13 +94,13 @@ export class SoulEquipTip extends BaseTips {
     if (this._info.equipLevel > 0) {
       this.txt_stage.text = LangManager.Instance.GetTranslation(
         "Mastery.stageNum",
-        this._info.equipLevel
+        this._info.equipLevel,
       );
     }
     if (this._info.strengthenLevel > 0) {
       this.txt_stren.text = LangManager.Instance.GetTranslation(
         "Mastery.strenLevel",
-        this._info.strengthenLevel
+        this._info.strengthenLevel,
       );
     }
 
@@ -111,7 +111,7 @@ export class SoulEquipTip extends BaseTips {
       //未激活
       let cfg = TempleteManager.Instance.getExtrajobEquipCfg(
         this._info.equipType,
-        1
+        1,
       );
       if (cfg) {
         this.initAttribute(cfg);
@@ -123,7 +123,7 @@ export class SoulEquipTip extends BaseTips {
           //显示解锁条件
           this.txt_condition.text = LangManager.Instance.GetTranslation(
             "Mastery.unlock",
-            cfg.NeedTotalJobLevel
+            cfg.NeedTotalJobLevel,
           );
           this.btn_use.visible = false;
           this.unlockBox.visible = true;
@@ -133,7 +133,7 @@ export class SoulEquipTip extends BaseTips {
     } else {
       let cfg = TempleteManager.Instance.getExtrajobEquipCfg(
         this._info.equipType,
-        this._info.equipLevel
+        this._info.equipLevel,
       );
       if (cfg) {
         this.initAttribute(cfg);
@@ -165,49 +165,49 @@ export class SoulEquipTip extends BaseTips {
     let curStrenCfg: t_s_extrajobequipstrengthenData =
       TempleteManager.Instance.getExtrajobEquipStrenthenCfg(strenLevel);
     let str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip13"
+      "armyII.ThaneAttributeView.Tip13",
     );
     this.updateAttributeTxt(
       this.attack,
       str,
       cfg.Attack,
-      this.getAdd(cfg.Attack, curStrenCfg)
+      this.getAdd(cfg.Attack, curStrenCfg),
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip14"
+      "armyII.ThaneAttributeView.Tip14",
     );
     this.updateAttributeTxt(
       this.defence,
       str,
       cfg.Defence,
-      this.getAdd(cfg.Defence, curStrenCfg)
+      this.getAdd(cfg.Defence, curStrenCfg),
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip15"
+      "armyII.ThaneAttributeView.Tip15",
     );
     this.updateAttributeTxt(
       this.magicAttack,
       str,
       cfg.MagicAttack,
-      this.getAdd(cfg.MagicAttack, curStrenCfg)
+      this.getAdd(cfg.MagicAttack, curStrenCfg),
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip16"
+      "armyII.ThaneAttributeView.Tip16",
     );
     this.updateAttributeTxt(
       this.magicDefence,
       str,
       cfg.MagicDefence,
-      this.getAdd(cfg.MagicDefence, curStrenCfg)
+      this.getAdd(cfg.MagicDefence, curStrenCfg),
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip11"
+      "armyII.ThaneAttributeView.Tip11",
     );
     this.updateAttributeTxt(
       this.live,
       str,
       cfg.Live,
-      this.getAdd(cfg.Live, curStrenCfg)
+      this.getAdd(cfg.Live, curStrenCfg),
     );
   }
 
@@ -215,7 +215,7 @@ export class SoulEquipTip extends BaseTips {
     item: GoodAttributeItem,
     property: string,
     value: number,
-    addValue: number
+    addValue: number,
   ) {
     if (value != 0) {
       item.visible = true;

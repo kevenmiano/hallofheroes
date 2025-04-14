@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageMoveRes {
+  int32 userId = 1;
+  int32 curX = 2;
+  int32 curY = 3;
+}

@@ -1,28 +1,24 @@
-// @ts-nocheck
-
 export default class DataAnalyzer {
+  protected _onCompleteCall: Function;
 
-	protected _onCompleteCall: Function;
+  constructor(onCompleteCall: Function) {
+    this._onCompleteCall = onCompleteCall;
+  }
 
-	constructor(onCompleteCall: Function) {
-		this._onCompleteCall = onCompleteCall;
-	}
+  public analyze(data: any) {}
 
-	public analyze(data: any) {
-	}
+  public message: string;
 
-	public message: string;
+  public analyzeCompleteCall: Function;
 
-	public analyzeCompleteCall: Function;
+  public analyzeErrorCall: Function;
 
-	public analyzeErrorCall: Function;
+  protected onAnalyzeComplete() {
+    if (this._onCompleteCall != null) this._onCompleteCall(this);
+    if (this.analyzeCompleteCall != null) this.analyzeCompleteCall();
+  }
 
-	protected onAnalyzeComplete() {
-		if (this._onCompleteCall != null) this._onCompleteCall(this);
-		if (this.analyzeCompleteCall != null) this.analyzeCompleteCall();
-	}
-
-	protected onAnalyzeError() {
-		if (this.analyzeErrorCall != null) this.analyzeErrorCall();
-	}
+  protected onAnalyzeError() {
+    if (this.analyzeErrorCall != null) this.analyzeErrorCall();
+  }
 }

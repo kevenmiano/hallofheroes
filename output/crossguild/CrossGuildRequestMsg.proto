@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildRequestMsg {
+  int32 op = 1;
+  string notice = 2;
+  string timeStamp = 3;
+  int32 road = 4;
+}

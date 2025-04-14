@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message SnowVehicleEndRewardMsg {
+  string myRank = 1;
+  string isOnHook = 2;
+  string pickSkillNum = 3;
+  string damage = 4;
+  string eliminateNum = 5;
+  string todayReward = 6;
+}

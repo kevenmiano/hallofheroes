@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -8,14 +7,14 @@
  * @Description: 不做具体用途, 只用做打开界面的中介
  */
 
-import FrameCtrlBase from "./FrameCtrlBase"
+import FrameCtrlBase from "./FrameCtrlBase";
 
 export default class CommonCtrl extends FrameCtrlBase {
-    show() {
-        super.show()
-    }
+  show() {
+    super.show();
+  }
 
-    hide() {
-        super.hide()
-    }
+  hide() {
+    super.hide();
+  }
 }

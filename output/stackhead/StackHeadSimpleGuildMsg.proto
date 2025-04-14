@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadSimpleGuildMsg {
+  int32 pos = 1;
+  int32 currentScore = 2;
+  int32 attackBuffLevel = 3;
+  int32 defenceBuffLevel = 4;
+  int32 defenceArmyAlive = 5;
+}

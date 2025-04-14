@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadAttackMsg {
+  int32 fromPos = 1;
+  int32 toPos = 2;
+  int32 totalCount = 3;
+  int32 changeCount = 4;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gamebox;
+
+message MoleGridInfoPB {
+  int32 round = 1;
+  string startTime = 2;
+  string endTime = 3;
+  repeated int32 grids = 4;
+}

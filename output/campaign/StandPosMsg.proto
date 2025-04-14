@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message StandPosMsg {
+  int32 id = 1;
+  int32 posX = 2;
+  int32 posY = 3;
+  string serverName = 4;
+}

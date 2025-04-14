@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message MallItemViewReqMsg {
+  int32 page = 1;
+  int32 count = 2;
+  int32 from = 3;
+  int32 orderBy = 4;
+  int32 orderType = 5;
+}

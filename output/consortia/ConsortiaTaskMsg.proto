@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaTaskMsg {
+  int32 taskId = 1;
+  int32 starNum = 2;
+  int32 refreshNum = 3;
+  int32 refreshTime = 4;
+  int32 status = 5;
+  int32 process = 6;
+  string rewardId = 7;
+  string fixId = 8;
+  int32 payRefreshNum = 9;
+}

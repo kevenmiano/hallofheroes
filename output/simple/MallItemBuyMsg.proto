@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message MallItemBuyMsg {
+  int32 id = 1;
+  int32 userId = 2;
+  string mallItem = 3;
+  int32 bidupPoint = 4;
+  string buyTime = 5;
+}

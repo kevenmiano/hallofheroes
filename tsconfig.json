@@ -1,9 +1,22 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "es6",
-    "noEmitHelpers": true,
-    "sourceMap": false
+    "target": "ES2018",
+    "module": "ES2015",
+    "skipLibCheck": true,
+    "stripInternal": false,
+    "noEmit": true,
+    "baseUrl": "./",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": false,
+    "removeComments": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "exclude": ["node_modules"]
+
+  "include": ["./**/*", "./public/7road/libs/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }

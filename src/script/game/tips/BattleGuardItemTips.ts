@@ -40,7 +40,7 @@ export class BattleGuardItemTips extends BaseTips {
 
   private updateTransform() {
     let name: string[] = LangManager.Instance.GetTranslation(
-      "BattleGuardItemNames"
+      "BattleGuardItemNames",
     ).split(",");
     let pos: number = 0;
     if (this._data.type == 1) {
@@ -61,7 +61,7 @@ export class BattleGuardItemTips extends BaseTips {
           let grade: number = temp.Property2; //parseInt(temp.TemplateName);
           let content: string = LangManager.Instance.GetTranslation(
             "public.level4_space2",
-            grade
+            grade,
           );
           if (grade > 9) {
             content += " " + temp.DescriptionLang;
@@ -73,11 +73,11 @@ export class BattleGuardItemTips extends BaseTips {
         } else {
           (this["txt_" + i] as fgui.GTextField).text =
             LangManager.Instance.GetTranslation(
-              "yishi.view.tips.goods.InlayItem.value02"
+              "yishi.view.tips.goods.InlayItem.value02",
             );
           (this["icon_" + i] as fgui.GLoader).icon = fgui.UIPackage.getItemURL(
             "Base",
-            "Icon_GemBox"
+            "Icon_GemBox",
           );
         }
       }

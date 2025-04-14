@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message PlayerMsg {
+  int32 userId = 1;
+  int32 avatar = 2;
+  int32 job = 3;
+  int32 grade = 4;
+  int32 avatarIcon = 5;
+  string nickName = 6;
+  int32 guildId = 7;
+}

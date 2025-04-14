@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import { DisplayObject } from "../../../component/DisplayObject";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";
@@ -53,7 +53,7 @@ export class RepeatBackGroundLayer extends Laya.Sprite implements IEnterFrame {
       0,
       this._asset.width,
       this._asset.height,
-      "#0x000000"
+      "#0x000000",
     );
   }
 

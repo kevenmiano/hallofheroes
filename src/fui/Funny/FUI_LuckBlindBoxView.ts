@@ -1,9 +1,15 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_LuckBlindBox_Background from "./FUI_LuckBlindBox_Background";
+
+//@ts-expect-error: External dependencies
 import FUI_LuckBlindBox_ChanceBox from "./FUI_LuckBlindBox_ChanceBox";
+
+//@ts-expect-error: External dependencies
 import FUI_LuckBlindBox_RuneBox from "./FUI_LuckBlindBox_RuneBox";
+
+//@ts-expect-error: External dependencies
 import FUI_LuckBlindBox_ButtomBox from "./FUI_LuckBlindBox_ButtomBox";
 
 export default class FUI_LuckBlindBoxView extends fgui.GComponent {

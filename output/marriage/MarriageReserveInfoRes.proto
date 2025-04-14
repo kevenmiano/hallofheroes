@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageReserveInfoRes {
+  repeated int32 infos = 1;
+}

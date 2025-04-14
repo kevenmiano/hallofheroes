@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fate;
+
+message FateListMsg {
+  repeated int32 fateInfo = 1;
+}

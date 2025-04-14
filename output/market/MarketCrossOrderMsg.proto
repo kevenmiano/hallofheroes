@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketCrossOrderMsg {
+  string orderId = 1;
+  int32 type = 2;
+  int32 templateId = 3;
+  string userName = 4;
+  string site = 5;
+  int32 count = 6;
+  int32 point = 7;
+  int32 status = 8;
+  string createTime = 9;
+  string actionTime = 10;
+  int32 extract = 11;
+  string extractTime = 12;
+  string tradingOrder = 13;
+  string tradingSite = 14;
+  int32 tradingPoint = 15;
+  int32 tax = 16;
+  bool isExist = 17;
+}

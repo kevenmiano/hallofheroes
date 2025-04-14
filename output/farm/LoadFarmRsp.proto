@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message LoadFarmRsp {
+  repeated int32 friendFarmState = 1;
+  string farm = 2;
+  repeated int32 farmLog = 3;
+}

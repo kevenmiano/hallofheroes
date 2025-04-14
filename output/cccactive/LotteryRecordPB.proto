@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message LotteryRecordPB {
+  string time = 1;
+  string activeName = 2;
+  int32 itemId = 3;
+  int32 itemCount = 4;
+  string serverId = 5;
+  string nickName = 6;
+}

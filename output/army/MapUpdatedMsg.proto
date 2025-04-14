@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message MapUpdatedMsg {
+  int32 updatedType = 1;
+  string army = 2;
+  string wildLand = 3;
+  string baseCastle = 4;
+}

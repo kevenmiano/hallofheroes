@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SkyTreasureExchangeInfoRes {
+  repeated int32 exchangeInfo = 1;
+}

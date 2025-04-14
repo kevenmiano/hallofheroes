@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message ChallengeScoreMsg {
+  int32 userId = 1;
+  int32 tollgateId = 2;
+  int32 score = 3;
+  int32 order = 4;
+  bool isLucky = 5;
+  string nickName = 6;
+  bool isVip = 7;
+  int32 grade = 8;
+  string consortiaName = 9;
+  int32 fightCapacity = 10;
+}

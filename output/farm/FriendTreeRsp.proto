@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FriendTreeRsp {
+  repeated int32 treeInfo = 1;
+}

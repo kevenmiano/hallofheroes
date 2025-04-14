@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import Logger from "../../../../core/logger/Logger";
 import { DragObject, DragType } from "../../../component/DragObject";
 import { RuneEvent } from "../../../constant/event/NotificationEvent";
@@ -93,7 +93,7 @@ export default class FastRuneItem
       this._itemData.removeEventListener(
         RuneEvent.RUNE_UPGRADE,
         this.__upgradeHandler,
-        this
+        this,
       );
     }
     this._itemData = value;
@@ -102,7 +102,7 @@ export default class FastRuneItem
       this._itemData.addEventListener(
         RuneEvent.RUNE_UPGRADE,
         this.__upgradeHandler,
-        this
+        this,
       );
       this.indexTxt.visible = false;
       let skillPanel = (NewbieUtils.getFrame(EmWindow.Skill) as SkillWnd)
@@ -136,7 +136,7 @@ export default class FastRuneItem
     if (!this._isLock) {
     } else {
       this.tipData = LangManager.Instance.GetTranslation(
-        "armyII.viewII.rune.FastRuneItem.OpenTipTxt2"
+        "armyII.viewII.rune.FastRuneItem.OpenTipTxt2",
       );
       ToolTipsManager.Instance.register(this);
     }
@@ -178,7 +178,7 @@ export default class FastRuneItem
         (this.item as RuneItem).switchEditMode(true);
         DragManager.Instance.registerDragObject(
           this.item,
-          this.onDragComplete.bind(this)
+          this.onDragComplete.bind(this),
         );
       }
     } else {
@@ -197,7 +197,7 @@ export default class FastRuneItem
           this.swap(dropTarget, sourTarget);
           NotificationManager.Instance.sendNotification(
             RuneEvent.SET_FAST_KEY,
-            null
+            null,
           );
         } else {
           return;
@@ -213,7 +213,7 @@ export default class FastRuneItem
         this.ItemData = null;
         NotificationManager.Instance.sendNotification(
           RuneEvent.SET_FAST_KEY,
-          null
+          null,
         );
       } else {
         return;
@@ -224,7 +224,7 @@ export default class FastRuneItem
       //拖出技能栏外释放时删除
       NotificationManager.Instance.dispatchEvent(
         RuneEvent.SET_FAST_KEY,
-        this._itemData
+        this._itemData,
       );
     }
   }
@@ -260,7 +260,7 @@ export default class FastRuneItem
       (this.item as RuneItem).ItemData = this._itemData;
       NotificationManager.Instance.sendNotification(
         RuneEvent.SET_FAST_KEY,
-        null
+        null,
       );
     }
   }
@@ -270,7 +270,7 @@ export default class FastRuneItem
       this._itemData.removeEventListener(
         RuneEvent.RUNE_UPGRADE,
         this.__upgradeHandler,
-        this
+        this,
       );
     this.item && this.item.dispose();
     super.dispose();

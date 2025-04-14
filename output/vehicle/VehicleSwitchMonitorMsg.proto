@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleSwitchMonitorMsg {
+  int32 nodeId = 1;
+  int32 playerId = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BufferMsg {
+  int32 bufferId = 1;
+  int32 templateId = 2;
+  int32 sourceId = 3;
+  int32 targetId = 4;
+  int32 curTurn = 5;
+  int32 execFrame = 6;
+  int32 seeType = 7;
+  int32 exeWay = 8;
+  int32 pressedNum = 9;
+  repeated int32 damage = 10;
+  int32 maxTurn = 11;
+  repeated int32 unSkillIds = 12;
+  bool isPermanent = 13;
+  int32 curRound = 14;
+  int32 maxRound = 15;
+  int32 level = 16;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message GetPlayerListRsp {
+  repeated int32 infoList = 1;
+  string userName = 2;
+  string site = 3;
+  int32 loginState = 4;
+}

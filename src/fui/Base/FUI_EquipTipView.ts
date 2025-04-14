@@ -1,7 +1,7 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_EquipTipsContent from "./FUI_EquipTipsContent";
+//@ts-expect-error: External dependencies
 import FUI_Btn_1r from "./FUI_Btn_1r";
 
 export default class FUI_EquipTipView extends fgui.GComponent {

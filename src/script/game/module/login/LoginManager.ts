@@ -1,4 +1,3 @@
-// TODO FIX
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import LangManager from "../../../core/lang/LangManager";
 import Logger from "../../../core/logger/Logger";
@@ -33,19 +32,33 @@ import { HintWnd } from "../common/HintWnd";
 import { SceneManager } from "../../map/scene/SceneManager";
 import { SharedManager } from "../../manager/SharedManager";
 
+//@ts-expect-error: External depedencies
 import NoviceReqMsgMsg = com.road.yishi.proto.novice.NoviceReqMsgMsg;
+//@ts-expect-error: External depedencies
 import createLoginReq = com.road.yishi.proto.login.createLoginReq;
+//@ts-expect-error: External depedencies
 import createLoginRsp = com.road.yishi.proto.login.createLoginRsp;
+//@ts-expect-error: External depedencies
 import GetPlayerListReq = com.road.yishi.proto.login.GetPlayerListReq;
+//@ts-expect-error: External depedencies
 import GetPlayerListRsp = com.road.yishi.proto.login.GetPlayerListRsp;
+//@ts-expect-error: External depedencies
 import playerLoginReq = com.road.yishi.proto.login.playerLoginReq;
+//@ts-expect-error: External depedencies
 import playerLoginRsp = com.road.yishi.proto.login.playerLoginRsp;
+//@ts-expect-error: External depedencies
 import LoginReqMsg = com.road.yishi.proto.player.LoginReqMsg;
+//@ts-expect-error: External depedencies
 import SimpleUserInfo = com.road.yishi.proto.login.SimpleUserInfo;
+//@ts-expect-error: External depedencies
 import registerRoleReq = com.road.yishi.proto.login.registerRoleReq;
+//@ts-expect-error: External depedencies
 import registerRoleRsp = com.road.yishi.proto.login.registerRoleRsp;
+//@ts-expect-error: External depedencies
 import GatewayMsg = com.road.yishi.proto.gateway.GatewayMsg;
+//@ts-expect-error: External depedencies
 import PlayerDataMsg = com.road.yishi.proto.player.PlayerDataMsg;
+//@ts-expect-error: External depedencies
 import SynchronizedTimeReq = com.road.yishi.proto.login.SynchronizedTimeReq;
 import { EmLayer } from "../../../core/ui/ViewInterface";
 import { getdefaultLangageCfg } from "../../../core/lang/LanguageDefine";
@@ -91,32 +104,32 @@ export class LoginManager extends GameEventDispatcher {
     ServerDataManager.listen(
       S2CProtocol.U_L_GET_PLAYER_LIST,
       this,
-      this.s2c_get_player_list
+      this.s2c_get_player_list,
     );
     ServerDataManager.listen(
       S2CProtocol.U_L_PREPARE_LOGIN,
       this,
-      this.s2c_prepare_login
+      this.s2c_prepare_login,
     );
     ServerDataManager.listen(
       S2CProtocol.U_L_REGISTER_ROLE_RSP,
       this,
-      this.s2c_register_role
+      this.s2c_register_role,
     );
     ServerDataManager.listen(
       S2CProtocol.U_G_LOGIN_OTHER,
       this,
-      this.s2c_login_other
+      this.s2c_login_other,
     );
     ServerDataManager.listen(
       S2CProtocol.U_L_CREATE_LOGIN_RSP,
       this,
-      this.s2c_createLoginRsp
+      this.s2c_createLoginRsp,
     );
     ServerDataManager.listen(
       S2CProtocol.U_G_LOGIN_GATEWAY,
       this,
-      this.s2c_LoginRsp
+      this.s2c_LoginRsp,
     );
   }
 
@@ -124,32 +137,32 @@ export class LoginManager extends GameEventDispatcher {
     ServerDataManager.cancel(
       S2CProtocol.U_L_GET_PLAYER_LIST,
       this,
-      this.s2c_get_player_list
+      this.s2c_get_player_list,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_L_PREPARE_LOGIN,
       this,
-      this.s2c_prepare_login
+      this.s2c_prepare_login,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_L_REGISTER_ROLE_RSP,
       this,
-      this.s2c_register_role
+      this.s2c_register_role,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_G_LOGIN_OTHER,
       this,
-      this.s2c_login_other
+      this.s2c_login_other,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_L_CREATE_LOGIN_RSP,
       this,
-      this.s2c_createLoginRsp
+      this.s2c_createLoginRsp,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_G_LOGIN_GATEWAY,
       this,
-      this.s2c_LoginRsp
+      this.s2c_LoginRsp,
     );
   }
 
@@ -192,16 +205,16 @@ export class LoginManager extends GameEventDispatcher {
 
   private sendSysTime() {
     Logger.base(
-      "请求同步============================= :  " + Laya.Browser.now()
+      "请求同步============================= :  " + Laya.Browser.now(),
     );
 
     let userName = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.userName
+      UserModelAttribute.userName,
     );
     let site = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.site
+      UserModelAttribute.site,
     );
     let msg: SynchronizedTimeReq = new SynchronizedTimeReq();
     msg.userName = userName;
@@ -227,7 +240,7 @@ export class LoginManager extends GameEventDispatcher {
     siteId: number,
     from: string,
     platId: number,
-    appData: any = null
+    appData: any = null,
   ) {
     Logger.yyz("初始化登录流程, key:" + pass);
     let msg: createLoginReq = new createLoginReq();
@@ -277,12 +290,12 @@ export class LoginManager extends GameEventDispatcher {
       case LoginResult.SUCCEED:
         let loginKey = ModelMgr.Instance.getProperty(
           EmModel.USER_MODEL,
-          UserModelAttribute.loginKey
+          UserModelAttribute.loginKey,
         );
         LoginManager.Instance.c2s_get_player_list(
           data.userName,
           loginKey,
-          data.site
+          data.site,
         ); //请求玩家列表
         //开启检测心跳
         LoginSocketManager.Instance.crateWeak();
@@ -292,35 +305,35 @@ export class LoginManager extends GameEventDispatcher {
       case LoginResult.OTHER_ERROR:
         //其他错误
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.otherError")
+          LangManager.Instance.GetTranslation("login.otherError"),
         );
         this.nativeReLogin();
         break;
       case LoginResult.CONTENT_ERROR:
         //地址栏参数个数不对
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.addressParaCountError")
+          LangManager.Instance.GetTranslation("login.addressParaCountError"),
         );
         this.nativeReLogin();
         break;
       case LoginResult.IP_ERROR:
         //无效IP
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.invalidIP")
+          LangManager.Instance.GetTranslation("login.invalidIP"),
         );
         this.nativeReLogin();
         break;
       case LoginResult.SITE_ERROR:
         //代理商错误
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.agentError")
+          LangManager.Instance.GetTranslation("login.agentError"),
         );
         this.nativeReLogin();
         break;
       case LoginResult.LOGIN_ERROR:
         //加密不正确
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.incorrectEncryption")
+          LangManager.Instance.GetTranslation("login.incorrectEncryption"),
         );
         this.nativeReLogin();
         break;
@@ -328,20 +341,20 @@ export class LoginManager extends GameEventDispatcher {
         //注册服务不正确
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "login.registrationServiceIncorrect"
-          )
+            "login.registrationServiceIncorrect",
+          ),
         );
         this.nativeReLogin();
         break;
       case LoginResult.VERIFY_ERROR:
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.verityError")
+          LangManager.Instance.GetTranslation("login.verityError"),
         );
         this.nativeReLogin();
         break;
       case LoginResult.SITE_CLOSE:
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("site.close")
+          LangManager.Instance.GetTranslation("site.close"),
         );
         break;
       default:
@@ -358,7 +371,7 @@ export class LoginManager extends GameEventDispatcher {
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.loginKey,
-        userInfo.loginKey
+        userInfo.loginKey,
       );
       SDKManager.Instance.getChannel().autoLogin();
     }
@@ -390,31 +403,31 @@ export class LoginManager extends GameEventDispatcher {
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.userInfoList,
-        data.infoList
+        data.infoList,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.userName,
-        data.userName
+        data.userName,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.site,
-        data.site
+        data.site,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.loginState,
-        data.loginState
+        data.loginState,
       );
 
       let loginKey = ModelMgr.Instance.getProperty(
         EmModel.USER_MODEL,
-        UserModelAttribute.loginKey
+        UserModelAttribute.loginKey,
       );
       let userinfo: SimpleUserInfo = ModelMgr.Instance.getProperty(
         EmModel.USER_MODEL,
-        UserModelAttribute.userInfoList
+        UserModelAttribute.userInfoList,
       )[0] as SimpleUserInfo;
 
       let userInfo: UserInfo =
@@ -422,7 +435,7 @@ export class LoginManager extends GameEventDispatcher {
       let playerInfo = PlayerManager.Instance.currentPlayerModel.playerInfo;
       playerInfo.site = ModelMgr.Instance.getProperty(
         EmModel.USER_MODEL,
-        UserModelAttribute.site
+        UserModelAttribute.site,
       );
       userInfo.isActive = true;
       let newPassword = String(Math.floor(Math.random() * 10000000));
@@ -430,7 +443,7 @@ export class LoginManager extends GameEventDispatcher {
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.password,
-        newPassword
+        newPassword,
       );
       let userId = 0;
       if (userinfo && userinfo.userId) {
@@ -439,18 +452,18 @@ export class LoginManager extends GameEventDispatcher {
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.userId,
-        userId
+        userId,
       );
       LoginManager.Instance.c2s_prepare_login(
         data.userName,
         loginKey,
         newPassword,
         data.site,
-        userId
+        userId,
       );
     } else {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("login.otherError")
+        LangManager.Instance.GetTranslation("login.otherError"),
       );
     }
   }
@@ -461,27 +474,27 @@ export class LoginManager extends GameEventDispatcher {
   private reLoginServer() {
     let userName = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.userName
+      UserModelAttribute.userName,
     );
     let site = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.site
+      UserModelAttribute.site,
     );
 
     let loginKey = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.loginKey
+      UserModelAttribute.loginKey,
     );
     let userinfo: SimpleUserInfo = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.userInfoList
+      UserModelAttribute.userInfoList,
     )[0] as SimpleUserInfo;
 
     let userInfo: UserInfo = PlayerManager.Instance.currentPlayerModel.userInfo;
     let playerInfo = PlayerManager.Instance.currentPlayerModel.playerInfo;
     playerInfo.site = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.site
+      UserModelAttribute.site,
     );
     userInfo.isActive = true;
     let newPassword = String(Math.floor(Math.random() * 10000000));
@@ -489,18 +502,18 @@ export class LoginManager extends GameEventDispatcher {
     ModelMgr.Instance.setProperty(
       EmModel.USER_MODEL,
       UserModelAttribute.password,
-      newPassword
+      newPassword,
     );
     let userId = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.userId
+      UserModelAttribute.userId,
     );
     LoginManager.Instance.c2s_prepare_login(
       userName,
       loginKey,
       newPassword,
       site,
-      userId
+      userId,
     );
   }
 
@@ -517,7 +530,7 @@ export class LoginManager extends GameEventDispatcher {
     loginKey: string,
     password: string,
     site: string,
-    userId: number
+    userId: number,
   ) {
     Logger.yyz("准备登录, key:" + loginKey);
     let msg: playerLoginReq = new playerLoginReq();
@@ -540,27 +553,27 @@ export class LoginManager extends GameEventDispatcher {
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.userName,
-        data.userName
+        data.userName,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.site,
-        data.site
+        data.site,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.userId,
-        data.userId
+        data.userId,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.gateIp,
-        data.gateIp
+        data.gateIp,
       ); // 准备登录的网关IP
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.port,
-        data.port
+        data.port,
       ); // 准备登录的网关端口
       SocketManager.Instance.setup();
 
@@ -593,7 +606,7 @@ export class LoginManager extends GameEventDispatcher {
         GameManager.Instance.onGameSocketConnect(
           data.gateIp,
           data.port,
-          callFunc
+          callFunc,
         ); //登录网关服
       }
     } else {
@@ -608,7 +621,7 @@ export class LoginManager extends GameEventDispatcher {
           //关闭登录Socket
           LoginSocketManager.Instance.close();
           MessageTipManager.Instance.show(
-            LangManager.Instance.GetTranslation("login.server.full")
+            LangManager.Instance.GetTranslation("login.server.full"),
           );
         } else {
           this.waitLoginServer();
@@ -637,15 +650,15 @@ export class LoginManager extends GameEventDispatcher {
         EmWindow.HintWnd,
         LangManager.Instance.GetTranslation(
           "login.server.loginwait",
-          this.loginWaitTime
-        )
+          this.loginWaitTime,
+        ),
       );
     } else {
       this._waitLoginAlert.setHintText(
         LangManager.Instance.GetTranslation(
           "login.server.loginwait",
-          this.loginWaitTime
-        )
+          this.loginWaitTime,
+        ),
       );
     }
   }
@@ -661,7 +674,7 @@ export class LoginManager extends GameEventDispatcher {
    * @param site
    * @param password
    */
-  private registerTime: number = 0;
+  private registerTime: ReturnType<typeof setTimeout> | null = null;
   public c2s_register_role(
     userId: number,
     userName: string,
@@ -670,7 +683,7 @@ export class LoginManager extends GameEventDispatcher {
     camp: number,
     icon: number,
     site: string,
-    password: string
+    password: string,
   ) {
     Logger.yyz("创建角色   c2s_register_role: ");
     let msg: registerRoleReq = new registerRoleReq();
@@ -691,7 +704,7 @@ export class LoginManager extends GameEventDispatcher {
       let confirm: string =
         LangManager.Instance.GetTranslation("public.logout");
       let content: string = LangManager.Instance.GetTranslation(
-        "login.serverclosed.lost2"
+        "login.serverclosed.lost2",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -706,7 +719,7 @@ export class LoginManager extends GameEventDispatcher {
         AlertBtnType.O,
         false,
         true,
-        EmLayer.STAGE_TIP_LAYER
+        EmLayer.STAGE_TIP_LAYER,
       );
       SceneManager.Instance.lock = true;
       return;
@@ -717,7 +730,7 @@ export class LoginManager extends GameEventDispatcher {
   public clearRegisterTime() {
     SimpleAlertHelper.Instance.Hide();
     clearTimeout(this.registerTime);
-    this.registerTime = 0;
+    this.registerTime = null;
   }
 
   /**
@@ -727,7 +740,7 @@ export class LoginManager extends GameEventDispatcher {
    */
   private s2c_register_role(pkg: PackageIn) {
     let data: registerRoleRsp = pkg.readBody(
-      registerRoleRsp
+      registerRoleRsp,
     ) as registerRoleRsp;
     if (data.value) {
       FrameCtrlManager.Instance.open(EmWindow.Waiting);
@@ -735,24 +748,24 @@ export class LoginManager extends GameEventDispatcher {
       Laya.timer.once(3000, this, () => {
         if (PlayerManager.Instance.currentPlayerModel.playerInfo.nickName) {
           SDKManager.Instance.getChannel().postGameEvent(
-            GameEventCode.Code_1041
+            GameEventCode.Code_1041,
           );
         }
       });
 
       PackageOut.clientId = ModelMgr.Instance.getProperty(
         EmModel.USER_MODEL,
-        UserModelAttribute.userId
+        UserModelAttribute.userId,
       );
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.gateIp,
-        data.gateIp
+        data.gateIp,
       ); // 准备登录的网关IP
       ModelMgr.Instance.setProperty(
         EmModel.USER_MODEL,
         UserModelAttribute.port,
-        data.port
+        data.port,
       ); // 准备登录的网关端口
       //关闭登录Socket
       let callFunc = () => {
@@ -762,13 +775,13 @@ export class LoginManager extends GameEventDispatcher {
       LoginSocketManager.Instance.close();
       if (data.gateIp == "" || data.gateIp == undefined) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("login.gatewayServerError")
+          LangManager.Instance.GetTranslation("login.gatewayServerError"),
         );
       } else {
         GameManager.Instance.onGameSocketConnect(
           data.gateIp,
           data.port,
-          callFunc
+          callFunc,
         ); //登录网关服
       }
     } else {
@@ -788,8 +801,8 @@ export class LoginManager extends GameEventDispatcher {
     msg.key = MD5Utils.md5(
       ModelMgr.Instance.getProperty(
         EmModel.USER_MODEL,
-        UserModelAttribute.password
-      )
+        UserModelAttribute.password,
+      ),
     );
     let key: Array<number> = [
       Math.ceil(Math.random() * 255),
@@ -801,10 +814,11 @@ export class LoginManager extends GameEventDispatcher {
       Math.ceil(Math.random() * 255),
       Math.ceil(Math.random() * 255),
     ];
+
     msg.ekeys = key;
     msg.playerId = ModelMgr.Instance.getProperty(
       EmModel.USER_MODEL,
-      UserModelAttribute.userId
+      UserModelAttribute.userId,
     );
     SocketManager.Instance.send(C2SProtocol.G_LOGIN_GATEWAY, msg);
     SocketManager.Instance.socket.setKey(key);
@@ -835,7 +849,7 @@ export class LoginManager extends GameEventDispatcher {
       AlertBtnType.O,
       false,
       false,
-      EmLayer.STAGE_TIP_LAYER
+      EmLayer.STAGE_TIP_LAYER,
     );
   }
 
@@ -873,7 +887,7 @@ export class LoginManager extends GameEventDispatcher {
     if (
       CampaignManager.Instance.mapModel &&
       WorldBossHelper.checkConsortiaSecretLand(
-        CampaignManager.Instance.mapModel.mapId
+        CampaignManager.Instance.mapModel.mapId,
       )
     ) {
       SocketManager.Instance.send(C2SProtocol.C_ENTER_CONSORTIA_FAM, null);

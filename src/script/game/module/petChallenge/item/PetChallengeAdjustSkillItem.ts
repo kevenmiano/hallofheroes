@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2023-06-12 11:25:47
@@ -12,33 +12,32 @@ import { IconFactory } from "../../../../core/utils/IconFactory";
 import { t_s_skilltemplateData } from "../../../config/t_s_skilltemplate";
 
 export class PetChallengeAdjustSkillItem extends FUI_PetChallengeAdjustSkillItem {
+  private _index = 0;
 
-    private _index = 0;
+  private _info: t_s_skilltemplateData;
 
-    private _info: t_s_skilltemplateData;
+  protected onConstruct(): void {
+    super.onConstruct();
+  }
 
-    protected onConstruct(): void {
-        super.onConstruct();
+  public get info() {
+    return this._info;
+  }
+
+  public set info(v: t_s_skilltemplateData) {
+    this._info = v;
+    if (v) {
+      this._icon.url = IconFactory.getCommonIconPath(v.Icons);
+    } else {
+      this._icon.url = "";
     }
+  }
 
-    public get info() {
-        return this._info;
-    }
+  public get index() {
+    return this._index;
+  }
 
-    public set info(v: t_s_skilltemplateData) {
-        this._info = v;
-        if (v) {
-            this._icon.url = IconFactory.getCommonIconPath(v.Icons);
-        } else {
-            this._icon.url = "";
-        }
-    }
-
-    public get index() {
-        return this._index;
-    }
-
-    public set index(v: number) {
-        this._index = v;
-    }
+  public set index(v: number) {
+    this._index = v;
+  }
 }

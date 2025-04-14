@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message FriendAddMsgList {
+  repeated int32 list = 1;
+}

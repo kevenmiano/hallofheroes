@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.worldmap;
+
+message MapPhysicAttackMsg {
+  int32 mapId = 1;
+  int32 posX = 2;
+  int32 posY = 3;
+  int32 nodeId = 4;
+  int32 sonNodeId = 5;
+  int32 op = 6;
+}

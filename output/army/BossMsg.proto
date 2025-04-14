@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message BossMsg {
+  string bossName = 1;
+  int32 grade = 2;
+  int32 type = 3;
+  int32 posX = 4;
+  int32 posY = 5;
+  int32 leftTime = 6;
+  int32 physicId = 7;
+  int32 posId = 8;
+  int32 state = 9;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message CoolDownMsg {
+  int32 templatedId = 1;
+  int32 coolDown = 2;
+  int32 coolType = 3;
+  int32 appearCoolDown = 4;
+}

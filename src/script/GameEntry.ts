@@ -1,4 +1,3 @@
-// @ts-nocheck
 import GameConfig from "../GameConfig";
 import AudioManager from "./core/audio/AudioManager";
 import Resolution from "./core/comps/Resolution";
@@ -92,7 +91,7 @@ export default class GameEntry {
         "加载选大区配置",
         "加载选大区配置",
         "",
-        ""
+        "",
       );
     } else {
       siteConfig = await this.onLoadSiteConfig();
@@ -122,7 +121,6 @@ export default class GameEntry {
     });
 
     if (GameConfig.stat) {
-      //@ts-ignore
       window.showMemTool = () => {
         UIManager.Instance.ShowWind(EmWindow.MemToolWnd);
       };
@@ -144,7 +142,7 @@ export default class GameEntry {
     let defaultLanguage: string = PathManager.info.LANGUAGE; //配置的默认语言
     setCfgDefaultLang(defaultLanguage);
     Logger.yyz(
-      `系统语言:browserLanguage: ${systemLanguage}, 游戏内设置的语言:settingLanguage: ${settingLanguage}, 配置的默认语言:defaultLanguage: ${defaultLanguage}`
+      `系统语言:browserLanguage: ${systemLanguage}, 游戏内设置的语言:settingLanguage: ${settingLanguage}, 配置的默认语言:defaultLanguage: ${defaultLanguage}`,
     );
     if (hasLanguage(settingLanguage, true)) {
       setDefaultLang(settingLanguage);
@@ -183,14 +181,14 @@ export default class GameEntry {
                 "加载基础资源",
                 "加载基础资源",
                 "",
-                ""
+                "",
               );
               resolve(true);
             } else {
               groupLoadIndex++;
               loadFunc();
             }
-          })
+          }),
         );
       };
       loadFunc();
@@ -207,7 +205,7 @@ export default class GameEntry {
 
         let temp = ConfigMgr.Instance.getTemplateByID(
           ConfigType.t_s_config,
-          "Language"
+          "Language",
         ) as t_s_configData;
         if (!temp) {
           temp = ConfigInfosTempInfo.temp as t_s_configData;
@@ -249,7 +247,7 @@ export default class GameEntry {
           "加载选大区配置",
           "加载选大区配置",
           "",
-          ""
+          "",
         );
         let siteConfig = ConfigMgr.Instance.getSync(ConfigType.siteConfig);
         let data = siteConfig.mDataList[0];
@@ -268,7 +266,7 @@ export default class GameEntry {
           "加载语言",
           "加载语言",
           "",
-          ""
+          "",
         );
         let gameConfig = ConfigMgr.Instance.getSync(ConfigType.languageLogin);
         Logger.base("加载languageLogin 配置表 Finished....", gameConfig);
@@ -297,7 +295,7 @@ export default class GameEntry {
           resolve();
         },
         null,
-        Laya.Loader.TEXT
+        Laya.Loader.TEXT,
       );
     });
   }

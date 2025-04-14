@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaContributeRspMsg {
+  int32 totalRows = 1;
+  repeated int32 contributeInfo = 2;
+  string selfInfo = 3;
+  int32 selfOrder = 4;
+}

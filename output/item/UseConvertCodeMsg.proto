@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message UseConvertCodeMsg {
+  string ActiveId = 1;
+  string Title = 2;
+  string Description = 3;
+}

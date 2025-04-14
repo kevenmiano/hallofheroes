@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.lucky;
+
+message LordsOrderListMsg {
+  int32 leftTime = 1;
+  int32 maxTurn = 2;
+  int32 currTurn = 3;
+  int32 myOrder = 4;
+  int32 winCount = 5;
+  int32 score = 6;
+  repeated int32 lordsInfo = 7;
+  int32 param1 = 8;
+  int32 param2 = 9;
+  string param3 = 10;
+  string param4 = 11;
+}

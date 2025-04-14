@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message OfflineRewardMsg {
+  int32 offlineTime = 1;
+  int32 gpCount = 2;
+  int32 rateCount = 3;
+  int32 payType = 4;
+}

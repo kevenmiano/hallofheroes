@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemMovedListMsg {
+  repeated int32 moved = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message MonsterScoreMsg {
+  int32 score = 1;
+  int32 nodeId = 2;
+}

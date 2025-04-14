@@ -1,5 +1,5 @@
-// @ts-nocheck
-import {BaseArmy} from "./BaseArmy";
+//@ts-expect-error: External dependencies
+import { BaseArmy } from "./BaseArmy";
 
 /**
  * 系统军队
@@ -7,10 +7,8 @@ import {BaseArmy} from "./BaseArmy";
  * @author leili
  *
  */
-export class SystemArmy extends BaseArmy
-{
-    constructor()
-    {
-        super();
-    }
+export class SystemArmy extends BaseArmy {
+  constructor() {
+    super();
+  }
 }

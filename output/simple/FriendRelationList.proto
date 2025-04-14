@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FriendRelationList {
+  repeated int32 relationList = 1;
+  repeated int32 group = 2;
+  int32 maxPage = 3;
+  int32 curPage = 4;
+}

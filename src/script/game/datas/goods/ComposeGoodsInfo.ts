@@ -1,4 +1,3 @@
-// @ts-nocheck
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import GameEventDispatcher from "../../../core/event/GameEventDispatcher";
 import { t_s_composeData } from "../../config/t_s_compose";
@@ -23,13 +22,13 @@ export class ComposeGoodsInfo extends GameEventDispatcher {
   public get template(): t_s_composeData {
     return ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_compose,
-      this.templateId
+      this.templateId,
     );
   }
   public get itemTemplate(): t_s_itemtemplateData {
     return ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_itemtemplate,
-      this.template.NewMaterial
+      this.template.NewMaterial,
     );
   }
 

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message ChargeOrderReq {
+  string productId = 1;
+  int32 count = 2;
+  int32 templateId = 3;
+}

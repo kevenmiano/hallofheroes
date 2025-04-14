@@ -46,7 +46,7 @@ export default class BufferTips extends BaseTips {
       this.describeTxt.text = this._tipData.description;
       if (this._tipData.bufferType == PlayerBufferType.BASE_PROPERTY_BUFFER) {
         this.timeTxt.text = LangManager.Instance.GetTranslation(
-          "buffer.BasePropertyBuffer"
+          "buffer.BasePropertyBuffer",
         );
       } else {
         if (this._tipData.leftTime > 0) {
@@ -58,7 +58,7 @@ export default class BufferTips extends BaseTips {
       this._tipData.addEventListener(
         Laya.Event.CHANGE,
         this.__changeHandler,
-        this
+        this,
       );
     }
   }
@@ -82,46 +82,46 @@ export default class BufferTips extends BaseTips {
           (
             (this._tipData as PlayerBufferInfo).leftTime /
             (3600 * 24)
-          ).toString()
+          ).toString(),
         ) +
         LangManager.Instance.GetTranslation("public.day") +
         parseInt(
           (
             ((this._tipData as PlayerBufferInfo).leftTime / 3600) %
             24
-          ).toString()
+          ).toString(),
         ) +
         LangManager.Instance.GetTranslation("public.time.hour") +
         parseInt(
           (
             ((this._tipData as PlayerBufferInfo).leftTime % 3600) /
             60
-          ).toString()
+          ).toString(),
         ) +
         LangManager.Instance.GetTranslation("public.minute");
     } else if ((this._tipData as PlayerBufferInfo).leftTime >= 3600) {
       timeStr =
         parseInt(
-          ((this._tipData as PlayerBufferInfo).leftTime / 3600).toString()
+          ((this._tipData as PlayerBufferInfo).leftTime / 3600).toString(),
         ) +
         LangManager.Instance.GetTranslation("public.time.hour") +
         parseInt(
           (
             ((this._tipData as PlayerBufferInfo).leftTime % 3600) /
             60
-          ).toString()
+          ).toString(),
         ) +
         LangManager.Instance.GetTranslation("public.minute");
     } else if (this._tipData.leftTime >= 60)
       timeStr =
         parseInt(
-          ((this._tipData as PlayerBufferInfo).leftTime / 60).toString()
+          ((this._tipData as PlayerBufferInfo).leftTime / 60).toString(),
         ) + LangManager.Instance.GetTranslation("public.minute");
     else
       timeStr = DateFormatter.getCountDate(
         (this._tipData as PlayerBufferInfo).leftTime,
         2,
-        2
+        2,
       );
     this.timeTxt.text = timeStr;
   }
@@ -131,12 +131,13 @@ export default class BufferTips extends BaseTips {
   }
 
   private removeEvent() {
-    this._tipData &&
+    if (this._tipData) {
       this._tipData.removeEventListener(
         Laya.Event.CHANGE,
         this.__changeHandler,
-        this
+        this,
       );
+    }
   }
 
   protected OnClickModal() {

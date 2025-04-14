@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildBufferListMsg {
+  int32 consortiaId = 1;
+  repeated int32 buffers = 2;
+}

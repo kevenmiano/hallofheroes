@@ -1,9 +1,7 @@
-import Logger from "../logger/Logger";
-
-import ClassUtils = Laya.ClassUtils;
+import Logger from "../logger/Logger.js";
 
 export default class ByteArray {
-  public classDic: Object = {};
+  public classDic: object = {};
   public static BIG_ENDIAN: string = "bigEndian";
   public static LITTLE_ENDIAN: string = "littleEndian";
   private _length: number = 0;
@@ -47,7 +45,7 @@ export default class ByteArray {
 
     bytes._byteView_.set(
       this._byteView_.subarray(this._position_, this._position_ + length),
-      offset
+      offset,
     );
     bytes.pos = offset;
 
@@ -58,7 +56,7 @@ export default class ByteArray {
   public readDouble(): number {
     var double: number = this._data_.getFloat64(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 8;
     return double;
@@ -67,7 +65,7 @@ export default class ByteArray {
   public readFloat(): number {
     var float: number = this._data_.getFloat32(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 4;
     return float;
@@ -83,7 +81,7 @@ export default class ByteArray {
   public readInt(): number {
     var tInt: number = this._data_.getInt32(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 4;
     return tInt;
@@ -92,7 +90,7 @@ export default class ByteArray {
   public readShort(): number {
     var short: number = this._data_.getInt16(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 2;
     return short;
@@ -109,7 +107,7 @@ export default class ByteArray {
   public readUnsignedInt(): number {
     var uInt: number = this._data_.getUint32(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 4;
     return Number(uInt); //add by ch.ji 解决读取整数时读到负整数的问题
@@ -118,7 +116,7 @@ export default class ByteArray {
   public readUnsignedShort(): number {
     var uShort: number = this._data_.getUint16(
       this._position_,
-      this._littleEndian_
+      this._littleEndian_,
     );
     this._position_ += 2;
     return uShort;
@@ -165,14 +163,14 @@ export default class ByteArray {
         }
       } else if (c < 0xe0) {
         value += String.fromCharCode(
-          ((c & 0x3f) << 6) | (this._data_.getUint8(this._position_++) & 0x7f)
+          ((c & 0x3f) << 6) | (this._data_.getUint8(this._position_++) & 0x7f),
         );
       } else if (c < 0xf0) {
         c2 = this._data_.getUint8(this._position_++);
         value += String.fromCharCode(
           ((c & 0x1f) << 12) |
             ((c2 & 0x7f) << 6) |
-            (this._data_.getUint8(this._position_++) & 0x7f)
+            (this._data_.getUint8(this._position_++) & 0x7f),
         );
       } else {
         c2 = this._data_.getUint8(this._position_++);
@@ -181,7 +179,7 @@ export default class ByteArray {
           ((c & 0x0f) << 18) |
             ((c2 & 0x7f) << 12) |
             ((c3 << 6) & 0x7f) |
-            (this._data_.getUint8(this._position_++) & 0x7f)
+            (this._data_.getUint8(this._position_++) & 0x7f),
         );
       }
     }
@@ -212,7 +210,7 @@ export default class ByteArray {
     this.ensureWrite(this._position_ + length);
     this._byteView_.set(
       bytes._byteView_.subarray(offset, offset + length),
-      this._position_
+      this._position_,
     );
     this._position_ += length;
   }
@@ -220,7 +218,7 @@ export default class ByteArray {
   public writeArrayBuffer(
     arraybuffer: any,
     offset: number = 0,
-    length: number = 0
+    length: number = 0,
   ) {
     if (offset < 0 || length < 0)
       throw "writeArrayBuffer error - Out of bounds";
@@ -229,7 +227,7 @@ export default class ByteArray {
     var uint8array: any = new Uint8Array(arraybuffer);
     this._byteView_.set(
       uint8array.subarray(offset, offset + length),
-      this._position_
+      this._position_,
     );
     this._position_ += length;
   }
@@ -389,7 +387,7 @@ export default class ByteArray {
       }
       this._byteView_ = newByteView;
       this._data_ = new DataView(newByteView.buffer);
-    } catch (error) {
+    } catch {
       throw "___resizeBuffer err:" + len;
     }
   }
@@ -522,7 +520,7 @@ export default class ByteArray {
   }
 
   private readObjectValue(type: number): any {
-    var value: Object;
+    var value: any;
     switch (type) {
       case ByteArray.NULL_TYPE:
         break;
@@ -551,7 +549,6 @@ export default class ByteArray {
         value = this.readByteArray();
         break;
       default:
-        // Unknown object type tag {type}
         Logger.warn("Unknown object type tag!!!" + type);
     }
 
@@ -561,7 +558,7 @@ export default class ByteArray {
     var ref: number = this.readUInt29();
 
     if ((ref & 1) == 0) {
-      return <ByteArray>this.getObjRef(ref >> 1);
+      return this.getObjRef(ref >> 1) as ByteArray;
     } else {
       var len: number = ref >> 1;
 
@@ -583,7 +580,7 @@ export default class ByteArray {
     return this._strTable[ref];
   }
 
-  private getObjRef(ref: number): Object {
+  private getObjRef(ref: number): object {
     return this._objTable[ref];
   }
 
@@ -634,7 +631,7 @@ export default class ByteArray {
     }
   }
 
-  protected readScriptObject(): Object {
+  protected readScriptObject(): object {
     var ref: number = this.readUInt29();
     if ((ref & 1) == 0) {
       return this.getObjRef(ref >> 1);
@@ -647,7 +644,7 @@ export default class ByteArray {
       var pros: string = objref.propoties;
       if (className && className != "") {
         //					var rst:*=getClassByAlias(className);
-        var rst: any = ClassUtils.getRegClass(className);
+        var rst: any = Laya.ClassUtils.getRegClass(className);
         if (rst) {
           obj = new rst();
         } else {
@@ -675,7 +672,7 @@ export default class ByteArray {
       return obj;
     }
   }
-  protected readArray(): Object {
+  protected readArray(): object {
     var ref: number = this.readUInt29();
 
     if ((ref & 1) == 0) {
@@ -845,7 +842,7 @@ export default class ByteArray {
     else this.writeByte(ByteArray.FALSE_TYPE);
   }
 
-  protected writeCustomObject(o: Object) {
+  protected writeCustomObject(o: object) {
     //写入类型8位字节
     this.writeByte(ByteArray.OBJECT_TYPE);
 
@@ -870,7 +867,7 @@ export default class ByteArray {
 
       var tRef: number = ByteArray.getTraitsInfoRef(
         this._traitsTable,
-        traitsInfo
+        traitsInfo,
       );
       var count: number = traitsInfo.properties.length;
       var i: number = 0;
@@ -882,7 +879,7 @@ export default class ByteArray {
           3 |
             (traitsInfo.externalizable ? 4 : 0) |
             (traitsInfo.dynamic ? 8 : 0) |
-            (count << 4)
+            (count << 4),
         );
         this.writeStringWithoutType(traitsInfo.className);
 
@@ -898,7 +895,7 @@ export default class ByteArray {
     }
   }
 
-  public static getTraitsInfoRef(arr: any[], ti: Object): number {
+  public static getTraitsInfoRef(arr: any[], ti: object): number {
     var i: number,
       len: number = arr.length;
     for (i = 0; i < len; i++) {
@@ -978,7 +975,7 @@ export default class ByteArray {
       this.writeBytes(ba, 0, len);
     }
   }
-  protected writeMapAsECMAArray(o: Object) {
+  protected writeMapAsECMAArray(o: object) {
     this.writeByte(ByteArray.ARRAY_TYPE);
     this.writeUInt29((0 << 1) | 1);
     var count: number, key: string;
@@ -1021,7 +1018,7 @@ export default class ByteArray {
       this.writeByte(ref & 0xff);
     } else {
       // 0x40000000 - 0xFFFFFFFF : throw range exception
-      Logger.error("Integer out of range: " + ref);
+      // Logger.error("Integer out of range: " + ref);
     }
   }
   /**

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message RemotePetOpMsg {
+  int32 op = 1;
+  repeated int32 pets = 2;
+  string pos = 3;
+  int32 friendId = 4;
+  int32 friendPetId = 5;
+  int32 skillId = 6;
+  int32 index = 7;
+  bool isSpecial = 8;
+  int32 sweepIndex = 9;
+  bool isFirst = 10;
+  int32 payType = 11;
+}

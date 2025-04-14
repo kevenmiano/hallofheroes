@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetChallengeInfoMsg {
+  string playerInfo = 1;
+  repeated int32 playerPets = 2;
+  repeated int32 challengeLog = 3;
+}

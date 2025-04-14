@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TurnTableMsg {
+  int32 turntableId = 1;
+  int32 freeRemainTimes = 2;
+  string nextRefreshTime = 3;
+  int32 payTimes = 4;
+  repeated int32 records = 5;
+}

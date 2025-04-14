@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message ChallengeCoolTimeMsg {
+  int32 leftTime = 1;
+  int32 challengeCount = 2;
+  int32 totalCount = 3;
+  int32 type = 4;
+  int32 totalBuyCount = 5;
+}

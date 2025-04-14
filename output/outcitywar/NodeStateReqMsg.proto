@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message NodeStateReqMsg {
+  int32 nodeId = 1;
+  int32 buildId = 2;
+  int32 userId = 3;
+  int32 orderId = 4;
+  int32 camp = 5;
+  int32 guildId = 6;
+  string guildNotice = 7;
+  int32 attend = 8;
+  int32 op = 9;
+}

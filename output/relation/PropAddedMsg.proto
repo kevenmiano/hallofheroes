@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.relation;
+
+message PropAddedMsg {
+  int32 userId = 1;
+  int32 addValue = 2;
+  int32 addRate = 3;
+}

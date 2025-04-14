@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SumActiveGetPackageMsg {
+  string activeId = 1;
+  string packageId = 2;
+  int32 type = 3;
+  int32 count = 4;
+}

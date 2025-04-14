@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomUpdateStateMsg {
+  int32 roomId = 1;
+  string serverName = 2;
+  int32 roomState = 3;
+  int32 execRs = 4;
+}

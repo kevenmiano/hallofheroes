@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarMoveMsg {
+  int32 changeType = 1;
+  int32 changePos = 2;
+  string star_Info = 3;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.NewMemoryCardMsg;
+
+message encode {
+}

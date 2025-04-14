@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message GuestsMsg {
+  int32 guestsId = 1;
+  int32 guestsJob = 2;
+  string guestsNick = 3;
+  bool isEnter = 4;
+  bool isViper = 5;
+}

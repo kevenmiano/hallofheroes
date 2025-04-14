@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetEquipResolveReqMsg {
+  string pos = 1;
+}

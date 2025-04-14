@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message EngageInfoMsg {
+  int32 tarUserId = 1;
+  bool isGetMarry = 2;
+  string nickName = 3;
+  string consortiaName = 4;
+  int32 grade = 5;
+  int32 headId = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadGuildMsg {
+  int32 op = 1;
+  int32 current = 2;
+  int32 total = 3;
+  string guildInfo = 4;
+  repeated int32 userList = 5;
+}

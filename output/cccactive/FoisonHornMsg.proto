@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message FoisonHornMsg {
+  int32 op = 1;
+  int32 itemId = 2;
+  bool isOpen = 3;
+  string openTime = 4;
+  string stopTime = 5;
+  int32 count = 6;
+  string activation = 7;
+  string rewardInfo = 8;
+  string stopTimeStamp = 9;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketItemPriceMsg {
+  int32 top = 1;
+  int32 point = 2;
+  string count = 3;
+}

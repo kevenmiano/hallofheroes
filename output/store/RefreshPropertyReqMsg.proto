@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.store;
+
+message RefreshPropertyReqMsg {
+  int32 itemId = 1;
+}

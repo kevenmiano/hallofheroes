@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import Logger from "../../../core/logger/Logger";
 import { ChatEvent } from "../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../manager/NotificationManager";
@@ -56,11 +56,11 @@ export default class ChatConsortiaAncCell extends FUI_ChatConsortiaAncCell {
           this._cellData.serverName,
           this._cellData.vipGrade,
           this._cellData.consortiaId,
-          this._cellData.senderName
+          this._cellData.senderName,
         );
         NotificationManager.Instance.dispatchEvent(
           ChatEvent.PLAYER_NAME_CLICK,
-          ret
+          ret,
         );
         break;
       case ChatCellType.GENERAL:
@@ -74,7 +74,7 @@ export default class ChatConsortiaAncCell extends FUI_ChatConsortiaAncCell {
           this._cellData.serverName,
           this._cellData.vipGrade,
           this._cellData.consortiaId,
-          this._cellData.senderName
+          this._cellData.senderName,
         );
         NotificationManager.Instance.dispatchEvent(ChatEvent.PROP_CLICK, ret);
         break;
@@ -90,11 +90,11 @@ export default class ChatConsortiaAncCell extends FUI_ChatConsortiaAncCell {
       case ChatCellType.CONSORTIA:
         ret = ChatFormat.createConsortiaCellData(
           this._cellData.consortiaId,
-          this._cellData.consortiaName
+          this._cellData.consortiaName,
         );
         NotificationManager.Instance.dispatchEvent(
           ChatEvent.CONSORTIA_CLICK,
-          ret
+          ret,
         );
         break;
       case ChatCellType.ROOM:
@@ -104,7 +104,7 @@ export default class ChatConsortiaAncCell extends FUI_ChatConsortiaAncCell {
       case ChatCellType.CHANNEL:
         NotificationManager.Instance.dispatchEvent(
           ChatEvent.CHANNEL_CLICK,
-          ret
+          ret,
         );
         break;
       case ChatCellType.GM:
@@ -113,13 +113,13 @@ export default class ChatConsortiaAncCell extends FUI_ChatConsortiaAncCell {
       case ChatCellType.VIP:
         NotificationManager.Instance.dispatchEvent(
           ChatEvent.VIP_LINK_CLICK,
-          ret
+          ret,
         );
         break;
       case ChatCellType.VipLink:
         NotificationManager.Instance.dispatchEvent(
           ChatEvent.VIP_LINK_CLICK,
-          ret
+          ret,
         );
         break;
       default:

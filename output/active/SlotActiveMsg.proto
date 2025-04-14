@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SlotActiveMsg {
+  bool open = 1;
+  int32 op = 2;
+  int32 status = 3;
+  string slot = 4;
+  int32 type = 5;
+  int32 rewarditemtemplateid = 6;
+  int32 findcost = 7;
+}

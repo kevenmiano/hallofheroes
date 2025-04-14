@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaDutyListRspMsg {
+  repeated int32 dutyInfo = 1;
+}

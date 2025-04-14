@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipInfoMsg {
+  int32 vipGp = 1;
+  int32 vipGrade = 2;
+  bool isGainBuff = 3;
+  string buffGainTime = 4;
+  string buffEndTime = 5;
+  repeated int32 giftState = 6;
+}

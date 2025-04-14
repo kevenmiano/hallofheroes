@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PassTaskInfoRsp {
+  int32 exp = 1;
+  int32 grade = 2;
+  repeated int32 status = 3;
+  int32 dayFreshNum = 4;
+  int32 weekFreshNum = 5;
+  int32 originId = 6;
+}

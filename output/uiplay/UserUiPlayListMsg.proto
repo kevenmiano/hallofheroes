@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.uiplay;
+
+message UserUiPlayListMsg {
+  repeated int32 uiPlayInfoList = 1;
+  int32 uiPlayRewardCount = 2;
+}

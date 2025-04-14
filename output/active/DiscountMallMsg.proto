@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message DiscountMallMsg {
+  string id = 1;
+  string begin = 2;
+  string end = 3;
+  string logo = 4;
+  repeated int32 items = 5;
+  repeated int32 scores = 6;
+  int32 myscore = 7;
+  int32 myDisc = 8;
+}

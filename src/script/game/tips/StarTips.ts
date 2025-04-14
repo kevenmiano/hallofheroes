@@ -105,10 +105,10 @@ export class StarTips extends BaseTips {
           this.cSpecialType6.selectedIndex = 1;
         }
         this.btnLock.title = LangManager.Instance.GetTranslation(
-          this.locked ? "public.unLock" : "public.lock"
+          this.locked ? "public.unLock" : "public.lock",
         );
         this.btnEquip.title = LangManager.Instance.GetTranslation(
-          this.type == StarBagType.THANE ? "public.unEquip" : "public.equip"
+          this.type == StarBagType.THANE ? "public.unEquip" : "public.equip",
         );
         break;
       case StarBagType.SHOP:
@@ -120,7 +120,7 @@ export class StarTips extends BaseTips {
     this.txt_name.text = this.tipData.template.TemplateNameLang;
     this.txt_useLevel.text = LangManager.Instance.GetTranslation(
       "public.level2",
-      String(this.tipData.grade)
+      String(this.tipData.grade),
     );
     let color =
       FilterFrameText.Colors[eFilterFrameText.StarQuality][
@@ -134,67 +134,67 @@ export class StarTips extends BaseTips {
 
   private initAttribute(info: StarInfo, template: t_s_startemplateData) {
     let str: string = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip01"
+      "armyII.ThaneAttributeView.Tip01",
     );
     this.updateAttributeTxt(this.power, str, template.Power * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip02"
+      "armyII.ThaneAttributeView.Tip02",
     );
     this.updateAttributeTxt(this.agility, str, template.Agility * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip03"
+      "armyII.ThaneAttributeView.Tip03",
     );
     this.updateAttributeTxt(
       this.intellect,
       str,
-      template.Intellect * info.grade
+      template.Intellect * info.grade,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip04"
+      "armyII.ThaneAttributeView.Tip04",
     );
     this.updateAttributeTxt(this.physique, str, template.Physique * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip05"
+      "armyII.ThaneAttributeView.Tip05",
     );
     this.updateAttributeTxt(this.captain, str, template.Captain * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip13"
+      "armyII.ThaneAttributeView.Tip13",
     );
     this.updateAttributeTxt(this.attack, str, template.Attack * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip14"
+      "armyII.ThaneAttributeView.Tip14",
     );
     this.updateAttributeTxt(this.defence, str, template.Defence * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip15"
+      "armyII.ThaneAttributeView.Tip15",
     );
     this.updateAttributeTxt(
       this.magicAttack,
       str,
-      template.MagicAttack * info.grade
+      template.MagicAttack * info.grade,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip16"
+      "armyII.ThaneAttributeView.Tip16",
     );
     this.updateAttributeTxt(
       this.magicDefence,
       str,
-      template.MagicDefence * info.grade
+      template.MagicDefence * info.grade,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip10"
+      "armyII.ThaneAttributeView.Tip10",
     );
     this.updateAttributeTxt(this.forceHit, str, template.ForceHit * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip19"
+      "armyII.ThaneAttributeView.Tip19",
     );
     this.updateAttributeTxt(this.parry, str, template.Parry * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip11"
+      "armyII.ThaneAttributeView.Tip11",
     );
     this.updateAttributeTxt(this.live, str, template.Live * info.grade);
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip17"
+      "armyII.ThaneAttributeView.Tip17",
     );
     this.updateAttributeTxt(this.conat, str, template.Conat * info.grade);
     if (template.DefaultSkill) {
@@ -211,26 +211,26 @@ export class StarTips extends BaseTips {
     this.txt_gp.visible = this.tipData.template.Profile >= 2;
     if (this.tipData.template.Profile >= 2) {
       let maxGrade = StarHelper.getStarMaxGradeByProfile(
-        this.tipData.template.Profile
+        this.tipData.template.Profile,
       );
       if (this.tipData.grade >= maxGrade) {
         this.txt_gp.text = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.StarTip.gp01"
+          "yishi.view.tips.goods.StarTip.gp01",
         );
       } else {
         let nextGradeExp = StarHelper.getStarExp(
           this.tipData.grade + 1,
-          this.tipData.template.Profile
+          this.tipData.template.Profile,
         );
         if (this.tipData.template.Profile == 6)
           this.txt_gp.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.StarTip.gp02",
-            this.tipData.gp
+            this.tipData.gp,
           );
         else
           this.txt_gp.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.StarTip.gp02",
-            this.tipData.gp + "/" + nextGradeExp
+            this.tipData.gp + "/" + nextGradeExp,
           );
       }
     }
@@ -239,7 +239,7 @@ export class StarTips extends BaseTips {
   private updateAttributeTxt(
     item: GoodAttributeItem,
     proper: string,
-    val: number
+    val: number,
   ) {
     item.visible = val > 0;
     if (val > 0) {
@@ -255,8 +255,8 @@ export class StarTips extends BaseTips {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
           "starTip.ComposeMaxLevel",
-          this.tipData.template.TemplateNameLang
-        )
+          this.tipData.template.TemplateNameLang,
+        ),
       );
     } else {
       NotificationManager.Instance.dispatchEvent(StarEvent.STAR_NEW_COMPOSE, {
@@ -277,7 +277,7 @@ export class StarTips extends BaseTips {
         //加锁或解锁
         this.starManager.sendStarComposeLock(
           this.tipData.bagType,
-          this.tipData.pos
+          this.tipData.pos,
         );
         break;
     }
@@ -294,15 +294,15 @@ export class StarTips extends BaseTips {
         if (unEquipPos < 0) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "cell.view.starbag.StarBagCell.command04"
-            )
+              "cell.view.starbag.StarBagCell.command04",
+            ),
           );
         } else {
           StarManager.Instance.starMove(
             this.tipData.pos,
             StarBagType.THANE,
             unEquipPos,
-            StarBagType.PLAYER
+            StarBagType.PLAYER,
           );
         }
         break;
@@ -311,8 +311,8 @@ export class StarTips extends BaseTips {
         if (this.tipData.template.Profile == 6) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "cell.view.starbag.StarBagCell.command01"
-            )
+              "cell.view.starbag.StarBagCell.command01",
+            ),
           );
         } else {
           // let flag: boolean = this.starManager.checkHasSameType(this.tipData)[0];
@@ -349,8 +349,8 @@ export class StarTips extends BaseTips {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
           "starTip.ComposeMaxLevel",
-          this.tipData.template.TemplateNameLang
-        )
+          this.tipData.template.TemplateNameLang,
+        ),
       );
     } else {
       NotificationManager.Instance.dispatchEvent(StarEvent.STAR_COMPOSE, {
@@ -379,7 +379,7 @@ export class StarTips extends BaseTips {
         DataCommonManager.playerInfo.starBagCount
     ) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("star.view.StarIconView.command01")
+        LangManager.Instance.GetTranslation("star.view.StarIconView.command01"),
       );
     } else {
       this.starModel.delWay = StarModel.PICK_UP;
@@ -407,15 +407,15 @@ export class StarTips extends BaseTips {
     if (this.tipData.grade > 1 || this.tipData.gp > 0) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "star.view.StarIconView.composedTip"
-        )
+          "star.view.StarIconView.composedTip",
+        ),
       );
       return;
     }
 
     if (this.tipData.composeLock) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("vicepassword.description11")
+        LangManager.Instance.GetTranslation("vicepassword.description11"),
       );
       return;
     }
@@ -428,7 +428,7 @@ export class StarTips extends BaseTips {
 
     let content = LangManager.Instance.GetTranslation(
       "StarBagWnd.SellStarTip",
-      this.tipData.template.SellGold
+      this.tipData.template.SellGold,
     );
     SimpleAlertHelper.Instance.Show(
       null,
@@ -441,7 +441,7 @@ export class StarTips extends BaseTips {
         if (b) {
           this.sellBack(true, true, isPlayBag);
         }
-      }
+      },
     );
   }
 

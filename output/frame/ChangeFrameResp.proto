@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.frame;
+
+message ChangeFrameResp {
+  int32 frameId = 1;
+  bool ret = 2;
+}

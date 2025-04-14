@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message PassTaskReceiveReq {
+  int32 op = 1;
+  int32 taskId = 2;
+  int32 area = 3;
+  int32 id = 4;
+  int32 buyType = 5;
+}

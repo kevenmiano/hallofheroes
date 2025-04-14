@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message ShopItemBuyMsg {
+  int32 itemId = 1;
+  int32 index = 2;
+  int32 payType = 3;
+}

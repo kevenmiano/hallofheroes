@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message OutercityRspMsg {
+  int32 result = 1;
+  int32 startPosX = 2;
+  int32 startPosY = 3;
+  int32 curPosX = 4;
+  int32 curPosY = 5;
+  int32 endPosX = 6;
+  int32 endPosY = 7;
+}

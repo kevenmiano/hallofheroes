@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message HeartMsg {
+  int32 order = 1;
+  int32 templateId = 2;
+  repeated int32 options = 3;
+  int32 result = 4;
+  int32 optionA = 5;
+  int32 optionB = 6;
+  int32 remainTime = 7;
+  int32 random = 8;
+}

@@ -14,32 +14,32 @@ export class GoodsHelp {
     switch (id) {
       case GoodsHelp.WHITE:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName01"
+          "yishi.utils.GoodsHelp.getGoodQualityName01",
         );
         break;
       case GoodsHelp.GREEN:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName02"
+          "yishi.utils.GoodsHelp.getGoodQualityName02",
         );
         break;
       case GoodsHelp.BLUE:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName03"
+          "yishi.utils.GoodsHelp.getGoodQualityName03",
         );
         break;
       case GoodsHelp.PURPLE:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName04"
+          "yishi.utils.GoodsHelp.getGoodQualityName04",
         );
         break;
       case GoodsHelp.ORANGE:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName05"
+          "yishi.utils.GoodsHelp.getGoodQualityName05",
         );
         break;
       case GoodsHelp.RED:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName06"
+          "yishi.utils.GoodsHelp.getGoodQualityName06",
         );
     }
     return str;

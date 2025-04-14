@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SumActiveDataMsg {
+  repeated int32 datas = 1;
+}

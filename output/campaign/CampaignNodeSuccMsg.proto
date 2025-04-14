@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNodeSuccMsg {
+  int32 nodeId = 1;
+}

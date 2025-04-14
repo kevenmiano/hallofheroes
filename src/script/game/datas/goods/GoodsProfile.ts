@@ -1,4 +1,3 @@
-// @ts-nocheck
 import LangManager from "../../../core/lang/LangManager";
 import {
   FilterFrameText,
@@ -45,7 +44,7 @@ export default class GoodsProfile {
         break;
     }
     return LangManager.Instance.GetTranslation(
-      "yishi.datas.goods.GoodsProfile.profile01"
+      "yishi.datas.goods.GoodsProfile.profile01",
     );
   }
   public static getGoodsProfileDescript(profile: number): string {
@@ -53,32 +52,32 @@ export default class GoodsProfile {
     switch (profile) {
       case 1:
         return LangManager.Instance.GetTranslation(
-          "yishi.datas.goods.GoodsProfile.profile02"
+          "yishi.datas.goods.GoodsProfile.profile02",
         );
         break;
       case 2:
         return LangManager.Instance.GetTranslation(
-          "yishi.datas.goods.GoodsProfile.profile03"
+          "yishi.datas.goods.GoodsProfile.profile03",
         );
         break;
       case 3:
         return LangManager.Instance.GetTranslation(
-          "yishi.datas.goods.GoodsProfile.profile04"
+          "yishi.datas.goods.GoodsProfile.profile04",
         );
         break;
       case 4:
         return LangManager.Instance.GetTranslation(
-          "yishi.datas.goods.GoodsProfile.profile05"
+          "yishi.datas.goods.GoodsProfile.profile05",
         );
         break;
       case 5:
         return LangManager.Instance.GetTranslation(
-          "yishi.datas.goods.GoodsProfile.profile06"
+          "yishi.datas.goods.GoodsProfile.profile06",
         );
         break;
     }
     return LangManager.Instance.GetTranslation(
-      "yishi.datas.goods.GoodsProfile.profile01"
+      "yishi.datas.goods.GoodsProfile.profile01",
     );
   }
 }

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BufferDataMsg {
+  int32 templateId = 1;
+  int32 validityDate = 2;
+  int32 grade = 3;
+  int32 type = 4;
+  int32 typeTemplateid = 5;
+  bool isCancel = 6;
+}

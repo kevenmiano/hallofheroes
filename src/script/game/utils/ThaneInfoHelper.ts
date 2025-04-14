@@ -2,14 +2,17 @@ import ConfigMgr from "../../core/config/ConfigMgr";
 import { t_s_runetemplateData } from "../config/t_s_runetemplate";
 import { ConfigType } from "../constant/ConfigDefine";
 import { JobType } from "../constant/JobType";
-import { RuneEvent } from "../constant/event/NotificationEvent";
+// import { RuneEvent } from "../constant/event/NotificationEvent";
 import { RuneInfo } from "../datas/RuneInfo";
 import { ThaneInfo } from "../datas/playerinfo/ThaneInfo";
 import { ArmyManager } from "../manager/ArmyManager";
 import { BaseArmy } from "../map/space/data/BaseArmy";
 
+//@ts-expect-error: External dependencies
 import ArmyMsg = com.road.yishi.proto.army.ArmyMsg;
+//@ts-expect-error: External dependencies
 import SimpleHeroInfoMsg = com.road.yishi.proto.army.SimpleHeroInfoMsg;
+//@ts-expect-error: External dependencies
 import HeroRuneInfoMsg = com.road.yishi.proto.army.HeroRuneInfoMsg;
 
 export class ThaneInfoHelper {
@@ -40,7 +43,9 @@ export class ThaneInfoHelper {
     thane.grades = armyMsg.grades;
     thane.vipType = armyMsg.vipType;
     thane.bodyEquipAvata = armyMsg.cloth;
-    armyMsg.hasOwnProperty("wing") && (thane.wingAvata = armyMsg.wing);
+    if (armyMsg.hasOwnProperty("wing")) {
+      thane.wingAvata = armyMsg.wing;
+    }
     thane.armsEquipAvata = armyMsg.arm;
     thane.job = armyMsg.job;
     thane.userId = armyMsg.playerId;
@@ -142,7 +147,7 @@ export class ThaneInfoHelper {
   public static readHeroHp(
     thane: ThaneInfo,
     pkgInfo: SimpleHeroInfoMsg,
-    aMsg: ArmyMsg = null
+    aMsg: ArmyMsg = null,
   ) {
     thane.beginChanges();
     if (pkgInfo) {
@@ -173,7 +178,7 @@ export class ThaneInfoHelper {
   public static readHeroInfo(
     thane: ThaneInfo,
     pkgInfo: SimpleHeroInfoMsg,
-    aMsg: ArmyMsg = null
+    aMsg: ArmyMsg = null,
   ) {
     thane.beginChanges();
     if (aMsg) {
@@ -394,7 +399,7 @@ export class ThaneInfoHelper {
 
   private static readHeroRuneInfo(
     thane: ThaneInfo,
-    pkgInfo: SimpleHeroInfoMsg
+    pkgInfo: SimpleHeroInfoMsg,
   ) {
     if (!pkgInfo.rune) return;
     thane.runeCate.runeScript = pkgInfo.rune.runeKey;
@@ -406,7 +411,7 @@ export class ThaneInfoHelper {
       runeMsg = pkgInfo.rune.runeinfo[i] as HeroRuneInfoMsg;
       temp = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_runetemplate,
-        runeMsg.runeId.toString()
+        runeMsg.runeId.toString(),
       );
       if (!temp) continue; //以免服务器传过来的数据有问题导致报错
       info = new RuneInfo();

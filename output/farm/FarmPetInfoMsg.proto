@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FarmPetInfoMsg {
+  int32 userId = 1;
+  int32 petId = 2;
+  int32 pos = 3;
+  string beginTime = 4;
+  string endTime = 5;
+  int32 petTemplateId = 6;
+  int32 state = 7;
+  string petName = 8;
+  int32 quality = 9;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mapshop;
+
+message MapshopIteminfoMsg {
+  int32 mapshopitemid = 1;
+  int32 mapshopcostid = 2;
+  bool isbuy = 3;
+  int32 index = 4;
+  int32 count = 5;
+}

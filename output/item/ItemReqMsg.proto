@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemReqMsg {
+  int32 beginBagType = 1;
+  int32 beginObjId = 2;
+  int32 beginPos = 3;
+  int32 endBagType = 4;
+  int32 endObjId = 5;
+  int32 endPos = 6;
+  int32 count = 7;
+  int32 objectId = 8;
+  bool isTakeOff = 9;
+}

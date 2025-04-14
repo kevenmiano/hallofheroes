@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemMazeBuyTimesMsg {
+  int32 buyTypes = 1;
+}

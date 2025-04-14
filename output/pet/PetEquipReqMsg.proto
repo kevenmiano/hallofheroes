@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetEquipReqMsg {
+  int32 bagType = 1;
+  int32 pos = 2;
+  int32 petId = 3;
+  bool isContinue = 4;
+  int32 op = 5;
+}

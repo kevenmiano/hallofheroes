@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message CommonMsgList {
+  repeated int32 list = 1;
+  int32 listParam1 = 2;
+  int32 listParam2 = 3;
+  string listParam3 = 4;
+  string listParam4 = 5;
+}

@@ -18,7 +18,7 @@ export class NpcAttackHelper {
   public static getAttackPointImp(
     info: any,
     attackPoint: Laya.Point,
-    findCnt: number = 20
+    findCnt: number = 20,
   ): Laya.Point {
     // Logger.xjy("[NpcAttackHelper]getAttackPointImp attackPoint", attackPoint.x, attackPoint.y)
     if (info instanceof CampaignNode) {
@@ -35,11 +35,11 @@ export class NpcAttackHelper {
           let gridY = parseInt((attackPoint.y / 20).toString());
           var b: boolean = CampaignManager.Instance.mapModel.getWalkable(
             gridX,
-            gridY
+            gridY,
           );
           var b2: boolean = CampaignManager.Instance.mapModel.getWalkable(
             gridX + offX,
-            gridY + offY
+            gridY + offY,
           );
           var bNotOutRange =
             Math.ceil(Math.sqrt(offX * offX + offY * offY)) <= attack;
@@ -72,7 +72,7 @@ export class NpcAttackHelper {
   public static getAttackPoint(
     info: CampaignNode,
     star: Laya.Point,
-    end: Laya.Point
+    end: Laya.Point,
   ): Laya.Point {
     var attack: number = info.handlerRange;
     attack = attack * Tiles.WIDTH;
@@ -82,7 +82,7 @@ export class NpcAttackHelper {
       tar = StringHelper.interpolate(star, end, i / leng);
       var b: boolean = CampaignManager.Instance.mapModel.getWalkable(
         parseInt((tar.x / 20).toString()),
-        parseInt((tar.y / 20).toString())
+        parseInt((tar.y / 20).toString()),
       );
       if (b) {
         break;

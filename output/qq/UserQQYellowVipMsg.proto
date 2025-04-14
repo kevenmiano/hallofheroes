@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.qq;
+
+message UserQQYellowVipMsg {
+  bool isYellowVip = 1;
+  bool isYellowYearVip = 2;
+  int32 yellowVipLevel = 3;
+  bool isYellowHighVip = 4;
+  int32 yellowVipPayWay = 5;
+  repeated int32 giftState = 6;
+}

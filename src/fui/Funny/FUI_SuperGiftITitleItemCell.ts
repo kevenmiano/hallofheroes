@@ -1,7 +1,6 @@
-// TODO FIX
-
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_SuperGiftDiaComList from "./FUI_SuperGiftDiaComList";
 
 export default class FUI_SuperGiftITitleItemCell extends fgui.GComponent {

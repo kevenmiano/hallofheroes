@@ -1,7 +1,9 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_Btn_Common_2 from "./FUI_Btn_Common_2";
+
+//@ts-expect-error: External dependencies
 import FUI_CommonBtn from "./FUI_CommonBtn";
 
 export default class FUI_CommonFrame extends fgui.GLabel {
@@ -14,8 +16,8 @@ export default class FUI_CommonFrame extends fgui.GLabel {
   public gTitleBg: fgui.GGroup;
   public closeBtn: FUI_CommonBtn;
   public helpBtn: FUI_CommonBtn;
-  public gTitle: fgui.GGroup;
   public static URL: string = "ui://og5jeos3129oeihy";
+  public gTitle: fgui.GGroup;
 
   public static createInstance(): FUI_CommonFrame {
     return <FUI_CommonFrame>fgui.UIPackage.createObject("Base", "CommonFrame");

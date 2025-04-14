@@ -89,7 +89,7 @@ export default class RoomHallRight extends BaseFguiCom {
     this.btnStart.soundRes = SoundIds.CAMPAIGN_READY_SOUND;
     this.btnStart.setCommonClickInternal();
     this.txtEnterCountDesc.text = LangManager.Instance.GetTranslation(
-      "PveSelectCampaignWnd.enterCountTxt"
+      "PveSelectCampaignWnd.enterCountTxt",
     );
 
     for (let index = 0; index < this.optList.numChildren; index++) {
@@ -117,7 +117,7 @@ export default class RoomHallRight extends BaseFguiCom {
   public refreshRoomInfo() {
     this.txtRoomNum.text = LangManager.Instance.GetTranslation(
       "public.No",
-      this.roomInfo.id
+      this.roomInfo.id,
     );
     this.txtCapacity.text =
       this.roomInfo.playerCount + " / " + this.roomInfo.capacity;
@@ -127,7 +127,7 @@ export default class RoomHallRight extends BaseFguiCom {
         "public.level4",
         "<br>",
         this.roomInfo.mapTemplate.MinLevel,
-        this.roomInfo.mapTemplate.MaxLevel
+        this.roomInfo.mapTemplate.MaxLevel,
       );
       if (
         this.roomInfo.mapTemplate.MinLevel == this.roomInfo.mapTemplate.MaxLevel
@@ -136,7 +136,7 @@ export default class RoomHallRight extends BaseFguiCom {
           "<br>" +
           LangManager.Instance.GetTranslation(
             "public.level3",
-            this.roomInfo.mapTemplate.MinLevel
+            this.roomInfo.mapTemplate.MinLevel,
           );
       }
     }
@@ -185,7 +185,7 @@ export default class RoomHallRight extends BaseFguiCom {
     } else {
       let player = this.roomInfo.getPlayerByUserId(
         this.model.selfArmy.userId,
-        ""
+        "",
       ) as CampaignArmy;
       if (player) {
         switch (player.roomState) {
@@ -258,10 +258,10 @@ export default class RoomHallRight extends BaseFguiCom {
       let item = this.optList.addItemFromPool() as fgui.GButton;
       item.icon = fgui.UIPackage.getItemURL(
         EmWindow.RoomHall,
-        "Btn_L_StageSwitch"
+        "Btn_L_StageSwitch",
       );
       item.title = LangManager.Instance.GetTranslation(
-        "RoomHall.btn.changeCampaign"
+        "RoomHall.btn.changeCampaign",
       );
       this.optList.columnGap = -5;
     } else {
@@ -294,7 +294,7 @@ export default class RoomHallRight extends BaseFguiCom {
 
   public refreshEnterCount() {
     let tempArr = CampaignMapModel.getCampaignCountArr(
-      this.roomInfo.mapTemplate
+      this.roomInfo.mapTemplate,
     );
     this.txtEnterCount.text = tempArr[0] + " / " + tempArr[1];
   }
@@ -315,14 +315,14 @@ export default class RoomHallRight extends BaseFguiCom {
   private btnIncomeClick() {
     if (this.btnCancel && this.btnCancel.visible == true) {
       let tip: string = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.btntip"
+        "room.view.pve.RoomRightView.btntip",
       );
       if (
         this.roomInfo.houseOwnerId == this.model.selfArmy.userId &&
         this.roomInfo.roomState == RoomState.STATE_COMPETEING
       ) {
         tip = LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.btntip2"
+          "room.view.pve.RoomRightView.btntip2",
         );
       }
       MessageTipManager.Instance.show(tip);
@@ -333,13 +333,13 @@ export default class RoomHallRight extends BaseFguiCom {
 
     if (this.isSpecialFB) {
       let tempArr = CampaignMapModel.getCampaignCountArr(
-        this.roomInfo.mapTemplate
+        this.roomInfo.mapTemplate,
       );
       if (tempArr[0] <= 0) {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "room.view.pve.RoomRightView.notEnoughIncome"
-          )
+            "room.view.pve.RoomRightView.notEnoughIncome",
+          ),
         );
       }
     } else {
@@ -348,8 +348,8 @@ export default class RoomHallRight extends BaseFguiCom {
         if (!flag) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "room.view.pve.RoomRightView.notEnoughIncome"
-            )
+              "room.view.pve.RoomRightView.notEnoughIncome",
+            ),
           );
         }
       }
@@ -358,7 +358,7 @@ export default class RoomHallRight extends BaseFguiCom {
     if (!sel) {
       if (this.showCancelBtnIncomeTip) {
         let content = LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward"
+          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.SIMPLE_ALERT,
@@ -374,7 +374,7 @@ export default class RoomHallRight extends BaseFguiCom {
               this.clickBtnIncomeState = 0;
               this.refreshIncomeStateWithClick(false);
             }
-          }
+          },
         );
       } else {
         this.clickBtnIncomeState = 0;
@@ -389,7 +389,7 @@ export default class RoomHallRight extends BaseFguiCom {
   private refreshIncomeStateWithClick(sel: boolean = true) {
     if (sel) {
       let tempArr = CampaignMapModel.getCampaignCountArr(
-        this.roomInfo.mapTemplate
+        this.roomInfo.mapTemplate,
       );
       sel = tempArr[0] > 0;
     }
@@ -410,7 +410,7 @@ export default class RoomHallRight extends BaseFguiCom {
         sel = false;
       } else {
         let tempArr = CampaignMapModel.getCampaignCountArr(
-          this.roomInfo.mapTemplate
+          this.roomInfo.mapTemplate,
         );
         sel = tempArr[0] > 0;
       }
@@ -422,7 +422,7 @@ export default class RoomHallRight extends BaseFguiCom {
     this.imgIncomeTick.visible = b;
     this.model.isNoGet = !b;
     let player: CampaignArmy = this.roomInfo.getPlayerByUserId(
-      this.model.selfArmy.userId
+      this.model.selfArmy.userId,
     );
     if (player) {
       player.isNoGet = !b;
@@ -446,12 +446,12 @@ export default class RoomHallRight extends BaseFguiCom {
    */
   private btnQuickInviteClick() {
     let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
     );
     if (num == 0) {
       if (this.model.thane.smallBugleFreeCount <= 0) {
         let str = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(str);
         this.ctrl.quickBuySmallBugle();
@@ -495,28 +495,28 @@ export default class RoomHallRight extends BaseFguiCom {
       let str: string = "";
       let campaignbufferData = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_campaignbuffer,
-        81101
+        81101,
       ) as t_s_campaignbufferData;
       if (campaignbufferData) str = campaignbufferData.DescriptionLang;
       let campaignContent: string = LangManager.Instance.GetTranslation(
         "room.view.pve.RoomRightView.content",
-        str
+        str,
       );
       let trailContent: string = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.content1"
+        "room.view.pve.RoomRightView.content1",
       );
       let kingTowerConter: string = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.content2"
+        "room.view.pve.RoomRightView.content2",
       );
       let isTaila: boolean = this.roomInfo.mapTemplate.isTaila;
       let tailaContent: string = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.content6"
+        "room.view.pve.RoomRightView.content6",
       );
       let content: string = isTrailCampaign
         ? trailContent
         : isKingTowerCampaign
-        ? kingTowerConter
-        : campaignContent;
+          ? kingTowerConter
+          : campaignContent;
       // if (isTaila) {
       // 	MessageTipManager.Instance.show(tailaContent);
       // 	this.btnStart.enabled = true;
@@ -529,14 +529,14 @@ export default class RoomHallRight extends BaseFguiCom {
         content,
         null,
         null,
-        this.__pveStartClick.bind(this)
+        this.__pveStartClick.bind(this),
       );
       // }
     } else {
       if (this.checkUseImperialCrusadeOrder()) return;
       if (this.showThewAlert(this.startAlertBack.bind(this))) return;
       HomeWnd.Instance.getMainToolBar().switchToolsBarState(
-        MainToolBar.PVE_ROOM_START
+        MainToolBar.PVE_ROOM_START,
       );
       LayerMgr.Instance.clearnGameDynamic();
       this.ctrl.senPlayerStart();
@@ -548,7 +548,7 @@ export default class RoomHallRight extends BaseFguiCom {
       if (this.checkUseImperialCrusadeOrder()) return;
       if (this.showThewAlert(this.startAlertBack.bind(this))) return;
       HomeWnd.Instance.getMainToolBar().switchToolsBarState(
-        MainToolBar.PVE_ROOM_START
+        MainToolBar.PVE_ROOM_START,
       );
       this.ctrl.senPlayerStart();
     } else {
@@ -562,10 +562,10 @@ export default class RoomHallRight extends BaseFguiCom {
       this.model.playerInfo.isTrailOverMaxCount
     ) {
       let checkTxt: string = LangManager.Instance.GetTranslation(
-        "yishi.view.base.ThewAlertFrame.text"
+        "yishi.view.base.ThewAlertFrame.text",
       );
       let content: string = LangManager.Instance.GetTranslation(
-        "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE"
+        "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -574,7 +574,7 @@ export default class RoomHallRight extends BaseFguiCom {
         content,
         null,
         null,
-        callback
+        callback,
       );
       return true;
     }
@@ -590,13 +590,13 @@ export default class RoomHallRight extends BaseFguiCom {
     }
     let flag: boolean = this.model.playerInfo.multiCopyCount < 1;
     let content: string = LangManager.Instance.GetTranslation(
-      "yishi.view.base.ThewAlertFrame.disclist01"
+      "yishi.view.base.ThewAlertFrame.disclist01",
     );
     if (this.roomInfo.mapTemplate.isTaila) {
       // 泰拉神庙
       if (this.playerInfo.tailaCount <= 0) {
         content = LangManager.Instance.GetTranslation(
-          "yishi.view.base.ThewAlertFrame.disclist07"
+          "yishi.view.base.ThewAlertFrame.disclist07",
         );
         let preDate: Date = new Date(SharedManager.Instance.tailaCheckDate);
         let now: Date = new Date();
@@ -610,7 +610,7 @@ export default class RoomHallRight extends BaseFguiCom {
           outdate = true;
         if (outdate) {
           let checkTxt = LangManager.Instance.GetTranslation(
-            "yishi.view.base.ThewAlertFrame.text"
+            "yishi.view.base.ThewAlertFrame.text",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -619,7 +619,7 @@ export default class RoomHallRight extends BaseFguiCom {
             content,
             null,
             null,
-            callBack
+            callBack,
           );
         }
         return outdate;
@@ -630,7 +630,7 @@ export default class RoomHallRight extends BaseFguiCom {
       // 王者之塔
       if (KingTowerManager.Instance.kingTowerInfo.kingCount <= 0) {
         content = LangManager.Instance.GetTranslation(
-          "yishi.view.base.KingTowerManager.disclistTRIAL_CHOSE"
+          "yishi.view.base.KingTowerManager.disclistTRIAL_CHOSE",
         );
         let preDate: Date = new Date(SharedManager.Instance.kingTowerCheckDate);
         let now: Date = new Date();
@@ -644,7 +644,7 @@ export default class RoomHallRight extends BaseFguiCom {
           outdate = true;
         if (outdate) {
           let checkTxt = LangManager.Instance.GetTranslation(
-            "yishi.view.base.ThewAlertFrame.text"
+            "yishi.view.base.ThewAlertFrame.text",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -653,7 +653,7 @@ export default class RoomHallRight extends BaseFguiCom {
             content,
             null,
             null,
-            callBack
+            callBack,
           );
         }
         return outdate;
@@ -664,10 +664,10 @@ export default class RoomHallRight extends BaseFguiCom {
       // 试炼之塔
       if (this.model.playerInfo.trialCount <= 0) {
         content = LangManager.Instance.GetTranslation(
-          "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE"
+          "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE",
         );
         let preDate: Date = new Date(
-          SharedManager.Instance.trailTowerCheckDate
+          SharedManager.Instance.trailTowerCheckDate,
         );
         let now: Date = new Date();
         let outdate: boolean = false;
@@ -680,7 +680,7 @@ export default class RoomHallRight extends BaseFguiCom {
           outdate = true;
         if (outdate) {
           let checkTxt = LangManager.Instance.GetTranslation(
-            "yishi.view.base.ThewAlertFrame.text"
+            "yishi.view.base.ThewAlertFrame.text",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -689,7 +689,7 @@ export default class RoomHallRight extends BaseFguiCom {
             content,
             null,
             null,
-            callBack
+            callBack,
           );
         }
         return outdate;
@@ -709,7 +709,7 @@ export default class RoomHallRight extends BaseFguiCom {
         outdate = true;
       if (flag && outdate) {
         let checkTxt = LangManager.Instance.GetTranslation(
-          "yishi.view.base.ThewAlertFrame.text"
+          "yishi.view.base.ThewAlertFrame.text",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -718,7 +718,7 @@ export default class RoomHallRight extends BaseFguiCom {
           content,
           null,
           null,
-          callBack
+          callBack,
         );
       }
       return flag && outdate;
@@ -773,7 +773,7 @@ export default class RoomHallRight extends BaseFguiCom {
     }
     SharedManager.Instance.saveRoomCheck();
     HomeWnd.Instance.getMainToolBar().switchToolsBarState(
-      MainToolBar.PVE_ROOM_START
+      MainToolBar.PVE_ROOM_START,
     );
   }
 
@@ -792,7 +792,7 @@ export default class RoomHallRight extends BaseFguiCom {
       // }
       if (callBack && parseInt(this.txtEnterCount.text.split("/")[0]) <= 0) {
         content = LangManager.Instance.GetTranslation(
-          "yishi.view.base.KingTowerManager.disclistTRIAL_CHOSE"
+          "yishi.view.base.KingTowerManager.disclistTRIAL_CHOSE",
         );
         let preDate: Date = new Date(SharedManager.Instance.kingTowerCheckDate);
         let now: Date = new Date();
@@ -806,7 +806,7 @@ export default class RoomHallRight extends BaseFguiCom {
           outdate = true;
         if (outdate) {
           let checkTxt = LangManager.Instance.GetTranslation(
-            "yishi.view.base.ThewAlertFrame.text"
+            "yishi.view.base.ThewAlertFrame.text",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -815,7 +815,7 @@ export default class RoomHallRight extends BaseFguiCom {
             content,
             null,
             null,
-            callBack
+            callBack,
           );
         }
         return outdate;
@@ -829,10 +829,10 @@ export default class RoomHallRight extends BaseFguiCom {
       // }
       if (callBack && parseInt(this.txtEnterCount.text.split("/")[0]) <= 0) {
         content = LangManager.Instance.GetTranslation(
-          "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE"
+          "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE",
         );
         let preDate: Date = new Date(
-          SharedManager.Instance.trailTowerCheckDate
+          SharedManager.Instance.trailTowerCheckDate,
         );
         let now: Date = new Date();
         let outdate: boolean = false;
@@ -845,7 +845,7 @@ export default class RoomHallRight extends BaseFguiCom {
           outdate = true;
         if (outdate) {
           let checkTxt = LangManager.Instance.GetTranslation(
-            "yishi.view.base.ThewAlertFrame.text"
+            "yishi.view.base.ThewAlertFrame.text",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -854,7 +854,7 @@ export default class RoomHallRight extends BaseFguiCom {
             content,
             null,
             null,
-            callBack
+            callBack,
           );
         }
         return outdate;
@@ -880,10 +880,10 @@ export default class RoomHallRight extends BaseFguiCom {
       this.btnStart.enabled = true;
 
       let content: string = LangManager.Instance.GetTranslation(
-        "RoomHall.ImperialCrusadeOrderNoEnoughTip"
+        "RoomHall.ImperialCrusadeOrderNoEnoughTip",
       );
       let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ItemID.IMPERIAL_CRUSADE_ORDER
+        ItemID.IMPERIAL_CRUSADE_ORDER,
       );
       let goodsCount: string =
         LangManager.Instance.GetTranslation("MazeShopWnd.HasNumTxt") + num;
@@ -916,7 +916,7 @@ export default class RoomHallRight extends BaseFguiCom {
     let mapTemplate = this.roomInfo.mapTemplate;
     if (!this.roomInfo.mapTemplate) {
       str = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.command02"
+        "room.view.pve.RoomRightView.command02",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -926,7 +926,7 @@ export default class RoomHallRight extends BaseFguiCom {
       this.roomInfo.mapTemplate.MinLevel > this.model.thane.grades
     ) {
       str = LangManager.Instance.GetTranslation(
-        "room.view.pve.RoomRightView.command03"
+        "room.view.pve.RoomRightView.command03",
       );
       MessageTipManager.Instance.show(str);
       return;
@@ -949,11 +949,11 @@ export default class RoomHallRight extends BaseFguiCom {
       if (maxIndex < difficultyGrade - 1) {
         let diffGrade: string =
           KingTowerManager.Instance.kingTowerInfo.difficultyStep(
-            difficultyGrade - 1
+            difficultyGrade - 1,
           );
         str = LangManager.Instance.GetTranslation(
           "room.view.pve.RoomRightView.kingtower.difficulty",
-          diffGrade
+          diffGrade,
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -968,7 +968,7 @@ export default class RoomHallRight extends BaseFguiCom {
         mapTemplate.DifficutlyGrade == 2
       ) {
         str = LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.command04"
+          "room.view.pve.RoomRightView.command04",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -978,7 +978,7 @@ export default class RoomHallRight extends BaseFguiCom {
         mapTemplate.DifficutlyGrade == 3
       ) {
         str = LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.command06"
+          "room.view.pve.RoomRightView.command06",
         );
         MessageTipManager.Instance.show(str);
         return;
@@ -1005,15 +1005,15 @@ export default class RoomHallRight extends BaseFguiCom {
     if (pos == -1) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "RoomHall.ImperialCrusadeOrderNoEnough"
-        )
+          "RoomHall.ImperialCrusadeOrderNoEnough",
+        ),
       );
     } else {
       let content: string = LangManager.Instance.GetTranslation(
-        "RoomHall.ImperialCrusadeOrderNoEnoughTip"
+        "RoomHall.ImperialCrusadeOrderNoEnoughTip",
       );
       let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ItemID.IMPERIAL_CRUSADE_ORDER
+        ItemID.IMPERIAL_CRUSADE_ORDER,
       );
       let goodsCount: string =
         LangManager.Instance.GetTranslation("MazeShopWnd.HasNumTxt") + num;
@@ -1051,7 +1051,7 @@ export default class RoomHallRight extends BaseFguiCom {
     }
     if (pos == -1) {
       let content: string = LangManager.Instance.GetTranslation(
-        "RoomHall.doubleExipNotEnoughTip"
+        "RoomHall.doubleExipNotEnoughTip",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -1064,20 +1064,20 @@ export default class RoomHallRight extends BaseFguiCom {
           if (!b) return;
           let info: ShopGoodsInfo =
             TempleteManager.Instance.getShopTempInfoByItemId(
-              ItemID.DOUBLE_EXP_PROP
+              ItemID.DOUBLE_EXP_PROP,
             );
           FrameCtrlManager.Instance.open(EmWindow.BuyFrameI, {
             info: info,
             count: 1,
           });
-        }
+        },
       );
     } else {
       let content: string = LangManager.Instance.GetTranslation(
-        "RoomHall.doubleExipUseTip"
+        "RoomHall.doubleExipUseTip",
       );
       let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ItemID.DOUBLE_EXP_PROP
+        ItemID.DOUBLE_EXP_PROP,
       );
       let goodsCount: string =
         LangManager.Instance.GetTranslation("MazeShopWnd.HasNumTxt") + num;
@@ -1108,7 +1108,7 @@ export default class RoomHallRight extends BaseFguiCom {
       RoomSocketOuterManager.sendRoomState(RoomState.STATE_USEING);
     } else {
       RoomSocketOuterManager.sendPlayerState(
-        RoomPlayerState.PLAYER_STATE_WAITE
+        RoomPlayerState.PLAYER_STATE_WAITE,
       );
     }
     if (!this.ctrl.openCrossPve) {
@@ -1120,7 +1120,7 @@ export default class RoomHallRight extends BaseFguiCom {
 
   public get ctrl(): RoomHallCtrl {
     let ctrl = FrameCtrlManager.Instance.getCtrl(
-      EmWindow.RoomHall
+      EmWindow.RoomHall,
     ) as RoomHallCtrl;
     return ctrl;
   }

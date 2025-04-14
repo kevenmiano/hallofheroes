@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerAASRefreshMsg {
+  int32 aasOnlineTime = 1;
+  bool isCloseAAS = 2;
+  bool sysSwitch = 3;
+}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { LoginManager } from "../../../game/module/login/LoginManager";
 import { ChannelSTR } from "../SDKConfig";
 import WanChannel from "../wan/WanChannel";
@@ -16,7 +15,7 @@ export default class FccChannel extends WanChannel {
     pass: string,
     site: string,
     siteId: number,
-    appData: any = null
+    appData: any = null,
   ) {
     this.platId = 5;
     LoginManager.Instance.c2s_createLoginReq(
@@ -26,7 +25,7 @@ export default class FccChannel extends WanChannel {
       siteId,
       ChannelSTR.FCC,
       this.platId,
-      appData
+      appData,
     ); //请求玩家列表
   }
 

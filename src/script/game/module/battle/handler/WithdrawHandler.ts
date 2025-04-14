@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -20,106 +19,138 @@ import { MessageTipManager } from "../../../manager/MessageTipManager";
 import FUIHelper from "../../../utils/FUIHelper";
 import BattleWnd from "../BattleWnd";
 
+//@ts-expect-error: External dependencies
 import WithdrawRespMsg = com.road.yishi.proto.battle.WithdrawRespMsg;
 import WithdrawVoteInitiatorView from "../ui/withdraw/WithdrawVoteInitiatorView";
 import WithdrawVoteView from "../ui/withdraw/WithdrawVoteView";
 export class WithdrawHandler {
-    private wnd: BattleWnd;
-    private comWithdrawVote: WithdrawVoteView;
-    private comWithdrawVoteInitiator: WithdrawVoteInitiatorView;
-    private withdrawVotePos: fgui.GGraph;
-    constructor(wnd: BattleWnd) {
-        this.wnd = wnd;
+  private wnd: BattleWnd;
+  private comWithdrawVote: WithdrawVoteView;
+  private comWithdrawVoteInitiator: WithdrawVoteInitiatorView;
+  private withdrawVotePos: fgui.GGraph;
+  constructor(wnd: BattleWnd) {
+    this.wnd = wnd;
 
-        if (!this.battleModel.isEnableWithdraw) return;
+    if (!this.battleModel.isEnableWithdraw) return;
 
-        this.initView()
-        this.addEvent()
-    }
+    this.initView();
+    this.addEvent();
+  }
 
-    private addEvent() {
-        ServerDataManager.listen(S2CProtocol.U_BATTLE_WITHDRAW_RSP, this, this.onBattleWithdrawRsp);
-    }
+  private addEvent() {
+    ServerDataManager.listen(
+      S2CProtocol.U_BATTLE_WITHDRAW_RSP,
+      this,
+      this.onBattleWithdrawRsp,
+    );
+  }
 
-    private removeEvent() {
-        ServerDataManager.cancel(S2CProtocol.U_BATTLE_WITHDRAW_RSP, this, this.onBattleWithdrawRsp);
-    }
+  private removeEvent() {
+    ServerDataManager.cancel(
+      S2CProtocol.U_BATTLE_WITHDRAW_RSP,
+      this,
+      this.onBattleWithdrawRsp,
+    );
+  }
 
-    private initView() {
-        this.withdrawVotePos = this.wnd["withdrawVotePos"]
-        this.refresh()
-    }
+  private initView() {
+    this.withdrawVotePos = this.wnd["withdrawVotePos"];
+    this.refresh();
+  }
 
-    private refresh() {
-        
-    }
-    
-    private onBattleWithdrawRsp(pkg: PackageIn) {
-        let msg: WithdrawRespMsg = pkg.readBody(WithdrawRespMsg) as WithdrawRespMsg;
-        Logger.battle("收到撤退", msg)
+  private refresh() {}
 
-        if (msg.result != 1) {
-            if (msg.info && msg.info.length > 0) {
-                this.battleModel.withdrawInfoList = msg.info;
-                this.battleModel.withdrawCountdown = msg.countdown;
-                let selfWithdraw = this.battleModel.selfHero.userId == msg.info[0].userId;
-                this.addWithdrawVoteInfo(selfWithdraw);
-            }
-        }
+  private onBattleWithdrawRsp(pkg: PackageIn) {
+    let msg: WithdrawRespMsg = pkg.readBody(WithdrawRespMsg) as WithdrawRespMsg;
+    Logger.battle("收到撤退", msg);
 
-        // 0未出 1成功 2失败
-        if (msg.result != 0) {
-            this.removeWithdrawVote();
-            if (msg.result == 1) {
-                MessageTipManager.Instance.show(LangManager.Instance.GetTranslation("battle.view.ui.withdraw.success"), null, true);
-            } else if (msg.result == 2) {
-                MessageTipManager.Instance.show(LangManager.Instance.GetTranslation("battle.view.ui.withdraw.failed"), null, true);
-            }
-        }
-    }
-    
-    /**
-     * @param selfWithdraw 是否是自己发起的撤退
-     */
-    public addWithdrawVoteInfo(selfWithdraw: boolean) {
-        if (selfWithdraw) {
-            if (!this.comWithdrawVoteInitiator) {
-                this.comWithdrawVoteInitiator = FUIHelper.createFUIInstance(EmPackName.Battle, "WithdrawVoteInitiatorView");
-                this.wnd.getContentPane().addChild(this.comWithdrawVoteInitiator);
-                this.comWithdrawVoteInitiator.setXY(this.withdrawVotePos.x, this.withdrawVotePos.y)
-            }
-            this.comWithdrawVoteInitiator.refresh()
-        } else {
-            if (!this.comWithdrawVote) {
-                this.comWithdrawVote = FUIHelper.createFUIInstance(EmPackName.Battle, "WithdrawVoteView");
-                this.wnd.getContentPane().addChild(this.comWithdrawVote);
-                this.comWithdrawVote.setXY(this.withdrawVotePos.x, this.withdrawVotePos.y)
-            }
-            this.comWithdrawVote.refresh()
-        }
+    if (msg.result != 1) {
+      if (msg.info && msg.info.length > 0) {
+        this.battleModel.withdrawInfoList = msg.info;
+        this.battleModel.withdrawCountdown = msg.countdown;
+        let selfWithdraw =
+          this.battleModel.selfHero.userId == msg.info[0].userId;
+        this.addWithdrawVoteInfo(selfWithdraw);
+      }
     }
 
-    public removeWithdrawVote() {
-        if (this.comWithdrawVote) {
-            this.comWithdrawVote.dispose();
-            this.comWithdrawVote = null;
-        }
-        if (this.comWithdrawVoteInitiator) {
-            this.comWithdrawVoteInitiator.dispose();
-            this.comWithdrawVoteInitiator = null;
-        }
+    // 0未出 1成功 2失败
+    if (msg.result != 0) {
+      this.removeWithdrawVote();
+      if (msg.result == 1) {
+        MessageTipManager.Instance.show(
+          LangManager.Instance.GetTranslation(
+            "battle.view.ui.withdraw.success",
+          ),
+          null,
+          true,
+        );
+      } else if (msg.result == 2) {
+        MessageTipManager.Instance.show(
+          LangManager.Instance.GetTranslation("battle.view.ui.withdraw.failed"),
+          null,
+          true,
+        );
+      }
     }
-    
-    public get showWithdrawVote(): boolean {
-        return Boolean(this.comWithdrawVote) || Boolean(this.comWithdrawVoteInitiator)
-    }
-    
-    private get battleModel(): BattleModel {
-        return BattleManager.Instance.battleModel;
-    }
+  }
 
-    public dispose() {
-        this.removeEvent();
-        this.removeWithdrawVote();
+  /**
+   * @param selfWithdraw 是否是自己发起的撤退
+   */
+  public addWithdrawVoteInfo(selfWithdraw: boolean) {
+    if (selfWithdraw) {
+      if (!this.comWithdrawVoteInitiator) {
+        this.comWithdrawVoteInitiator = FUIHelper.createFUIInstance(
+          EmPackName.Battle,
+          "WithdrawVoteInitiatorView",
+        );
+        this.wnd.getContentPane().addChild(this.comWithdrawVoteInitiator);
+        this.comWithdrawVoteInitiator.setXY(
+          this.withdrawVotePos.x,
+          this.withdrawVotePos.y,
+        );
+      }
+      this.comWithdrawVoteInitiator.refresh();
+    } else {
+      if (!this.comWithdrawVote) {
+        this.comWithdrawVote = FUIHelper.createFUIInstance(
+          EmPackName.Battle,
+          "WithdrawVoteView",
+        );
+        this.wnd.getContentPane().addChild(this.comWithdrawVote);
+        this.comWithdrawVote.setXY(
+          this.withdrawVotePos.x,
+          this.withdrawVotePos.y,
+        );
+      }
+      this.comWithdrawVote.refresh();
     }
+  }
+
+  public removeWithdrawVote() {
+    if (this.comWithdrawVote) {
+      this.comWithdrawVote.dispose();
+      this.comWithdrawVote = null;
+    }
+    if (this.comWithdrawVoteInitiator) {
+      this.comWithdrawVoteInitiator.dispose();
+      this.comWithdrawVoteInitiator = null;
+    }
+  }
+
+  public get showWithdrawVote(): boolean {
+    return (
+      Boolean(this.comWithdrawVote) || Boolean(this.comWithdrawVoteInitiator)
+    );
+  }
+
+  private get battleModel(): BattleModel {
+    return BattleManager.Instance.battleModel;
+  }
+
+  public dispose() {
+    this.removeEvent();
+    this.removeWithdrawVote();
+  }
 }

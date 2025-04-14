@@ -1,4 +1,4 @@
-// TODO FIX
+//@ts-expect-error: External dependencies
 import FUI_scollText from "../../../fui/Skill/FUI_scollText";
 import LangManager from "../../core/lang/LangManager";
 import { FormularySets } from "../../core/utils/FormularySets";
@@ -77,14 +77,14 @@ export class TalentItemTips extends BaseTips {
   public OnInitWind() {
     super.OnInitWind();
     this.studyBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnStudy"
+      "armyII.viewII.skill.btnStudy",
     );
     this.upgradeBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnUpgrade"
+      "armyII.viewII.skill.btnUpgrade",
     );
     this.txt_cost.text = LangManager.Instance.GetTranslation(
       "talent.gradeCondition2",
-      1
+      1,
     );
     this.skillEffectRichText = new ScrollTextField(this.desc);
     this.nextSkillEffectRichText = new ScrollTextField(this.nextSkillEffect);
@@ -103,20 +103,20 @@ export class TalentItemTips extends BaseTips {
       false;
     this.contentPane.getController("c1").selectedIndex = 1;
     this.txt_name.text = LangManager.Instance.GetTranslation(
-      "FightSkillEdit.txt9"
+      "FightSkillEdit.txt9",
     );
     this.txt_name.color = this.skillName2.color = "#ffdc57";
     this.skillEffectRichText.text =
       LangManager.Instance.GetTranslation("talent.levelupDesc");
     this.txt_level.text = LangManager.Instance.GetTranslation(
       "public.level3",
-      this.thane.talentData.talentGrade
+      this.thane.talentData.talentGrade,
     );
 
     let gradeInfo: t_s_upgradetemplateData =
       TempleteManager.Instance.getTemplateByTypeAndLevel(
         this.thane.talentData.talentGrade + 1,
-        21
+        21,
       );
     let ismax: boolean = false;
     if (gradeInfo) {
@@ -129,24 +129,24 @@ export class TalentItemTips extends BaseTips {
         LangManager.Instance.GetTranslation("talent.levelupDesc");
       this.item2.getChild("imgBg").visible = false;
       this.skillName2.text = LangManager.Instance.GetTranslation(
-        "FightSkillEdit.txt9"
+        "FightSkillEdit.txt9",
       );
       this.txt_lv1.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        this.thane.talentData.talentGrade
+        this.thane.talentData.talentGrade,
       );
       this.txt_lv2.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        this.thane.talentData.talentGrade + 1
+        this.thane.talentData.talentGrade + 1,
       );
 
       this.upCostGoldNumber.text = FormularySets.toStringSelf(
         this._nextLevelNeedCoin,
-        GeniusPanel.STEP
+        GeniusPanel.STEP,
       );
       this.upCostExpNumber.text = FormularySets.toStringSelf(
         this._nextLevelExp,
-        GeniusPanel.STEP
+        GeniusPanel.STEP,
       );
       if (ResourceManager.Instance.gold.count >= this._nextLevelNeedCoin) {
         this.upCostGoldNumber.color = "#FFECC6";
@@ -175,10 +175,10 @@ export class TalentItemTips extends BaseTips {
       this.levelupBox.visible = true;
     } else {
       this.upCostGoldNumber.text = LangManager.Instance.GetTranslation(
-        "public.defaultnumber"
+        "public.defaultnumber",
       );
       this.upCostExpNumber.text = LangManager.Instance.GetTranslation(
-        "public.defaultnumber"
+        "public.defaultnumber",
       );
       this.upCostGoldNumber.color = "#FF2E2E";
       this.upCostExpNumber.color = "#FF2E2E";
@@ -200,18 +200,18 @@ export class TalentItemTips extends BaseTips {
    */
   private showCurSkillInfo(info: SkillInfo) {
     this.selectTalentItem.icon = IconFactory.getTecIconByIcon(
-      info.templateInfo.Icons
+      info.templateInfo.Icons,
     );
     this.txt_name.text = info.templateInfo.SkillTemplateName;
     this.txt_level.text = LangManager.Instance.GetTranslation(
       "public.level3",
-      info.templateInfo.Grades
+      info.templateInfo.Grades,
     );
     this.skillEffectRichText.text = info.templateInfo.SkillDescription;
     if (info.templateInfo.PropCoolDown > 0) {
       this.txt_cold.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown01",
-        info.templateInfo.PropCoolDown * 0.001
+        info.templateInfo.PropCoolDown * 0.001,
       );
     }
   }
@@ -225,18 +225,18 @@ export class TalentItemTips extends BaseTips {
     this.item2.icon = IconFactory.getTecIconByIcon(next.Icons);
     this.txt_lv2.text = LangManager.Instance.GetTranslation(
       "public.level3",
-      next.Grades
+      next.Grades,
     );
     if (next.PropCoolDown > 0) {
       this.nextSkillCold.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown01",
-        next.PropCoolDown * 0.001
+        next.PropCoolDown * 0.001,
       );
     }
     if (Number(next.Cost) < 0) {
       this.nextSkillCost.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown02",
-        Math.abs(Number(next.Cost))
+        Math.abs(Number(next.Cost)),
       );
     }
     this.nextSkillEffectRichText.text = next.SkillDescription;
@@ -260,7 +260,7 @@ export class TalentItemTips extends BaseTips {
         if (nextTemp.PropCoolDown > 0) {
           this.txt_cold.text = LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.SkillTips.cooldown01",
-            nextTemp.PropCoolDown * 0.001
+            nextTemp.PropCoolDown * 0.001,
           );
         }
         this.txt_level.text = "";
@@ -283,18 +283,18 @@ export class TalentItemTips extends BaseTips {
           this.studyBox.visible = false;
           this.levelupBox.visible = true;
           this.upgradeBtn.title = LangManager.Instance.GetTranslation(
-            "armyII.viewII.skill.btnStudy"
+            "armyII.viewII.skill.btnStudy",
           );
           this.studyBtn.enabled = true;
         }
         this.txt1.text = LangManager.Instance.GetTranslation(
-          "ConsortiaSkillTowerWnd.n70"
+          "ConsortiaSkillTowerWnd.n70",
         );
         this.nextBox.visible = false;
       } else if (nextTemp) {
         this.txt_lv1.text = LangManager.Instance.GetTranslation(
           "public.level3",
-          info.templateInfo.Grades
+          info.templateInfo.Grades,
         );
         this.showNextSkillInfo(nextTemp);
         condition = info.checkTalentUpgradeCondition(nextTemp);
@@ -306,10 +306,10 @@ export class TalentItemTips extends BaseTips {
           //升级条件
           this.txt1.text =
             LangManager.Instance.GetTranslation(
-              "yishi.view.tips.TechnologyTip.nextGrade.text"
+              "yishi.view.tips.TechnologyTip.nextGrade.text",
             ) + ":";
           this.studyBtn.title = LangManager.Instance.GetTranslation(
-            "armyII.viewII.skill.btnUpgrade"
+            "armyII.viewII.skill.btnUpgrade",
           );
           this.studyBtn.enabled = false;
           this.upgradeLimit.visible = true;
@@ -322,7 +322,7 @@ export class TalentItemTips extends BaseTips {
           LangManager.Instance.GetTranslation("armyII.viewII.skill.btnStudy")
         ) {
           this.upgradeBtn.title = LangManager.Instance.GetTranslation(
-            "armyII.viewII.skill.btnUpgrade"
+            "armyII.viewII.skill.btnUpgrade",
           );
           this.x -= this.contentPane.width / 2;
         }
@@ -349,14 +349,14 @@ export class TalentItemTips extends BaseTips {
       this.selectTalentItem.icon = IconFactory.getTecIconByIcon(temp.Icons);
       this.txt_level.text = LangManager.Instance.GetTranslation(
         "public.level3",
-        temp.Grades
+        temp.Grades,
       );
       this.txt_name.text = temp.SkillTemplateName;
       // this.talentMethod.text = this.getSkillType(temp);
       if (temp.PropCoolDown > 0) {
         this.txt_cold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          temp.PropCoolDown * 0.001
+          temp.PropCoolDown * 0.001,
         );
       }
       // if (Number(temp.Cost) < 0) {
@@ -403,7 +403,7 @@ export class TalentItemTips extends BaseTips {
     var gradeInfo: t_s_upgradetemplateData =
       TempleteManager.Instance.getTemplateByTypeAndLevel(
         this.thane.talentData.talentGrade + 1,
-        21
+        21,
       );
     if (gradeInfo) {
       this._nextLevelNeedCoin = gradeInfo.TemplateId;
@@ -411,11 +411,11 @@ export class TalentItemTips extends BaseTips {
 
       this.upCostGoldNumber.text = FormularySets.toStringSelf(
         this._nextLevelNeedCoin,
-        GeniusPanel.STEP
+        GeniusPanel.STEP,
       );
       this.upCostExpNumber.text = FormularySets.toStringSelf(
         this._nextLevelExp,
-        GeniusPanel.STEP
+        GeniusPanel.STEP,
       );
       if (ResourceManager.Instance.gold.count >= this._nextLevelNeedCoin) {
         this.upCostGoldNumber.color = "#FFECC6";
@@ -440,10 +440,10 @@ export class TalentItemTips extends BaseTips {
       }
     } else {
       this.upCostGoldNumber.text = LangManager.Instance.GetTranslation(
-        "public.defaultnumber"
+        "public.defaultnumber",
       );
       this.upCostExpNumber.text = LangManager.Instance.GetTranslation(
-        "public.defaultnumber"
+        "public.defaultnumber",
       );
       this.upCostGoldNumber.color = "#FF2E2E";
       this.upCostExpNumber.color = "#FF2E2E";
@@ -456,7 +456,7 @@ export class TalentItemTips extends BaseTips {
     //下一天赋等级
     else
       this.txt_lv1.text = LangManager.Instance.GetTranslation(
-        "public.defaultnumber"
+        "public.defaultnumber",
       );
   }
 
@@ -468,7 +468,7 @@ export class TalentItemTips extends BaseTips {
     NotificationManager.Instance.addEventListener(
       TalentEvent.TALENT_UPGRADE,
       this.__talenChangeHanler,
-      this
+      this,
     );
     // NotificationManager.Instance.addEventListener(TalentEvent.SELECT_TALENT, this.__talenSelectHanler, this);
   }
@@ -479,7 +479,7 @@ export class TalentItemTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       TalentEvent.TALENT_UPGRADE,
       this.__talenChangeHanler,
-      this
+      this,
     );
     // NotificationManager.Instance.removeEventListener(TalentEvent.SELECT_TALENT, this.__talenSelectHanler, this);
   }
@@ -490,16 +490,16 @@ export class TalentItemTips extends BaseTips {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
           "armyII.SkillFrame.AlertMsg",
-          limitGrade
-        )
+          limitGrade,
+        ),
       );
       return;
     }
     if (ResourceManager.Instance.gold.count < this._nextLevelNeedCoin) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "armyII.viewII.talent.TalentGradeUpFailed01"
-        )
+          "armyII.viewII.talent.TalentGradeUpFailed01",
+        ),
       );
       return;
     }
@@ -507,8 +507,8 @@ export class TalentItemTips extends BaseTips {
     if (this.thane.gp < this._nextLevelExp) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "armyII.viewII.talent.TalentGradeUpFailed02"
-        )
+          "armyII.viewII.talent.TalentGradeUpFailed02",
+        ),
       );
       return;
     }
@@ -516,7 +516,7 @@ export class TalentItemTips extends BaseTips {
     ArmyManager.Instance.addEventListener(
       TalentEvent.TALENT_GRADUP_SUCC,
       this.__talentGradeUpSucc,
-      this
+      this,
     );
     ArmySocketOutManager.sendUpTalentGrade();
   }
@@ -531,15 +531,15 @@ export class TalentItemTips extends BaseTips {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
             "armyII.SkillFrame.AlertMsg",
-            limitGrade
-          )
+            limitGrade,
+          ),
         );
         return;
       }
       if (this.selectTalentData && this.selectTalentData.nextTemplateInfo) {
         ArmySocketOutManager.sendAddSkillpoint(
           this.selectTalentData.nextTemplateInfo.TemplateId,
-          1
+          1,
         );
       }
     }
@@ -555,15 +555,15 @@ export class TalentItemTips extends BaseTips {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
           "armyII.SkillFrame.AlertMsg",
-          limitGrade
-        )
+          limitGrade,
+        ),
       );
     }
     if (ResourceManager.Instance.gold.count < this._nextLevelNeedCoin) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "armyII.viewII.talent.TalentGradeUpFailed01"
-        )
+          "armyII.viewII.talent.TalentGradeUpFailed01",
+        ),
       );
       return;
     }
@@ -571,8 +571,8 @@ export class TalentItemTips extends BaseTips {
     if (this.thane.gp < this._nextLevelExp) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "armyII.viewII.talent.TalentGradeUpFailed02"
-        )
+          "armyII.viewII.talent.TalentGradeUpFailed02",
+        ),
       );
       return;
     }
@@ -580,7 +580,7 @@ export class TalentItemTips extends BaseTips {
     ArmyManager.Instance.addEventListener(
       TalentEvent.TALENT_GRADUP_SUCC,
       this.__talentGradeUpSucc,
-      this
+      this,
     );
     ArmySocketOutManager.sendUpTalentGrade();
   }
@@ -594,7 +594,7 @@ export class TalentItemTips extends BaseTips {
     ArmyManager.Instance.removeEventListener(
       TalentEvent.TALENT_GRADUP_SUCC,
       this.__talentGradeUpSucc,
-      this
+      this,
     );
     this.showTalentGrade();
   }

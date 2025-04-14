@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message RemotePetMsg {
+  int32 userId = 1;
+  int32 nowIndex = 2;
+  int32 MaxIndex = 3;
+  int32 order = 4;
+  string skills = 5;
+  string items = 6;
+  string sweepTime = 7;
+  string specialIndex = 8;
+  string pos = 9;
+  string pets = 10;
+  int32 sweepIndex = 11;
+  bool isFirst = 12;
+  int32 fight = 13;
+  int32 lastOrder = 14;
+  bool isGet = 15;
+  string resetTime = 16;
+  string skillStatus = 17;
+}

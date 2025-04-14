@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message PlayerNodeStateMsg {
+  int32 mapId = 1;
+  int32 nodeId = 2;
+  bool isStand = 3;
+  int32 armyId = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message HangupInfoMsg {
+  int32 leftWeay = 1;
+  bool isStartHangup = 2;
+  int32 addWeay = 3;
+}

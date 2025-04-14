@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message SystemPropertyMsg {
+  string sysCurtime = 1;
+  string sysStarTime = 2;
+}

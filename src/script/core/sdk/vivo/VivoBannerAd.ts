@@ -1,8 +1,6 @@
-// @ts-nocheck
 import Logger from "../../logger/Logger";
 import BaseAd from "../base/BaseAd";
 import { SDKState } from "../SDKConfig";
-
 
 /**
  * https://minigame.vivo.com.cn/documents/#/api/da/banner-da
@@ -16,97 +14,92 @@ import { SDKState } from "../SDKConfig";
 4、Banner广告创建间隔不得少于10s
  */
 export default class VivoBannerAd extends BaseAd {
+  onError(err) {
+    Logger.log("banner onError", err);
+    this.setState(SDKState.loadFail);
+    // this.reLoad()
+  }
 
-    onError(err) {
-        Logger.log('banner onError', err)
-        this.setState(SDKState.loadFail)
-        // this.reLoad()
+  onLoad() {
+    Logger.log("banner onLoad this.logicState ", this.logicState);
+    this.setState(SDKState.loadSucess);
+    if (this.logicState == SDKState.open) {
+      // this.show()
+    } else {
+      this.hide();
     }
+  }
+  open(adID) {
+    //逻辑要求开
+    this.logicState = SDKState.open;
 
-    onLoad() {
-        Logger.log('banner onLoad this.logicState ', this.logicState)
-        this.setState(SDKState.loadSucess)
-        if (this.logicState == SDKState.open) {
-            // this.show()
-        } else {
-            this.hide()
-        }
+    //如果banner已经已经显示 则返回。
+    if (this.state == SDKState.loading) {
+      Logger.log("showBanner 正在加载中");
+      return;
     }
-    open(adID) {
-        //逻辑要求开
-        this.logicState = SDKState.open;
+    this.state = SDKState.loading;
+    // if (this.adUnitID != adID) {
+    this.destroy();
+    this.create(adID);
+  }
 
-        //如果banner已经已经显示 则返回。
-        if (this.state == SDKState.loading) {
-            Logger.log('showBanner 正在加载中')
-            return;
-        }
-        this.state = SDKState.loading;
-        // if (this.adUnitID != adID) {
-        this.destroy();
-        this.create(adID)
+  close() {
+    this.logicState = SDKState.close;
 
+    if (this.state == SDKState.loading) {
+      Logger.log("hideBanner 正在加载中");
+      //如果先调用createBannerAd()后 不能立马调用hide()方法, 要等Ad创建成功后, 在某个需要的场景下调hide()
+      return;
     }
-
-    close() {
-
-        this.logicState = SDKState.close;
-
-        if (this.state == SDKState.loading) {
-            Logger.log('hideBanner 正在加载中')
-            //如果先调用createBannerAd()后 不能立马调用hide()方法, 要等Ad创建成功后, 在某个需要的场景下调hide()
-            return;
-        }
-        if (!this.Instance) {
-            return
-        }
-        this.hide()
+    if (!this.Instance) {
+      return;
     }
+    this.hide();
+  }
 
+  onResize(data) {
+    Logger.log("banner onResize", data);
+  }
 
+  protected show() {
+    this.state = SDKState.open;
+    if (this.Instance) this.Instance.show();
+    Logger.log(" banner show ");
+  }
 
-    onResize(data) {
-        Logger.log('banner onResize', data)
-    }
-    
-    protected show() {
-        this.state = SDKState.open
-        if (this.Instance)
-            this.Instance.show();
-        Logger.log(' banner show ')
-    }
+  protected hide() {
+    this.state = SDKState.close;
+    if (this.Instance) this.Instance.hide();
+  }
 
-    protected hide() {
-        this.state = SDKState.close;
-        if (this.Instance)
-            this.Instance.hide();
+  protected destroy() {
+    if (this.Instance) {
+      this.Instance.offLoad(this.onLoad.bind(this));
+      this.Instance.offError(this.onError.bind(this));
+      this.Instance.offSize(this.onResize.bind(this));
+      this.Instance.destroy();
+      this.Instance = null;
     }
-
-    protected destroy() {
-        if (this.Instance) {
-            this.Instance.offLoad(this.onLoad.bind(this))
-            this.Instance.offError(this.onError.bind(this))
-            this.Instance.offSize(this.onResize.bind(this))
-            this.Instance.destroy()
-            this.Instance = null;
-        }
-    }
-    protected create(adID) {
-        this.adUnitID = adID;
-        let winSize = qg.getSystemInfoSync();
-        this.Instance = qg.createBannerAd({
-            posId: adID,
-            style: {}
-        })
-        this.Instance.onLoad(this.onLoad.bind(this))
-        this.Instance.onError(this.onError.bind(this))
-        this.Instance.onSize(this.onResize.bind(this))
-        this.Instance.show().then(() => {
-            Logger.log('banner广告展示完成');
-            this.setState(SDKState.open)
-        }).catch((err) => {
-            this.setState(SDKState.close)
-            Logger.log('banner广告展示失败', JSON.stringify(err));
-        })
-    }
+  }
+  protected create(adID) {
+    this.adUnitID = adID;
+    let winSize = qg.getSystemInfoSync();
+    this.Instance = qg.createBannerAd({
+      posId: adID,
+      style: {},
+    });
+    this.Instance.onLoad(this.onLoad.bind(this));
+    this.Instance.onError(this.onError.bind(this));
+    this.Instance.onSize(this.onResize.bind(this));
+    this.Instance.show()
+      .then(() => {
+        Logger.log("banner广告展示完成");
+        this.setState(SDKState.open);
+      })
+      .catch((err) => {
+        this.setState(SDKState.close);
+        Logger.log("banner广告展示失败", JSON.stringify(err));
+      });
+  }
 }

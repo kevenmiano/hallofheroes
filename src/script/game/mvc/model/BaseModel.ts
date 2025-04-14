@@ -3,13 +3,13 @@ import Logger from "../../../core/logger/Logger";
 
 export class PropertyData extends GameEventDispatcher {
   //玩家属性
-  protected mapPropertyData: Map<string, Object> = new Map();
+  protected mapPropertyData: Map<string, object> = new Map();
   /**
    * 属性赋值
    * @param {string} proName
    * @param {Object} proValue
    */
-  public setPropertyData(proName: string, proValue: Object) {
+  public setPropertyData(proName: string, proValue: object) {
     if (this.mapPropertyData.has(proName)) {
       this.mapPropertyData.set(proName, proValue);
     } else {
@@ -22,7 +22,7 @@ export class PropertyData extends GameEventDispatcher {
    * @param {string} proName
    * @returns {Object}
    */
-  public getPropertyData(proName: string): Object {
+  public getPropertyData(proName: string): object {
     if (this.mapPropertyData.has(proName)) {
       return this.mapPropertyData.get(proName);
     } else {
@@ -66,12 +66,12 @@ export default class BaseModel {
     return this.m_propertyData;
   }
 
-  public setPropertyData(proName: string, proValue: Object) {
+  public setPropertyData(proName: string, proValue: object) {
     this.m_propertyData.setPropertyData(proName, proValue);
   }
 
-  public getPropertyData(proName: string): Object {
-    return this.getAnyPropertyData<Object>(proName);
+  public getPropertyData(proName: string): object {
+    return this.getAnyPropertyData<object>(proName);
   }
 
   public getAnyPropertyData<T>(proName: string): T {
@@ -93,13 +93,17 @@ export default class BaseModel {
    */
   public registerPropertyDataUpdateHandle(
     proName: string,
-    propertyDataUpdateHandle: Function
+    propertyDataUpdateHandle: (
+      oldValue: object,
+      newValue: object,
+      params?: object[],
+    ) => void,
   ) {
     if (this.m_mapPropertyManager.has(proName)) {
       Logger.error(
         "RegisterPropertyDataUpdateHandle Property " +
           proName +
-          " has exist !!!"
+          " has exist !!!",
       );
     } else {
       this.m_mapPropertyManager.set(proName, propertyDataUpdateHandle);
@@ -115,16 +119,16 @@ export default class BaseModel {
    */
   public onUpdatePropertyDataUpdateHandle(
     proName: string,
-    oldValue: Object,
-    newValue: Object,
-    params?: Object[]
+    oldValue: object,
+    newValue: object,
+    params?: object[],
   ) {
     if (this.m_mapPropertyManager.has(proName)) {
       Logger.log(
         "onUpdateProperty   Property :" + proName,
         oldValue,
         "---",
-        newValue
+        newValue,
       );
       this.m_mapPropertyManager.get(proName)(oldValue, newValue, params);
     }

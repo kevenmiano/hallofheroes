@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemUseMsg {
+  int32 pos = 1;
+  int32 count = 2;
+  int32 bagType = 3;
+  string battleId = 4;
+  int32 friendId = 5;
+  repeated int32 selectItemInfos = 6;
+}

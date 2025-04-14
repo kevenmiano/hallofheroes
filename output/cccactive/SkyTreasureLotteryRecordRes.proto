@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message SkyTreasureLotteryRecordRes {
+  repeated int32 selfRecord = 1;
+  repeated int32 serverRecord = 2;
+}

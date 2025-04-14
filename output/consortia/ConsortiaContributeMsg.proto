@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaContributeMsg {
+  string nickName = 1;
+  int32 totalOffer = 2;
+  int32 todayOffer = 3;
+}

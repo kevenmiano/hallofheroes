@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message DoubleMountMsg {
+  int32 op = 1;
+  int32 inviteUserId = 2;
+  int32 agree = 3;
+  int32 driverId = 4;
+  string uniqueKey = 5;
+  int32 kickOutId = 6;
+}

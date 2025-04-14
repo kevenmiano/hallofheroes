@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadBattleDefenceMsg {
+  int32 defenceArmyAlive = 1;
+  int32 defenceArmyTotal = 2;
+  int32 defenceProperty = 3;
+  repeated int32 defenceSeniorGeneral = 4;
+}

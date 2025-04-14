@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleSkillListMsg {
+  int32 skillId = 1;
+  int32 state = 2;
+  int32 curSum = 3;
+}

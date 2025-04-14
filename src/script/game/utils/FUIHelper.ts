@@ -72,11 +72,9 @@ export default class FUIHelper {
       Logger.warn(resKey + ".fui 获取失败");
       return count;
     }
-    // @ts-ignore
-    let cnt: number = pkg._items.length;
-    for (let j: number = 0; j < cnt; j++) {
-      // @ts-ignore
-      let pi: fgui.PackageItem = pkg._items[j];
+    let items = pkg.getItems(); // Use a public method to retrieve items
+    for (let j: number = 0; j < items.length; j++) {
+      let pi: fgui.PackageItem = items[j];
       if (
         pi.type == fgui.PackageItemType.Atlas ||
         pi.type == fgui.PackageItemType.Sound
@@ -134,12 +132,14 @@ export default class FUIHelper {
     startPoint: Laya.Point = new Laya.Point(0, 0),
     showType: TipsShowType = TipsShowType.onClick,
     extData?: any,
-    tipDirctions?: string
+    tipDirctions?: string,
   ) {
     let tipItem = target.getChild("CommonTipItem") as CommonTipItem;
     //取消提示
     if (tipData == null || tipData == undefined) {
-      tipItem && tipItem.removeFromParent();
+      if (tipItem) {
+        tipItem.removeFromParent();
+      }
       return;
     }
     if (!tipItem) {
@@ -169,7 +169,7 @@ export default class FUIHelper {
     showType: TipsShowType = TipsShowType.onClick,
     extData: any = null,
     w: number = 0,
-    h: number = 0
+    h: number = 0,
   ) {
     let tipItem = target.getChild("CommonTipItem") as CommonTipItem;
     if (!tipItem) {

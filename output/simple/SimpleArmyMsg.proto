@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimpleArmyMsg {
+  int32 armyId = 1;
+  int32 playerId = 2;
+  string nickName = 3;
+  int32 mapId = 4;
+  int32 startPosX = 5;
+  int32 startPosY = 6;
+  int32 curPosX = 7;
+  int32 curPosY = 8;
+  int32 endPosX = 9;
+  int32 endPosY = 10;
+  int32 state = 11;
+  int32 velocity = 12;
+  int32 costTime = 13;
+  string departure = 14;
+  string destination = 15;
+  int32 command = 16;
+  repeated int32 routeKey = 17;
+  int32 type = 18;
+  repeated int32 armyPawn = 19;
+  int32 consortiaId = 20;
+  string consortiaName = 21;
+  string simpleHero = 22;
+  int32 tempTime = 23;
+  bool isVip = 24;
+  int32 vipType = 25;
+  int32 storeGrade = 26;
+  int32 appellid = 27;
+  int32 fateTotalGp = 28;
+  string fateGrades = 29;
+  int32 honorEquipLevel = 30;
+  int32 honorEquipStage = 31;
+}

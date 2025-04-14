@@ -79,6 +79,7 @@ export class SocketManager extends GameEventDispatcher {
   }
 
   public regEvent() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
     if (!self._socket) {
       self._socket = new GameSocket(true);
@@ -93,7 +94,7 @@ export class SocketManager extends GameEventDispatcher {
     NotificationManager.Instance.on(
       SocketEvent.SERVER_DATA,
       self.onSocketDataRecord,
-      self
+      self,
     );
   }
 
@@ -110,7 +111,7 @@ export class SocketManager extends GameEventDispatcher {
     Logger.base("网关服务器已关闭", evt);
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:onClose",
-      "网关服务器已关闭"
+      "网关服务器已关闭",
     );
     this.dispatchEvent(Laya.Event.CLOSE);
     if (SceneManager.Instance.currentType == SceneType.BATTLE_SCENE) {
@@ -127,7 +128,7 @@ export class SocketManager extends GameEventDispatcher {
     Logger.base("连接网关服务器失败", evt);
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:onError",
-      "连接网关服务器失败"
+      "连接网关服务器失败",
     );
     this.dispatchEvent(Laya.Event.ERROR);
     // this.reconnect();
@@ -140,7 +141,7 @@ export class SocketManager extends GameEventDispatcher {
     Logger.base("连接网关服务器成功");
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:onSuccess",
-      "连接网关服务器成功"
+      "连接网关服务器成功",
     );
     //开启弱网检测
     this._socket
@@ -163,7 +164,7 @@ export class SocketManager extends GameEventDispatcher {
   private onSocketData(pkg: PackageIn) {
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:onSocketData:",
-      "" + pkg.code
+      "" + pkg.code,
     );
     ProtoManager.Instance.checkS2CCode(pkg.code);
     ServerDataManager.Instance.add(pkg.code, pkg);
@@ -188,12 +189,12 @@ export class SocketManager extends GameEventDispatcher {
     this._socket = null;
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:close",
-      "关闭socket"
+      "关闭socket",
     );
     NotificationManager.Instance.off(
       SocketEvent.SERVER_DATA,
       this.onSocketDataRecord,
-      this
+      this,
     );
   }
 
@@ -217,7 +218,7 @@ export class SocketManager extends GameEventDispatcher {
     if (this.isMaxReconnected()) {
       SDKManager.Instance.getChannel().nativeLog(
         "socketManager:tryReconnect",
-        "已达到最大重连次数"
+        "已达到最大重连次数",
       );
       // 清理新手, 避免遮住 网络异常消息框, 不能点击
       NewbieBaseActionMediator.cleanAll();
@@ -237,12 +238,12 @@ export class SocketManager extends GameEventDispatcher {
   public tick() {
     this.showReconnectHint(
       this.reconnectTimeCoolDown - this.reconnectTimeCounter,
-      this.reconnectCounter
+      this.reconnectCounter,
     );
     this.reconnectTimeCounter++;
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:tryReconnect",
-      "重新链接:+" + this.reconnectCounter
+      "重新链接:+" + this.reconnectCounter,
     );
     if (this.reconnectTimeCounter >= this.reconnectTimeCoolDown) {
       Laya.timer.clear(this, this.tick);
@@ -260,7 +261,7 @@ export class SocketManager extends GameEventDispatcher {
   public resetReconnection() {
     SDKManager.Instance.getChannel().nativeLog(
       "socketManager:resetReconnection",
-      "重置链接"
+      "重置链接",
     );
     this.firstDisconnect = true;
     this.reconnectTimeCounter = 0;
@@ -285,8 +286,8 @@ export class SocketManager extends GameEventDispatcher {
         EmWindow.HintWnd,
         LangManager.Instance.GetTranslation(
           "reconnection.tip",
-          recounter + "/" + this.reconnectMacCount
-        )
+          recounter + "/" + this.reconnectMacCount,
+        ),
       );
       //这里需要重新判断一次, 是否已经连接成功, 或者已经达到最大重连数了, 隐藏。
       if (this.isConnected() || this.isMaxReconnected())
@@ -297,8 +298,8 @@ export class SocketManager extends GameEventDispatcher {
       this.reConnetAlert.setHintText(
         LangManager.Instance.GetTranslation(
           "reconnection.tip",
-          recounter + "/" + this.reconnectMacCount
-        )
+          recounter + "/" + this.reconnectMacCount,
+        ),
       );
     }
   }

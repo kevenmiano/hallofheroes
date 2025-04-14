@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message FriendAddedMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 grades = 3;
+  int32 sex = 4;
+  string reqId = 5;
+}

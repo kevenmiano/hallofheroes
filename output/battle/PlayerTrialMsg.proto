@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message PlayerTrialMsg {
+  int32 userId = 1;
+  repeated int32 trialInfos = 2;
+  int32 param1 = 3;
+  int32 param2 = 4;
+  int32 param3 = 5;
+  int32 param4 = 6;
+}

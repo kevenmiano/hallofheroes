@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message RuneStoneUpReqMsg {
+  int32 pos = 1;
+  int32 id = 2;
+  int32 runeNum = 3;
+  int32 bagType = 4;
+  int32 runeId = 5;
+}

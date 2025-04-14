@@ -52,7 +52,7 @@ export default class PveRoomListData extends FrameDataBase {
 
   private formatList(
     arr: t_s_campaignData[],
-    type: number = RoomCampaignType.Multy
+    type: number = RoomCampaignType.Multy,
   ) {
     let format = [];
     arr.forEach((item) => {

@@ -10,7 +10,7 @@ export default class NoOperationCallUtil {
   public constructor(
     time: number,
     noOperationCall: Function,
-    activeCall: Function
+    activeCall: Function,
   ) {
     this._time = time;
     this._noOperationCall = noOperationCall;
@@ -23,7 +23,7 @@ export default class NoOperationCallUtil {
     StageReferance.stage.on(
       Laya.Event.MOUSE_MOVE,
       this,
-      this.__mouseMoveHandler
+      this.__mouseMoveHandler,
     );
     StageReferance.stage.on(Laya.Event.KEY_DOWN, this, this.__keyDownHandler);
   }
@@ -32,7 +32,7 @@ export default class NoOperationCallUtil {
     StageReferance.stage.off(
       Laya.Event.MOUSE_MOVE,
       this,
-      this.__mouseMoveHandler
+      this.__mouseMoveHandler,
     );
     StageReferance.stage.off(Laya.Event.KEY_DOWN, this, this.__keyDownHandler);
   }

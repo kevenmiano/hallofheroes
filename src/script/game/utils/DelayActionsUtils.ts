@@ -1,5 +1,6 @@
 import { EnterFrameManager } from "../manager/EnterFrameManager";
-// import { IEnterFrame } from "../interfaces/IEnterFrame";
+// import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
+
 import { SceneManager } from "../map/scene/SceneManager";
 import SceneType from "../map/scene/SceneType";
 import { GameBaseQueueManager } from "../manager/GameBaseQueueManager";
@@ -42,7 +43,7 @@ export class DelayActionsUtils {
     this._actions = ArrayUtils.sortOn(
       this._actions,
       "level",
-      ArrayConstant.DESCENDING | ArrayConstant.NUMERIC
+      ArrayConstant.DESCENDING | ArrayConstant.NUMERIC,
     );
     while (this._actions.length > 0) {
       var action = this._actions.shift();

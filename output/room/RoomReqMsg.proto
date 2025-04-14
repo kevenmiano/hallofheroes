@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomReqMsg {
+  int32 roomId = 1;
+  int32 dungeonId = 2;
+  int32 campaignId = 3;
+  int32 armyId = 4;
+  int32 userId = 5;
+  int32 state = 6;
+  int32 index = 7;
+  bool open = 8;
+  int32 roomType = 9;
+  string nameKey = 10;
+  string password = 11;
+  bool isInvite = 12;
+  int32 capacity = 13;
+  bool isGet = 14;
+  string serverName = 15;
+  string proxyId = 16;
+  int32 enterType = 17;
+  int32 startType = 18;
+}

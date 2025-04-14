@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message ChallengeLogMsg {
+  int32 userId = 1;
+  int32 result = 2;
+  int32 tarUserId = 3;
+  string tarNickName = 4;
+  bool isAttack = 5;
+  string logDate = 6;
+  int32 curRankResult = 7;
+  int32 grades = 8;
+  int32 gpOrder = 9;
+  int32 gp = 10;
+  int32 job = 11;
+  int32 forward = 12;
+  int32 curScore = 13;
+}

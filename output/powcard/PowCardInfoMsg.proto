@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowCardInfoMsg {
+  int32 tempId = 1;
+  int32 grade = 2;
+  int32 gp = 3;
+  string buf = 4;
+  int32 isActive = 5;
+}

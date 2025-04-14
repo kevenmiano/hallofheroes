@@ -1,10 +1,11 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 export default class FUI_IconAvatarFrame extends fgui.GComponent {
   public c1: fgui.Controller;
   public head: fgui.GLoader;
   public frame: fgui.GLoader;
+
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://4x3i47txgq0dmigi";
 

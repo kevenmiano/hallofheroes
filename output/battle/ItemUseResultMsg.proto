@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ItemUseResultMsg {
+  int32 uItemId = 1;
+  int32 bagPos = 2;
+  int32 count = 3;
+  int32 result = 4;
+  int32 livingId = 5;
+  int32 tempId = 6;
+  int32 type = 7;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message AddFriendFavorMsg {
+  int32 playerId = 1;
+  int32 friendId = 2;
+  int32 addCount = 3;
+  int32 waterCount = 4;
+  int32 goldCount = 5;
+  int32 tree_GpCount = 6;
+  int32 property1 = 7;
+  int32 property2 = 8;
+  bool isUpGrade = 9;
+}

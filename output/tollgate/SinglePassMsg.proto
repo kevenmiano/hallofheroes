@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message SinglePassMsg {
+  int32 userId = 1;
+  int32 area = 2;
+  int32 maxIndex = 3;
+  string areaReward = 4;
+  repeated int32 rankInfo = 5;
+  int32 count = 6;
+  int32 itemCount = 7;
+  int32 from = 8;
+}

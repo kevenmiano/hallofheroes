@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message TollgateRewardMsg {
+  int32 userId = 1;
+  int32 score = 2;
+  int32 order = 3;
+  string scoreItems = 4;
+  string luckyItems = 5;
+}

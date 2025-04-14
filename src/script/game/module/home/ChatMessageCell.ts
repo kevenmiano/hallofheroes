@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_ChatMessageCell from "../../../../fui/Base/FUI_ChatMessageCell";
 import { EmPackName, EmWindow } from "../../constant/UIDefine";
 import { ChatChannel } from "../../datas/ChatChannel";
@@ -20,7 +19,9 @@ export default class ChatMessageCell extends FUI_ChatMessageCell {
 
   onConstruct() {
     super.onConstruct();
-    (this.textTxt.displayObject as Laya.HTMLDivElement).style.wordWrap = false;
+    (
+      this.textTxt.displayObject as unknown as Laya.HTMLDivElement
+    ).style.wordWrap = false;
     this.addEvent();
   }
 
@@ -41,7 +42,7 @@ export default class ChatMessageCell extends FUI_ChatMessageCell {
     this._cellData = value;
     this.channelIcon.url = FUIHelper.getItemURL(
       EmPackName.Base,
-      ChatChannel.getChatChannelIcon(value.channel)
+      ChatChannel.getChatChannelIcon(value.channel),
     );
     let elementText: string = "";
     let elements = value.getAllElements();

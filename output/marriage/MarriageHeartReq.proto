@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageHeartReq {
+  int32 op = 1;
+  int32 order = 2;
+  int32 option = 3;
+}

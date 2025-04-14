@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message TrialReforceMsg {
+  string proxyId = 1;
+  int32 curWave = 2;
+  int32 type = 3;
+}

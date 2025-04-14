@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.castle;
+
+message CastleYieldMsg {
+  int32 goldYield = 1;
+  int32 goldWildLandYield = 2;
+  int32 goldTechnology = 3;
+  int32 goldWonder = 4;
+  int32 goldDower = 5;
+  int32 goldTotalCount = 6;
+  int32 goldMax = 7;
+  int32 curPopulation = 8;
+  int32 maxPopulation = 9;
+  repeated int32 wildYield = 10;
+  int32 crystalsCount = 11;
+  repeated int32 treasureMineYield = 12;
+}

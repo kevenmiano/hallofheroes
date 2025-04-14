@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message WorldBossPlayerStateMsg {
+  int32 armyId = 1;
+  int32 state = 2;
+  int32 leftTime = 3;
+  string serverName = 4;
+}

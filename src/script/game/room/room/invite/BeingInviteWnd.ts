@@ -1,4 +1,3 @@
-// TODO FIX
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -20,7 +19,7 @@ import SimpleAlertHelper from "../../../component/SimpleAlertHelper";
 import { t_s_campaignData } from "../../../config/t_s_campaign";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import ItemID from "../../../constant/ItemID";
-import { RoomType } from "../../../constant/RoomDefine";
+// import { RoomType } from "../../../constant/RoomDefine";
 import { EmWindow } from "../../../constant/UIDefine";
 import { PlayerEvent } from "../../../constant/event/PlayerEvent";
 import { S2CProtocol } from "../../../constant/protocol/S2CProtocol";
@@ -37,13 +36,14 @@ import { TimerEvent, TimerTicker } from "../../../utils/TimerTicker";
 import RoomHallCtrl from "../roomHall/RoomHallCtrl";
 import InviteData from "./InviteData";
 
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
 import { RoomInfo } from "../../../mvc/model/room/RoomInfo";
 import { CampaignManager } from "../../../manager/CampaignManager";
 import StringHelper from "../../../../core/utils/StringHelper";
 import { CampaignMapModel } from "../../../mvc/model/CampaignMapModel";
 import UIButton from "../../../../core/ui/UIButton";
-import { RoomManager } from "../../../manager/RoomManager";
+// import { RoomManager } from "../../../manager/RoomManager";
 import InviteTipManager, {
   EmInviteTipType,
 } from "../../../manager/InviteTipManager";
@@ -70,7 +70,7 @@ export default class BeingInviteWnd extends BaseWindow {
   private _curCount: number;
   private _maxCount: number;
   private _content: string;
-  private _quick: Boolean = false;
+  private _quick: boolean = false;
   constructor() {
     super();
     this.resizeContent = true;
@@ -131,33 +131,33 @@ export default class BeingInviteWnd extends BaseWindow {
     } else {
       this._autoExitTimer = new TimerTicker(
         1000,
-        InviteData.BeingInvite_AutoExitTime
+        InviteData.BeingInvite_AutoExitTime,
       );
       this._autoExitTimer.addEventListener(
         TimerEvent.TIMER,
         this.__timerHandler,
-        this
+        this,
       );
       this._autoExitTimer.start();
     }
     this.txtNotAcceptInvite.text = LangManager.Instance.GetTranslation(
-      "BeingInviteWnd.txtNotAcceptInvite"
+      "BeingInviteWnd.txtNotAcceptInvite",
     );
 
     ServerDataManager.listen(
       S2CProtocol.U_C_MULITY_CAMPAIGN_REQUEST,
       this,
-      this.__mulityCampaignRequestHandler
+      this.__mulityCampaignRequestHandler,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.on(
       PlayerEvent.MUTICOPY_COUNT,
       this.refreshCurrentCnt,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.on(
       PlayerEvent.TAILA_COUNT,
       this.refreshCurrentCnt,
-      this
+      this,
     );
   }
 
@@ -168,7 +168,7 @@ export default class BeingInviteWnd extends BaseWindow {
       this._autoExitTimer.removeEventListener(
         TimerEvent.TIMER,
         this.__timerHandler,
-        this
+        this,
       );
       this._autoExitTimer.stop();
     }
@@ -177,24 +177,24 @@ export default class BeingInviteWnd extends BaseWindow {
     ServerDataManager.cancel(
       S2CProtocol.U_C_MULITY_CAMPAIGN_REQUEST,
       this,
-      this.__mulityCampaignRequestHandler
+      this.__mulityCampaignRequestHandler,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.off(
       PlayerEvent.MUTICOPY_COUNT,
       this.refreshCurrentCnt,
-      this
+      this,
     );
     PlayerManager.Instance.currentPlayerModel.playerInfo.off(
       PlayerEvent.TAILA_COUNT,
       this.refreshCurrentCnt,
-      this
+      this,
     );
   }
 
   private refreshCurrentCnt() {
     this._campaign = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_campaign,
-      this.tempId
+      this.tempId,
     );
     if (this._campaign) {
       let tempArr = CampaignMapModel.getCampaignCountArr(this._campaign);
@@ -209,7 +209,7 @@ export default class BeingInviteWnd extends BaseWindow {
         LangManager.Instance.GetTranslation(
           showTick ? "invite.campaign.income" : "invite.campaign.income.color",
           this._curCount,
-          this._maxCount
+          this._maxCount,
         );
     }
   }
@@ -237,8 +237,8 @@ export default class BeingInviteWnd extends BaseWindow {
       if (tempArr[0] <= 0) {
         MessageTipManager.Instance.show(
           LangManager.Instance.GetTranslation(
-            "room.view.pve.RoomRightView.notEnoughIncome"
-          )
+            "room.view.pve.RoomRightView.notEnoughIncome",
+          ),
         );
       }
     } else {
@@ -247,8 +247,8 @@ export default class BeingInviteWnd extends BaseWindow {
         if (!flag) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "room.view.pve.RoomRightView.notEnoughIncome"
-            )
+              "room.view.pve.RoomRightView.notEnoughIncome",
+            ),
           );
         }
       }
@@ -257,7 +257,7 @@ export default class BeingInviteWnd extends BaseWindow {
     if (!sel) {
       if (this._showCancelBtnIncomeTip) {
         let content = LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward"
+          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.SIMPLE_ALERT,
@@ -271,7 +271,7 @@ export default class BeingInviteWnd extends BaseWindow {
               this._showCancelBtnIncomeTip = false;
               this.refreshIncomeState(false);
             }
-          }
+          },
         );
       } else {
         this.refreshIncomeState(false);
@@ -291,7 +291,7 @@ export default class BeingInviteWnd extends BaseWindow {
 
   public setInviteCancelIncome(selected: boolean) {
     let roomHallCtrl = FrameCtrlManager.Instance.getCtrl(
-      EmWindow.RoomHall
+      EmWindow.RoomHall,
     ) as RoomHallCtrl;
     roomHallCtrl.data.inviteCancelIncome = !selected;
   }
@@ -333,10 +333,10 @@ export default class BeingInviteWnd extends BaseWindow {
       return false;
     } else {
       let content: string = LangManager.Instance.GetTranslation(
-        "RoomHall.ImperialCrusadeOrderNoEnoughTip"
+        "RoomHall.ImperialCrusadeOrderNoEnoughTip",
       );
       let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-        ItemID.IMPERIAL_CRUSADE_ORDER
+        ItemID.IMPERIAL_CRUSADE_ORDER,
       );
       let goodsCount: string =
         LangManager.Instance.GetTranslation("MazeShopWnd.HasNumTxt") + num;
@@ -357,7 +357,7 @@ export default class BeingInviteWnd extends BaseWindow {
   }
 
   private __mulityCampaignRequestHandler(pkg: PackageIn) {
-    let refresh: Boolean = false;
+    let refresh: boolean = false;
 
     /**房间信息对象 */
     let roomInfo: RoomInfo = new RoomInfo();
@@ -406,30 +406,30 @@ export default class BeingInviteWnd extends BaseWindow {
     if (this.roomType != msg.param3) {
       refresh = true;
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("Invite.room.change.type")
+        LangManager.Instance.GetTranslation("Invite.room.change.type"),
       );
     }
 
     /**副本是否已经开始 */
-    var isInCampaign: Boolean = msg.param7 && roomInfo.campaignId != 0;
+    var isInCampaign: boolean = msg.param7 && roomInfo.campaignId != 0;
     if ((this.position == 1) != isInCampaign) {
       refresh = true;
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("Invite.room.change.state")
+        LangManager.Instance.GetTranslation("Invite.room.change.state"),
       );
     }
 
     if (this._campaign.AreaId != templateInfo.AreaId) {
       refresh = true;
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("Invite.room.change.campaign")
+        LangManager.Instance.GetTranslation("Invite.room.change.campaign"),
       );
     }
 
     if (this._campaign.DifficutlyGrade != templateInfo.DifficutlyGrade) {
       refresh = true;
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("Invite.room.change.difficutly")
+        LangManager.Instance.GetTranslation("Invite.room.change.difficutly"),
       );
     }
 
@@ -448,19 +448,19 @@ export default class BeingInviteWnd extends BaseWindow {
       lvstr =
         LangManager.Instance.GetTranslation(
           "public.level3",
-          templateInfo.MinLevel
+          templateInfo.MinLevel,
         ) +
         "-" +
         LangManager.Instance.GetTranslation(
           "public.level3",
-          templateInfo.MaxLevel
+          templateInfo.MaxLevel,
         );
 
       // 最小等级与最大等级相等时
       if (templateInfo.MinLevel == templateInfo.MaxLevel) {
         lvstr = LangManager.Instance.GetTranslation(
           "public.level3",
-          templateInfo.MinLevel
+          templateInfo.MinLevel,
         );
       }
 
@@ -468,7 +468,7 @@ export default class BeingInviteWnd extends BaseWindow {
       if (templateInfo.isKingTower) {
         difficultyGrade =
           KingTowerManager.Instance.kingTowerInfo.difficultyStep(
-            templateInfo.DifficutlyGrade
+            templateInfo.DifficutlyGrade,
           );
       }
 
@@ -486,29 +486,29 @@ export default class BeingInviteWnd extends BaseWindow {
       // 竞技邀请
       if (roomInfo.roomType == 1) {
         titleText = LangManager.Instance.GetTranslation(
-          "yishi.manager.BaseManager.frame"
+          "yishi.manager.BaseManager.frame",
         );
         content = nickName
           ? LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content02",
               nickName,
-              roomInfo.id
+              roomInfo.id,
             )
           : LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content022",
-              roomInfo.id
+              roomInfo.id,
             );
       }
 
       // 普通副本邀请
       else if (roomInfo.roomType == 0) {
         titleText = LangManager.Instance.GetTranslation(
-          "yishi.manager.BaseManager.frame02"
+          "yishi.manager.BaseManager.frame02",
         );
 
         // 副本名称
         let nameMap: string = LangManager.Instance.GetTranslation(
-          "yishi.manager.BaseManager.msg.name"
+          "yishi.manager.BaseManager.msg.name",
         );
         let str: string = StringHelper.isNullOrEmpty(msg.param4)
           ? nameMap
@@ -523,11 +523,11 @@ export default class BeingInviteWnd extends BaseWindow {
           ? LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content03",
               nickName,
-              str
+              str,
             )
           : LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content033",
-              str
+              str,
             );
 
         // 副本是否已开始
@@ -541,18 +541,18 @@ export default class BeingInviteWnd extends BaseWindow {
       // 活动副本邀请
       else if (roomInfo.roomType == 2) {
         titleText = LangManager.Instance.GetTranslation(
-          "yishi.manager.BaseManager.frame02"
+          "yishi.manager.BaseManager.frame02",
         );
         content = LangManager.Instance.GetTranslation("vehicle.mapName");
         content = nickName
           ? LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content04",
               nickName,
-              content
+              content,
             )
           : LangManager.Instance.GetTranslation(
               "yishi.manager.BaseManager.content044",
-              content
+              content,
             );
         // 副本是否已开始
         if (msg.param7) {
@@ -578,7 +578,7 @@ export default class BeingInviteWnd extends BaseWindow {
         this.roomId,
         this.roomPwd,
         true,
-        !this["imgIncomeTick"].visible
+        !this["imgIncomeTick"].visible,
       );
       this.OnBtnClose();
     }
@@ -596,7 +596,7 @@ export default class BeingInviteWnd extends BaseWindow {
 
           if (this.position == 1) {
             var content: string = LangManager.Instance.GetTranslation(
-              "chat.view.ChatView.EnterCampaignTips"
+              "chat.view.ChatView.EnterCampaignTips",
             );
             SimpleAlertHelper.Instance.Show(
               SimpleAlertHelper.SIMPLE_ALERT,
@@ -605,7 +605,7 @@ export default class BeingInviteWnd extends BaseWindow {
               content,
               null,
               null,
-              this.__btnConfirmClick.bind(this)
+              this.__btnConfirmClick.bind(this),
             );
             return;
           }
@@ -615,8 +615,8 @@ export default class BeingInviteWnd extends BaseWindow {
             if (ArmyManager.Instance.army.onVehicle) {
               MessageTipManager.Instance.show(
                 LangManager.Instance.GetTranslation(
-                  "OuterCityCastleTips.gotoBtnTips"
-                )
+                  "OuterCityCastleTips.gotoBtnTips",
+                ),
               );
               return;
             }
@@ -624,13 +624,13 @@ export default class BeingInviteWnd extends BaseWindow {
           }
         },
         LangManager.Instance.GetTranslation(
-          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward"
-        )
+          "room.view.pve.RoomRightView.notUserIncomeWillNotGetReward",
+        ),
       )
     ) {
       if (this.position == 1) {
         var content: string = LangManager.Instance.GetTranslation(
-          "chat.view.ChatView.EnterCampaignTips"
+          "chat.view.ChatView.EnterCampaignTips",
         );
         SimpleAlertHelper.Instance.Show(
           SimpleAlertHelper.SIMPLE_ALERT,
@@ -639,7 +639,7 @@ export default class BeingInviteWnd extends BaseWindow {
           content,
           null,
           null,
-          this.__btnConfirmClick.bind(this)
+          this.__btnConfirmClick.bind(this),
         );
         return;
       }
@@ -649,8 +649,8 @@ export default class BeingInviteWnd extends BaseWindow {
         if (ArmyManager.Instance.army.onVehicle) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "OuterCityCastleTips.gotoBtnTips"
-            )
+              "OuterCityCastleTips.gotoBtnTips",
+            ),
           );
           return;
         }
@@ -663,7 +663,9 @@ export default class BeingInviteWnd extends BaseWindow {
     if (b) {
       if (ArmyManager.Instance.army.onVehicle) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips")
+          LangManager.Instance.GetTranslation(
+            "OuterCityCastleTips.gotoBtnTips",
+          ),
         );
         return;
       }
@@ -676,7 +678,7 @@ export default class BeingInviteWnd extends BaseWindow {
     if (!b) return;
     if (ArmyManager.Instance.army.onVehicle) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips")
+        LangManager.Instance.GetTranslation("OuterCityCastleTips.gotoBtnTips"),
       );
       return;
     }
@@ -696,8 +698,8 @@ export default class BeingInviteWnd extends BaseWindow {
             this._curCount,
             callBack,
             LangManager.Instance.GetTranslation(
-              "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE"
-            )
+              "yishi.view.base.ThewAlertFrame.disclistTRIAL_CHOSE",
+            ),
           );
         }
         return false;
@@ -709,8 +711,8 @@ export default class BeingInviteWnd extends BaseWindow {
         this.playerInfo.multiCopyCount,
         callBack,
         LangManager.Instance.GetTranslation(
-          "yishi.view.base.ThewAlertFrame.disclist01"
-        )
+          "yishi.view.base.ThewAlertFrame.disclist01",
+        ),
       );
     }
 
@@ -719,8 +721,8 @@ export default class BeingInviteWnd extends BaseWindow {
 
   private isAlert(
     currentCount: number,
-    callBack: Function,
-    content: string
+    callBack: (b: boolean, check: boolean) => void,
+    content: string,
   ): boolean {
     var flag: boolean = currentCount < 1;
     var preDate: Date = new Date(SharedManager.Instance.inviteCheckDate);
@@ -735,7 +737,7 @@ export default class BeingInviteWnd extends BaseWindow {
       outdate = true;
     if (flag && outdate) {
       var checkTxt: string = LangManager.Instance.GetTranslation(
-        "yishi.view.base.ThewAlertFrame.text"
+        "yishi.view.base.ThewAlertFrame.text",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -744,7 +746,7 @@ export default class BeingInviteWnd extends BaseWindow {
         content,
         null,
         null,
-        callBack
+        callBack,
       );
     }
     return flag && outdate;
@@ -759,7 +761,7 @@ export default class BeingInviteWnd extends BaseWindow {
       InviteTipManager.Instance.set(
         EmInviteTipType.Room,
         this.playerId.toString(),
-        true
+        true,
       );
     }
     this.OnBtnClose();

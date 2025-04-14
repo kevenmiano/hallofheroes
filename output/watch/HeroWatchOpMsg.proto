@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.watch;
+
+message HeroWatchOpMsg {
+  int32 opType = 1;
+  int32 gridType = 2;
+  int32 gridPos = 3;
+  int32 jionPos = 4;
+  int32 itemPos = 5;
+}

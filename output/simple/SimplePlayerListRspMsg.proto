@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimplePlayerListRspMsg {
+  int32 totalRows = 1;
+  repeated int32 playerInfo = 2;
+  string uuid = 3;
+}

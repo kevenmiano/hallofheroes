@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_GvgTopTenView from "../../../../../../fui/Consortia/FUI_GvgTopTenView";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { GvgEvent } from "../../../../constant/event/NotificationEvent";
@@ -33,7 +33,7 @@ export class GvgTopTenView extends FUI_GvgTopTenView {
       this,
       this.onListItemRender,
       null,
-      false
+      false,
     );
     this._inWarNumTxt.text = "0";
     this._rewardTxt01.text = "0";
@@ -46,12 +46,12 @@ export class GvgTopTenView extends FUI_GvgTopTenView {
     CampaignManager.Instance.gvgModel.addEventListener(
       GvgEvent.TOP_TEN_CHANGE,
       this.__topTenChangeHandler,
-      this
+      this,
     );
     CampaignManager.Instance.gvgModel.addEventListener(
       GvgEvent.GUILDWAR_PLAYER_COUNT,
       this.__updatePlayerCount,
-      this
+      this,
     );
   }
 
@@ -113,12 +113,12 @@ export class GvgTopTenView extends FUI_GvgTopTenView {
     CampaignManager.Instance.gvgModel.removeEventListener(
       GvgEvent.TOP_TEN_CHANGE,
       this.__topTenChangeHandler,
-      this
+      this,
     );
     CampaignManager.Instance.gvgModel.removeEventListener(
       GvgEvent.GUILDWAR_PLAYER_COUNT,
       this.__updatePlayerCount,
-      this
+      this,
     );
   }
 

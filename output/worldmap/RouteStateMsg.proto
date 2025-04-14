@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.worldmap;
+
+message RouteStateMsg {
+  int32 userId = 1;
+  int32 userState = 2;
+  repeated int32 path = 3;
+}

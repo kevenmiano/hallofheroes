@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message NodeHpMsg {
+  int32 nodeId = 1;
+  int32 currentHp = 2;
+  int32 totalHp = 3;
+  int32 param1 = 4;
+}

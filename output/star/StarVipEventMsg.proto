@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.star;
+
+message StarVipEventMsg {
+  int32 golden = 1;
+  int32 sellMaxQuality = 2;
+  int32 composeMaxQuality = 3;
+}

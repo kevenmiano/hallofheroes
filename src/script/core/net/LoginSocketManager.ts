@@ -1,4 +1,3 @@
-// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from '../Interface/IManager';
 import Logger from "../logger/Logger";
@@ -6,7 +5,7 @@ import { GameSocket } from "./GameSocket";
 import { PackageIn } from "./PackageIn";
 import { ServerDataManager } from "./ServerDataManager";
 import { SocketEvent } from "./SocketEvent";
-import { SocketManager } from "./SocketManager";
+// import { SocketManager } from "./SocketManager";
 import SDKManager from "../sdk/SDKManager";
 import { MessageTipManager } from "../../game/manager/MessageTipManager";
 import LangManager from "../lang/LangManager";
@@ -14,6 +13,7 @@ import { FrameCtrlManager } from "../../game/mvc/FrameCtrlManager";
 import { EmWindow } from "../../game/constant/UIDefine";
 import WeakNetCheckModel from "../check/WeakNetCheckModel";
 import { LoginManager } from "../../game/module/login/LoginManager";
+import { IManager } from "@/script/game/interfaces/Manager";
 
 /**
  * 登录Socket
@@ -58,6 +58,7 @@ export class LoginSocketManager
   }
 
   public regEvent() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
 
     if (self._socket) {
@@ -66,7 +67,9 @@ export class LoginSocketManager
       self._socket.off(SocketEvent.SERVER_ERROR, this, this.onError);
       self._socket.off(SocketEvent.SERVER_CLOSE, this, this.onClose);
       self._socket.close();
-      self._socket && this._socket.dispose();
+      if (self._socket) {
+        this._socket.dispose();
+      }
       self._socket = null;
     }
     self._socket = new GameSocket(true);
@@ -83,7 +86,7 @@ export class LoginSocketManager
       this._socket.send(code, msg);
     } else {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("login.serverclosed.noneConnected")
+        LangManager.Instance.GetTranslation("login.serverclosed.noneConnected"),
       );
     }
   }
@@ -142,7 +145,9 @@ export class LoginSocketManager
       socket.off(SocketEvent.SERVER_CLOSE, this, this.onClose);
       socket.close();
     }
-    this._socket && this._socket.dispose();
+    if (this._socket) {
+      this._socket.dispose();
+    }
     this._socket = null;
   }
 

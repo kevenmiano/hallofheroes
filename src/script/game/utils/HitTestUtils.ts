@@ -1,6 +1,6 @@
-import Logger from "../../core/logger/Logger";
+//
+/**import Logger from "../../core/logger/Logger";
 
-/**
  * @author:pzlricky
  * @data: 2021-01-08 17:09
  * @description 判断像素点击
@@ -9,16 +9,15 @@ export default class HitTestUtils {
   /**判断点击是否在对象范围内 */
   static isInArea(
     target: Laya.Sprite | Laya.Animation,
-    point: Laya.Point
+    point: Laya.Point,
   ): boolean {
     if (!target) return false;
     let targetGraphicBounds = target.getBounds();
     let stagePos: Laya.Point;
     if (target.parent) {
-      //@ts-ignore
-      stagePos = target.parent.localToGlobal(
+      stagePos = (target.parent as Laya.Sprite).localToGlobal(
         new Laya.Point(target.x, target.y),
-        true
+        true,
       );
     } else {
       stagePos = new Laya.Point(target.x, target.y);
@@ -27,7 +26,7 @@ export default class HitTestUtils {
       stagePos.x,
       stagePos.y,
       targetGraphicBounds.width,
-      targetGraphicBounds.height
+      targetGraphicBounds.height,
     );
     if (
       point.x >= rect.x &&
@@ -68,7 +67,7 @@ export default class HitTestUtils {
         Math.floor(point.x),
         Math.floor(point.y),
         1,
-        1
+        1,
       );
 
       // Logger.xjy("[HitTestUtils]hitTest", target, point, s)
@@ -76,7 +75,7 @@ export default class HitTestUtils {
       if (!s || (s.join("").slice(0, 3) == "000" && s[3] < 10)) {
         return false;
       }
-    } catch (error) {
+    } catch {
       return true;
     }
 
@@ -85,7 +84,7 @@ export default class HitTestUtils {
 
   static hitTestAlpha(
     target: Laya.Sprite | Laya.Texture,
-    point: Laya.Point
+    point: Laya.Point,
   ): number {
     if (!target) {
       return 0;
@@ -116,13 +115,13 @@ export default class HitTestUtils {
         Math.floor(point.x),
         Math.floor(point.y),
         1,
-        1
+        1,
       );
       if (s && s[3]) {
         // Logger.yyz("像素级检测透明度判断: ", target, point, s);
         return s[3];
       }
-    } catch (error) {
+    } catch {
       return 0;
     }
     return 0;

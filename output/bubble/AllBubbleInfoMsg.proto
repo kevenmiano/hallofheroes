@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.bubble;
+
+message AllBubbleInfoMsg {
+  repeated int32 allBubble = 1;
+}

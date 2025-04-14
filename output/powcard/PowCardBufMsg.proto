@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowCardBufMsg {
+  int32 sonType = 1;
+  int32 bufId = 2;
+  int32 fixValue = 3;
+  int32 percent = 4;
+}

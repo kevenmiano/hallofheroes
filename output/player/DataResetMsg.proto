@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message DataResetMsg {
+  int32 weary = 1;
+  int32 hangupCount = 2;
+  int32 transEnergy = 3;
+  int32 attackCount = 4;
+  int32 challengeCount = 5;
+  int32 leftHangupWeary = 6;
+  int32 tower1EnterCount = 7;
+  int32 tower2EnterCount = 8;
+  int32 blessingCount = 9;
+  int32 blessingBuff = 10;
+  int32 buyCount = 11;
+  bool king_Buff = 12;
+  string serverName = 13;
+  int32 UpRuneByPointTimes = 14;
+}

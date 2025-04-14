@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 /**
  * @author:jeremy.xu
  * @data: 2020-11-20 18:00
@@ -17,82 +15,85 @@ import { PawnRoleView } from "../../view/roles/PawnRoleView";
 import { BaseRoleInfo } from "./BaseRoleInfo";
 
 export class PawnRoleInfo extends BaseRoleInfo {
-    public inheritType: InheritRoleType = InheritRoleType.Pawn
-    /**
-     * 士兵模板信息 
-     */
-    private _tempInfo: t_s_pawntemplateData;
-    private _count: number = 0;//数量
-    private _armyType: number = 0;
+  public inheritType: InheritRoleType = InheritRoleType.Pawn;
+  /**
+   * 士兵模板信息
+   */
+  private _tempInfo: t_s_pawntemplateData;
+  private _count: number = 0; //数量
+  private _armyType: number = 0;
 
-    public initView(roleview: PawnRoleView) {
-        this._roleView = roleview
-    }
+  public initView(roleview: PawnRoleView) {
+    this._roleView = roleview;
+  }
 
-    public get count(): number {
-        return this._count;
-    }
+  public get count(): number {
+    return this._count;
+  }
 
-    public set count(value: number) {
-        this._count = value;
-        this._count = value < 0 ? 0 : value;
-        this.dispatchEvent(RoleEvent.COUNT, value);
-    }
+  public set count(value: number) {
+    this._count = value;
+    this._count = value < 0 ? 0 : value;
+    this.dispatchEvent(RoleEvent.COUNT, value);
+  }
 
-    public get tempInfo(): t_s_pawntemplateData {
-        return this._tempInfo;
-    }
+  public get tempInfo(): t_s_pawntemplateData {
+    return this._tempInfo;
+  }
 
-    public set templateId(value: number) {
-        this._templateId = value;
-        this.initTempInfoAndEffeInfo();
-    }
+  public set templateId(value: number) {
+    this._templateId = value;
+    this.initTempInfoAndEffeInfo();
+  }
 
-    public get roleName(): string {
-        return this._tempInfo && this._tempInfo.PawnNameLang;
-    }
+  public get roleName(): string {
+    return this._tempInfo && this._tempInfo.PawnNameLang;
+  }
 
-    public get templateId():number {
-        return this._templateId;
-    }
+  public get templateId(): number {
+    return this._templateId;
+  }
 
-    public get armyType(): number {
-        return this._armyType;
-    }
+  public get armyType(): number {
+    return this._armyType;
+  }
 
-    public set armyType(value: number) {
-        this._armyType = value;
-        if (this._templateId != 0) {
-            this.initTempInfoAndEffeInfo();
-        }
+  public set armyType(value: number) {
+    this._armyType = value;
+    if (this._templateId != 0) {
+      this.initTempInfoAndEffeInfo();
     }
-    private initTempInfoAndEffeInfo() {
-        this._tempInfo = ConfigMgr.Instance.getTemplateByID(ConfigType.t_s_pawntemplate, this._templateId.toString()) as t_s_pawntemplateData;
-        if (this._tempInfo == null) {
-            Logger.warn("[PawnRoleInfo]initTempInfoAndEffeInfo ", this._templateId)
-            return
-        }
-        // if(Number(PawnViewType.swf)>0)
-        //     this._tempInfo.Swf = PawnViewType.swf;
-        this.effectId = this._tempInfo.Swf.toLocaleLowerCase()
+  }
+  private initTempInfoAndEffeInfo() {
+    this._tempInfo = ConfigMgr.Instance.getTemplateByID(
+      ConfigType.t_s_pawntemplate,
+      this._templateId.toString(),
+    ) as t_s_pawntemplateData;
+    if (this._tempInfo == null) {
+      Logger.warn("[PawnRoleInfo]initTempInfoAndEffeInfo ", this._templateId);
+      return;
     }
-    public clone(): BaseRoleInfo {
-        let role: PawnRoleInfo = new PawnRoleInfo();
-        role.livingId = this.livingId
-        role.templateId = this.templateId;
-        role.armyType = this.armyType;
-        role.side = this.side
-        role.pos = this.pos
-        // role.baseBlood = this.baseBlood
-        // role.count = this.count
-        return role;
-    }
+    // if(Number(PawnViewType.swf)>0)
+    //     this._tempInfo.Swf = PawnViewType.swf;
+    this.effectId = this._tempInfo.Swf.toLocaleLowerCase();
+  }
+  public clone(): BaseRoleInfo {
+    let role: PawnRoleInfo = new PawnRoleInfo();
+    role.livingId = this.livingId;
+    role.templateId = this.templateId;
+    role.armyType = this.armyType;
+    role.side = this.side;
+    role.pos = this.pos;
+    // role.baseBlood = this.baseBlood
+    // role.count = this.count
+    return role;
+  }
 
-    public get level(): number {
-        return this._tempInfo.Level;
-    }
+  public get level(): number {
+    return this._tempInfo.Level;
+  }
 
-    public get icon(){
-        return IconFactory.getHeroIconByPics(this._tempInfo.Icon);
-    }
+  public get icon() {
+    return IconFactory.getHeroIconByPics(this._tempInfo.Icon);
+  }
 }

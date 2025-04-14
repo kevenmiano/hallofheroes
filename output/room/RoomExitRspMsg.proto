@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomExitRspMsg {
+  int32 playerId = 1;
+  int32 exitType = 2;
+  int32 param1 = 3;
+}

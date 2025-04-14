@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SevenSignReceiveRsp {
+  int32 rewardSite = 1;
+}

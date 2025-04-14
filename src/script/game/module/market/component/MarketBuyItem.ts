@@ -1,28 +1,24 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_MarketBuyItem from "../../../../../fui/Market/FUI_MarketBuyItem";
 
 import IMarketItemPriceMsg = com.road.yishi.proto.market.IMarketItemPriceMsg;
 
 export default class MarketBuyItem extends FUI_MarketBuyItem {
+  private _info: IMarketItemPriceMsg;
 
+  public set info(v: IMarketItemPriceMsg) {
+    this._info = v;
+    this.updateView();
+  }
 
-    private _info: IMarketItemPriceMsg;
+  public get info() {
+    return this._info;
+  }
 
-
-    public set info(v: IMarketItemPriceMsg) {
-        this._info = v;
-        this.updateView();
-    }
-
-    public get info() {
-        return this._info;
-    }
-
-    private updateView() {
-        if (!this._info) return;
-        this.sellPriceLab.text = this._info.point + "";
-        this.sellCountLab.text = this._info.count + "";
-        this.topCrol.selectedIndex = this._info.top >= 100 ? 1 : 0;
-    }
-
+  private updateView() {
+    if (!this._info) return;
+    this.sellPriceLab.text = this._info.point + "";
+    this.sellCountLab.text = this._info.count + "";
+    this.topCrol.selectedIndex = this._info.top >= 100 ? 1 : 0;
+  }
 }

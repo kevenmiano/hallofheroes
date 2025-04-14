@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ChairsChargeMsg {
+  int32 userId = 1;
+  int32 totalPoint = 2;
+  int32 currentPoint = 3;
+  int32 tokenCount = 4;
+  string uuid = 5;
+  string site = 6;
+  string serverName = 7;
+  int32 param1 = 8;
+  int32 param2 = 9;
+}

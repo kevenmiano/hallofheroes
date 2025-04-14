@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message PlaceStateRspMsg {
+  repeated int32 placeState = 1;
+}

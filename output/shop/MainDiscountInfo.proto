@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message MainDiscountInfo {
+  int32 id = 1;
+  int32 site = 2;
+  int32 shopId = 3;
+  int32 templateId = 4;
+  int32 counts = 5;
+  int32 shopId1 = 6;
+  int32 templateId1 = 7;
+  int32 count1 = 8;
+  int32 shopId2 = 9;
+  int32 templateId2 = 10;
+  int32 count2 = 11;
+  int32 shopId3 = 12;
+  int32 templateId3 = 13;
+  int32 count3 = 14;
+  int32 shopId4 = 15;
+  int32 templateId4 = 16;
+  int32 count4 = 17;
+  int32 shopId5 = 18;
+  int32 templateId5 = 19;
+  int32 count5 = 20;
+  int32 shopId6 = 21;
+  int32 templateId6 = 22;
+  int32 count6 = 23;
+  int32 shopId7 = 24;
+  int32 templateId7 = 25;
+  int32 count7 = 26;
+  int32 shopId8 = 27;
+  int32 templateId8 = 28;
+  int32 count8 = 29;
+  int32 sortId = 30;
+  int32 discount = 31;
+  string beginDate = 32;
+  string endDate = 33;
+  int32 oneDayCount = 34;
+  int32 maxCount = 35;
+  int32 currentCount = 36;
+  string maxCurrentDate = 37;
+  bool isGift = 38;
+  string url = 39;
+  string names = 40;
+  int32 price = 41;
+  int32 type = 42;
+  int32 limitCount = 43;
+  int32 vip = 44;
+}

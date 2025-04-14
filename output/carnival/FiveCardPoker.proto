@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message FiveCardPoker {
+  int32 index = 1;
+  int32 color = 2;
+  int32 number = 3;
+}

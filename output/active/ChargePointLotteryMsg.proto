@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ChargePointLotteryMsg {
+  int32 op = 1;
+  int32 chargePoint = 2;
+  int32 oneNeedPoint = 3;
+  int32 leftNeedPoint = 4;
+  int32 leftCount = 5;
+  int32 dayMaxCount = 6;
+  int32 dayAddCount = 7;
+  string openTime = 8;
+  string stopTime = 9;
+  repeated int32 reward = 10;
+  repeated int32 logs = 11;
+  bool isOneKey = 12;
+  bool isRare = 13;
+  repeated int32 resultPos = 14;
+  repeated int32 lotteryInfo = 15;
+  string activeId = 16;
+  int32 lotteryNum = 17;
+}

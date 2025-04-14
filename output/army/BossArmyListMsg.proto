@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message BossArmyListMsg {
+  int32 leftFightTime = 1;
+  string bossName = 2;
+  int32 level = 3;
+  int32 bossTemplateId = 4;
+  repeated int32 fightPlayer = 5;
+}

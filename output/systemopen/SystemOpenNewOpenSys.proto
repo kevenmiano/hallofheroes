@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.systemopen;
+
+message SystemOpenNewOpenSys {
+  int32 sysId = 1;
+}

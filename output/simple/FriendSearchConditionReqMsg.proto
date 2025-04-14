@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FriendSearchConditionReqMsg {
+  int32 pageIndex = 1;
+  int32 sex = 2;
+  int32 birthMonth = 3;
+  int32 birthDay = 4;
+  int32 starId = 5;
+  int32 bloodType = 6;
+  int32 country = 7;
+  int32 province = 8;
+  int32 city = 9;
+}

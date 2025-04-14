@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message NewActiveStateRes {
+  repeated int32 infos = 1;
+}

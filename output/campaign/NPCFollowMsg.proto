@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message NPCFollowMsg {
+  int32 escortId = 1;
+  int32 followId = 2;
+  int32 curPosX = 3;
+  int32 curPosY = 4;
+}

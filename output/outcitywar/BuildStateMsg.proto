@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message BuildStateMsg {
+  int32 nodeId = 1;
+  int32 defenseSite = 2;
+  repeated int32 oneBuildStateMsg = 3;
+  int32 buffType = 4;
+  int32 buffCondition = 5;
+}

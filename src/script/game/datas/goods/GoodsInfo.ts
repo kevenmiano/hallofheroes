@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";
 import ConfigMgr from "../../../core/config/ConfigMgr";
 import { ConfigType } from "../../constant/ConfigDefine";
@@ -125,6 +124,7 @@ export class GoodsInfo {
   public displayEffect: number = 0;
 
   public sortNumber: number = 0;
+  isInlay: boolean;
   /** 封印的英灵信息 <br/>
      * 宠物模板ID,宠物品质,当前品质经验,品质总经验, 当前等级,当前宠物经验,宠物总经验,
      |力量资质,智力资质,体质资质,护甲资质, 力量, 智力, 体质, 护甲
@@ -252,7 +252,7 @@ export class GoodsInfo {
   private mouldMaxGrade: number = 0;
   public get MOULD_MAX_GRADE(): number {
     let cfgItem = TempleteManager.Instance.getConfigInfoByConfigName(
-      "Divinecast_Upperlimit"
+      "Divinecast_Upperlimit",
     );
     if (cfgItem) {
       this.mouldMaxGrade = Number(cfgItem.ConfigValue);
@@ -380,7 +380,7 @@ export class GoodsInfo {
   public get templateInfo(): t_s_itemtemplateData {
     return ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_itemtemplate,
-      this.templateId
+      this.templateId,
     );
   }
 
@@ -643,7 +643,7 @@ export class GoodsInfo {
     let skillPropertyInfo: t_s_skillpropertytemplateData =
       ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_skillpropertytemplate,
-        id.toString()
+        id.toString(),
       );
     if (!skillPropertyInfo) {
       return 0;
@@ -680,7 +680,7 @@ export class GoodsInfo {
     return true;
   }
 
-  public copy(info: Object) {
+  public copy(info: object) {
     for (let key in info) {
       if (Object.prototype.hasOwnProperty.call(info, key)) {
         let value = info[key];

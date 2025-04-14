@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2024-03-07 18:25:15
@@ -12,11 +12,11 @@ import { SecretType } from "../../../../datas/secret/SecretConst";
 import { SecretItemInfo as SecretItemInfo } from "../../../../datas/secret/SecretItemInfo";
 
 export class SecretTipData {
-    type: SecretType;
-    secretId: number;
-    infoList: SecretItemInfo[] = [];
-    constructor(secretId:number, infoList: SecretItemInfo[]){
-        this.secretId = secretId
-        this.infoList = infoList
-    }
+  type: SecretType;
+  secretId: number;
+  infoList: SecretItemInfo[] = [];
+  constructor(secretId: number, infoList: SecretItemInfo[]) {
+    this.secretId = secretId;
+    this.infoList = infoList;
+  }
 }

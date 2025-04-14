@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BottleDropListMsg {
+  repeated int32 dropItem = 1;
+  repeated int32 score = 2;
+  repeated int32 storey = 3;
+  bool open = 4;
+  string endTime = 5;
+  string startTime = 6;
+  string activeUuid = 7;
+}

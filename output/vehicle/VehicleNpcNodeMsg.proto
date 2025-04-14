@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleNpcNodeMsg {
+  string nodeId = 1;
+  string type = 2;
+  string curX = 3;
+  string curY = 4;
+  string state = 5;
+  string hp = 6;
+  string name = 7;
+  string sonType = 8;
+  string heroTempId = 9;
+  string resource = 10;
+  string nameColor = 11;
+  string restX = 12;
+  string restY = 13;
+  string team = 14;
+  repeated int32 path = 15;
+  repeated int32 skillBuffList = 16;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageHeartMsg {
+  string curQuestion = 1;
+  repeated int32 lastQuestions = 2;
+  int32 syncRate = 3;
+  int32 maxOrder = 4;
+}

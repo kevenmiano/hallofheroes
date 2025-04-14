@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message ChatStateListRspMsg {
+  repeated int32 chatState = 1;
+}

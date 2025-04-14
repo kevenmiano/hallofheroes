@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignExitMsg {
+  int32 result = 1;
+  int32 playerId = 2;
+  int32 armyId = 3;
+  string serverName = 4;
+  repeated int32 userIds = 5;
+}

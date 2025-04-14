@@ -1,69 +1,63 @@
-// @ts-nocheck
-import {ClassFactory} from "../../../../core/utils/ClassFactory";
+//@ts-expect-error: External dependencies
+import { ClassFactory } from "../../../../core/utils/ClassFactory";
 
 /**
  * 公会用户数据
  * @author yuanzhan.yu
  */
-export class ConsortiaUserInfo
-{
-    /**
-     * consortiaId
-     */
-    public consortiaId:number = 0;
+export class ConsortiaUserInfo {
+  /**
+   * consortiaId
+   */
+  public consortiaId: number = 0;
 
-    /**
-     * userId
-     */
-    public userId:number = 0;
+  /**
+   * userId
+   */
+  public userId: number = 0;
 
-    /**
-     * nickName
-     */
-    public nickName:string;
+  /**
+   * nickName
+   */
+  public nickName: string;
 
-    /**
-     * ratifierUserId
-     */
-    public ratifierUserId:number = 0;
+  /**
+   * ratifierUserId
+   */
+  public ratifierUserId: number = 0;
 
-    /**
-     * ratifierNickName
-     */
-    public ratifierNickName:string;
+  /**
+   * ratifierNickName
+   */
+  public ratifierNickName: string;
 
-    /**
-     * dutyID
-     */
-    public dutyID:number = 0;
+  /**
+   * dutyID
+   */
+  public dutyID: number = 0;
 
-    /**
-     * isExist
-     */
-    public isExist:boolean;
+  /**
+   * isExist
+   */
+  public isExist: boolean;
 
-    public dayOffer:number = 0;
+  public dayOffer: number = 0;
 
-    private _lastDate:Object;
+  private _lastDate: object;
 
-    public totalOffer:number = 0;
+  public totalOffer: number = 0;
 
-    public todayOffer:number = 0;
-    public altarCount:number = 0;
-    public lastAltarDate:Object;
+  public todayOffer: number = 0;
+  public altarCount: number = 0;
+  public lastAltarDate: object;
 
-    constructor()
-    {
-    }
+  constructor() {}
 
-    public get lastDate():Object
-    {
-        return this._lastDate;
-    }
+  public get lastDate(): object {
+    return this._lastDate;
+  }
 
-    public set lastDate(value:Object)
-    {
-        this._lastDate = ClassFactory.copyDateType(value);
-    }
-
+  public set lastDate(value: object) {
+    this._lastDate = ClassFactory.copyDateType(value);
+  }
 }

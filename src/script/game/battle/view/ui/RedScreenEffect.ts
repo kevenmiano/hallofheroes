@@ -1,55 +1,55 @@
-// @ts-nocheck
-import ObjectUtils from '../../../../core/utils/ObjectUtils';
-import Resolution from '../../../../core/comps/Resolution';
-import { EmPackName } from '../../../constant/UIDefine';
+//@ts-expect-error: External dependencies
+import ObjectUtils from "../../../../core/utils/ObjectUtils";
+import Resolution from "../../../../core/comps/Resolution";
+import { EmPackName } from "../../../constant/UIDefine";
 /**
-* @author:pzlricky
-* @data: 2021-03-24 12:15
-* @description : 自己领主被暴击时屏幕变红效果类.
-*/
+ * @author:pzlricky
+ * @data: 2021-03-24 12:15
+ * @description : 自己领主被暴击时屏幕变红效果类.
+ */
 export default class RedScreenEffect extends Laya.Sprite {
+  private _redBm: fgui.GImage;
 
-    private _redBm: fgui.GImage;
+  constructor() {
+    super();
+    this.mouseEnabled = false;
+    this._redBm = fgui.UIPackage.createObject(
+      EmPackName.Base,
+      "Img_RedScreenBMD",
+    ).asImage;
 
-    constructor() {
-        super();
-        this.mouseEnabled = false;
-        this._redBm = fgui.UIPackage.createObject(EmPackName.Base, "Img_RedScreenBMD").asImage;
+    this.addChild(this._redBm.displayObject);
+    this._redBm.visible = false;
+    this._redBm.alpha = 0.5;
+    this.resize();
+  }
 
-        this.addChild(this._redBm.displayObject);
-        this._redBm.visible = false;
-        this._redBm.alpha = 0.5;
-        this.resize();
-    }
+  public resize() {
+    this.width = Resolution.gameWidth;
+    this.height = Resolution.gameHeight;
+    this._redBm.width = Resolution.gameWidth;
+    this._redBm.height = Resolution.gameHeight;
+  }
 
-    public resize() {
-        this.width = Resolution.gameWidth;
-        this.height = Resolution.gameHeight;
-        this._redBm.width = Resolution.gameWidth;
-        this._redBm.height = Resolution.gameHeight;
-    }
+  public play() {
+    this._redBm.visible = true;
+    Laya.timer.loop(200, this, this.onTimerComplete, null);
+  }
+  private onTimerComplete(event) {
+    this.removeTimer();
+    this._redBm.visible = false;
+  }
 
-    public play() {
-        this._redBm.visible = true;
-        Laya.timer.loop(200, this, this.onTimerComplete, null);
+  private removeTimer() {
+    Laya.timer.clearAll(this);
+  }
 
-    }
-    private onTimerComplete(event) {
-        this.removeTimer();
-        this._redBm.visible = false;
-    }
+  public stop() {
+    this.onTimerComplete(null);
+  }
 
-    private removeTimer() {
-        Laya.timer.clearAll(this);
-    }
-
-    public stop() {
-        this.onTimerComplete(null);
-    }
-
-    public dispose() {
-        ObjectUtils.disposeObject(this._redBm);
-        stop();
-    }
-
+  public dispose() {
+    ObjectUtils.disposeObject(this._redBm);
+    stop();
+  }
 }

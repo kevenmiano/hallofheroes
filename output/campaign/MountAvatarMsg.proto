@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message MountAvatarMsg {
+  repeated int32 avatarInfo = 1;
+  int32 soulScore = 2;
+}

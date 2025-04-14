@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadBattleFieldMsg {
+  repeated int32 guildInfoList = 1;
+  repeated int32 attackList = 2;
+  int32 myGuildPos = 3;
+}

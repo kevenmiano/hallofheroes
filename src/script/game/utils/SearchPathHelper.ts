@@ -12,12 +12,12 @@ export class SearchPathHelper {
     return CampaignManager.Instance.controller.findPath.find(
       new Laya.Point(
         parseInt((cur.x / 20).toString()),
-        parseInt((cur.y / 20).toString())
+        parseInt((cur.y / 20).toString()),
       ),
       new Laya.Point(
         parseInt((next.x / 20).toString()),
-        parseInt((next.y / 20).toString())
-      )
+        parseInt((next.y / 20).toString()),
+      ),
     );
   }
 

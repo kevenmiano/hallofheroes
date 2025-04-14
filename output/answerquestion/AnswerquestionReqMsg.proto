@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message AnswerquestionReqMsg {
+  int32 type = 1;
+  int32 count = 2;
+}

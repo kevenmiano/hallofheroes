@@ -1,7 +1,8 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_BaseItem from "./FUI_BaseItem";
+
+//@ts-expect-error: External dependencies
 import FUI_Btn_Common from "./FUI_Btn_Common";
 
 export default class FUI_OuterCityShopItem extends fgui.GButton {

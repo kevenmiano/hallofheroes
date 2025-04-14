@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message ChangeMasterRspMsg {
+  int32 roomId = 1;
+  int32 masterId = 2;
+  string serverName = 3;
+  bool isCross = 4;
+}

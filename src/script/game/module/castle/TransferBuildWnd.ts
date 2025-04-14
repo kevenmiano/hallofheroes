@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
 import BuildingManager from "../../map/castle/BuildingManager";
 import { BuildingEvent } from "../../map/castle/event/BuildingEvent";
@@ -18,105 +18,140 @@ import { TempleteManager } from "../../manager/TempleteManager";
  * @ver 1.0
  */
 export class TransferBuildWnd extends BaseWindow {
-    public progressBar: fgui.GProgressBar;
-    public btnPower: fgui.GButton;
-    public btnMap: fgui.GButton;
+  public progressBar: fgui.GProgressBar;
+  public btnPower: fgui.GButton;
+  public btnMap: fgui.GButton;
 
-    private _data: BuildInfo;
+  private _data: BuildInfo;
 
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+  public OnInitWind() {
+    super.OnInitWind();
+
+    this.initData();
+    this.initView();
+    this.initEvent();
+    this.setCenter();
+  }
+
+  private initData() {
+    this._data = this.params;
+  }
+
+  private initView() {
+    this.progressBar.titleType = fgui.ProgressTitleType.ValueAndMax;
+  }
+
+  private initEvent() {
+    this.btnPower.onClick(this, this.__powerHandler);
+    this.btnMap.onClick(this, this.__onMapClick);
+    BuildingManager.Instance.addEventListener(
+      BuildingEvent.TRANSFER_POWER_SUCCESS,
+      this.addPowerSuccess,
+      this,
+    );
+  }
+
+  public OnShowWind() {
+    super.OnShowWind();
+
+    this.refreshView();
+  }
+
+  private __powerHandler(e: Laya.Event): void {
+    let cfgValue = 1;
+    let cfgItem =
+      TempleteManager.Instance.getConfigInfoByConfigName("AddEnergy_Price");
+    if (cfgItem) {
+      cfgValue = Number(cfgItem.ConfigValue);
     }
-
-    public OnInitWind() {
-        super.OnInitWind();
-
-        this.initData();
-        this.initView();
-        this.initEvent();
-        this.setCenter();
+    let needPoint: number = this.getPowerPoint() * cfgValue;
+    if (needPoint > 0) {
+      let confirm: string =
+        LangManager.Instance.GetTranslation("public.confirm");
+      let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
+      let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
+      let str: string = LangManager.Instance.GetTranslation(
+        "buildings.transferbuilding.view.TransferBuildFrame.content",
+        needPoint,
+      );
+      SimpleAlertHelper.Instance.Show(
+        SimpleAlertHelper.USEBINDPOINT_ALERT,
+        { point: needPoint, checkDefault: true },
+        prompt,
+        str,
+        confirm,
+        cancel,
+        this.addPowerBack.bind(this),
+      );
     }
+  }
 
-    private initData() {
-        this._data = this.params;
+  private getPowerPoint(): number {
+    let max: number =
+      PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(
+        this._data.templeteInfo.Property2,
+      );
+    let current: number = this._data.property1;
+    return (max - current) / 5;
+  }
+
+  private addPowerBack(
+    restult: boolean,
+    flag: boolean,
+    id: number = 0,
+    type: number = 2,
+  ): void {
+    if (restult) {
+      if (!flag) {
+        type = 1;
+      }
+      BuildingSocketOutManager.sendAddTransferPower(type);
     }
+  }
 
-    private initView() {
-        this.progressBar.titleType = fgui.ProgressTitleType.ValueAndMax;
-    }
+  private __onMapClick(e: Laya.Event): void {
+    FrameCtrlManager.Instance.open(EmWindow.OuterCityMapWnd);
+  }
 
-    private initEvent() {
-        this.btnPower.onClick(this, this.__powerHandler);
-        this.btnMap.onClick(this, this.__onMapClick);
-        BuildingManager.Instance.addEventListener(BuildingEvent.TRANSFER_POWER_SUCCESS, this.addPowerSuccess, this);
+  private addPowerSuccess(): void {
+    this.refreshView();
+  }
 
-    }
+  private refreshView(): void {
+    this.progressBar.max =
+      PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(
+        this._data.templeteInfo.Property2,
+      );
+    this.progressBar.value = this._data.property1;
+    this.btnPower.enabled =
+      this._data.property1 !=
+      PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(
+        this._data.templeteInfo.Property2,
+      );
+  }
 
-    public OnShowWind() {
-        super.OnShowWind();
+  private removeEvent() {
+    this.btnPower.offClick(this, this.__powerHandler);
+    this.btnMap.offClick(this, this.__onMapClick);
+    BuildingManager.Instance.removeEventListener(
+      BuildingEvent.TRANSFER_POWER_SUCCESS,
+      this.addPowerSuccess,
+      this,
+    );
+  }
 
-        this.refreshView();
-    }
+  public OnHideWind() {
+    super.OnHideWind();
 
-    private __powerHandler(e: Laya.Event): void {
-        let cfgValue = 1;
-        let cfgItem = TempleteManager.Instance.getConfigInfoByConfigName("AddEnergy_Price");
-        if (cfgItem) {
-            cfgValue = Number(cfgItem.ConfigValue);
-        }
-        let needPoint: number = this.getPowerPoint() * cfgValue;
-        if (needPoint > 0) {
-            let confirm: string = LangManager.Instance.GetTranslation("public.confirm");
-            let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
-            let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
-            let str: string = LangManager.Instance.GetTranslation("buildings.transferbuilding.view.TransferBuildFrame.content", needPoint);
-            SimpleAlertHelper.Instance.Show(SimpleAlertHelper.USEBINDPOINT_ALERT, { point: needPoint,checkDefault: true}, prompt, str, confirm, cancel, this.addPowerBack.bind(this));
-        }
-    }
+    this.removeEvent();
+  }
 
-    private getPowerPoint(): number {
-        let max: number = PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(this._data.templeteInfo.Property2);
-        let current: number = this._data.property1;
-        return (max - current) / 5;
-    }
-
-    private addPowerBack(restult: boolean, flag: boolean, id: number = 0, type: number = 2): void {
-        if (restult) {
-            if (!flag) {
-                type = 1;
-            }
-            BuildingSocketOutManager.sendAddTransferPower(type);
-        }
-    }
-
-    private __onMapClick(e: Laya.Event): void {
-        FrameCtrlManager.Instance.open(EmWindow.OuterCityMapWnd);
-    }
-
-    private addPowerSuccess(): void {
-        this.refreshView();
-    }
-
-    private refreshView(): void {
-        this.progressBar.max = PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(this._data.templeteInfo.Property2);
-        this.progressBar.value = this._data.property1;
-        this.btnPower.enabled = this._data.property1 != PlayerManager.Instance.currentPlayerModel.playerEffect.getTransferPowerLimitAddition(this._data.templeteInfo.Property2);
-    }
-
-    private removeEvent() {
-        this.btnPower.offClick(this, this.__powerHandler);
-        this.btnMap.offClick(this, this.__onMapClick);
-        BuildingManager.Instance.removeEventListener(BuildingEvent.TRANSFER_POWER_SUCCESS, this.addPowerSuccess, this);
-    }
-
-    public OnHideWind() {
-        super.OnHideWind();
-
-        this.removeEvent();
-    }
-
-    dispose(dispose?: boolean) {
-        this._data = null;
-        super.dispose(dispose);
-    }
+  dispose(dispose?: boolean) {
+    this._data = null;
+    super.dispose(dispose);
+  }
 }

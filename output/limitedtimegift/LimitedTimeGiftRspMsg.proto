@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.limitedtimegift;
+
+message LimitedTimeGiftRspMsg {
+  int32 op = 1;
+  repeated int32 gifts = 2;
+  string dailyGift = 3;
+}

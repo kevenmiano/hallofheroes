@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message OneMineInfoMsg {
+  int32 posId = 1;
+  int32 nodeId = 2;
+  int32 sonNodeId = 3;
+  int32 occupyPlayerId = 4;
+  string playerName = 5;
+  int32 guildId = 6;
+  bool isOccupy = 7;
+}

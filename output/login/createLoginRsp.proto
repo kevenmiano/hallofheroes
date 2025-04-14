@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message createLoginRsp {
+  string userName = 1;
+  string site = 2;
+  int32 result = 3;
+}

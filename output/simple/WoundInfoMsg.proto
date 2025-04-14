@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message WoundInfoMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 wound = 3;
+  int32 woundAddation = 4;
+  int32 job = 5;
+}

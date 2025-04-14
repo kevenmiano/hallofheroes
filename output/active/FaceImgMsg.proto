@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message FaceImgMsg {
+  repeated int32 faceImgInfos = 1;
+}

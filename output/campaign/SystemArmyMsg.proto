@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message SystemArmyMsg {
+  repeated int32 heroTemplated = 1;
+  repeated int32 soldierTemplated = 2;
+}

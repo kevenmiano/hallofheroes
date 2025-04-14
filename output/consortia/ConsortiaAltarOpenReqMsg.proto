@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaAltarOpenReqMsg {
+  int32 altarType = 1;
+  int32 waveNum = 2;
+}

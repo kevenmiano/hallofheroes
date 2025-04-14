@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message FriendRelationMsg {
+  int32 otherId = 1;
+  string nickName = 2;
+  int32 relation = 3;
+  string noticeMsg = 4;
+  bool result = 5;
+  string reqId = 6;
+}

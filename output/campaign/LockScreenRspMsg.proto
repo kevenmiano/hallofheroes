@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message LockScreenRspMsg {
+  string screen = 1;
+  int32 frame = 2;
+}

@@ -22380,6 +22380,8 @@ new Animation_Example();
 	 * <code>Node</code> 类是可放在显示列表中的所有对象的基类。该显示列表管理 Laya 运行时中显示的所有对象。使用 Node 类排列显示列表中的显示对象。Node 对象可以有子显示对象。
 	 */
 	class Node extends EventDispatcher  {
+    scaleX: number;
+    resize(): void;
 
 		/**
 		 * @private
@@ -31499,6 +31501,10 @@ enum HTMLElementType {
 	}
 
 	interface loadItem{
+    key(key: (key: any, arg1: any) => unknown, arg1: any): unknown;
+    key(key: any, arg1: any): unknown;
+    type: any;
+		url: string;
 	}
 
 
@@ -35431,6 +35437,9 @@ enum RTDEPTHATTACHMODE {
 	 * <code>Resource</code> 资源存取类。
 	 */
 	class Resource extends EventDispatcher implements ICreateResource,IDestroy  {
+    static getIdResourcesMap(): any {
+      throw new Error("Method not implemented.");
+    }
 
 		/**
 		 * @private

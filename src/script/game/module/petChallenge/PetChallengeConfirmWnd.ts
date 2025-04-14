@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -19,71 +19,89 @@ import PetChallengeCtrl from "./PetChallengeCtrl";
 import PetChallengeData from "./PetChallengeData";
 
 export default class PetChallengeConfirmWnd extends BaseWindow {
-    private txtTitleName: fgui.GLabel;
-    private txtCapacityValue: fgui.GLabel;
-    private txtWinValue: fgui.GLabel;
-    private txtLoseValue: fgui.GLabel;
-    private _info: PetChallengeObjectData;
+  private txtTitleName: fgui.GLabel;
+  private txtCapacityValue: fgui.GLabel;
+  private txtWinValue: fgui.GLabel;
+  private txtLoseValue: fgui.GLabel;
+  private _info: PetChallengeObjectData;
 
-    constructor() {
-        super();
-        this.resizeContent = true;
+  constructor() {
+    super();
+    this.resizeContent = true;
+  }
+
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+  }
+
+  /**界面打开 */
+  OnShowWind() {
+    super.OnShowWind();
+    this._info = this.frameData;
+    this.refresh();
+  }
+
+  /**关闭界面 */
+  OnHideWind() {
+    super.OnHideWind();
+  }
+
+  private refresh() {
+    let selfScore = this.control.data.score;
+    let defencerScore = this._info.score;
+
+    let win = PetChallengeData.getResultScore(selfScore, defencerScore, true);
+    let lose = PetChallengeData.getResultScore(selfScore, defencerScore, false);
+
+    this.txtWinValue.text =
+      LangManager.Instance.GetTranslation(
+        "petchallenge.PetChallengeTopFrame.ScoreTitleTxt",
+      ) +
+      "+" +
+      win;
+    this.txtLoseValue.text =
+      LangManager.Instance.GetTranslation(
+        "petchallenge.PetChallengeTopFrame.ScoreTitleTxt",
+      ) + lose;
+    this.txtTitleName.text = LangManager.Instance.GetTranslation(
+      "PetChallengePetListInfoView.Title",
+      this._info.userName,
+    );
+    this.txtCapacityValue.text = this._info.totalFightPower.toString();
+
+    let petLen = this._info.petList.length;
+    if (petLen == 1) {
+      (this["item2"] as TeamFormationPetFigureItem).info =
+        this._info.petList[0];
+    } else {
+      for (let i = 0; i < PetChallengeData.CARRY_PET_CNT; i++) {
+        let data = this._info.petList[i];
+        (this["item" + (i + 1)] as TeamFormationPetFigureItem).info = data;
+      }
+    }
+  }
+
+  private btnCancelClick() {
+    this.hide();
+  }
+
+  private btnConfirmClick() {
+    if (this.control.data.buildingOrder.remainCount <= 0) {
+      MessageTipManager.Instance.show(
+        LangManager.Instance.GetTranslation(
+          "PetChallengeCtrl.lackChallengeCnt",
+        ),
+      );
+      return;
     }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter()
-    }
+    this.control.sendChallengeCommand(this._info.userId);
+  }
 
-    /**界面打开 */
-    OnShowWind() {
-        super.OnShowWind();
-        this._info = this.frameData
-        this.refresh()
-    }
-
-    /**关闭界面 */
-    OnHideWind() {
-        super.OnHideWind();
-    }
-
-    private refresh() {
-        let selfScore = this.control.data.score
-        let defencerScore = this._info.score
-
-        let win = PetChallengeData.getResultScore(selfScore, defencerScore, true)
-        let lose = PetChallengeData.getResultScore(selfScore, defencerScore, false)
-
-        this.txtWinValue.text = LangManager.Instance.GetTranslation("petchallenge.PetChallengeTopFrame.ScoreTitleTxt") + "+" + win;
-        this.txtLoseValue.text = LangManager.Instance.GetTranslation("petchallenge.PetChallengeTopFrame.ScoreTitleTxt") + lose;
-        this.txtTitleName.text = LangManager.Instance.GetTranslation("PetChallengePetListInfoView.Title", this._info.userName);
-        this.txtCapacityValue.text = this._info.totalFightPower.toString();
-
-        let petLen = this._info.petList.length
-        if (petLen == 1) {
-            (this["item2"] as TeamFormationPetFigureItem).info = this._info.petList[0]
-        } else {
-            for (let i = 0; i < PetChallengeData.CARRY_PET_CNT; i++) {
-                let data = this._info.petList[i];
-                (this["item" + (i + 1)] as TeamFormationPetFigureItem).info = data
-            }
-        }
-    }
-
-    private btnCancelClick() {
-        this.hide();
-    }
-
-    private btnConfirmClick() {
-        if (this.control.data.buildingOrder.remainCount <= 0) {
-            MessageTipManager.Instance.show(LangManager.Instance.GetTranslation("PetChallengeCtrl.lackChallengeCnt"));
-            return;
-        }
-        
-        this.control.sendChallengeCommand(this._info.userId);
-    }
-
-    public get control() {
-        return FrameCtrlManager.Instance.getCtrl(EmWindow.PetChallenge) as PetChallengeCtrl
-    }
+  public get control() {
+    return FrameCtrlManager.Instance.getCtrl(
+      EmWindow.PetChallenge,
+    ) as PetChallengeCtrl;
+  }
 }

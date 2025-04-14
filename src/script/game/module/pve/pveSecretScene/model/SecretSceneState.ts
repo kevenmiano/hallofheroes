@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2024-03-01 11:49:11
@@ -8,9 +7,9 @@
  * @Description: 场景所处状态
  */
 
-export enum SecretSceneState{
-    Default = 1,
-    Fighting,
-    Failed,
-    Sucess,
+export enum SecretSceneState {
+  Default = 1,
+  Fighting,
+  Failed,
+  Sucess,
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message PlayerStateListMsg {
+  repeated int32 playerState = 1;
+  repeated int32 userId = 2;
+}

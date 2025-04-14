@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehiclePickPropMsg {
+  string propNodeId = 1;
+  string playerId = 2;
+  string serverName = 3;
+}

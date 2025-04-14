@@ -19,11 +19,12 @@ export class BaseSceneSocketDataProxy {
    */
   protected __onDataHandler(pkg: PackageIn) {
     Logger.yyz("__onDataHandler:");
-    this._model &&
+    if (this._model) {
       this._model.addSocketData(
         new SocketDataProxyInfo(pkg, pkg.code.toString()),
-        this.sceneType
+        this.sceneType,
       );
+    }
   }
 
   public get sceneType(): string {

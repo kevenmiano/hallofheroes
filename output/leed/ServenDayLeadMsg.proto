@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message ServenDayLeadMsg {
+  string beginTime = 1;
+  int32 statu = 2;
+  repeated int32 singleDay = 3;
+}

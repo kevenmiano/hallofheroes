@@ -75,7 +75,7 @@ export default class UseGoodsAlert extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       NotificationEvent.USE_PROP,
       this.refreshView,
-      this
+      this,
     );
   }
 
@@ -86,7 +86,7 @@ export default class UseGoodsAlert extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.USE_PROP,
       this.refreshView,
-      this
+      this,
     );
   }
 

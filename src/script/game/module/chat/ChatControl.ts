@@ -1,22 +1,19 @@
-// @ts-nocheck
-import FrameCtrlBase from '../../mvc/FrameCtrlBase';
+import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 /**
-* @author:pzlricky
-* @data: 2021-04-29 10:17
-* @description 聊天管理器
-*/
+ * @author:pzlricky
+ * @data: 2021-04-29 10:17
+ * @description 聊天管理器
+ */
 export default class ChatControl extends FrameCtrlBase {
+  show() {
+    super.show();
+  }
 
-    show() {
-        super.show()
-    }
+  hide() {
+    super.hide();
+  }
 
-    hide() {
-        super.hide()
-    }
-
-    dispose() {
-        super.dispose()
-    }
-
+  dispose() {
+    super.dispose();
+  }
 }

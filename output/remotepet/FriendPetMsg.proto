@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message FriendPetMsg {
+  int32 friendId = 1;
+  int32 petId = 2;
+  int32 petFight = 3;
+  int32 petQuality = 4;
+  int32 petType = 5;
+  string petName = 6;
+  string friendName = 7;
+  int32 petTempId = 8;
+}

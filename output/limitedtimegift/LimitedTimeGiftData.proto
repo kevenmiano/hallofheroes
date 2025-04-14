@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.limitedtimegift;
+
+message LimitedTimeGiftData {
+  int32 templateId = 1;
+  string lastShowTime = 2;
+  int32 showSecond = 3;
+  int32 status = 4;
+  int32 type = 5;
+}

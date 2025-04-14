@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { DataAnalyzer } from "../../../core/lang/LanguageAnalyzer";
 import ResMgr from "../../../core/res/ResMgr";
 import ByteArray from "../../../core/net/ByteArray";
@@ -34,7 +33,7 @@ export class FilterWordAnalyzer extends DataAnalyzer {
                 this.nickNames = arr[1].split("|");
                 this.words = arr[2].split("|");
                 this.onAnalyzeComplete();
-              } catch (error) {
+              } catch {
                 this.onAnalyzeComplete();
               }
             } else {
@@ -45,7 +44,7 @@ export class FilterWordAnalyzer extends DataAnalyzer {
           }
         },
         null,
-        Laya.Loader.BUFFER
+        Laya.Loader.BUFFER,
       );
     } else {
       this.onAnalyzeComplete();

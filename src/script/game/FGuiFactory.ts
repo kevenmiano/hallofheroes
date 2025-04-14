@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_AllocateItem from "../../fui/Allocate/FUI_AllocateItem";
 import FUI_SpecialSelecteItem from "../../fui/Allocate/FUI_SpecialSelecteItem";
 import FUI_AppellCellItem from "../../fui/Appell/FUI_AppellCellItem";
@@ -1132,7 +1131,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_RoomPlayerItem.URL, RoomPlayerItem);
     this.registerExtension(
       FUI_TeamFormationItemDrag.URL,
-      TeamFormationItemDrag
+      TeamFormationItemDrag,
     );
     this.registerExtension(FUI_FriendItem.URL, FriendItem);
     this.registerExtension(FUI_ChatTabBtn.URL, ChatTabBtn);
@@ -1181,7 +1180,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_ShopDiscountGoodItem.URL, ShopDiscountGoodItem);
     this.registerExtension(
       FUI_ShopDiscountScoreItem.URL,
-      ShopDiscountScoreItem
+      ShopDiscountScoreItem,
     );
     this.registerExtension(FUI_DegreeActivityView.URL, DegreeActivityView);
     this.registerExtension(FUI_GrowthFundView.URL, GrowthFundView);
@@ -1197,7 +1196,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_DegreeActivityBox.URL, DegreeActivityBox);
     this.registerExtension(
       FUI_DegreeActivityListCell.URL,
-      DegreeActivityListCell
+      DegreeActivityListCell,
     );
     this.registerExtension(FUI_GrowthFundItem.URL, GrowthFundItem);
     this.registerExtension(FUI_LevelGiftItem1.URL, LevelGiftItem1);
@@ -1222,40 +1221,40 @@ export default class FGuiFactory {
     this.registerExtension(FUI_ConsortiaMemberPage.URL, ConsortiaMemberPage);
     this.registerExtension(
       FUI_ConsortiaActivityPage.URL,
-      ConsortiaActivityPage
+      ConsortiaActivityPage,
     );
     this.registerExtension(
       FUI_ConsortiaActivityItem.URL,
-      ConsortiaActivityItem
+      ConsortiaActivityItem,
     );
     this.registerExtension(
       FUI_ConsortiaActivityListView.URL,
-      ConsortiaActivityListView
+      ConsortiaActivityListView,
     );
     this.registerExtension(FUI_ConsortiaMemberView.URL, ConsortiaMemberView);
     this.registerExtension(FUI_ConsortiaMemberItem.URL, ConsortiaMemberItem);
     this.registerExtension(FUI_ConsortiaApplyCell.URL, ConsortiaApplyCell);
     this.registerExtension(
       FUI_ConsortiaApplyRecordCell.URL,
-      ConsortiaApplyRecordCell
+      ConsortiaApplyRecordCell,
     );
     this.registerExtension(
       FUI_ConsortiaSkillTowerItem.URL,
-      ConsortiaSkillTowerItem
+      ConsortiaSkillTowerItem,
     );
 
     this.registerExtension(
       FUI_ConsortiaEmailMemberItem.URL,
-      ConsortiaEmailMemberItem
+      ConsortiaEmailMemberItem,
     );
     this.registerExtension(FUI_ConsortiaEventItem.URL, ConsortiaEventItem);
     this.registerExtension(
       FUI_ConsortiaContributeRankItem.URL,
-      ConsortiaContributeRankItem
+      ConsortiaContributeRankItem,
     );
     this.registerExtension(
       FUI_ConsortiaAuditingCell.URL,
-      ConsortiaAuditingCell
+      ConsortiaAuditingCell,
     );
     this.registerExtension(FUI_ConditionContentItem.URL, ConditionContentItem);
     this.registerExtension(FUI_RvrBattleResultItem.URL, RvrBattleResultItem);
@@ -1277,7 +1276,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_DescribleItem.URL, DescribleItem);
     this.registerExtension(
       FUI_ConsortiaPrizeAllotItem.URL,
-      ConsortiaPrizeAllotItem
+      ConsortiaPrizeAllotItem,
     );
     this.registerExtension(FUI_Dialog2.URL, FUI_Dialog2);
     this.registerExtension(FUI_CommonFrame3.URL, FUI_CommonFrame3);
@@ -1318,40 +1317,40 @@ export default class FGuiFactory {
     //PetChallenge
     this.registerExtension(
       FUI_PetChallengeFigureItem.URL,
-      PetChallengeFigureItem
+      PetChallengeFigureItem,
     );
     this.registerExtension(
       FUI_PetChallengeMainHeadItem.URL,
-      PetChallengeMainHeadItem
+      PetChallengeMainHeadItem,
     );
     this.registerExtension(
       FUI_PetChallengeRankHeadItem.URL,
-      PetChallengeRankHeadItem
+      PetChallengeRankHeadItem,
     );
     this.registerExtension(FUI_PetChallengeRankItem.URL, PetChallengeRankItem);
     this.registerExtension(
       FUI_PetChallengeScoreRewardItem.URL,
-      PetChallengeScoreRewardItem
+      PetChallengeScoreRewardItem,
     );
     this.registerExtension(
       FUI_PetChallengeRankRewardItem.URL,
-      PetChallengeRankRewardItem
+      PetChallengeRankRewardItem,
     );
     this.registerExtension(
       FUI_TeamFormationPetFigureItem.URL,
-      TeamFormationPetFigureItem
+      TeamFormationPetFigureItem,
     );
     this.registerExtension(
       FUI_PetChallengeAdjustSkillItem.URL,
-      PetChallengeAdjustSkillItem
+      PetChallengeAdjustSkillItem,
     );
     this.registerExtension(
       FUI_PetChallengeAdjustPetItem.URL,
-      PetChallengeAdjustPetItem
+      PetChallengeAdjustPetItem,
     );
     this.registerExtension(
       FUI_PetChallengeAdjustFormationItem.URL,
-      PetChallengeAdjustFormationItem
+      PetChallengeAdjustFormationItem,
     );
 
     //称号
@@ -1361,25 +1360,25 @@ export default class FGuiFactory {
     this.registerExtension(FUI_WarlordsPlayerItem.URL, WarlordsPlayerItem);
     this.registerExtension(
       FUI_WarlordRoomPlayerItem.URL,
-      WarlordRoomPlayerItem
+      WarlordRoomPlayerItem,
     );
     this.registerExtension(FUI_WarlordRoomRankItem.URL, WarlordRoomRankItem);
     this.registerExtension(
       FUI_WarlordsCheckRewardItem.URL,
-      WarlordsCheckRewardItem
+      WarlordsCheckRewardItem,
     );
     this.registerExtension(FUI_WarlordsRewardItem.URL, WarlordsRewardItem);
     this.registerExtension(
       FUI_WarlordsPrelimReportItem.URL,
-      WarlordsPrelimReportItem
+      WarlordsPrelimReportItem,
     );
     this.registerExtension(
       FUI_WarlordsWinPrizesItem.URL,
-      WarlordsWinPrizesItem
+      WarlordsWinPrizesItem,
     );
     this.registerExtension(
       FUI_WarlordsBetSelectItem.URL,
-      WarlordsBetSelectItem
+      WarlordsBetSelectItem,
     );
 
     //个人中心
@@ -1402,7 +1401,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_MapItem.URL, MapItem);
     this.registerExtension(
       FUI_ConsortiaElectionItem.URL,
-      ConsortiaElectionItem
+      ConsortiaElectionItem,
     );
     //其他玩家头像信息
     this.registerExtension(FUI_OtherRoleCom.URL, OtherRoleCom);
@@ -1421,7 +1420,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_CommonTipItem.URL, CommonTipItem);
     this.registerExtension(
       FUI_OuterCityBossInfoView.URL,
-      OuterCityBossInfoView
+      OuterCityBossInfoView,
     );
 
     this.registerExtension(FUI_SinglePassBugleItem.URL, SinglePassBugleItem);
@@ -1429,7 +1428,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_ChatBubbleTip.URL, ChatPopView);
     this.registerExtension(
       FUI_OuterCityResourceInfoItem.URL,
-      OuterCityResourceInfoItem
+      OuterCityResourceInfoItem,
     );
     this.registerExtension(FUI_PotionBufferItem.URL, PotionBufferItem);
     this.registerExtension(FUI_comTotalEvalue.URL, FUI_comTotalEvalue);
@@ -1441,19 +1440,19 @@ export default class FGuiFactory {
     //精彩活动 累计充值
     this.registerExtension(
       FUI_CumulativeRechargeView.URL,
-      CumulativeRechargeView
+      CumulativeRechargeView,
     );
     this.registerExtension(
       FUI_CumulativeRechargeItem.URL,
-      CumulativeRechargeItem
+      CumulativeRechargeItem,
     );
     this.registerExtension(
       FUI_CumulativeRechargeDayView.URL,
-      CumulativeRechargeDayView
+      CumulativeRechargeDayView,
     );
     this.registerExtension(
       FUI_CumulativeRechargeDayItem.URL,
-      CumulativeRechargeDayItem
+      CumulativeRechargeDayItem,
     );
     this.registerExtension(FUI_AllExchangeView.URL, AllExchangeView);
     this.registerExtension(FUI_ExchangeItem.URL, ExchangeItem);
@@ -1463,7 +1462,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_ImprovePowerItem.URL, ImprovePowerItem);
     this.registerExtension(
       FUI_FightingDescribleItem.URL,
-      FightingDescribleItem
+      FightingDescribleItem,
     );
     this.registerExtension(FUI_FightingPetItem.URL, FightingPetItem);
     this.registerExtension(FUI_FirstRechargeView.URL, FirstRechargeView);
@@ -1490,30 +1489,30 @@ export default class FGuiFactory {
     this.registerExtension(FUI_LuckyExchangeView.URL, LuckyExchangeView);
     this.registerExtension(
       FUI_LuckyExchangeRareItem.URL,
-      LuckyExchangeRareItem
+      LuckyExchangeRareItem,
     );
     this.registerExtension(FUI_DropList.URL, DropListCom);
     this.registerExtension(FUI_DropListItem.URL, DropListItem);
     this.registerExtension(
       FUI_ConsortiaBossTaskItem.URL,
-      ConsortiaBossTaskItem
+      ConsortiaBossTaskItem,
     );
     this.registerExtension(FUI_MemToolItem.URL, MemToolItem);
     //聊天气泡
     this.registerExtension(
       FUI_ChatAirBubbleItemCell.URL,
-      ChatAirBubbleItemCell
+      ChatAirBubbleItemCell,
     );
     this.registerExtension(FUI_EditSkillItem.URL, EditSkillItem);
     this.registerExtension(FUI_EditPetItem.URL, EditPetItem);
     this.registerExtension(FUI_EditTalentItem.URL, EditTalentItem);
     this.registerExtension(
       FUI_OuterCityTreasureItem.URL,
-      OuterCityTreasureItem
+      OuterCityTreasureItem,
     );
     this.registerExtension(
       FUI_ConsortiaTreasureItem.URL,
-      ConsortiaTreasureItem
+      ConsortiaTreasureItem,
     );
     this.registerExtension(FUI_ResourceItem.URL, ResourceItem);
     this.registerExtension(FUI_FoisonHornItem.URL, FoisonHornItem);
@@ -1553,11 +1552,11 @@ export default class FGuiFactory {
     this.registerExtension(FUI_GoldenSheepItem.URL, GoldenSheepItem);
     this.registerExtension(
       FUI_MonopolyFinishRewardItem.URL,
-      MonopolyFinishRewardItem
+      MonopolyFinishRewardItem,
     );
     this.registerExtension(
       FUI_MonopolyFinishColumnView.URL,
-      MonopolyFinishColumnView
+      MonopolyFinishColumnView,
     );
     this.registerExtension(FUI_AccountCom.URL, AccountCom);
     this.registerExtension(FUI_SRolePropertyCom.URL, SRolePropertyCom);
@@ -1580,58 +1579,58 @@ export default class FGuiFactory {
     this.registerExtension(FUI_RemoteSkillView.URL, RemoteSkillView);
     this.registerExtension(
       FUI_RemotePetHeadItemView.URL,
-      RemotePetHeadItemView
+      RemotePetHeadItemView,
     );
     this.registerExtension(
       FUI_RemotePetHeadSelectView.URL,
-      RemotePetHeadSelectView
+      RemotePetHeadSelectView,
     );
     this.registerExtension(
       FUI_RemotePetHeadSelectItemView.URL,
-      RemotePetHeadSelectItemView
+      RemotePetHeadSelectItemView,
     );
     this.registerExtension(FUI_RemotePetSkillsView.URL, RemotePetSkillsView);
     this.registerExtension(
       FUI_RemotePetSkillItemView.URL,
-      RemotePetSkillItemView
+      RemotePetSkillItemView,
     );
     this.registerExtension(
       FUI_RemotePetFormationView.URL,
-      RemotePetFormationView
+      RemotePetFormationView,
     );
     this.registerExtension(
       FUI_RemotePetFormationItemView.URL,
-      RemotePetFormationItemView
+      RemotePetFormationItemView,
     );
     this.registerExtension(
       FUI_RemotePetTurnDownView.URL,
-      RemotePetTurnDownView
+      RemotePetTurnDownView,
     );
     this.registerExtension(FUI_RemotePetTurnUpView.URL, RemotePetTurnUpView);
     this.registerExtension(FUI_RemotePetTurnMap.URL, RemotePetTurnMap);
     this.registerExtension(
       FUI_RemotePetTurnInfoItemView.URL,
-      RemotePetTurnInfoItemView
+      RemotePetTurnInfoItemView,
     );
     this.registerExtension(FUI_RemotePetFriendView.URL, RemotePetFriendView);
     this.registerExtension(
       FUI_RemotePetFriendItemView.URL,
-      RemotePetFriendItemView
+      RemotePetFriendItemView,
     );
     this.registerExtension(FUI_RemoteSkillItemView.URL, RemoteSkillItemView);
     this.registerExtension(
       FUI_RemotePetTurnSingleItemView.URL,
-      RemotePetTurnSingleItemView
+      RemotePetTurnSingleItemView,
     );
     this.registerExtension(
       FUI_RemotePetOrderItemView.URL,
-      RemotePetOrderItemView
+      RemotePetOrderItemView,
     );
     this.registerExtension(FUI_PetSkillItemListView.URL, PetSkillItemListView);
     this.registerExtension(FUI_HomePrivate.URL, HomePrivate);
     this.registerExtension(
       FUI_RemotePetSkillLevelUpItem.URL,
-      RemotePetSkillLevelUpItem
+      RemotePetSkillLevelUpItem,
     );
     this.registerExtension(FUI_RingTaskRewardItem.URL, RingTaskRewardItem);
     this.registerExtension(RemotePetOption.URL, RemotePetOption);
@@ -1641,18 +1640,18 @@ export default class FGuiFactory {
     this.registerExtension(RemotePetChapterItem.URL, RemotePetChapterItem);
     this.registerExtension(
       FUI_RemotePetRewardItem.URL,
-      FUI_RemotePetRewardItem
+      FUI_RemotePetRewardItem,
     );
     this.registerExtension(RemotePetAdjstPetItem.URL, RemotePetAdjstPetItem);
 
     this.registerExtension(
       FUI_NumericProgressStepper.URL,
-      NumericProgressStepper
+      NumericProgressStepper,
     );
     //时装吞噬
     this.registerExtension(
       FUI_FashionBounsAttribute.URL,
-      FashionBounsAttribute
+      FashionBounsAttribute,
     );
     this.registerExtension(FUI_FashionBounsGroup.URL, FashionBounsGroup);
     this.registerExtension(FUI_SFashionCom.URL, SFashionCom);
@@ -1668,37 +1667,37 @@ export default class FGuiFactory {
     this.registerExtension(FUI_OutyardChangeItem.URL, OutyardChangeItem);
     this.registerExtension(
       FUI_OutyardConsortiaRewardItem.URL,
-      OutyardConsortiaRewardItem
+      OutyardConsortiaRewardItem,
     );
     this.registerExtension(FUI_OutyardFigureMemItem.URL, OutyardFigureMemItem);
     this.registerExtension(
       FUI_OutyardMemberFirstItem.URL,
-      OutyardMemberFirstItem
+      OutyardMemberFirstItem,
     );
     this.registerExtension(
       FUI_OutyardMemberSecondItem.URL,
-      OutyardMemberSecondItem
+      OutyardMemberSecondItem,
     );
     this.registerExtension(FUI_OutyardOpenTimeItem.URL, OutyardOpenTimeItem);
     this.registerExtension(
       FUI_OutyardPersonRewardItem.URL,
-      OutyardPersonRewardItem
+      OutyardPersonRewardItem,
     );
     this.registerExtension(FUI_DragIconCom.URL, DragIconCom);
     this.registerExtension(FUI_DragRuneIcon.URL, DragRuneIcon);
     this.registerExtension(
       FUI_OutyardFigureStatusItem.URL,
-      OutyardFigureStatusItem
+      OutyardFigureStatusItem,
     );
     this.registerExtension(FUI_GoldenTreeView.URL, GoldenTreeView);
     this.registerExtension(FUI_RewardMsgItem.URL, RewardMsgItem);
     this.registerExtension(
       FUI_BottleIntergalBoxView.URL,
-      BottleIntergalBoxView
+      BottleIntergalBoxView,
     );
     this.registerExtension(
       FUI_BottleBottomIntergalBoxView.URL,
-      BottleBottomIntergalBoxView
+      BottleBottomIntergalBoxView,
     );
     this.registerExtension(FUI_ComSacredGoldTree.URL, FUI_ComSacredGoldTree);
     this.registerExtension(FUI_ComGoldsRain.URL, FUI_ComGoldsRain);
@@ -1710,14 +1709,14 @@ export default class FGuiFactory {
     this.registerExtension(FUI_PvpPreviewItem.URL, PvpPreviewItem);
     this.registerExtension(
       FUI_RoomListPvpMemberItem.URL,
-      FUI_RoomListPvpMemberItem
+      FUI_RoomListPvpMemberItem,
     );
     this.registerExtension(FUI_MiniRankStarItem.URL, RankStarItem);
     this.registerExtension(FUI_OutyardShowView.URL, OutyardShowView);
     this.registerExtension(FUI_WithdrawVoteView.URL, WithdrawVoteView);
     this.registerExtension(
       FUI_WithdrawVoteInitiatorView.URL,
-      WithdrawVoteInitiatorView
+      WithdrawVoteInitiatorView,
     );
     this.registerExtension(FUI_TextBox.URL, TextBox);
     this.registerExtension(FUI_ColosseumRewardsItem.URL, ColosseumRewardsItem);
@@ -1726,7 +1725,7 @@ export default class FGuiFactory {
     //符孔
     this.registerExtension(
       FUI_BottleBottomIntergalBox.URL,
-      BottleBottomIntergalBox
+      BottleBottomIntergalBox,
     );
 
     this.registerExtension(FUI_TalentBalance.URL, TalentBalance);
@@ -1768,45 +1767,45 @@ export default class FGuiFactory {
     this.registerExtension(FUI_CarnivalInfoItem.URL, CarnivalInfoItem);
     this.registerExtension(
       FUI_CarnivalAwardPointPage.URL,
-      CarnivalAwardPointPage
+      CarnivalAwardPointPage,
     );
     this.registerExtension(
       FUI_CarnivalAwardPointPageItem.URL,
-      CarnivalAwardPointPageItem
+      CarnivalAwardPointPageItem,
     );
     this.registerExtension(FUI_CarnivalBaoPage.URL, CarnivalBaoPage);
     this.registerExtension(FUI_CarnivalDayTaskPage.URL, CarnivalDayTaskPage);
     this.registerExtension(
       FUI_CarnivalDayTaskPageItem.URL,
-      CarnivalDayTaskPageItem
+      CarnivalDayTaskPageItem,
     );
     this.registerExtension(FUI_CarnivalDisBtn.URL, CarnivalDisBtn);
     this.registerExtension(FUI_CarnivalDiscountPage.URL, CarnivalDiscountPage);
     this.registerExtension(
       FUI_CarnivalDiscountPageItem.URL,
-      CarnivalDiscountPageItem
+      CarnivalDiscountPageItem,
     );
     this.registerExtension(FUI_CarnivalGamePage.URL, CarnivalGamePage);
     this.registerExtension(FUI_CarnivalGamePageItem.URL, CarnivalGamePageItem);
     this.registerExtension(FUI_CarnivalOnlinePage.URL, CarnivalOnlinePage);
     this.registerExtension(
       FUI_CarnivalOnlinePageItem.URL,
-      CarnivalOnlinePageItem
+      CarnivalOnlinePageItem,
     );
     this.registerExtension(FUI_CarnivalRechargePage.URL, CarnivalRechargePage);
     this.registerExtension(CarnivalRechargeItem.URL, CarnivalRechargeItem);
     this.registerExtension(
       AirGardenGameFivecardItem.URL,
-      AirGardenGameFivecardItem
+      AirGardenGameFivecardItem,
     );
     this.registerExtension(
       AirGardenGameFivecardScoreItem.URL,
-      AirGardenGameFivecardScoreItem
+      AirGardenGameFivecardScoreItem,
     );
     this.registerExtension(AirGardenGameLLKItem.URL, AirGardenGameLLKItem);
     this.registerExtension(
       FUI_AirGardenGameMemoryCardItem.URL,
-      AirGardenGameMemoryCardItem
+      AirGardenGameMemoryCardItem,
     );
     // 绑定手机、邮箱
     this.registerExtension(FUI_BindMailView.URL, BindMailView);
@@ -1817,15 +1816,15 @@ export default class FGuiFactory {
     this.registerExtension(FUI_RechargeLotteryView.URL, RechargeLotteryView);
     this.registerExtension(
       FUI_RechargeLotteryGoodsItem.URL,
-      RechargeLotteryGoodsItem
+      RechargeLotteryGoodsItem,
     );
     this.registerExtension(
       FUI_RechargeLotteryInfoItem.URL,
-      RechargeLotteryInfoItem
+      RechargeLotteryInfoItem,
     );
     this.registerExtension(
       OutyardBattleRecordItem.URL,
-      OutyardBattleRecordItem
+      OutyardBattleRecordItem,
     );
 
     this.registerExtension(PreviewGoodsItem.URL, PreviewGoodsItem);
@@ -1840,12 +1839,12 @@ export default class FGuiFactory {
     this.registerExtension(FUI_LuckBlindBoxView.URL, LuckBlindBoxView);
     this.registerExtension(
       FUI_LuckBlindBox_ChanceBoxItem.URL,
-      LuckBlindBoxChanceBoxItem
+      LuckBlindBoxChanceBoxItem,
     );
     this.registerExtension(FUI_SuperGiftOfGroup.URL, SuperGiftOfGroupView);
     this.registerExtension(
       FUI_SuperGiftITitleItemCell.URL,
-      SuperGiftOfGroupItem
+      SuperGiftOfGroupItem,
     );
     this.registerExtension(FUI_WishPoolItem.URL, WishPoolItem);
     this.registerExtension(FUI_WishPoolView.URL, WishPoolView);
@@ -1865,7 +1864,7 @@ export default class FGuiFactory {
     this.registerExtension(FUI_SmallMapMineItem.URL, SmallMapMineItem);
     this.registerExtension(
       FUI_OuterCityBossInfoItem.URL,
-      OuterCityBossInfoItem
+      OuterCityBossInfoItem,
     );
     this.registerExtension(AirGardenGameSuDuItem.URL, AirGardenGameSuDuItem);
     this.registerExtension(SuDuCellGroup.URL, SuDuCellGroup);
@@ -1876,7 +1875,7 @@ export default class FGuiFactory {
     this.registerExtension(PetInfoView.URL, PetInfoView);
     this.registerExtension(
       FUI_PetPKSkillItemListView.URL,
-      PetPKSkillItemListView
+      PetPKSkillItemListView,
     );
 
     this.registerExtension(BloodSingle.URL, BloodSingle);
@@ -1901,27 +1900,27 @@ export default class FGuiFactory {
 
     this.registerExtension(
       FUI_OuterCityWarBuildBriefInfoItem.URL,
-      OuterCityWarBuildBriefInfoItem
+      OuterCityWarBuildBriefInfoItem,
     );
     this.registerExtension(
       FUI_OuterCityWarScoreItem.URL,
-      OuterCityWarScoreItem
+      OuterCityWarScoreItem,
     );
     this.registerExtension(
       FUI_OuterCityWarBuildSiteItem.URL,
-      OuterCityWarBuildSiteItem
+      OuterCityWarBuildSiteItem,
     );
     this.registerExtension(
       FUI_OuterCityWarAttackerBuildItem.URL,
-      OuterCityWarAttackerBuildItem
+      OuterCityWarAttackerBuildItem,
     );
     this.registerExtension(
       FUI_OuterCityWarDefenceSettingItem.URL,
-      OuterCityWarDefenceSettingItem
+      OuterCityWarDefenceSettingItem,
     );
     this.registerExtension(
       FUI_OuterCityWarEnterWarSettingItem.URL,
-      OuterCityWarEnterWarSettingItem
+      OuterCityWarEnterWarSettingItem,
     );
     this.registerExtension(FUI_PetPotencyItem.URL, FUI_PetPotencyItem);
     this.registerExtension(FUI_PetPotencyCell.URL, PetPotencyCell);
@@ -1958,16 +1957,16 @@ export default class FGuiFactory {
     this.registerExtension(FUI_SecretFailedMultiCom.URL, SecretFailedMultiCom);
     this.registerExtension(
       FUI_SecretFailedSingleCom.URL,
-      SecretFailedSingleCom
+      SecretFailedSingleCom,
     );
     this.registerExtension(
       FUI_OuterCityVehicleRewardItem.URL,
-      OuterCityVehicleRewardItem
+      OuterCityVehicleRewardItem,
     );
     this.registerExtension(FUI_ConsortiaPayItem.URL, ConsortiaPayItem);
     this.registerExtension(
       FUI_ConsortiaTaskScoreItem.URL,
-      ConsortiaTaskScoreItem
+      ConsortiaTaskScoreItem,
     );
     this.registerExtension(FUI_CastleBuildInfoItem.URL, CastleBuildInfoItem);
     this.registerExtension(FUI_ActivityTimeView.URL, ActivityTimeView);

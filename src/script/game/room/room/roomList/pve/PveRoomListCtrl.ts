@@ -26,8 +26,13 @@ import { BaseArmy } from "../../../../map/space/data/BaseArmy";
 import FrameCtrlBase from "../../../../mvc/FrameCtrlBase";
 import { FrameCtrlManager } from "../../../../mvc/FrameCtrlManager";
 import { RoomInfo } from "../../../../mvc/model/room/RoomInfo";
+
+//@ts-expect-error: External dependencies
 import RoomMsg = com.road.yishi.proto.room.RoomMsg;
+//@ts-expect-error: External dependencies
+
 import RoomListRspMsg = com.road.yishi.proto.room.RoomListRspMsg;
+//@ts-expect-error: External dependencies
 import RoomPlayerMsg = com.road.yishi.proto.room.RoomPlayerMsg;
 
 export default class PveRoomListCtrl extends FrameCtrlBase {
@@ -43,7 +48,7 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
     ServerDataManager.listen(
       S2CProtocol.U_C_CAMPAIGN_ROOM_LIST,
       this,
-      this.__onRefreshRoomList
+      this.__onRefreshRoomList,
     );
   }
 
@@ -51,7 +56,7 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
     ServerDataManager.cancel(
       S2CProtocol.U_C_CAMPAIGN_ROOM_LIST,
       this,
-      this.__onRefreshRoomList
+      this.__onRefreshRoomList,
     );
   }
 
@@ -60,12 +65,12 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
     ServerDataManager.listen(
       S2CProtocol.U_C_ROOM_SEND,
       this,
-      this.__onRefreshRoomState
+      this.__onRefreshRoomState,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_ROOM_FIND_RESULT,
       this,
-      this.__onSearchRoom
+      this.__onSearchRoom,
     );
   }
 
@@ -74,12 +79,12 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
     ServerDataManager.cancel(
       S2CProtocol.U_C_ROOM_SEND,
       this,
-      this.__onRefreshRoomState
+      this.__onRefreshRoomState,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_ROOM_FIND_RESULT,
       this,
-      this.__onSearchRoom
+      this.__onSearchRoom,
     );
   }
 
@@ -179,7 +184,7 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
 
     var aInfo: CampaignArmy = roomInfo.getPlayerByUserId(
       player.playerId,
-      player.serverName
+      player.serverName,
     );
     if (!aInfo) {
       aInfo = new CampaignArmy();
@@ -209,7 +214,7 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
   public requestRoomInfo() {
     RoomListSocketOutManager.requestRoomList(
       RoomType.NORMAL,
-      this.data.selCampaignID
+      this.data.selCampaignID,
     );
   }
   //return: S2CProtocol.U_C_CAMPAIGN_ROOM_CREATE
@@ -221,7 +226,7 @@ export default class PveRoomListCtrl extends FrameCtrlBase {
     roomType: RoomType,
     roomId: number,
     pwd: string,
-    isInvite: boolean
+    isInvite: boolean,
   ) {
     RoomListSocketOutManager.addRoomById(roomType, roomId, pwd, isInvite);
   }

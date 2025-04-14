@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SNSInfoMsg {
+  int32 id = 1;
+  int32 userId = 2;
+  string nickname = 3;
+  string signDesc = 4;
+  int32 sex = 5;
+  int32 birthdayType = 6;
+  int32 birthYear = 7;
+  int32 birthMonth = 8;
+  int32 birthDay = 9;
+  int32 starId = 10;
+  int32 bloodType = 11;
+  int32 country = 12;
+  int32 province = 13;
+  int32 city = 14;
+  int32 headId = 15;
+  int32 job = 16;
+}

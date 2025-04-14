@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.store;
+
+message StoreRspMsg {
+  bool composeResult = 1;
+  int32 composeTemplateId = 2;
+  bool strengResult = 3;
+  int32 strengthenGrade = 4;
+  int32 pos = 5;
+  int32 objectId = 6;
+  int32 bagType = 7;
+  string masterAttr = 8;
+  string sonAttr = 9;
+}

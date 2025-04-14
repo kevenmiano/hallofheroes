@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetChallengeLogMsg {
+  int32 userId = 1;
+  int32 tarUserId = 2;
+  string tarNickName = 3;
+  int32 result = 4;
+  bool isAttack = 5;
+  string logDate = 6;
+  int32 score = 7;
+  string tarPets = 8;
+}

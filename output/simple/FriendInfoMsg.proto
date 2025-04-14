@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FriendInfoMsg {
+  int32 userId = 1;
+  int32 relation = 2;
+  int32 sex = 3;
+  int32 pic = 4;
+  int32 grades = 5;
+  string nickName = 6;
+  int32 onlineState = 7;
+  int32 relationGrade = 8;
+  int32 relationGp = 9;
+  int32 consortiaId = 10;
+  string consortiaName = 11;
+  bool result = 12;
+  string addMsg = 13;
+  int32 fightCapacity = 14;
+  int32 job = 15;
+  int32 groupId = 16;
+  int32 expAdded = 17;
+  string snsInfo = 18;
+  int32 chatState = 19;
+  int32 vipType = 20;
+  bool isVip = 21;
+  int32 frameId = 22;
+  int32 tarRelation = 23;
+}

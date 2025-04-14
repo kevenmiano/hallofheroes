@@ -1,4 +1,3 @@
-// TODO FIX
 import LangManager from "../../core/lang/LangManager";
 import Logger from "../../core/logger/Logger";
 import { PackageIn } from "../../core/net/PackageIn";
@@ -62,17 +61,41 @@ import { CampaignMapModel } from "../mvc/model/CampaignMapModel";
 import ComponentSetting from "../utils/ComponentSetting";
 import { WorldBossHelper } from "../utils/WorldBossHelper";
 import UIManager from "../../core/ui/UIManager";
+
+//@ts-expect-error: External dependencies
 import CampaignConfirmMsg = com.road.yishi.proto.campaign.CampaignConfirmMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerMovieMsg = com.road.yishi.proto.player.PlayerMovieMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerNodeStateMsg = com.road.yishi.proto.campaign.PlayerNodeStateMsg;
+
+//@ts-expect-error: External dependencies
 import WarMovieMsg = com.road.yishi.proto.campaign.WarMovieMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerMoveCameraMsg = com.road.yishi.proto.player.PlayerMoveCameraMsg;
+
+//@ts-expect-error: External dependencies
 import FightOverMoiveMsg = com.road.yishi.proto.simple.FightOverMoiveMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerMoveMsg = com.road.yishi.proto.campaign.PlayerMoveMsg;
+
+//@ts-expect-error: External dependencies
 import BaseItemMsg = com.road.yishi.proto.battle.BaseItemMsg;
+
+//@ts-expect-error: External dependencies
 import BattleReportMsg = com.road.yishi.proto.battle.BattleReportMsg;
+
+//@ts-expect-error: External dependencies
 import HangupAttackMsg = com.road.yishi.proto.campaign.HangupAttackMsg;
+
+//@ts-expect-error: External dependencies
 import NPCChaseMsg = com.road.yishi.proto.campaign.NPCChaseMsg;
+
+//@ts-expect-error: External dependencies
 import NPCChatMsg = com.road.yishi.proto.campaign.NPCChatMsg;
 import { EmWindow } from "../constant/UIDefine";
 import { FrameCtrlManager } from "../mvc/FrameCtrlManager";
@@ -198,7 +221,7 @@ export class CampaignMapScene extends BaseSceneView {
   /**
    * 进入场景
    */
-  public enter(preScene: BaseSceneView, data: Object = null): Promise<void> {
+  public enter(preScene: BaseSceneView, data: object = null): Promise<void> {
     Logger.log("SceneManager.CampaignMapScene:enter");
     return new Promise(async (resolve) => {
       if (this.gotoOutCampaign()) {
@@ -247,7 +270,7 @@ export class CampaignMapScene extends BaseSceneView {
     });
   }
 
-  public preLoadingStart(data: Object = null): Promise<void> {
+  public preLoadingStart(data: object = null): Promise<void> {
     NotificationManager.Instance.dispatchEvent(SceneEvent.LOCK_SCENE, true);
     // SceneManager.Instance.lockScene = true;
     return new Promise((resolve) => {
@@ -296,13 +319,13 @@ export class CampaignMapScene extends BaseSceneView {
 
       // await JoyStickWnd.Instance.Show();//TODO --暂时屏蔽遥杆
       let ismonopoly: boolean = WorldBossHelper.checkMonopoly(
-        this._mapModel.mapId
+        this._mapModel.mapId,
       );
       if (!HomeWnd.Instance.isShowing) {
         if (!ismonopoly) {
           await HomeWnd.Instance.instShow();
           HomeWnd.Instance.getSmallMapBar().switchSmallMapState(
-            SmallMapBar.CAMPAIGN_SMALL_MAP_STATE
+            SmallMapBar.CAMPAIGN_SMALL_MAP_STATE,
           );
         }
       }
@@ -449,7 +472,7 @@ export class CampaignMapScene extends BaseSceneView {
     });
   }
 
-  public onEnter(preScene: BaseSceneView, data: Object = null) {}
+  public onEnter(preScene: BaseSceneView, data: object = null) {}
 
   private gotoCastleScene() {
     if (this._gotoCastleTimeId > 0) {
@@ -464,7 +487,7 @@ export class CampaignMapScene extends BaseSceneView {
     if (CampaignManager.Instance.exit) {
       this._gotoCastleTimeId = setInterval(
         this.gotoCastleScene.bind(this),
-        1000
+        1000,
       ); //loading时被人踢了
       return true;
     }
@@ -473,9 +496,9 @@ export class CampaignMapScene extends BaseSceneView {
 
   private _gotoCastleTimeId: any = 0;
 
-  private searchPathSyc(arr: any[], para: Object) {
+  private searchPathSyc(arr: any[], para: object) {
     let str: string = LangManager.Instance.GetTranslation(
-      "map.campaign.CampaignMapController.command01"
+      "map.campaign.CampaignMapController.command01",
     );
     MessageTipManager.Instance.show(str);
   }
@@ -516,78 +539,78 @@ export class CampaignMapScene extends BaseSceneView {
     NotificationManager.Instance.addEventListener(
       S2CProtocol.U_C_CAMERA_MOVE.toString(),
       this.__campaignSceneMoveHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       SLGSocketEvent.U_PLAY_MOVIE,
       this.__playNodeMovieHandler,
-      this
+      this,
     );
     this._mapModel.addEventListener(
       CampaignMapEvent.ATTACK_BOSS_TEMA,
       this.__refreshTeamHandler,
-      this
+      this,
     );
     this._mapModel.addEventListener(
       CampaignMapEvent.ATTACK_BOSS_INVITE,
       this.__showInviteHandler,
-      this
+      this,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAY_GETMOIVE,
       this,
-      this.__playGetMovieHandler
+      this.__playGetMovieHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_WARMOVIE,
       this,
-      this.__warMovieHandler
+      this.__warMovieHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_MOVE,
       this,
-      this.__playerMoveHandler
+      this.__playerMoveHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_CAMPAIGN_CONFIRM,
       this,
-      this.__confirmFrameHandler
+      this.__confirmFrameHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_TAKEDROP_FAIL,
       this,
-      this.__resetFallHandler
+      this.__resetFallHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_NPC_CHAT,
       this,
-      this.__npcChatHandler
+      this.__npcChatHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_NPC_CHASE_ARMY,
       this,
-      this.__npcChaseArmyHandler
+      this.__npcChaseArmyHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_HANGUP_PVP,
       this,
-      this.__onPKRequestHandler
+      this.__onPKRequestHandler,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_PLAYER_NODE_STATE,
       this,
-      this.__playerTranseferStateHandler
+      this.__playerTranseferStateHandler,
     );
     //节点
     NotificationManager.Instance.addEventListener(
       NotificationEvent.UN_LOCK_NODE,
       this.__unlockNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NotificationEvent.SELF_HELP_RESET_POSITION,
       this.__resetPositionHandler,
-      this
+      this,
     );
   }
 
@@ -595,79 +618,79 @@ export class CampaignMapScene extends BaseSceneView {
     NotificationManager.Instance.removeEventListener(
       S2CProtocol.U_C_CAMERA_MOVE.toString(),
       this.__campaignSceneMoveHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       SLGSocketEvent.U_PLAY_MOVIE,
       this.__playNodeMovieHandler,
-      this
+      this,
     );
     if (this._mapModel) {
       this._mapModel.removeEventListener(
         CampaignMapEvent.ATTACK_BOSS_TEMA,
         this.__refreshTeamHandler,
-        this
+        this,
       );
       this._mapModel.removeEventListener(
         CampaignMapEvent.ATTACK_BOSS_INVITE,
         this.__showInviteHandler,
-        this
+        this,
       );
     }
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAY_GETMOIVE,
       this,
-      this.__playGetMovieHandler
+      this.__playGetMovieHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_WARMOVIE,
       this,
-      this.__warMovieHandler
+      this.__warMovieHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_MOVE,
       this,
-      this.__playerMoveHandler
+      this.__playerMoveHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_CAMPAIGN_CONFIRM,
       this,
-      this.__confirmFrameHandler
+      this.__confirmFrameHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_TAKEDROP_FAIL,
       this,
-      this.__resetFallHandler
+      this.__resetFallHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_NPC_CHAT,
       this,
-      this.__npcChatHandler
+      this.__npcChatHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_NPC_CHASE_ARMY,
       this,
-      this.__npcChaseArmyHandler
+      this.__npcChaseArmyHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_HANGUP_PVP,
       this,
-      this.__onPKRequestHandler
+      this.__onPKRequestHandler,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_PLAYER_NODE_STATE,
       this,
-      this.__playerTranseferStateHandler
+      this.__playerTranseferStateHandler,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.UN_LOCK_NODE,
       this.__unlockNodeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.SELF_HELP_RESET_POSITION,
       this.__resetPositionHandler,
-      this
+      this,
     );
   }
 
@@ -678,7 +701,7 @@ export class CampaignMapScene extends BaseSceneView {
    */
   private __playerTranseferStateHandler(pkg: PackageIn) {
     let msg: PlayerNodeStateMsg = pkg.readBody(
-      PlayerNodeStateMsg
+      PlayerNodeStateMsg,
     ) as PlayerNodeStateMsg;
     let cArmy: CampaignArmy = this._mapModel.getBaseArmyByArmyId(msg.armyId);
     if (cArmy) {
@@ -790,7 +813,7 @@ export class CampaignMapScene extends BaseSceneView {
       if (nodeId == GlobalConfig.CampaignNodeID.Node_2000149) {
         if (
           TaskManage.Instance.cate.hasTaskAndNotCompleted(
-            TaskManage.PET_SYSTEM_OPEN_TASK02
+            TaskManage.PET_SYSTEM_OPEN_TASK02,
           )
         ) {
           FrameCtrlManager.Instance.open(EmWindow.PetFirstSelectWnd);
@@ -816,11 +839,11 @@ export class CampaignMapScene extends BaseSceneView {
           this.selfCarInfo.pick_count < 5 &&
           this.selfCarInfo.is_own == 1 &&
           SharedManager.Instance.checkIsExpired(
-            SharedManager.Instance.handInMineralDate
+            SharedManager.Instance.handInMineralDate,
           )
         ) {
           let content: string = LangManager.Instance.GetTranslation(
-            "map.campaign.view.frame.MineralDialogFrame.handInAlert"
+            "map.campaign.view.frame.MineralDialogFrame.handInAlert",
           );
           UIManager.Instance.ShowWind(EmWindow.TodayNotAlert, {
             state: 2,
@@ -870,20 +893,20 @@ export class CampaignMapScene extends BaseSceneView {
     MapSocketOuterManager.sendFrameCallBack(
       data[0],
       CampaignMapModel.MINERA_GET_CAR_NODEID,
-      true
+      true,
     );
   }
 
   private __mineralConfirmCall(
     isSccess: boolean,
     mapId: number,
-    nodeId: number
+    nodeId: number,
   ) {
     if (isSccess)
       SocketSendManager.Instance.sendSessionOverToBattle(
         mapId,
         nodeId,
-        CollectionAction.LEAVE
+        CollectionAction.LEAVE,
       );
   }
 
@@ -896,7 +919,7 @@ export class CampaignMapScene extends BaseSceneView {
     SocketSceneBufferManager.Instance.addPkgToBuffer(
       pkg,
       BattleManager.preScene,
-      this.createPlayerMoveAction.bind(this)
+      this.createPlayerMoveAction.bind(this),
     );
   }
 
@@ -910,7 +933,7 @@ export class CampaignMapScene extends BaseSceneView {
     SocketSceneBufferManager.Instance.addPkgToBuffer(
       pkg,
       SceneType.CAMPAIGN_MAP_SCENE,
-      this.playerMovie.bind(this)
+      this.playerMovie.bind(this),
     );
   }
 
@@ -928,7 +951,7 @@ export class CampaignMapScene extends BaseSceneView {
     SocketSceneBufferManager.Instance.addPkgToBuffer(
       pkg,
       SceneType.CAMPAIGN_MAP_SCENE,
-      this.playGetMovie.bind(this)
+      this.playGetMovie.bind(this),
     );
   }
 
@@ -936,12 +959,12 @@ export class CampaignMapScene extends BaseSceneView {
     // Logger.xjy("[CampaignMapScene]playGetMovie", pkg, this._mapModel)
     if (this._mapModel && pkg) {
       let msg: FightOverMoiveMsg = pkg.readBody(
-        FightOverMoiveMsg
+        FightOverMoiveMsg,
       ) as FightOverMoiveMsg;
       let armyInfo: CampaignArmy = this._mapModel.selfMemberData;
       if (armyInfo)
         GameBaseQueueManager.Instance.addAction(
-          new BattleGetMoviesAction(armyInfo, msg)
+          new BattleGetMoviesAction(armyInfo, msg),
         );
     }
   }
@@ -949,7 +972,7 @@ export class CampaignMapScene extends BaseSceneView {
   private exitSubmitBack(b: boolean) {
     if (b) {
       CampaignSocketOutManager.Instance.sendExitCampaignScene(
-        this.currentArmyId
+        this.currentArmyId,
       );
     }
   }
@@ -981,11 +1004,11 @@ export class CampaignMapScene extends BaseSceneView {
 
   private __campaignSceneMoveHandler(pkg: PackageIn) {
     let msg: PlayerMoveCameraMsg = pkg.readBody(
-      PlayerMoveCameraMsg
+      PlayerMoveCameraMsg,
     ) as PlayerMoveCameraMsg;
     GameBaseQueueManager.Instance.addAction(
       new SceneMoveAction(msg.targetX, msg.targetY),
-      true
+      true,
     );
     msg = null;
     pkg = null;
@@ -999,9 +1022,9 @@ export class CampaignMapScene extends BaseSceneView {
       node = this._view.getNpcNodeById(msg.targetId);
     } else if (msg.movieTargetType == MovieTargetType.ARMY) {
       let caInfo: CampaignArmy = this._mapModel.getBaseArmyByArmyId(
-        msg.targetId
+        msg.targetId,
       );
-      let armyView: Object =
+      let armyView: object =
         CampaignManager.Instance.controller.getArmyView(caInfo);
       if (caInfo) node = armyView;
     }
@@ -1020,7 +1043,7 @@ export class CampaignMapScene extends BaseSceneView {
       node,
       pkg,
       delay,
-      msg.targetId
+      msg.targetId,
     );
   }
 
@@ -1168,12 +1191,12 @@ export class CampaignMapScene extends BaseSceneView {
     endX: number,
     endY: number,
     isCheckRect: boolean = false,
-    isAttack: boolean = false
+    isAttack: boolean = false,
   ): boolean {
     //移动到某个点
     NotificationManager.Instance.sendNotification(
       NotificationEvent.LOCK_TEAM_FOLLOW_TARGET,
-      0
+      0,
     );
     let end: Laya.Point = new Laya.Point(endX, endY);
     let army: CampaignArmy = this._mapModel.selfMemberData;
@@ -1200,7 +1223,7 @@ export class CampaignMapScene extends BaseSceneView {
       end = this._rectScanUtils.walkRectScan(
         end,
         new Laya.Point(start.x / 20, start.y / 20),
-        current
+        current,
       );
     }
     if (end) {
@@ -1209,11 +1232,11 @@ export class CampaignMapScene extends BaseSceneView {
       }
       let startPos: Laya.Point = new Laya.Point(
         parseInt((start.x / 20).toString()),
-        parseInt((start.y / 20).toString())
+        parseInt((start.y / 20).toString()),
       );
       let endPos: Laya.Point = new Laya.Point(
         parseInt((end.x / 20).toString()),
-        parseInt((end.y / 20).toString())
+        parseInt((end.y / 20).toString()),
       );
       let distance: number = startPos.distance(endPos.x, endPos.y);
       let arr: any[] = this._finPath.find(startPos, endPos);
@@ -1237,9 +1260,9 @@ export class CampaignMapScene extends BaseSceneView {
               armyView,
               new Laya.Point(
                 parseInt((start.x / 20).toString()),
-                parseInt((start.y / 20).toString())
+                parseInt((start.y / 20).toString()),
               ),
-              true
+              true,
             )
           ) {
             return false;
@@ -1257,7 +1280,7 @@ export class CampaignMapScene extends BaseSceneView {
             if (nextNode) {
               var vNode: DisplayObject =
                 CampaignManager.Instance.mapView.getNpcNodeById(
-                  nextNode.info.id
+                  nextNode.info.id,
                 );
               end = new Laya.Point(vNode.x, vNode.y);
               if (isCheckRect) {
@@ -1265,7 +1288,7 @@ export class CampaignMapScene extends BaseSceneView {
                 end = this._rectScanUtils.walkRectScan(
                   end,
                   new Laya.Point(start.x / 20, start.y / 20),
-                  current
+                  current,
                 );
               }
               if (end) {
@@ -1274,11 +1297,11 @@ export class CampaignMapScene extends BaseSceneView {
                 }
                 let startPos: Laya.Point = new Laya.Point(
                   parseInt((start.x / 20).toString()),
-                  parseInt((start.y / 20).toString())
+                  parseInt((start.y / 20).toString()),
                 );
                 let endPos: Laya.Point = new Laya.Point(
                   parseInt((end.x / 20).toString()),
-                  parseInt((end.y / 20).toString())
+                  parseInt((end.y / 20).toString()),
                 );
 
                 distance = startPos.distance(endPos.x, endPos.y);
@@ -1300,7 +1323,7 @@ export class CampaignMapScene extends BaseSceneView {
         } else {
           Logger.warn(
             "[CampaignMapScene]点击物体, 无移动路径点, 没执行军队到达, 若需要在上面加条件",
-            this._mapModel.mapId
+            this._mapModel.mapId,
           );
         }
       }
@@ -1314,8 +1337,8 @@ export class CampaignMapScene extends BaseSceneView {
               armyView,
               new Laya.Point(
                 parseInt((start.x / 20).toString()),
-                parseInt((start.y / 20).toString())
-              )
+                parseInt((start.y / 20).toString()),
+              ),
             )
           ) {
             return false;
@@ -1333,9 +1356,9 @@ export class CampaignMapScene extends BaseSceneView {
               armyView,
               new Laya.Point(
                 parseInt((start.x / 20).toString()),
-                parseInt((start.y / 20).toString())
+                parseInt((start.y / 20).toString()),
               ),
-              true
+              true,
             )
           ) {
             return false;
@@ -1395,7 +1418,7 @@ export class CampaignMapScene extends BaseSceneView {
   private getStartPoint(
     curX: number,
     curY: number,
-    nextPoint: Laya.Point
+    nextPoint: Laya.Point,
   ): Laya.Point {
     if (this.getWalkable(curX / 20, curY / 20)) {
       return new Laya.Point(curX, curY);
@@ -1430,7 +1453,7 @@ export class CampaignMapScene extends BaseSceneView {
   public sendCampaignArrive(
     armyId: number,
     nodeId: number,
-    protocolId: number = 0
+    protocolId: number = 0,
   ) {
     if (!this._bSendCampaignArriveCool) {
       this._bSendCampaignArriveCool = true;
@@ -1443,17 +1466,17 @@ export class CampaignMapScene extends BaseSceneView {
           " nodeId-->" +
           nodeId +
           " protocolId-->" +
-          protocolId
+          protocolId,
       );
       MapSocketOuterManager.sendCampaignArrive(
         armyId,
         nodeId,
         true,
-        protocolId
+        protocolId,
       );
     } else {
       Logger.base(
-        "🚩重复发送 军队到达某个节点armyId-->" + armyId + " nodeId-->" + nodeId
+        "🚩重复发送 军队到达某个节点armyId-->" + armyId + " nodeId-->" + nodeId,
       );
     }
   }

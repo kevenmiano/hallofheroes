@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message LuckExchangeItemTempMsg {
+  int32 itemId = 1;
+  int32 itemCount = 2;
+  bool rare = 3;
+  int32 dropType = 4;
+}

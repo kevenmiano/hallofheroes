@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildJoinPlayerInfoMsg {
+  int32 redConsortiaId = 1;
+  int32 redCount = 2;
+  int32 blueConsortiaId = 3;
+  int32 blueCount = 4;
+  repeated int32 userIds = 5;
+}

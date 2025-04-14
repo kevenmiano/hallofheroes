@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildOrderInfoMsg {
+  int32 order = 1;
+  int32 id = 2;
+  string name = 3;
+  int32 count = 4;
+  int32 power = 5;
+  string chairmanName = 6;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.store;
+
+message SmithResolveRspMsg {
+  bool result = 1;
+}

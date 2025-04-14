@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GiftMsg {
+  string giftId = 1;
+  int32 count = 2;
+  int32 seflCount = 3;
+  int32 price = 4;
+  int32 discountPrice = 5;
+  string giftName = 6;
+  int32 limitCount = 7;
+  repeated int32 levelMsg = 8;
+  repeated int32 itemMsg = 9;
+  int32 sort = 10;
+}

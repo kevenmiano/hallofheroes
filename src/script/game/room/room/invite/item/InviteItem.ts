@@ -7,18 +7,18 @@
  * @Description:
  */
 
+import IconAvatarFrame from "@/script/game/map/space/view/physics/IconAvatarFrame";
 import FUI_InviteItem from "../../../../../../fui/BaseCommon/FUI_InviteItem";
 import LangManager from "../../../../../core/lang/LangManager";
-import { IconFactory } from "../../../../../core/utils/IconFactory";
+// import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { t_s_itemtemplateData } from "../../../../config/t_s_itemtemplate";
-import { IconType } from "../../../../constant/IconType";
+// import { IconType } from "../../../../constant/IconType";
 import { JobType } from "../../../../constant/JobType";
 import { ThaneInfo } from "../../../../datas/playerinfo/ThaneInfo";
 import { TempleteManager } from "../../../../manager/TempleteManager";
 
 export default class InviteItem extends FUI_InviteItem {
   private _info: ThaneInfo;
-  //@ts-ignore
   public headIcon: IconAvatarFrame;
   protected onConstruct() {
     super.onConstruct();
@@ -36,13 +36,13 @@ export default class InviteItem extends FUI_InviteItem {
       this.touchable = !this._info.invited;
       this.btnInvite.enabled = !this._info.invited;
       this.btnInvite.text = LangManager.Instance.GetTranslation(
-        this._info.invited ? "public.invited" : "public.invite"
+        this._info.invited ? "public.invited" : "public.invite",
       );
       this.headIcon.headId = this._info.snsInfo.headId;
       if (this._info.frameId > 0) {
         let itemData: t_s_itemtemplateData =
           TempleteManager.Instance.getGoodsTemplatesByTempleteId(
-            this._info.frameId
+            this._info.frameId,
           );
         if (itemData) {
           this.headIcon.headFrame = itemData.Avata;

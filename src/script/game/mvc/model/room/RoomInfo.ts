@@ -48,19 +48,19 @@ export class RoomInfo extends SimpleRoomInfo {
   public get mapTemplate(): t_s_campaignData {
     let temp: t_s_campaignData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_campaign,
-      this.campaignId
+      this.campaignId,
     );
     if (!temp) {
       // 由于多人副本多个关卡, 每进入一个关卡发的是 map中的Id, 再通过Id找CampaignId
       let Id = this.campaignId;
       let tempMap: t_s_mapData = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_map,
-        Id
+        Id,
       );
       if (tempMap) {
         temp = ConfigMgr.Instance.getTemplateByID(
           ConfigType.t_s_campaign,
-          tempMap.CampaignId
+          tempMap.CampaignId,
         );
       }
       if (temp) {
@@ -112,11 +112,11 @@ export class RoomInfo extends SimpleRoomInfo {
     this._armyList[serverName + "_" + army.baseHero.userId] = army;
     this.dispatchEvent(RoomEvent.ADD_PLAYER_ROOM, army);
     NotificationManager.Instance.dispatchEvent(
-      NotificationEvent.ROOM_INFO_UPDATE
+      NotificationEvent.ROOM_INFO_UPDATE,
     );
     if (this.isCross)
       NotificationManager.Instance.dispatchEvent(
-        NotificationEvent.CROSS_ADD_GOONBTN
+        NotificationEvent.CROSS_ADD_GOONBTN,
       );
   }
   /**
@@ -128,13 +128,13 @@ export class RoomInfo extends SimpleRoomInfo {
    */
   public removePlayerByUserId(
     userId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     Logger.info(
       "[RoomInfo]removePlayerByUserId 需要删除",
       userId,
       serverName,
-      this._armyList
+      this._armyList,
     );
     if (!this.isCross) serverName = "";
     var key: string = serverName + "_" + userId;
@@ -151,11 +151,11 @@ export class RoomInfo extends SimpleRoomInfo {
     delete this._armyList[key];
     this.dispatchEvent(RoomEvent.REMOVE_PLAYER_ROOM, playerTmp);
     NotificationManager.Instance.dispatchEvent(
-      NotificationEvent.ROOM_INFO_UPDATE
+      NotificationEvent.ROOM_INFO_UPDATE,
     );
     if (this.isCross)
       NotificationManager.Instance.dispatchEvent(
-        NotificationEvent.CROSS_ADD_GOONBTN
+        NotificationEvent.CROSS_ADD_GOONBTN,
       );
     return player;
   }
@@ -170,7 +170,7 @@ export class RoomInfo extends SimpleRoomInfo {
 
   public getPlayerByUserId(
     userId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (!this.isCross) serverName = "";
     return this._armyList[serverName + "_" + userId] as CampaignArmy;
@@ -178,7 +178,7 @@ export class RoomInfo extends SimpleRoomInfo {
 
   public getPlayerByArmyId(
     armyId: number,
-    serverName: string = ""
+    serverName: string = "",
   ): CampaignArmy {
     if (serverName == null || !this.isCross) serverName = "";
     var cArmy: CampaignArmy;
@@ -243,7 +243,7 @@ export class RoomInfo extends SimpleRoomInfo {
       this.dispatchEvent(RoomEvent.ROOM_HOUSEOWNER_CHANGE, null);
       if (this.isCross)
         NotificationManager.Instance.dispatchEvent(
-          NotificationEvent.CROSS_ADD_GOONBTN
+          NotificationEvent.CROSS_ADD_GOONBTN,
         );
     }
   }

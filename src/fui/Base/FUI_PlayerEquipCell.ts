@@ -1,7 +1,8 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_BaseItem from "./FUI_BaseItem";
+
+//@ts-expect-error: External dependencies
 import FUI_RadioBtn from "./FUI_RadioBtn";
 
 export default class FUI_PlayerEquipCell extends fgui.GButton {

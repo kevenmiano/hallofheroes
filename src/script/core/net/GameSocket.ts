@@ -138,7 +138,7 @@ export class GameSocket extends Laya.EventDispatcher {
   public send(
     code: number,
     message?: protobuf.Message<any>,
-    extendId?: number
+    extendId?: number,
   ) {
     if (!this.connected) {
       return;
@@ -192,7 +192,7 @@ export class GameSocket extends Laya.EventDispatcher {
     (this._socket.output as Laya.Byte).writeArrayBuffer(
       pkg.__getBuffer(),
       0,
-      pkg.length
+      pkg.length,
     );
     this._socket.flush();
 
@@ -277,23 +277,23 @@ export class GameSocket extends Laya.EventDispatcher {
       while (this._readOffset + 4 < this._writeOffset) {
         this._headerTemp.position = 0;
         this._headerTemp.writeByte(
-          this._readBuffer._byteAt_(this._readOffset + 0)
+          this._readBuffer._byteAt_(this._readOffset + 0),
         );
         this._headerTemp.writeByte(
-          this._readBuffer._byteAt_(this._readOffset + 1)
+          this._readBuffer._byteAt_(this._readOffset + 1),
         );
         this._headerTemp.writeByte(
-          this._readBuffer._byteAt_(this._readOffset + 2)
+          this._readBuffer._byteAt_(this._readOffset + 2),
         );
         this._headerTemp.writeByte(
-          this._readBuffer._byteAt_(this._readOffset + 3)
+          this._readBuffer._byteAt_(this._readOffset + 3),
         );
 
         if (this._encrypted) {
           this._headerTemp = this.decrptBytes(
             this._headerTemp,
             4,
-            this.copyByteArray(GameSocket.RECEIVE_KEY)
+            this.copyByteArray(GameSocket.RECEIVE_KEY),
           );
         }
         this._headerTemp.position = 0;
@@ -318,7 +318,7 @@ export class GameSocket extends Laya.EventDispatcher {
         }
         let code: string = StringHelper.pad(
           buff.code.toString(16),
-          4
+          4,
         ).toUpperCase();
         Logger.socket(`💛收到协议: 0x${code}   请解析数据！`);
         this._readOffset += len;
@@ -374,7 +374,7 @@ export class GameSocket extends Laya.EventDispatcher {
   }
 
   private traceArr(arr: ByteArray) {
-    let str: String = "[";
+    let str: string = "[";
     for (let i: number = 0; i < arr.length; i++) {
       str += arr._byteAt_(i) + " ";
     }
@@ -393,7 +393,7 @@ export class GameSocket extends Laya.EventDispatcher {
     } else {
       Logger.error(
         "pkg checksum error:",
-        ByteUtils.ToHexDump("Bytes Left:", pkg, 0, pkg.length)
+        ByteUtils.ToHexDump("Bytes Left:", pkg, 0, pkg.length),
       );
     }
   }
@@ -406,7 +406,7 @@ export class GameSocket extends Laya.EventDispatcher {
   }
 }
 
-class FSM {
+export class FSM {
   private _state: number;
   private _adder: number;
   private _multiper: number;

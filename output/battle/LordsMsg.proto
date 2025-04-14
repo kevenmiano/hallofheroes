@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message LordsMsg {
+  string army = 1;
+  int32 id = 2;
+  int32 userId = 3;
+  string serverName = 4;
+  string nickName = 5;
+  string userKeys = 6;
+  int32 fightPower = 7;
+  int32 readyScore = 8;
+  int32 readyOrder = 9;
+  int32 finalScore = 10;
+  int32 finalOrder = 11;
+  int32 winCounter = 12;
+  int32 currentTurn = 13;
+  int32 finalTurn = 14;
+  int32 finalWinCount = 15;
+  bool isVip = 16;
+}

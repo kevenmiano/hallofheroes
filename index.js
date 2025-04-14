@@ -41,7 +41,7 @@ localStorage.setItem("7Road_undefined", JSON.stringify(s7road.data));
 
 localStorage.setItem(
   "7Road_undefined-SITE_ZONE",
-  JSON.stringify(s7RoadSizeZone)
+  JSON.stringify(s7RoadSizeZone),
 );
 
 var zoneStr = localStorage.getItem("7Road_undefined-SITE_ZONE");
@@ -60,7 +60,7 @@ if (!zoneStr) {
         loadLib("gameindex.js?timestamp=" + new Date().getTime());
       } else {
         loadLib(
-          oldarea.localCDN + "/gameindex.js?timestamp=" + new Date().getTime()
+          oldarea.localCDN + "/gameindex.js?timestamp=" + new Date().getTime(),
         );
       }
     } else {

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message PlayerScoreInfoMsg {
+  int32 rank = 1;
+  string name = 2;
+  int32 fighting = 3;
+  int32 score = 4;
+  int32 job = 5;
+  string time = 6;
+}

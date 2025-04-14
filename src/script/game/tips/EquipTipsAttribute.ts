@@ -22,39 +22,38 @@ import ForgeData from "../module/forge/ForgeData";
 import { GoodsHelp } from "../utils/GoodsHelp";
 import ComponentSetting from "../utils/ComponentSetting";
 export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
-  //@ts-ignore
   public power: GoodAttributeItem;
-  //@ts-ignore
+
   public agility: GoodAttributeItem;
-  //@ts-ignore
+
   public ability: GoodAttributeItem;
-  //@ts-ignore
+
   public physique: GoodAttributeItem;
-  //@ts-ignore
+
   public captain: GoodAttributeItem;
-  //@ts-ignore
+
   public attack: GoodAttributeItem;
-  //@ts-ignore
+
   public magicAttack: GoodAttributeItem;
-  //@ts-ignore
+
   public defence: GoodAttributeItem;
-  //@ts-ignore
+
   public magicDefence: GoodAttributeItem;
-  //@ts-ignore
+
   public parry: GoodAttributeItem;
-  //@ts-ignore
+
   public live: GoodAttributeItem;
-  //@ts-ignore
+
   public forceHit: GoodAttributeItem;
-  //@ts-ignore
+
   public conat: GoodAttributeItem;
-  //@ts-ignore
+
   public inlayItem1: InlayItem;
-  //@ts-ignore
+
   public inlayItem2: InlayItem;
-  //@ts-ignore
+
   public inlayItem3: InlayItem;
-  //@ts-ignore
+
   public inlayItem4: InlayItem;
   private _info: GoodsInfo;
   constructor() {
@@ -97,7 +96,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
         ? ""
         : LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.EquipTipsContent.intensify",
-            info.templateInfo.StrengthenMax
+            info.templateInfo.StrengthenMax,
           );
     this.txt_describe.text = temp.DescriptionLang;
     if (!StringHelper.isNullOrEmpty(this.txt_describe.text)) {
@@ -127,7 +126,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
           LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.EquipTipsContent.castSelected.text3",
             info.mouldRankShow,
-            info.mouldStar
+            info.mouldStar,
           );
       } else {
         this.txt_intensify.text +=
@@ -135,7 +134,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
           LangManager.Instance.GetTranslation(
             "yishi.view.tips.goods.EquipTipsContent.castSelected.text2",
             info.mouldRankShow,
-            info.mouldStar
+            info.mouldStar,
           );
       }
     } else {
@@ -158,7 +157,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
 
   private initAttribute(info: GoodsInfo, temp: t_s_itemtemplateData) {
     let str: string = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip01"
+      "armyII.ThaneAttributeView.Tip01",
     );
     this.updateAttributeTxt(
       this.power,
@@ -166,10 +165,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Power,
       this.getAdd(temp.Power, info),
       this.getNewAdd(temp.Power, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip02"
+      "armyII.ThaneAttributeView.Tip02",
     );
     this.updateAttributeTxt(
       this.agility,
@@ -177,10 +176,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Agility,
       this.getAdd(temp.Agility, info),
       this.getNewAdd(temp.Agility, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip03"
+      "armyII.ThaneAttributeView.Tip03",
     );
     this.updateAttributeTxt(
       this.ability,
@@ -188,10 +187,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Intellect,
       this.getAdd(temp.Intellect, info),
       this.getNewAdd(temp.Intellect, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip04"
+      "armyII.ThaneAttributeView.Tip04",
     );
     this.updateAttributeTxt(
       this.physique,
@@ -199,10 +198,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Physique,
       this.getAdd(temp.Physique, info),
       this.getNewAdd(temp.Physique, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip05"
+      "armyII.ThaneAttributeView.Tip05",
     );
     this.updateAttributeTxt(
       this.captain,
@@ -210,10 +209,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Captain,
       this.getAdd(temp.Captain, info),
       this.getNewAdd(temp.Captain, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip13"
+      "armyII.ThaneAttributeView.Tip13",
     );
     this.updateAttributeTxt(
       this.attack,
@@ -221,10 +220,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Attack,
       this.getAdd(temp.Attack, info),
       this.getNewAdd(temp.Attack, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip15"
+      "armyII.ThaneAttributeView.Tip15",
     );
     this.updateAttributeTxt(
       this.magicAttack,
@@ -232,10 +231,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.MagicAttack,
       this.getAdd(temp.MagicAttack, info),
       this.getNewAdd(temp.MagicAttack, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip14"
+      "armyII.ThaneAttributeView.Tip14",
     );
     this.updateAttributeTxt(
       this.defence,
@@ -243,10 +242,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Defence,
       this.getAdd(temp.Defence, info),
       this.getNewAdd(temp.Defence, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip16"
+      "armyII.ThaneAttributeView.Tip16",
     );
     this.updateAttributeTxt(
       this.magicDefence,
@@ -254,10 +253,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.MagicDefence,
       this.getAdd(temp.MagicDefence, info),
       this.getNewAdd(temp.MagicDefence, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip19"
+      "armyII.ThaneAttributeView.Tip19",
     );
     this.updateAttributeTxt(
       this.parry,
@@ -265,10 +264,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Parry,
       this.getAdd(temp.Parry, info),
       this.getNewAdd(temp.Parry, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip11"
+      "armyII.ThaneAttributeView.Tip11",
     );
     this.updateAttributeTxt(
       this.live,
@@ -276,10 +275,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Live,
       this.getAdd(temp.Live, info),
       this.getNewAdd(temp.Live, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip10"
+      "armyII.ThaneAttributeView.Tip10",
     );
     this.updateAttributeTxt(
       this.forceHit,
@@ -287,10 +286,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.ForceHit,
       this.getAdd(temp.ForceHit, info),
       this.getNewAdd(temp.ForceHit, info),
-      info.objectId
+      info.objectId,
     );
     str = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip17"
+      "armyII.ThaneAttributeView.Tip17",
     );
     this.updateAttributeTxt(
       this.conat,
@@ -298,7 +297,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       temp.Conat,
       this.getAdd(temp.Conat, info),
       this.getNewAdd(temp.Conat, info),
-      info.objectId
+      info.objectId,
     );
   }
 
@@ -377,7 +376,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
         }
         let star: string = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.star",
-          skillTemp.Grades
+          skillTemp.Grades,
         );
         star = LangManager.Instance.GetTranslation("public.parentheses1", star);
         tempStr += skillTemp.SkillTemplateName + " " + star + "<br>";
@@ -393,7 +392,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
         "[" +
         LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.RandomSkillCount",
-          info.templateInfo.RandomSkillCount
+          info.templateInfo.RandomSkillCount,
         ) +
         "]<br>";
     }
@@ -412,7 +411,8 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
     }
   }
 
-  private isFashion(temp: t_s_itemtemplateData): boolean { //检测是否属于时装
+  private isFashion(temp: t_s_itemtemplateData): boolean {
+    //检测是否属于时装
     if (!temp) {
       return false;
     }
@@ -431,7 +431,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
     let skillString: string = "";
     let suitTemp: t_s_suitetemplateData = ConfigMgr.Instance.getTemplateByID(
       ConfigType.t_s_suitetemplate,
-      temp.SuiteId
+      temp.SuiteId,
     ); //取得套装模板
     if (suitTemp) {
       let heroId: number = info.objectId;
@@ -470,16 +470,16 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
         //每套最大8件套装单件
         let suitGood: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
           ConfigType.t_s_itemtemplate,
-          suitTemp["Template" + k]
+          suitTemp["Template" + k],
         ); //取得单件模板（物品模板）
         let info: GoodsInfo = GoodsManager.Instance.getGoodsByObjectIdAndGoodID(
           heroId,
-          suitTemp["Template" + k]
+          suitTemp["Template" + k],
         );
         if (!info) {
           info = GoodsManager.Instance.getGoodsByObjectIdAndGoodID(
             heroId,
-            suitTemp["Template" + k + "S"]
+            suitTemp["Template" + k + "S"],
           );
         }
         if (suitGood) {
@@ -536,7 +536,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
     value: number,
     addValue: number,
     newAddValue?: number,
-    objectId?: number
+    objectId?: number,
   ) {
     if (value != 0) {
       item.visible = true;
@@ -559,7 +559,7 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
       if (gInfo.mouldGrade > 0) {
         let curr: number = GoodsHelp.getMouldAddition(
           preValue,
-          this.getPropertyMouldGrade(gInfo)
+          this.getPropertyMouldGrade(gInfo),
         );
         return curr;
       }
@@ -574,8 +574,10 @@ export default class EquipTipsAttribute extends FUI_EquipTipsAttribute {
     );
   }
 
-  private getStrengthenGrade(gInfo: GoodsInfo): Object {
-    return gInfo.strengthenGrade > 0 ? "+" + gInfo.strengthenGrade : "";
+  private getStrengthenGrade(gInfo: GoodsInfo): object {
+    return gInfo.strengthenGrade > 0
+      ? { value: "+" + gInfo.strengthenGrade }
+      : { value: "" };
   }
 
   private _mouldGrade: number;

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message AvatarInfoMsg {
+  int32 mountTempId = 1;
+  bool isExist = 2;
+  string expairDate = 3;
+  string activeDate = 4;
+  int32 validity = 5;
+  int32 param1 = 6;
+  int32 param2 = 7;
+  int32 starLevel = 8;
+  int32 blessing = 9;
+}

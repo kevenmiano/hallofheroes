@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message StarBufferMsg {
+  int32 skillId = 1;
+  int32 level = 2;
+}

@@ -1,4 +1,3 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_BaseTipItem from "./FUI_BaseTipItem";
@@ -9,6 +8,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
   public showRecharge: fgui.Controller;
   public diamondTip: FUI_BaseTipItem;
   public giftTxt: fgui.GTextField;
+  //@ts-expect-error: External dependencies
   public btn_buy: FUI_CommonBtn;
   public giftTip: FUI_BaseTipItem;
   public voucherTxt: fgui.GTextField;
@@ -26,6 +26,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
   public tipItem4: FUI_BaseTipItem;
   public txt_petGrowthStone: fgui.GTextField;
   public tipItem5: FUI_BaseTipItem;
+  //@ts-expect-error: External dependencies
   public petGrowthStone_buy: FUI_CommonBtn;
   public txt_petCoeStone: fgui.GTextField;
   public tipItem6: FUI_BaseTipItem;
@@ -47,6 +48,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
   public tipItem14: FUI_BaseTipItem;
   public txt_consortiajianse: fgui.GTextField;
   public tipItem15: FUI_BaseTipItem;
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://og5jeos3129oeii4";
 
@@ -59,6 +61,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
     this.showRecharge = this.getController("showRecharge");
     this.diamondTip = <FUI_BaseTipItem>this.getChild("diamondTip");
     this.giftTxt = <fgui.GTextField>this.getChild("giftTxt");
+    //@ts-expect-error: External dependencies
     this.btn_buy = <FUI_CommonBtn>this.getChild("btn_buy");
     this.giftTip = <FUI_BaseTipItem>this.getChild("giftTip");
     this.voucherTxt = <fgui.GTextField>this.getChild("voucherTxt");
@@ -80,6 +83,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
       this.getChild("txt_petGrowthStone")
     );
     this.tipItem5 = <FUI_BaseTipItem>this.getChild("tipItem5");
+    //@ts-expect-error: External dependencies
     this.petGrowthStone_buy = <FUI_CommonBtn>(
       this.getChild("petGrowthStone_buy")
     );

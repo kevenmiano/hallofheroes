@@ -1,30 +1,23 @@
-// @ts-nocheck
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 
-export class MazeCtrl extends FrameCtrlBase
-{
-    constructor()
-    {
-        super();
-    }
+export class MazeCtrl extends FrameCtrlBase {
+  constructor() {
+    super();
+  }
 
-    protected show()
-    {
-        super.show();
-    }
+  protected show() {
+    super.show();
+  }
 
-    protected hide()
-    {
-        super.hide();
-    }
+  protected hide() {
+    super.hide();
+  }
 
-    protected addEventListener()
-    {
-        super.addEventListener();
-    }
+  protected addEventListener() {
+    super.addEventListener();
+  }
 
-    protected delEventListener()
-    {
-        super.delEventListener();
-    }
+  protected delEventListener() {
+    super.delEventListener();
+  }
 }

@@ -1,5 +1,4 @@
-// @ts-nocheck
-import IManager from "../../core/Interface/IManager";
+// import IManager from "../../core/Interface/IManager";
 import Logger from "../../core/logger/Logger";
 import Dictionary from "../../core/utils/Dictionary";
 import { EmPackName, EmWindow } from "../constant/UIDefine";
@@ -127,7 +126,7 @@ export class FrameCtrlManager {
     NotificationManager.Instance.addEventListener(
       WinEvent.RETURN_TO_WIN,
       this.__returnToWin,
-      this
+      this,
     );
     this.register(EmWindow.Login, CommonCtrl);
     this.register(EmWindow.LoginOS, CommonCtrl);
@@ -152,7 +151,7 @@ export class FrameCtrlManager {
     this.register(
       EmWindow.PveMultiCampaignWnd,
       PveMultiCampaignCtrl,
-      PveMultiCampaignData
+      PveMultiCampaignData,
     );
     this.register(EmWindow.RoomHall, RoomHallCtrl, RoomHallData, [
       EmPackName.BaseRoom,
@@ -174,7 +173,7 @@ export class FrameCtrlManager {
     this.register(
       EmWindow.CampaignResult,
       CampaignResultCtrl,
-      CampaignResultData
+      CampaignResultData,
     );
     this.register(EmWindow.ConfigSoliderWnd, AllocateCtrl, ArmyModel);
     this.register(EmWindow.MailWnd, MailCtrl, MailModel);
@@ -419,7 +418,7 @@ export class FrameCtrlManager {
     this.register(
       EmWindow.PveSecretSceneWnd,
       PveSecretSceneCtrl,
-      PveSecretSceneData
+      PveSecretSceneData,
     );
     this.register(EmWindow.ConsortiaTaskWnd, CommonCtrl);
 
@@ -439,7 +438,7 @@ export class FrameCtrlManager {
     moduleName: EmWindow,
     framData: any = null,
     isSwitch: boolean = false,
-    exitModuleName: EmWindow = null
+    exitModuleName: EmWindow = null,
   ) {
     if (
       moduleName == EmWindow.Pet ||
@@ -451,7 +450,7 @@ export class FrameCtrlManager {
       }
     }
     moduleName = SiteZoneUICtrl.Instance.getDifferEmWindow(
-      moduleName
+      moduleName,
     ) as EmWindow;
 
     let frameInfo: FrameCtrlInfo = this._frameInfoDic.get(moduleName);
@@ -491,10 +490,10 @@ export class FrameCtrlManager {
   public exit(
     moduleName: EmWindow,
     nextModule?: EmWindow,
-    nextInfo?: FrameCtrlInfo
+    nextInfo?: FrameCtrlInfo,
   ) {
     moduleName = SiteZoneUICtrl.Instance.getDifferEmWindow(
-      moduleName
+      moduleName,
     ) as EmWindow;
 
     let controller: FrameCtrlBase = this.getCtrl(moduleName);
@@ -531,7 +530,7 @@ export class FrameCtrlManager {
     ctrlCls: { new (): FrameCtrlBase },
     dataCls?: { new (): FrameDataBase },
     resList?: any[],
-    frameData?: Record<string, any>
+    frameData?: Record<string, any>,
   ) {
     let ctrl = this.getCtrl(moduleName);
     if (!ctrl) {
@@ -547,10 +546,10 @@ export class FrameCtrlManager {
   private registerFrameInfo(
     moduleName: EmWindow,
     resList: any[],
-    frameData?: Record<string, any>
+    frameData?: Record<string, any>,
   ) {
     let info: FrameCtrlInfo = this._frameInfoDic.get(
-      moduleName
+      moduleName,
     ) as FrameCtrlInfo;
     if (!info) {
       info = new FrameCtrlInfo();
@@ -564,7 +563,7 @@ export class FrameCtrlManager {
   public setNextFrame(
     moduleName: EmWindow,
     nextModuleName: EmWindow,
-    nextInfo?: any
+    nextInfo?: any,
   ) {
     let ctrl = this.getCtrl(moduleName);
     if (ctrl) {
@@ -575,7 +574,7 @@ export class FrameCtrlManager {
   private __returnToWin(
     typeWin: EmWindow,
     returnToWin: EmWindow,
-    returnToWinFrameData: any
+    returnToWinFrameData: any,
   ) {
     if (!typeWin) {
       Logger.warn("[FrameCtrlManager]typeWin=null");

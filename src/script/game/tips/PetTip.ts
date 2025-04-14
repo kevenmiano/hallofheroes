@@ -79,7 +79,7 @@ export class PetTip extends BaseTips {
   protected OnClickModal() {
     super.OnClickModal();
     NotificationManager.Instance.dispatchEvent(
-      PetChallengeEvent.RESET_SELECTED_STATE
+      PetChallengeEvent.RESET_SELECTED_STATE,
     );
     this.hide();
   }
@@ -95,7 +95,7 @@ export class PetTip extends BaseTips {
         this.btnOpt.title = LangManager.Instance.GetTranslation(
           this.challengeState == PetChallengeState.UnEquiped
             ? "public.onFormation"
-            : "public.unEquip"
+            : "public.unEquip",
         );
         break;
       default:
@@ -111,7 +111,7 @@ export class PetTip extends BaseTips {
 
     this.txt_level.text = LangManager.Instance.GetTranslation(
       "public.level2",
-      petData.grade
+      petData.grade,
     );
     this.txt_capacity.text = petData.fightPower.toString();
     if (template) {
@@ -120,7 +120,7 @@ export class PetTip extends BaseTips {
       // this.txt_useLevel.text = LangManager.Instance.GetTranslation("pet.PetFrame.carryGrade") + template.NeedGrade;
       this.imgPetType.icon = FUIHelper.getItemURL(
         EmPackName.Base,
-        "Icon_PetType" + template.PetType
+        "Icon_PetType" + template.PetType,
       );
     }
     for (let index = 0; index < 8; index++) {
@@ -169,7 +169,7 @@ export class PetTip extends BaseTips {
         // 检查是否上阵中
         if (this.challengeState == PetChallengeState.Equiped) {
           NotificationManager.Instance.dispatchEvent(
-            PetChallengeEvent.RESET_SELECTED_STATE
+            PetChallengeEvent.RESET_SELECTED_STATE,
           );
           const arr =
             PlayerManager.Instance.currentPlayerModel.playerInfo
@@ -182,12 +182,12 @@ export class PetTip extends BaseTips {
           });
           if (count == 1) {
             MessageTipManager.Instance.show(
-              LangManager.Instance.GetTranslation("PetChallenge.unEquipPetTip")
+              LangManager.Instance.GetTranslation("PetChallenge.unEquipPetTip"),
             );
           } else {
             NotificationManager.Instance.dispatchEvent(
               PetChallengeEvent.READY_ON_FORMATION_STATE,
-              { state: false, petId: this.tipData.petId }
+              { state: false, petId: this.tipData.petId },
             );
           }
         } else {
@@ -195,7 +195,7 @@ export class PetTip extends BaseTips {
           PetChallengeCtrl.curOptPetId = this.tipData.petId;
           NotificationManager.Instance.dispatchEvent(
             PetChallengeEvent.READY_ON_FORMATION_STATE,
-            { state: true, petId: this.tipData.petId }
+            { state: true, petId: this.tipData.petId },
           );
         }
         break;
@@ -205,7 +205,7 @@ export class PetTip extends BaseTips {
 
   private get petChallengeCtrl(): PetChallengeCtrl {
     return FrameCtrlManager.Instance.getCtrl(
-      EmWindow.PetChallenge
+      EmWindow.PetChallenge,
     ) as PetChallengeCtrl;
   }
 

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignSweepRsp {
+  repeated int32 result = 1;
+  int32 status = 2;
+  int32 sweepType = 3;
+  int32 totalGp = 4;
+  repeated int32 dropItems = 5;
+  int32 campaignId = 6;
+}

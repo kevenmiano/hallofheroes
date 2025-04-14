@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_PetSelectItemTitle from "../../../../../../fui/Pet/FUI_PetSelectItemTitle";
 
 /**
@@ -9,12 +9,12 @@ import FUI_PetSelectItemTitle from "../../../../../../fui/Pet/FUI_PetSelectItemT
  * @date 2023年7月26日15:51:11
  */
 export class PetSelectItemTitle extends FUI_PetSelectItemTitle {
-	/**伪构造函数 */
-	protected onConstruct() {
-		super.onConstruct();
-	}
+  /**伪构造函数 */
+  protected onConstruct() {
+    super.onConstruct();
+  }
 
-	dispose(): void {
-		super.dispose();
-	}
+  dispose(): void {
+    super.dispose();
+  }
 }

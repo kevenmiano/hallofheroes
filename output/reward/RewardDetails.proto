@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.reward;
+
+message RewardDetails {
+  int32 id = 1;
+  int32 isValid = 2;
+  int32 quality = 3;
+}

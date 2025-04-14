@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message WorldBossBattleResultMsg {
+  int32 campaignId = 1;
+  int32 userId = 2;
+  repeated int32 otherUserId = 3;
+}

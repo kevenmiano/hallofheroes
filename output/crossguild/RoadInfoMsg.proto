@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message RoadInfoMsg {
+  repeated int32 roadInfo = 1;
+}

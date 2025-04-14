@@ -68,8 +68,12 @@ export class Main {
     } else {
       Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
     }
-    Laya["Physics"] && Laya["Physics"].enable();
-    Laya["DebugPanel"] && Laya["DebugPanel"].enable();
+    if (Laya["Physics"]) {
+      Laya["Physics"].enable();
+    }
+    if (Laya["DebugPanel"]) {
+      Laya["DebugPanel"].enable();
+    }
     Laya.stage.scaleMode = GameConfig.scaleMode;
     Laya.stage.screenMode = GameConfig.screenMode;
     Laya.stage.alignV = GameConfig.alignV;
@@ -95,7 +99,7 @@ export class Main {
       Laya.ResourceVersion.enable(
         "version.json?v=" + new Date().getTime(),
         Laya.Handler.create(this, this.onVersionLoaded),
-        Laya.ResourceVersion.FILENAME_VERSION
+        Laya.ResourceVersion.FILENAME_VERSION,
       );
     } else {
       //先以二进制方式加载zip包
@@ -150,7 +154,7 @@ export class Main {
               }
             }
           })
-          .catch((error) => {
+          .catch(() => {
             Logger.yyz("version.zip加载失败！");
             SDKManager.Instance.getChannel().showNetworkAlert();
           });
@@ -160,7 +164,7 @@ export class Main {
       1,
       false,
       "",
-      true
+      true,
     );
   }
 

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.building;
+
+message OrderInfoMsg {
+  int32 orderId = 1;
+  int32 orderType = 2;
+  int32 remainTime = 3;
+  int32 userId = 4;
+  string beginTime = 5;
+  int32 needTime = 6;
+}

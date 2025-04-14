@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildWarInfoMsg {
+  int32 consortiaId = 1;
+  string consrotiaName = 2;
+  int32 noviceCount = 3;
+  int32 score = 4;
+  int32 fightPower = 5;
+  int32 param1 = 6;
+  int32 param2 = 7;
+}

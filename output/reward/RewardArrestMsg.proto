@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.reward;
+
+message RewardArrestMsg {
+  int32 param1 = 1;
+  int32 condictionType = 2;
+}

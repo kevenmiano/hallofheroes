@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message PhysicListUpdateMsg {
+  string reqGrid = 1;
+  repeated int32 wildLand = 2;
+  repeated int32 baseCastle = 3;
+}

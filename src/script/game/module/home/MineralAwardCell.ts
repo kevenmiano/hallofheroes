@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import { ShopGoodsInfo } from "../shop/model/ShopGoodsInfo";
 import FUI_MineralAwardCell from "../../../../fui/Home/FUI_MineralAwardCell";
@@ -39,7 +39,7 @@ export default class MineralAwardCell extends FUI_MineralAwardCell {
     if (this._data.NeedMinGrade > this.thane.grades) {
       this.txt_Name.text += LangManager.Instance.GetTranslation(
         "view.subshop.MineralShopItem.minLevel",
-        this._data.NeedMinGrade
+        this._data.NeedMinGrade,
       );
       // this.txt_level.visible = true;
       // this.txt_count.visible = false;

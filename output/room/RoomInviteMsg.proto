@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message RoomInviteMsg {
+  int32 roomId = 1;
+  int32 playerId = 2;
+  string nickName = 3;
+  string name = 4;
+  string signStr = 5;
+  int32 roomType = 6;
+  int32 tempId = 7;
+  int32 position = 8;
+  string userKey = 9;
+  string bossCount = 10;
+  string isCross = 11;
+}

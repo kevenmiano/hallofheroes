@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fund;
+
+message GrowthFundDataInfoRsp {
+  repeated int32 fundMsg = 1;
+  int32 isPay = 2;
+  int32 recNum = 3;
+  int32 isOpen = 4;
+}

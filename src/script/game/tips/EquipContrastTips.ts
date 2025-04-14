@@ -62,12 +62,12 @@ export class EquipContrastTips extends BaseTips {
     NotificationManager.Instance.addEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       TipsEvent.EQUIP_TIPS_OBTAIN,
       this.onObtain,
-      this
+      this,
     );
   }
 
@@ -89,7 +89,7 @@ export class EquipContrastTips extends BaseTips {
     // this.totalBox.ensureBoundsCorrect();
     let point = this.goodstip1.parent.localToGlobal(
       this.goodstip1.x,
-      this.goodstip1.y
+      this.goodstip1.y,
     );
     //当前方向
     if (point.x + this.goodstip1.width >= Resolution.gameWidth) {
@@ -110,13 +110,13 @@ export class EquipContrastTips extends BaseTips {
 
     let equipeds: any[] = GoodsManager.Instance.getHeroGoodsListBySonTypeAndId(
       this._info.templateInfo.SonType,
-      this.thane.id
+      this.thane.id,
     ).getList();
     equipeds = ArrayUtils.sortOn(equipeds, "pos", ArrayConstant.NUMERIC);
     let equiped: GoodsInfo;
     if (equipeds.length >= 2) {
       this.goodstip1.btn_use.text = LangManager.Instance.GetTranslation(
-        "armyII.viewII.skill.btnEquipExchange"
+        "armyII.viewII.skill.btnEquipExchange",
       ); //替换
       equiped = equipeds[0] as GoodsInfo;
       this.goodstip2.showObtain = false;
@@ -137,11 +137,11 @@ export class EquipContrastTips extends BaseTips {
       ) {
         //戒指和饰品有两个, 只装备了1个的情况下 仍然显示装备按钮
         this.goodstip1.btn_use.text = LangManager.Instance.GetTranslation(
-          "armyII.viewII.skill.btnEquipOn"
+          "armyII.viewII.skill.btnEquipOn",
         ); //装备
       } else {
         this.goodstip1.btn_use.text = LangManager.Instance.GetTranslation(
-          "armyII.viewII.skill.btnEquipExchange"
+          "armyII.viewII.skill.btnEquipExchange",
         ); //替换
       }
     } else {
@@ -221,12 +221,12 @@ export class EquipContrastTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       TipsEvent.EQUIP_TIPS_OBTAIN,
       this.onObtain,
-      this
+      this,
     );
   }
 

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleNoticeMsg {
+  string battleId = 1;
+  int32 countDown = 2;
+  int32 damageImprove = 3;
+  int32 buffType = 4;
+}

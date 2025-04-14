@@ -49,7 +49,7 @@ export default class InviteWnd extends BaseWindow {
       {},
       [this["tabMainFriend"], this["tabMainGuild"], this["tabMainHall"]],
       undefined,
-      this.__selectTabCallback.bind(this)
+      this.__selectTabCallback.bind(this),
     );
     this._tabbar.interruptCallback = this.__interruptCallback.bind(this);
 
@@ -58,7 +58,7 @@ export default class InviteWnd extends BaseWindow {
       this,
       this.__renderListItem,
       null,
-      false
+      false,
     );
 
     if (InviteData.playerInfo.consortiaID > 0) {
@@ -72,14 +72,14 @@ export default class InviteWnd extends BaseWindow {
     this.iTxtSearch.stroke = 1;
     this.iTxtSearch.strokeColor = "#000000";
     this.iTxtSearch.promptText = LangManager.Instance.GetTranslation(
-      "InviteWnd.iTxtSearch.text"
+      "InviteWnd.iTxtSearch.text",
     );
     this.iTxtSearch.on(Laya.Event.INPUT, this, this.__onTxtSearchChange);
     ConsortiaManager.Instance.getConsortiaUserInfos();
     NotificationManager.Instance.addEventListener(
       ChatEvent.BLACKLIST,
       this.onRecvBlackList,
-      this
+      this,
     );
   }
 
@@ -90,7 +90,7 @@ export default class InviteWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       ChatEvent.BLACKLIST,
       this.onRecvBlackList,
-      this
+      this,
     );
     super.OnHideWind();
   }
@@ -100,7 +100,7 @@ export default class InviteWnd extends BaseWindow {
       case InviteData.TabIndex.Guild:
         if (InviteData.playerInfo.consortiaID == 0) {
           let str: string = LangManager.Instance.GetTranslation(
-            "room.view.invite.RoomInviteFrame.command01"
+            "room.view.invite.RoomInviteFrame.command01",
           );
           MessageTipManager.Instance.show(str);
           return true;
@@ -118,14 +118,14 @@ export default class InviteWnd extends BaseWindow {
       case InviteData.TabIndex.Friend:
         // this.refreshList(FriendManager.getInstance().friendList.getList());
         list = this.filterData(
-          FriendManager.getInstance().friendList.getList()
+          FriendManager.getInstance().friendList.getList(),
         );
         this.refreshList(list);
         break;
       case InviteData.TabIndex.Guild:
         // this.refreshList(ConsortiaManager.Instance.model.consortiaMemberList.getList());
         list = this.filterData(
-          ConsortiaManager.Instance.model.consortiaMemberList.getList()
+          ConsortiaManager.Instance.model.consortiaMemberList.getList(),
         );
         this.refreshList(list);
         break;
@@ -163,7 +163,7 @@ export default class InviteWnd extends BaseWindow {
   public changeIndex(
     index: number,
     bConvert: boolean = false,
-    bSwitchSound: boolean = true
+    bSwitchSound: boolean = true,
   ) {
     if (this._tabbar) {
       this._tabbar.changeIndex(index, bConvert, bSwitchSound);
@@ -173,7 +173,7 @@ export default class InviteWnd extends BaseWindow {
   private onRecvBlackList(result: boolean) {
     if (result) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("chat.notfriend02")
+        LangManager.Instance.GetTranslation("chat.notfriend02"),
       );
       return;
     } else {
@@ -196,7 +196,7 @@ export default class InviteWnd extends BaseWindow {
     let roomInfo = RoomManager.Instance.roomInfo;
     if (roomInfo) {
       let str = LangManager.Instance.GetTranslation(
-        "room.view.invite.InviteItem.command01"
+        "room.view.invite.InviteItem.command01",
       );
       // if (roomInfo.selectedMapTemplate && roomInfo.selectedMapTemplate.MinLevel > info.grades) {
       //     MessageTipManager.Instance.show(str);
@@ -214,8 +214,8 @@ export default class InviteWnd extends BaseWindow {
         if (info.grades < OpenGrades.CHALLENGE) {
           MessageTipManager.Instance.show(
             LangManager.Instance.GetTranslation(
-              "room.view.invite.InviteItem.command01"
-            )
+              "room.view.invite.InviteItem.command01",
+            ),
           );
           return;
         }

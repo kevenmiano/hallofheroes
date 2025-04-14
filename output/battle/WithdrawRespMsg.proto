@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message WithdrawRespMsg {
+  repeated int32 info = 1;
+  int32 result = 2;
+  int32 countdown = 3;
+}

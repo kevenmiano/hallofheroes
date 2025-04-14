@@ -1,13 +1,10 @@
-// @ts-nocheck
 /**
- * 夺宝奇兵奖励 
+ * 夺宝奇兵奖励
  */
-export default class GemRewardInfoVO{
+export default class GemRewardInfoVO {
+  public rewardIdArr: Array<any>; //物品Id数组
 
-    public rewardIdArr:Array<any>; //物品Id数组
-		
-    constructor()
-    {
-        this.rewardIdArr = [];
-    }
+  constructor() {
+    this.rewardIdArr = [];
+  }
 }

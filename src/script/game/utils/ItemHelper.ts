@@ -1,6 +1,8 @@
-// TODO FIX
+//@ts-expect-error: External dependencies
 import ItemInfoMsg = com.road.yishi.proto.item.ItemInfoMsg;
+//@ts-expect-error: External dependencies
 import SimpleItemInfoMsg = com.road.yishi.proto.simple.SimpleItemInfoMsg;
+//@ts-expect-error: External dependencies
 import ChatItemInfoMsg = com.road.yishi.proto.chat.ChatItemInfoMsg;
 import { GoodsInfo } from "../datas/goods/GoodsInfo";
 import { DateFormatter } from "../../core/utils/DateFormatter";
@@ -55,7 +57,7 @@ export class ItemHelper {
 
   public static readGoodsInfo2(
     itemMsg: SimpleItemInfoMsg,
-    goods: GoodsInfo
+    goods: GoodsInfo,
   ): GoodsInfo {
     if (!itemMsg) {
       return goods;
@@ -86,7 +88,7 @@ export class ItemHelper {
 
   public static createChatItemInfoMsg(
     goods: GoodsInfo,
-    name: string
+    name: string,
   ): ChatItemInfoMsg {
     var itemMsg: ChatItemInfoMsg = new ChatItemInfoMsg();
     itemMsg.id = goods.id;

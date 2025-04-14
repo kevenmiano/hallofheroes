@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WarMovieMsg {
+  int32 score = 1;
+  int32 geste = 2;
+  bool isAdd = 3;
+  int32 userId = 4;
+  int32 type = 5;
+  string serverName = 6;
+}

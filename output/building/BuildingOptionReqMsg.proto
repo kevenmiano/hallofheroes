@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.building;
+
+message BuildingOptionReqMsg {
+  int32 buildingId = 1;
+  int32 sonType = 2;
+}

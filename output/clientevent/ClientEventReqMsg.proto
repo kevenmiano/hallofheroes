@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.clientevent;
+
+message ClientEventReqMsg {
+  int32 eventType = 1;
+  int32 eventData = 2;
+}

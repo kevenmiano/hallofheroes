@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message SnowVehicleSkillListMsg {
+  string skillIdW = 1;
+  string stateW = 2;
+  string curSumW = 3;
+  string skillIdE = 4;
+  string stateE = 5;
+  string curSumE = 6;
+  string playerId = 7;
+  string serverName = 8;
+}

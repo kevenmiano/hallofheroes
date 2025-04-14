@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { PackageIn } from "../../../core/net/PackageIn";
 
 export class PkgBuffer {
@@ -10,7 +9,7 @@ export class PkgBuffer {
     $pkg: PackageIn,
     $time: number,
     $call: Function,
-    $leftTime: number
+    $leftTime: number,
   ) {
     this.pkg = $pkg;
     this.time = $time;

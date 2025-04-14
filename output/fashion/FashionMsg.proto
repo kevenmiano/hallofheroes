@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fashion;
+
+message FashionMsg {
+  int32 templateId = 1;
+  repeated int32 info = 2;
+  repeated int32 fashionIds = 3;
+}

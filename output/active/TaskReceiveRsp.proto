@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message TaskReceiveRsp {
+  int32 starNum = 1;
+  string status = 2;
+}

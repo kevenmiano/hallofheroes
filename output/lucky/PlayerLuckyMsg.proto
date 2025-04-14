@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.lucky;
+
+message PlayerLuckyMsg {
+  int32 luckyCount = 1;
+  int32 remainCount = 2;
+  string lastReceive = 3;
+  int32 point = 4;
+  int32 gold = 5;
+}

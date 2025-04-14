@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message TattooHoleMsg {
+  int32 hole = 1;
+  int32 OldAddProperty = 2;
+  int32 OldAddingValue = 3;
+  int32 OldReduceProperty = 4;
+  int32 OldReduceValue = 5;
+  int32 OldStage = 6;
+  int32 NewAddProperty = 7;
+  int32 NewAddingValue = 8;
+  int32 NewReduceProperty = 9;
+  int32 NewReduceValue = 10;
+  int32 NewStage = 11;
+}

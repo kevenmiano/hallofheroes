@@ -78,7 +78,7 @@ export class WorldMapHelper {
 
   private static noOpen(): boolean {
     let str: string = LangManager.Instance.GetTranslation(
-      "worldmap.data.WorldMapHelper.command01"
+      "worldmap.data.WorldMapHelper.command01",
     );
     MessageTipManager.Instance.show(str);
     return false;

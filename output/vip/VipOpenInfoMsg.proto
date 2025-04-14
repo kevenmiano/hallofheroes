@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipOpenInfoMsg {
+  bool isFriend = 1;
+  int32 friendId = 2;
+  string friendNickName = 3;
+  int32 days = 4;
+}

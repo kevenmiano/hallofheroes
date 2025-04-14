@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message TreeInfoMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 waterCount = 3;
+  int32 fruitCount = 4;
+  bool isFirstFruit = 5;
+  string nextPickTime = 6;
+  int32 property1 = 7;
+  int32 property2 = 8;
+  string lastWaterTime = 9;
+  int32 leftTime = 10;
+  int32 leftPickTime = 11;
+  bool canWater = 12;
+}

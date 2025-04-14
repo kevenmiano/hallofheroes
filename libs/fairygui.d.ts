@@ -1,5 +1,3 @@
-// TODO FIX
-
 declare namespace fgui {
   class AssetProxy {
     loader: Laya.Loader;
@@ -10,7 +8,7 @@ declare namespace fgui {
     load(
       url: string | Laya.ILoadURL | (string | Readonly<Laya.ILoadURL>)[],
       type?: string,
-      onProgress?: Laya.ProgressCallback
+      onProgress?: Laya.ProgressCallback,
     ): Promise<any>;
   }
 }
@@ -90,7 +88,7 @@ declare namespace fgui {
       source: GObject,
       icon: string,
       sourceData?: any,
-      touchID?: number
+      touchID?: number,
     ): void;
     cancel(): void;
     private __dragEnd;
@@ -119,7 +117,7 @@ declare namespace fgui {
       source?: {
         target?: Laya.Sprite;
         touchId?: number;
-      }
+      },
     ): Laya.Event;
     static dispatch(
       type: string,
@@ -127,7 +125,7 @@ declare namespace fgui {
       source?: {
         target?: Laya.Sprite;
         touchId?: number;
-      }
+      },
     ): void;
   }
   /** 通用无参数回调 */
@@ -294,10 +292,6 @@ declare namespace fgui {
     Bottom = 1,
     Left = 2,
     Right = 3,
-    TopLeft = 0,
-    TopRight = 1,
-    BottomLeft = 2,
-    BottomRight = 3,
   }
   enum FillOrigin90 {
     TopLeft = 0,
@@ -461,7 +455,7 @@ declare namespace fgui {
     addRelation(
       target: GObject,
       relationType: number,
-      usePercent?: boolean
+      usePercent?: boolean,
     ): void;
     removeRelation(target: GObject, relationType?: number): void;
     get displayObject(): Laya.Sprite;
@@ -511,14 +505,14 @@ declare namespace fgui {
       ay?: number,
       aw?: number,
       ah?: number,
-      result?: Laya.Rectangle
+      result?: Laya.Rectangle,
     ): Laya.Rectangle;
     globalToLocalRect(
       ax?: number,
       ay?: number,
       aw?: number,
       ah?: number,
-      result?: Laya.Rectangle
+      result?: Laya.Rectangle,
     ): Laya.Rectangle;
     handleControllerChanged(c: Controller): void;
     protected createDisplayObject(): void;
@@ -585,11 +579,11 @@ declare namespace fgui {
     removeChildren(
       beginIndex?: number,
       endIndex?: number,
-      dispose?: boolean
+      dispose?: boolean,
     ): void;
     getChildAt<T extends GObject>(index: number, classType?: new () => T): T;
     getChild<T extends GObject>(name: string, classType?: new () => T): T;
-    getChildByPath<T extends GObject>(path: String, classType?: new () => T): T;
+    getChildByPath<T extends GObject>(path: string, classType?: new () => T): T;
     getVisibleChild(name: string): GObject;
     getChildInGroup(name: string, group: GGroup): GObject;
     getChildById(id: string): GObject;
@@ -647,7 +641,7 @@ declare namespace fgui {
     getSnappingPosition(
       xValue: number,
       yValue: number,
-      result?: Laya.Point
+      result?: Laya.Point,
     ): Laya.Point;
     /**
      * dir正数表示右移或者下移，负数表示左移或者上移
@@ -657,18 +651,18 @@ declare namespace fgui {
       yValue: number,
       xDir: number,
       yDir: number,
-      result?: Laya.Point
+      result?: Laya.Point,
     ): Laya.Point;
     childSortingOrderChanged(
       child: GObject,
       oldValue: number,
-      newValue: number
+      newValue: number,
     ): void;
     constructFromResource(): void;
     constructFromResource2(objectPool: GObject[], poolIndex: number): void;
     protected constructExtension(buffer: ByteBuffer): void;
     protected onConstruct(): void;
-    protected constructFromXML(xml: Object): void;
+    protected constructFromXML(xml: object): void;
     setup_afterAdd(buffer: ByteBuffer, beginPos: number): void;
     private ___added;
     private ___removed;
@@ -840,7 +834,7 @@ declare namespace fgui {
       lineSize: number,
       lineColor: string,
       fillColor: string,
-      cornerRadius?: number[]
+      cornerRadius?: number[],
     ): void;
     drawEllipse(lineSize: number, lineColor: string, fillColor: string): void;
     drawRegularPolygon(
@@ -849,13 +843,13 @@ declare namespace fgui {
       fillColor: string,
       sides: number,
       startAngle?: number,
-      distances?: number[]
+      distances?: number[],
     ): void;
     drawPolygon(
       lineSize: number,
       lineColor: string,
       fillColor: string,
-      points: number[]
+      points: number[],
     ): void;
     get distances(): number[];
     set distances(value: number[]);
@@ -1062,7 +1056,7 @@ declare namespace fgui {
       yValue: number,
       xDir: number,
       yDir: number,
-      result?: Laya.Point
+      result?: Laya.Point,
     ): Laya.Point;
     scrollToView(index: number, ani?: boolean, setFirst?: boolean): void;
     getFirstChildInView(): number;
@@ -1237,7 +1231,7 @@ declare namespace fgui {
     private onLoaded;
     setSkeleton(
       skeleton: Laya.Skeleton | Laya.SpineSkeleton,
-      anchor?: Laya.Point
+      anchor?: Laya.Point,
     ): void;
     private onChange;
     protected loadExternal(): void;
@@ -1271,7 +1265,7 @@ declare namespace fgui {
       end?: number,
       times?: number,
       endAt?: number,
-      endHandler?: SimpleHandler
+      endHandler?: SimpleHandler,
     ): void;
     getProp(index: number): any;
     setProp(index: number, value: any): void;
@@ -1411,12 +1405,12 @@ declare namespace fgui {
     showPopup(
       popup: GObject,
       target?: GObject,
-      dir?: PopupDirection | boolean
+      dir?: PopupDirection | boolean,
     ): void;
     togglePopup(
       popup: GObject,
       target?: GObject,
-      dir?: PopupDirection | boolean
+      dir?: PopupDirection | boolean,
     ): void;
     hidePopup(popup?: GObject): void;
     get hasAnyPopup(): boolean;
@@ -1709,7 +1703,7 @@ declare namespace fgui {
     applyOnSelfResized(
       dWidth: number,
       dHeight: number,
-      applyPivot: boolean
+      applyPivot: boolean,
     ): void;
     private applyOnXYChanged;
     private applyOnSizeChanged;
@@ -1737,7 +1731,7 @@ declare namespace fgui {
     onOwnerSizeChanged(
       dWidth: number,
       dHeight: number,
-      applyPivot: boolean
+      applyPivot: boolean,
     ): void;
     ensureRelationsSizeCorrect(): void;
     get empty(): boolean;
@@ -1861,7 +1855,7 @@ declare namespace fgui {
     scrollToView(
       target: Laya.Rectangle | GObject,
       ani?: boolean,
-      setFirst?: boolean
+      setFirst?: boolean,
     ): void;
     isChildInView(obj: GObject): boolean;
     cancelDragging(): void;
@@ -1877,7 +1871,7 @@ declare namespace fgui {
       deltaWidth: number,
       deltaHeight: number,
       deltaPosX: number,
-      deltaPosY: number
+      deltaPosY: number,
     ): void;
     private handleSizeChanged;
     private posChanged;
@@ -1936,14 +1930,14 @@ declare namespace fgui {
       times?: number,
       delay?: number,
       startTime?: number,
-      endTime?: number
+      endTime?: number,
     ): void;
     playReverse(
       onComplete?: SimpleHandler,
       times?: number,
       delay?: number,
       startTime?: number,
-      endTime?: number
+      endTime?: number,
     ): void;
     changePlayTimes(value: number): void;
     setAutoPlay(value: boolean, times?: number, delay?: number): void;
@@ -2029,7 +2023,7 @@ declare namespace fgui {
     static useLayaSkeleton: boolean;
   }
 }
-declare module fgui {
+declare namespace fgui {
   class UIObjectFactory {
     static extensions: Record<string, new () => GComponent>;
     static loaderType: new () => GLoader;
@@ -2037,13 +2031,13 @@ declare module fgui {
     static setExtension(url: string, type: new () => GComponent): void;
     static setPackageItemExtension(
       url: string,
-      type: new () => GComponent
+      type: new () => GComponent,
     ): void;
     static setLoaderExtension(type: new () => GLoader): void;
     static resolvePackageItemExtension(pi: PackageItem): void;
     static newObject(
       type: number | PackageItem,
-      userClass?: new () => GObject
+      userClass?: new () => GObject,
     ): GObject;
   }
 }
@@ -2079,17 +2073,17 @@ declare namespace fgui {
     static loadPackage(
       resKey: string | Array<string>,
       completeHandler: Laya.Handler | ((pkgs: UIPackage[]) => void),
-      progressHandler?: Laya.Handler | ((progress: number) => void)
+      progressHandler?: Laya.Handler | ((progress: number) => void),
     ): void;
     static removePackage(packageIdOrName: string): void;
     static createObject(
       pkgName: string,
       resName: string,
-      userClass?: new () => GObject
+      userClass?: new () => GObject,
     ): GObject;
     static createObjectFromURL(
       url: string,
-      userClass?: new () => GObject
+      userClass?: new () => GObject,
     ): GObject;
     static getItemURL(pkgName: string, resName: string): string;
     static getItemByURL(url: string): PackageItem;
@@ -2108,7 +2102,7 @@ declare namespace fgui {
     createObject(resName: string, userClass?: new () => GObject): GObject;
     internalCreateObject(
       item: PackageItem,
-      userClass?: new () => GObject
+      userClass?: new () => GObject,
     ): GObject;
     getItems(): ReadonlyArray<PackageItem>;
     getItemById(itemId: string): PackageItem;
@@ -2117,7 +2111,7 @@ declare namespace fgui {
     getItemAsset(item: PackageItem): any;
     getItemAssetAsync(
       item: PackageItem,
-      onComplete?: (err: any, item: PackageItem) => void
+      onComplete?: (err: any, item: PackageItem) => void,
     ): void;
     private loadMovieClip;
     private loadFont;
@@ -2221,7 +2215,7 @@ declare namespace fgui {
     method: number,
     origin: number,
     clockwise: boolean,
-    amount: number
+    amount: number,
   ): number[];
 }
 declare namespace fgui {
@@ -2313,7 +2307,7 @@ declare namespace fgui {
       end?: number,
       times?: number,
       endAt?: number,
-      endHandler?: SimpleHandler
+      endHandler?: SimpleHandler,
     ): void;
     private update;
     private drawFrame;
@@ -2479,7 +2473,7 @@ declare namespace fgui {
     time: number,
     duration: number,
     overshootOrAmplitude: number,
-    period: number
+    period: number,
   ): number;
 }
 declare namespace fgui {
@@ -2529,7 +2523,7 @@ declare namespace fgui {
       pt1: Array<GPathPoint> | GPathPoint,
       pt2?: GPathPoint,
       pt3?: GPathPoint,
-      pt4?: GPathPoint
+      pt4?: GPathPoint,
     ): void;
     private createSplineSegment;
     clear(): void;
@@ -2537,7 +2531,7 @@ declare namespace fgui {
     get segmentCount(): number;
     getAnchorsInSegment(
       segmentIndex: number,
-      points?: Array<Laya.Point>
+      points?: Array<Laya.Point>,
     ): Array<Laya.Point>;
     getPointsInSegment(
       segmentIndex: number,
@@ -2545,12 +2539,12 @@ declare namespace fgui {
       t1: number,
       points?: Array<Laya.Point>,
       ts?: Array<number>,
-      pointDensity?: number
+      pointDensity?: number,
     ): Array<Laya.Point>;
     getAllPoints(
       points?: Array<Laya.Point>,
       ts?: Array<number>,
-      pointDensity?: number
+      pointDensity?: number,
     ): Array<Laya.Point>;
     private onCRSplineCurve;
     private onBezierCurve;
@@ -2577,7 +2571,7 @@ declare namespace fgui {
       x?: number,
       y?: number,
       control1_x?: number,
-      control1_y?: number
+      control1_y?: number,
     ): GPathPoint;
     static newCubicBezierPoint(
       x?: number,
@@ -2585,7 +2579,7 @@ declare namespace fgui {
       control1_x?: number,
       control1_y?: number,
       control2_x?: number,
-      control2_y?: number
+      control2_y?: number,
     ): GPathPoint;
     clone(): GPathPoint;
   }
@@ -2599,7 +2593,7 @@ declare namespace fgui {
       start2: number,
       end: number,
       end2: number,
-      duration: number
+      duration: number,
     ): GTweener;
     static to3(
       start: number,
@@ -2608,7 +2602,7 @@ declare namespace fgui {
       end: number,
       end2: number,
       end3: number,
-      duration: number
+      duration: number,
     ): GTweener;
     static to4(
       start: number,
@@ -2619,7 +2613,7 @@ declare namespace fgui {
       end2: number,
       end3: number,
       end4: number,
-      duration: number
+      duration: number,
     ): GTweener;
     static toColor(start: number, end: number, duration: number): GTweener;
     static delayedCall(delay: number): GTweener;
@@ -2627,9 +2621,9 @@ declare namespace fgui {
       startX: number,
       startY: number,
       amplitude: number,
-      duration: number
+      duration: number,
     ): GTweener;
-    static isTweening(target: any, propType?: any): Boolean;
+    static isTweening(target: any, propType?: any): boolean;
     static kill(target: any, complete?: boolean, propType?: any): void;
     static getTween(target: any, propType?: any): GTweener;
   }
@@ -2707,7 +2701,7 @@ declare namespace fgui {
       start2: number,
       end: number,
       end2: number,
-      duration: number
+      duration: number,
     ): GTweener;
     _to3(
       start: number,
@@ -2716,7 +2710,7 @@ declare namespace fgui {
       end: number,
       end2: number,
       end3: number,
-      duration: number
+      duration: number,
     ): GTweener;
     _to4(
       start: number,
@@ -2727,14 +2721,14 @@ declare namespace fgui {
       end2: number,
       end3: number,
       end4: number,
-      duration: number
+      duration: number,
     ): GTweener;
     _toColor(start: number, end: number, duration: number): GTweener;
     _shake(
       startX: number,
       startY: number,
       amplitude: number,
-      duration: number
+      duration: number,
     ): GTweener;
     _init(): void;
     _reset(): void;
@@ -2800,7 +2794,7 @@ declare namespace fgui {
       p_brightness?: number,
       p_contrast?: number,
       p_saturation?: number,
-      p_hue?: number
+      p_hue?: number,
     );
     reset(): void;
     invert(): void;
@@ -2808,7 +2802,7 @@ declare namespace fgui {
       p_brightness: number,
       p_contrast: number,
       p_saturation: number,
-      p_hue: number
+      p_hue: number,
     ): void;
     adjustBrightness(p_val: number): void;
     adjustContrast(p_val: number): void;
@@ -2847,7 +2841,7 @@ declare namespace fgui {
     static startsWith(
       source: string,
       str: string,
-      ignoreCase?: boolean
+      ignoreCase?: boolean,
     ): boolean;
     static endsWith(source: string, str: string, ignoreCase?: boolean): boolean;
     static trimRight(targetString: string): string;
@@ -2862,7 +2856,7 @@ declare namespace fgui {
     static distance(x1: number, y1: number, x2: number, y2: number): number;
     static setColorFilter(
       obj: Laya.Sprite,
-      color?: string | number[] | boolean
+      color?: string | number[] | boolean,
     ): void;
   }
 }

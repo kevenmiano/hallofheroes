@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageCampaignOpReq {
+  int32 op = 1;
+  int32 fireworkId = 2;
+  int32 fireworkCount = 3;
+}

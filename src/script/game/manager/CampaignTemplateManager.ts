@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,7 +8,6 @@
  */
 
 import ConfigMgr from "../../core/config/ConfigMgr";
-import IManager from "../../core/Interface/IManager";
 import { SimpleDictionary } from "../../core/utils/SimpleDictionary";
 import { t_s_campaignData } from "../config/t_s_campaign";
 import { CampaignMapLand } from "../constant/CampaignMapLand";
@@ -55,7 +53,7 @@ export class CampaignTemplateManager {
         }
         if (temp.DungeonId != CampaignTemplateManager.ShieldDoundleID) {
           chapterInfo = landInfo.getChapterById(
-            temp.DungeonId
+            temp.DungeonId,
           ) as CampaignChapterInfo;
           this.addAreaToChapter(temp, chapterInfo, landInfo);
         }
@@ -73,7 +71,7 @@ export class CampaignTemplateManager {
   private addAreaToChapter(
     temp: t_s_campaignData,
     chapterInfo: CampaignChapterInfo,
-    landInfo: CampaignLandInfo
+    landInfo: CampaignLandInfo,
   ) {
     if (!chapterInfo) {
       chapterInfo = new CampaignChapterInfo();
@@ -87,7 +85,7 @@ export class CampaignTemplateManager {
   private addMapTempToArea(
     temp: t_s_campaignData,
     areaInfo: CampaignAreaInfo,
-    chapterInfo: CampaignChapterInfo
+    chapterInfo: CampaignChapterInfo,
   ) {
     if (!areaInfo) {
       areaInfo = new CampaignAreaInfo();

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PlayerPetOpMsg {
+  int32 petId = 1;
+  int32 opType = 2;
+  string petName = 3;
+  repeated int32 attributes = 4;
+  int32 value = 5;
+  int32 itemPos = 6;
+  int32 payType = 7;
+  int32 targetUserid = 8;
+  int32 skillId = 9;
+  repeated int32 petIds = 10;
+}

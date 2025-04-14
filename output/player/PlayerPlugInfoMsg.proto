@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerPlugInfoMsg {
+  string ip = 1;
+  int32 userId = 2;
+  string userName = 3;
+  string sendTime = 4;
+  string ext = 5;
+  string sign = 6;
+}

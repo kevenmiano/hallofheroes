@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message PrepareOverLivingMsg {
+  int32 calcType = 1;
+  int32 livingId = 2;
+  int32 sp = 3;
+}

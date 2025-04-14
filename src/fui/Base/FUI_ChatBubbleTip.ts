@@ -1,8 +1,12 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_bgcom from "./FUI_bgcom";
+
+//@ts-expect-error: External dependencies
 import FUI_arrowCom from "./FUI_arrowCom";
+
+//@ts-expect-error: External dependencies
 import FUI_VoiceCom from "./FUI_VoiceCom";
 
 export default class FUI_ChatBubbleTip extends fgui.GComponent {
@@ -12,7 +16,6 @@ export default class FUI_ChatBubbleTip extends fgui.GComponent {
   public txt_content: fgui.GRichTextField;
   public voiceCom: FUI_VoiceCom;
   public static URL: string = "ui://og5jeos3ofptidb";
-
   public static createInstance(): FUI_ChatBubbleTip {
     return <FUI_ChatBubbleTip>(
       fgui.UIPackage.createObject("Base", "ChatBubbleTip")

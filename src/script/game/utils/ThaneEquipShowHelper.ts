@@ -20,7 +20,7 @@ export class ThaneEquipShowHelper {
     equipInfo = GoodsManager.Instance.getItemByPOB(
       pos,
       equipObjectId,
-      equipBagType
+      equipBagType,
     );
     if (!equipInfo) {
       return avatar;

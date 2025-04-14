@@ -1,4 +1,3 @@
-// @ts-nocheck
 import FUI_StoreBagCell from "../../../../fui/Base/FUI_StoreBagCell";
 import { BaseItem } from "./BaseItem";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
@@ -20,120 +19,128 @@ import { ItemSelectState } from "../../constant/Const";
  *
  */
 export class StoreBagCell extends FUI_StoreBagCell {
-    public item: BaseItem;
-    protected _registed: boolean = false;
-    protected _mediatorKey: string;
-    private _info: GoodsInfo;
-    public static NAME: string = "cell.view.storebag.StoreBagCell";
+  public item: BaseItem;
+  protected _registed: boolean = false;
+  protected _mediatorKey: string;
+  private _info: GoodsInfo;
+  public static NAME: string = "cell.view.storebag.StoreBagCell";
 
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+  protected onConstruct() {
+    super.onConstruct();
+    //铁匠铺面板显示装备背景
+    this.item.hideBgHasInfo = true;
+    this.heroEquipIcon.visible = false;
+    this.item.needShowBetterImg = false;
+  }
+
+  get info(): GoodsInfo {
+    return this._info;
+  }
+
+  set info(value: GoodsInfo) {
+    this._info = value;
+
+    this.dark = false;
+    this.item.showType = TipsShowType.onClick;
+    this.item.info = value;
+    // if (!this._registed) {
+    //     this.registerMediator();
+    // }
+    if (value) {
+      let template = value.templateInfo;
+      if (
+        template.MasterType == GoodsType.EQUIP ||
+        template.MasterType == GoodsType.HONER
+      ) {
+        this.item.tipType = EmWindow.ForgeEquipTip;
+      } else if (template.MasterType == GoodsType.PROP) {
+        this.item.tipType = EmWindow.ForgePropTip;
+      }
     }
 
-    protected onConstruct() {
-        super.onConstruct();
-        //铁匠铺面板显示装备背景
-        this.item.hideBgHasInfo = true;
-        this.heroEquipIcon.visible = false;
-        this.item.needShowBetterImg = false;
+    this.heroEquipIcon.visible = false;
+    if (value) {
+      if (value.objectId == this.thane.id) {
+        this.heroEquipIcon.visible = true;
+      }
+
+      let icon: fgui.GLoader = <fgui.GLoader>this.item.getChild("icon");
+      if (
+        GoodsCheck.isEquip(value.templateInfo) &&
+        !this.checkGoodsByHero(false)
+      ) {
+        icon.color = "#FF0000";
+      } else {
+        icon.color = "#FFFFFF";
+      }
     }
+  }
 
-    get info(): GoodsInfo {
-        return this._info;
+  private _selectState: ItemSelectState = ItemSelectState.Default;
+  public get selectState(): ItemSelectState {
+    return this._selectState;
+  }
+
+  public set selectState(value: ItemSelectState) {
+    this._selectState = value;
+    this.__starSelectState(value);
+  }
+
+  public set dark(value: boolean) {
+    this.cDark.selectedIndex = value ? 1 : 0;
+  }
+
+  private __starSelectState(state: ItemSelectState) {
+    if (!this._info) return;
+
+    switch (state) {
+      case ItemSelectState.Default:
+        this.cSelectState.selectedIndex = 0;
+        break;
+      case ItemSelectState.Selectable:
+        this.cSelectState.selectedIndex = 1;
+        break;
+      case ItemSelectState.Selected:
+        this.cSelectState.selectedIndex = 2;
+        break;
+      default:
+        break;
     }
+  }
 
-    set info(value: GoodsInfo) {
-        this._info = value;
-
-        this.dark = false;
-        this.item.showType = TipsShowType.onClick;
-        this.item.info = value;
-        // if (!this._registed) {
-        //     this.registerMediator();
-        // }
-        if (value) {
-            let template = value.templateInfo
-            if (template.MasterType == GoodsType.EQUIP || template.MasterType == GoodsType.HONER) {
-                this.item.tipType = EmWindow.ForgeEquipTip;
-            }
-            else if (template.MasterType == GoodsType.PROP) {
-                this.item.tipType = EmWindow.ForgePropTip;
-            }
-        }
-
-        this.heroEquipIcon.visible = false;
-        if (value) {
-            if (value.objectId == this.thane.id) {
-                this.heroEquipIcon.visible = true;
-            }
-
-            let icon: fgui.GLoader = <fgui.GLoader>this.item.getChild("icon");
-            if (GoodsCheck.isEquip(value.templateInfo) && !this.checkGoodsByHero(false)) {
-                icon.color = "#FF0000";
-            }
-            else {
-                icon.color = "#FFFFFF";
-            }
-        }
+  public checkGoodsByHero(popMsg: boolean = true): boolean {
+    if (GoodsCheck.isGradeFix(this.thane, this._info.templateInfo, popMsg)) {
+      return GoodsCheck.checkGoodsByHero(this._info, this.thane, popMsg);
     }
+    return false;
+  }
 
-    private _selectState: ItemSelectState = ItemSelectState.Default;
-    public get selectState(): ItemSelectState {
-        return this._selectState
-    }
+  private get thane(): ThaneInfo {
+    return ArmyManager.Instance.thane;
+  }
 
-    public set selectState(value: ItemSelectState) {
-        this._selectState = value;
-        this.__starSelectState(value);
-    }
+  // 以前双击的方式操作 现在改成在tip上按钮操作
+  protected registerMediator() {
+    this._registed = true;
+    var arr: any[] = [
+      StoreBagCellClickMediator,
+      // StoreBagCellDropMediator
+    ];
+    this._mediatorKey = MediatorMananger.Instance.registerMediatorList(
+      arr,
+      this,
+      StoreBagCell.NAME,
+    );
+  }
 
-    public set dark(value: boolean) {
-        this.cDark.selectedIndex = value ? 1 : 0;
-    }
-
-    private __starSelectState(state: ItemSelectState) {
-        if (!this._info) return;
-
-        switch (state) {
-            case ItemSelectState.Default:
-                this.cSelectState.selectedIndex = 0;
-                break;
-            case ItemSelectState.Selectable:
-                this.cSelectState.selectedIndex = 1;
-                break;
-            case ItemSelectState.Selected:
-                this.cSelectState.selectedIndex = 2;
-                break;
-            default:
-                break;
-        }
-    }
-
-    public checkGoodsByHero(popMsg: boolean = true): boolean {
-        if (GoodsCheck.isGradeFix(this.thane, this._info.templateInfo, popMsg)) {
-            return GoodsCheck.checkGoodsByHero(this._info, this.thane, popMsg);
-        }
-        return false;
-    }
-
-    private get thane(): ThaneInfo {
-        return ArmyManager.Instance.thane;
-    }
-
-    // 以前双击的方式操作 现在改成在tip上按钮操作
-    protected registerMediator() {
-        this._registed = true;
-        var arr: any[] = [
-            StoreBagCellClickMediator
-            // StoreBagCellDropMediator
-        ];
-        this._mediatorKey = MediatorMananger.Instance.registerMediatorList(arr, this, StoreBagCell.NAME);
-    }
-
-    dispose() {
-        this._info = null;
-        this.item.dispose();
-        MediatorMananger.Instance.unregisterMediatorList(this._mediatorKey, this);
-        super.dispose();
-    }
+  dispose() {
+    this._info = null;
+    this.item.dispose();
+    MediatorMananger.Instance.unregisterMediatorList(this._mediatorKey, this);
+    super.dispose();
+  }
 }

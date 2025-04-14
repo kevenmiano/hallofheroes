@@ -28,37 +28,37 @@ export class StarHelper {
     switch (profile) {
       case 1:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName01"
+          "yishi.utils.GoodsHelp.getGoodQualityName01",
         );
         break;
       case 2:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName02"
+          "yishi.utils.GoodsHelp.getGoodQualityName02",
         );
         break;
       case 3:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName03"
+          "yishi.utils.GoodsHelp.getGoodQualityName03",
         );
         break;
       case 4:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName04"
+          "yishi.utils.GoodsHelp.getGoodQualityName04",
         );
         break;
       case 5:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName05"
+          "yishi.utils.GoodsHelp.getGoodQualityName05",
         );
         break;
       case 6:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName06"
+          "yishi.utils.GoodsHelp.getGoodQualityName06",
         );
         break;
       case 7:
         str = LangManager.Instance.GetTranslation(
-          "yishi.utils.GoodsHelp.getGoodQualityName07"
+          "yishi.utils.GoodsHelp.getGoodQualityName07",
         );
         break;
     }
@@ -141,7 +141,7 @@ export class StarHelper {
     if (!info || !info.template) return 0;
     var currentGrade: number = info.grade;
     var upgradeList: any[] = StarHelper.getStarUpgradeListByProfile(
-      info.template.Profile
+      info.template.Profile,
     );
     for (let index = 0; index < upgradeList.length; index++) {
       const tp = upgradeList[index] as t_s_upgradetemplateData;
@@ -173,80 +173,80 @@ export class StarHelper {
    */
   public static getStarAttributeAdd(info: StarInfo): string {
     var str: string = LangManager.Instance.GetTranslation(
-      "armyII.ThaneAttributeView.Tip01"
+      "armyII.ThaneAttributeView.Tip01",
     );
     if (info.template.Power * info.grade > 0) {
       return str + "+" + info.template.Power * info.grade;
     }
     if (info.template.Agility * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip02"
+        "armyII.ThaneAttributeView.Tip02",
       );
       return str + "+" + info.template.Agility * info.grade;
     }
     if (info.template.Intellect * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip03"
+        "armyII.ThaneAttributeView.Tip03",
       );
       return str + "+" + info.template.Intellect * info.grade;
     }
     if (info.template.Physique * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip04"
+        "armyII.ThaneAttributeView.Tip04",
       );
       return str + "+" + info.template.Physique * info.grade;
     }
     if (info.template.Captain * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip05"
+        "armyII.ThaneAttributeView.Tip05",
       );
       return str + "+" + info.template.Captain * info.grade;
     }
     if (info.template.Attack * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip13"
+        "armyII.ThaneAttributeView.Tip13",
       );
       return str + "+" + info.template.Attack * info.grade;
     }
     if (info.template.Defence * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip14"
+        "armyII.ThaneAttributeView.Tip14",
       );
       return str + "+" + info.template.Defence * info.grade;
     }
     if (info.template.MagicAttack * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip15"
+        "armyII.ThaneAttributeView.Tip15",
       );
       return str + "+" + info.template.MagicAttack * info.grade;
     }
     if (info.template.MagicDefence * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip16"
+        "armyII.ThaneAttributeView.Tip16",
       );
       return str + "+" + info.template.MagicDefence * info.grade;
     }
     if (info.template.ForceHit * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip10"
+        "armyII.ThaneAttributeView.Tip10",
       );
       return str + "+" + info.template.ForceHit * info.grade;
     }
     if (info.template.Live * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip11"
+        "armyII.ThaneAttributeView.Tip11",
       );
       return str + "+" + info.template.Live * info.grade;
     }
     if (info.template.Conat * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip17"
+        "armyII.ThaneAttributeView.Tip17",
       );
       return str + "+" + info.template.Conat * info.grade;
     }
     if (info.template.Parry * info.grade > 0) {
       str = LangManager.Instance.GetTranslation(
-        "armyII.ThaneAttributeView.Tip19"
+        "armyII.ThaneAttributeView.Tip19",
       );
       return str + "+" + info.template.Parry * info.grade;
     }
@@ -263,13 +263,13 @@ export class StarHelper {
     var bufferTemp: t_s_skillbuffertemplateData =
       ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_skillbuffertemplate,
-        info.template.DefaultSkill[0]
+        info.template.DefaultSkill[0],
       );
     if (bufferTemp) {
       var bufferField: string = StringHelper.getSubStrBetweenTwoChar(
         "{",
         "}",
-        bufferTemp.BufferNameLang
+        bufferTemp.BufferNameLang,
       );
       if (StringHelper.isNullOrEmpty(bufferField)) {
         return bufferTemp.BufferNameLang;
@@ -280,7 +280,7 @@ export class StarHelper {
         return StringHelper.replaceStr(
           bufferTemp.BufferNameLang,
           "{" + bufferField + "}",
-          String(bufferValue)
+          String(bufferValue),
         );
       }
     }
@@ -318,7 +318,7 @@ export class StarHelper {
         LangManager.Instance.GetTranslation(
           "StarHelper.tempTxt",
           color,
-          temp.TemplateNameLang
+          temp.TemplateNameLang,
         ) +
         "]"
       );

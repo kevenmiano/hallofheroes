@@ -81,10 +81,10 @@ export class SkillItemTips extends BaseTips {
   public OnInitWind() {
     super.OnInitWind();
     this.studyBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnStudy"
+      "armyII.viewII.skill.btnStudy",
     );
     this.upgradeBtn.title = LangManager.Instance.GetTranslation(
-      "armyII.viewII.skill.btnUpgrade"
+      "armyII.viewII.skill.btnUpgrade",
     );
     this.skillEffectRichText = new ScrollTextField(this.skillEffect);
     this.nextSkillEffectRichText = new ScrollTextField(this.skillEffect2);
@@ -111,7 +111,7 @@ export class SkillItemTips extends BaseTips {
     Logger.log("选择技能:", data.templateInfo.TemplateNameLang);
     this.skillName.text = data.templateInfo.TemplateNameLang;
     this.selectSkillItem.icon = IconFactory.getTecIconByIcon(
-      data.templateInfo.Icons
+      data.templateInfo.Icons,
     );
     let info: SkillInfo = data as SkillInfo;
     let curTemp: t_s_skilltemplateData = info.templateInfo;
@@ -128,7 +128,7 @@ export class SkillItemTips extends BaseTips {
       if (nextTemp.CoolDown > 0) {
         this.skillCold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          nextTemp.CoolDown * 0.001
+          nextTemp.CoolDown * 0.001,
         );
       }
       if (nextTemp.Cost < 0) {
@@ -140,7 +140,7 @@ export class SkillItemTips extends BaseTips {
         { key: "Parameter1", value: Math.abs(nextTemp.Parameter1) },
         { key: "Parameter2", value: Math.abs(nextTemp.Parameter2) },
         { key: "Parameter3", value: Math.abs(nextTemp.Parameter3) },
-        { key: "Cost", value: Math.abs(nextTemp.Cost) }
+        { key: "Cost", value: Math.abs(nextTemp.Cost) },
       );
       this.skillEffectRichText.text = skillEffectText;
       if (this.isMasterySkill) {
@@ -149,12 +149,12 @@ export class SkillItemTips extends BaseTips {
           //xx秘典达到xx级
           let jobtype = this.selectSkillData.templateInfo.MasterType;
           let p1 = LangManager.Instance.GetTranslation(
-            "Mastery.jobtype" + jobtype
+            "Mastery.jobtype" + jobtype,
           );
           let str = LangManager.Instance.GetTranslation(
             "Mastery.sutdyCondition",
             p1,
-            this.selectSkillData.templateInfo.NeedPlayerGrade
+            this.selectSkillData.templateInfo.NeedPlayerGrade,
           );
           this.txt_condition.text = str;
           this.txt_condition.visible = true;
@@ -170,11 +170,11 @@ export class SkillItemTips extends BaseTips {
       this.item2.icon = IconFactory.getTecIconByIcon(data.templateInfo.Icons);
       this.txt_lv1.text = LangManager.Instance.GetTranslation(
         "public.level2",
-        curTemp.Grades
+        curTemp.Grades,
       );
       this.txt_lv2.text = LangManager.Instance.GetTranslation(
         "public.level2",
-        curTemp.Grades + 1
+        curTemp.Grades + 1,
       );
       this.nextBox.visible = true;
       this.skillName2.text = curTemp.TemplateNameLang;
@@ -185,7 +185,7 @@ export class SkillItemTips extends BaseTips {
       if (curTemp.CoolDown > 0) {
         this.skillCold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          curTemp.CoolDown * 0.001
+          curTemp.CoolDown * 0.001,
         );
       }
       if (curTemp.Cost < 0) {
@@ -197,13 +197,13 @@ export class SkillItemTips extends BaseTips {
         { key: "Parameter1", value: Math.abs(curTemp.Parameter1) },
         { key: "Parameter2", value: Math.abs(curTemp.Parameter2) },
         { key: "Parameter3", value: Math.abs(curTemp.Parameter3) },
-        { key: "Cost", value: Math.abs(curTemp.Cost) }
+        { key: "Cost", value: Math.abs(curTemp.Cost) },
       );
       this.skillEffectRichText.text = skillEffect;
       if (nextTemp.CoolDown > 0) {
         this.nextSkillCost.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          nextTemp.CoolDown * 0.001
+          nextTemp.CoolDown * 0.001,
         );
       }
       if (nextTemp.Cost < 0) {
@@ -214,7 +214,7 @@ export class SkillItemTips extends BaseTips {
         { key: "Parameter1", value: Math.abs(nextTemp.Parameter1) },
         { key: "Parameter2", value: Math.abs(nextTemp.Parameter2) },
         { key: "Parameter3", value: Math.abs(nextTemp.Parameter3) },
-        { key: "Cost", value: Math.abs(nextTemp.Cost) }
+        { key: "Cost", value: Math.abs(nextTemp.Cost) },
       );
       this.nextSkillEffectRichText.text = nextEffect;
       if (this.isMasterySkill) {
@@ -223,12 +223,12 @@ export class SkillItemTips extends BaseTips {
           //xx秘典达到xx级
           let jobtype = this.selectSkillData.templateInfo.MasterType;
           let p1 = LangManager.Instance.GetTranslation(
-            "Mastery.jobtype" + jobtype
+            "Mastery.jobtype" + jobtype,
           );
           let str = LangManager.Instance.GetTranslation(
             "Mastery.sutdyCondition",
             p1,
-            this.selectSkillData.nextTemplateInfo.NeedPlayerGrade
+            this.selectSkillData.nextTemplateInfo.NeedPlayerGrade,
           );
           this.txt_condition.text = str;
           this.txt_condition.visible = true;
@@ -252,7 +252,7 @@ export class SkillItemTips extends BaseTips {
       if (curTemp.CoolDown > 0) {
         this.skillCold.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.SkillTips.cooldown01",
-          Math.ceil(curTemp.CoolDown * 0.001)
+          Math.ceil(curTemp.CoolDown * 0.001),
         );
       }
       if (curTemp.Cost < 0) {
@@ -263,7 +263,7 @@ export class SkillItemTips extends BaseTips {
         { key: "Parameter1", value: Math.abs(curTemp.Parameter1) },
         { key: "Parameter2", value: Math.abs(curTemp.Parameter2) },
         { key: "Parameter3", value: Math.abs(curTemp.Parameter3) },
-        { key: "Cost", value: Math.abs(curTemp.Cost) }
+        { key: "Cost", value: Math.abs(curTemp.Cost) },
       );
       this.skillEffectRichText.text = skillEffect;
       this.nextBox.visible =
@@ -306,7 +306,7 @@ export class SkillItemTips extends BaseTips {
     if (_isOpen) {
       this.studyBtn.visible = true;
       this.txt1.text = LangManager.Instance.GetTranslation(
-        "ConsortiaSkillTowerWnd.n70"
+        "ConsortiaSkillTowerWnd.n70",
       );
       if (this.isMasterySkill) {
         let jobtype = this.selectSkillData.templateInfo.MasterType;
@@ -336,7 +336,7 @@ export class SkillItemTips extends BaseTips {
         if (!_canAdd) {
           this.studyBox.visible = true;
           this.txt1.text = LangManager.Instance.GetTranslation(
-            "yishi.view.tips.goods.SkillTips.need"
+            "yishi.view.tips.goods.SkillTips.need",
           );
         } else {
           this.upgradeBtn.visible = true;
@@ -345,7 +345,7 @@ export class SkillItemTips extends BaseTips {
       } else {
         this.upgradeBtn.visible = true;
         this.txt1.text = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.need"
+          "yishi.view.tips.goods.SkillTips.need",
         );
         this.upgradeBtn.enabled = _canAdd;
       }
@@ -401,12 +401,12 @@ export class SkillItemTips extends BaseTips {
       this,
       this.onRender,
       null,
-      false
+      false,
     );
     NotificationManager.Instance.addEventListener(
       SkillEvent.SKILL_UPGRADE,
       this.__skillChangeHandler,
-      this
+      this,
     );
   }
 
@@ -416,7 +416,7 @@ export class SkillItemTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       SkillEvent.SKILL_UPGRADE,
       this.__skillChangeHandler,
-      this
+      this,
     );
   }
   private get thane(): ThaneInfo {
@@ -433,11 +433,11 @@ export class SkillItemTips extends BaseTips {
         let skillInfo;
         if (this.isMasterySkill) {
           skillInfo = this.thane.skillCate.getExtrajobSkillInfoBySkillTempId(
-            itemData.TemplateId
+            itemData.TemplateId,
           );
         } else {
           skillInfo = this.thane.skillCate.getSkillInfoBySkillTempId(
-            itemData.TemplateId
+            itemData.TemplateId,
           );
         }
         if (skillInfo) {
@@ -450,11 +450,11 @@ export class SkillItemTips extends BaseTips {
       } else {
         item.icon = IconFactory.getPlayerIcon(
           ArmyManager.Instance.thane.snsInfo.headId,
-          IconType.HEAD_ICON
+          IconType.HEAD_ICON,
         );
         item.txt_name.text = LangManager.Instance.GetTranslation(
           "buildings.BaseBuildFrame.gradeValue",
-          itemData
+          itemData,
         );
         if (this.thane.grades < itemData) {
           item.num.color = "#ff0000";
@@ -475,7 +475,7 @@ export class SkillItemTips extends BaseTips {
       this.control.sendAddSkillPoint(
         this.selectSkillData,
         2,
-        this.selectSkillData.templateInfo.MasterType
+        this.selectSkillData.templateInfo.MasterType,
       );
     } else {
       this.control.sendAddSkillPoint(this.selectSkillData);
@@ -501,7 +501,7 @@ export class SkillItemTips extends BaseTips {
       this.control.sendAddSkillPoint(
         this.selectSkillData,
         2,
-        this.selectSkillData.templateInfo.MasterType
+        this.selectSkillData.templateInfo.MasterType,
       );
     } else {
       this.control.sendAddSkillPoint(this.selectSkillData);
@@ -514,114 +514,114 @@ export class SkillItemTips extends BaseTips {
       return (
         "[" +
         LangManager.Instance.GetTranslation(
-          "yishi.datas.templates.SkillTempInfo.UseWay02"
+          "yishi.datas.templates.SkillTempInfo.UseWay02",
         ) +
         "]"
       );
     switch (temp.AcceptObject) {
       case 1:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type01"
+          "yishi.view.tips.goods.SkillTips.Type01",
         );
         break;
       case 2:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type02"
+          "yishi.view.tips.goods.SkillTips.Type02",
         );
         break;
       case 3:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type03"
+          "yishi.view.tips.goods.SkillTips.Type03",
         );
         break;
       case 4:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type04"
+          "yishi.view.tips.goods.SkillTips.Type04",
         );
         break;
       case 5:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type05"
+          "yishi.view.tips.goods.SkillTips.Type05",
         );
         break;
       case 6:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type06"
+          "yishi.view.tips.goods.SkillTips.Type06",
         );
         break;
       case 7:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type07"
+          "yishi.view.tips.goods.SkillTips.Type07",
         );
         break;
       case 8:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type08"
+          "yishi.view.tips.goods.SkillTips.Type08",
         );
         break;
       case 9:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type09"
+          "yishi.view.tips.goods.SkillTips.Type09",
         );
         break;
       case 10:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type10"
+          "yishi.view.tips.goods.SkillTips.Type10",
         );
         break;
       case 11:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type11"
+          "yishi.view.tips.goods.SkillTips.Type11",
         );
         break;
       case 12:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type12"
+          "yishi.view.tips.goods.SkillTips.Type12",
         );
         break;
       case 13:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type13"
+          "yishi.view.tips.goods.SkillTips.Type13",
         );
         break;
       case 14:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type14"
+          "yishi.view.tips.goods.SkillTips.Type14",
         );
         break;
       case 15:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type15"
+          "yishi.view.tips.goods.SkillTips.Type15",
         );
         break;
       case 16:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type16"
+          "yishi.view.tips.goods.SkillTips.Type16",
         );
         break;
       case 17:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type17"
+          "yishi.view.tips.goods.SkillTips.Type17",
         );
         break;
       case 18:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type18"
+          "yishi.view.tips.goods.SkillTips.Type18",
         );
         break;
       case 19:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type19"
+          "yishi.view.tips.goods.SkillTips.Type19",
         );
         break;
       case 20:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type20"
+          "yishi.view.tips.goods.SkillTips.Type20",
         );
         break;
       case 21:
         return LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.SkillTips.Type21"
+          "yishi.view.tips.goods.SkillTips.Type21",
         );
         break;
     }
@@ -634,7 +634,7 @@ export class SkillItemTips extends BaseTips {
     num = parseInt(num.toString());
     str = LangManager.Instance.GetTranslation(
       "yishi.view.tips.goods.SkillTips.cooldown02",
-      num
+      num,
     );
     return str;
   }

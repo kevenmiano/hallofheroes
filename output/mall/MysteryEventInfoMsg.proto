@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message MysteryEventInfoMsg {
+  int32 id = 1;
+  int32 userId = 2;
+  string remark = 3;
+  string createTime = 4;
+  bool isExist = 5;
+}

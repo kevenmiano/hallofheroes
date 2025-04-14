@@ -1,4 +1,3 @@
-// @ts-nocheck
 import SimpleAlertHelper, {
   AlertBtnType,
 } from "../../../game/component/SimpleAlertHelper";
@@ -144,12 +143,12 @@ export class NativeChannel extends BaseChannel {
             Logger.yyz("SDK初始化返回: " + result);
             NotificationManager.Instance.sendNotification(
               NativeEvent.SDK_INIT,
-              result
+              result,
             );
             return result;
           },
           "selectSiteOver",
-          cfg
+          cfg,
         );
       } else {
         this.bridge.call("selectSiteOver", cfg);
@@ -188,14 +187,14 @@ export class NativeChannel extends BaseChannel {
         "postGameEvent",
         code,
         roleInfo ? JSON.stringify(roleInfo) : "",
-        exInfo ? exInfo : ""
+        exInfo ? exInfo : "",
       );
     } else if (this.isIOS) {
       this.bridge.call(
         "postGameEvent:::",
         code,
         roleInfo ? JSON.stringify(roleInfo) : "",
-        exInfo ? exInfo : ""
+        exInfo ? exInfo : "",
       );
     }
   }
@@ -215,7 +214,7 @@ export class NativeChannel extends BaseChannel {
     eventName: string,
     eventDescribe: string,
     pageName: string,
-    pageDescribe: string
+    pageDescribe: string,
   ) {
     let userInfo: UserInfo = PlayerManager.Instance.currentPlayerModel.userInfo;
     let playerInfo = PlayerManager.Instance.currentPlayerModel.playerInfo;
@@ -231,7 +230,7 @@ export class NativeChannel extends BaseChannel {
     Logger.yyz(
       "trackEvent:" +
         `type:${type}, node:${node}, roleInfo:${JSON.stringify(roleInfo)},
-        eventName:${eventName}, eventDescribe:${eventDescribe}, pageName:${pageName}, pageDescribe:${pageDescribe}`
+        eventName:${eventName}, eventDescribe:${eventDescribe}, pageName:${pageName}, pageDescribe:${pageDescribe}`,
     );
     if (this.isAndroid) {
       this.bridge.call(
@@ -242,7 +241,7 @@ export class NativeChannel extends BaseChannel {
         eventName,
         eventDescribe,
         pageName,
-        pageDescribe
+        pageDescribe,
       );
     } else if (this.isIOS) {
       this.bridge.call(
@@ -253,7 +252,7 @@ export class NativeChannel extends BaseChannel {
         eventName,
         eventDescribe,
         pageName,
-        pageDescribe
+        pageDescribe,
       );
     }
   }
@@ -285,12 +284,12 @@ export class NativeChannel extends BaseChannel {
         let channelId: number = Number(
           ModelMgr.Instance.getProperty(
             EmModel.USER_MODEL,
-            UserModelAttribute.channelId
-          )
+            UserModelAttribute.channelId,
+          ),
         );
         if (channelId == 20360 || channelId == 20370) {
           SDKManager.Instance.getChannel().postGameEvent(
-            GameEventCode.Code_1080
+            GameEventCode.Code_1080,
           );
         }
         Laya.timer.callLater(this, () => {
@@ -366,6 +365,7 @@ export class NativeChannel extends BaseChannel {
   /**
    * 跳转到App Store等应用商店进行评分
    */
+  // eslint-disable-next-line quotes
   evaluateOnAppStore(json: string = '{"type":"2"}') {
     super.evaluateOnAppStore();
     if (this.isAndroid) {
@@ -410,7 +410,7 @@ export class NativeChannel extends BaseChannel {
         () => {
           SDKManager.Instance.getChannel().relaunch();
         },
-        AlertBtnType.O
+        AlertBtnType.O,
       );
     } else if (this.isIOS) {
       this.bridge.call("showNetworkAlert:", tip);
@@ -435,7 +435,7 @@ export class NativeChannel extends BaseChannel {
           let prompt: string =
             LangManager.Instance.GetTranslation("public.prompt");
           let msg: string = LangManager.Instance.GetTranslation(
-            "login.serverclosed.lost2"
+            "login.serverclosed.lost2",
           );
           SimpleAlertHelper.Instance.Show(
             SimpleAlertHelper.SIMPLE_ALERT,
@@ -447,7 +447,7 @@ export class NativeChannel extends BaseChannel {
             (b: boolean, flag: boolean) => {
               SDKManager.Instance.getChannel().relaunch();
             },
-            AlertBtnType.O
+            AlertBtnType.O,
           );
         } else {
           // window.location.reload();
@@ -475,13 +475,13 @@ export class NativeChannel extends BaseChannel {
             Logger.yyz("权限申请结果返回: " + result);
             NotificationManager.Instance.sendNotification(
               NativeEvent.PERMISSION_UPDATE,
-              result
+              result,
             );
             return result;
           },
           "checkPermission",
           type,
-          request
+          request,
         );
       }
     } else if (this.isIOS) {
@@ -494,12 +494,12 @@ export class NativeChannel extends BaseChannel {
               Logger.yyz("权限申请结果返回: " + result);
               NotificationManager.Instance.sendNotification(
                 NativeEvent.PERMISSION_UPDATE,
-                result
+                result,
               );
               return result;
             },
             "recordPermission:",
-            request
+            request,
           );
         }
       } else if (type == "android.permission.READ_EXTERNAL_STORAGE") {
@@ -567,7 +567,7 @@ export class NativeChannel extends BaseChannel {
     isShare: number = 1,
     code: number = 0,
     title: string = "title",
-    desc: string = "desc"
+    desc: string = "desc",
   ) {
     let htmlCanvas1: HTMLCanvas = sp.drawToCanvas(sp.width, sp.height, 0, 0); //把精灵绘制到canvas上面
     let base64Str1: string = htmlCanvas1.toBase64("image/png", 0.8);
@@ -580,7 +580,7 @@ export class NativeChannel extends BaseChannel {
           // MessageTipManager.Instance.show("分享结果返回: " + result);
           NotificationManager.Instance.sendNotification(
             NativeEvent.MOUNT_SHARE_RESULT,
-            result
+            result,
           );
           return result;
         },
@@ -590,13 +590,13 @@ export class NativeChannel extends BaseChannel {
         isShare,
         code,
         title,
-        desc
+        desc,
       );
     } else if (this.isIOS) {
       Utils.delay(3000).then(() => {
         NotificationManager.Instance.sendNotification(
           NativeEvent.MOUNT_SHARE_RESULT,
-          1
+          1,
         );
       });
       this.bridge.callWithBack(
@@ -612,7 +612,7 @@ export class NativeChannel extends BaseChannel {
         isShare,
         code,
         title,
-        desc
+        desc,
       );
     }
   }
@@ -645,7 +645,7 @@ export class NativeChannel extends BaseChannel {
     code: number = 0,
     title: string = "title",
     desc: string = "desc",
-    url: string = ""
+    url: string = "",
   ) {
     if (this.isAndroid) {
       this.bridge.call("shareURL", code, title, desc, url);
@@ -663,7 +663,7 @@ export class NativeChannel extends BaseChannel {
     desc: string,
     photoPath: string,
     url: string,
-    exInfo: string
+    exInfo: string,
   ) {
     // Laya.Browser.window.conch.captureScreen(function (arrayBuff, width, height) {
     //     // alert(Laya.Browser.window.conch.getCachePath());
@@ -767,7 +767,7 @@ export class NativeChannel extends BaseChannel {
     count: number,
     coinType: string,
     virtualCoinType: string,
-    oExInfo: string = ""
+    oExInfo: string = "",
   ) {
     let userInfo: UserInfo = PlayerManager.Instance.currentPlayerModel.userInfo;
     let thaneInfo: ThaneInfo = ArmyManager.Instance.thane;
@@ -803,7 +803,7 @@ export class NativeChannel extends BaseChannel {
         roleName,
         roleLevel,
         vipLevel,
-        rExInfo
+        rExInfo,
       );
     } else if (this.isIOS) {
       this.bridge.call(
@@ -828,7 +828,7 @@ export class NativeChannel extends BaseChannel {
         roleName,
         roleLevel,
         vipLevel,
-        rExInfo
+        rExInfo,
       );
     }
   }
@@ -842,7 +842,7 @@ export class NativeChannel extends BaseChannel {
       //取消支付上报
       SDKManager.Instance.getChannel().postGameEvent(
         GameEventCode.Code_9999,
-        JSON.stringify({ eventToken: GameEventString.cancel_purchase })
+        JSON.stringify({ eventToken: GameEventString.cancel_purchase }),
       );
     } else if (result == 1) {
       //支付成功上报
@@ -913,7 +913,7 @@ export class NativeChannel extends BaseChannel {
         "startRecordAudioMessage:chatType:extraText:",
         recvId,
         chatType,
-        extraText
+        extraText,
       );
     }
   }
@@ -979,7 +979,7 @@ export class NativeChannel extends BaseChannel {
    * */
   cancelRecordAudio() {
     MessageTipManager.Instance.show(
-      LangManager.Instance.GetTranslation("NativeChannel.cancelRecordAudio")
+      LangManager.Instance.GetTranslation("NativeChannel.cancelRecordAudio"),
     );
     this.bridge.call("cancelRecordAudio");
   }
@@ -1052,7 +1052,6 @@ export class NativeChannel extends BaseChannel {
    */
   public static nativeCallJs_sourceId(sourceId: string) {
     NativeChannel.sourceId = sourceId;
-    //@ts-ignore
     window.sourceId = sourceId;
     Logger.yyz(`Android包体渠道信息:  sourceId: ${sourceId}`);
   }
@@ -1074,13 +1073,13 @@ export class NativeChannel extends BaseChannel {
   public static nativeCallJs_packageInfo(
     packageName: string,
     versionName: string,
-    versionCode: number
+    versionCode: number,
   ) {
     NativeChannel.packageName = packageName;
     NativeChannel.versionName = versionName;
     NativeChannel.versionCode = versionCode;
     Logger.yyz(
-      `Android包体信息:  packageName: ${packageName}, versionName:${versionName}, versionCode:${versionCode}`
+      `Android包体信息:  packageName: ${packageName}, versionName:${versionName}, versionCode:${versionCode}`,
     );
   }
 
@@ -1091,7 +1090,7 @@ export class NativeChannel extends BaseChannel {
   public static nativeCallJs_errorCode(errorCode: number) {
     NotificationManager.Instance.sendNotification(
       NativeEvent.ERROR_CODE,
-      errorCode
+      errorCode,
     );
   }
 
@@ -1105,7 +1104,7 @@ export class NativeChannel extends BaseChannel {
     window["__nativeInfo__"] = info;
     NotificationManager.Instance.sendNotification(
       WebViewEvent.RECEIVE_DATA,
-      info
+      info,
     );
   }
 
@@ -1113,7 +1112,7 @@ export class NativeChannel extends BaseChannel {
   public static nativeCallPhoto(info) {
     NotificationManager.Instance.sendNotification(
       WebViewEvent.RECEIVE_PHOTO_CALL,
-      info
+      info,
     );
   }
 
@@ -1126,7 +1125,7 @@ export class NativeChannel extends BaseChannel {
     //保存切换账户是否需要重登状态
     SharedManager.Instance.setWindowItem(
       "isLoginAfterRestart",
-      isLoginAfterRestart.toString()
+      isLoginAfterRestart.toString(),
     );
     if (
       isLoginAfterRestart &&
@@ -1163,7 +1162,7 @@ export class NativeChannel extends BaseChannel {
               break;
           }
         }
-      }
+      },
     );
   }
 
@@ -1225,7 +1224,7 @@ export class NativeChannel extends BaseChannel {
     sendTime: number,
     isForbidRoom: boolean,
     reasonType: number,
-    forbidEndTime: number
+    forbidEndTime: number,
   ) {
     let recvId: string = NativeChannel.currentRecvId;
     //解析为ChatData
@@ -1286,7 +1285,7 @@ export class NativeChannel extends BaseChannel {
     distance: number,
     savePath: string,
     isRead: number,
-    mParam: string
+    mParam: string,
   ) {
     //解析为ChatData
     let chatData: ChatData = new ChatData();
@@ -1335,7 +1334,7 @@ export class NativeChannel extends BaseChannel {
    */
   public static onDownLoadAudioMessageCallBack(
     msgId: string,
-    savePath: string
+    savePath: string,
   ) {
     let msg: ChatData = this.msgHash.get(msgId);
     if (msg) {
@@ -1362,13 +1361,13 @@ export class NativeChannel extends BaseChannel {
   public static getNoSafeAreaHeight(
     height1: number,
     height2: number,
-    rotation: number
+    rotation: number,
   ) {
     NotificationManager.Instance.sendNotification(
       NativeEvent.STATUS_BAR_CHANGE,
       height1,
       height2,
-      rotation
+      rotation,
     );
   }
 
@@ -1411,7 +1410,7 @@ export class NativeChannel extends BaseChannel {
     }
     NotificationManager.Instance.dispatchEvent(
       NativeEvent.WIFI_STATE_UPDATE,
-      lost
+      lost,
     );
   }
 
@@ -1446,8 +1445,8 @@ export class NativeChannel extends BaseChannel {
         EmWindow.HintWnd,
         LangManager.Instance.GetTranslation(
           "login.serverclosed.lost1",
-          this._weekNetWaitTime
-        )
+          this._weekNetWaitTime,
+        ),
       );
     } else {
       if (!SocketManager.Instance.reConnetAlert) {
@@ -1455,8 +1454,8 @@ export class NativeChannel extends BaseChannel {
         this._weekNetHint.setHintText(
           LangManager.Instance.GetTranslation(
             "login.serverclosed.lost1",
-            this._weekNetWaitTime
-          )
+            this._weekNetWaitTime,
+          ),
         );
       } else {
         this._weekNetWaitTime--;
@@ -1478,7 +1477,7 @@ export class NativeChannel extends BaseChannel {
     pass: string,
     site: string,
     siteId: number,
-    appData: any
+    appData: any,
   ) {
     if (appData && appData.token != "") {
       this.platId = 1;
@@ -1494,7 +1493,7 @@ export class NativeChannel extends BaseChannel {
         siteId,
         ChannelSTR.APP,
         this.platId,
-        appData
+        appData,
       ); //请求玩家列表
     }
   }
@@ -1504,7 +1503,7 @@ export class NativeChannel extends BaseChannel {
     if (isOversea()) {
       SDKManager.Instance.getChannel().postGameEvent(
         GameEventCode.Code_9999,
-        JSON.stringify({ eventToken: eventType })
+        JSON.stringify({ eventToken: eventType }),
       );
     }
   }
@@ -1518,12 +1517,12 @@ export class NativeChannel extends BaseChannel {
             Logger.yyz("绑定账户结果返回: " + result);
             NotificationManager.Instance.dispatchEvent(
               NativeEvent.BIND_ACCOUNT_RET,
-              result
+              result,
             );
             resolve(result);
           },
           "bindAccount",
-          type
+          type,
         );
       } else if (this.isIOS) {
         this.bridge.callWithBack(
@@ -1531,12 +1530,12 @@ export class NativeChannel extends BaseChannel {
             Logger.yyz("绑定账户结果返回: " + result);
             NotificationManager.Instance.dispatchEvent(
               NativeEvent.BIND_ACCOUNT_RET,
-              result
+              result,
             );
             resolve(result);
           },
           "bindAccount:",
-          type
+          type,
         );
       }
     });
@@ -1549,7 +1548,7 @@ export class NativeChannel extends BaseChannel {
         let info: Array<any> = JSON.parse(result);
         NotificationManager.Instance.dispatchEvent(
           NativeEvent.CHECK_BIND_ACCOUNT,
-          info
+          info,
         );
         resolve(info);
       }, "checkBindState");

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SevenTargetInfoRsp {
+  int32 startTime = 1;
+  int32 rewardSite = 2;
+  repeated int32 sevenTask = 3;
+  int32 giftSite = 4;
+  int32 starNum = 5;
+  int32 day = 6;
+  int32 residualTime = 7;
+}

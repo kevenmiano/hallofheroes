@@ -1,4 +1,3 @@
-// @ts-nocheck
 import AudioManager from "../../../../core/audio/AudioManager";
 import Resolution from "../../../../core/comps/Resolution";
 import {
@@ -113,7 +112,7 @@ export default class TaskTraceTipWnd {
       LayerMgr.Instance.addToLayer(
         this.wnd.displayObject,
         EmLayer.GAME_UI_LAYER,
-        -2
+        -2,
       );
       this.onUpdateView(data);
       Logger.xjy("TaskTraceTipWnd Show type==" + data.type);
@@ -133,7 +132,7 @@ export default class TaskTraceTipWnd {
     if (this.wnd) {
       LayerMgr.Instance.removeByLayer(
         this.wnd.displayObject,
-        EmLayer.GAME_UI_LAYER
+        EmLayer.GAME_UI_LAYER,
       );
       this.dispose();
     }
@@ -151,22 +150,22 @@ export default class TaskTraceTipWnd {
     NotificationManager.Instance.addEventListener(
       UIBarEvent.SHOW_TASK_TRACE,
       this.__show,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       UIBarEvent.HIDE_TASK_TRACE,
       this.__hide,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NotificationEvent.SWITCH_SCENE,
       this._onSceneViewAdded,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NativeEvent.AFTER_STATUS_BAR_CHANGE,
       this.__afterStatusBarChange,
-      this
+      this,
     );
   }
 
@@ -180,22 +179,22 @@ export default class TaskTraceTipWnd {
     NotificationManager.Instance.removeEventListener(
       UIBarEvent.SHOW_TASK_TRACE,
       this.__show,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       UIBarEvent.HIDE_TASK_TRACE,
       this.__hide,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.SWITCH_SCENE,
       this._onSceneViewAdded,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NativeEvent.AFTER_STATUS_BAR_CHANGE,
       this.__afterStatusBarChange,
-      this
+      this,
     );
   }
 

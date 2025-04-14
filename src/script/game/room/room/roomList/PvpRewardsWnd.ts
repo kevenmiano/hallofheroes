@@ -27,23 +27,23 @@ export default class PvpRewardsWnd extends BaseWindow {
       this,
       this.renderListItem,
       null,
-      false
+      false,
     );
     this.itemList.numItems = this.rewardList.length;
   }
 
   initText() {
     this.txt1.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.rewards.text1"
+      "RoomList.pvp.rewards.text1",
     );
     this.txt2.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.rewards.text2"
+      "RoomList.pvp.rewards.text2",
     );
     this.txt3.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.rewards.text3"
+      "RoomList.pvp.rewards.text3",
     );
     this.frame.title = LangManager.Instance.GetTranslation(
-      "funny.FunnyRightView.active.previewText"
+      "funny.FunnyRightView.active.previewText",
     );
   }
 

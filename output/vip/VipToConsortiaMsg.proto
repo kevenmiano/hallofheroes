@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipToConsortiaMsg {
+  int32 userid = 1;
+  bool isVip = 2;
+  int32 vipType = 3;
+  int32 consortiaId = 4;
+}

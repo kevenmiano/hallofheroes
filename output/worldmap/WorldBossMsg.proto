@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.worldmap;
+
+message WorldBossMsg {
+  int32 armyId = 1;
+  int32 mapId = 2;
+  int32 param1 = 3;
+  int32 param2 = 4;
+  string param3 = 5;
+  string param4 = 6;
+}

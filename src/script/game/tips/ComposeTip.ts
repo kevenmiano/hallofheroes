@@ -91,14 +91,14 @@ export class ComposeTip extends BaseTips {
       this.item.text = "";
       this.txt_name.text = this._info.templateInfo.TemplateNameLang;
       this.txt_name.color = GoodsSonType.getColorByProfile(
-        this._info.templateInfo.Profile
+        this._info.templateInfo.Profile,
       );
       ToolTipsManager.Instance.setMountActiveTxt(this._info, this.txt_bind);
       let player: PlayerInfo =
         PlayerManager.Instance.currentPlayerModel.playerInfo;
       if (player.composeList.indexOf(this._info.templateInfo.Property1) >= 0) {
         this.txt_study.text = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.ComposeTip.vStudy"
+          "yishi.view.tips.goods.ComposeTip.vStudy",
         );
       } else {
         this.txt_study.text = "";
@@ -109,7 +109,7 @@ export class ComposeTip extends BaseTips {
       let needStr: string = "";
       let composeTemp: t_s_composeData = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_compose,
-        this._info.templateInfo.Property1
+        this._info.templateInfo.Property1,
       );
       if (composeTemp) {
         let composeGoods: GoodsInfo = new GoodsInfo();
@@ -125,7 +125,7 @@ export class ComposeTip extends BaseTips {
           if (composeTemp["Material" + i] > 0) {
             materialTemp = ConfigMgr.Instance.getTemplateByID(
               ConfigType.t_s_itemtemplate,
-              composeTemp["Material" + i]
+              composeTemp["Material" + i],
             );
             needStr +=
               materialTemp.TemplateNameLang + "*" + composeTemp["Count" + i];
@@ -134,7 +134,7 @@ export class ComposeTip extends BaseTips {
       }
       this.txt_need.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.ComposeTip.need"
+          "yishi.view.tips.goods.ComposeTip.need",
         ) + needStr;
 
       this.group_price.visible = this._info.templateInfo.SellGold > 0;
@@ -146,13 +146,13 @@ export class ComposeTip extends BaseTips {
       if (this._info.templateInfo.NeedGrades > 1) {
         this.txt_useLevel.text = LangManager.Instance.GetTranslation(
           "yishi.view.tips.goods.EquipTipsContent.grade",
-          this._info.templateInfo.NeedGrades
+          this._info.templateInfo.NeedGrades,
         );
         if (
           !GoodsCheck.isGradeFix(
             ArmyManager.Instance.thane,
             this._info.templateInfo,
-            false
+            false,
           )
         ) {
           this.txt_useLevel.color = "#FF0000";
@@ -177,18 +177,18 @@ export class ComposeTip extends BaseTips {
       let timeStr: string;
       if (this._info.leftTime == -1) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr01"
+          "yishi.view.tips.goods.EquipTip.timeStr01",
         );
       } else if (this._info.leftTime < 0) {
         timeStr = LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.timeStr02"
+          "yishi.view.tips.goods.EquipTip.timeStr02",
         );
       } else {
         timeStr = DateFormatter.getFullDateString(this._info.leftTime);
       }
       this.txt_time.text =
         LangManager.Instance.GetTranslation(
-          "yishi.view.tips.goods.EquipTip.time.text"
+          "yishi.view.tips.goods.EquipTip.time.text",
         ) +
         ":" +
         timeStr;
@@ -237,11 +237,11 @@ export class ComposeTip extends BaseTips {
         !GoodsCheck.isGradeFix(
           ArmyManager.Instance.thane,
           this._info.templateInfo,
-          false
+          false,
         )
       ) {
         let str: string = LangManager.Instance.GetTranslation(
-          "cell.view.GoodsItemMenu.command01"
+          "cell.view.GoodsItemMenu.command01",
         );
         MessageTipManager.Instance.show(str);
         this.hide();
@@ -249,12 +249,12 @@ export class ComposeTip extends BaseTips {
       } else if (this.check()) {
         let itemBuffer: PlayerBufferInfo =
           PlayerBufferManager.Instance.getItemBufferInfo(
-            this._info.templateInfo.Property1
+            this._info.templateInfo.Property1,
           );
         if (itemBuffer) {
           if (this._info.templateInfo.Property3 < itemBuffer.grade) {
             str = LangManager.Instance.GetTranslation(
-              "cell.view.GoodsItemMenu.command02"
+              "cell.view.GoodsItemMenu.command02",
             );
             MessageTipManager.Instance.show(str);
             this.hide();
@@ -294,7 +294,7 @@ export class ComposeTip extends BaseTips {
         0
     ) {
       str = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command04"
+        "cell.view.GoodsItemMenu.command04",
       );
       MessageTipManager.Instance.show(str);
       return false;
@@ -305,7 +305,7 @@ export class ComposeTip extends BaseTips {
   private checkWearyCanGet(
     wearyGet: number,
     pos: number,
-    count: number = 1
+    count: number = 1,
   ): boolean {
     // let wearyCanGet: number = PlayerInfo.WEARY_MAX - this.playerInfo.weary;
     // if (wearyGet > wearyCanGet) {
@@ -322,7 +322,7 @@ export class ComposeTip extends BaseTips {
   private checkWearyTodayCanGet(
     wearyGet: number,
     pos: number,
-    count: number = 1
+    count: number = 1,
   ): boolean {
     let wearyTodayCanGet: number =
       PlayerInfo.WEARY_GET_MAX - this.playerInfo.wearyLimit;
@@ -331,12 +331,12 @@ export class ComposeTip extends BaseTips {
         LangManager.Instance.GetTranslation("public.confirm");
       let cancel: string = LangManager.Instance.GetTranslation("public.cancel");
       let prompt: string = LangManager.Instance.GetTranslation(
-        "map.campaign.view.frame.SubmitResourcesFrame.titleTextTip"
+        "map.campaign.view.frame.SubmitResourcesFrame.titleTextTip",
       );
       let content: string = LangManager.Instance.GetTranslation(
         "cell.mediator.playerbag.PlayerBagCellClickMediator.command06",
         PlayerInfo.WEARY_GET_MAX,
-        wearyTodayCanGet
+        wearyTodayCanGet,
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.SIMPLE_ALERT,
@@ -345,7 +345,7 @@ export class ComposeTip extends BaseTips {
         content,
         confirm,
         cancel,
-        this.wearyTodayCanGetCallBack.bind(this)
+        this.wearyTodayCanGetCallBack.bind(this),
       );
       return false;
     }
@@ -379,11 +379,11 @@ export class ComposeTip extends BaseTips {
       !GoodsCheck.isGradeFix(
         ArmyManager.Instance.thane,
         this._info.templateInfo,
-        false
+        false,
       )
     ) {
       let str: string = LangManager.Instance.GetTranslation(
-        "cell.view.GoodsItemMenu.command01"
+        "cell.view.GoodsItemMenu.command01",
       );
       MessageTipManager.Instance.show(str);
       this.hide();

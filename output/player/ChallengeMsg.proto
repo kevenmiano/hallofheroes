@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message ChallengeMsg {
+  int32 tarUserId = 1;
+  int32 tarArmyId = 2;
+  int32 payType = 3;
+  int32 type = 4;
+}

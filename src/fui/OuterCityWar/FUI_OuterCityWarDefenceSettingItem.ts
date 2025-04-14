@@ -20,7 +20,7 @@ export default class FUI_OuterCityWarDefenceSettingItem extends fgui.GComponent 
     return <FUI_OuterCityWarDefenceSettingItem>(
       fgui.UIPackage.createObject(
         "OuterCityWar",
-        "OuterCityWarDefenceSettingItem"
+        "OuterCityWarDefenceSettingItem",
       )
     );
   }

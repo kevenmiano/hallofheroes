@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message ImgMsg {
+  string id = 1;
+  string url = 2;
+  int32 sort = 3;
+  int32 offsetX = 4;
+  int32 offsetY = 5;
+  string jumpUrl = 6;
+}

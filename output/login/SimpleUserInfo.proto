@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message SimpleUserInfo {
+  int32 userId = 1;
+  string userName = 2;
+  string nickName = 3;
+  int32 grade = 4;
+  int32 repute = 5;
+  int32 sex = 6;
+  int32 rename = 7;
+  bool active = 8;
+  string site = 9;
+  bool isOnline = 10;
+}

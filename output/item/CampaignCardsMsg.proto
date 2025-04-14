@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message CampaignCardsMsg {
+  string sceneType = 1;
+  int32 cardCount = 2;
+  int32 payCardCount = 3;
+  int32 price = 4;
+  repeated int32 dropItems = 5;
+}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { GameEventCode } from "../../../game/constant/GameEventCode";
 import { EmWindow } from "../../../game/constant/UIDefine";
 import { UserInfo } from "../../../game/datas/userinfo/UserInfo";
@@ -55,7 +54,7 @@ export default class DevChannel extends BaseChannel {
     chatRoomId: string,
     type: number,
     extraText: string,
-    cb: Function
+    cb: Function,
   ) {
     YMWebManager.Instance.startRecord(chatRoomId, type, extraText, cb);
   }
@@ -129,7 +128,7 @@ export default class DevChannel extends BaseChannel {
     pass: string,
     site: string,
     siteId: number,
-    appData: any = null
+    appData: any = null,
   ) {
     let platId = 5;
     if (Utils.isFromMicroApp()) {
@@ -142,7 +141,7 @@ export default class DevChannel extends BaseChannel {
       siteId,
       ChannelSTR.DEV,
       platId,
-      appData
+      appData,
     ); //请求玩家列表
   }
 
@@ -150,7 +149,7 @@ export default class DevChannel extends BaseChannel {
     if (isOversea()) {
       SDKManager.Instance.getChannel().postGameEvent(
         GameEventCode.Code_9999,
-        JSON.stringify({ eventToken: eventType })
+        JSON.stringify({ eventToken: eventType }),
       );
     }
   }
@@ -160,7 +159,7 @@ export default class DevChannel extends BaseChannel {
     isShare: number = 1,
     code: number = 0,
     title: string = "title",
-    desc: string = "desc"
+    desc: string = "desc",
   ) {
     if (code != 6) {
       return;
@@ -174,7 +173,7 @@ export default class DevChannel extends BaseChannel {
       sp.width * sp.scaleX,
       sp.height * sp.scaleY,
       0,
-      0
+      0,
     ); //把精灵绘制到canvas上面
     let base64Str1: string = htmlCanvas1.toBase64("image/png", 0.8);
     let fileStream = Utils.dataURLtoFile(base64Str1);
@@ -190,7 +189,7 @@ export default class DevChannel extends BaseChannel {
       "POST",
       "text",
       null,
-      ["Content-Type", "text/plain"]
+      ["Content-Type", "text/plain"],
     ).then((data) => {
       let retData = JSON.parse(data);
       Logger.log("FB分享返回: ", retData);
@@ -199,16 +198,16 @@ export default class DevChannel extends BaseChannel {
         case 200:
           let shareurl = retData.data;
           let shareUrl = `https://www.facebook.com/dialog/share?app_id=445717077248729&display=popup&href=${encodeURIComponent(
-            shareurl
+            shareurl,
           )}&redirect_uri=${encodeURIComponent(
-            "https://wartunelite.wan.com/"
+            "https://wartunelite.wan.com/",
           )}`;
           SDKManager.Instance.getChannel().openURL(shareUrl);
           break;
         default:
           let codeStr = "mountShareWnd.FB.share_" + retData.code;
           MessageTipManager.Instance.show(
-            LangManager.Instance.GetTranslation(codeStr)
+            LangManager.Instance.GetTranslation(codeStr),
           );
           break;
       }

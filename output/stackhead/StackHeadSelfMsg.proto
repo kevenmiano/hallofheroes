@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadSelfMsg {
+  string uid = 1;
+  int32 actionPoint = 2;
+  int32 readyBuffCount = 3;
+  int32 weekPoint = 4;
+}

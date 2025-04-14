@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.follow_reward;
+
+message StatusInfo {
+  int32 type = 1;
+  int32 status = 2;
+}

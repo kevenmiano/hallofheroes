@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleItemMsg {
+  int32 userId = 1;
+  string battleId = 2;
+  string serverName = 3;
+  int32 uItemId = 4;
+  int32 count = 5;
+  int32 tempId = 6;
+  int32 bagPos = 7;
+  int32 skillTempId = 8;
+  int32 sonType = 9;
+}

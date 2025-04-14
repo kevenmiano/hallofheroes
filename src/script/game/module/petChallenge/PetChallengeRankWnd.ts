@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -18,68 +18,85 @@ import PetChallengeRankItem from "./item/PetChallengeRankItem";
 import PetChallengeCtrl from "./PetChallengeCtrl";
 
 export default class PetChallengeRankWnd extends BaseWindow {
-    private rankList: fgui.GList;
+  private rankList: fgui.GList;
 
-    constructor() {
-        super();
-        this.resizeContent = true;
-    }
+  constructor() {
+    super();
+    this.resizeContent = true;
+  }
 
-    public OnInitWind() {
-        super.OnInitWind();
-        this.setCenter()
-    }
+  public OnInitWind() {
+    super.OnInitWind();
+    this.setCenter();
+  }
 
-    /**界面打开 */
-    OnShowWind() {
-        super.OnShowWind();
-        this.addEvent();
-        this.rankList.setVirtual();
-        this.rankList.itemRenderer = Laya.Handler.create(this, this.onRenderListItem, null, false);
-        this.control.requestChallengeData(2);
-    }
+  /**界面打开 */
+  OnShowWind() {
+    super.OnShowWind();
+    this.addEvent();
+    this.rankList.setVirtual();
+    this.rankList.itemRenderer = Laya.Handler.create(
+      this,
+      this.onRenderListItem,
+      null,
+      false,
+    );
+    this.control.requestChallengeData(2);
+  }
 
-    /**关闭界面 */
-    OnHideWind() {
-        super.OnHideWind();
-        this.delEvent();
-    }
+  /**关闭界面 */
+  OnHideWind() {
+    super.OnHideWind();
+    this.delEvent();
+  }
 
-    private addEvent() {
-        NotificationManager.Instance.addEventListener(PetChallengeEvent.CHALLENGE_INFO_CHAGNE, this.__refreshChallengeInfo, this);
-    }
+  private addEvent() {
+    NotificationManager.Instance.addEventListener(
+      PetChallengeEvent.CHALLENGE_INFO_CHAGNE,
+      this.__refreshChallengeInfo,
+      this,
+    );
+  }
 
-    private delEvent() {
-        NotificationManager.Instance.removeEventListener(PetChallengeEvent.CHALLENGE_INFO_CHAGNE, this.__refreshChallengeInfo, this);
-    }
+  private delEvent() {
+    NotificationManager.Instance.removeEventListener(
+      PetChallengeEvent.CHALLENGE_INFO_CHAGNE,
+      this.__refreshChallengeInfo,
+      this,
+    );
+  }
 
-    private __refreshChallengeInfo() {
-        let challengeTopList = this.control.data.challengeTopList;
-        if (challengeTopList.length <= 0) return;
-        this.rankList.numItems = challengeTopList.length;
-    }
+  private __refreshChallengeInfo() {
+    let challengeTopList = this.control.data.challengeTopList;
+    if (challengeTopList.length <= 0) return;
+    this.rankList.numItems = challengeTopList.length;
+  }
 
-    private onRenderListItem(index: number, item: PetChallengeRankItem) {
-        if (!this.control) return;
-        let itemDatas = this.control.data.challengeTopList;
-        if (!itemDatas) return
-        let itemData = itemDatas[index]
-        if (!itemData) {
-            item.info = null
-            return
-        }
-        item.info = itemData
+  private onRenderListItem(index: number, item: PetChallengeRankItem) {
+    if (!this.control) return;
+    let itemDatas = this.control.data.challengeTopList;
+    if (!itemDatas) return;
+    let itemData = itemDatas[index];
+    if (!itemData) {
+      item.info = null;
+      return;
     }
+    item.info = itemData;
+  }
 
-    public get control() {
-        return FrameCtrlManager.Instance.getCtrl(EmWindow.PetChallenge) as PetChallengeCtrl
-    }
+  public get control() {
+    return FrameCtrlManager.Instance.getCtrl(
+      EmWindow.PetChallenge,
+    ) as PetChallengeCtrl;
+  }
 
-    dispose() {
-        for (let index = 0; index < this.rankList.numChildren; index++) {
-            const element = this.rankList.getChildAt(index) as PetChallengeRankHeadItem;
-            element.dispose();
-        }
-        super.dispose();
+  dispose() {
+    for (let index = 0; index < this.rankList.numChildren; index++) {
+      const element = this.rankList.getChildAt(
+        index,
+      ) as PetChallengeRankHeadItem;
+      element.dispose();
     }
+    super.dispose();
+  }
 }

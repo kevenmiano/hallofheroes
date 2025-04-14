@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message AchieveListInfoMsg {
+  repeated int32 activeRspInfo = 1;
+}

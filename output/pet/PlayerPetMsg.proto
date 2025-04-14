@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PlayerPetMsg {
+  int32 userId = 1;
+  repeated int32 petInfo = 2;
+  string nickName = 3;
+  int32 order = 4;
+  string chaPos = 5;
+  int32 score = 6;
+  int32 petCount = 7;
+  int32 op = 8;
+  string fightIndex = 9;
+}

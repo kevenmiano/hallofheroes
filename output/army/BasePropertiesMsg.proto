@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message BasePropertiesMsg {
+  int32 power = 1;
+  int32 agility = 2;
+  int32 intel = 3;
+  int32 physi = 4;
+  int32 captain = 5;
+  int32 attack = 6;
+  int32 defence = 7;
+  int32 magicattack = 8;
+  int32 magicdefence = 9;
+  int32 live = 10;
+  int32 conat = 11;
+  int32 forcehit = 12;
+  int32 parry = 13;
+}

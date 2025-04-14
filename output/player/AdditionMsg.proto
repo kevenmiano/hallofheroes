@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message AdditionMsg {
+  int32 masterType = 1;
+  int32 power = 2;
+  int32 agility = 3;
+  int32 intellect = 4;
+  int32 physique = 5;
+  string createDate = 6;
+  string expirtDate = 7;
+  string description = 8;
+  bool isExist = 9;
+}

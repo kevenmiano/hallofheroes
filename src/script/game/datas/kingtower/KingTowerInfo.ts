@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -55,12 +54,12 @@ export class KingTowerInfo {
     switch (type) {
       case KingTowerType.SIMPLE:
         str = LangManager.Instance.GetTranslation(
-          "kingtower.difficulty.simple"
+          "kingtower.difficulty.simple",
         );
         break;
       case KingTowerType.COMMON:
         str = LangManager.Instance.GetTranslation(
-          "kingtower.difficulty.common"
+          "kingtower.difficulty.common",
         );
         break;
       case KingTowerType.HARD:
@@ -68,7 +67,7 @@ export class KingTowerInfo {
         break;
       case KingTowerType.NIGHTMARE:
         str = LangManager.Instance.GetTranslation(
-          "kingtower.difficulty.nightmare"
+          "kingtower.difficulty.nightmare",
         );
         break;
       default:

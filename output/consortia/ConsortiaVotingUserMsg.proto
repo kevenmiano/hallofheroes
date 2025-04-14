@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaVotingUserMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 votingId = 3;
+  bool isVotingman = 4;
+  int32 votingTime = 5;
+  int32 votingData = 6;
+}

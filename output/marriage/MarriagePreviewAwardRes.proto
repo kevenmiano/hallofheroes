@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriagePreviewAwardRes {
+  int32 flag = 1;
+}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2023-10-24 17:30:22
@@ -10,7 +9,7 @@
 
 export enum EmCastlePos {
   Castle,
-  OuterCityWar
+  OuterCityWar,
 }
 
 export class CastleBuildInfoStyle {
@@ -23,7 +22,12 @@ export class CastleBuildInfoStyle {
   castleFightPos: Laya.Point;
   castleFightNamePos: Laya.Point;
 
-  constructor(castlePos: Laya.Point, castleNamePos: Laya.Point, castleFightPos: Laya.Point, castleFightNamePos: Laya.Point) {
+  constructor(
+    castlePos: Laya.Point,
+    castleNamePos: Laya.Point,
+    castleFightPos: Laya.Point,
+    castleFightNamePos: Laya.Point,
+  ) {
     this.castlePos = castlePos;
     this.castleNamePos = castleNamePos;
 
@@ -40,47 +44,173 @@ export default class CastleConfigUtil {
   public static MAP_SCENE_WIDTH: number = 1334 * 1.2;
   public static MAP_SCENE_HEIGHT: number = 750 * 1.2;
 
-
   /**场景特效的摆放点 */
   public aniPos: Laya.Point[] = [
-    new Laya.Point(1450 - 350, 30),//"bird_effect",
-    new Laya.Point(1730 - 350, 50),// "cloud_effect_0",
-    new Laya.Point(1180 - 350, -10),// "cloud_effect_1",
-    new Laya.Point(420 - 350, 15),//"cloud_effect_2",
-    new Laya.Point(180 - 350, 35),//"cloud_effect_3",
+    new Laya.Point(1450 - 350, 30), //"bird_effect",
+    new Laya.Point(1730 - 350, 50), // "cloud_effect_0",
+    new Laya.Point(1180 - 350, -10), // "cloud_effect_1",
+    new Laya.Point(420 - 350, 15), //"cloud_effect_2",
+    new Laya.Point(180 - 350, 35), //"cloud_effect_3",
   ];
 
   /**建筑配置 */
   public buildConfig: Map<number, CastleBuildInfoStyle> = new Map();
 
   constructor() {
-    this.buildConfig.set(101, new CastleBuildInfoStyle(new Laya.Point(680 - 350, 460), new Laya.Point(100, 100), new Laya.Point(680, 460), new Laya.Point(115, 100)));//精炼炉
-    this.buildConfig.set(301, new CastleBuildInfoStyle(new Laya.Point(860 - 350, 300), new Laya.Point(105, 130), new Laya.Point(860, 300), new Laya.Point(130, 135)));//仓库
-    this.buildConfig.set(402, new CastleBuildInfoStyle(new Laya.Point(950 - 350, 430), new Laya.Point(40, 130), new Laya.Point(950, 430), new Laya.Point(110, 140)));//兵营
-    this.buildConfig.set(501, new CastleBuildInfoStyle(new Laya.Point(1100 - 350, 210), new Laya.Point(70, 155), new Laya.Point(1100, 210), new Laya.Point(90, 180)));//神学院
-    this.buildConfig.set(901, new CastleBuildInfoStyle(new Laya.Point(1330 - 350, 0), new Laya.Point(40, 330), new Laya.Point(1330, 0), new Laya.Point(170, 305)));//内政厅
-    this.buildConfig.set(1201, new CastleBuildInfoStyle(new Laya.Point(1170 - 350, 550), new Laya.Point(55, 100), new Laya.Point(1170, 550), new Laya.Point(120, 100)));//民居
-    this.buildConfig.set(1504, new CastleBuildInfoStyle(new Laya.Point(1355 - 350, 400), new Laya.Point(20, 100), new Laya.Point(1355, 400), new Laya.Point(100, 120)));//修行神殿
-    this.buildConfig.set(1506, new CastleBuildInfoStyle(new Laya.Point(1010 - 350, 625), new Laya.Point(100, 100), new Laya.Point(1010, 625), new Laya.Point(130, 120)));//市场
+    this.buildConfig.set(
+      101,
+      new CastleBuildInfoStyle(
+        new Laya.Point(680 - 350, 460),
+        new Laya.Point(100, 100),
+        new Laya.Point(680, 460),
+        new Laya.Point(115, 100),
+      ),
+    ); //精炼炉
+    this.buildConfig.set(
+      301,
+      new CastleBuildInfoStyle(
+        new Laya.Point(860 - 350, 300),
+        new Laya.Point(105, 130),
+        new Laya.Point(860, 300),
+        new Laya.Point(130, 135),
+      ),
+    ); //仓库
+    this.buildConfig.set(
+      402,
+      new CastleBuildInfoStyle(
+        new Laya.Point(950 - 350, 430),
+        new Laya.Point(40, 130),
+        new Laya.Point(950, 430),
+        new Laya.Point(110, 140),
+      ),
+    ); //兵营
+    this.buildConfig.set(
+      501,
+      new CastleBuildInfoStyle(
+        new Laya.Point(1100 - 350, 210),
+        new Laya.Point(70, 155),
+        new Laya.Point(1100, 210),
+        new Laya.Point(90, 180),
+      ),
+    ); //神学院
+    this.buildConfig.set(
+      901,
+      new CastleBuildInfoStyle(
+        new Laya.Point(1330 - 350, 0),
+        new Laya.Point(40, 330),
+        new Laya.Point(1330, 0),
+        new Laya.Point(170, 305),
+      ),
+    ); //内政厅
+    this.buildConfig.set(
+      1201,
+      new CastleBuildInfoStyle(
+        new Laya.Point(1170 - 350, 550),
+        new Laya.Point(55, 100),
+        new Laya.Point(1170, 550),
+        new Laya.Point(120, 100),
+      ),
+    ); //民居
+    this.buildConfig.set(
+      1504,
+      new CastleBuildInfoStyle(
+        new Laya.Point(1355 - 350, 400),
+        new Laya.Point(20, 100),
+        new Laya.Point(1355, 400),
+        new Laya.Point(100, 120),
+      ),
+    ); //修行神殿
+    this.buildConfig.set(
+      1506,
+      new CastleBuildInfoStyle(
+        new Laya.Point(1010 - 350, 625),
+        new Laya.Point(100, 100),
+        new Laya.Point(1010, 625),
+        new Laya.Point(130, 120),
+      ),
+    ); //市场
 
-    this.buildConfig.set(1512, new CastleBuildInfoStyle(new Laya.Point(967 - 350, 50), new Laya.Point(90, 200), new Laya.Point(967, 50), new Laya.Point(90, 200)));//占星塔
-    this.buildConfig.set(1513, new CastleBuildInfoStyle(new Laya.Point(520 - 350, 580), new Laya.Point(80, 150), new Laya.Point(520, 580), new Laya.Point(80, 150)));//堡垒
-    this.buildConfig.set(1514, new CastleBuildInfoStyle(new Laya.Point(755 - 350, 540), new Laya.Point(100, 100), new Laya.Point(755, 540), new Laya.Point(100, 100)));//城门
-    this.buildConfig.set(1515, new CastleBuildInfoStyle(new Laya.Point(760 - 350, 730), new Laya.Point(80, 150), new Laya.Point(760, 730), new Laya.Point(80, 150)));//训练场
+    this.buildConfig.set(
+      1512,
+      new CastleBuildInfoStyle(
+        new Laya.Point(967 - 350, 50),
+        new Laya.Point(90, 200),
+        new Laya.Point(967, 50),
+        new Laya.Point(90, 200),
+      ),
+    ); //占星塔
+    this.buildConfig.set(
+      1513,
+      new CastleBuildInfoStyle(
+        new Laya.Point(520 - 350, 580),
+        new Laya.Point(80, 150),
+        new Laya.Point(520, 580),
+        new Laya.Point(80, 150),
+      ),
+    ); //堡垒
+    this.buildConfig.set(
+      1514,
+      new CastleBuildInfoStyle(
+        new Laya.Point(755 - 350, 540),
+        new Laya.Point(100, 100),
+        new Laya.Point(755, 540),
+        new Laya.Point(100, 100),
+      ),
+    ); //城门
+    this.buildConfig.set(
+      1515,
+      new CastleBuildInfoStyle(
+        new Laya.Point(760 - 350, 730),
+        new Laya.Point(80, 150),
+        new Laya.Point(760, 730),
+        new Laya.Point(80, 150),
+      ),
+    ); //训练场
 
-    this.buildConfig.set(1519, new CastleBuildInfoStyle(new Laya.Point(750 - 350, 990), new Laya.Point(100, 100), new Laya.Point(730, 935), new Laya.Point(80, 105)));//进攻营地1
-    this.buildConfig.set(1518, new CastleBuildInfoStyle(new Laya.Point(590 - 350, 900), new Laya.Point(100, 100), new Laya.Point(570, 855), new Laya.Point(80, 105)));//进攻营地2
-    this.buildConfig.set(1517, new CastleBuildInfoStyle(new Laya.Point(430 - 350, 810), new Laya.Point(100, 100), new Laya.Point(400, 770), new Laya.Point(80, 105)));//进攻营地3
-    this.buildConfig.set(1516, new CastleBuildInfoStyle(new Laya.Point(280 - 350, 720), new Laya.Point(100, 100), new Laya.Point(255, 685), new Laya.Point(80, 105)));//进攻营地4
+    this.buildConfig.set(
+      1519,
+      new CastleBuildInfoStyle(
+        new Laya.Point(750 - 350, 990),
+        new Laya.Point(100, 100),
+        new Laya.Point(730, 935),
+        new Laya.Point(80, 105),
+      ),
+    ); //进攻营地1
+    this.buildConfig.set(
+      1518,
+      new CastleBuildInfoStyle(
+        new Laya.Point(590 - 350, 900),
+        new Laya.Point(100, 100),
+        new Laya.Point(570, 855),
+        new Laya.Point(80, 105),
+      ),
+    ); //进攻营地2
+    this.buildConfig.set(
+      1517,
+      new CastleBuildInfoStyle(
+        new Laya.Point(430 - 350, 810),
+        new Laya.Point(100, 100),
+        new Laya.Point(400, 770),
+        new Laya.Point(80, 105),
+      ),
+    ); //进攻营地3
+    this.buildConfig.set(
+      1516,
+      new CastleBuildInfoStyle(
+        new Laya.Point(280 - 350, 720),
+        new Laya.Point(100, 100),
+        new Laya.Point(255, 685),
+        new Laya.Point(80, 105),
+      ),
+    ); //进攻营地4
 
-
-    this.buildConfig.get(101).zIndex = 10
-    this.buildConfig.get(402).zIndex = 12
-    this.buildConfig.get(901).zIndex = 10
-    this.buildConfig.get(1201).zIndex = 10
+    this.buildConfig.get(101).zIndex = 10;
+    this.buildConfig.get(402).zIndex = 12;
+    this.buildConfig.get(901).zIndex = 10;
+    this.buildConfig.get(1201).zIndex = 10;
 
     //内政厅
-    this.buildConfig.get(901).buildEffectPos = [new Laya.Point(30, 270)]
+    this.buildConfig.get(901).buildEffectPos = [new Laya.Point(30, 270)];
     //采矿场(精炼炉)
     this.buildConfig.get(101).buildEffectPos = [
       new Laya.Point(58, 48), //岩浆
@@ -88,8 +218,8 @@ export default class CastleConfigUtil {
       new Laya.Point(20, -55), //烟囱2
       new Laya.Point(105, 70), //火盆1
       new Laya.Point(75, 70), //火盆2
-      new Laya.Point(120, 55) //火盆3
-    ]
+      new Laya.Point(120, 55), //火盆3
+    ];
   }
 
   private static _instance: CastleConfigUtil;
@@ -98,8 +228,11 @@ export default class CastleConfigUtil {
     return this._instance;
   }
 
-  public getAniPos(index: number, type: number = EmCastlePos.Castle): Laya.Point {
-    let pt = this.aniPos[index]
+  public getAniPos(
+    index: number,
+    type: number = EmCastlePos.Castle,
+  ): Laya.Point {
+    let pt = this.aniPos[index];
     if (pt) {
       if (type == EmCastlePos.Castle) {
         return pt;
@@ -130,7 +263,10 @@ export default class CastleConfigUtil {
   }
 
   /** 建筑位置 */
-  public getBuildPos(sonType: number, type: number = EmCastlePos.Castle): Laya.Point {
+  public getBuildPos(
+    sonType: number,
+    type: number = EmCastlePos.Castle,
+  ): Laya.Point {
     let cfg = this.buildConfig.get(sonType);
     if (cfg) {
       if (type == EmCastlePos.Castle) {
@@ -143,7 +279,10 @@ export default class CastleConfigUtil {
   }
 
   /** 建筑名字位置 */
-  public getBuildNamePos(sonType: number, type: number = EmCastlePos.Castle): Laya.Point {
+  public getBuildNamePos(
+    sonType: number,
+    type: number = EmCastlePos.Castle,
+  ): Laya.Point {
     let cfg = this.buildConfig.get(sonType);
     if (cfg) {
       if (type == EmCastlePos.Castle) {

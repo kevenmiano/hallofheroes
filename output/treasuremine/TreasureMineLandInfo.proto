@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.treasuremine;
+
+message TreasureMineLandInfo {
+  int32 id = 1;
+  int32 mapId = 2;
+  int32 posX = 3;
+  int32 posY = 4;
+  int32 templateId = 5;
+  int32 type = 6;
+  int32 occupyPlayerId = 7;
+  string occupyPlayerName = 8;
+  int32 occupyGuildId = 9;
+  string occupyGuildName = 10;
+  int32 state = 11;
+  string startFightTime = 12;
+}

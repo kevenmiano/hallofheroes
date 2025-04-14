@@ -1,12 +1,11 @@
-// @ts-nocheck
 import GameEventDispatcher from "../event/GameEventDispatcher";
 // import IManager from "../Interface/IManager";
 import UILayer from "../ui/UILayer";
 import { EmLayer } from "../ui/ViewInterface";
 import SceneLayer from "./SceneLayer";
-import { ILayer } from "./ILayer";
 import ObjectUtils from "../utils/ObjectUtils";
 import FuiLayer from "../ui/FuiLayer";
+import { ILayer } from "./interfaces/Layer";
 
 /**
  * @author:pzlricky
@@ -15,7 +14,6 @@ import FuiLayer from "../ui/FuiLayer";
  */
 export default class LayerMgr extends GameEventDispatcher {
   private managers: ILayer[] = [];
-
   private static ins: LayerMgr;
 
   static get Instance(): LayerMgr {
@@ -41,80 +39,80 @@ export default class LayerMgr extends GameEventDispatcher {
     this.setManager(
       EmLayer.STAGE_BOTTOM_LAYER,
       new SceneLayer(EmLayer.STAGE_BOTTOM_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_BOTTOM_LAYER,
       new UILayer(EmLayer.GAME_BOTTOM_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_BASE_LAYER,
       new UILayer(EmLayer.GAME_BASE_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_UI_LAYER,
       new UILayer(EmLayer.GAME_UI_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(EmLayer.FGUI_LAYER, new FuiLayer(EmLayer.FGUI_LAYER), null);
 
     this.setManager(
       EmLayer.GAME_DYNAMIC_LAYER,
       new UILayer(EmLayer.GAME_DYNAMIC_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_DYNAMIC_LAYER2,
       new UILayer(EmLayer.GAME_DYNAMIC_LAYER2, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_MENU_LAYER,
       new UILayer(EmLayer.GAME_MENU_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.GAME_TOP_LAYER,
       new UILayer(EmLayer.GAME_TOP_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
 
     this.setManager(
       EmLayer.STAGE_DYANMIC_LAYER,
       new UILayer(EmLayer.STAGE_DYANMIC_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.STAGE_TOP_LAYER,
       new UILayer(EmLayer.STAGE_TOP_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.STAGE_DRAG_LAYER,
       new UILayer(EmLayer.STAGE_DRAG_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.STAGE_TOOLTIP_LAYER,
       new UILayer(EmLayer.STAGE_TOOLTIP_LAYER, true),
-      Laya.stage
+      Laya.stage,
     ); //界面提示层
     this.setManager(
       EmLayer.NOVICE_LAYER,
       new UILayer(EmLayer.NOVICE_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.STAGE_TIP_DYANMIC_LAYER,
       new UILayer(EmLayer.STAGE_TIP_DYANMIC_LAYER, true),
-      Laya.stage
+      Laya.stage,
     );
     this.setManager(
       EmLayer.STAGE_TIP_LAYER,
       new UILayer(EmLayer.STAGE_TIP_LAYER, true),
-      Laya.stage
+      Laya.stage,
     ); //公用文字提示层
   }
 

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message RankMsg {
+  int32 userId = 1;
+  int32 campaignId = 2;
+  int32 rank = 3;
+}

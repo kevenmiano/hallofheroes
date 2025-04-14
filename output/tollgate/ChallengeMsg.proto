@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.tollgate;
+
+message ChallengeMsg {
+  int32 tollgateId = 1;
+  int32 attackUserid = 2;
+  string attackName = 3;
+  string attackTime = 4;
+  int32 remainTime = 5;
+  int32 lastHp = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.login;
+
+message playerLoginReq {
+  string userName = 1;
+  string loginKey = 2;
+  string password = 3;
+  string site = 4;
+  int32 userId = 5;
+}

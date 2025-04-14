@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message CanceltemRspMsg {
+  int32 result = 1;
+  int32 id = 2;
+  string item = 3;
+}

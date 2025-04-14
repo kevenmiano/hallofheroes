@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message EnterTowerInfoMsg {
+  int32 chooseIndex = 1;
+  int32 campaignId = 2;
+  int32 isDouble = 3;
+}

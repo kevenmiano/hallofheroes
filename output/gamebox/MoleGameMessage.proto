@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gamebox;
+
+message MoleGameMessage {
+  int32 total = 1;
+  string gridInfo = 2;
+}

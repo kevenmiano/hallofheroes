@@ -61,7 +61,7 @@ export default class WearyTips extends BaseTips {
     GameManager.Instance.addEventListener(
       PlayerEvent.SYSTIME_UPGRADE_MINUTE,
       this.onSysTimeUpdateHandler,
-      this
+      this,
     );
   }
 
@@ -69,7 +69,7 @@ export default class WearyTips extends BaseTips {
     GameManager.Instance.removeEventListener(
       PlayerEvent.SYSTIME_UPGRADE_MINUTE,
       this.onSysTimeUpdateHandler,
-      this
+      this,
     );
 
     Laya.timer.clear(this, this.onUpdateRecoveryCountdownHandler);
@@ -121,12 +121,12 @@ export default class WearyTips extends BaseTips {
   private updateTimeText(): void {
     const timeStr: string = DateUtils.getFormatBySecond(
       this._nextRecoveryTimeSec,
-      3
+      3,
     );
     this.timeTxt.text = LangManager.Instance.GetTranslation(
       "WearyTips.RecoveryTime",
       timeStr,
-      this._wearyRestore
+      this._wearyRestore,
     );
   }
 

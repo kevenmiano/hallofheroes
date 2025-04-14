@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.answerquestion;
+
+message answerquestionorderMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 curOrder = 3;
+  int32 currentScore = 4;
+}

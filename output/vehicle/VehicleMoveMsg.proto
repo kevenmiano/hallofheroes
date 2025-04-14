@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleMoveMsg {
+  string playerId = 1;
+  string timestamp = 2;
+  repeated int32 path = 3;
+  string serverName = 4;
+}

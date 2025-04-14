@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message HangupAttackMsg {
+  int32 attackId = 1;
+  string attackName = 2;
+  int32 defenceId = 3;
+  int32 defenceName = 4;
+  int32 op = 5;
+}

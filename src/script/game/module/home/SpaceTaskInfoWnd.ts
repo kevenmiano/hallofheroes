@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_QueueItem from "../../../../fui/Home/FUI_QueueItem";
 import FUI_TaskRingItem from "../../../../fui/Home/FUI_TaskRingItem";
 import AudioManager from "../../../core/audio/AudioManager";
@@ -166,13 +166,13 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       this,
       this.getListItemResource,
       null,
-      false
+      false,
     );
     this.scrollList.itemRenderer = Laya.Handler.create(
       this,
       this.renderListItem,
       null,
-      false
+      false,
     );
     this.scrollList.on(fgui.Events.CLICK_ITEM, this, this.onClickItem);
     Utils.setDrawCallOptimize(this.scrollList);
@@ -198,7 +198,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     } else {
       text = LangManager.Instance.GetTranslation(
         "VipCoolDownFrameWnd.n7",
-        VIPManager.Instance.model.vipInfo.VipGrade
+        VIPManager.Instance.model.vipInfo.VipGrade,
       );
     }
     this.openVipTxt.text = text;
@@ -235,134 +235,134 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     this.copyNameBtn.onClick(this, this.copyNameHandler.bind(this));
     this.inviteConsortiaBtn.onClick(
       this,
-      this.inviteConsortiaBtnHandler.bind(this)
+      this.inviteConsortiaBtnHandler.bind(this),
     );
     this.tablist.on(fairygui.Events.CLICK_ITEM, this, this.__onTabChange);
     //冷却CD
     this.thane.addEventListener(
       PlayerEvent.THANE_LEVEL_UPDATE,
       this.__upgradeHandler,
-      this
+      this,
     );
     this.buildManager.addEventListener(
       BuildOrderEvent.ADD_ONE_ORDER,
       this.__addQueueItemHandler,
-      this
+      this,
     );
     ServerDataManager.listen(
       S2CProtocol.U_C_CHALLENGE_TIME,
       this,
-      this.__colosseumTimeHandler
+      this.__colosseumTimeHandler,
     );
     this.vipModel.addEventListener(
       VIPEvent.UPFRAMEVIEW_CHANGE,
       this.__UpvipInfoHandler,
-      this
+      this,
     );
 
     //任务
     this.cate.addEventListener(
       TaskEvent.TASK_ADDED,
       this.__taskChangeHandler,
-      this
+      this,
     );
     this.cate.addEventListener(
       TaskEvent.TASK_REMOVE,
       this.__taskFinishHandler,
-      this
+      this,
     );
     TaskManage.Instance.addEventListener(
       TaskEvent.TASK_DETAIL_CHANGE,
       this.__taskChangeHandler,
-      this
+      this,
     );
     OfferRewardManager.Instance.addEventListener(
       RewardEvent.REWARD_TASK_ADD,
       this.__taskChangeHandler,
-      this
+      this,
     );
     OfferRewardManager.Instance.addEventListener(
       RewardEvent.REWARD_TASK_FINISH,
       this.__taskFinishHandler,
-      this
+      this,
     );
     RingTaskManager.Instance.addEventListener(
       RingTaskEvent.REFRESHRING,
       this.__taskChangeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       KingContractEvents.UPDATE_KINGCONTRACT,
       this.__updateKingContractHandler,
-      this
+      this,
     );
     //组队
     NotificationManager.Instance.addEventListener(
       FreedomTeamEvent.TEAM_INFO_UPDATE,
       this.__teamInfoUpdateHandler,
-      this
+      this,
     );
     if (this.checkIsTeamList()) {
       if (this.mapModel)
         this.mapModel.addEventListener(
           OuterCityEvent.ADD_GARRISON,
           this.__addArmyHandler,
-          this
+          this,
         );
       if (this.mapModel)
         this.mapModel.addEventListener(
           OuterCityEvent.REMOVE_ARMY,
           this.__removeArmyHandler,
-          this
+          this,
         );
       if (this.roomInfo) {
         this.roomInfo.addEventListener(
           RoomEvent.ROOM_HOUSEOWNER_CHANGE,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.addEventListener(
           RoomEvent.REMOVE_PLAYER_ROOM,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.addEventListener(
           RoomEvent.ADD_PLAYER_ROOM,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.addEventListener(
           RoomEvent.UPDATE_ROOM_BASE_DATA,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.addEventListener(
           RoomEvent.UPDATE_ROOM_PLAYER_DATA,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         NotificationManager.Instance.addEventListener(
           NotificationEvent.UPDATE_TEAM_ONLINE_STATUS,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
       }
     }
     NotificationManager.Instance.addEventListener(
       NotificationEvent.TASKRING_ITEM_UPDATE,
       this.__taskChangeHandler,
-      this
+      this,
     );
     StageReferance.stage.on(Laya.Event.RESIZE, this, this.__stageResizeHandler);
     NotificationManager.Instance.addEventListener(
       NotificationEvent.MAP_CLICK,
       this.hideGroup,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       OuterCityEvent.OUTERCITY_CLICK,
       this.hideGroup,
-      this
+      this,
     );
   }
 
@@ -377,17 +377,17 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       NotificationEvent.TASKWND_VISIBLE,
       this.__selfVisibleHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NewbieEvent.ARROW_STATE,
       this.__noviceArrowSwitchHandler,
-      this
+      this,
     );
     NotificationManager.Instance.addEventListener(
       NewbieEvent.MAIN_NODE_FINISH,
       this.__mainNodeFinishHandler,
-      this
+      this,
     );
   }
 
@@ -395,17 +395,17 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.TASKWND_VISIBLE,
       this.__selfVisibleHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NewbieEvent.ARROW_STATE,
       this.__noviceArrowSwitchHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NewbieEvent.MAIN_NODE_FINISH,
       this.__mainNodeFinishHandler,
-      this
+      this,
     );
   }
 
@@ -424,13 +424,13 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     this.followBtn.offClick(this, this.followHandler.bind(this));
     this.captainTansferBtn.offClick(
       this,
-      this.captainTansferHandler.bind(this)
+      this.captainTansferHandler.bind(this),
     );
     this.selfContractBtn.offClick(this, this.selfContractHandler.bind(this));
     this.copyNameBtn.offClick(this, this.copyNameHandler.bind(this));
     this.inviteConsortiaBtn.offClick(
       this,
-      this.inviteConsortiaBtnHandler.bind(this)
+      this.inviteConsortiaBtnHandler.bind(this),
     );
     this.tablist.off(fairygui.Events.CLICK_ITEM, this, this.__onTabChange);
 
@@ -438,70 +438,70 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     this.thane.removeEventListener(
       PlayerEvent.THANE_LEVEL_UPDATE,
       this.__upgradeHandler,
-      this
+      this,
     );
     this.buildManager.removeEventListener(
       BuildOrderEvent.ADD_ONE_ORDER,
       this.__addQueueItemHandler,
-      this
+      this,
     );
     ServerDataManager.cancel(
       S2CProtocol.U_C_CHALLENGE_TIME,
       this,
-      this.__colosseumTimeHandler
+      this.__colosseumTimeHandler,
     );
     this.vipModel.removeEventListener(
       VIPEvent.UPFRAMEVIEW_CHANGE,
       this.__UpvipInfoHandler,
-      this
+      this,
     );
 
     //任务
     this.cate.removeEventListener(
       TaskEvent.TASK_ADDED,
       this.__taskChangeHandler,
-      this
+      this,
     );
     this.cate.removeEventListener(
       TaskEvent.TASK_REMOVE,
       this.__taskFinishHandler,
-      this
+      this,
     );
     TaskManage.Instance.removeEventListener(
       TaskEvent.TASK_DETAIL_CHANGE,
       this.__taskChangeHandler,
-      this
+      this,
     );
     OfferRewardManager.Instance.removeEventListener(
       RewardEvent.REWARD_TASK_ADD,
       this.__taskChangeHandler,
-      this
+      this,
     );
     OfferRewardManager.Instance.removeEventListener(
       RewardEvent.REWARD_TASK_FINISH,
       this.__taskFinishHandler,
-      this
+      this,
     );
     RingTaskManager.Instance.removeEventListener(
       RingTaskEvent.REFRESHRING,
       this.__taskChangeHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       KingContractEvents.UPDATE_KINGCONTRACT,
       this.__updateKingContractHandler,
-      this
+      this,
     );
     //组队
     NotificationManager.Instance.removeEventListener(
       FreedomTeamEvent.TEAM_INFO_UPDATE,
       this.__teamInfoUpdateHandler,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.UPDATE_TEAM_ONLINE_STATUS,
       this.__houseownerChangeHandler,
-      this
+      this,
     );
 
     if (this.checkIsTeamList()) {
@@ -509,39 +509,39 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         this.mapModel.removeEventListener(
           OuterCityEvent.ADD_GARRISON,
           this.__addArmyHandler,
-          this
+          this,
         );
       if (this.mapModel)
         this.mapModel.removeEventListener(
           OuterCityEvent.REMOVE_ARMY,
           this.__removeArmyHandler,
-          this
+          this,
         );
       if (this.roomInfo) {
         this.roomInfo.removeEventListener(
           RoomEvent.ROOM_HOUSEOWNER_CHANGE,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.removeEventListener(
           RoomEvent.REMOVE_PLAYER_ROOM,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.removeEventListener(
           RoomEvent.ADD_PLAYER_ROOM,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.removeEventListener(
           RoomEvent.UPDATE_ROOM_BASE_DATA,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
         this.roomInfo.removeEventListener(
           RoomEvent.UPDATE_ROOM_PLAYER_DATA,
           this.__houseownerChangeHandler,
-          this
+          this,
         );
       }
     }
@@ -549,22 +549,22 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.TASKRING_ITEM_UPDATE,
       this.__taskChangeHandler,
-      this
+      this,
     );
     StageReferance.stage.off(
       Laya.Event.RESIZE,
       this,
-      this.__stageResizeHandler
+      this.__stageResizeHandler,
     );
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.MAP_CLICK,
       this.hideGroup,
-      this
+      this,
     );
     NotificationManager.Instance.removeEventListener(
       OuterCityEvent.OUTERCITY_CLICK,
       this.hideGroup,
-      this
+      this,
     );
   }
 
@@ -677,7 +677,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       this._addFriendlistData = ArrayUtils.sortOn(
         this._addFriendlistData,
         "pos",
-        ArrayConstant.NUMERIC
+        ArrayConstant.NUMERIC,
       );
       if (this._addFriendlistData.length < ComponentSetting.TEAM_NUM) {
         this.showQuickInvite.selectedIndex = 1;
@@ -817,29 +817,29 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     this.infoImg.height = 291;
     if (this.roomInfo && this.roomInfo.isCross) {
       this.removeTeamBtn.title = LangManager.Instance.GetTranslation(
-        "spacetaskwnd.removeTeamBtn.title1"
+        "spacetaskwnd.removeTeamBtn.title1",
       );
     } else {
       this.removeTeamBtn.title = LangManager.Instance.GetTranslation(
-        "map.campaign.view.frame.ArmyManageFrame.kick"
+        "map.campaign.view.frame.ArmyManageFrame.kick",
       );
       ("投票踢出");
     }
     this.removeTeamBtn.enabled = true;
     this.leaveTeamBtn.enabled = true;
     let fInfo: FriendItemCellInfo = IMManager.Instance.getFriendInfo(
-      this.userId
+      this.userId,
     );
     if (fInfo) {
       switch (fInfo.relation) {
         case RelationType.FRIEND:
           this.addFriendBtn.title = LangManager.Instance.GetTranslation(
-            "friends.im.IMFrame.delFriend"
+            "friends.im.IMFrame.delFriend",
           );
           break;
         case RelationType.STRANGER:
           this.addFriendBtn.title = LangManager.Instance.GetTranslation(
-            "chatII.view.ChatItemMenu.addfriendText"
+            "chatII.view.ChatItemMenu.addfriendText",
           );
           break;
         case RelationType.BLACKLIST:
@@ -848,7 +848,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       }
     } else {
       this.addFriendBtn.title = LangManager.Instance.GetTranslation(
-        "chatII.view.ChatItemMenu.addfriendText"
+        "chatII.view.ChatItemMenu.addfriendText",
       );
     }
     if (!this.sameServiceName()) {
@@ -963,18 +963,18 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         FreedomTeamManager.Instance.model.followId != this.userId
       ) {
         this.followBtn.title = LangManager.Instance.GetTranslation(
-          "yishi.view.PlayerMenu.follow"
+          "yishi.view.PlayerMenu.follow",
         );
       } else {
         this.followBtn.title = LangManager.Instance.GetTranslation(
-          "map.internals.mediator.team.FreedomTeamFollowMediator.Tips02"
+          "map.internals.mediator.team.FreedomTeamFollowMediator.Tips02",
         );
       }
     }
     if (PlayerManager.Instance.currentPlayerModel.playerInfo.consortiaID > 0) {
       let showConsortia: boolean = (
         FrameCtrlManager.Instance.getCtrl(
-          EmWindow.Consortia
+          EmWindow.Consortia,
         ) as ConsortiaControler
       ).getRightsByIndex(ConsortiaDutyInfo.PASSINVITE);
       showConsortia =
@@ -1039,7 +1039,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     PlayerManager.Instance.addEventListener(
       RequestInfoEvent.REQUEST_SIMPLEINFO,
       this.__recentContactHandler,
-      this
+      this,
     );
     if (
       this._serverName &&
@@ -1048,7 +1048,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     ) {
       PlayerInfoManager.Instance.sendRequestSimpleInfoCross(
         this.userId,
-        this._serverName
+        this._serverName,
       );
     } else {
       PlayerInfoManager.Instance.sendRequestSimpleInfo(this.userId);
@@ -1059,15 +1059,15 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     PlayerManager.Instance.removeEventListener(
       RequestInfoEvent.REQUEST_SIMPLEINFO,
       this.__recentContactHandler,
-      this
+      this,
     );
     let thane: ThaneInfo = data2;
     // thane.isRobot = this._isRobot;
     if (!(thane && thane.nickName)) {
       MessageTipManager.Instance.show(
         LangManager.Instance.GetTranslation(
-          "ChatItemMenu.cannotSearchPlayerInfo"
-        )
+          "ChatItemMenu.cannotSearchPlayerInfo",
+        ),
       );
       return;
     }
@@ -1105,7 +1105,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         this.setBtnFoldVisible(false);
         this.runNoviceShineFunc();
         this.runNoviceFunc();
-      })
+      }),
     );
   }
 
@@ -1138,13 +1138,13 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         this.showNoviceArrowWithFlag(true);
         this.runNoviceShineFunc();
         this.runNoviceFunc();
-      })
+      }),
     );
   }
 
   private onQuickInviteHandler() {
     let ctrl = FrameCtrlManager.Instance.getCtrl(
-      EmWindow.RoomHall
+      EmWindow.RoomHall,
     ) as RoomHallCtrl;
     if (ctrl) {
       ctrl.quickInvite();
@@ -1186,7 +1186,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   private removeTeamHander() {
     this.setInfoGroupVisible(false);
     let content: string = LangManager.Instance.GetTranslation(
-      "map.internals.view.team.FreedomTeamManageFrame.kickTipTxt"
+      "map.internals.view.team.FreedomTeamManageFrame.kickTipTxt",
     );
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let confirm: string = LangManager.Instance.GetTranslation("public.confirm");
@@ -1198,7 +1198,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       content,
       confirm,
       cancel,
-      this.__requestKickBtnHandler.bind(this)
+      this.__requestKickBtnHandler.bind(this),
     );
   }
 
@@ -1220,7 +1220,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   /**离开队伍 */
   private leaveTeamHandler() {
     let content: string = LangManager.Instance.GetTranslation(
-      "map.internals.view.team.FreedomTeamManageFrame.quitTipTxt"
+      "map.internals.view.team.FreedomTeamManageFrame.quitTipTxt",
     );
     let prompt: string = LangManager.Instance.GetTranslation("public.prompt");
     let confirm: string = LangManager.Instance.GetTranslation("public.confirm");
@@ -1232,7 +1232,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       content,
       confirm,
       cancel,
-      this.__requestQuitBtnHandler.bind(this)
+      this.__requestQuitBtnHandler.bind(this),
     );
   }
 
@@ -1250,19 +1250,19 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         if (
           this.followBtn.title ==
           LangManager.Instance.GetTranslation(
-            "map.internals.mediator.team.FreedomTeamFollowMediator.Tips02"
+            "map.internals.mediator.team.FreedomTeamFollowMediator.Tips02",
           )
         ) {
           FreedomTeamManager.Instance.model.followId = 0;
           NotificationManager.Instance.sendNotification(
             NotificationEvent.LOCK_TEAM_FOLLOW_TARGET,
-            0
+            0,
           );
         } else {
           FreedomTeamManager.Instance.model.followId = this.userId; //我点跟随时保存被跟随者id
           NotificationManager.Instance.sendNotification(
             NotificationEvent.LOCK_TEAM_FOLLOW_TARGET,
-            this.userId
+            this.userId,
           );
         }
       }
@@ -1280,7 +1280,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         //     && this.roomInfo.serverName == this.playerInfo.serviceName))
         RoomSocketOutManager.sendChangeRoomOwner(
           this.userId,
-          this.selectedItem.vData.baseHero.serviceName
+          this.selectedItem.vData.baseHero.serviceName,
         );
       } else {
         if (
@@ -1323,13 +1323,13 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   inviteConsortiaBtnHandler() {
     if (FriendManager.getInstance().isInBlackList) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("chat.notfriend02")
+        LangManager.Instance.GetTranslation("chat.notfriend02"),
       );
       return;
     }
     (
       FrameCtrlManager.Instance.getCtrl(
-        EmWindow.Consortia
+        EmWindow.Consortia,
       ) as ConsortiaControler
     ).sendConsortiaInvitePlayer(this.userId);
     this.setInfoGroupVisible(false);
@@ -1339,14 +1339,14 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   private blackListHandler() {
     if (ArmyManager.Instance.thane.grades < 6) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("chat.view.ChatItemMenu.command01")
+        LangManager.Instance.GetTranslation("chat.view.ChatItemMenu.command01"),
       );
       this.setInfoGroupVisible(false);
       return;
     }
     FriendManager.getInstance().sendAddFriendRequest(
       this.selectedItem.vData.baseHero.nickName,
-      RelationType.BLACKLIST
+      RelationType.BLACKLIST,
     );
     this.setInfoGroupVisible(false);
   }
@@ -1355,7 +1355,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   private addFriendHandler() {
     if (ArmyManager.Instance.thane.grades < 6) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("chat.view.ChatItemMenu.command01")
+        LangManager.Instance.GetTranslation("chat.view.ChatItemMenu.command01"),
       );
       this.infoGroup.visible = false;
       return;
@@ -1369,7 +1369,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     } else {
       FriendManager.getInstance().sendAddFriendRequest(
         this.userName,
-        RelationType.FRIEND
+        RelationType.FRIEND,
       );
     }
 
@@ -1390,7 +1390,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     let order: BuildingOrderInfo =
       BuildingManager.Instance.model.colosseumOrderList[0];
     let msg: ChallengeCoolTimeMsg = pkg.readBody(
-      ChallengeCoolTimeMsg
+      ChallengeCoolTimeMsg,
     ) as ChallengeCoolTimeMsg;
     if (msg.type == 1) return;
     order.totalCount = msg.totalCount;
@@ -1463,7 +1463,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
           selectedIndex = this._lastTabIndex;
           this.__onTabChange(useSound);
           MessageTipManager.Instance.show(
-            LangManager.Instance.GetTranslation("public.unopen2")
+            LangManager.Instance.GetTranslation("public.unopen2"),
           );
         } else {
           this.refreshOuterCityView();
@@ -1563,7 +1563,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
           ArrayConstant.NUMERIC,
           ArrayConstant.DESCENDING | ArrayConstant.NUMERIC,
           ArrayConstant.NUMERIC,
-        ]
+        ],
       );
     } else {
       ringtaskInfos = RingTaskManager.Instance._defaultList.getList();
@@ -1581,7 +1581,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
           ArrayConstant.NUMERIC,
           ArrayConstant.DESCENDING | ArrayConstant.NUMERIC,
           ArrayConstant.NUMERIC,
-        ]
+        ],
       );
     }
     for (index = 0; index < arr.length; index++) {
@@ -1605,7 +1605,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
 
     UIButton.setRedDot(
       this.taskTabBtn as fgui.GComponent,
-      redPointTip > 0 ? 1 : 0
+      redPointTip > 0 ? 1 : 0,
     );
     this.setBtnUnFoldRedDotVisible(!this.showing);
     if (this.scrollList.numItems > 0) {
@@ -1677,7 +1677,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     this._noviceArrow = new NoviceArrowView(
       NoviceArrowView.UP,
       LangManager.Instance.GetTranslation("newbie.autoFindPath"),
-      false
+      false,
     );
     this._noviceArrow.name = "_noviceArrow";
     this.addChild(this._noviceArrow);
@@ -1828,7 +1828,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     if (this.tablist.selectedIndex != 0) {
       Logger.warn(
         "[SpaceTaskInfoWnd]getTraceItemByTaskTempId 请先切换到任务栏",
-        taskTempId
+        taskTempId,
       );
       return;
     }
@@ -1861,7 +1861,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     if (this.tablist.selectedIndex != 0) {
       Logger.warn(
         "[SpaceTaskInfoWnd]getTaskItemByIndex 请先切换到任务栏",
-        index
+        index,
       );
       return;
     }
@@ -1878,7 +1878,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     if (this.tablist.selectedIndex != 2) {
       Logger.warn(
         "[SpaceTaskInfoWnd]getQueueItemByType 请先切换到冷却栏",
-        type
+        type,
       );
       return;
     }
@@ -1895,7 +1895,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
     if (this.tablist.selectedIndex != 0) {
       Logger.warn(
         "[SpaceTaskInfoWnd]scrollToItemByTaskTempId 请先切换到任务栏",
-        taskTempId
+        taskTempId,
       );
       return;
     }
@@ -1924,7 +1924,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
         let itemPos = item.displayObject.localToGlobal(
           new Laya.Point(0, 0),
           false,
-          this
+          this,
         );
         this._noviceArrow.y =
           -12 + itemPos.y + item.height + SpaceTaskInfoWnd.NoviceArrowH / 2;
@@ -1948,7 +1948,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
       this.addChild(imgShine.displayObject);
       imgShine.url = FUIHelper.getItemURL(
         EmPackName.Base,
-        "Icon_IconBox70_Sel"
+        "Icon_IconBox70_Sel",
       );
       imgShine.fill = fgui.LoaderFillType.ScaleFree;
       imgShine.setSize(377, 480);
@@ -2057,7 +2057,7 @@ export default class SpaceTaskInfoWnd extends BaseWindow {
   }
 
   private get checkIsPve(): boolean {
-    let curScene: String = SceneManager.Instance.currentType;
+    let curScene: string = SceneManager.Instance.currentType;
     let mapModel: CampaignMapModel = CampaignManager.Instance.mapModel;
     if (
       curScene == SceneType.CAMPAIGN_MAP_SCENE &&

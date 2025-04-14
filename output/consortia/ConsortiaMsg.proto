@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaMsg {
+  int32 consortiaId = 1;
+  int32 applyId = 2;
+  int32 otherId = 3;
+  int32 contributeGold = 4;
+  int32 upgradeType = 5;
+  int32 studySkill = 6;
+  int32 positionId = 7;
+  int32 blessSite = 8;
+  int32 blessTempId = 9;
+  int32 blessCount = 10;
+  string placard = 11;
+  string description = 12;
+  string consortiaName = 13;
+  bool result = 14;
+  int32 blessLeftTime = 15;
+  bool returnItem = 16;
+  bool isPay = 17;
+  string groupPlacard = 18;
+  int32 payType = 19;
+}

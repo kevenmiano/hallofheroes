@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fate;
+
+message FateEditMsg {
+  int32 skillSonType = 1;
+  int32 useItemCount = 2;
+  bool isDisable = 3;
+  int32 turnNum = 4;
+  string param1 = 5;
+  string param2 = 6;
+  bool isSuccess = 7;
+  int32 currCount = 8;
+  repeated int32 count = 9;
+  int32 payType = 10;
+}

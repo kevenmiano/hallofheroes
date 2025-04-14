@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.extrajob;
+
+message ExtraJobEquipReqMsg {
+  int32 op = 1;
+  int32 equipType = 2;
+  int32 bagType = 3;
+  int32 bagPos = 4;
+  int32 pos = 5;
+}

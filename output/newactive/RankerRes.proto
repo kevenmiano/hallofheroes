@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.newactive;
+
+message RankerRes {
+  repeated int32 rankers = 1;
+  string self = 2;
+  int32 rankType = 3;
+}

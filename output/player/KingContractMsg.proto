@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message KingContractMsg {
+  repeated int32 kingContractInfos = 1;
+}

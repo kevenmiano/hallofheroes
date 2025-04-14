@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   EmPackName,
   EmWindow,
@@ -47,7 +46,7 @@ export default class UIManager extends GameEventDispatcher {
     NotificationManager.Instance.addEventListener(
       GlobalEvent.POP_VIEW,
       this.onPopViewHandler,
-      this
+      this,
     );
   }
 
@@ -135,7 +134,7 @@ export default class UIManager extends GameEventDispatcher {
   public ShowWind(
     type: EmWindow,
     param = null,
-    immediately: boolean = true
+    immediately: boolean = true,
   ): Promise<any> {
     return new Promise<any>((resolve) => {
       let uiInfo = this.getUIInfo(type);
@@ -209,7 +208,7 @@ export default class UIManager extends GameEventDispatcher {
         completeFunc,
         null,
         this.loadFailed(type, true),
-        uiInfo.ShowLoading == false
+        uiInfo.ShowLoading == false,
       );
     });
   }
@@ -273,7 +272,7 @@ export default class UIManager extends GameEventDispatcher {
           this,
           this.releaseModuleRes,
           [type, pkgList],
-          false
+          false,
         );
       }
     }
@@ -469,7 +468,7 @@ export default class UIManager extends GameEventDispatcher {
               "释放资源" +
                 srcPackName +
                 "失败, 已经打开引用该资源的模块" +
-                emWindow
+                emWindow,
             );
             break;
           }
@@ -479,7 +478,7 @@ export default class UIManager extends GameEventDispatcher {
               "释放资源" +
                 srcPackName +
                 "失败, 正在打开引用该资源的模块" +
-                emWindow
+                emWindow,
             );
             break;
           }

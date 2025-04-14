@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.quest;
+
+message QuestFinishedRspMsg {
+  int32 templateId = 1;
+}

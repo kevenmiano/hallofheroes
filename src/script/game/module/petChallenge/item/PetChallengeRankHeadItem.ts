@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Date: 2021-11-08 15:17:02
@@ -14,31 +14,31 @@ import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { PetData } from "../../pet/data/PetData";
 
 export class PetChallengeRankHeadItem extends FUI_PetChallengeRankHeadItem {
-    private _info: PetData;
+  private _info: PetData;
 
-    public get info(): PetData {
-        return this._info;
-    }
+  public get info(): PetData {
+    return this._info;
+  }
 
-    public set info(value: PetData) {
-        this._info = value;
-        if (value) {
-            this.title = value.fightPower.toString()
-            let gInfo = new GoodsInfo();
-            gInfo.petData = value;
-            let baseItem = (this.item as BaseItem);
-            baseItem.info = gInfo;
-        } else {
-            let baseItem = (this.item as BaseItem);
-            baseItem.info = null;
-        }
+  public set info(value: PetData) {
+    this._info = value;
+    if (value) {
+      this.title = value.fightPower.toString();
+      let gInfo = new GoodsInfo();
+      gInfo.petData = value;
+      let baseItem = this.item as BaseItem;
+      baseItem.info = gInfo;
+    } else {
+      let baseItem = this.item as BaseItem;
+      baseItem.info = null;
     }
+  }
 
-    onConstruct() {
-        super.onConstruct();
-    }
+  onConstruct() {
+    super.onConstruct();
+  }
 
-    public dispose() {
-        super.dispose();
-    }
+  public dispose() {
+    super.dispose();
+  }
 }

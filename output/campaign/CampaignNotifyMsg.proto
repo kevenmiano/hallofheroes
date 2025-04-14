@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignNotifyMsg {
+  int32 id = 1;
+  string scene = 2;
+  int32 mapId = 3;
+  string body = 4;
+  int32 delay = 5;
+}

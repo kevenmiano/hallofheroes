@@ -38,7 +38,7 @@ export default class IconAlertHelperWnd extends BaseWindow {
           this.content[0],
           this.content[1],
           this.content[2],
-          this.content[3]
+          this.content[3],
         );
     }
   }
@@ -91,7 +91,7 @@ export default class IconAlertHelperWnd extends BaseWindow {
     msg: string,
     goodsTempID: number,
     goodsCount: number,
-    enableHTML: boolean = false
+    enableHTML: boolean = false,
   ) {
     this.n1.getChild("title").text = title;
     this.AlertTxt.text = msg;
@@ -101,7 +101,7 @@ export default class IconAlertHelperWnd extends BaseWindow {
       this.item.info = gInfo;
       var temp: t_s_itemtemplateData = ConfigMgr.Instance.getTemplateByID(
         ConfigType.t_s_itemtemplate,
-        gInfo.templateId.toString()
+        gInfo.templateId.toString(),
       );
       if (temp) {
         this.GoodsCountTxt.text = gInfo.count.toString();
@@ -151,7 +151,7 @@ export default class IconAlertHelperWnd extends BaseWindow {
 
   private backCall(fun: Function, b: boolean) {
     var vCanFiveParams: string = LangManager.Instance.GetTranslation(
-      "yishi.utils.IconAlertHelper.CanFiveParams"
+      "yishi.utils.IconAlertHelper.CanFiveParams",
     );
     if (fun == null) return;
     switch (this._data.length - 1) {
@@ -177,7 +177,7 @@ export default class IconAlertHelperWnd extends BaseWindow {
           this._data[2],
           this._data[3],
           this._data[4],
-          this._data[5]
+          this._data[5],
         );
         break;
       default:

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message PlayerStatusMsg {
+  int32 orderId = 1;
+  int32 userId = 2;
+  string userName = 3;
+  int32 userGrade = 4;
+  int32 job = 5;
+  int32 guildId = 6;
+  string guildName = 7;
+  int32 guildDutyId = 8;
+  int32 defenseForce = 9;
+  int32 defenseSite = 10;
+  int32 state = 11;
+  int32 fightCapaity = 12;
+  int32 petFightCapaity = 13;
+  int32 pawnTempId = 14;
+  repeated int32 petData = 15;
+  int32 camp = 16;
+  int32 nodeId = 17;
+  int32 heroType = 18;
+  int32 enterWar = 19;
+  string actionPoint = 20;
+  int32 defenseSitePet = 21;
+  int32 defenseForcePet = 22;
+  int32 statePet = 23;
+  int32 orderIdPet = 24;
+  repeated int32 buffMsg = 25;
+  bool isOnline = 26;
+}

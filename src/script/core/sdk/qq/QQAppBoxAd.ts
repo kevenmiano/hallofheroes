@@ -1,38 +1,32 @@
-// @ts-nocheck
-
 import BaseAd from "../base/BaseAd";
 
 export default class QQAppBoxAd extends BaseAd {
+  protected Instance: qq.AppBox;
+  open(id: string) {
+    this.create(id);
+  }
 
-    protected Instance: qq.AppBox;
-    open(id: string) {
+  create(id: string) {
+    this.adUnitID = id;
+    this.Instance = qq.createAppBox({ adUnitId: id });
+    this.load();
+  }
 
-        this.create(id)
+  load() {
+    if (this.Instance) {
+      this.Instance.load();
     }
+  }
 
-    create(id: string) {
-        this.adUnitID = id;
-        this.Instance = qq.createAppBox({ adUnitId: id })
-        this.load()
+  show() {
+    if (this.Instance) {
+      this.Instance.show();
     }
+  }
 
-    load() {
-        if (this.Instance) {
-            this.Instance.load()
-        }
+  destroy() {
+    if (this.Instance) {
+      this.Instance.destroy();
     }
-
-    show() {
-        if (this.Instance) {
-            this.Instance.show()
-        }
-    }
-
-    destroy() {
-        if (this.Instance) {
-            this.Instance.destroy()
-        }
-    }
-
-
+  }
 }

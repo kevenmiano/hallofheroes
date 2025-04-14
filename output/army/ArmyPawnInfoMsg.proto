@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ArmyPawnInfoMsg {
+  int32 id = 1;
+  int32 armyId = 2;
+  int32 sites = 3;
+  int32 sonType = 4;
+  int32 tempateId = 5;
+  int32 ownPawns = 6;
+  repeated int32 pawnLive = 7;
+  int32 fightPos = 8;
+  string specialTempIds = 9;
+  string comprehednTempIds = 10;
+  int32 blessNum = 11;
+}

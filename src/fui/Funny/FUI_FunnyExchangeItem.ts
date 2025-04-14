@@ -1,4 +1,3 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 export default class FUI_FunnyExchangeItem extends fgui.GComponent {
@@ -9,6 +8,8 @@ export default class FUI_FunnyExchangeItem extends fgui.GComponent {
   public check: fgui.GButton;
   public exchangeList1: fgui.GList;
   public exchangeList2: fgui.GList;
+
+  //@ts-expect-error: External dependencies
   public group: fgui.GGroup;
   public static URL: string = "ui://lzu8jcp2th2c4z";
 

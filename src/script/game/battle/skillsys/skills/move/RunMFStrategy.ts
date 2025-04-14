@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Date: 2022-06-08 18:09:36
@@ -16,20 +15,41 @@ import { BaseSkill } from "../BaseSkill";
 import { BaseMoveStrategy } from "./BaseMoveStrategy";
 
 export class RunMFStrategy extends BaseMoveStrategy {
-    constructor(skill: BaseSkill, startMoveFun: Function, endMoveFun: Function) {
-        super(skill, startMoveFun, endMoveFun);
+  constructor(skill: BaseSkill, startMoveFun: Function, endMoveFun: Function) {
+    super(skill, startMoveFun, endMoveFun);
+  }
+
+  public execute() {
+    let toRole: any = this.getToRole();
+    if (!toRole) {
+      return;
     }
 
-    public execute() {
-        let toRole: any = this.getToRole();
-        if (!toRole) { return; }
-
-        let moveFrameData: MoveFrameData = this.getMoveForwardFrameData()
-        let skillData: SkillData = this.getSkillData()
-        let tarPos = this.getMoveForwardPoint(toRole)
-        Logger.battle("[RunMFStrategy] fId=" + skillData.fId + ", speed=" + moveFrameData.speed, "tarPos=", tarPos, "toRole=", toRole)
-        new MovePointAction(skillData.fId, tarPos, moveFrameData.speed, skillData.liftTime,
-            false, false, true, false, null, this._startMoveFun, true,
-            moveFrameData.dustRes, moveFrameData.dustGap, true);
-    }
+    let moveFrameData: MoveFrameData = this.getMoveForwardFrameData();
+    let skillData: SkillData = this.getSkillData();
+    let tarPos = this.getMoveForwardPoint(toRole);
+    Logger.battle(
+      "[RunMFStrategy] fId=" + skillData.fId + ", speed=" + moveFrameData.speed,
+      "tarPos=",
+      tarPos,
+      "toRole=",
+      toRole,
+    );
+    new MovePointAction(
+      skillData.fId,
+      tarPos,
+      moveFrameData.speed,
+      skillData.liftTime,
+      false,
+      false,
+      true,
+      false,
+      null,
+      this._startMoveFun,
+      true,
+      moveFrameData.dustRes,
+      moveFrameData.dustGap,
+      true,
+    );
+  }
 }

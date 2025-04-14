@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.store;
+
+message SmithFreshReqMsg {
+  repeated int32 lock = 1;
+  int32 bindType = 2;
+  int32 payType = 3;
+}

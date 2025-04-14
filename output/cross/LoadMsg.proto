@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cross;
+
+message LoadMsg {
+  int32 serverId = 1;
+  string serverName = 2;
+  int32 load = 3;
+  string address = 4;
+  int32 port = 5;
+  string userServerName = 6;
+  int32 type = 7;
+  int32 connTimes = 8;
+  string crossActionMsg = 9;
+  int32 index = 10;
+}

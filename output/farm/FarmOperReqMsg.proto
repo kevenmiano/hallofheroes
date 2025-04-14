@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FarmOperReqMsg {
+  int32 userId = 1;
+  int32 friendId = 2;
+  int32 opType = 3;
+  int32 pos = 4;
+  int32 templateId = 5;
+  int32 payType = 6;
+  int32 bagPos = 7;
+}

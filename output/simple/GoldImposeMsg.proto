@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message GoldImposeMsg {
+  int32 leftImpose = 1;
+  int32 maxImpose = 2;
+  int32 payImpose = 3;
+}

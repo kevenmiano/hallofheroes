@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message BatterLastInfoMsg {
+  int32 count = 1;
+}

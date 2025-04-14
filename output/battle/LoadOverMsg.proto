@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message LoadOverMsg {
+  int32 armyId = 1;
+  string battleId = 2;
+  string serverName = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message LeedData {
+  int32 templateId = 1;
+  int32 userId = 2;
+  int32 currentCount = 3;
+  string beginDate = 4;
+  bool isComplete = 5;
+}

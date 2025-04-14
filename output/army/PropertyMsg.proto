@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message PropertyMsg {
+  int32 tempData = 1;
+  int32 effect_Per = 2;
+  int32 effect_Data = 3;
+  int32 bag_Per = 4;
+  int32 bag_Data = 5;
+  int32 star_Per = 6;
+  int32 star_Data = 7;
+  int32 powcard_Per = 8;
+  int32 powcard_Data = 9;
+  int32 skill_Per = 10;
+  int32 skill_Data = 11;
+  int32 base_Join = 12;
+}

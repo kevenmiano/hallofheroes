@@ -8,7 +8,7 @@ export class StageReferance {
   private static _stage: Laya.Stage;
   private static widthChange: string = "widthChange";
   private static heightChange: string = "heightChange";
-  private static _dict: Object = new Object();
+  private static _dict: object = new Object();
   private static eventDispatcher: GameEventDispatcher =
     new GameEventDispatcher();
 
@@ -49,16 +49,16 @@ export class StageReferance {
 
   public static addEventListener(
     type: string,
-    listener: Function,
-    target?: Object
+    listener: (event?: any) => void,
+    target?: object,
   ) {
     this.eventDispatcher.addEventListener(type, listener, target);
   }
 
   public static removeEventListener(
     type: string,
-    listener: Function,
-    target?: Object
+    listener: (event?: any) => void,
+    target?: object,
   ) {
     this.eventDispatcher.removeEventListener(type, listener, target);
   }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignConfirmMsg {
+  string title = 1;
+  string body = 2;
+  int32 mapId = 3;
+  int32 nodeId = 4;
+  int32 itemTempId = 5;
+  int32 itemCount = 6;
+  int32 type = 7;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ArmyPlayerInfoMsg {
+  int32 aasFactor = 1;
+  bool isVip = 2;
+  int32 vipType = 3;
+  int32 gesteDecCount = 4;
+  int32 consortiaId = 5;
+  string consortiaName = 6;
+  int32 changeShapeId = 7;
+  string arm = 8;
+  int32 geste = 9;
+  int32 mountTempId = 10;
+  int32 mountGrade = 11;
+  string wing = 12;
+  string hat = 13;
+  string fashionArm = 14;
+  string fashionCloth = 15;
+  bool hide = 16;
+  bool isMaxCount = 17;
+  int32 vipGrade = 18;
+  string fateSkills = 19;
+  int32 petTempId = 20;
+  int32 petQuality = 21;
+  string petName = 22;
+  bool isNoGet = 23;
+  bool isCrossMultiReward = 24;
+  int32 mulSportScore = 25;
+}

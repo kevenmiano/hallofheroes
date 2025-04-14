@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message MemoryCardMsg {
+  int32 op = 1;
+  int32 curTurn = 2;
+  int32 score = 3;
+  int32 addScore = 4;
+  int32 addScore2 = 5;
+  int32 cIndex1 = 6;
+  int32 cIndex2 = 7;
+  bool result = 8;
+  int32 leftAutoChance = 9;
+  int32 leftCheckChance = 10;
+  int32 duration = 11;
+  repeated int32 cards = 12;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message AwakeInfoMsg {
+  int32 livingId = 1;
+  int32 awake = 2;
+}

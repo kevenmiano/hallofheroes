@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message RuneHoleOpMsg {
+  int32 holeId = 1;
+  int32 op = 2;
+  int32 opPos = 3;
+  int32 beginPos = 4;
+}

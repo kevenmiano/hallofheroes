@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message SelledItemInfo {
+  int32 pos = 1;
+  int32 count = 2;
+}

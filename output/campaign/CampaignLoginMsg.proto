@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignLoginMsg {
+  int32 playerId = 1;
+  string serverName = 2;
+  repeated int32 userIds = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message FamInfoMsg {
+  int32 consortiaId = 1;
+  int32 treeGrades = 2;
+  int32 treeGp = 3;
+  int32 treeWaterCount = 4;
+  int32 treeState = 5;
+  int32 personNum = 6;
+  int32 rate = 7;
+  int32 opreate = 8;
+  repeated int32 userId = 9;
+  string pickTime = 10;
+  bool isReturnedPlayer = 11;
+}

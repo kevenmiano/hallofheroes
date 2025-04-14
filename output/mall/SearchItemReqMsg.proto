@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mall;
+
+message SearchItemReqMsg {
+  string itemName = 1;
+  int32 minLevel = 2;
+  int32 maxLevel = 3;
+  int32 quality = 4;
+  int32 job = 5;
+  int32 type = 6;
+  int32 sonType = 7;
+  bool usable = 8;
+  int32 page = 9;
+  int32 orderBy = 10;
+  int32 orderType = 11;
+}

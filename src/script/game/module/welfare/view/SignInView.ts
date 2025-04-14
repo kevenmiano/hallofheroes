@@ -1,4 +1,3 @@
-// @ts-nocheck
 import AudioManager from "../../../../core/audio/AudioManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";
 import Dictionary from "../../../../core/utils/Dictionary";
@@ -100,16 +99,16 @@ export default class SignInView extends FUI_SignInView {
           this.today.getMonth() - 1,
           DateFormatter.getMonthMaxDay(
             this.today.getMonth() - 1,
-            this.today.getFullYear()
+            this.today.getFullYear(),
           ) -
             last.getDay() +
-            1
+            1,
         );
       } else {
         last.setFullYear(
           this.today.getFullYear() - 1,
           11,
-          31 - last.getDay() + 1
+          31 - last.getDay() + 1,
         );
       }
     }
@@ -125,14 +124,14 @@ export default class SignInView extends FUI_SignInView {
       if (!this.displayObject || this.displayObject.destroyed) {
         return;
       }
-      //@ts-ignore
+      //@ts-expect-error: _
       this.monthDaylist._pool = PoolManager.instance.getPool();
       this.monthDaylist.numItems = this._dateItemList.length;
     });
 
     date = new Date();
     date.setTime(
-      PlayerManager.Instance.currentPlayerModel.sysCurTimeBySecond * 1000
+      PlayerManager.Instance.currentPlayerModel.sysCurTimeBySecond * 1000,
     );
     // this.signInUIButton.enabled = !this.cate.hasSigned(date);
   }
@@ -149,7 +148,7 @@ export default class SignInView extends FUI_SignInView {
     this._countList = ArrayUtils.sortOn(
       this._countList,
       "DropId",
-      ArrayConstant.NUMERIC
+      ArrayConstant.NUMERIC,
     );
     this.signTab.numItems = this._countList.length;
   }
@@ -173,53 +172,53 @@ export default class SignInView extends FUI_SignInView {
     //     //已签到次数
     //     let monthDay = this.today.getDate();
     //     this.reSignInUIButton.enabled = (this.playerInfo.reissueNum > 0 || this.hasNotSignDay()) && this.playerInfo.signTimes < monthDay && this.playerInfo.hasGetData;
-    //     //@ts-ignore
+    //
     //     this.reSignInUIButton._view.getChild('title').strokeColor = this.reSignInUIButton.enabled ? "#804802" : "#666666";
     //     this.signEffect.selectedIndex = this.reSignInUIButton.enabled ? 1 : 0;
     // }
   }
 
   private initEvent() {
-    //@ts-ignore
+    //@ts-expect-error: splitFrame
     this.monthDaylist.splitFrame = true;
     this.monthDaylist.itemRenderer = Laya.Handler.create(
       this,
       this.renderDateItemListItem,
       null,
-      false
+      false,
     );
     Utils.setDrawCallOptimize(this.signRewardList);
     this.signRewardList.itemRenderer = Laya.Handler.create(
       this,
       this.renderRewardHandler,
       null,
-      false
+      false,
     );
     this.signTab.itemRenderer = Laya.Handler.create(
       this,
       this.renderRewardTabHandler,
       null,
-      false
+      false,
     );
     this.playerInfo.addEventListener(
       PlayerEvent.PLAYER_SIGNSITE_CHANGE,
       this.__changeHandler,
-      this
+      this,
     );
     this.playerInfo.addEventListener(
       PlayerEvent.REWARDSTATE_CHANGE,
       this.__changeHandler,
-      this
+      this,
     );
     this.vipModel.addEventListener(
       VIPEvent.UPFRAMEVIEW_CHANGE,
       this.__upGifViewHandler,
-      this
+      this,
     );
     this.signTab.on(
       fairygui.Events.CLICK_ITEM,
       this,
-      this.__selectedChangHandler
+      this.__selectedChangHandler,
     );
     this.signInUIButton.onClick(this, this.__signHandler);
     this.reSignInUIButton.onClick(this, this.__reSignHandler);
@@ -239,22 +238,22 @@ export default class SignInView extends FUI_SignInView {
     this.playerInfo.removeEventListener(
       PlayerEvent.PLAYER_SIGNSITE_CHANGE,
       this.__changeHandler,
-      this
+      this,
     );
     this.playerInfo.removeEventListener(
       PlayerEvent.REWARDSTATE_CHANGE,
       this.__changeHandler,
-      this
+      this,
     );
     this.vipModel.removeEventListener(
       VIPEvent.UPFRAMEVIEW_CHANGE,
       this.__upGifViewHandler,
-      this
+      this,
     );
     this.signTab.off(
       fairygui.Events.CLICK_ITEM,
       this,
-      this.__selectedChangHandler
+      this.__selectedChangHandler,
     );
     this.signInUIButton.offClick(this, this.__signHandler);
     this.reSignInUIButton.onClick(this, this.__reSignHandler);
@@ -283,7 +282,7 @@ export default class SignInView extends FUI_SignInView {
     ) {
       FrameCtrlManager.Instance.open(
         EmWindow.VipCoolDownFrameWnd,
-        VIPModel.OPEN_GIFT_FRAME
+        VIPModel.OPEN_GIFT_FRAME,
       );
     } else {
       FrameCtrlManager.Instance.open(EmWindow.VipCoolDownFrameWnd);
@@ -306,7 +305,7 @@ export default class SignInView extends FUI_SignInView {
   private __reSignHandler(e: Laya.Event) {
     if (!this.hasNotSignDay()) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("signInView.signTips")
+        LangManager.Instance.GetTranslation("signInView.signTips"),
       );
       return;
     }
@@ -318,7 +317,7 @@ export default class SignInView extends FUI_SignInView {
     } else {
       let content: string = LangManager.Instance.GetTranslation(
         "signInView.signContent",
-        this.signCost
+        this.signCost,
       );
       UIManager.Instance.ShowWind(EmWindow.TodayNotAlert, {
         state: 1,
@@ -333,7 +332,7 @@ export default class SignInView extends FUI_SignInView {
       //优先使用绑定钻石
       if (this.playerInfo.giftToken + this.playerInfo.point < this.signCost) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("Auction.ResultAlert11")
+          LangManager.Instance.GetTranslation("Auction.ResultAlert11"),
         );
         return;
       }
@@ -344,7 +343,7 @@ export default class SignInView extends FUI_SignInView {
       //只使用钻石
       if (this.playerInfo.point < this.signCost) {
         MessageTipManager.Instance.show(
-          LangManager.Instance.GetTranslation("Auction.ResultAlert11")
+          LangManager.Instance.GetTranslation("Auction.ResultAlert11"),
         );
         return;
       }
@@ -372,10 +371,9 @@ export default class SignInView extends FUI_SignInView {
     AudioManager.Instance.playSound(SoundIds.CONFIRM_SOUND);
     let selectTab = this.signTab.selectedIndex;
     let cfgSingCount = Number(this._countList[selectTab].Para1[0]);
-    let self = this;
     if (this.btnInternalState) return;
     Utils.delay(this.btnInternal).then(() => {
-      self.btnInternalState = false;
+      this.btnInternalState = false;
     });
     this.btnInternalState = true;
     this.control.sendSignReward(2, cfgSingCount);
@@ -395,7 +393,7 @@ export default class SignInView extends FUI_SignInView {
     }
     this.signTimeRewardState.selectedIndex = this.getRewardState(
       i,
-      cfgSingCount
+      cfgSingCount,
     );
     this.refreshRedPoint();
   }
@@ -423,12 +421,12 @@ export default class SignInView extends FUI_SignInView {
   private refreshView() {
     this.refreshBaseData();
     let cfgSingCount = Number(
-      this._countList[this.signTab.selectedIndex].Para1[0]
+      this._countList[this.signTab.selectedIndex].Para1[0],
     );
     this.refreshGoods(true);
     this.signTimeRewardState.selectedIndex = this.getRewardState(
       this.signTab.selectedIndex,
-      cfgSingCount
+      cfgSingCount,
     );
     this.refreshRedPoint();
   }
@@ -462,7 +460,7 @@ export default class SignInView extends FUI_SignInView {
             this.refreshGoods(true);
             this.signTimeRewardState.selectedIndex = this.getRewardState(
               i,
-              cfgSingCount
+              cfgSingCount,
             );
             this.refreshRedPoint();
             break;
@@ -473,11 +471,11 @@ export default class SignInView extends FUI_SignInView {
         this._currentSignIndex = this.signTab.selectedIndex;
         this.refreshGoods(true);
         let cfgSingCount = Number(
-          this._countList[this._countList.length - 1].Para1[0]
+          this._countList[this._countList.length - 1].Para1[0],
         );
         this.signTimeRewardState.selectedIndex = this.getRewardState(
           this._countList.length - 1,
-          cfgSingCount
+          cfgSingCount,
         );
         this.refreshRedPoint();
       }
@@ -530,7 +528,7 @@ export default class SignInView extends FUI_SignInView {
     this.signRewardList.numItems = 0;
     this.awardData = [];
     var list = TempleteManager.Instance.getDropItemssByDropId(
-      this._countList[this._currentSignIndex].DropId
+      this._countList[this._currentSignIndex].DropId,
     );
     for (const key in list) {
       if (Object.prototype.hasOwnProperty.call(list, key)) {
@@ -580,7 +578,7 @@ export default class SignInView extends FUI_SignInView {
     item.selectedIcon = fgui.UIPackage.getItemURL("Base", "Tab_Brown_Y");
     let str = LangManager.Instance.GetTranslation(
       "SignInView.title",
-      itemData.Para1[0]
+      itemData.Para1[0],
     );
     item.title = "[size=22][color=#FFECC6]" + str + "[/color][/size]";
     item.selectedTitle = "[size=22][color=#FFC68F]" + str + "[/color][/size]";

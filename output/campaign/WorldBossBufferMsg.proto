@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message WorldBossBufferMsg {
+  int32 type = 1;
+  int32 pointValue = 2;
+  int32 giftValue = 3;
+  int32 op = 4;
+  int32 result = 5;
+  int32 wound = 6;
+}

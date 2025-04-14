@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,30 +9,30 @@
  */
 
 export enum RoleInfoUIEnum {
-    RoleName,
-    RoleSeviceName,
-    StripUIView,
-    BufferContainer,
+  RoleName,
+  RoleSeviceName,
+  StripUIView,
+  BufferContainer,
 }
 
 export class RoleInfoUI extends Laya.Sprite {
-    addChildWithTag(node: Laya.Sprite, tag: RoleInfoUIEnum): Laya.Sprite {
-        switch (tag) {
-            case RoleInfoUIEnum.RoleName:
-                this.addChild(node)
-                node.y = 25
-                break;
-            case RoleInfoUIEnum.BufferContainer:
-                this.addChild(node)
-                node.pos(-65, 0)
-                break;
-            case RoleInfoUIEnum.StripUIView:
-                this.addChild(node)
-                node.pos(-node.width / 2, node.height / 2)
-                break;
-            default:
-                break;
-        }
-        return this
+  addChildWithTag(node: Laya.Sprite, tag: RoleInfoUIEnum): Laya.Sprite {
+    switch (tag) {
+      case RoleInfoUIEnum.RoleName:
+        this.addChild(node);
+        node.y = 25;
+        break;
+      case RoleInfoUIEnum.BufferContainer:
+        this.addChild(node);
+        node.pos(-65, 0);
+        break;
+      case RoleInfoUIEnum.StripUIView:
+        this.addChild(node);
+        node.pos(-node.width / 2, node.height / 2);
+        break;
+      default:
+        break;
     }
+    return this;
+  }
 }

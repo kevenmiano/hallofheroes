@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message PropertyListMsg {
+  int32 param1 = 1;
+  int32 param2 = 2;
+  string param3 = 3;
+  repeated int32 property = 4;
+}

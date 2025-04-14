@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FarmInfoRspMsg {
+  int32 userId = 1;
+  string nickName = 2;
+  int32 grades = 3;
+  int32 landGrades = 4;
+  int32 gp = 5;
+  int32 totalGp = 6;
+  int32 todayFromFriendGp = 7;
+  repeated int32 farmLandInfo = 8;
+  string treeInfo = 9;
+  int32 todayStolenCount = 10;
+  repeated int32 petInfo = 11;
+  string guardPetInfo = 12;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.friend;
+
+message VipFriendMsg {
+  int32 count = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.skilledit;
+
+message SkillEditResMsg {
+  repeated int32 skillInfo = 1;
+  bool isOpen = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemMoveInviteMsg {
+  int32 playerIdInvited = 1;
+}

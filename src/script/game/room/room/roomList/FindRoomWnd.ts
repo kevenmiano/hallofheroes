@@ -25,7 +25,7 @@ export default class FindRoomWnd extends BaseWindow {
   private txtInput: fgui.GTextInput;
   private _roomSceneType: RoomSceneType = RoomSceneType.PVE;
   private _alertString: string = LangManager.Instance.GetTranslation(
-    "pveroomlist.view.PVERoomSearchFrame.alert"
+    "pveroomlist.view.PVERoomSearchFrame.alert",
   );
 
   constructor() {
@@ -75,11 +75,11 @@ export default class FindRoomWnd extends BaseWindow {
         this._roomSceneType == RoomSceneType.PVE
           ? RoomType.NORMAL
           : RoomType.MATCH,
-        id
+        id,
       );
     } else if (id == 0) {
       let str = LangManager.Instance.GetTranslation(
-        "pveroomlist.view.PVERoomSearchFrame.command01"
+        "pveroomlist.view.PVERoomSearchFrame.command01",
       );
       MessageTipManager.Instance.show(str);
     } else {

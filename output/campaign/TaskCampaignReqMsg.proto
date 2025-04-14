@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message TaskCampaignReqMsg {
+  int32 dungeonId = 1;
+  int32 campaignId = 2;
+}

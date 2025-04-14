@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadGuildUserListMsg {
+  int32 op = 1;
+  repeated int32 userList = 2;
+  repeated int32 seniorGeneralUser = 3;
+}

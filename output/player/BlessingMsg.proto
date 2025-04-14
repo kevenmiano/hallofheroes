@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message BlessingMsg {
+  int32 increase = 1;
+  int32 usedCount = 2;
+  int32 maxCount = 3;
+}

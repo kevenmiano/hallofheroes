@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketInfoReqMsg {
+  int32 userId = 1;
+  int32 op = 2;
+  int32 templateId = 3;
+}

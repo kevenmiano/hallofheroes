@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message OnlineRewardInfoRsp {
+  int32 op = 1;
+  int32 rewardTime = 2;
+  int32 leftTime = 3;
+  repeated int32 allItem = 4;
+  int32 id = 5;
+}

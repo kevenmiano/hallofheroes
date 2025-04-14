@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.limitedtimegift;
+
+message LimitedTimeGiftReqMsg {
+  int32 op = 1;
+  int32 templateId = 2;
+  int32 type = 3;
+}

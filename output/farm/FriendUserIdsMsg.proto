@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.farm;
+
+message FriendUserIdsMsg {
+  repeated int32 friendId = 1;
+}

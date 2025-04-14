@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.building;
+
+message OrderQuickRspMsg {
+  repeated int32 orderInfo = 1;
+}

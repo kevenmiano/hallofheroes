@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PayTypeMsg {
+  int32 payType = 1;
+  int32 property1 = 2;
+  int32 property2 = 3;
+  int32 type = 4;
+}

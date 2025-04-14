@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message PlayerAASRspMsg {
+  bool result = 1;
+  int32 age = 2;
+  string cardId = 3;
+}

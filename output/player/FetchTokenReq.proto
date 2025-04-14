@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message FetchTokenReq {
+  string userId = 1;
+}

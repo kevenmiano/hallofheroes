@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.skilledit;
+
+message SkillMsg {
+  int32 job = 1;
+  int32 percent = 2;
+  int32 defaultSkill = 3;
+  int32 petId = 4;
+  string normalSkill = 5;
+  string specialSkill = 6;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GradeReceiveRsp {
+  int32 receiveSite = 1;
+  int32 buySite = 2;
+}

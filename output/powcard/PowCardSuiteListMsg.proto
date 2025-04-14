@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.powcard;
+
+message PowCardSuiteListMsg {
+  repeated int32 suites = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.seek;
+
+message PlayerSeekInfoMsg {
+  int32 seekCount = 1;
+  string nextAddTime = 2;
+  int32 state = 3;
+  string eventDesc = 4;
+  int32 curNodeId = 5;
+  int32 op = 6;
+  string seekNodeList = 7;
+}

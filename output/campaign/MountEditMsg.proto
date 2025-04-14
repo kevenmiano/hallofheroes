@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message MountEditMsg {
+  int32 propertyType = 1;
+  int32 payType = 2;
+  int32 param1 = 3;
+  int32 param2 = 4;
+}

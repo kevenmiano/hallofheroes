@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaPlayerMsg {
+  string nickName = 1;
+  int32 sex = 2;
+  int32 pic = 3;
+  int32 consortiaId = 4;
+  string consortiaName = 5;
+  int32 level = 6;
+  string mapName = 7;
+  int32 fightCapacity = 8;
+  bool playernonespeak = 9;
+  bool refusefriend = 10;
+  int32 right = 11;
+  int32 vipGrade = 12;
+  int32 vipFriendCount = 13;
+  int32 appellid = 14;
+  int32 frameId = 15;
+  int32 transGrade = 16;
+  int32 petId = 17;
+  int32 petFight = 18;
+  string petName = 19;
+  int32 petQuality = 20;
+  int32 petType = 21;
+  int32 petTempId = 22;
+  int32 clientLan = 23;
+  int32 job = 24;
+}

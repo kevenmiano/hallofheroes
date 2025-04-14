@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.remotepet;
+
+message RemoteItemMsg {
+  int32 type = 1;
+  int32 count = 2;
+  string items = 3;
+}

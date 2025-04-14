@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message PlayerHangupStateMsg {
+  int32 armyId = 1;
+  int32 state = 2;
+}

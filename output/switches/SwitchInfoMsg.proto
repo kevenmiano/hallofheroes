@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.switches;
+
+message SwitchInfoMsg {
+  int32 switchId = 1;
+  int32 switchType = 2;
+  bool isOpen = 3;
+  string beginDate = 4;
+  string endDate = 5;
+}

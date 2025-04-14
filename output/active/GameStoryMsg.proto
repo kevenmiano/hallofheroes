@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GameStoryMsg {
+  bool isAccess = 1;
+  int32 index = 2;
+  bool isDrop = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.qq;
+
+message QQGiftBagState {
+  bool novicesGift = 1;
+  bool dailyGift = 2;
+  repeated int32 gradeGifts = 3;
+}

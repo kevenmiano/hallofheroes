@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.extrajob;
+
+message ExtraJobEquipItemMsg {
+  int32 equipType = 1;
+  int32 equipLevel = 2;
+  int32 strengthenLevel = 3;
+  int32 join1 = 4;
+  int32 join2 = 5;
+  int32 join3 = 6;
+  int32 join4 = 7;
+}

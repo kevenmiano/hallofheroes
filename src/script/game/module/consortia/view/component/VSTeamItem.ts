@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import FUI_VSTeamItem from "../../../../../../fui/Consortia/FUI_VSTeamItem";
 import { GuildGroupInfo } from "../../data/gvg/GuildGroupInfo";
 import { EmWindow } from "../../../../constant/UIDefine";
@@ -42,12 +42,12 @@ export class VSTeamItem extends FUI_VSTeamItem {
     if (index % 2 == 0) {
       this.bg.icon = fgui.UIPackage.getItemURL(
         EmWindow.Consortia,
-        "Img_GuildBattle_Bg1"
+        "Img_GuildBattle_Bg1",
       );
     } else {
       this.bg.icon = fgui.UIPackage.getItemURL(
         EmWindow.Consortia,
-        "Img_GuildBattle_Bg2"
+        "Img_GuildBattle_Bg2",
       );
     }
   }
@@ -55,12 +55,12 @@ export class VSTeamItem extends FUI_VSTeamItem {
   private initView(): void {
     if (this._team01) {
       this._resultIcon01.url = this.getResultIcon(
-        this._team01["result" + this._dayIndex] > 0
+        this._team01["result" + this._dayIndex] > 0,
       );
     }
     if (this._team02) {
       this._resultIcon02.url = this.getResultIcon(
-        this._team02["result" + this._dayIndex] > 0
+        this._team02["result" + this._dayIndex] > 0,
       );
     }
     if (this._team01) {

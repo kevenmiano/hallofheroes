@@ -1,7 +1,6 @@
-// @ts-nocheck
 import Base64 from "../utils/Base64";
 import GameEventDispatcher from "../event/GameEventDispatcher";
-// import IManager from '../Interface/IManager';
+import { IManager } from "../../game/interfaces/Manager";
 import Logger from "../logger/Logger";
 
 export default class StorageHelper
@@ -67,7 +66,7 @@ export default class StorageHelper
       try {
         let value = JSON.parse(string);
         return value;
-      } catch (error) {
+      } catch {
         Logger.error(" getJsonBase64");
       }
     }

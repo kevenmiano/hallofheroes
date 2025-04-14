@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaBossStateMsg {
+  int32 missionAProcess = 1;
+  int32 missionBProcess = 2;
+  int32 missionCProcess = 3;
+  repeated int32 playerList = 4;
+  int32 missionASkillId = 5;
+  int32 missionBSkillId = 6;
+  int32 missionCSkillId = 7;
+}

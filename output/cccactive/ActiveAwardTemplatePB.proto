@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ActiveAwardTemplatePB {
+  string uuid = 1;
+  int32 templateId = 2;
+  int32 templateType = 3;
+  int32 templateCount = 4;
+  int32 templateShow = 5;
+  int32 isBind = 6;
+  int32 isNotice = 7;
+  string remain_1 = 8;
+  string remain_2 = 9;
+  string remain_3 = 10;
+  string remain_4 = 11;
+}

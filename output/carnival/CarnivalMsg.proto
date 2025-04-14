@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.carnival;
+
+message CarnivalMsg {
+  int32 opType = 1;
+  int32 score = 2;
+  string scoreRewardInfo = 3;
+  int32 totalCharge = 4;
+  int32 lotteryCount = 5;
+  int32 dayCharge = 6;
+  string giftBuyInfo = 7;
+  int32 dayOnline = 8;
+  string onlineDate = 9;
+  string onlineRewardInfo = 10;
+  int32 luckCount = 11;
+  int32 luckNum = 12;
+  string gameInfo = 13;
+  string result = 14;
+  int32 snowRewardCount = 15;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message LoginReqMsg {
+  int32 playerId = 1;
+  string key = 2;
+  repeated int32 ekeys = 3;
+}

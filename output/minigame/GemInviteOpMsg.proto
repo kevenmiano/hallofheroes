@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemInviteOpMsg {
+  int32 playerId = 1;
+  int32 opCode = 2;
+}

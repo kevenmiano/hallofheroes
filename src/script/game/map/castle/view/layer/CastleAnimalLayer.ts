@@ -1,23 +1,22 @@
-// @ts-nocheck
-import ResMgr from '../../../../../core/res/ResMgr';
-import { Sequence } from '../../../../../core/task/Sequence';
-import { ActionsExecutionMode, SequenceList } from '../../../../../core/task/SequenceList';
-import { MovieClip } from '../../../../component/MovieClip';
+//@ts-expect-error: External dependencies
+import ResMgr from "../../../../../core/res/ResMgr";
+import { Sequence } from "../../../../../core/task/Sequence";
+import {
+  ActionsExecutionMode,
+  SequenceList,
+} from "../../../../../core/task/SequenceList";
+import { MovieClip } from "../../../../component/MovieClip";
 import { NotificationEvent } from "../../../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../../../manager/NotificationManager";
 import IStopEffect from "../../interfaces/IStopEffect";
-import Logger from '../../../../../core/logger/Logger';
-import { AnimationManager } from '../../../../manager/AnimationManager';
-import ObjectUtils from '../../../../../core/utils/ObjectUtils';
-import CastleConfigUtil, { EmCastlePos } from '../../utils/CastleConfigUtil';
-import { WorldBossHelper } from '../../../../utils/WorldBossHelper';
-
-
-
+import Logger from "../../../../../core/logger/Logger";
+import { AnimationManager } from "../../../../manager/AnimationManager";
+import ObjectUtils from "../../../../../core/utils/ObjectUtils";
+import CastleConfigUtil, { EmCastlePos } from "../../utils/CastleConfigUtil";
+import { WorldBossHelper } from "../../../../utils/WorldBossHelper";
 
 /**内城建筑加载任务 */
 export class CastleEffectLoadTask extends Sequence {
-
   private resName: string = "";
 
   static path = "res/animation/images/effect/";
@@ -29,26 +28,34 @@ export class CastleEffectLoadTask extends Sequence {
 
   protected onExecute() {
     super.onExecute();
-    let loadUrl = CastleEffectLoadTask.path + this.resName + "/" + this.resName + ".json";
-    ResMgr.Instance.loadRes(loadUrl, (res) => {
-      Logger.ricky("加载完成:", loadUrl);
-      this.endAction(true);
-    }, null, Laya.Loader.ATLAS);
+    let loadUrl =
+      CastleEffectLoadTask.path + this.resName + "/" + this.resName + ".json";
+    ResMgr.Instance.loadRes(
+      loadUrl,
+      (res) => {
+        Logger.ricky("加载完成:", loadUrl);
+        this.endAction(true);
+      },
+      null,
+      Laya.Loader.ATLAS,
+    );
   }
 
   protected onForcedStop() {
-    let loadUrl = CastleEffectLoadTask.path + this.resName + "/" + this.resName + ".json";
+    let loadUrl =
+      CastleEffectLoadTask.path + this.resName + "/" + this.resName + ".json";
     ResMgr.Instance.cancelLoadByUrl(loadUrl);
   }
-
 }
 
 /**
  * 内城动画层
  * 新动画
  */
-export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffect {
-
+export default class CastleAnimalLayer
+  extends Laya.Sprite
+  implements IStopEffect
+{
   /**特效名称 */
   private anis: string[] = [
     "bird_effect",
@@ -86,10 +93,14 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
       parallel = parallel.addTask(new CastleEffectLoadTask(resName));
     }
     this.downLoadList = parallel;
-    parallel.setComplete(Laya.Handler.create(this, () => {
-      Logger.ricky("任务完成");
-      this.createAnimation();
-    })).execute(null)
+    parallel
+      .setComplete(
+        Laya.Handler.create(this, () => {
+          Logger.ricky("任务完成");
+          this.createAnimation();
+        }),
+      )
+      .execute(null);
 
     // new SequenceList(ActionsExecutionMode.RunInParallel)
     //   .addTask(parallel)
@@ -105,8 +116,19 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
       let resName = this.anis[index];
       let prefixUrl = "images/effect/";
       let aniName = resName + "/";
-      AnimationManager.Instance.createAnimation(prefixUrl, aniName, 0, "", AnimationManager.MapPhysicsFormatLen);
-      let pos = CastleConfigUtil.Instance.getAniPos(index, WorldBossHelper.checkInOuterCityWarMap() ? EmCastlePos.OuterCityWar : EmCastlePos.Castle)
+      AnimationManager.Instance.createAnimation(
+        prefixUrl,
+        aniName,
+        0,
+        "",
+        AnimationManager.MapPhysicsFormatLen,
+      );
+      let pos = CastleConfigUtil.Instance.getAniPos(
+        index,
+        WorldBossHelper.checkInOuterCityWarMap()
+          ? EmCastlePos.OuterCityWar
+          : EmCastlePos.Castle,
+      );
       let tl = new MovieClip(prefixUrl + aniName);
       tl.x = pos.x;
       tl.y = pos.y;
@@ -116,7 +138,8 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
         this.animationMaps = new Map();
       }
       this.animationMaps.set(resName, tl);
-      if (this.moveAnis.indexOf(resName) != -1) {//移动动画
+      if (this.moveAnis.indexOf(resName) != -1) {
+        //移动动画
         this.doCircleAnimation(tl, pos.x);
       }
     }
@@ -127,23 +150,39 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
     target.x = defalultX;
     target.alpha = 0.5;
     let targetPos: number = target.x - 1934 - Math.floor(Math.random() * 500);
-    Laya.Tween.to(target, { alpha: 1 }, 1000, null,
+    Laya.Tween.to(
+      target,
+      { alpha: 1 },
+      1000,
+      null,
       Laya.Handler.create(this, () => {
-        Laya.Tween.to(target, { x: targetPos }, Math.floor(Math.random() * 2000) + 50000, null,
+        Laya.Tween.to(
+          target,
+          { x: targetPos },
+          Math.floor(Math.random() * 2000) + 50000,
+          null,
           Laya.Handler.create(this, () => {
-            Laya.Tween.to(target, { alpha: 0 }, 200, undefined,
+            Laya.Tween.to(
+              target,
+              { alpha: 0 },
+              200,
+              undefined,
               Laya.Handler.create(this, () => {
                 self.doCircleAnimation(target, defalultX);
-              }), 100);
-          }));
-      }));
+              }),
+              100,
+            );
+          }),
+        );
+      }),
+    );
   }
 
   private initEvent() {
     NotificationManager.Instance.addEventListener(
       NotificationEvent.STOP_EFFECT,
       this.__notificationHandler,
-      this
+      this,
     );
   }
 
@@ -151,7 +190,8 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.STOP_EFFECT,
       this.__notificationHandler,
-      this);
+      this,
+    );
   }
 
   private __notificationHandler(target: any, data: any) {
@@ -163,24 +203,27 @@ export default class CastleAnimalLayer extends Laya.Sprite implements IStopEffec
   }
 
   public stopEffect() {
-    this.animationMaps && this.animationMaps.forEach((value: MovieClip, key: string) => {
-      value.stop();
-    })
+    this.animationMaps &&
+      this.animationMaps.forEach((value: MovieClip, key: string) => {
+        value.stop();
+      });
   }
 
   public startEffet() {
-    this.animationMaps && this.animationMaps.forEach((value: MovieClip, key: string) => {
-      value.play();
-    })
+    this.animationMaps &&
+      this.animationMaps.forEach((value: MovieClip, key: string) => {
+        value.play();
+      });
   }
 
   public dispose() {
     this.removeEvent();
     this.removeSelf();
     this.downLoadList && this.downLoadList.clear();
-    this.animationMaps && this.animationMaps.forEach((value: MovieClip, key: string) => {
-      ObjectUtils.disposeObject(value);
-    });
+    this.animationMaps &&
+      this.animationMaps.forEach((value: MovieClip, key: string) => {
+        ObjectUtils.disposeObject(value);
+      });
     Laya.Tween.clearAll(this);
     this.animationMaps.clear();
     this.animationMaps = null;

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message VehicleReqMsg {
+  int32 type = 1;
+  int32 nodeId = 2;
+  int32 posX = 3;
+  int32 posY = 4;
+}

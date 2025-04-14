@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.frame;
+
+message FrameInfoMsgList {
+  int32 op = 1;
+  repeated int32 frames = 2;
+}

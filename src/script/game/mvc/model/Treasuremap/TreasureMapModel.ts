@@ -61,7 +61,7 @@ export class TreasureMapModel extends GameEventDispatcher {
     let data: t_s_vipprerogativetemplateData =
       TempleteManager.Instance.getPrivilegeTempletesByTypeLevel(
         VipPrivilegeType.MYSTERY_BOX,
-        VIPManager.Instance.model.vipInfo.VipGrade
+        VIPManager.Instance.model.vipInfo.VipGrade,
       );
     if (data) {
       this._joinMax += data.para1;
@@ -72,7 +72,7 @@ export class TreasureMapModel extends GameEventDispatcher {
   private getConfigValue(key: string): number {
     if (TempleteManager.Instance.getConfigInfoByConfigName(key)) {
       return parseInt(
-        TempleteManager.Instance.getConfigInfoByConfigName(key).ConfigValue
+        TempleteManager.Instance.getConfigInfoByConfigName(key).ConfigValue,
       );
     }
     return 5;

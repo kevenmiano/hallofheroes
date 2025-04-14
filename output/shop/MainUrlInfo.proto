@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message MainUrlInfo {
+  int32 id = 1;
+  string url = 2;
+  int32 site = 3;
+}

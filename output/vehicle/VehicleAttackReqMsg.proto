@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleAttackReqMsg {
+  string skillId = 1;
+  string attackType = 2;
+  string suffererNpcId = 3;
+  repeated int32 suffererId = 4;
+  string effectX = 5;
+  string effectY = 6;
+  repeated int32 suffererServerName = 7;
+  repeated int32 suffererNpcIdArray = 8;
+  string attackServerName = 9;
+}

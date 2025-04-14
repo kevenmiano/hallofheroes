@@ -7,8 +7,9 @@
  * @Description:
  */
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
-import Logger from "../../core/logger/Logger";
-// import { IEnterFrame } from "../interfaces/IEnterFrame";
+// import Logger from "../../core/logger/Logger";
+// import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
+
 import { EnterFrameManager } from "../manager/EnterFrameManager";
 
 export class TimerTicker extends GameEventDispatcher {
@@ -39,7 +40,7 @@ export class TimerTicker extends GameEventDispatcher {
     delay: number,
     repeatCount: number = 0,
     tickFunc: Function = null,
-    completeFunc: Function = null
+    completeFunc: Function = null,
   ) {
     super();
 
@@ -75,11 +76,15 @@ export class TimerTicker extends GameEventDispatcher {
     if (count > 0 && this._running) {
       this._currentCount++;
       this.dispatchEvent(TimerEvent.TIMER);
-      this._tickFunc && this._tickFunc();
+      if (this._tickFunc) {
+        this._tickFunc();
+      }
       if (this._repeatCount > 0 && this._currentCount >= this._repeatCount) {
         this.stop();
         this.dispatchEvent(TimerEvent.TIMER_COMPLETE);
-        this._completeFunc && this._completeFunc();
+        if (this._completeFunc) {
+          this._completeFunc();
+        }
       }
     }
     this._currentTime = t - (d % this._delay);

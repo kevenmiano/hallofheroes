@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message SimpleTaskMsg {
+  int32 taskId = 1;
+  int32 isComplete = 2;
+}

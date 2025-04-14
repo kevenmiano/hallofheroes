@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.room;
+
+message EditRoomRspMsg {
+  int32 roomId = 1;
+  int32 startCampaignId = 2;
+  int32 masterId = 3;
+  int32 count = 4;
+  int32 capacity = 5;
+  string passWord = 6;
+  string roomName = 7;
+}

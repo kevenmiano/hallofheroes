@@ -76,7 +76,7 @@ export default class RoomHallRightPvp extends BaseFguiCom {
       " / " +
       this.model.playerInfo.JJCMaxCount;
     this.txtCampaignName.text = LangManager.Instance.GetTranslation(
-      "HigherGradeOpenTipView.content13"
+      "HigherGradeOpenTipView.content13",
     );
     this.refreshQueueTimer();
     this.refreshOptBtn();
@@ -108,7 +108,7 @@ export default class RoomHallRightPvp extends BaseFguiCom {
     } else {
       let player = this.roomInfo.getPlayerByUserId(
         this.model.selfArmy.userId,
-        ""
+        "",
       ) as CampaignArmy;
       if (player) {
         switch (player.roomState) {
@@ -183,18 +183,18 @@ export default class RoomHallRightPvp extends BaseFguiCom {
       this.roomInfo.roomState == RoomState.STATE_COMPETEING
     ) {
       MessageTipManager.Instance.show(
-        LangManager.Instance.GetTranslation("roomplayerItem.btnClick.tips")
+        LangManager.Instance.GetTranslation("roomplayerItem.btnClick.tips"),
       );
       return;
     }
 
     let num: number = GoodsManager.Instance.getGoodsNumByTempId(
-      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID
+      ShopGoodsInfo.SMALL_BUGLE_TEMP_ID,
     );
     if (num == 0) {
       if (this.model.thane.smallBugleFreeCount <= 0) {
         let str = LangManager.Instance.GetTranslation(
-          "chat.view.ChatInputView.command06"
+          "chat.view.ChatInputView.command06",
         );
         MessageTipManager.Instance.show(str);
         this.ctrl.quickBuySmallBugle();
@@ -240,10 +240,10 @@ export default class RoomHallRightPvp extends BaseFguiCom {
       outdate = true;
     if (flag && outdate) {
       let checkTxt = LangManager.Instance.GetTranslation(
-        "yishi.view.base.ThewAlertFrame.text"
+        "yishi.view.base.ThewAlertFrame.text",
       );
       let content = LangManager.Instance.GetTranslation(
-        "yishi.view.base.ThewAlertFrame.disclist03"
+        "yishi.view.base.ThewAlertFrame.disclist03",
       );
       SimpleAlertHelper.Instance.Show(
         SimpleAlertHelper.USEBINDPOINT_ALERT,
@@ -252,7 +252,7 @@ export default class RoomHallRightPvp extends BaseFguiCom {
         content,
         null,
         null,
-        callBack
+        callBack,
       );
     }
 
@@ -276,7 +276,7 @@ export default class RoomHallRightPvp extends BaseFguiCom {
     SharedManager.Instance.roomCheckDate = new Date();
     SharedManager.Instance.saveRoomCheck();
     HomeWnd.Instance.getMainToolBar().switchToolsBarState(
-      MainToolBar.PVP_ROOM_START
+      MainToolBar.PVP_ROOM_START,
     );
   }
 
@@ -293,7 +293,7 @@ export default class RoomHallRightPvp extends BaseFguiCom {
 
   public get ctrl(): RoomHallCtrl {
     let ctrl = FrameCtrlManager.Instance.getCtrl(
-      EmWindow.RoomHall
+      EmWindow.RoomHall,
     ) as RoomHallCtrl;
     return ctrl;
   }

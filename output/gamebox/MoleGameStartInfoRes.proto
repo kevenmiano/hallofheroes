@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.gamebox;
+
+message MoleGameStartInfoRes {
+  int32 total = 1;
+  string startTime = 2;
+  string endTime = 3;
+  repeated int32 allRound = 4;
+}

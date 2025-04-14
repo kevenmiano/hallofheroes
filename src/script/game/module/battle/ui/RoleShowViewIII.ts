@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 import Dictionary from "../../../../core/utils/Dictionary";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";
@@ -31,43 +31,43 @@ export class RoleShowViewIII extends Laya.Sprite implements IEnterFrame {
       this._bossView.bossBufferContainer1 = new BossBufferContainer(
         this._bossView,
         2,
-        this._boss2
+        this._boss2,
       );
       this._bossView.bossBufferContainer2 = new BossBufferContainer(
         this._bossView,
         1,
-        this._boss1
+        this._boss1,
       );
       this._bossView.setParent(this.view.getContentPane());
       this._bossView.setInfo(this._boss2, this._boss1);
       this._bossView.setTotalHp(
         this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss2),
-        this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss1)
+        this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss1),
       );
       this._bossView.setCurrentHp(
         this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss2),
-        this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss1)
+        this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss1),
       );
     } else {
       this._bossView.bossBufferContainer1 = new BossBufferContainer(
         this._bossView,
         1,
-        this._boss1
+        this._boss1,
       );
       this._bossView.bossBufferContainer2 = new BossBufferContainer(
         this._bossView,
         2,
-        this._boss2
+        this._boss2,
       );
       this._bossView.setParent(this.view.getContentPane());
       this._bossView.setInfo(this._boss1, this._boss2);
       this._bossView.setTotalHp(
         this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss1),
-        this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss2)
+        this.battleModel.armyInfoRight.getBossesTotalHpByInfo(this._boss2),
       );
       this._bossView.setCurrentHp(
         this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss1),
-        this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss2)
+        this.battleModel.armyInfoRight.getBossesLeftHpByInfo(this._boss2),
       );
     }
   }
@@ -86,24 +86,24 @@ export class RoleShowViewIII extends Laya.Sprite implements IEnterFrame {
       this.view.bottomBar.selfBloodView.updateHeroHp(
         precent,
         leftBlood,
-        maxBoold
+        maxBoold,
       );
     }
     var bossHp1: number;
     var bossHp2: number;
     if (this.needExchange) {
       bossHp1 = this.battleModel.armyInfoRight.getBossesLeftHpByInfo(
-        this._boss2
+        this._boss2,
       );
       bossHp2 = this.battleModel.armyInfoRight.getBossesLeftHpByInfo(
-        this._boss1
+        this._boss1,
       );
     } else {
       bossHp1 = this.battleModel.armyInfoRight.getBossesLeftHpByInfo(
-        this._boss1
+        this._boss1,
       );
       bossHp2 = this.battleModel.armyInfoRight.getBossesLeftHpByInfo(
-        this._boss2
+        this._boss2,
       );
     }
     this._bossView.setCurrentHp(bossHp1, bossHp2);
@@ -112,7 +112,7 @@ export class RoleShowViewIII extends Laya.Sprite implements IEnterFrame {
       BattleManager.Instance.battleModel.isOver = true;
       NotificationManager.Instance.sendNotification(
         BattleNotic.FORCE_SKILL_ENABLE,
-        false
+        false,
       );
     }
   }

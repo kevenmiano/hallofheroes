@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -11,15 +10,9 @@
 import GameEventDispatcher from "../../core/event/GameEventDispatcher";
 
 export default class FrameDataBase extends GameEventDispatcher {
-    protected show(){
-        
-    }
+  protected show() {}
 
-    protected hide(){
+  protected hide() {}
 
-    }
-
-    protected dispose(){
-        
-    }
+  protected dispose() {}
 }

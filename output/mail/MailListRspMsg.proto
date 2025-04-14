@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailListRspMsg {
+  repeated int32 mailInfos = 1;
+  int32 curPage = 2;
+  int32 maxPage = 3;
+}

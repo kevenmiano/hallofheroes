@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message TriggerEventMsg {
+  int32 userId = 1;
+  int32 param1 = 2;
+  int32 param2 = 3;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message ChairsListMsg {
+  int32 op = 1;
+  int32 totalChairsCount = 2;
+  repeated int32 reward = 3;
+  repeated int32 charge = 4;
+  int32 userId = 5;
+  repeated int32 luckyNickName = 6;
+  int32 currentChairs = 7;
+  int32 rewardCounts = 8;
+  int32 rewardNeedChairs = 9;
+  int32 chairsNeedPoints = 10;
+  string openTime = 11;
+  string stopTime = 12;
+  string chairsNum = 13;
+  repeated int32 luckyItems = 14;
+  repeated int32 comfortItems = 15;
+  int32 leftPoint = 16;
+  bool isLucky = 17;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message SumActivesMsg {
+  repeated int32 actives = 1;
+  int32 dataStamp = 2;
+  int32 curPage = 3;
+  int32 maxPage = 4;
+  int32 mainType = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.leed;
+
+message SingleDayMsg {
+  int32 day = 1;
+  int32 getReward = 2;
+  repeated int32 simpleTask = 3;
+}

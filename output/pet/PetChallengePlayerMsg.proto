@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.pet;
+
+message PetChallengePlayerMsg {
+  int32 leftTime = 1;
+  int32 challengeCount = 2;
+  int32 totalCount = 3;
+  int32 score = 4;
+  int32 order = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message WorldBossStartMsg {
+  int32 nodeId = 1;
+  int32 campaignId = 2;
+  string heroMsg = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.customer;
+
+message FastOpenCustomerMsg {
+  int32 canOpen = 1;
+}

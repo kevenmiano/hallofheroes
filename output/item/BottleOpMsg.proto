@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message BottleOpMsg {
+  int32 alterType = 1;
+  int32 opType = 2;
+  int32 stickFirst = 3;
+}

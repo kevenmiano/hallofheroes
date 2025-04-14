@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadFreshGuildMsg {
+  repeated int32 guildList = 1;
+}

@@ -36,7 +36,7 @@ export default class RoomListItem extends FUI_RoomListItem {
     if (this._roomInfo) {
       this.txtNum.text = LangManager.Instance.GetTranslation(
         "public.No",
-        this._roomInfo.id
+        this._roomInfo.id,
       );
       this.txtCapicity.text =
         this._roomInfo.curCount + " / " + this._roomInfo.capacity;
@@ -46,7 +46,7 @@ export default class RoomListItem extends FUI_RoomListItem {
         EmWindow.RoomList,
         this.roomSceneType == RoomSceneType.PVE
           ? "Img_Room_Box1"
-          : "Img_Room_Box2"
+          : "Img_Room_Box2",
       );
 
       if (this.roomSceneType == RoomSceneType.PVE) {
@@ -55,7 +55,7 @@ export default class RoomListItem extends FUI_RoomListItem {
             "public.level4",
             "<br>",
             this.roomInfo.mapTemplate.MinLevel,
-            this.roomInfo.mapTemplate.MaxLevel
+            this.roomInfo.mapTemplate.MaxLevel,
           );
           if (
             this.roomInfo.mapTemplate.MinLevel ==
@@ -65,7 +65,7 @@ export default class RoomListItem extends FUI_RoomListItem {
               "<br>" +
               LangManager.Instance.GetTranslation(
                 "public.level3",
-                this.roomInfo.mapTemplate.MinLevel
+                this.roomInfo.mapTemplate.MinLevel,
               );
           }
           this.txtTitle.text =
@@ -91,7 +91,7 @@ export default class RoomListItem extends FUI_RoomListItem {
         }
       } else if (this.roomSceneType == RoomSceneType.PVP) {
         this.txtTitle.text = LangManager.Instance.GetTranslation(
-          "RoomListItem.Title01"
+          "RoomListItem.Title01",
         );
         // this.imgSelect.alpha = 0
       }
@@ -101,7 +101,7 @@ export default class RoomListItem extends FUI_RoomListItem {
   private resetItem() {
     this.imgBg.icon = fgui.UIPackage.getItemURL(
       EmWindow.RoomList,
-      "Img_Room_Box"
+      "Img_Room_Box",
     );
     this.txtNum.text = "";
     this.txtTitle.text = "";

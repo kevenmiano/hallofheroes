@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message ArmyResMsg {
+  repeated int32 loadRes = 1;
+  int32 reinforceCount = 2;
+  int32 reinforceType = 3;
+}

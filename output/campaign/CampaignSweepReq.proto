@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CampaignSweepReq {
+  int32 sweepType = 1;
+  int32 opType = 2;
+  int32 campaignId = 3;
+  int32 count = 4;
+  int32 eIndex = 5;
+  int32 enterType = 6;
+  bool openSilverBox = 7;
+  bool openSecretBox = 8;
+  int32 payType = 9;
+}

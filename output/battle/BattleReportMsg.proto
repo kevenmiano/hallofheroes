@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleReportMsg {
+  int32 battleResult = 1;
+  int32 strategyBonus = 2;
+  int32 gpBonus = 3;
+  int32 posX = 4;
+  int32 posY = 5;
+  string signId = 6;
+  repeated int32 baseItem = 7;
+  int32 battleScene = 8;
+  int32 failCount = 9;
+  int32 goldBonus = 10;
+  int32 petGpBonus = 11;
+  int32 param1 = 12;
+  int32 param2 = 13;
+  string battleId = 14;
+}

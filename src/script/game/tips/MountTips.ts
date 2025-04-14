@@ -46,10 +46,10 @@ export class MountTips extends BaseTips {
       return;
     }
     var item: WildSoulInfo = MountsManager.Instance.avatarList.getWildSoulInfo(
-      this._info.TemplateId
+      this._info.TemplateId,
     );
     var strArray: Array<string> = LangManager.Instance.GetTranslation(
-      "mounts.WildsoulItem.tips01"
+      "mounts.WildsoulItem.tips01",
     ).split("|");
     var tipStr: string = "";
     var speed: number = 0;
@@ -71,7 +71,7 @@ export class MountTips extends BaseTips {
     }
     this.willScoreTxt.text = LangManager.Instance.GetTranslation(
       "mountTip.soulscore",
-      this._info.SoulScore
+      this._info.SoulScore,
     );
     if (this._info.MountType == MountType.NORMAL) {
       if (item) {
@@ -80,13 +80,13 @@ export class MountTips extends BaseTips {
         if (this.isFlying(this._info.TemplateId)) {
           this.date1.visible = true;
           this.date1.text = LangManager.Instance.GetTranslation(
-            "mounts.WildsoulItem.tips06"
+            "mounts.WildsoulItem.tips06",
           );
         }
       } else {
         this.date1.text = LangManager.Instance.GetTranslation(
           "mounts.WildsoulItem.tips03",
-          this._info.Property2
+          this._info.Property2,
         );
         this.date1.visible = true;
       }
@@ -100,14 +100,14 @@ export class MountTips extends BaseTips {
         needTips.push(
           LangManager.Instance.GetTranslation(
             "mounts.WildsoulItem.tips.NeedGrade",
-            this._info.NeedMountGrade
-          )
+            this._info.NeedMountGrade,
+          ),
         );
       if (this._info.NeedItemId != 0) {
         var goodTemplate: t_s_itemtemplateData =
           ConfigMgr.Instance.getTemplateByID(
             ConfigType.t_s_itemtemplate,
-            this._info.NeedItemId.toString()
+            this._info.NeedItemId.toString(),
           );
         if (goodTemplate) {
           needTips.push(goodTemplate.TemplateNameLang);
@@ -123,11 +123,11 @@ export class MountTips extends BaseTips {
       } else {
         if (item == null && needTips.length > 0) {
           var needTipStr: string = needTips.join(
-            "\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            "\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
           );
           this.date1.text = LangManager.Instance.GetTranslation(
             "mounts.MountTip.NeedGood",
-            needTipStr
+            needTipStr,
           );
           this.date1.visible = true;
         }
@@ -135,12 +135,12 @@ export class MountTips extends BaseTips {
           this.specialTxt.visible = true;
           if (this._info.validity < 0) {
             this.specialTxt.text = LangManager.Instance.GetTranslation(
-              "mounts.WildsoulItem.forever"
+              "mounts.WildsoulItem.forever",
             );
           } else {
             this.specialTxt.text = LangManager.Instance.GetTranslation(
               "mounts.WildsoulItem.tips02",
-              this._info.validity
+              this._info.validity,
             );
           }
         }
@@ -149,11 +149,11 @@ export class MountTips extends BaseTips {
         this.specialTxt.visible = true;
         if (!StringHelper.isNullOrEmpty(this.specialTxt.text)) {
           this.specialTxt.text += LangManager.Instance.GetTranslation(
-            "mounts.WildsoulItem.tips06"
+            "mounts.WildsoulItem.tips06",
           );
         } else {
           this.specialTxt.text = LangManager.Instance.GetTranslation(
-            "mounts.WildsoulItem.tips06"
+            "mounts.WildsoulItem.tips06",
           );
         }
       }
@@ -182,7 +182,7 @@ export class MountTips extends BaseTips {
     NotificationManager.Instance.addEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 
@@ -190,7 +190,7 @@ export class MountTips extends BaseTips {
     NotificationManager.Instance.removeEventListener(
       TipsEvent.EQUIP_TIPS_HIDE,
       this.OnBtnClose,
-      this
+      this,
     );
   }
 

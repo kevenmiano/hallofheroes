@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guide;
+
+message RedPointMsg {
+  repeated int32 redPoint = 1;
+}

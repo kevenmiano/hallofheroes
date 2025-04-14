@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message HurtDataMsg {
+  string affecteId = 1;
+  string value = 2;
+  string serverName = 3;
+  string damageType = 4;
+  string leftTime = 5;
+}

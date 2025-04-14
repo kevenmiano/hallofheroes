@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.item;
+
+message ItemMoveReqMsg {
+  repeated int32 moveItemInfos = 1;
+  int32 endBagType = 2;
+  int32 beginBagType = 3;
+}

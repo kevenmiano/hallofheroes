@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message FightOverMoiveMsg {
+  int32 gp = 1;
+  int32 gold = 2;
+  int32 strategy = 3;
+}

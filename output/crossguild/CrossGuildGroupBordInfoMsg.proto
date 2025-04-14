@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.crossguild;
+
+message CrossGuildGroupBordInfoMsg {
+  int32 state = 1;
+  string guildInfo = 2;
+  int32 startTime = 3;
+  int32 endTime = 4;
+}

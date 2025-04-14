@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message GuildTotemUpdateBufferMsg {
+  int32 campaignId = 1;
+  int32 nodeId = 2;
+  int32 viceCount = 3;
+}

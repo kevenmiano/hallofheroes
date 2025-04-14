@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vip;
+
+message VipRouletteMsg {
+  int32 leftCount = 1;
+  int32 needVipItem = 2;
+  repeated int32 openIndex = 3;
+  repeated int32 leftItem = 4;
+  repeated int32 takeItem = 5;
+  bool isStart = 6;
+  int32 opType = 7;
+}

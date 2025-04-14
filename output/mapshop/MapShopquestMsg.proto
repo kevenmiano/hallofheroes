@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mapshop;
+
+message MapShopquestMsg {
+  int32 op = 1;
+  int32 para1 = 2;
+  int32 para2 = 3;
+  int32 payType = 4;
+  int32 count = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message GetItemInfosMsg {
+  int32 interval = 1;
+  int32 times = 2;
+  repeated int32 itemInfo = 3;
+}

@@ -44,11 +44,11 @@ export class GvgBufferTips extends BaseTips {
       this._title1.text = this._tipData.bufferNameLang;
       this._cooldown1.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.SkillTips.cooldown01",
-        this._tipData.maxCdTimer
+        this._tipData.maxCdTimer,
       );
       this._cost1.text = LangManager.Instance.GetTranslation(
         "yishi.view.tips.goods.Gvgbuffercost",
-        Math.abs(this._tipData.needPay)
+        Math.abs(this._tipData.needPay),
       );
       this._describe1.text = this._tipData.DescriptionLang;
     }

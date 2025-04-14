@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outercity;
+
+message CastleDefenseRspMsg {
+  int32 posX = 1;
+  int32 posY = 2;
+  int32 leftTime = 3;
+}

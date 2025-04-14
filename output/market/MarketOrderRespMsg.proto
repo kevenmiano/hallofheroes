@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.market;
+
+message MarketOrderRespMsg {
+  int32 op = 1;
+  bool result = 2;
+  repeated int32 orderMsg = 3;
+  int32 type = 4;
+  int32 freeUseMarkeOrderCount = 5;
+  int32 payUseMarketOrderCount = 6;
+  int32 freeUsePurchaseCount = 7;
+  int32 payUsePurchaseCount = 8;
+}

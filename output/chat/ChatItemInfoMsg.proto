@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.chat;
+
+message ChatItemInfoMsg {
+  int32 id = 1;
+  int32 templateId = 2;
+  int32 pos = 3;
+  bool exist = 4;
+  int32 objectId = 5;
+  int32 bagType = 6;
+  bool bind = 7;
+  bool used = 8;
+  int32 validDate = 9;
+  string beginDate = 10;
+  int32 count = 11;
+  int32 attack = 12;
+  int32 defence = 13;
+  int32 agility = 14;
+  int32 ability = 15;
+  int32 captain = 16;
+  int32 strengthenGrade = 17;
+  int32 join_1 = 18;
+  int32 join_2 = 19;
+  int32 join_3 = 20;
+  int32 randomSkill_1 = 21;
+  int32 randomSkill_2 = 22;
+  int32 randomSkill_3 = 23;
+  int32 randomSkill_4 = 24;
+  int32 randomSkill_5 = 25;
+  bool isNew = 26;
+  int32 userId = 27;
+  string itemName = 28;
+  int32 join_4 = 29;
+  string property1 = 30;
+  int32 appraisalSkill = 31;
+  int32 mouldGrade = 32;
+}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,9 +8,9 @@
  */
 
 export class CampaignMapLand {
-    public static None: number = 0; //英雄之门
-    public static East: number = 1;
-    public static West: number = 2;
-    public static North: number = 3;
-    public static South: number = 4;
+  public static None: number = 0; //英雄之门
+  public static East: number = 1;
+  public static West: number = 2;
+  public static North: number = 3;
+  public static South: number = 4;
 }

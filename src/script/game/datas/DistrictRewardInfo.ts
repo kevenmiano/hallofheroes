@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -9,13 +8,12 @@
  */
 
 export class DistrictRewardInfo {
-    public District: number;
-    public ItemId: number;
-    public Count: number;
-    constructor(district: number, itemId: number, count: number){
-        this.District = district
-        this.ItemId = itemId
-        this.Count = count
-    }
+  public District: number;
+  public ItemId: number;
+  public Count: number;
+  constructor(district: number, itemId: number, count: number) {
+    this.District = district;
+    this.ItemId = itemId;
+    this.Count = count;
+  }
 }
-

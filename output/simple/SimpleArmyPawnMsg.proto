@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SimpleArmyPawnMsg {
+  int32 id = 1;
+  int32 armyId = 2;
+  int32 sites = 3;
+  int32 sonType = 4;
+  int32 tempateId = 5;
+  int32 ownPawns = 6;
+  int32 live = 7;
+  int32 attack = 8;
+  int32 defence = 9;
+  int32 magicAttack = 10;
+  int32 magicDefence = 11;
+  int32 skill = 12;
+  int32 forceHit = 13;
+  int32 parry = 14;
+}

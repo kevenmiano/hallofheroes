@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.seventarget;
+
+message ShareRewardInfo {
+  bool hasReward = 1;
+}

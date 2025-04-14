@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message ChallengeInfoMsg {
+  int32 lastWinCount = 1;
+  int32 challengeCount = 2;
+  int32 curScore = 3;
+  repeated int32 simplePlayer = 4;
+  repeated int32 challengeLog = 5;
+  string noticMsg = 6;
+  repeated int32 avater = 7;
+  int32 totalCount = 8;
+  string winCountReward = 9;
+  string nextRefreshTime = 10;
+  int32 freeRefreshTimes = 11;
+  int32 payRefreshTimes = 12;
+}

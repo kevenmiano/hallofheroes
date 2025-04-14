@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.outcitywar;
+
+message CastlePlayerMsg {
+  int32 nodeId = 1;
+  repeated int32 playerStatusMsg = 2;
+  int32 allNum = 3;
+  int32 buildId = 4;
+}

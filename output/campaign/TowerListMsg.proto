@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message TowerListMsg {
+  repeated int32 towerInfo = 1;
+}

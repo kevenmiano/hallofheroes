@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.minigame;
+
+message GemMazeInfoMsg {
+  repeated int32 allGems = 1;
+  int32 score = 2;
+  int32 weekScore = 3;
+  int32 timesLeft = 4;
+  int32 buyTimesLeft = 5;
+  int32 helpTimesLeft = 6;
+  int32 gemLevel = 7;
+  int32 curExp = 8;
+  int32 maxExp = 9;
+  int32 boxMark = 10;
+  int32 scoreOrder = 11;
+  repeated int32 boxesId = 12;
+}

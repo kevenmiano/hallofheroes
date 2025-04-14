@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.fate;
+
+message FateInfoMsg {
+  int32 templateId = 1;
+  int32 fateTypes = 2;
+  int32 totalGp = 3;
+  int32 grades = 4;
+  string property1 = 5;
+  string property2 = 6;
+  int32 turnCount = 7;
+}

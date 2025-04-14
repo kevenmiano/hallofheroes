@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.campaign;
+
+message CrossScoreMsg {
+  string userName = 1;
+  string serverName = 2;
+  int32 grades = 3;
+  int32 score = 4;
+  int32 userId = 5;
+}

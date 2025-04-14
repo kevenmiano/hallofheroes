@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.simple;
+
+message SellItemRspMsg {
+  int32 result = 1;
+  string item = 2;
+}

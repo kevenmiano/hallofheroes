@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.cccactive;
+
+message GoldenSheepPlayerMsg {
+  int32 userid = 1;
+  string nickName = 2;
+  int32 money = 3;
+  bool isBest = 4;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ArmyPosUpdatedMsg {
+  int32 armyId = 1;
+  int32 curPosX = 2;
+  int32 curPosY = 3;
+  int32 endPosX = 4;
+  int32 endPosY = 5;
+  repeated int32 userIds = 6;
+  string serverName = 7;
+}

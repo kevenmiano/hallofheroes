@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.guildcampaign;
+
+message GuildChallengeOrderListMsg {
+  repeated int32 info = 1;
+  string guildName = 2;
+  int32 guildGrade = 3;
+  int32 guildOffer = 4;
+  int32 guildOrder = 5;
+  int32 guildFighPower = 6;
+  repeated int32 challenge = 7;
+}

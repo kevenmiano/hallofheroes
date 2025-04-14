@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message HeroRuneOpMsg {
+  int32 userId = 1;
+  int32 runeId = 2;
+  string runeKey = 3;
+  int32 learnRunePos = 4;
+  int32 learnRuneCount = 5;
+  int32 opType = 6;
+  bool opResult = 7;
+  string runeInfo = 8;
+  int32 count = 9;
+}

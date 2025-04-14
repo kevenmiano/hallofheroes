@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.qq;
+
+message UserQQDaWanKaMsg {
+  int32 score = 1;
+  int32 level = 2;
+  bool binding = 3;
+  int32 discount = 4;
+  int32 payReturnCount = 5;
+  bool isUsingCard = 6;
+  int32 realLevel = 7;
+  repeated int32 giftState = 8;
+}

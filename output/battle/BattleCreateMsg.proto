@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.battle;
+
+message BattleCreateMsg {
+  int32 mapTempId = 1;
+  string proxyId = 2;
+  int32 type = 3;
+  int32 attackerNum = 4;
+  int32 userSide = 5;
+  repeated int32 army = 6;
+  int32 reinforceCount = 7;
+  int32 campaignId = 8;
+  int32 capity = 9;
+  int32 lastWound = 10;
+  int32 nodeId = 11;
+  int32 castleRoomId = 12;
+  string serverName = 13;
+  string defenceServerName = 14;
+  int32 defenceUserId = 15;
+  string campaignUuid = 16;
+  int32 serverId = 17;
+  string battleUid = 18;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.shop;
+
+message ShopMainRspMsg {
+  repeated int32 urlInfo = 1;
+  repeated int32 goodInfo = 2;
+  repeated int32 discountInfo = 3;
+}

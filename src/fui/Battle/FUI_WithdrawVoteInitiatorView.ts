@@ -1,6 +1,6 @@
-// TODO FIX
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
+//@ts-expect-error: External dependencies
 import FUI_Prog_VoteCDLine from "./FUI_Prog_VoteCDLine";
 
 export default class FUI_WithdrawVoteInitiatorView extends fgui.GComponent {

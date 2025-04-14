@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadReportMsg {
+  string sourceGuildName = 1;
+  string sourceUserNickName = 2;
+  string rivalGuildName = 3;
+  string rivalUserNickName = 4;
+  bool rivalIsNpc = 5;
+  bool isWin = 6;
+  int32 defenceDebuffLevel = 7;
+  int32 changeScore = 8;
+  string reportTime = 9;
+  string timestamp = 10;
+}

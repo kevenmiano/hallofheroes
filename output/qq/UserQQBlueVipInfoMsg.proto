@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.qq;
+
+message UserQQBlueVipInfoMsg {
+  int32 isBlueVip = 1;
+  int32 isBlueYearVip = 2;
+  int32 isSuperBlueVip = 3;
+  int32 isExpandBlueVip = 4;
+  int32 blueVipLevel = 5;
+  int32 isHaveGrowth = 6;
+  int32 isMobileBlueVip = 7;
+}

@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /*
  * @Author: jeremy.xu
  * @Email: 760139307@qq.com
@@ -82,7 +82,7 @@ export default class ColosseumWnd extends BaseWindow {
   public OnInitWind() {
     super.OnInitWind();
     this.btnReturn.title = LangManager.Instance.GetTranslation(
-      "mainBar.MainToolBar.returnBtnTipData"
+      "mainBar.MainToolBar.returnBtnTipData",
     );
     // this.setCenter()
     this.initText();
@@ -97,30 +97,32 @@ export default class ColosseumWnd extends BaseWindow {
     this.refresh();
     this.addEvent();
     if (Utils.isWxMiniGame()) {
-      //@ts-ignore
-      this.btnRank && WXAdapt.Instance.wxMenuAdapt(this.btnRank);
+      if (this.btnRank) {
+        //@ts-expect-error: wxMenuAdapt not recognized
+        WXAdapt.Instance.wxMenuAdapt(this.btnRank);
+      }
     }
   }
 
   initText() {
     this.txtMyRankDesc.text = LangManager.Instance.GetTranslation(
-      "RvrBattleMapRightWnd.myScoreTxt"
+      "RvrBattleMapRightWnd.myScoreTxt",
     );
     this.txtEnterCountDesc.text = LangManager.Instance.GetTranslation(
-      "ColosseumWnd.limtCountTxt"
+      "ColosseumWnd.limtCountTxt",
     );
     this.txtCountTitle.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.colosseum.tip.txt1"
+      "RoomList.pvp.colosseum.tip.txt1",
     );
     this.txtEnterCountDesc.text = LangManager.Instance.GetTranslation(
-      "securityCode.view.remainCountText"
+      "securityCode.view.remainCountText",
     );
     this.txtOrderDesc.text = LangManager.Instance.GetTranslation(
-      "RoomList.pvp.colosseum.tip.txt2"
+      "RoomList.pvp.colosseum.tip.txt2",
     );
 
     this.btnReward.title = LangManager.Instance.GetTranslation(
-      "godarrive.GodArriveFrame.rewardBtn"
+      "godarrive.GodArriveFrame.rewardBtn",
     );
   }
 
@@ -130,7 +132,7 @@ export default class ColosseumWnd extends BaseWindow {
       const element = this.boxDataList[i];
       this["txtCount" + i].text = LangManager.Instance.GetTranslation(
         "RoomList.pvp.colosseum.box.txt1",
-        element.Property1
+        element.Property1,
       );
     }
     this.activityBar.max =
@@ -140,7 +142,7 @@ export default class ColosseumWnd extends BaseWindow {
       this,
       this.renderListItem,
       null,
-      false
+      false,
     );
   }
 
@@ -175,7 +177,7 @@ export default class ColosseumWnd extends BaseWindow {
     NotificationManager.Instance.addEventListener(
       NativeEvent.AFTER_STATUS_BAR_CHANGE,
       this.onAfterStatusBarChange,
-      this
+      this,
     );
   }
 
@@ -183,7 +185,7 @@ export default class ColosseumWnd extends BaseWindow {
     NotificationManager.Instance.removeEventListener(
       NativeEvent.AFTER_STATUS_BAR_CHANGE,
       this.onAfterStatusBarChange,
-      this
+      this,
     );
   }
 
@@ -194,7 +196,7 @@ export default class ColosseumWnd extends BaseWindow {
 
     this.imgMyHead.icon = IconFactory.getHeadIcon(
       ArmyManager.Instance.thane.snsInfo.headId,
-      IconType.HEAD_ICON
+      IconType.HEAD_ICON,
     );
 
     if (this.model.curScore == undefined || this.model.curScore == null) {
@@ -213,11 +215,11 @@ export default class ColosseumWnd extends BaseWindow {
     this.txtEnterCount.text = LangManager.Instance.GetTranslation(
       "fish.FishFrame.countText",
       this.model.remainFreeCount,
-      this.model.totalFreeCount
+      this.model.totalFreeCount,
     );
     this.txtCount.text = LangManager.Instance.GetTranslation(
       "RoomList.pvp.colosseum.box.txt1",
-      this.model.lastWinCount
+      this.model.lastWinCount,
     );
 
     this.gOrder.visible = true;
@@ -232,7 +234,7 @@ export default class ColosseumWnd extends BaseWindow {
       this.model.getRewardProgress(this.model.lastWinCount) *
       this.activityBar.max;
     this.activityBar.value = curCount;
-    // @ts-ignore
+    //@ts-expect-error: activityBar not recognized
     this.activityBar._titleObject.visible = false;
     this.dayBoxlist.numItems = this.boxDataList.length;
 
@@ -256,7 +258,7 @@ export default class ColosseumWnd extends BaseWindow {
     item.setInfo(
       this.boxDataList[index],
       this.model.lastWinCount,
-      this.model.winCountReward
+      this.model.winCountReward,
     );
   }
 
@@ -340,7 +342,7 @@ export default class ColosseumWnd extends BaseWindow {
     if (this._order.remainTime > 0) {
       if (this.txtOrderTime && !this.txtOrderTime.isDisposed)
         this.txtOrderTime.text = DateFormatter.getCountDate(
-          this._order.remainTime
+          this._order.remainTime,
         );
     } else {
       this.__completeHandler(null);
@@ -412,7 +414,7 @@ export default class ColosseumWnd extends BaseWindow {
       this.__btnOrderCoolClick(true, this._order.orderId);
     } else {
       let cfgItemChallenge = TempleteManager.Instance.getConfigInfoByConfigName(
-        "QuickCoolChallenge_Price"
+        "QuickCoolChallenge_Price",
       );
       let cfgItemChallengeValue = 1;
       if (cfgItemChallenge) {
@@ -434,7 +436,7 @@ export default class ColosseumWnd extends BaseWindow {
     b: boolean,
     id: number = 0,
     type: number = 0,
-    useBind: boolean = true
+    useBind: boolean = true,
   ) {
     if (b) {
       ColosseumCtrl.sendCoolColosseun(0, useBind);

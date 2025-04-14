@@ -1,4 +1,3 @@
-// TODO FIX
 /**
  * @author:pzlricky
  * @data: 2022-03-23 11:50
@@ -28,14 +27,14 @@ export default class CryptoUtils {
     }
     var keyHex = CryptoJS.enc.Utf8.parse(key);
     var decrypted = CryptoJS.DES.decrypt(
-      {
+      CryptoJS.lib.CipherParams.create({
         ciphertext: CryptoJS.enc.Hex.parse(ciphertext),
-      },
+      }),
       keyHex,
       {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7,
-      }
+      },
     );
     var result_value = decrypted.toString(CryptoJS.enc.Utf8);
     return result_value;

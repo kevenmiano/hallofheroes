@@ -1,4 +1,3 @@
-// TODO FIX
 import BaseChannel from "../base/BaseChannel";
 import BDRewardAd from "./BDRewardAd";
 import BDSubPackage from "./BDSubPackage";

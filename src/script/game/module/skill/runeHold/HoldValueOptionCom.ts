@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+//@ts-expect-error: External dependencies
 import FUI_HoldValueOptionCom from "../../../../../fui/Skill/FUI_HoldValueOptionCom";
 import LangManager from "../../../../core/lang/LangManager";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";
@@ -10,60 +9,73 @@ import SkillWndCtrl from "../SkillWndCtrl";
 import { RuneHoldValueLock2 } from "./RuneHoldValueLock2";
 
 export class HoldValueOptionCom extends FUI_HoldValueOptionCom {
+  declare public valueItem: RuneHoldValueLock2;
 
-    declare public valueItem: RuneHoldValueLock2;
-    //@ts-ignore
-    public runeCarve:BaseTipItem;
-    onConstruct() {
-        super.onConstruct();
-        this.valueBtn.onClick(this, this.onValueClick);
+  //@ts-expect-error: BaseTipItem
+  public runeCarve: BaseTipItem;
+  onConstruct() {
+    super.onConstruct();
+    this.valueBtn.onClick(this, this.onValueClick);
 
-        this.runeCarve.setInfo(TemplateIDConstant.TEMP_ID_FUKONG);
+    this.runeCarve.setInfo(TemplateIDConstant.TEMP_ID_FUKONG);
+  }
+
+  public updateView(info: RuneHoleInfo) {
+    this.valueItem.info = info;
+    let nextUpgrade = info.getNextUpgrade();
+    this.costTxt.text = nextUpgrade ? nextUpgrade.Data + "" : "Max";
+
+    let opened = info.checkOpenAllRune();
+    if (!opened) {
+      this.levelupDetail.visible = false;
+      this.lockedGroup.visible = true;
+      this.valueBtn.enabled = false;
+      return;
     }
 
-    public updateView(info: RuneHoleInfo) {
-        this.valueItem.info = info
-        let nextUpgrade = info.getNextUpgrade();
-        this.costTxt.text = nextUpgrade ? nextUpgrade.Data + "" : "Max";
+    this.levelupDetail.visible = true;
+    this.lockedGroup.visible = false;
+    this.valueBtn.enabled = true;
+    this.updateDetail(info);
+  }
 
-        let opened = info.checkOpenAllRune();
-        if (!opened) {
-            this.levelupDetail.visible = false;
-            this.lockedGroup.visible = true;
-            this.valueBtn.enabled = false;
-            return;
-        }
+  private updateDetail(info: RuneHoleInfo) {
+    let curUpgrade = info.getUpgrade();
+    let nextUpgrade = info.getNextUpgrade();
 
-        this.levelupDetail.visible = true;
-        this.lockedGroup.visible = false;
-        this.valueBtn.enabled = true;
-        this.updateDetail(info);
-    }
+    let maxStr = LangManager.Instance.GetTranslation(
+      "consortia.view.myConsortia.skill.ConsortiaSkillItem.tip.title2",
+    );
 
-    private updateDetail(info: RuneHoleInfo) {
-        let curUpgrade = info.getUpgrade();
-        let nextUpgrade = info.getNextUpgrade();
+    this.costTxt.text = nextUpgrade ? nextUpgrade.Data + "" : maxStr;
 
-        let maxStr = LangManager.Instance.GetTranslation('consortia.view.myConsortia.skill.ConsortiaSkillItem.tip.title2');
+    this.curLv.setVar("level", info.grade + "").flushVars();
 
-        this.costTxt.text = nextUpgrade ? nextUpgrade.Data + "" : maxStr;
+    this.nextLv.text = nextUpgrade
+      ? LangManager.Instance.GetTranslation(
+          "HoldValueOptionCom.nextLevel",
+          info.grade + 1,
+        )
+      : maxStr;
 
-        this.curLv.setVar("level", info.grade + "").flushVars();   
+    let tips = LangManager.Instance.GetTranslation("runeHole.bonus.levelup");
 
-        this.nextLv.text = nextUpgrade ? LangManager.Instance.GetTranslation("HoldValueOptionCom.nextLevel", info.grade + 1) : maxStr;
+    this.curDesc.text = tips.replace(
+      "{0}",
+      (curUpgrade ? curUpgrade.TemplateId : 0) + "",
+    );
 
-        let tips = LangManager.Instance.GetTranslation("runeHole.bonus.levelup");
+    this.nextDesc.text = nextUpgrade
+      ? tips.replace("{0}", nextUpgrade.TemplateId + "")
+      : maxStr;
+    this.valueBtn.enabled = !!nextUpgrade;
+    this.costGroup.visible = !!nextUpgrade;
+  }
 
-        this.curDesc.text = tips.replace("{0}", (curUpgrade ? curUpgrade.TemplateId : 0) + "");
-
-        this.nextDesc.text = nextUpgrade ? tips.replace("{0}", nextUpgrade.TemplateId + "") : maxStr;
-        this.valueBtn.enabled = !!nextUpgrade;
-        this.costGroup.visible = !!nextUpgrade
-    }
-
-    private onValueClick() {
-        let ctrl = (FrameCtrlManager.Instance.getCtrl(EmWindow.Skill) as SkillWndCtrl)
-        ctrl.reqRuneHoldOpton(this.valueItem.info.holeId, 2);
-    }
-
+  private onValueClick() {
+    let ctrl = FrameCtrlManager.Instance.getCtrl(
+      EmWindow.Skill,
+    ) as SkillWndCtrl;
+    ctrl.reqRuneHoldOpton(this.valueItem.info.holeId, 2);
+  }
 }

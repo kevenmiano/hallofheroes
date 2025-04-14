@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mapshop;
+
+message MapShopInfoMsg {
+  int32 userId = 1;
+  string freshTime = 2;
+  int32 bless = 3;
+  int32 freshCount = 4;
+  repeated int32 items = 5;
+  int32 score = 6;
+  repeated int32 weeklyLimitItems = 7;
+}

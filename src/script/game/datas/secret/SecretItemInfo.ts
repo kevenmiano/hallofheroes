@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { GoodsInfo } from "../goods/GoodsInfo";
 import { SecretDropType } from "./SecretConst";
 import { SecretTresureInfo } from "./SecretTresureInfo";
@@ -12,32 +11,32 @@ import { SecretTresureInfo } from "./SecretTresureInfo";
  * @Description: 秘境物品信息 秘宝或物品
  */
 export class SecretItemInfo {
-    dropType: SecretDropType;
-    itemGoodInfo = new GoodsInfo()
-    secretInfo = new SecretTresureInfo()
-    private _count: number = 0;
+  dropType: SecretDropType;
+  itemGoodInfo = new GoodsInfo();
+  secretInfo = new SecretTresureInfo();
+  private _count: number = 0;
 
-    constructor(type?: SecretDropType) {
-        this.dropType = type
-    }
+  constructor(type?: SecretDropType) {
+    this.dropType = type;
+  }
 
-    parseTempId(id: number) {
-        if (this.dropType == SecretDropType.Tresure) {
-            this.secretInfo.templateId = id
-        } else if (this.dropType == SecretDropType.Item) {
-            this.itemGoodInfo.templateId = id
-        }
+  parseTempId(id: number) {
+    if (this.dropType == SecretDropType.Tresure) {
+      this.secretInfo.templateId = id;
+    } else if (this.dropType == SecretDropType.Item) {
+      this.itemGoodInfo.templateId = id;
     }
+  }
 
-    set count(v: number){
-        this._count = v;
-        if (this.dropType == SecretDropType.Tresure) {
-            this.secretInfo.count = v
-        } else if (this.dropType == SecretDropType.Item) {
-            this.itemGoodInfo.count = v
-        }
+  set count(v: number) {
+    this._count = v;
+    if (this.dropType == SecretDropType.Tresure) {
+      this.secretInfo.count = v;
+    } else if (this.dropType == SecretDropType.Item) {
+      this.itemGoodInfo.count = v;
     }
-    get count(): number{
-        return this._count;
-    }
+  }
+  get count(): number {
+    return this._count;
+  }
 }

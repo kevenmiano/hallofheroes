@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-expect-error: External dependencies
 /**
  * @author:jeremy.xu
  * @data: 2020-11-20 18:00
@@ -98,7 +98,7 @@ export class HeroMovieClip extends Laya.Animation {
     roleUnit.completeFunc = this.onPartComplete.bind(this);
     roleUnit.data = HeroLoadDataFactory.create(
       (this._heroInfo as HeroRoleInfo).heroInfo,
-      sPart
+      sPart,
     );
 
     this.addChild(roleUnit);
@@ -195,7 +195,7 @@ export class HeroMovieClip extends Laya.Animation {
     if (this.body)
       (this.body.content as MovieClip).addFrameScript.apply(
         this.body.content,
-        parameters
+        parameters,
       );
   }
 

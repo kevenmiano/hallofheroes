@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.consortia;
+
+message ConsortiaEventInfoMsg {
+  int32 id = 1;
+  int32 consortiaId = 2;
+  string remark = 3;
+  string createDate = 4;
+  int32 type = 5;
+  bool isExist = 6;
+}

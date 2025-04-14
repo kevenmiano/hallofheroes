@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.vehicle;
+
+message VehicleScroeListMsg {
+  string playerId = 1;
+  string playerScroe = 2;
+  string playerExp = 3;
+  string awardPropId = 4;
+  string awardSum = 5;
+  string ladderPropId = 6;
+  string ladderSum = 7;
+  string awardPropIdNew = 8;
+  string awardSumNew = 9;
+  string serverName = 10;
+  string killCount = 11;
+  string order = 12;
+  string nickName = 13;
+  string scoreChangeTime = 14;
+  string pickSkillCount = 15;
+  string enterSeq = 16;
+}

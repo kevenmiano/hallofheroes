@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.army;
+
+message ComprehendMsg {
+  int32 templateId = 1;
+  bool quick = 2;
+}

@@ -56,7 +56,7 @@ export class SimpleRoomInfo extends GameEventDispatcher {
   public commit() {
     this.dispatchEvent(RoomEvent.UPDATE_ROOM_BASE_DATA, this);
     NotificationManager.Instance.dispatchEvent(
-      NotificationEvent.UPDATE_ROOM_BASE_DATA
+      NotificationEvent.UPDATE_ROOM_BASE_DATA,
     );
   }
 

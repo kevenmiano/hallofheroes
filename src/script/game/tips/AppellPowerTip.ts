@@ -35,7 +35,7 @@ export class AppellPowerTip extends BaseTips {
     this.tipData = this.params[0];
     this.clear();
     this["txt_name"].text = LangManager.Instance.GetTranslation(
-      "AppellPowerTip.title"
+      "AppellPowerTip.title",
     );
     let hasProps: boolean = false;
     if (this.tipData.Power > 0) {
@@ -147,7 +147,7 @@ export class AppellPowerTip extends BaseTips {
     }
     if (!hasProps) {
       this["txt_name"].text += LangManager.Instance.GetTranslation(
-        "AppellPowerTip.noneProps"
+        "AppellPowerTip.noneProps",
       );
     }
   }

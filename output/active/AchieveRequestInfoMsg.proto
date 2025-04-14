@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.active;
+
+message AchieveRequestInfoMsg {
+  int32 op = 1;
+  int32 id = 2;
+  int32 type1 = 3;
+  int32 type2 = 4;
+}

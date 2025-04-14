@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.mail;
+
+message MailDelReqMsg {
+  repeated int32 delList = 1;
+  int32 reqType = 2;
+}

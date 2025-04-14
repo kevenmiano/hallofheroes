@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.universalActive;
+
+message ExchangeActive {
+  string startTime = 1;
+  string endTime = 2;
+  int32 bagId = 3;
+  string bagName = 4;
+  repeated int32 rewardItem = 5;
+  repeated int32 needItem = 6;
+}

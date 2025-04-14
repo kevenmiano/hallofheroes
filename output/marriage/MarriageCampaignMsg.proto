@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.marriage;
+
+message MarriageCampaignMsg {
+  int32 userIdA = 1;
+  string nickNameA = 2;
+  int32 userIdB = 3;
+  string nickNameB = 4;
+  int32 specTemplateId = 5;
+  string beginTime = 6;
+  int32 curMarId = 7;
+  bool isOver = 8;
+  string userKey = 9;
+  string createTime = 10;
+}

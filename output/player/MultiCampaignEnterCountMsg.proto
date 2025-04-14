@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.player;
+
+message MultiCampaignEnterCountMsg {
+  int32 campaignCount = 1;
+  int32 campaignMaxcount = 2;
+}

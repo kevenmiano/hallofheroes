@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.road.yishi.proto.stackhead;
+
+message StackHeadStateMsg {
+  int32 state = 1;
+  repeated int32 openTime = 2;
+  string timestamp = 3;
+  int32 index = 4;
+  int32 session = 5;
+  bool myGuildSignup = 6;
+  bool canSignin = 7;
+  bool myGuildJoin = 8;
+  string nextOpenTime = 9;
+  bool isSpan = 10;
+}

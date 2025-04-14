@@ -1,8 +1,8 @@
-// TODO FIX
-
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import FUI_GemMazeBoxItem from "./FUI_GemMazeBoxItem";
+
+//@ts-expect-error: External dependencies
 import FUI_barCom from "./FUI_barCom";
 
 export default class FUI_GemMazeBoxCom extends fgui.GComponent {
