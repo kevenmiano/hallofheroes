@@ -48,8 +48,7 @@ export default class FUI_AccountCom extends fgui.GComponent {
   public tipItem14: FUI_BaseTipItem;
   public txt_consortiajianse: fgui.GTextField;
   public tipItem15: FUI_BaseTipItem;
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // // public group: fgui.GGroup;
   public static URL: string = "ui://og5jeos3129oeii4";
 
   public static createInstance(): FUI_AccountCom {

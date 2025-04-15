@@ -1,4 +1,4 @@
-import IBuildingFilter from "../../../space/interfaces/IBuildingFilter";
+// import IBuildingFilter from "../../../space/interfaces/IBuildingFilter";
 import { BuildInfo } from "../../data/BuildInfo";
 import SimpleBuildingFilter from "../../filter/SimpleBuildingFilter";
 import { MasterTypes } from "../../data/MasterTypes";
@@ -17,6 +17,19 @@ import { HookManager } from "../../../../manager/HookManager";
 import Utils from "../../../../../core/utils/Utils";
 import CastleConfigUtil from "../../utils/CastleConfigUtil";
 import OpenGrades from "../../../../constant/OpenGrades";
+
+interface IBuildingFilter {
+  setLightFilter(display: Laya.Sprite): void;
+  setLightingFilter(display: Laya.Sprite): void;
+  setGlowFilter(display: Laya.Sprite): void;
+  setBuildingOverFilter(display: Laya.Sprite): void;
+  setGrayFilter(display: Laya.Sprite): void;
+  setBuildingOutFilter(display: Laya.Sprite): void;
+  setNormalFilter(display: Laya.Sprite): void;
+  setBuildingBuildingFilter(display: Laya.Sprite): void;
+  setBuildingFinishFilter(display: Laya.Sprite): void;
+  setRedFilter(display: Laya.Sprite): void;
+}
 
 export default class CastleWalkLayer extends Laya.Sprite {
   protected _buildingFilter: IBuildingFilter;

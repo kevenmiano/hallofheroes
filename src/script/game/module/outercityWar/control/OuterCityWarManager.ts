@@ -7,17 +7,40 @@
  * @Description:
  */
 
+//@ts-expect-error: External dependencies
 import OutCityWarDeclearReq = com.road.yishi.proto.outcitywar.OutCityWarDeclearReq;
+
+//@ts-expect-error: External dependencies
 import NodeStateReqMsg = com.road.yishi.proto.outcitywar.NodeStateReqMsg;
+
+//@ts-expect-error: External dependencies
 import OutCityWarStateMsg = com.road.yishi.proto.outcitywar.OutCityWarStateMsg;
+
+//@ts-expect-error: External dependencies
 import CastlePlayerMsg = com.road.yishi.proto.outcitywar.CastlePlayerMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerStatusMsg = com.road.yishi.proto.outcitywar.PlayerStatusMsg;
+
+//@ts-expect-error: External dependencies
 import BuildStateMsg = com.road.yishi.proto.outcitywar.BuildStateMsg;
+
+//@ts-expect-error: External dependencies
 import CastleMsg = com.road.yishi.proto.outcitywar.CastleMsg;
+
+//@ts-expect-error: External dependencies
 import GuildMsg = com.road.yishi.proto.outcitywar.GuildMsg;
+
+//@ts-expect-error: External dependencies
 import OneGuildBuildMsg = com.road.yishi.proto.outcitywar.OneGuildBuildMsg;
+
+//@ts-expect-error: External dependencies
 import MonsterScoreMsg = com.road.yishi.proto.outcitywar.MonsterScoreMsg;
+
+//@ts-expect-error: External dependencies
 import MapPhysicAttackMsg = com.road.yishi.proto.worldmap.MapPhysicAttackMsg;
+
+//@ts-expect-error: External dependencies
 import PetInfoMsg = com.road.yishi.proto.pet.PetInfoMsg;
 
 import { SocketManager } from "../../../../core/net/SocketManager";

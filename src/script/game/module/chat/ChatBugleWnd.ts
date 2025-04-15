@@ -20,8 +20,11 @@ import StarInfo from "../mail/StarInfo";
 import { ShopGoodsInfo } from "../shop/model/ShopGoodsInfo";
 import ChatModel from "./ChatModel";
 
+//@ts-expect-error: External dependencies
 import ChatItemInfoMsg = com.road.yishi.proto.chat.ChatItemInfoMsg;
+//@ts-expect-error: External dependencies
 import ChatStarInfoMsg = com.road.yishi.proto.chat.ChatStarInfoMsg;
+//@ts-expect-error: External dependencies
 import ChatPowCardInfoMsg = com.road.yishi.proto.chat.ChatPowCardInfoMsg;
 import OpenGrades from "../../constant/OpenGrades";
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";

@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import Dictionary from "../../core/utils/Dictionary";
 import { MovieClip } from "../component/MovieClip";
 import Logger from "../../core/logger/Logger";

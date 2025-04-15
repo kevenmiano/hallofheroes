@@ -53,8 +53,13 @@ export default class Promotion extends FUI_Promotion {
   }
 
   public dispose(destroy = true) {
-    this.list.itemRenderer && this.list.itemRenderer.recover();
+    if (this.list.itemRenderer instanceof Laya.Handler) {
+      this.list.itemRenderer.recover();
+    }
     this.list.itemRenderer = null;
-    destroy && super.dispose();
+    this.list.itemRenderer = null;
+    if (destroy) {
+      super.dispose();
+    }
   }
 }

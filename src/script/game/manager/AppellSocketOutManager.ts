@@ -1,6 +1,7 @@
 import { SocketManager } from "../../core/net/SocketManager";
 import { C2SProtocol } from "../constant/protocol/C2SProtocol";
 
+//@ts-expect-error: External dependencies
 import AppellExchangeMsg = com.road.yishi.proto.player.AppellExchangeMsg;
 
 /**

@@ -22,6 +22,8 @@ import { GoodsManager } from "../../manager/GoodsManager";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { TempleteManager } from "../../manager/TempleteManager";
 import { GoodsHelp } from "../../utils/GoodsHelp";
+//@ts-expect-error: External dependencies
+
 import ItemUseStoreReqMsg = com.road.yishi.proto.item.ItemUseStoreReqMsg;
 
 /**

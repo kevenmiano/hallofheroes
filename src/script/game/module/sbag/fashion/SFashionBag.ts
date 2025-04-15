@@ -18,6 +18,8 @@ import { GoodsManager } from "../../../manager/GoodsManager";
 import { BaseArmy } from "../../../map/space/data/BaseArmy";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { FashionModel } from "../../bag/model/FashionModel";
+
+//@ts-expect-error: External dependencies
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 
 /**

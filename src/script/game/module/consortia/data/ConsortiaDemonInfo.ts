@@ -13,6 +13,7 @@ import { ConsortiaEvent } from "../../../constant/event/NotificationEvent";
 import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import { PlayerModel } from "../../../datas/playerinfo/PlayerModel";
+//@ts-expect-error: External dependencies
 import AltarCampaignSkillMsg = com.road.yishi.proto.campaign.AltarCampaignSkillMsg;
 /**
  * 公会祭坛数据

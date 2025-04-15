@@ -14,8 +14,15 @@ import AudioManager from "../../../../core/audio/AudioManager";
 import { SoundIds } from "../../../constant/SoundIds";
 import UIManager from "../../../../core/ui/UIManager";
 import { EmWindow } from "../../../constant/UIDefine";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import Utils from "../../../../core/utils/Utils";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @description

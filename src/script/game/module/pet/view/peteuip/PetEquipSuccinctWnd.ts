@@ -15,6 +15,7 @@ import PetCtrl from "../../control/PetCtrl";
 import { PetEquipCell } from "./PetEquipCell";
 import PetEquipSuccinctItem from "./PetEquipSuccinctItem";
 
+//@ts-expect-error: External dependencies
 import PetEquipRefreshRspMsg = com.road.yishi.proto.pet.PetEquipRefreshRspMsg;
 import { MessageTipManager } from "../../../../manager/MessageTipManager";
 import Utils from "../../../../../core/utils/Utils";

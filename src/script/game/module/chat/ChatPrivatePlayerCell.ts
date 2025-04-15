@@ -10,6 +10,7 @@ import IMManager from "../../manager/IMManager";
 import BaseIMInfo from "../../datas/BaseIMInfo";
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";
 import { TempleteManager } from "../../manager/TempleteManager";
+import IconAvatarFrame from "@/script/game/map/space/view/physics/IconAvatarFrame";
 /**
  * @author:pzlricky
  * @data: 2021-06-03 12:24

@@ -10,8 +10,15 @@ import FunnyData from "../model/FunnyData";
 import FunnyType from "../model/FunnyType";
 import ConsumoCalcItem from "./ConsumoCalcItem";
 import { ArrayConstant, ArrayUtils } from "../../../../core/utils/ArrayUtils";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import Utils from "../../../../core/utils/Utils";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @author:pzlricky

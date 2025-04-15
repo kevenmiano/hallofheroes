@@ -17,11 +17,18 @@ import { CampaignManager } from "../../../../manager/CampaignManager";
 import { NotificationManager } from "../../../../manager/NotificationManager";
 import { WorldBossHelper } from "../../../../utils/WorldBossHelper";
 import { HeroAvatar } from "../../../avatar/view/HeroAvatar";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { AvatarInfoUILayerHandler } from "../../../view/layer/AvatarInfoUILayer";
 import { CampaignArmy } from "../../data/CampaignArmy";
 import { CampaignWalkLayer } from "../layer/CampaignWalkLayer";
 import { CampaignArmyView } from "./CampaignArmyView";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
 
 /**
  *

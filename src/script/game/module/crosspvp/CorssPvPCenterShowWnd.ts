@@ -25,6 +25,7 @@ import { TempleteManager } from "../../manager/TempleteManager";
 import { SceneManager } from "../../map/scene/SceneManager";
 import SceneType from "../../map/scene/SceneType";
 import { RoomInfo } from "../../mvc/model/room/RoomInfo";
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
 /**副本中跨服多人本撮合和取消撮合按钮操作 */
 export default class CorssPvPCenterShowWnd extends BaseWindow {

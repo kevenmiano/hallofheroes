@@ -1,7 +1,11 @@
 import { SocketManager } from "../../core/net/SocketManager";
 import { C2SProtocol } from "../constant/protocol/C2SProtocol";
+
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
+//@ts-expect-error: External dependencies
 import MemberFightPos = com.road.yishi.proto.team.MemberFightPos;
+//@ts-expect-error: External dependencies
 import MemberFightPosListMsg = com.road.yishi.proto.team.MemberFightPosListMsg;
 
 /**

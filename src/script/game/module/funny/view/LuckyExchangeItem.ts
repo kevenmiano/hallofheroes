@@ -5,7 +5,9 @@ import { BaseItem } from "../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import FunnyManager from "../../../manager/FunnyManager";
 import LuckyExchangeManager from "../../../manager/LuckyExchangeManager";
+//@ts-expect-error: External dependencies
 import LuckExchangeItemTempMsg = com.road.yishi.proto.active.LuckExchangeItemTempMsg;
+//@ts-expect-error: External dependencies
 import LuckExchangeTempMsg = com.road.yishi.proto.active.LuckExchangeTempMsg;
 export default class LuckyExchangeItem extends FUI_LuckyExchangeItem {
   private _info: Array<LuckExchangeItemTempMsg>;
@@ -125,7 +127,10 @@ export default class LuckyExchangeItem extends FUI_LuckyExchangeItem {
   }
 
   public dispose() {
-    this.iconList.itemRenderer.recover();
+    if (this.iconList instanceof Laya.Handler) {
+      this.iconList.recover();
+    }
+    // this.iconList.itemRenderer.recover();
     Utils.clearGListHandle(this.iconList);
     super.dispose();
   }

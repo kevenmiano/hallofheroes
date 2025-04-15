@@ -1,7 +1,9 @@
 import BaseTips from "../../../tips/BaseTips";
+//@ts-expect-error: External dependencies
 import BottlePackage = com.road.yishi.proto.item.BottlePackage;
 import { BaseItem } from "../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
+//@ts-expect-error: External dependencies
 import BottleItemInfoMsg = com.road.yishi.proto.item.BottleItemInfoMsg;
 import Utils from "../../../../core/utils/Utils";
 

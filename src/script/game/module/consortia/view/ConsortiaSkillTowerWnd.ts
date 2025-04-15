@@ -31,6 +31,7 @@ import { ConsortiaUpgradeType } from "../../../constant/ConsortiaUpgradeType";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";
 import Utils from "../../../../core/utils/Utils";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 
 export class ConsortiaSkillTowerWnd extends BaseWindow {
   public cPower: fgui.Controller;

@@ -38,8 +38,13 @@ import { SocketSendManager } from "../../../../manager/SocketSendManager";
 import { ThaneInfoHelper } from "../../../../utils/ThaneInfoHelper";
 import { SkillItemListView } from "./SkillItemListView";
 import { TempleteManager } from "../../../../manager/TempleteManager";
+//@ts-expect-error: External dependencies
 import SealOrderMsg = com.road.yishi.proto.battle.SealOrderMsg;
+//@ts-expect-error: External dependencies
+
 import HeroOrderMsg = com.road.yishi.proto.battle.HeroOrderMsg;
+//@ts-expect-error: External dependencies
+
 import ItemUseResultMsg = com.road.yishi.proto.battle.ItemUseResultMsg;
 import { BattleRecordReader } from "../../../../battle/record/BattleRecordReader";
 import { BattleType } from "../../../../constant/BattleDefine";
@@ -356,8 +361,8 @@ export class SkillItemListController {
           info = hero.getExtrajobSkillBySontype(fastKey[j - 1]);
         }
         if (info) {
-          setList.add("fastkey_" + j, info.templateInfo.TemplateId);
-          setList.add("index_" + info.templateInfo.TemplateId, j);
+          setList.add("fastkey_" + j, { value: info.templateInfo.TemplateId });
+          setList.add("index_" + info.templateInfo.TemplateId, { value: j });
           length++;
         }
       }

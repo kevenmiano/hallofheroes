@@ -6,7 +6,9 @@ import { MessageTipManager } from "../../manager/MessageTipManager";
 import { NotificationManager } from "../../manager/NotificationManager";
 import OutyardManager from "../../manager/OutyardManager";
 import OutyardGuildInfo from "./data/OutyardGuildInfo";
+//@ts-expect-error: External dependencies
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
+//@ts-expect-error: External dependencies
 import StackHeadSelfMsg = com.road.yishi.proto.stackhead.StackHeadSelfMsg;
 import { PlayerManager } from "../../manager/PlayerManager";
 /**

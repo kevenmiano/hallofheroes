@@ -7,8 +7,15 @@ import FunnyManager from "../../../manager/FunnyManager";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import FunnyBagData from "../model/FunnyBagData";
 import FunnyData from "../model/FunnyData";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import SevenLoginItem from "./SevenLoginItem";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 export default class FunnySevenLoginView
   extends FUI_FunnySevenLoginView

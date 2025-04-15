@@ -7,6 +7,8 @@ import OutyardManager from "../../../manager/OutyardManager";
 import { SceneManager } from "../../../map/scene/SceneManager";
 import SceneType from "../../../map/scene/SceneType";
 import OutyardGuildInfo from "../data/OutyardGuildInfo";
+
+//@ts-expect-error: External dependencies
 import StackHeadSelfMsg = com.road.yishi.proto.stackhead.StackHeadSelfMsg;
 export default class OutyardFigureMemItem extends FUI_OutyardFigureMemItem {
   private _info: OutyardGuildInfo;

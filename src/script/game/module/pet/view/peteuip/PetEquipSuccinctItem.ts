@@ -1,4 +1,6 @@
 import FUI_PetEquipSuccinctItem from "../../../../../../fui/Pet/FUI_PetEquipSuccinctItem";
+
+//@ts-expect-error: External dependencies
 import FUI_StrenAtrriItem1 from "../../../../../../fui/Pet/FUI_StrenAtrriItem1";
 import ConfigMgr from "../../../../../core/config/ConfigMgr";
 import LangManager from "../../../../../core/lang/LangManager";

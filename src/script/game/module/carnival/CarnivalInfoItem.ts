@@ -6,8 +6,8 @@ export default class CarnivalInfoItem extends FUI_CarnivalInfoItem {
   }
 
   public ensureSizeCorrect() {
-    this.Group.ensureBoundsCorrect();
-    this.Group.ensureSizeCorrect();
+    this.group.ensureBoundsCorrect();
+    this.group.ensureSizeCorrect();
     super.ensureSizeCorrect();
   }
 }

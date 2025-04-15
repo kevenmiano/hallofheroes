@@ -25,7 +25,7 @@ import {
   RoleEvent,
 } from "../../../constant/event/NotificationEvent";
 import { EmPackName, EmWindow, UIZOrder } from "../../../constant/UIDefine";
-import { IStrip } from "../../../interfaces/IStrip";
+// import { IStrip } from "../../../interfaces/IStrip";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import { SharedManager } from "../../../manager/SharedManager";
 import { ReadyAction } from "../../actions/ReadyAction";
@@ -51,7 +51,7 @@ import BufferIconFactory from "../buffer/BufferIconFactory";
 import BufferContainer from "../buffer/BufferContainer";
 import { PathManager } from "../../../manager/PathManager";
 import { UpgradeType } from "../../../constant/UpgradeType";
-import LoaderInfo from "../../../datas/LoaderInfo";
+// import LoaderInfo from "../../../datas/LoaderInfo";
 import { t_s_upgradetemplateData } from "../../../config/t_s_upgradetemplate";
 import { t_s_skillbuffertemplateData } from "../../../config/t_s_skillbuffertemplate";
 import ResMgr from "../../../../core/res/ResMgr";
@@ -67,6 +67,21 @@ import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { t_s_herotemplateData } from "../../../config/t_s_herotemplate";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import { GlobalConfig } from "../../../constant/GlobalConfig";
+
+interface IStrip {
+  resetBloodShield: any;
+  bloodLoseValue: number;
+  bloodShield: any;
+  maxValue: number;
+  currentValue: number;
+  currentIndex: number;
+  dispose(): void;
+}
+
+interface LoaderInfo {
+  url: string;
+  content: any;
+}
 
 export enum RoleViewZOrder {
   Back = 0,

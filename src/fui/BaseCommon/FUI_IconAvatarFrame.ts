@@ -5,8 +5,7 @@ export default class FUI_IconAvatarFrame extends fgui.GComponent {
   public head: fgui.GLoader;
   public frame: fgui.GLoader;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://4x3i47txgq0dmigi";
 
   public static createInstance(): FUI_IconAvatarFrame {

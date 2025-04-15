@@ -389,7 +389,9 @@ export class PetExchangeShopWnd extends BaseWindow {
   private showBuyalert() {}
 
   private removeEvent() {
-    this.list.itemRenderer && this.list.itemRenderer.recover();
+    if (this.list.itemRenderer instanceof Laya.Handler) {
+      this.list.itemRenderer.recover();
+    }
     this.list.off(fgui.Events.CLICK_ITEM, this, this.onListItemClick);
     this.frame.helpBtn.offClick(this, this.onBtnHelp);
     this.btn_buy.offClick(this, this.onBtnBuy);

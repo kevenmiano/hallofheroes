@@ -8,7 +8,7 @@ export default class FUI_DegreeActivityListCell extends fgui.GComponent {
   public level: fgui.GRichTextField;
   public time: fgui.GRichTextField;
   public goHeadBtn: fgui.GButton;
-  public Group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://vw2db6bov2103n";
 
   public static createInstance(): FUI_DegreeActivityListCell {
@@ -25,6 +25,6 @@ export default class FUI_DegreeActivityListCell extends fgui.GComponent {
     this.level = <fgui.GRichTextField>this.getChild("level");
     this.time = <fgui.GRichTextField>this.getChild("time");
     this.goHeadBtn = <fgui.GButton>this.getChild("goHeadBtn");
-    this.Group = <fgui.GGroup>this.getChild("Group");
+    this.group = <fgui.GGroup>this.getChild("Group");
   }
 }

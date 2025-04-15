@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 import ResMgr from "../../../../../core/res/ResMgr";
 import { Sequence } from "../../../../../core/task/Sequence";
 import {
@@ -7,12 +8,17 @@ import {
 import { MovieClip } from "../../../../component/MovieClip";
 import { NotificationEvent } from "../../../../constant/event/NotificationEvent";
 import { NotificationManager } from "../../../../manager/NotificationManager";
-import IStopEffect from "../../interfaces/IStopEffect";
+// import IStopEffect from "../../interfaces/IStopEffect";
 import Logger from "../../../../../core/logger/Logger";
 import { AnimationManager } from "../../../../manager/AnimationManager";
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import CastleConfigUtil, { EmCastlePos } from "../../utils/CastleConfigUtil";
 import { WorldBossHelper } from "../../../../utils/WorldBossHelper";
+
+interface IStopEffect {
+  stopEffect(): void;
+  startEffet(): void;
+}
 
 /**内城建筑加载任务 */
 export class CastleEffectLoadTask extends Sequence {

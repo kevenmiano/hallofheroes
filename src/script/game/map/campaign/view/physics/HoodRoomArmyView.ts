@@ -1,10 +1,18 @@
 import { CampaignArmyView } from "./CampaignArmyView";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { HeroAvatar } from "../../../avatar/view/HeroAvatar";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { NodeState } from "../../../space/constant/NodeState";
 import { CampaignNpcPhysics } from "./CampaignNpcPhysics";
 import { CampaignNode } from "../../../space/data/CampaignNode";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
+
 /**
  * @author:pzlricky
  * @data: 2021-11-29 09:57

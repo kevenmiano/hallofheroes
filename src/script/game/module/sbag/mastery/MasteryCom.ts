@@ -3,6 +3,7 @@
  */
 
 import FUI_MasteryCom from "../../../../../fui/SBag/FUI_MasteryCom";
+//@ts-expect-error: External dependencies
 import FUI_SecretListItem from "../../../../../fui/SBag/FUI_SecretListItem";
 import LangManager from "../../../../core/lang/LangManager";
 import UIManager from "../../../../core/ui/UIManager";

@@ -6,10 +6,10 @@ import { OuterCityEvent } from "../../../../constant/event/NotificationEvent";
 import { AnimationManager } from "../../../../manager/AnimationManager";
 import { NodeState } from "../../constant/NodeState";
 import { MapPhysics } from "../../data/MapPhysics";
-import IBaseMouseEvent from "../../interfaces/IBaseMouseEvent";
-import IBuildingFilter from "../../interfaces/IBuildingFilter";
-import IManualTipTargetSize from "../../interfaces/IManualTipTargetSize";
-import ISelectMovie from "../../interfaces/ISelectMovie";
+// import IBaseMouseEvent from "../../interfaces/IBaseMouseEvent";
+// import IBuildingFilter from "../../interfaces/IBuildingFilter";
+// import IManualTipTargetSize from "../../interfaces/IManualTipTargetSize";
+// import ISelectMovie from "../../interfaces/ISelectMovie";
 import Logger from "../../../../../core/logger/Logger";
 import Utils from "../../../../../core/utils/Utils";
 import { CampaignNode } from "../../data/CampaignNode";
@@ -19,6 +19,31 @@ import {
   getMultiLangList,
   getMultiLangValue,
 } from "../../../../../core/lang/LanguageDefine";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
+
+interface IBuildingFilter {
+  setGlowFilter(effectArea: Laya.Sprite): unknown;
+  setLightFilter(target: Laya.Sprite): void;
+  setNormalFilter(target: Laya.Sprite): void;
+}
+
+interface IManualTipTargetSize {
+  manualWidth(): number;
+  manualHeight(): number;
+}
+
+interface ISelectMovie {
+  selectMovie(): Laya.Sprite;
+  beginSelectMovie(): void;
+  resetSelectMovie(): void;
+  getMovie(): MovieClip;
+}
 
 /**
  *
@@ -479,7 +504,7 @@ export class MapPhysicsBase
 
   public resetSelectMovie() {}
 
-  public get getMovie(): MovieClip {
+  public getMovie(): MovieClip {
     return this._movie;
   }
 

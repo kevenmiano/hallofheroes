@@ -1,4 +1,6 @@
 import FUI_MarketListItem from "../../../../../fui/Market/FUI_MarketListItem";
+
+//@ts-expect-error: External dependencies
 import MarketItemInfoMsg = com.road.yishi.proto.market.IMarketItemInfoMsg;
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import MarkGoodsItem from "./MarkGoodsItem";

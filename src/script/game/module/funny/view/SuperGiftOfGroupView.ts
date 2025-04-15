@@ -12,8 +12,14 @@ import RechargeAlertMannager from "../../../manager/RechargeAlertMannager";
 import { SuperGiftOfGroupManager } from "../../../manager/SuperGiftOfGroupManager";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import HomeWnd from "../../home/HomeWnd";
-// import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import { SuperGiftOfGroupItem } from "./SuperGiftOfGroupItem";
+
+interface FunnyContent {
+  onShow(): void;
+  onUpdate(): void;
+  onHide(): void;
+}
 
 /**
  * 超值团购

@@ -10,7 +10,7 @@ import FunnyConditionType from "../model/FunnyConditionType";
 import FunnyData from "../model/FunnyData";
 import FunnyType from "../model/FunnyType";
 import ConsumoCalcItem from "./ConsumoCalcItem";
-import { FunnyContent } from "./FunnyContent";
+import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 
 /**
  * @author:pzlricky

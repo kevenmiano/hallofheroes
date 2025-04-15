@@ -18,7 +18,7 @@ import { SoundIds } from "../../constant/SoundIds";
 import { EmWindow } from "../../constant/UIDefine";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import ForgeData from "./ForgeData";
-import UIFenJie from "./UIFenJie";
+// import UIFenJie from "./UIFenJie";
 import UIHeCheng from "./UIHeCheng";
 import UIQiangHua from "./UIQiangHua";
 import UIXiangQian from "./UIXiangQian";
@@ -141,6 +141,7 @@ export default class ForgeWnd extends BaseWindow {
 
     // this.bagItemList.on(fgui.Events.SCROLL_END, this, this.onScrollEnd);
     this.bagItemList.on(fgui.Events.CLICK_ITEM, this, this.onClickItem);
+
     this.bagItemList.itemPool.useGlobal = true;
     // this.bagItemList.splitFrame = true;
     // this.bagItemList.splitTime = 24;

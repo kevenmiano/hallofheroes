@@ -19,6 +19,7 @@ import Utils from "../../../core/utils/Utils";
 import { WorldBossHelper } from "../../utils/WorldBossHelper";
 import MazeItem from "./com/MazeItem";
 
+//@ts-expect-error: External dependencies
 import TowerInfoMsg = com.road.yishi.proto.campaign.TowerInfoMsg;
 import { EmMazeType } from "./MazeModel";
 export default class MazeFrameWnd extends BaseWindow {

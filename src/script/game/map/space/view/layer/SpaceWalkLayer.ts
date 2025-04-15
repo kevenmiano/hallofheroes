@@ -7,7 +7,7 @@ import {
   SpaceEvent,
 } from "../../../../constant/event/NotificationEvent";
 import { EmPackName, EmWindow } from "../../../../constant/UIDefine";
-import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../../manager/EnterFrameManager";
 import FreedomTeamManager from "../../../../manager/FreedomTeamManager";
 import MediatorMananger from "../../../../manager/MediatorMananger";
@@ -29,10 +29,14 @@ import SpaceArmy from "../../data/SpaceArmy";
 import SpaceManager from "../../SpaceManager";
 import { SpaceArmyView } from "../physics/SpaceArmyView";
 import { SpaceNpcView } from "../physics/SpaceNpcView";
+
+//@ts-expect-error: External dependencies
 import SpacePlayerMoveMsg = com.road.yishi.proto.campaign.SpacePlayerMoveMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerMsg = com.road.yishi.proto.campaign.SpacePlayerMsg;
 import { JobType } from "../../../../constant/JobType";
 import { ShadowUILayer } from "../../../view/layer/ShadowUILayer";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 
 /**
  * 天空之城人物显示层

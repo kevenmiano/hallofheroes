@@ -89,7 +89,11 @@ export default class OutercityGoldMineWnd extends BaseWindow {
   private removeEvent() {
     if (this.mineList) {
       this.mineList.off(fgui.Events.CLICK_ITEM, this, this.onMineListItemClick);
-      this.mineList.itemRenderer.recover();
+
+      if (this.mineList.itemRenderer instanceof Laya.Handler) {
+        this.mineList.itemRenderer.recover();
+      }
+
       this.mineList.itemRenderer = null;
     }
     NotificationManager.Instance.removeEventListener(

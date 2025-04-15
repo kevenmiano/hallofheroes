@@ -69,8 +69,14 @@ import GrowthFundItemInfo from "../welfare/data/GrowthFundItemInfo";
 import WelfareCtrl from "../welfare/WelfareCtrl";
 import WelfareData from "../welfare/WelfareData";
 import { WelfareManager } from "../welfare/WelfareManager";
+//@ts-expect-error: External dependencies
+
 import LuckExchangeTempMsg = com.road.yishi.proto.active.LuckExchangeTempMsg;
+//@ts-expect-error: External dependencies
+
 import ChallengeRankRewardMsg = com.road.yishi.proto.player.ChallengeRankRewardMsg;
+//@ts-expect-error: External dependencies
+
 import OnlineRewardInfoRsp = com.road.yishi.proto.active.OnlineRewardInfoRsp;
 import { ConfigManager } from "../../manager/ConfigManager";
 import SimpleAlertHelper from "../../component/SimpleAlertHelper";
@@ -95,6 +101,8 @@ import ColorConstant from "../../constant/ColorConstant";
 import { ResourceData } from "../../datas/resource/ResourceData";
 import QQDawankaManager from "../../manager/QQDawankaManager";
 import QQGiftManager from "../../manager/QQGiftManager";
+//@ts-expect-error: External dependencies
+
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
 import ConfigInfoManager from "../../manager/ConfigInfoManager";
 import OutyardManager from "../../manager/OutyardManager";
@@ -2089,7 +2097,7 @@ export default class TopToolBar extends BaseFguiCom {
       return;
     }
     //已经报名的情况
-    let time = stateMsg.nextOpenTime as Long;
+    let time = stateMsg.nextOpenTime as any;
     var nextOpenTime: number = 0;
     if (time.high) {
       nextOpenTime = Int64Utils.int64ToNumber(time);

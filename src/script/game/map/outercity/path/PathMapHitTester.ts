@@ -1,8 +1,17 @@
-import { PathIHitTester } from "../../../interfaces/PathIHitTester";
 import { OuterCityManager } from "../../../manager/OuterCityManager";
 import { Geometry } from "./Geometry";
 import Point = Laya.Point;
 import Sprite = Laya.Sprite;
+
+interface PathIHitTester {
+  isHit(point: Point): boolean;
+  getNextMoveAblePoint(
+    point: Point,
+    angle: number,
+    step: number,
+    max: number,
+  ): Point;
+}
 
 export class PathMapHitTester implements PathIHitTester {
   private meshSprite: Sprite;

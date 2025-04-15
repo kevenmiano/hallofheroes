@@ -1,4 +1,5 @@
-import FUI_StrenAtrriItem from "../../../../../../fui/Pet/FUI_StrenAtrriItem";
+//@ts-expect-error: External dependencies
+import FUI_StrenAtrriItem from "../../../../../../fui/Pet/FUI_Str";
 import LangManager from "../../../../../core/lang/LangManager";
 import BaseWindow from "../../../../../core/ui/Base/BaseWindow";
 import { t_s_attributeData } from "../../../../config/t_s_attribute";

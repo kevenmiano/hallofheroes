@@ -29,6 +29,7 @@ import { PlayerManager } from "../../../manager/PlayerManager";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import ComponentSetting from "../../../utils/ComponentSetting";
 
+//@ts-expect-error: External dependencies
 import PetInfoMsg = com.road.yishi.proto.pet.PetInfoMsg;
 import { UpgradeType } from "../../../constant/UpgradeType";
 
@@ -1322,7 +1323,7 @@ export class PetData extends GameEventDispatcher {
       pet.curExp = petMsg.curGp;
     }
     if (petMsg.hasOwnProperty("totalGp")) {
-      let tempTotalExp = petMsg.totalGp as Long;
+      let tempTotalExp = petMsg.totalGp as any;
       if (tempTotalExp.high) {
         pet.totalExp = Int64Utils.int64ToNumber(tempTotalExp);
       } else {

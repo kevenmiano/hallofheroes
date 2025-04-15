@@ -1,5 +1,7 @@
 import FUI_MonopolyFinishRewardItem from "../../../../../fui/Monopoly/FUI_MonopolyFinishRewardItem";
 import { IconFactory } from "../../../../core/utils/IconFactory";
+
+//@ts-expect-error: External dependencies
 import TempMsg = com.road.yishi.proto.campaign.TempMsg;
 
 /**

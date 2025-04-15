@@ -15,11 +15,11 @@ import { FarmManager } from "../../../manager/FarmManager";
 import { TweenDrag } from "../../../map/castle/utils/TweenDrag";
 import FUIHelper from "../../../utils/FUIHelper";
 import NewbieUtils from "../../guide/utils/NewbieUtils";
-import { FarmBuildLayer } from "./component/FarmBuildLayer";
+// import { FarmBuildLayer } from "./component/FarmBuildLayer";
 import { FarmLandLayer } from "./component/FarmLandLayer";
-import { FarmSkinLayer } from "./component/FarmSkinLayer";
-import { FarmWalkLayer } from "./component/FarmWalkLayer";
-import { WaterViewContainer } from "./component/WaterViewContainer";
+// import { FarmSkinLayer } from "./component/FarmSkinLayer";
+// import { FarmWalkLayer } from "./component/FarmWalkLayer";
+// import { WaterViewContainer } from "./component/WaterViewContainer";
 
 export class FarmMapView extends Laya.Sprite {
   public static BG_WIDTH = 1800;

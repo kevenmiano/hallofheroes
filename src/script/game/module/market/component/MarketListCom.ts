@@ -2,6 +2,7 @@ import FUI_MarketListCom from "../../../../../fui/Market/FUI_MarketListCom";
 import LangManager from "../../../../core/lang/LangManager";
 import MarketListItem from "./MarketListItem";
 
+//@ts-expect-error: External dependencies
 import MarketItemInfoMsg = com.road.yishi.proto.market.IMarketItemInfoMsg;
 import MarketManager from "../../../manager/MarketManager";
 
@@ -59,7 +60,9 @@ export default class MarketListCom extends FUI_MarketListCom {
   }
 
   public remove() {
-    this.goodsList.itemRenderer.recover();
+    if (this.goodsList.itemRenderer instanceof Laya.Handler) {
+      this.goodsList.itemRenderer.recover();
+    }
     this.goodsList.itemRenderer = null;
   }
 }

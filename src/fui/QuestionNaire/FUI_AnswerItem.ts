@@ -7,8 +7,7 @@ export default class FUI_AnswerItem extends fgui.GButton {
   public item_line: fgui.GImage;
   public inputGroup: fgui.GGroup;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://hu55xxyzphcul";
 
   public static createInstance(): FUI_AnswerItem {

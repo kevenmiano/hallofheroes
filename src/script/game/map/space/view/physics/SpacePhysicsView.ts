@@ -29,6 +29,10 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
   protected initView() {
     super.initView();
 
+    const movie = this.getMovie();
+
+    const bounds = movie.getBounds();
+
     if (this.info.info.names != "") {
       this._buildName.text = this.titleLang;
     }
@@ -47,9 +51,9 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
       this._buildName.x = -76;
       this._buildName.y = -92;
     }
+
     if (SpaceNodeType.isYearNode(this.info.info.types)) {
-      this._buildName.x =
-        (this.getMovie.getBounds().width - this._buildName.textWidth) / 2;
+      this._buildName.x = (bounds.width - this._buildName.textWidth) / 2;
     }
 
     if (!this.parent) {
@@ -90,22 +94,26 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
   }
 
   protected layouCallBack() {
+    const movie = this.getMovie();
+
+    const bounds = movie.getBounds();
+
     if (this.isCollection) {
       if (SpaceNodeType.isYearNode(this.info.info.types)) {
         if ((this.info as SpaceNode).stateId == SpaceNode.STATE1) {
           this._buildName.color = ColorConstant.YELLOW_COLOR;
           this._buildName.text = this.titleLang;
-          this.getMovie.visible = true;
+          const movie = this.getMovie();
+          movie.visible = true;
           this._buildName.visible = true;
-          this._buildName.x =
-            (this.getMovie.getBounds().width - this._buildName.textWidth) / 2;
+          this._buildName.x = (bounds.width - this._buildName.textWidth) / 2;
           this._buildName.y = -this._buildName.textHeight;
         } else {
           this._buildName.text = "";
           this._buildName.visible = false;
-          this.getMovie.visible = false;
+          movie.visible = false;
         }
-        this.getMovie.active = this.getMovie.visible;
+        movie.active = movie.visible;
         this.mouseEnabled = this.mouseThrough =
           (this.info as SpaceNode).stateId == SpaceNode.STATE1;
       }
@@ -127,7 +135,7 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
       SpaceManager.Instance.model.glowTarget = this;
     }
     if (this.isTransfer) {
-      this.filter.setLightFilter(this.getMovie);
+      this.filter.setLightFilter(this.getMovie());
     }
     if (this.isOfferReward) {
       SpaceManager.Instance.model.glowTarget = this;
@@ -137,7 +145,7 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
 
   public mouseOutHandler(evt: Laya.Event): boolean {
     if (this.isTransfer) {
-      this.filter.setNormalFilter(this.getMovie);
+      this.filter.setNormalFilter(this.getMovie());
     }
     return true;
   }
@@ -205,7 +213,7 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
     if (this.hasEffectArea) {
       return this.getMovie["content"]["effect_area"];
     }
-    return this.getMovie;
+    return this.getMovie();
   }
 
   private get hasEffectArea(): boolean {
@@ -260,6 +268,11 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
 
   public set isPlaying(value: boolean) {
     super.isPlaying = value;
+
+    const movie = this.getMovie();
+
+    const bounds = movie.getBounds();
+
     if (this._buildName) {
       if ((this.info as SpaceNode).nodeId != 18) {
         this._buildName.text = "";
@@ -271,17 +284,18 @@ export class SpacePhysicsView extends MapPhysicsAttackingBase {
           this._buildName.text = "";
           this._buildName.visible = false;
           this._buildName.active = false;
-          this.getMovie.visible = false;
-          this.getMovie.active = false;
-          let movieWidth: number = this.getMovie.getBounds().width;
+          movie.visible = false;
+          movie.visible = false;
+
+          let movieWidth: number = bounds.width;
           // this._buildName.x = (movieWidth - this._buildName.textWidth) / 2;
         } else {
           this._buildName.text = this.titleLang;
           this._buildName.visible = true;
           this._buildName.active = true;
-          this.getMovie.visible = true;
-          this.getMovie.active = true;
-          let movieWidth: number = this.getMovie.getBounds().width;
+          movie.visible = true;
+          movie.visible = true;
+          let movieWidth: number = bounds.width;
           // this._buildName.x = (movieWidth - this._buildName.textWidth) / 2;
           this._buildName.y = -this._buildName.textHeight;
         }

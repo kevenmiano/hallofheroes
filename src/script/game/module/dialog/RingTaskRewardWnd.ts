@@ -50,8 +50,16 @@ export default class RingTaskRewardWnd extends BaseWindow {
   }
 
   private removeEvent() {
-    this.list1.itemRenderer.recover();
-    this.list2.itemRenderer.recover();
+    if (this.list1.itemRenderer instanceof Laya.Handler) {
+      this.list1.itemRenderer.recover();
+    }
+
+    if (this.list2.itemRenderer instanceof Laya.Handler) {
+      this.list2.itemRenderer.recover();
+    }
+
+    // this.list1.itemRenderer = null;
+    // this.list2.itemRenderer = null;
   }
 
   private renderList1Item(index: number, item: RingTaskRewardItem) {

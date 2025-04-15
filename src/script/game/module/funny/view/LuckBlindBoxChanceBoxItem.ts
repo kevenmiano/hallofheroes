@@ -6,8 +6,10 @@ import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { ArrayConstant, ArrayUtils } from "../../../../core/utils/ArrayUtils";
 
 /**幸运盲盒响应对象 */
+//@ts-expect-error: External dependencies
 import LuckBlindBoxMessage = com.road.yishi.proto.active.ChargePointLotteryMsg;
 /**幸运盲盒物品项响应对象 */
+//@ts-expect-error: External dependencies
 import LuckBlindBoxRewardItemMessage = com.road.yishi.proto.active.LotteryItemMsg;
 
 /**

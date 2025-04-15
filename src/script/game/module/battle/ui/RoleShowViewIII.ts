@@ -1,3 +1,4 @@
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import Dictionary from "../../../../core/utils/Dictionary";
 import { BattleManager } from "../../../battle/BattleManager";
 import { BattleModel } from "../../../battle/BattleModel";

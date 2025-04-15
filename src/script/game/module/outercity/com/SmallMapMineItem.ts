@@ -34,7 +34,10 @@ export default class SmallMapMineItem extends FUI_SmallMapMineItem {
   }
 
   private removeEvent() {
-    this.countList.itemRenderer.recover();
+    if (this.countList.itemRenderer instanceof Laya.Handler) {
+      this.countList.itemRenderer.clear();
+    }
+
     this.countList.itemRenderer = null;
   }
 

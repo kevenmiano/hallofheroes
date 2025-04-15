@@ -17,6 +17,7 @@ import { IconType } from "../../../../constant/IconType";
 import { FarmManager } from "../../../../manager/FarmManager";
 import { t_s_itemtemplateData } from "../../../../config/t_s_itemtemplate";
 import { TempleteManager } from "../../../../manager/TempleteManager";
+import IconAvatarFrame from "@/script/game/map/space/view/physics/IconAvatarFrame";
 
 export class FarmFriendItem extends FUI_FarmFriendItem {
   public pos: number = -1;

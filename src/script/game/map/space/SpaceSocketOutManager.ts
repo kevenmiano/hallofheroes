@@ -8,11 +8,17 @@ import { ArmyManager } from "../../manager/ArmyManager";
 import { MessageTipManager } from "../../manager/MessageTipManager";
 import SpaceArmy from "./data/SpaceArmy";
 import SpaceManager from "./SpaceManager";
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerMoveMsg = com.road.yishi.proto.campaign.SpacePlayerMoveMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerMsg = com.road.yishi.proto.campaign.SpacePlayerMsg;
+//@ts-expect-error: External dependencies
 import PosMsg = com.road.yishi.proto.campaign.PosMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerArmyInfoReqMsg = com.road.yishi.proto.campaign.SpacePlayerArmyInfoReqMsg;
+//@ts-expect-error: External dependencies
 import HangupAttackMsg = com.road.yishi.proto.campaign.HangupAttackMsg;
 
 export class SpaceSocketOutManager {

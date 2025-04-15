@@ -11,7 +11,9 @@ import { EnterFrameManager } from "../../../manager/EnterFrameManager";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import OutyardManager from "../../../manager/OutyardManager";
 
+//@ts-expect-error: External dependencies
 import StackHeadBattleDefenceMsg = com.road.yishi.proto.stackhead.StackHeadBattleDefenceMsg;
+//@ts-expect-error: External dependencies
 import StackHeadSeniorGeneralMsg = com.road.yishi.proto.stackhead.StackHeadSeniorGeneralMsg;
 export default class OutyardShowView extends FUI_OutyardShowView {
   onConstruct() {

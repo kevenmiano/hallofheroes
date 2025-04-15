@@ -1,3 +1,5 @@
+//@ts-expect-error: External dependencies
+
 import FUI_FashionBounsAttributeItem from "../../../../fui/PlayerInfo/FUI_FashionBounsAttributeItem";
 import FUI_RolePropertyCom from "../../../../fui/PlayerInfo/FUI_RolePropertyCom";
 import LangManager from "../../../core/lang/LangManager";

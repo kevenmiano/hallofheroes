@@ -5,11 +5,14 @@ import { NumericStepper } from "../../component/NumericStepper";
 import { EmWindow } from "../../constant/UIDefine";
 import MarkGoodsItem from "./component/MarkGoodsItem";
 import MarketBuyItem from "./component/MarketBuyItem";
+
+//@ts-expect-error: External dependencies
 import MarketItemPurchaseInfoMsg = com.road.yishi.proto.market.MarketItemPurchaseInfoMsg;
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
 import MarketManager from "../../manager/MarketManager";
 import { t_s_itempricelimitData } from "../../config/t_s_itempricelimit";
 
+//@ts-expect-error: External dependencies
 import IMarketItemPriceMsg = com.road.yishi.proto.market.IMarketItemPriceMsg;
 import { PlayerManager } from "../../manager/PlayerManager";
 import { MessageTipManager } from "../../manager/MessageTipManager";

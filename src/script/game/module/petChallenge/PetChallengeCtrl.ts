@@ -32,16 +32,37 @@ import SimpleAlertHelper from "../../component/SimpleAlertHelper";
 import { ArrayConstant, ArrayUtils } from "../../../core/utils/ArrayUtils";
 import { FrameCtrlManager } from "../../mvc/FrameCtrlManager";
 
+//@ts-expect-error: External dependencies
 import ChallengeRequestMsg = com.road.yishi.proto.pet.ChallengeRequestMsg;
+
+//@ts-expect-error: External dependencies
 import PetChallengeInfoMsg = com.road.yishi.proto.pet.PetChallengeInfoMsg;
+
+//@ts-expect-error: External dependencies
 import PetChallengeLogMsg = com.road.yishi.proto.pet.PetChallengeLogMsg;
+
+//@ts-expect-error: External dependencies
 import PetChallengePlayerMsg = com.road.yishi.proto.pet.PetChallengePlayerMsg;
+
+//@ts-expect-error: External dependencies
 import PetInfoMsg = com.road.yishi.proto.pet.PetInfoMsg;
+
+//@ts-expect-error: External dependencies
 import PlayerPetMsg = com.road.yishi.proto.pet.PlayerPetMsg;
+
+//@ts-expect-error: External dependencies
 import RankRewardMsg = com.road.yishi.proto.pet.RankRewardMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeCoolTimeMsg = com.road.yishi.proto.player.ChallengeCoolTimeMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeMsg = com.road.yishi.proto.player.ChallengeMsg;
+
+//@ts-expect-error: External dependencies
 import PayTypeMsg = com.road.yishi.proto.player.PayTypeMsg;
+
+//@ts-expect-error: External dependencies
 import PetChallengeLogList = com.road.yishi.proto.pet.PetChallengeLogList;
 import { EmWindow } from "../../constant/UIDefine";
 import Logger from "../../../core/logger/Logger";

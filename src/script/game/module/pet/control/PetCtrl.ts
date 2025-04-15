@@ -14,11 +14,17 @@ import { PetData } from "../data/PetData";
 import Logger from "../../../../core/logger/Logger";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 
+//@ts-expect-error: External dependencies
 import PlayerPetMsg = com.road.yishi.proto.pet.PlayerPetMsg;
+//@ts-expect-error: External dependencies
 import PlayerPetOpMsg = com.road.yishi.proto.pet.PlayerPetOpMsg;
+//@ts-expect-error: External dependencies
 import PetEquipReqMsg = com.road.yishi.proto.pet.PetEquipReqMsg;
+//@ts-expect-error: External dependencies
 import PetEquipResolveReqMsg = com.road.yishi.proto.pet.PetEquipResolveReqMsg;
+//@ts-expect-error: External dependencies
 import StoreReqMsg = com.road.yishi.proto.store.StoreReqMsg;
+//@ts-expect-error: External dependencies
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 import { ServerDataManager } from "../../../../core/net/ServerDataManager";
 import { S2CProtocol } from "../../../constant/protocol/S2CProtocol";

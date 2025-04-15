@@ -36,8 +36,11 @@ import OpenGrades from "../../constant/OpenGrades";
 import { BattleRecordReader } from "../../battle/record/BattleRecordReader";
 import SimpleAlertHelper from "../../component/SimpleAlertHelper";
 import { RoleShowViewIII } from "./ui/RoleShowViewIII";
+//@ts-expect-error: External dependencies
 import { PetBattleBar } from "./ui/bottom/PetBattleBar";
+//@ts-expect-error: External dependencies
 import FUI_BattleSkillItemCircle from "../../../../fui/Battle/FUI_BattleSkillItemCircle";
+//@ts-expect-error: External dependencies
 import FUI_BattleSkillItemRect from "../../../../fui/Battle/FUI_BattleSkillItemRect";
 import Utils from "../../../core/utils/Utils";
 import Resolution from "../../../core/comps/Resolution";

@@ -4,7 +4,10 @@ import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../manager/PlayerManager";
 import FUIHelper from "../../utils/FUIHelper";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
+//@ts-expect-error: External dependencies
 import BattleReportMsg = com.road.yishi.proto.battle.BattleReportMsg;
+//@ts-expect-error: External dependencies
+
 import BaseItemMsg = com.road.yishi.proto.battle.BaseItemMsg;
 import Dictionary from "../../../core/utils/Dictionary";
 import { FrameCtrlManager } from "../../mvc/FrameCtrlManager";

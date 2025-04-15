@@ -5,7 +5,7 @@ import { t_s_pettemplateData } from "../../../config/t_s_pettemplate";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import { FarmEvent } from "../../../constant/event/NotificationEvent";
 import { ThaneInfo } from "../../../datas/playerinfo/ThaneInfo";
-import PetTemplate from "../../../datas/template/PetTemplate";
+// import PetTemplate from "../../../datas/template/PetTemplate";
 import { ArmyManager } from "../../../manager/ArmyManager";
 import { PlayerManager } from "../../../manager/PlayerManager";
 

@@ -5,8 +5,7 @@ export default class FUI_MessageCellInfo extends fgui.GComponent {
   public hasContent: fgui.Controller;
   public emojiIcon: fgui.GLoader;
   public content: fgui.GRichTextField;
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://og5jeos3n9eii3q";
 
   public static createInstance(): FUI_MessageCellInfo {

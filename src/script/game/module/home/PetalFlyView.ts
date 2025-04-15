@@ -51,7 +51,10 @@ export default class PetalFlyView extends Laya.Sprite {
     // this._popProbability = popProbability;
     // this._petalList = []
     // this._popList = [];
-    this._timerId = setInterval(this.update.bind(this), this.INTERVALTIME);
+    this._timerId = setInterval(
+      this.update.bind(this),
+      this.INTERVALTIME,
+    ) as unknown as number;
     this.addEvent();
   }
 
@@ -198,6 +201,7 @@ export default class PetalFlyView extends Laya.Sprite {
   public dispose(): void {
     if (this._isDisposing) return;
     this._isDisposing = true;
+    //@ts-expect-error: External dependencies
     TweenLite.to(this, this.FADEOUT_TIME / 1000, {
       alpha: 0,
       onComplete: this.disposeCall.bind(this),

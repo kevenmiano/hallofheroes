@@ -35,7 +35,10 @@ import { GoodsCheck } from "../../../utils/GoodsCheck";
 import { FashionModel } from "../../bag/model/FashionModel";
 import { ForgeSocketOutManager } from "../../forge/ForgeSocketOutManager";
 import { SFashionBag } from "./SFashionBag";
+//@ts-expect-error: External dependencies
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
+//@ts-expect-error: External dependencies
+
 import FashionInfoMsg = com.road.yishi.proto.simple.FashionInfoMsg;
 
 /**

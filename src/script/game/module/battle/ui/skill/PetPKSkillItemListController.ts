@@ -31,8 +31,12 @@ import { SocketSendManager } from "../../../../manager/SocketSendManager";
 import { PetData } from "../../../pet/data/PetData";
 import PetPKSkillItemListView from "./PetPKSkillItemListView";
 import Dictionary from "../../../../../core/utils/Dictionary";
+
+//@ts-expect-error: External dependencies
 import SealOrderMsg = com.road.yishi.proto.battle.SealOrderMsg;
+//@ts-expect-error: External dependencies
 import HeroOrderMsg = com.road.yishi.proto.battle.HeroOrderMsg;
+//@ts-expect-error: External dependencies
 import ItemUseResultMsg = com.road.yishi.proto.battle.ItemUseResultMsg;
 import { IconFactory } from "../../../../../core/utils/IconFactory";
 import { TempleteManager } from "../../../../manager/TempleteManager";

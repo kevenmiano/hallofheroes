@@ -18,6 +18,7 @@ import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import { ArmyManager } from "../../../manager/ArmyManager";
 
+//@ts-expect-error: External dependencies
 import ChallengeRankRewardMsg = com.road.yishi.proto.player.ChallengeRankRewardMsg;
 
 export default class RankInfoSelf extends FUI_RankInfoSelf {

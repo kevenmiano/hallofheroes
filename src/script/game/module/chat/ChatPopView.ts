@@ -116,7 +116,7 @@ export default class ChatPopView extends FUI_ChatBubbleTip {
       clearTimeout(this._timeId);
     }
     this._timeId = 0;
-    this._timeId = setTimeout(this.close.bind(this), this.TIME);
+    this._timeId = Number(setTimeout(this.close.bind(this), this.TIME));
   }
 
   get contextWidth(): number {

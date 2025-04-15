@@ -12,7 +12,7 @@ import { HeroAvatarView } from "../../../view/hero/HeroAvatarView";
 import SpaceNodeType from "../../constant/SpaceNodeType";
 import { MapPhysics } from "../../data/MapPhysics";
 import { SpaceNode } from "../../data/SpaceNode";
-import IBaseMouseEvent from "../../interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../interfaces/IBaseMouseEvent";
 import SpaceManager from "../../SpaceManager";
 import { ResRefCountManager } from "../../../../managerRes/ResRefCountManager";
 import { eAvatarBaseViewType } from "../../../view/hero/AvatarBaseView";
@@ -20,6 +20,13 @@ import Utils from "../../../../../core/utils/Utils";
 import { AvatarInfoUILayerHandler } from "../../../view/layer/AvatarInfoUILayer";
 import { AvatarInfoTag } from "../../../../constant/Const";
 import { AiStateType } from "../../constant/AiStateType";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
 
 /**
  * 天空之城NPC显示对象

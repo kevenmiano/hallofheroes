@@ -5,6 +5,8 @@ import { TempleteManager } from "../../manager/TempleteManager";
 import FrameDataBase from "../../mvc/FrameDataBase";
 import QQGiftEnum, { QQLevelEnum } from "./enum/QQGiftEnum";
 
+//@ts-expect-error: External dependencies
+
 import QQGiftBagState = com.road.yishi.proto.qq.QQGiftBagState;
 export default class QQGiftModel extends FrameDataBase {
   cfgDaily = "QQ_Dailygiftpackage"; //每日礼包配置

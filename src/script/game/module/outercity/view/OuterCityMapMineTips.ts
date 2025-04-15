@@ -103,7 +103,10 @@ export default class OuterCityMapMineTips extends BaseWindow {
   private removeEvent() {
     this.btnLookInfo.offClick(this, this.lookInfoHandler);
     this.btnGoto.offClick(this, this.btnGotoHandler);
-    this.list.itemRenderer.recover();
+
+    if (this.list.itemRenderer instanceof Laya.Handler) {
+      this.list.itemRenderer.recover();
+    }
     this.list.itemRenderer = null;
   }
 

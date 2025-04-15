@@ -7,8 +7,7 @@ export default class FUI_StarTipCom extends fgui.GComponent {
   public comp: fgui.GGroup;
   public list: fgui.GList;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://i5djjunllbk9i3d";
 
   public static createInstance(): FUI_StarTipCom {

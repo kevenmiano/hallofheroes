@@ -27,10 +27,15 @@ import BattleWnd from "../BattleWnd";
 import { BossInfoView } from "./BossInfoView";
 import { BossBufferContainer } from "./buffer/BossBufferContainer";
 
+//@ts-expect-error: External dependencies
 import BossHpMsg = com.road.yishi.proto.battle.BossHpMsg;
+//@ts-expect-error: External dependencies
 import WorldBossInfoMsg = com.road.yishi.proto.simple.WorldBossInfoMsg;
+//@ts-expect-error: External dependencies
 import SyncRoomBossHPMsg = com.road.yishi.proto.simple.SyncRoomBossHPMsg;
+//@ts-expect-error: External dependencies
 import RoomBossInfoMsg = com.road.yishi.proto.simple.RoomBossInfoMsg;
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
   /**
    * 是否有boss
@@ -207,7 +212,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
     }
     if (bossInfo != null) {
       if (this.battleModel.battleType == BattleType.ROOM_BOSS_BATTLE) {
-        let tempCurHp = boss.curHp as Long;
+        let tempCurHp = boss.curHp as any;
         let syncHp: number;
         if (tempCurHp.high) {
           syncHp = Int64Utils.int64ToNumber(tempCurHp);
@@ -260,7 +265,7 @@ export class RoleShowViewII extends Laya.Sprite implements IEnterFrame {
       msg.curHp,
       msg.currentMillis,
     );
-    var time = Int64Utils.int64ToNumber(msg.currentMillis as Long);
+    var time = Int64Utils.int64ToNumber(msg.currentMillis as any);
     this.battleModel.updateWorldBossBlood(msg.curHp, time);
   }
   /**

@@ -1,4 +1,4 @@
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { CampaignArmyView } from "./CampaignArmyView";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { NotificationManager } from "../../../../manager/NotificationManager";
@@ -12,6 +12,13 @@ import { WorldBossHelper } from "../../../../utils/WorldBossHelper";
 import { CampaignArmy } from "../../data/CampaignArmy";
 import { AvatarInfoUILayerHandler } from "../../../view/layer/AvatarInfoUILayer";
 import { eFilterFrameText } from "../../../../component/FilterFrameText";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(): boolean;
+  mouseOutHandler(): boolean;
+  mouseMoveHandler(): boolean;
+}
 
 /**
  * 公会战中的人物形象

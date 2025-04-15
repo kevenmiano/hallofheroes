@@ -8,7 +8,11 @@ import FrameDataBase from "../../mvc/FrameDataBase";
 import FUIHelper from "../../utils/FUIHelper";
 import QQDawankaItemVO from "./item/QQDawankaItemVO";
 
+//@ts-expect-error: External dependencies
+
 import UserQQDaWanKaMsg = com.road.yishi.proto.qq.UserQQDaWanKaMsg;
+//@ts-expect-error: External dependencies
+
 import QQGradeGiftState = com.road.yishi.proto.qq.QQGradeGiftState;
 
 export default class QQDawankaModel extends FrameDataBase {
@@ -37,6 +41,8 @@ export default class QQDawankaModel extends FrameDataBase {
   QQGradePrivilegeDic: t_s_qqgradeprivilegeData[][] = [];
   RenderList: QQDawankaItemVO[][] = [];
   info: UserQQDaWanKaMsg = null;
+  //@ts-expect-error: External dependencies
+
   giftState: com.road.yishi.proto.qq.IQQGradeGiftState[];
   titleRedDotArrs: boolean[] = [false, false, false, false];
 

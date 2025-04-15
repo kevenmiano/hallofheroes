@@ -66,7 +66,9 @@ export class GvgManageView extends FUI_GvgManageView {
   }
 
   private removeEvent() {
-    this.list.itemRenderer.recover();
+    if (this.list.itemRenderer instanceof Laya.Handler) {
+      this.list.itemRenderer.recover();
+    }
     this._manageBtn.offClick(this, this.__openManagerHandler);
 
     CampaignManager.Instance.gvgModel.removeEventListener(

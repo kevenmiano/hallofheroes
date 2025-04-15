@@ -90,6 +90,7 @@ export class DamageNumView extends Laya.Sprite {
 
       Laya.Tween.to(this, { alpha: 1 }, 167, Laya.Ease.quadOut).to(
         this,
+        //@ts-expect-error: External dependencies
         { alpha: 0.4, ease: Linear.easeNone },
         1000 - 167,
         Laya.Ease.linearNone,

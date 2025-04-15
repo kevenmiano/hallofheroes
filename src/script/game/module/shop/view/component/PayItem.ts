@@ -4,6 +4,7 @@ import LangManager from "../../../../../core/lang/LangManager";
 import { ShopManager } from "../../../../manager/ShopManager";
 import Utils from "../../../../../core/utils/Utils";
 import { ChargeLotteryManager } from "../../../../manager/ChargeLotteryManager";
+//@ts-expect-error: External dependencies
 import LotteryInfoMsg = com.road.yishi.proto.active.LotteryInfoMsg;
 
 /**

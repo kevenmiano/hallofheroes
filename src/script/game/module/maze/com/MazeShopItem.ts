@@ -19,7 +19,8 @@ import { UIFilter } from "../../../../core/ui/UIFilter";
 import FUI_MazeShopItem from "../../../../../fui/Maze/FUI_MazeShopItem";
 import BaseTipItem from "../../../component/item/BaseTipItem";
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";
-import { BaseItem } from "../../../component/item/BaseItem";
+import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
+
 import {
   FilterFrameText,
   eFilterFrameText,
@@ -30,7 +31,7 @@ export default class MazeShopItem extends FUI_MazeShopItem {
 
   public tipItem: BaseTipItem;
 
-  public GoodsIcon: BaseItem;
+  public GoodsIcon: any;
 
   private goodsData: GoodsInfo;
   private __clickHandler() {

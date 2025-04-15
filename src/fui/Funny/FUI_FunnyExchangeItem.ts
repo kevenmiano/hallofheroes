@@ -9,8 +9,7 @@ export default class FUI_FunnyExchangeItem extends fgui.GComponent {
   public exchangeList1: fgui.GList;
   public exchangeList2: fgui.GList;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://lzu8jcp2th2c4z";
 
   public static createInstance(): FUI_FunnyExchangeItem {

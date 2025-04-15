@@ -5,7 +5,11 @@ import { t_s_uiplaylevelData } from "../../config/t_s_uiplaylevel";
 import { ConfigType } from "../../constant/ConfigDefine";
 import { ArmyManager } from "../../manager/ArmyManager";
 import { PetCampaignEvent } from "./enum/PetCampaignEnum";
+
+//@ts-expect-error: External dependencies
 import UserUiPlayInfoMsg = com.road.yishi.proto.uiplay.UserUiPlayInfoMsg;
+
+//@ts-expect-error: External dependencies
 import UserUiPlayListMsg = com.road.yishi.proto.uiplay.UserUiPlayListMsg;
 import Logger from "../../../core/logger/Logger";
 

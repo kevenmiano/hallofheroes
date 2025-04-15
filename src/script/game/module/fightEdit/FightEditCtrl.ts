@@ -7,7 +7,11 @@ import { S2CProtocol } from "../../constant/protocol/S2CProtocol";
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
 import { SkillEditData } from "./SkillEditData";
 import { SkillEditModel } from "./SkillEditModel";
+//@ts-expect-error: External dependencies
+
 import SkillEditReqMsg = com.road.yishi.proto.skilledit.SkillEditReqMsg;
+//@ts-expect-error: External dependencies
+
 import SkillEditResMsg = com.road.yishi.proto.skilledit.SkillEditResMsg;
 
 /**

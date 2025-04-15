@@ -30,7 +30,7 @@ import Dictionary from "../../../../core/utils/Dictionary";
 import { t_s_castlebattlebuildingskillData } from "../../../config/t_s_castlebattlebuildingskill";
 import { OuterCityWarGuildInfo } from "./OuterCityWarGuildInfo";
 import { TempleteManager } from "../../../manager/TempleteManager";
-import { DateTest } from "./DateTest";
+// import { DateTest } from "./DateTest";
 import { PlayerInfo } from "../../../datas/playerinfo/PlayerInfo";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import { ArmyManager } from "../../../manager/ArmyManager";

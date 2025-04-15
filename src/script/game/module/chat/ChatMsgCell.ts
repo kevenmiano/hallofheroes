@@ -1,3 +1,4 @@
+import IconAvatarFrame from "@/script/game/map/space/view/physics/IconAvatarFrame";
 import FUI_ChatMsgCell from "../../../../fui/Chat/FUI_ChatMsgCell";
 import Logger from "../../../core/logger/Logger";
 import { DateFormatter } from "../../../core/utils/DateFormatter";

@@ -1,4 +1,8 @@
-import LoaderInfo from "../datas/LoaderInfo";
+// import LoaderInfo from "../datas/LoaderInfo";
+
+interface LoaderInfo {
+  priority: number;
+}
 
 /**
  * @author:pzlricky

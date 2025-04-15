@@ -18,6 +18,7 @@ import { VipPrivilegeType } from "../../constant/VipPrivilegeType";
 import { VIPManager } from "../../manager/VIPManager";
 import TemplateIDConstant from "../../constant/TemplateIDConstant";
 import UIButton from "../../../core/ui/UIButton";
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 export default class SeminaryItem extends FUI_SeminaryItem {
   public newIcon: BaseIcon;
 

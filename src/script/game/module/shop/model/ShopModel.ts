@@ -1,7 +1,7 @@
 import GameEventDispatcher from "../../../../core/event/GameEventDispatcher";
 import Dictionary from "../../../../core/utils/Dictionary";
 import { SimpleDictionary } from "../../../../core/utils/SimpleDictionary";
-import { ItemBuyInfo } from "./ItemBuyInfo";
+// import { ItemBuyInfo } from "./ItemBuyInfo";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
@@ -15,6 +15,22 @@ import { TempleteManager } from "../../../manager/TempleteManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { t_s_skilltemplateData } from "../../../config/t_s_skilltemplate";
+
+interface ItemBuyInfo {
+  isDiscount: boolean;
+  count: number;
+  goodId: number;
+  nickname: string;
+  itemId: number;
+  itemName: string;
+  itemCount: number;
+  itemType: number;
+  itemPrice: number;
+  itemPayType: number;
+  itemTemplateId: number;
+}
+
+//@ts-expect-error: External dependencies
 import MainDiscountInfo = com.road.yishi.proto.shop.MainDiscountInfo;
 import TemplateIDConstant from "../../../constant/TemplateIDConstant";
 

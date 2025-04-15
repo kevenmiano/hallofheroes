@@ -10,6 +10,7 @@ import { RuneInfo } from "../../../datas/RuneInfo";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import FUI_Skill_Panel from "../../../../../fui/Skill/FUI_Skill_Panel";
+//@ts-expect-error: External dependencies
 import FUI_EditPanel from "../../../../../fui/SkillEdit/FUI_EditPanel";
 import { SkillInfo } from "../../../datas/SkillInfo";
 import { NotificationManager } from "../../../manager/NotificationManager";

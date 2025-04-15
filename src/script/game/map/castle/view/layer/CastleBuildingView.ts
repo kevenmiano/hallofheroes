@@ -1,4 +1,4 @@
-import IBuildingFilter from "../../../space/interfaces/IBuildingFilter";
+// import IBuildingFilter from "../../../space/interfaces/IBuildingFilter";
 import BuildingType from "../../consant/BuildingType";
 import BuildingBase from "./BuildingBase";
 import CastleBuildingLoader from "../../CastleBuildingLoader";
@@ -27,6 +27,11 @@ import { MarketHalo } from "../MarketHalo";
 import LangManager from "../../../../../core/lang/LangManager";
 import OpenGrades from "../../../../constant/OpenGrades";
 import { ArmyManager } from "../../../../manager/ArmyManager";
+
+interface IBuildingFilter {
+  setBuildingOverFilter(view: Laya.Sprite): void;
+  setBuildingOutFilter(view: Laya.Sprite): void;
+}
 
 /**
  * 内城建筑视图类<br/>

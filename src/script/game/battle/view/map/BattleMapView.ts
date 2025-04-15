@@ -29,8 +29,8 @@ import { SharedManager } from "../../../manager/SharedManager";
 import FUIHelper from "../../../utils/FUIHelper";
 import { BattleManager } from "../../BattleManager";
 import { BattleModel } from "../../BattleModel";
-import { BattleBackGroundData } from "../../data/BattleBackGroundData";
-import { BattleMapData } from "../../data/BattleMapData";
+// import { BattleBackGroundData } from "../../data/BattleBackGroundData";
+// import { BattleMapData } from "../../data/BattleMapData";
 import { BaseRoleInfo } from "../../data/objects/BaseRoleInfo";
 import { HeroRoleInfo } from "../../data/objects/HeroRoleInfo";
 import { BattleEffect } from "../../skillsys/effect/BattleEffect";
@@ -44,7 +44,7 @@ export class BattleMapView extends BattleMap {
   private static REVIVE_BATTLE_TYPE: Array<number> = [
     BattleType.DOUBLE_BOSS_BATTLE,
   ];
-  private _mapData: BattleMapData;
+  private _mapData;
   /**
    * 场景切换特效层
    */
@@ -275,10 +275,10 @@ export class BattleMapView extends BattleMap {
    *
    */
   public changeMap(mapData: any, asset: string = "asset") {
-    var data: BattleBackGroundData;
+    var data;
     this._mapData = mapData;
     for (var i: number = 0; i < mapData.bg_back_arr.length; i++) {
-      data = mapData.bg_back_arr[i] as BattleBackGroundData;
+      data = mapData.bg_back_arr[i];
       if (data.repeat) {
         var layer: RepeatBackGroundLayer = new RepeatBackGroundLayer(
           data[asset],
@@ -303,7 +303,7 @@ export class BattleMapView extends BattleMap {
       }
     }
     for (i = 0; i < mapData.bg_front_arr.length; i++) {
-      data = mapData.bg_front_arr[i] as BattleBackGroundData;
+      data = mapData.bg_front_arr[i];
       var layer_f: RepeatBackGroundLayer;
       if (data.repeat) {
         layer_f = new RepeatBackGroundLayer(data[asset], data.transparent);

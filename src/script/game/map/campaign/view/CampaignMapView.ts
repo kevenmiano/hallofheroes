@@ -433,6 +433,7 @@ export class CampaignMapView extends Laya.Sprite {
       return;
     }
     if (isTween) {
+      //@ts-expect-error: Enternal dependencies
       TweenLite.to(this, dealy, {
         x: p.x,
         y: p.y,

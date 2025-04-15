@@ -68,6 +68,7 @@ export class RemotePetFormationItemView extends FUI_RemotePetFormationItemView {
       alpha: 0.2,
       repeat: -1,
       yoyo: true,
+      //@ts-expect-error: External dependencies
       ease: Sine.easeInOut,
     });
   }

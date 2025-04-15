@@ -12,8 +12,15 @@ import { EmWindow } from "../../../constant/UIDefine";
 import Logger from "../../../../core/logger/Logger";
 import { LoginManager } from "../../login/LoginManager";
 import RechargeAlertMannager from "../../../manager/RechargeAlertMannager";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import Utils from "../../../../core/utils/Utils";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @author:pzlricky

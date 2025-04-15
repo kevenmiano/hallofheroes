@@ -1099,6 +1099,7 @@ declare namespace fgui {
 }
 declare namespace fgui {
   class GObjectPool {
+    [x: string]: boolean;
     private _pool;
     private _count;
     constructor();
@@ -1371,6 +1372,7 @@ declare namespace fgui {
 declare const labelPadding: number[];
 declare namespace fgui {
   class GRichTextField extends GTextField {
+    div: any;
     constructor();
   }
   class GHtmlImage extends Laya.HtmlImage {

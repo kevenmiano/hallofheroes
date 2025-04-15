@@ -1,3 +1,4 @@
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import Logger from "../../../../../core/logger/Logger";
 import { DisplayObject } from "../../../../component/DisplayObject";
 import {
@@ -5,7 +6,7 @@ import {
   OuterCityEvent,
   SecretEvent,
 } from "../../../../constant/event/NotificationEvent";
-import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { EnterFrameManager } from "../../../../manager/EnterFrameManager";
 import MediatorMananger from "../../../../manager/MediatorMananger";
@@ -141,8 +142,10 @@ export class NpcLayer implements IEnterFrame {
 
   // NPC 移动并追击
   private __npcChaseArmyHandler(
+    //@ts-expect-error: External dependencies
     data: com.road.yishi.proto.campaign.NPCChaseMsg,
   ) {
+    //@ts-expect-error: External dependencies
     let msg: com.road.yishi.proto.campaign.NPCChaseMsg = data;
     let npc: NpcAvatarView = this._model.getNodeById(
       msg.nodeId,
@@ -156,11 +159,13 @@ export class NpcLayer implements IEnterFrame {
   }
 
   // NPC 移动
+  //@ts-expect-error: External dependencies
   private __npcMoveHandler(data: com.road.yishi.proto.campaign.NPCMoveMsg) {
     let mapId: number = CampaignManager.Instance.mapModel
       ? CampaignManager.Instance.mapModel.mapId
       : 0;
     if (WorldBossHelper.checkConsortiaDemon(mapId)) return;
+    //@ts-expect-error: External dependencies
     let msg: com.road.yishi.proto.campaign.NPCMoveMsg = data;
     let npc: NpcAvatarView = this._model.getNodeById(msg.id) as NpcAvatarView;
     // Logger.info("[NpcLayer]__npcMoveHandler", data, npc)

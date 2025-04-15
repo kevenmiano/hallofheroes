@@ -17,7 +17,7 @@ import {
   ObjectsEvent,
   TreasureMapEvent,
 } from "../../constant/event/NotificationEvent";
-import { IEnterFrame } from "../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../manager/EnterFrameManager";
 import FreedomTeamManager from "../../manager/FreedomTeamManager";
 import { NotificationManager } from "../../manager/NotificationManager";
@@ -43,6 +43,8 @@ import { EmPackName } from "../../constant/UIDefine";
 import { PathManager } from "../../manager/PathManager";
 import ResMgr from "../../../core/res/ResMgr";
 import SpaceNodeType from "../../map/space/constant/SpaceNodeType";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
+
 export default class SmallMapWnd extends BaseWindow implements IEnterFrame {
   protected _model: SpaceModel | CampaignMapModel;
   protected _selfArmy: SpaceArmy | CampaignArmy;
@@ -659,6 +661,7 @@ export default class SmallMapWnd extends BaseWindow implements IEnterFrame {
         if (t - this._flushtime > 200) {
           this._flushtime = t;
           TweenLite.killTweensOf(this.selfImg);
+          //@ts-expect-error: External dependencies
           TweenLite.to(this.selfImg, 0.2, { x: posX, y: posY });
         }
       }

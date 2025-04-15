@@ -33,7 +33,7 @@ import { ConfigType } from "../../../constant/ConfigDefine";
 import FUIHelper from "../../../utils/FUIHelper";
 import { ConsortiaTaskInfo } from "../data/ConsortiaTaskInfo";
 import { ConsortiaTaskScoreRewardInfo } from "../data/ConsortiaTaskScoreRewardInfo";
-import { ConsortiaTaskType } from "../data/ConsortiaTaskType";
+// import { ConsortiaTaskType } from "../data/ConsortiaTaskType";
 import { FinishStatus } from "../../../constant/Const";
 import { NotificationManager } from "../../../manager/NotificationManager";
 
@@ -947,7 +947,7 @@ export class ConsortiaModel extends GameEventDispatcher {
     }
   }
 
-  getTaskTitleByType(type: ConsortiaTaskType): string {
+  getTaskTitleByType(type: any): string {
     let titleArr = LangManager.Instance.GetTranslation(
       "ConsortiaTaskWnd.taskTitleStr",
     ).split(",");

@@ -19,8 +19,14 @@ import { FrameCtrlManager } from "../../mvc/FrameCtrlManager";
 import FUIHelper from "../../utils/FUIHelper";
 import { PetData } from "../pet/data/PetData";
 import PetCampaignModel from "./PetCampaignModel";
+
+//@ts-expect-error: External dependencies
 import UserUiPlayInfoMsg = com.road.yishi.proto.uiplay.UserUiPlayInfoMsg;
+
+//@ts-expect-error: External dependencies
 import BattleReportMsg = com.road.yishi.proto.battle.BattleReportMsg;
+
+//@ts-expect-error: External dependencies
 import BaseItemMsg = com.road.yishi.proto.battle.BaseItemMsg;
 import ItemID from "../../constant/ItemID";
 import { TempleteManager } from "../../manager/TempleteManager";

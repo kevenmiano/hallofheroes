@@ -10,9 +10,16 @@ import { StripUIView } from "../../../component/StripUIView";
 import { t_s_herotemplateData } from "../../../config/t_s_herotemplate";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import { NativeEvent } from "../../../constant/event/NotificationEvent";
-import { IStrip } from "../../../interfaces/IStrip";
+// import { IStrip } from "../../../interfaces/IStrip";
 import { NotificationManager } from "../../../manager/NotificationManager";
 import { BossBufferContainer } from "./buffer/BossBufferContainer";
+
+interface IStrip {
+  maxValue: number;
+  currentValue: number;
+  currentIndex: number;
+  dispose(): void;
+}
 
 export class DoubleBossInfoView extends FUI_DoubleBossInfoView {
   public static UIName: string = "DoubleBossInfoView";

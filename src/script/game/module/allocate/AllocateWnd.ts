@@ -107,7 +107,7 @@ export default class AllocateWnd extends BaseWindow {
       this,
     );
     if (this.SoliderList && this.SoliderList.itemRenderer) {
-      this.SoliderList.itemRenderer.recover();
+      (this.SoliderList.itemRenderer as Laya.Handler)?.recover();
       this.SoliderList.itemRenderer = null;
     }
   }

@@ -8,7 +8,7 @@
  */
 
 import Resolution from "../../../../core/comps/Resolution";
-import Dictionary from "../../../../core/utils/Dictionary";
+// Removed Dictionary import as it is replaced with Map
 import { DisplayObject } from "../../../component/DisplayObject";
 import { RepeatBackGroundLayer } from "./RepeatBackGroundLayer";
 
@@ -17,7 +17,10 @@ export class BattleCameraScene extends Laya.Sprite {
   protected _cameraY: number = Resolution.gameHeight / 2;
   protected _preCameraX: number = 0;
   protected _zoom: number = 1;
-  protected childLayerSettingMap: Dictionary;
+  protected childLayerSettingMap: Map<
+    DisplayObject,
+    { moveCoefficient: number }
+  >;
   protected _cameraScaleCenterPoint: Laya.Point = new Laya.Point(
     Resolution.gameWidth / 2,
     Resolution.gameHeight / 2,
@@ -26,7 +29,10 @@ export class BattleCameraScene extends Laya.Sprite {
   protected _sceneHeight: number = Resolution.gameHeight;
   constructor() {
     super();
-    this.childLayerSettingMap = new Dictionary();
+    this.childLayerSettingMap = new Map<
+      DisplayObject,
+      { moveCoefficient: number }
+    >();
   }
 
   public addLayerAt(
@@ -36,7 +42,7 @@ export class BattleCameraScene extends Laya.Sprite {
   ) {
     this.addChildAt(layer, childIndex);
 
-    this.childLayerSettingMap[layer] = { moveCoefficient: moveCoefficient };
+    this.childLayerSettingMap.set(layer, { moveCoefficient: moveCoefficient });
   }
 
   public addLayer(layer: DisplayObject, moveCoefficient: number = 0) {
@@ -46,7 +52,7 @@ export class BattleCameraScene extends Laya.Sprite {
   public removeLayer(layer: DisplayObject) {
     this.removeChild(layer);
 
-    delete this.childLayerSettingMap(layer);
+    this.childLayerSettingMap.delete(layer);
   }
 
   public get cameraY(): number {
@@ -99,15 +105,10 @@ export class BattleCameraScene extends Laya.Sprite {
    */
   protected stopMovingAllMembers() {
     if (this.childLayerSettingMap) {
-      for (const key in this.childLayerSettingMap) {
-        if (
-          Object.prototype.hasOwnProperty.call(this.childLayerSettingMap, key)
-        ) {
-          let element = this.childLayerSettingMap[key];
-          element.moveCoefficient = 0;
-          if (element instanceof RepeatBackGroundLayer) {
-            element.moveSpeed = 0;
-          }
+      for (const [key, element] of this.childLayerSettingMap.entries()) {
+        element.moveCoefficient = 0;
+        if (key instanceof RepeatBackGroundLayer) {
+          key.moveSpeed = 0;
         }
       }
     }
@@ -119,17 +120,15 @@ export class BattleCameraScene extends Laya.Sprite {
           Object.prototype.hasOwnProperty.call(this.childLayerSettingMap, key)
         ) {
           let element = this.childLayerSettingMap[key];
-          element.moveCoefficient = element.getParaData().moveCoefficient;
-          if (element instanceof RepeatBackGroundLayer) {
-            element.moveSpeed = element.getParaData().moveSpeed;
+          for (const [key, element] of this.childLayerSettingMap.entries()) {
+            element.moveCoefficient = element.moveCoefficient;
+            if (key instanceof RepeatBackGroundLayer) {
+              key.moveSpeed = key.getParaData().moveSpeed;
+            }
           }
         }
       }
     }
-  }
-
-  public get preCameraX(): number {
-    return this._preCameraX;
   }
 
   public get sceneWidth(): number {

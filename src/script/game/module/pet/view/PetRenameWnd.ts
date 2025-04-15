@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 /*
  * @Author: jeremy.xu
  * @Date: 2021-07-20 20:31:46
@@ -26,6 +27,7 @@ import { ServerDataManager } from "../../../../core/net/ServerDataManager";
 import { PackageIn } from "../../../../core/net/PackageIn";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
 
+//@ts-expect-error: External dependencies
 import PlayerPetOpRes = com.road.yishi.proto.pet.PlayerPetOpRes;
 import { StringUtil } from "../../../utils/StringUtil";
 import { YTextInput } from "../../common/YTextInput";

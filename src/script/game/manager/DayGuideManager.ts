@@ -27,12 +27,19 @@ import { ChatChannel } from "../datas/ChatChannel";
 import LeedInfo from "../module/welfare/data/LeedInfo";
 import { PackageIn } from "../../core/net/PackageIn";
 
+//@ts-expect-error: External dependencies
 import DayActiveRspMsg = com.road.yishi.proto.active.DayActiveRspMsg;
+//@ts-expect-error: External dependencies
 import ClickDatasRspMsg = com.road.yishi.proto.leed.ClickDatasRspMsg;
+//@ts-expect-error: External dependencies
 import LeedData = com.road.yishi.proto.leed.LeedData;
+//@ts-expect-error: External dependencies
 import LeedFinishedRspMsg = com.road.yishi.proto.leed.LeedFinishedRspMsg;
+//@ts-expect-error: External dependencies
 import LeedUpdatedRspMsg = com.road.yishi.proto.leed.LeedUpdatedRspMsg;
+//@ts-expect-error: External dependencies
 import PlayerSignRspMsg = com.road.yishi.proto.player.PlayerSignRspMsg;
+//@ts-expect-error: External dependencies
 import MonthCardRsp = com.road.yishi.proto.active.MonthCardRsp;
 import { S2CProtocol } from "../constant/protocol/S2CProtocol";
 import { ServerDataManager } from "../../core/net/ServerDataManager";

@@ -33,6 +33,8 @@ import { ShopGoodsInfo } from "../shop/model/ShopGoodsInfo";
 import ForgeData from "./ForgeData";
 import { ForgeSocketOutManager } from "./ForgeSocketOutManager";
 import ItemID from "../../constant/ItemID";
+//@ts-expect-error: External dependencies
+
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 
 export default class ForgeCtrl extends FrameCtrlBase {

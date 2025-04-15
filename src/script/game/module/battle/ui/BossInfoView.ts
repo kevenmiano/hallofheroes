@@ -22,11 +22,18 @@ import {
   BattleEvent,
   NativeEvent,
 } from "../../../constant/event/NotificationEvent";
-import { IStrip } from "../../../interfaces/IStrip";
+// import { IStrip } from "../../../interfaces/IStrip";
 import { BossBufferContainer } from "./buffer/BossBufferContainer";
 import ResMgr from "../../../../core/res/ResMgr";
 import Resolution from "../../../../core/comps/Resolution";
 import { NotificationManager } from "../../../manager/NotificationManager";
+
+interface IStrip {
+  maxValue: number;
+  currentValue: number;
+  currentIndex: number;
+  dispose(): void;
+}
 
 export class BossInfoView extends FUI_BossInfoView {
   public static UIName: string = "BossInfoView";

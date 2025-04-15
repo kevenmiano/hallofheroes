@@ -1,6 +1,8 @@
 import FUI_MarketMineCom from "../../../../../fui/Market/FUI_MarketMineCom";
 import LangManager from "../../../../core/lang/LangManager";
 import MarketMineItem from "./MarketMineItem";
+
+//@ts-expect-error: External dependencies
 import IMarketOrderMsg = com.road.yishi.proto.market.IMarketOrderMsg;
 import MarketManager from "../../../manager/MarketManager";
 

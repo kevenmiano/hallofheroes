@@ -21,7 +21,7 @@ import MineralModel from "../../../../mvc/model/MineralModel";
 import { WorldBossHelper } from "../../../../utils/WorldBossHelper";
 import { HeroAvatar } from "../../../avatar/view/HeroAvatar";
 import { NodeState } from "../../../space/constant/NodeState";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import {
   AvatarInfoUILayer,
   AvatarInfoUILayerHandler,
@@ -30,6 +30,13 @@ import { CampaignArmy } from "../../data/CampaignArmy";
 import { CampaignArmyState } from "../../data/CampaignArmyState";
 import { CampaignWalkLayer } from "../layer/CampaignWalkLayer";
 import { CampaignArmyView } from "./CampaignArmyView";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
 
 /**
  * 紫晶矿场人物视图

@@ -1110,7 +1110,9 @@ export default class UIHeCheng extends BaseFguiCom {
 
   public dispose(destred = true) {
     this.tree.off(fgui.Events.CLICK_ITEM, this, this.__clickTreeItem);
-    this.tree.treeNodeRender.recover();
+    if (this.tree.treeNodeRender instanceof Laya.Handler) {
+      this.tree.treeNodeRender.recover();
+    }
     this.tree.treeNodeRender = null;
     this.btnComp.offClick(this, this.btnCompClick.bind(this));
     this.btnCompAll.offClick(this, this.btnCompAllClick.bind(this));

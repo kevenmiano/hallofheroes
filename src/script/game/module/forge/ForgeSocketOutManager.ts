@@ -9,8 +9,14 @@
 
 import { SocketManager } from "../../../core/net/SocketManager";
 import { C2SProtocol } from "../../constant/protocol/C2SProtocol";
+//@ts-expect-error: External dependencies
+
 import StoreReqMsg = com.road.yishi.proto.store.StoreReqMsg;
+//@ts-expect-error: External dependencies
+
 import SmithFreshReqMsg = com.road.yishi.proto.store.SmithFreshReqMsg;
+//@ts-expect-error: External dependencies
+
 import RefreshPropertyReqMsg = com.road.yishi.proto.store.RefreshPropertyReqMsg;
 
 export class ForgeSocketOutManager {

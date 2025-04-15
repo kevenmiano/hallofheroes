@@ -6,11 +6,16 @@ import ComponentSetting from "../../../../utils/ComponentSetting";
 import BuildingManager from "../../BuildingManager";
 import { BuildInfo } from "../../data/BuildInfo";
 import { BuildingEvent } from "../../event/BuildingEvent";
-import IStopEffect from "../../interfaces/IStopEffect";
+// import IStopEffect from "../../interfaces/IStopEffect";
 import FUIHelper from "../../../../utils/FUIHelper";
 import { EmPackName } from "../../../../constant/UIDefine";
 import BuildingType from "../../consant/BuildingType";
 import CastleConfigUtil, { EmCastlePos } from "../../utils/CastleConfigUtil";
+
+interface IStopEffect {
+  stopEffect(): void;
+  startEffet(): void;
+}
 
 /**
  * 内城建筑显示基类

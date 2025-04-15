@@ -56,7 +56,7 @@ import { ConsortiaUpgradeWnd } from "../module/consortia/view/chairman/Consortia
 import { ConsortiaEmailMemberWnd } from "../module/consortia/view/chairman/email/ConsortiaEmailMemberWnd";
 import { ConsortiaEmailWnd } from "../module/consortia/view/chairman/email/ConsortiaEmailWnd";
 import ConsortiaPlayerMenu from "../module/consortia/view/component/ConsortiaPlayerMenu";
-import ConsortiaAltarWnd from "../module/consortia/view/ConsortiaAltarWnd";
+// import ConsortiaAltarWnd from "../module/consortia/view/ConsortiaAltarWnd";
 import { ConsortiaApplyWnd } from "../module/consortia/view/ConsortiaApplyWnd";
 import { ConsortiaAuditingWnd } from "../module/consortia/view/ConsortiaAuditingWnd";
 import { ConsortiaContributeWnd } from "../module/consortia/view/ConsortiaContributeWnd";
@@ -68,7 +68,7 @@ import { ConsortiaRankWnd } from "../module/consortia/view/ConsortiaRankWnd";
 import ConsortiaSecretInfoWnd from "../module/consortia/view/ConsortiaSecretInfoWnd";
 import { ConsortiaSkillTowerWnd } from "../module/consortia/view/ConsortiaSkillTowerWnd";
 import { ConsortiaTreasureBoxWnd } from "../module/consortia/view/ConsortiaTreasureBoxWnd";
-import { ConsortiaWnd } from "../module/consortia/view/ConsortiaWnd";
+// import { ConsortiaWnd } from "../module/consortia/view/ConsortiaWnd";
 import { GvgAddMembersWnd } from "../module/consortia/view/GvgAddMembersWnd";
 import { GvgBattleWnd } from "../module/consortia/view/GvgBattleWnd";
 import { GvgEnterWarWnd } from "../module/consortia/view/GvgEnterWarWnd";

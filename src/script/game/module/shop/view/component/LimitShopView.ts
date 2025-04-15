@@ -40,6 +40,7 @@ import { FrameCtrlManager } from "../../../../mvc/FrameCtrlManager";
 import Logger from "../../../../../core/logger/Logger";
 import { C2SProtocol } from "../../../../constant/protocol/C2SProtocol";
 import BaseTipItem from "../../../../component/item/BaseTipItem";
+//@ts-expect-error: External dependencies
 import ShopMsg = com.road.yishi.proto.shop.ShopMsg;
 import {
   getMultiLangList,
@@ -211,7 +212,10 @@ export default class LimitShopView extends FUI_LimitShopView {
   private addTimer() {
     this.removeTimer();
     this._homepageTime = 0;
-    this._homepageTime = setInterval(this.__updateTimeHandler.bind(this), 1000);
+    this._homepageTime = setInterval(
+      this.__updateTimeHandler.bind(this),
+      1000,
+    ) as unknown as number;
   }
 
   private removeTimer() {

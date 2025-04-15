@@ -1,3 +1,4 @@
+import { PetItem } from "@/script/game/module/pet/view/item/PetItem";
 import FUI_ArtifactItem from "../../../../../fui/PlayerInfo/FUI_ArtifactItem";
 import Utils from "../../../../core/utils/Utils";
 import { BagType } from "../../../constant/BagDefine";
@@ -5,6 +6,7 @@ import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { GoodsManager } from "../../../manager/GoodsManager";
 import ArtifactTips from "../../../tips/ArtifactTips";
 import { PetData } from "../../pet/data/PetData";
+import ArtifactCell from "@/script/game/module/pet/view/item/ArtifactCell";
 
 export default class ArtifactItem extends FUI_ArtifactItem {
   public petItem: PetItem;

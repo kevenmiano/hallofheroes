@@ -2,7 +2,7 @@ import FUI_BottleBottomIntergalBox from "../../../../../fui/Funny/FUI_BottleBott
 import { BottleBottomIntergalBoxView } from "./BottleBottomIntergalBoxView";
 import { BottleManager } from "../../../manager/BottleManager";
 import { BottleModel } from "../model/BottleModel";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 
 /**
  * @description

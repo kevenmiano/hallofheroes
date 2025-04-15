@@ -3,8 +3,7 @@
 export default class FUI_QuestionTitle extends fgui.GComponent {
   public questionTitle: fgui.GRichTextField;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://hu55xxyzqsyfc";
 
   public static createInstance(): FUI_QuestionTitle {

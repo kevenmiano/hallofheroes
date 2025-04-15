@@ -5,9 +5,16 @@ import NewbieBaseActionMediator from "../../../../module/guide/mediators/NewbieB
 import { HeroAvatar } from "../../../avatar/view/HeroAvatar";
 import { NodeState } from "../../../space/constant/NodeState";
 import { CampaignNode } from "../../../space/data/CampaignNode";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { CampaignWalkLayer } from "../layer/CampaignWalkLayer";
 import { CampaignArmyView } from "./CampaignArmyView";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
 
 export class PetLandArmyView
   extends CampaignArmyView

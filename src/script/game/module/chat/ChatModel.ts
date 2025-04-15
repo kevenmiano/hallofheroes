@@ -3,9 +3,13 @@ import { ChatChannel } from "../../datas/ChatChannel";
 import { PlayerInfo } from "../../datas/playerinfo/PlayerInfo";
 import { NotificationManager } from "../../manager/NotificationManager";
 import { PlayerManager } from "../../manager/PlayerManager";
-import { ConsortiaGroupChatModel } from "../groupchat/ConsortiaGroupChatModel";
+// import { ConsortiaGroupChatModel } from "../groupchat/ConsortiaGroupChatModel";
 import ChatData from "./data/ChatData";
 import { ThaneInfo } from "../../datas/playerinfo/ThaneInfo";
+
+class ConsortiaGroupChatModel {}
+
+//@ts-expect-error: External dependencies
 import TranslateRespMsg = com.road.yishi.proto.translate.TranslateRespMsg;
 import ChatHelper from "../../utils/ChatHelper";
 import IMManager from "../../manager/IMManager";

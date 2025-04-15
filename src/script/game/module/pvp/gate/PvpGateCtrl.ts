@@ -18,7 +18,9 @@ import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { RoomInfo } from "../../../mvc/model/room/RoomInfo";
 
+//@ts-expect-error: External dependencies
 import RoomMsg = com.road.yishi.proto.room.RoomMsg;
+//@ts-expect-error: External dependencies
 import RoomListRspMsg = com.road.yishi.proto.room.RoomListRspMsg;
 
 export default class PvpGateCtrl extends FrameCtrlBase {

@@ -1,3 +1,4 @@
+//@ts-expect-error: External dependencies
 import FUI_StrenAtrriItem1 from "../../../../../../fui/Pet/FUI_StrenAtrriItem1";
 import LangManager from "../../../../../core/lang/LangManager";
 import Logger from "../../../../../core/logger/Logger";
@@ -22,6 +23,7 @@ import PetCtrl from "../../control/PetCtrl";
 import { PetData } from "../../data/PetData";
 import { PetEquipCell } from "./PetEquipCell";
 
+//@ts-expect-error: External dependencies
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 import { t_s_dropitemData } from "../../../../config/t_s_dropitem";
 import { t_s_petequipattrData } from "../../../../config/t_s_petequipattr";

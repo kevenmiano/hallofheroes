@@ -1,3 +1,4 @@
+//@ts-expect-error: External dependencies
 import FUI_TabButton from "../../../../fui/Base/FUI_TabButton";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";
@@ -9,22 +10,28 @@ import MarketListCom from "./component/MarketListCom";
 import MarketMineCom from "./component/MarketMineCom";
 import MarketRecordCom from "./component/MarketRecordCom";
 
+//@ts-expect-error: External dependencies
 import MarketItemListMsg = com.road.yishi.proto.market.MarketItemListMsg;
+
+//@ts-expect-error: External dependencies
 
 import MarketOrderListMsg = com.road.yishi.proto.market.MarketOrderListMsg;
 
+//@ts-expect-error: External dependencies
 import MarketItemSellInfoMsg = com.road.yishi.proto.market.MarketItemSellInfoMsg;
 
+//@ts-expect-error: External dependencies
 import MarketItemPurchaseInfoMsg = com.road.yishi.proto.market.MarketItemPurchaseInfoMsg;
 
+//@ts-expect-error: External dependencies
 import MarketOrderRespMsg = com.road.yishi.proto.market.MarketOrderRespMsg;
-
+//@ts-expect-error: External dependencies
 import MarketOrderReqMsg = com.road.yishi.proto.market.MarketOrderReqMsg;
-
+//@ts-expect-error: External dependencies
 import MarketInfoReqMsg = com.road.yishi.proto.market.MarketInfoReqMsg;
-
+//@ts-expect-error: External dependencies
 import IMarketOrderMsg = com.road.yishi.proto.market.IMarketOrderMsg;
-
+//@ts-expect-error: External dependencies
 import MarketItemInfoMsg = com.road.yishi.proto.market.IMarketItemInfoMsg;
 
 import TemplateIDConstant from "../../constant/TemplateIDConstant";
@@ -253,7 +260,9 @@ export default class MarketWnd extends BaseWindow {
 
   private removeEvent() {
     this.sellBtn.offClick(this, this.onSellTap);
-    this.marketTabs.itemRenderer.recover();
+    if (this.marketTabs.itemRenderer instanceof Laya.Handler) {
+      this.marketTabs.itemRenderer.recover();
+    }
     this.marketTabs.itemRenderer = null;
 
     MarketManager.Instance.removeEventListener(

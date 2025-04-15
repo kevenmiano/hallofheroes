@@ -1,5 +1,6 @@
 import FUI_MarketBuyItem from "../../../../../fui/Market/FUI_MarketBuyItem";
 
+//@ts-expect-error: External dependencies
 import IMarketItemPriceMsg = com.road.yishi.proto.market.IMarketItemPriceMsg;
 
 export default class MarketBuyItem extends FUI_MarketBuyItem {

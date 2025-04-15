@@ -1,7 +1,8 @@
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import ObjectUtils from "../../../../../core/utils/ObjectUtils";
 import { WarlordsEvent } from "../../../../constant/event/NotificationEvent";
 import { JobType } from "../../../../constant/JobType";
-import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../../manager/EnterFrameManager";
 import WarlordsManager from "../../../../manager/WarlordsManager";
 import WarlordsModel from "../../../../module/warlords/WarlordsModel";

@@ -31,7 +31,11 @@ import ForgeData from "./ForgeData";
 import { ForgeSocketOutManager } from "./ForgeSocketOutManager";
 import ForgeRefreshItem from "./item/ForgeRefreshItem";
 
+//@ts-expect-error: External dependencies
+
 import SmithFreshRspMsg = com.road.yishi.proto.store.SmithFreshRspMsg;
+//@ts-expect-error: External dependencies
+
 import RefreshPropertyRepMsg = com.road.yishi.proto.store.RefreshPropertyRepMsg;
 import { StoreIntensifyCell } from "../../component/item/StoreIntensifyCell";
 import { BaseItem } from "../../component/item/BaseItem";

@@ -1,3 +1,5 @@
+//@ts-expect-error: External dependencies
+
 import FUI_starCom from "../../../../fui/Forge/FUI_starCom";
 import LangManager from "../../../core/lang/LangManager";
 import { PackageIn } from "../../../core/net/PackageIn";
@@ -23,6 +25,8 @@ import { GoodsCheck } from "../../utils/GoodsCheck";
 import { GoodsHelp } from "../../utils/GoodsHelp";
 import ForgeCtrl from "./ForgeCtrl";
 import ForgeData from "./ForgeData";
+//@ts-expect-error: External dependencies
+
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 import BaseTipItem from "../../component/item/BaseTipItem";
 import TemplateIDConstant from "../../constant/TemplateIDConstant";

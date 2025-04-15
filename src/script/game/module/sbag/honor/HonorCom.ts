@@ -1,4 +1,6 @@
+//@ts-expect-error: External dependencies
 import FUI_AttrItem from "../../../../../fui/SBag/FUI_AttrItem";
+
 import FUI_HonorCom from "../../../../../fui/SBag/FUI_HonorCom";
 import LangManager from "../../../../core/lang/LangManager";
 import { t_s_honorequipData } from "../../../config/t_s_honorequip";

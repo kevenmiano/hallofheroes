@@ -2,6 +2,7 @@ import BaseWindow from "../../../../core/ui/Base/BaseWindow";
 import { BottleModel } from "../model/BottleModel";
 import { BottleManager } from "../../../manager/BottleManager";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
+//@ts-expect-error: External dependencies
 import BottleItemInfoMsg = com.road.yishi.proto.item.BottleItemInfoMsg;
 import { PlayerBagCell } from "../../../component/item/PlayerBagCell";
 import { BaseItem } from "../../../component/item/BaseItem";

@@ -1,4 +1,5 @@
 import FrameCtrlBase from "../../mvc/FrameCtrlBase";
+//@ts-expect-error: External dependencies
 import PlayerPetOpMsg = com.road.yishi.proto.pet.PlayerPetOpMsg;
 import { SocketManager } from "../../../core/net/SocketManager";
 import { C2SProtocol } from "../../constant/protocol/C2SProtocol";

@@ -14,6 +14,8 @@ import SimpleAlertHelper, {
 import { MessageTipManager } from "../../manager/MessageTipManager";
 import FUI_QuestionSubmit from "../../../../fui/QuestionNaire/FUI_QuestionSubmit";
 import FUI_QuestionInput from "../../../../fui/QuestionNaire/FUI_QuestionInput";
+
+//@ts-expect-error: External dependencies
 import QuestionDataRspInfo = com.road.yishi.proto.questionnarie.QuestionDataRspInfo;
 import Utils from "../../../core/utils/Utils";
 

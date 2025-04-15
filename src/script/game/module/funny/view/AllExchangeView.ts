@@ -13,7 +13,13 @@ import { PlayerManager } from "../../../manager/PlayerManager";
 import AllManExchangeModel from "../model/AllManExchangeModel";
 import ExchangeItem from "./ExchangeItem";
 import ExcSvrItem from "./ExcSvrItem";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+}
 
 /**
  * 全民兑换
@@ -172,8 +178,12 @@ export default class AllExchangeView
     this.helpBtn.offClick(this, this.onHelp);
     // if (_timer) _timer.removeEventListener(TimerEvent.TIMER, __timerHandler);
     Laya.timer.clear(this, this.__updateTimeHandler);
-    this.list0.itemRenderer && this.list0.itemRenderer.recover();
-    this.list1.itemRenderer && this.list1.itemRenderer.recover();
+    if (this.list0.itemRenderer instanceof Laya.Handler) {
+      this.list0.itemRenderer.recover();
+    }
+    if (this.list1.itemRenderer instanceof Laya.Handler) {
+      this.list1.itemRenderer.recover();
+    }
 
     this.list0.itemRenderer = null;
     this.list1.itemRenderer = null;

@@ -7,6 +7,7 @@ import OutyardManager from "../../manager/OutyardManager";
 import { FrameCtrlManager } from "../../mvc/FrameCtrlManager";
 import OutyardModel from "./OutyardModel";
 import OutyardOpenTimeItem from "./view/OutyardOpenTimeItem";
+//@ts-expect-error: External dependencies
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
 import LangManager from "../../../core/lang/LangManager";
 import UIManager from "../../../core/ui/UIManager";
@@ -73,7 +74,9 @@ export default class OutyardOpenWnd extends BaseWindow {
       this.__refreshOpeningHandler,
       this,
     );
-    this.timeList.itemRenderer.recover();
+    if (this.timeList.itemRenderer instanceof Laya.Handler) {
+      this.timeList.itemRenderer.recover();
+    }
     Utils.clearGListHandle(this.timeList);
     NotificationManager.Instance.removeEventListener(
       NotificationEvent.OUTYARD_FULL_INFO,

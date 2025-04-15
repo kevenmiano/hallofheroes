@@ -309,9 +309,13 @@ export class PayView extends FUI_PayView {
 
   dispose(destroy = true) {
     this.removeEvent();
-    this.list.itemRenderer && this.list.itemRenderer.recover();
+    if (this.list.itemRenderer instanceof Laya.Handler) {
+      this.list.itemRenderer.recover();
+    }
     this.list.itemRenderer = null;
     this._data = null;
-    destroy && super.dispose();
+    if (destroy) {
+      super.dispose();
+    }
   }
 }

@@ -35,7 +35,14 @@ import ItemID from "../../../constant/ItemID";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import { ConfigType } from "../../../constant/ConfigDefine";
 import { t_s_itemtemplateData } from "../../../config/t_s_itemtemplate";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 export class MemoryCardView extends FUI_MemoryCardView implements FunnyContent {
   private _remainTime: number = 0;

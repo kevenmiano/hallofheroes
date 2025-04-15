@@ -7,8 +7,17 @@ import { PlayerManager } from "../../../manager/PlayerManager";
 import { BottleModel } from "../model/BottleModel";
 import { BottleUserInfo } from "../model/BottleUserInfo";
 import { ToolTipsManager } from "../../../manager/ToolTipsManager";
+
+//@ts-expect-error: External dependencies
 import BottlePackage = com.road.yishi.proto.item.BottlePackage;
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @description

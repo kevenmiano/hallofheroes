@@ -39,6 +39,9 @@ import QQDawankaManager from "../../../manager/QQDawankaManager";
 import { UIFilter } from "../../../../core/ui/UIFilter";
 
 interface IBuildingFilter {
+  setLightFilter(_avatar: Avatar): unknown;
+  setNormalFilter(contentBitmap: Laya.Sprite): unknown;
+  setGlowFilter(contentBitmap: Laya.Sprite): unknown;
   filterType: number;
   filterValue: number;
 }

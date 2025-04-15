@@ -12,6 +12,7 @@ import SpaceArmy from "./data/SpaceArmy";
 import { SpaceNode } from "./data/SpaceNode";
 import SpaceManager from "./SpaceManager";
 import { MapUtils } from "./utils/MapUtils";
+//@ts-expect-error: External dependencies
 import SpacePlayerMoveMsg = com.road.yishi.proto.campaign.SpacePlayerMoveMsg;
 import MathHelper from "../../../core/utils/MathHelper";
 import { TempleteManager } from "../../manager/TempleteManager";

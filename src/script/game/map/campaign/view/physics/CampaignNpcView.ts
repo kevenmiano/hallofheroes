@@ -4,7 +4,7 @@ import {
   FilterFrameText,
   eFilterFrameText,
 } from "../../../../component/FilterFrameText";
-import { SimpleMovie } from "../../../../component/tools/SimpleMovie";
+// import { SimpleMovie } from "../../../../component/tools/SimpleMovie";
 import {
   ConsortiaEvent,
   PhysicsEvent,
@@ -330,7 +330,7 @@ export class CampaignNpcView extends MapPhysicsAttackingBase {
     this._givePowerEffect = null;
   }
 
-  private _givePowerEffect: SimpleMovie;
+  private _givePowerEffect: any;
 
   private showGivePowerEffect() {
     // AudioManager.Instance.play(SoundIds.WATER_TREE_GIVEPOW_SOUND);

@@ -11,13 +11,17 @@ import Dictionary from "../../../../core/utils/Dictionary";
 import ObjectUtils from "../../../../core/utils/ObjectUtils";
 import { DisplayObject } from "../../../component/DisplayObject";
 import { SharedManager } from "../../../manager/SharedManager";
-import Shaker from "../../../utils/Shaker";
+// import Shaker from "../../../utils/sha";
 import { BattleEffect } from "../../skillsys/effect/BattleEffect";
 import { EffectContainer } from "../../skillsys/effect/EffectContainer";
 import { BaseRoleView } from "../roles/BaseRoleView";
 import { BattleCameraScene } from "./BattleCameraScene";
 import SDKManager from "../../../../core/sdk/SDKManager";
 import Resolution from "../../../../core/comps/Resolution";
+
+interface Shaker {
+  stop(): void;
+}
 
 export class BattleMap extends BattleCameraScene {
   protected _rolesContainer: Laya.Sprite;
@@ -41,6 +45,7 @@ export class BattleMap extends BattleCameraScene {
   protected _mapBg: DisplayObject;
   protected _mapBgAni: fgui.GComponent;
 
+  //@ts-expect-error: External dependencies
   private _moveCameraTween: TweenMax;
 
   constructor() {
@@ -118,12 +123,14 @@ export class BattleMap extends BattleCameraScene {
       if (this._mapBgAni) {
         this._mapBgAni.filters = [this._layerColorTransform];
       }
+      //@ts-expect-error: External dependencies
       TweenLite.to(this._layerColorTransform, easeInOutTime, {
         redOffset: rOff,
         greenOffset: gOff,
         blueOffset: bOff,
         onUpdate: updateFun,
       });
+      //@ts-expect-error: External dependencies
       TweenLite.to(this._layerColorTransform, easeInOutTime, {
         redOffset: 0,
         greenOffset: 0,
@@ -178,6 +185,7 @@ export class BattleMap extends BattleCameraScene {
     var gOff: number = ((color & 0x00ff00) >>> 8) * a;
     var bOff: number = (color & 0x0000ff) * a;
 
+    //@ts-expect-error: External dependencies
     TweenLite.to(this._layerColorTransform, easeInFrame, {
       useFrames: true,
       redOffset: rOff,
@@ -185,6 +193,7 @@ export class BattleMap extends BattleCameraScene {
       blueOffset: bOff,
       onUpdate: updateFun,
     });
+    //@ts-expect-error: External dependencies
     TweenLite.to(this._layerColorTransform, endFrame - easeOutFrame, {
       useFrames: true,
       delay: easeOutFrame,
@@ -196,7 +205,7 @@ export class BattleMap extends BattleCameraScene {
     });
   }
 
-  private _revertTimeoutId: number;
+  private _revertTimeoutId: number | ReturnType<typeof setTimeout>;
   public backGroundToColor2(brightness: number, time: number) {
     var filter: Laya.ColorFilter;
     var matrix: any[] = [];
@@ -281,6 +290,7 @@ export class BattleMap extends BattleCameraScene {
     point: Laya.Point,
     time: number = 0.5,
     delay: number = 0,
+    //@ts-expect-error: External dependencies
   ): TweenMax {
     var f_point = new Laya.Point(
       this.cameraX + point.x,
@@ -300,6 +310,7 @@ export class BattleMap extends BattleCameraScene {
     point: Laya.Point,
     time: number = 0.5,
     delay: number = 0,
+    //@ts-expect-error: External dependencies
   ): TweenMax {
     this._moveCameraTween = TweenMax.to(this, time, {
       cameraX: point.x,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
 import FUI_GoldMineInfoView from "../../../../../fui/OuterCity/FUI_GoldMineInfoView";
 import Utils from "../../../../core/utils/Utils";
 import {

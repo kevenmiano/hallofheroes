@@ -16,7 +16,10 @@ import ChatData from "../../chat/data/ChatData";
 import { MonopolyItemInfo } from "../model/MonopolyItemInfo";
 import MonopolyModel from "../model/MonopolyModel";
 import MonopolyFinishColumnView from "./MonopolyFinishColumnView";
+
+//@ts-expect-error: External dependencies
 import TempMsg = com.road.yishi.proto.campaign.TempMsg;
+//@ts-expect-error: External dependencies
 import CampaignNodeInfoMsg = com.road.yishi.proto.campaign.CampaignNodeInfoMsg;
 import SimpleAlertHelper from "../../../component/SimpleAlertHelper";
 

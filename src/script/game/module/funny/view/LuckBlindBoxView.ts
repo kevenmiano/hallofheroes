@@ -25,13 +25,16 @@ import RechargeAlertMannager from "../../../manager/RechargeAlertMannager";
 import SimpleAlertHelper from "../../../component/SimpleAlertHelper";
 
 /**幸运盲盒响应对象 */
+//@ts-expect-error: External dependencies
 import LuckBlindBoxMessage = com.road.yishi.proto.active.ChargePointLotteryMsg;
 /**幸运盲盒物品项响应对象 */
+//@ts-expect-error: External dependencies
+
 import LuckBlindBoxRewardItemMessage = com.road.yishi.proto.active.LotteryItemMsg;
 
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 import { LuckBlindBoxChanceBoxItem } from "./LuckBlindBoxChanceBoxItem";
-import { FunnyContent } from "./FunnyContent";
+import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import Utils from "../../../../core/utils/Utils";
 
 /**

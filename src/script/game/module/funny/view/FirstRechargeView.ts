@@ -13,7 +13,15 @@ import { EmWindow } from "../../../constant/UIDefine";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import Utils from "../../../../core/utils/Utils";
 import RechargeAlertMannager from "../../../manager/RechargeAlertMannager";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
+
 /**
  * 首充送礼
  */

@@ -8,6 +8,7 @@ import ConfigInfoManager from "../../../manager/ConfigInfoManager";
 import OutyardManager from "../../../manager/OutyardManager";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import OutyardUserInfo from "../data/OutyardUserInfo";
+//@ts-expect-error: External dependencies
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
 import OutyardModel from "../OutyardModel";
 import FUIHelper from "../../../utils/FUIHelper";

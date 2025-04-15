@@ -43,6 +43,7 @@ import { MemoryCardManager } from "../control/MemoryCardManager";
 import { MemoryCardView } from "./MemoryCardView";
 import LuckyExchangeManager from "../../../manager/LuckyExchangeManager";
 import LuckyExchangeView from "./LuckyExchangeView";
+//@ts-expect-error: External dependencies
 import LuckExchangeTempMsg = com.road.yishi.proto.active.LuckExchangeTempMsg;
 import { ConfigManager } from "../../../manager/ConfigManager";
 import FoisonHornManager from "../../../manager/FoisonHornManager";
@@ -465,7 +466,7 @@ export default class FunnyWnd extends BaseWindow {
   }
 
   offEvent() {
-    if (this.tabList.itemRenderer) {
+    if (this.tabList.itemRenderer instanceof Laya.Handler) {
       this.tabList.itemRenderer.recover();
       this.tabList.itemRenderer = null;
     }

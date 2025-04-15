@@ -1,3 +1,5 @@
+//@ts-expect-error: External dependencies
+
 import FUI_SecretItem from "../../../../fui/PlayerInfo/FUI_SecretItem";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

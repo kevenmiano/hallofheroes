@@ -5,8 +5,7 @@ import FUI_AccountItem from "./FUI_AccountItem";
 export default class FUI_RecordList extends fgui.GComponent {
   public recentLoginTxt: fgui.GRichTextField;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public N8: fgui.GImage;
   public allLoginTxt: fgui.GRichTextField;
   public groupAll: fgui.GGroup;

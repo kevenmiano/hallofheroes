@@ -33,6 +33,8 @@ import {
   Enum_BagState,
 } from "../../bag/model/Enum_BagState";
 import { BagHelper } from "../../bag/utils/BagHelper";
+
+//@ts-expect-error: External dependencies
 import PayTypeMsg = com.road.yishi.proto.player.PayTypeMsg;
 import { ArmyManager } from "../../../manager/ArmyManager";
 

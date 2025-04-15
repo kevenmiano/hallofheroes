@@ -1057,14 +1057,16 @@ export default class LoginWndOS extends BaseWindow {
       this.serverInfoItem.serverInfo.openTime;
     /***正式服和beta测试服判断***/
     let betaSites = PathManager.info.BETA_SITES;
-    let versionType: VerType =
+    let versionType =
       betaSites.indexOf(this.selectServerData.mainSite) >= 0
         ? SITE_MODE.BETA
         : SITE_MODE.RELEASE;
     let needAlert = PathManager.info.RELOAD_ALERT;
     if (
       !Utils.isWxMiniGame() &&
+      //@ts-expect-error: External dependencies
       checkNeedReload &&
+      //@ts-expect-error: External dependencies
       checkNeedReload(versionType)
     ) {
       if (needAlert) {
@@ -1112,6 +1114,7 @@ export default class LoginWndOS extends BaseWindow {
 
   private reloadGame(versionType) {
     Utils.delay(300).then(() => {
+      //@ts-expect-error: External dependencies
       gotoVersionAndReload(versionType, JSON.stringify(this.selectServerData));
     });
   }

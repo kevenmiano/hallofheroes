@@ -1,7 +1,19 @@
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 import { DisplayObject } from "../../../component/DisplayObject";
 // import { IEnterFrame } from "../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../manager/EnterFrameManager";
-import { BattleBackGroundData } from "../../data/BattleBackGroundData";
+// import { BattleBackGroundData } from "../../data/BattleBackGroundData";
+
+interface BattleBackGroundData {
+  moveSpeed: number;
+  id: number;
+  name: string;
+  type: number;
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+}
 
 export class RepeatBackGroundLayer extends Laya.Sprite implements IEnterFrame {
   private _x: number = 0;

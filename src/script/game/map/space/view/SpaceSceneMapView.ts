@@ -209,6 +209,7 @@ export class SpaceSceneMapView extends Laya.Sprite {
       return;
     }
     if (isTween) {
+      //@ts-expect-error: External dependencies
       TweenLite.to(this, dealy, {
         x: p.x,
         y: p.y,

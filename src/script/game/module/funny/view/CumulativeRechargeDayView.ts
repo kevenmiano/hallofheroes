@@ -20,7 +20,14 @@ import FunnyConditionType from "../model/FunnyConditionType";
 import FunnyData from "../model/FunnyData";
 import FunnyType from "../model/FunnyType";
 import CumulativeRechargeDayItem from "./CumulativeRechargeDayItem";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @author:pzlricky

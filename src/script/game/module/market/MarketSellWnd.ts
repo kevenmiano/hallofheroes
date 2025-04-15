@@ -9,7 +9,10 @@ import GoodsSonType from "../../constant/GoodsSonType";
 import FUIHelper from "../../utils/FUIHelper";
 import UIButton from "../../../core/ui/UIButton";
 
+//@ts-expect-error: External dependencies
 import MarketItemSellInfoMsg = com.road.yishi.proto.market.MarketItemSellInfoMsg;
+
+//@ts-expect-error: External dependencies
 import MarketOrderRespMsg = com.road.yishi.proto.market.MarketOrderRespMsg;
 import { MessageTipManager } from "../../manager/MessageTipManager";
 import ColorConstant from "../../constant/ColorConstant";

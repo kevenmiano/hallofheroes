@@ -1,3 +1,4 @@
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 import FUI_OuterCityShopItem from "../../../../../fui/Base/FUI_OuterCityShopItem";
 import FUI_ExchangePoint from "../../../../../fui/OutCityShop/FUI_ExchangePoint";
 import LangManager from "../../../../core/lang/LangManager";

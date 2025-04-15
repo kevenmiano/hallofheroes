@@ -2,10 +2,15 @@ import { OuterCityEvent } from "../../../../constant/event/NotificationEvent";
 import { PlayerManager } from "../../../../manager/PlayerManager";
 import { FloorMapInfo } from "../../../space/data/FloorMapInfo";
 import { MapInfo } from "../../../space/data/MapInfo";
-import ISelectMovie from "../../../space/interfaces/ISelectMovie";
+// import ISelectMovie from "../../../space/interfaces/ISelectMovie";
 import { MapPhysicsBase } from "../../../space/view/physics/MapPhysicsBase";
 import { MapPhysicsFilter } from "../../filter/MapPhysicsFilter";
 import { MapBaseLayer } from "./MapBaseLayer";
+
+interface ISelectMovie {
+  beginSelectMovie(): void;
+  resetSelectMovie(): void;
+}
 
 export class SimpleMapLayer extends MapBaseLayer {
   protected _model: FloorMapInfo;
@@ -110,12 +115,14 @@ export class SimpleMapLayer extends MapBaseLayer {
         }
       }
     });
+    //@ts-expect-error: External dependencies
     timeline1.insertMultiple([
       TweenMax.from(canAttack, 0.5, {
         colorTransform: { tint: 0xff0000, tintAmount: 0.4 },
         glowFilter: { color: 0xff0000, alpha: 0.9, blurX: 17, blurY: 17 },
       }),
     ]);
+    //@ts-expect-error: External dependencies
     timeline2.insertMultiple([
       TweenMax.from(canAttack, 0.5, {
         colorTransform: { tint: 0xff0000, tintAmount: 0.18 },
@@ -128,12 +135,14 @@ export class SimpleMapLayer extends MapBaseLayer {
         },
       }),
     ]);
+    //@ts-expect-error: External dependencies
     timeline3.insertMultiple([
       TweenMax.from(noAttack, 0.5, {
         colorTransform: { tint: 0xffff00, tintAmount: 0.4 },
         glowFilter: { color: 0xff0000, alpha: 0.9, blurX: 17, blurY: 17 },
       }),
     ]);
+    //@ts-expect-error: External dependencies
     timeline4.insertMultiple([
       TweenMax.from(noAttack, 0.5, {
         colorTransform: { tint: 0xffff00, tintAmount: 0.15 },

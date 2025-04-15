@@ -10,7 +10,11 @@ import { PlayerManager } from "../../manager/PlayerManager";
 import FrameDataBase from "../../mvc/FrameDataBase";
 import OutyardGuildInfo from "./data/OutyardGuildInfo";
 import OutyardUserInfo from "./data/OutyardUserInfo";
+
+//@ts-expect-error: External dependencies
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
+
+//@ts-expect-error: External dependencies
 import StackHeadOpenTimeMsg = com.road.yishi.proto.stackhead.StackHeadOpenTimeMsg;
 import Utils from "../../../core/utils/Utils";
 export default class OutyardModel extends FrameDataBase {
@@ -230,7 +234,7 @@ export default class OutyardModel extends FrameDataBase {
         stateMsg.session - 1
       ] as StackHeadOpenTimeMsg;
       let startTime: number = 0;
-      let startTime2 = openMsg.startTime as Long;
+      let startTime2 = openMsg.startTime as any;
       if (startTime2.high) {
         startTime = Int64Utils.int64ToNumber(startTime2);
       } else {

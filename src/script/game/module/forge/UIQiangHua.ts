@@ -36,6 +36,8 @@ import CommonUtils from "../../../core/utils/CommonUtils";
 import ColorConstant from "../../constant/ColorConstant";
 import BaseTipItem from "../../component/item/BaseTipItem";
 import TemplateIDConstant from "../../constant/TemplateIDConstant";
+//@ts-expect-error: External dependencies
+
 import StoreRspMsg = com.road.yishi.proto.store.StoreRspMsg;
 
 export default class UIQiangHua extends BaseFguiCom {
@@ -123,7 +125,7 @@ export default class UIQiangHua extends BaseFguiCom {
       let strengthenDate = new Date(strengthenCheckDate);
       let now: Date = new Date();
       let outdate: boolean = false;
-      let check: boolean = SharedManager.Instance.resolveStrengthen;
+      // let check: boolean = SharedManager.Instance.resolveStrengthen;
       if (
         !isStrengthen ||
         (strengthenDate &&

@@ -28,12 +28,26 @@ import FrameCtrlBase from "../../../mvc/FrameCtrlBase";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { ColosseumEventData } from "./ColosseumData";
 
+//@ts-expect-error: External dependencies
 import ChallengeRequestMsg = com.road.yishi.proto.pet.ChallengeRequestMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeMsg = com.road.yishi.proto.player.ChallengeMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeInfoMsg = com.road.yishi.proto.simple.ChallengeInfoMsg;
+
+//@ts-expect-error: External dependencies
+
 import AvaterMsg = com.road.yishi.proto.simple.AvaterMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeRankRewardMsg = com.road.yishi.proto.player.ChallengeRankRewardMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeCoolTimeMsg = com.road.yishi.proto.player.ChallengeCoolTimeMsg;
+
+//@ts-expect-error: External dependencies
 import ChallengeRewardReq = com.road.yishi.proto.simple.ChallengeRewardReq;
 
 export default class ColosseumCtrl extends FrameCtrlBase {

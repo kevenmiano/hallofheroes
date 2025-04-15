@@ -10,12 +10,13 @@ import NpcAiInfo from "../../../ai/NpcAiInfo";
 import Tiles from "../../constant/Tiles";
 import { AiStateType } from "../../constant/AiStateType";
 import { SpaceArmyView } from "../physics/SpaceArmyView";
-import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
 import { EnterFrameManager } from "../../../../manager/EnterFrameManager";
 import MediatorMananger from "../../../../manager/MediatorMananger";
 import Logger from "../../../../../core/logger/Logger";
 import { SpeedEnumerate } from "../../constant/SpeedEnumerate";
 import { ConfigManager } from "../../../../manager/ConfigManager";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 
 export class SpaceNpcLayer implements IEnterFrame {
   public static NAME: string = "map.space.view.layer.SpaceNpcLayer";

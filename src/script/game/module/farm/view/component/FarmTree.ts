@@ -22,6 +22,7 @@ import { TimerTicker } from "../../../../utils/TimerTicker";
 import FarmInfo from "../../data/FarmInfo";
 import { FarmModel } from "../../data/FarmModel";
 import { WaterTreeModel } from "../../data/WaterTreeModel";
+//@ts-expect-error: External dependencies
 import TreeUpdateRsp = com.road.yishi.proto.farm.TreeUpdateRsp;
 import AudioManager from "../../../../../core/audio/AudioManager";
 import LangManager from "../../../../../core/lang/LangManager";
@@ -331,8 +332,10 @@ export class FarmTree extends FUI_FarmTree {
     this.showOpt(false);
     this.showProgTransition(true, 0);
     TweenLite.killTweensOf(this.progTranstion);
+    //@ts-expect-error: External dependencies
     TweenLite.to(this.progTranstion, 1, {
       value: 100,
+      //@ts-expect-error: External dependencies
       ease: Linear.easeNone,
       onUpdate: null,
       onComplete: this.onWaterProgressBack.bind(this),

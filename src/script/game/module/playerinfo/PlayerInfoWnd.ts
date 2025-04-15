@@ -37,15 +37,27 @@ import StarInfo from "../mail/StarInfo";
 import { PetData } from "../pet/data/PetData";
 import SortData from "../sort/SortData";
 import StarTipCom from "./StarTipCom";
+//@ts-expect-error: External dependencies
+
 import SimpleHeroMsg = com.road.yishi.proto.simple.SimpleHeroMsg;
+//@ts-expect-error: External dependencies
+
 import DetailRspMsg = com.road.yishi.proto.simple.DetailRspMsg;
+//@ts-expect-error: External dependencies
+
 import SimpleItemInfoMsg = com.road.yishi.proto.simple.SimpleItemInfoMsg;
+//@ts-expect-error: External dependencies
+
 import SimpleStarInfoMsg = com.road.yishi.proto.simple.SimpleStarInfoMsg;
+//@ts-expect-error: External dependencies
+
 import SimplePowCardFightInfoMsg = com.road.yishi.proto.simple.SimplePowCardFightInfoMsg;
 import FUIHelper from "../../utils/FUIHelper";
 import { GoodsHelp } from "../../utils/GoodsHelp";
 import UIButton from "../../../core/ui/UIButton";
 import { TattooHole } from "../sbag/tattoo/model/TattooHole";
+//@ts-expect-error: External dependencies
+
 import { TattooHoleInfoII } from "../sbag/tattoo/model/TattooHoleInfoII";
 import { t_s_upgradetemplateData } from "../../config/t_s_upgradetemplate";
 import { TempleteManager } from "../../manager/TempleteManager";
@@ -841,7 +853,7 @@ export class PlayerInfoWnd extends BaseWindow {
    */
   private onRecvMasteryInfo(info: any): void {
     info[2] = this._thane.job;
-    ``;
+
     FrameCtrlManager.Instance.open(EmWindow.PlayerMasteryWnd, info);
     FrameCtrlManager.Instance.open(EmWindow.MyMasteryWnd);
     // this.OnBtnClose();

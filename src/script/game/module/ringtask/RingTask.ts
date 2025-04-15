@@ -12,6 +12,8 @@ import RingTaskManager from "../../manager/RingTaskManager";
 import OfferRewardTemplate from "../offerReward/OfferRewardTemplate";
 import { t_s_rewardcondictionData } from "../../config/t_s_rewardcondiction";
 import LangManager from "../../../core/lang/LangManager";
+
+//@ts-expect-error: External dependencies
 import RewardInfo = com.road.yishi.proto.reward.RewardInfo;
 import {
   RingTaskEvent,

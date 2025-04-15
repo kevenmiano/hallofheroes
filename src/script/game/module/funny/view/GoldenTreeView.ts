@@ -28,7 +28,14 @@ import UIButton, { UIButtonChangeType } from "../../../../core/ui/UIButton";
 import { BottleIntergalBox } from "./BottleIntergalBox";
 import { BottleBottomIntergalBox } from "./BottleBottomIntergalBox";
 import { TempleteManager } from "../../../manager/TempleteManager";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**
  * @description

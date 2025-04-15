@@ -1,6 +1,6 @@
 import { t_s_configData } from "../../../../config/t_s_config";
 import { TattooHole } from "./TattooHole";
-import { TattooHoleInfoII } from "./TattooHoleInfoII";
+// import { TattooHoleInfoII } from "./TattooHoleInfoII";
 import { NotificationManager } from "../../../../manager/NotificationManager";
 import { ArmyEvent } from "../../../../constant/event/NotificationEvent";
 import { t_s_upgradetemplateData } from "../../../../config/t_s_upgradetemplate";
@@ -11,6 +11,16 @@ import { GoodsManager } from "../../../../manager/GoodsManager";
 import { BagType } from "../../../../constant/BagDefine";
 import OpenGrades from "../../../../constant/OpenGrades";
 import { RoleCtrl } from "../../../bag/control/RoleCtrl";
+
+class TattooHoleInfoII {
+  public holeId: number;
+  public property: number;
+  public level: number;
+  public isLock: boolean = false; //是否锁定
+  public isSelected: boolean = false; //是否选中
+  public isShow: boolean = false; //是否显示
+  public isCanUse: boolean = false; //是否可用
+}
 
 /**
  * @description

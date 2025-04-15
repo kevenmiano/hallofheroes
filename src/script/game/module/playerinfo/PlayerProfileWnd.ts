@@ -17,14 +17,32 @@ import IconAvatarFrame from "../../map/space/view/physics/IconAvatarFrame";
  * @author zhihua.zhou
  */
 export class PlayerProfileWnd extends BaseWindow {
+  //@ts-expect-error: External dependencies
+
   private txt_name: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_job: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_consortia: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_charm: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_honor: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_svr: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_title: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_lv: fairygui.GBasicTextField;
+  //@ts-expect-error: External dependencies
+
   private txt_honorName: fairygui.GBasicTextField;
   public icon_head: IconAvatarFrame;
   protected _honerView: AppellView;

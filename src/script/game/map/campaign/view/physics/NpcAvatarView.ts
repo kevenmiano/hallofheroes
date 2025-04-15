@@ -48,7 +48,7 @@ import { SpeedEnumerate } from "../../../space/constant/SpeedEnumerate";
 import Tiles from "../../../space/constant/Tiles";
 import { CampaignNode } from "../../../space/data/CampaignNode";
 import { MapPhysics } from "../../../space/data/MapPhysics";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { eAvatarBaseViewType } from "../../../view/hero/AvatarBaseView";
 import { HeroAvatarView } from "../../../view/hero/HeroAvatarView";
 import { AvatarInfoUILayerHandler } from "../../../view/layer/AvatarInfoUILayer";
@@ -57,8 +57,14 @@ import { CollectionRobotData } from "../../data/CollectionRobotData";
 import { CampaignWalkLayer } from "../layer/CampaignWalkLayer";
 import { CampaignArmyView } from "./CampaignArmyView";
 
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  attackFunEx(): boolean;
+  attackFun(): boolean;
+}
+
 /**
- * @author:shujin.ou
+ *
  * @email:1009865728@qq.com
  * @data: 2020-12-14 20:17
  */

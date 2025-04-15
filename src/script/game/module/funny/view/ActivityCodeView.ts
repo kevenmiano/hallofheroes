@@ -4,7 +4,7 @@ import ActivityManager from "../../../manager/ActivityManager";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
 import LangManager from "../../../../core/lang/LangManager";
 import UIButton from "../../../../core/ui/UIButton";
-import { FunnyContent } from "./FunnyContent";
+import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 
 /**
  * 激活码

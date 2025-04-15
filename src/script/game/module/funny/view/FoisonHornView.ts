@@ -16,7 +16,15 @@ import FoisonHornModel from "../../../mvc/model/FoisonHornModel";
 import FUIHelper from "../../../utils/FUIHelper";
 import { GoodsHelp } from "../../../utils/GoodsHelp";
 import FoisonHornItem from "./FoisonHornItem";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
+
 /**
  * 丰收号角
  */

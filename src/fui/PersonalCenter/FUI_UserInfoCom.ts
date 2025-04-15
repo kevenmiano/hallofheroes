@@ -20,8 +20,7 @@ export default class FUI_UserInfoCom extends fgui.GComponent {
   public btn_role: fgui.GButton;
   public btn_login: fgui.GButton;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public airBubbleLoader: fgui.GLoader;
   public appellMovie: fgui.GLoader;
   public static URL: string = "ui://6watmcoihzsft";

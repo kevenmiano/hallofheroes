@@ -4,8 +4,7 @@ export default class FUI_QuestionItem extends fgui.GComponent {
   public QuestTitle: fgui.GRichTextField;
   public list: fgui.GList;
 
-  //@ts-expect-error: External dependencies
-  public group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://hu55xxyzqsyfb";
 
   public static createInstance(): FUI_QuestionItem {

@@ -5,6 +5,7 @@ import OutyardManager from "../../manager/OutyardManager";
 import OutyardUserInfo from "./data/OutyardUserInfo";
 import OutyardModel from "./OutyardModel";
 import OutyardChangeItem from "./view/OutyardChangeItem";
+//@ts-expect-error: External dependencies
 import StackHeadSeniorGeneralMsg = com.road.yishi.proto.stackhead.StackHeadSeniorGeneralMsg;
 import Utils from "../../../core/utils/Utils";
 

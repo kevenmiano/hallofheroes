@@ -27,15 +27,25 @@ import SpaceActionsFactory from "../../action/map/SpaceActionsFactory";
 import SpaceScene from "../../scene/SpaceScene";
 import { SpaceSceneMapView } from "./view/SpaceSceneMapView";
 
+//@ts-expect-error: External dependencies
 import RoomEnterMsg = com.road.yishi.proto.room.RoomEnterMsg;
+//@ts-expect-error: External dependencies
 import RoomPlayerMsg = com.road.yishi.proto.room.RoomPlayerMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerMoveMsg = com.road.yishi.proto.campaign.SpacePlayerMoveMsg;
+//@ts-expect-error: External dependencies
 import SpacePlayerMsg = com.road.yishi.proto.campaign.SpacePlayerMsg;
+//@ts-expect-error: External dependencies
 import CampaignExitMsg = com.road.yishi.proto.campaign.CampaignExitMsg;
+//@ts-expect-error: External dependencies
 import HeroEquUpdatedMsg = com.road.yishi.proto.army.HeroEquUpdatedMsg;
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
+//@ts-expect-error: External dependencies
 import PlayerMovieMsg = com.road.yishi.proto.player.PlayerMovieMsg;
+//@ts-expect-error: External dependencies
 import StandPosMsg = com.road.yishi.proto.campaign.StandPosMsg;
+//@ts-expect-error: External dependencies
 import HangupAttackMsg = com.road.yishi.proto.campaign.HangupAttackMsg;
 import Logger from "../../../core/logger/Logger";
 import { SpaceNpcView } from "./view/physics/SpaceNpcView";
@@ -474,6 +484,7 @@ export default class SpaceManager extends GameEventDispatcher {
     return PlayerManager.Instance.currentPlayerModel.playerInfo;
   }
 
+  //@ts-expect-error: External dependencies
   public readMember(player: com.road.yishi.proto.room.RoomPlayerMsg) {
     var id: number = player.heroId;
     var userId: number = player.playerId;

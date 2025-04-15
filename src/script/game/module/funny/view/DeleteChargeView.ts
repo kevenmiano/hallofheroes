@@ -10,8 +10,15 @@ import DeleteChargeItem from "./DeleteChargeItem";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import { MessageTipManager } from "../../../manager/MessageTipManager";
 import SimpleAlertHelper from "../../../component/SimpleAlertHelper";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
 import Utils from "../../../../core/utils/Utils";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 export default class DeleteChargeView
   extends FUI_DeleteChargeView

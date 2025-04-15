@@ -22,6 +22,7 @@ import { ShopManager } from "../../../manager/ShopManager";
 import { TempleteManager } from "../../../manager/TempleteManager";
 import { ShopGoodsInfo } from "../../shop/model/ShopGoodsInfo";
 import { BaseItem } from "../../../component/item/BaseItem";
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 
 export class PvpShopItem extends FUI_ShopItem {
   public item: BaseItem;

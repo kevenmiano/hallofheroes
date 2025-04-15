@@ -15,9 +15,16 @@ import { ToolTipsManager } from "../../../../manager/ToolTipsManager";
 import { TipsShowType } from "../../../../tips/ITipedDisplay";
 import FUIHelper from "../../../../utils/FUIHelper";
 import { WildLand } from "../../../data/WildLand";
-import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
+// import IBaseMouseEvent from "../../../space/interfaces/IBaseMouseEvent";
 import { HeroAvatarView } from "../../../view/hero/HeroAvatarView";
 import { CampaignArmyViewHelper } from "../../CampaignArmyViewHelper";
+
+interface IBaseMouseEvent {
+  mouseClickHandler(evt: Laya.Event): boolean;
+  mouseOverHandler(evt: Laya.Event): boolean;
+  mouseOutHandler(evt: Laya.Event): boolean;
+  mouseMoveHandler(evt: Laya.Event): boolean;
+}
 
 export default class OutercityVehicleArmyView
   extends HeroAvatarView

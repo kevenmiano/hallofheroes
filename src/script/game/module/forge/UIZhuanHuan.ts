@@ -16,6 +16,8 @@ import SimpleAlertHelper from "../../component/SimpleAlertHelper";
 import { BagType } from "../../constant/BagDefine";
 import { ConfigType } from "../../constant/ConfigDefine";
 import { GoodsInfo } from "../../datas/goods/GoodsInfo";
+//@ts-expect-error: External dependencies
+
 import { SwitchGoodsInfo } from "../../datas/SwitchGoodsInfo";
 import { MessageTipManager } from "../../manager/MessageTipManager";
 import { ResourceManager } from "../../manager/ResourceManager";

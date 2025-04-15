@@ -105,6 +105,8 @@ export class OuterCityShopModel extends GameEventDispatcher {
   public static RANDOM_SHOP: number = 2; //随机兑换
   public static PLANES_SHOP: number = 3; //位面战争黑市
   // 周限购
+
+  //@ts-expect-error: External dependencies
   public weeklyLimitItems: com.road.yishi.proto.mapshop.IMapshopIteminfoMsg[] =
     [];
 

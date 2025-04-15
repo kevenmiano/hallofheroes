@@ -13,6 +13,7 @@ import { C2SProtocol } from "../../constant/protocol/C2SProtocol";
 import { FateRotarySkillInfo } from "../../datas/FateRotarySkillInfo";
 import { GoodsManager } from "../../manager/GoodsManager";
 import { TempleteManager } from "../../manager/TempleteManager";
+//@ts-expect-error: External dependencies
 import FateEditMsg = com.road.yishi.proto.fate.FateEditMsg;
 
 export class SFateRotarySkillItem extends FUI_SFotruneHead {

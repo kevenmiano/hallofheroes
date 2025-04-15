@@ -44,7 +44,9 @@ import { VIPManager } from "../../../manager/VIPManager";
 import { FarmLandItem } from "./item/FarmLandItem";
 import { FarmModel } from "../data/FarmModel";
 import UIManager from "../../../../core/ui/UIManager";
+//@ts-expect-error: External dependencies
 import FriendFarmStateMsg = com.road.yishi.proto.farm.FriendFarmStateMsg;
+//@ts-expect-error: External dependencies
 import LoadFarmRsp = com.road.yishi.proto.farm.LoadFarmRsp;
 import BaseFguiCom from "../../../../core/ui/Base/BaseFguiCom";
 import Utils from "../../../../core/utils/Utils";

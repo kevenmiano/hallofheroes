@@ -277,7 +277,9 @@ export default class ForgeData extends FrameDataBase {
   }
 
   public getStrengthenGrade(gInfo: GoodsInfo): object {
-    return gInfo.strengthenGrade > 0 ? "+" + gInfo.strengthenGrade : "";
+    return gInfo.strengthenGrade > 0
+      ? { value: "+" + gInfo.strengthenGrade }
+      : { value: "" };
   }
 
   public getTreeDataByType(type: number) {

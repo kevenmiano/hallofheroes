@@ -2,6 +2,8 @@ import FUI_OutyardOpenTimeItem from "../../../../../fui/OutYard/FUI_OutyardOpenT
 import LangManager from "../../../../core/lang/LangManager";
 import { DateFormatter } from "../../../../core/utils/DateFormatter";
 import { Int64Utils } from "../../../../core/utils/Int64Utils";
+
+//@ts-expect-error: External dependencies
 import StackHeadOpenTimeMsg = com.road.yishi.proto.stackhead.StackHeadOpenTimeMsg;
 import Utils from "../../../../core/utils/Utils";
 import { PlayerManager } from "../../../manager/PlayerManager";

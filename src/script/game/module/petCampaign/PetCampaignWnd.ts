@@ -1,3 +1,4 @@
+//@ts-expect-error: External dependencies
 import FUI_PetCampaignBackBtn from "../../../../fui/PetCampaign/FUI_PetCampaignBackBtn";
 // import FUI_PetCampaignItem from '../../../../fui/PetCampaign/FUI_PetCampaignItem';
 import LangManager from "../../../core/lang/LangManager";
@@ -25,6 +26,8 @@ import { PetData } from "../pet/data/PetData";
 import { PetCampaignEvent } from "./enum/PetCampaignEnum";
 import PetCampaignLevelItem from "./item/PetCampaignLevelItem";
 import PetCampaignModel from "./PetCampaignModel";
+
+//@ts-expect-error: External dependencies
 import UserUiPlayInfoMsg = com.road.yishi.proto.uiplay.UserUiPlayInfoMsg;
 import { TempleteManager } from "../../manager/TempleteManager";
 import ItemID from "../../constant/ItemID";

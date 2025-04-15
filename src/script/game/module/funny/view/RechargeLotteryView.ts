@@ -29,10 +29,19 @@ import MaskLockOper from "../../../component/MaskLockOper";
 import RechargeAlertMannager from "../../../manager/RechargeAlertMannager";
 import { TaskTraceTipManager } from "../../../manager/TaskTraceTipManager";
 import { ConfigManager } from "../../../manager/ConfigManager";
-import { FunnyContent } from "./FunnyContent";
 
+interface FunnyContent {
+  onShow(): void;
+  onUpdate(): void;
+  onHide(): void;
+  dispose(): void;
+}
+
+//@ts-expect-error: External dependencies
 import LotteryItemMsg = com.road.yishi.proto.active.LotteryItemMsg;
+//@ts-expect-error: External dependencies
 import LotteryInfoMsg = com.road.yishi.proto.active.LotteryInfoMsg;
+//@ts-expect-error: External dependencies
 import ChargePointLotteryMsg = com.road.yishi.proto.active.ChargePointLotteryMsg;
 
 /**

@@ -7,11 +7,16 @@ import { BaseItem } from "../../../component/item/BaseItem";
 import { GoodsInfo } from "../../../datas/goods/GoodsInfo";
 
 import Utils from "../../../../core/utils/Utils";
+//@ts-expect-error: External dependencies
 import FUI_Prog_CDLine from "../../../../../fui/Base/FUI_Prog_CDLine";
+//@ts-expect-error: External dependencies
 import FUI_SuperGiftDiaCom from "../../../../../fui/Funny/FUI_SuperGiftDiaCom";
 
+//@ts-expect-error: External dependencies
 import SuperGiftOfGroupGiftMsg = com.road.yishi.proto.active.GiftMsg;
+//@ts-expect-error: External dependencies
 import SuperGiftOfGroupGiftGoodsMsg = com.road.yishi.proto.active.ItemMsg;
+//@ts-expect-error: External dependencies
 import SuperGiftOfGroupGiftDiamondsMsg = com.road.yishi.proto.active.LevelMsg;
 import { SuperGiftOfGroupManager } from "../../../manager/SuperGiftOfGroupManager";
 import { ArrayConstant, ArrayUtils } from "../../../../core/utils/ArrayUtils";

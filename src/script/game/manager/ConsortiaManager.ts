@@ -52,31 +52,57 @@ import { ConsortiaDutyInfo } from "../module/consortia/data/ConsortiaDutyInfo";
 import BitArray from "../../core/utils/BitArray";
 import SimpleAlertHelper from "../component/SimpleAlertHelper";
 import FUIHelper from "../utils/FUIHelper";
+//@ts-expect-error: External dependencies
 import ConsortiaStorageInfoMsg = com.road.yishi.proto.consortia.ConsortiaStorageInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaBoxInfoMsg = com.road.yishi.proto.consortia.ConsortiaBoxInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaTreasureBoxMsg = com.road.yishi.proto.consortia.ConsortiaTreasureBoxMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaMembersInfoMsg = com.road.yishi.proto.consortia.ConsortiaMembersInfoMsg;
+//@ts-expect-error: External dependencies
 import SimplePlayerListRspMsg = com.road.yishi.proto.simple.SimplePlayerListRspMsg;
+//@ts-expect-error: External dependencies
 import SimplePlayerInfoMsg = com.road.yishi.proto.simple.SimplePlayerInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaMsg = com.road.yishi.proto.consortia.ConsortiaMsg;
+//@ts-expect-error: External dependencies
 import FamInfoMsg = com.road.yishi.proto.consortia.FamInfoMsg;
+//@ts-expect-error: External dependencies
 import FamLordsInfoMsg = com.road.yishi.proto.consortia.FamLordsInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaAltarOpenRspMsg = com.road.yishi.proto.consortia.ConsortiaAltarOpenRspMsg;
+//@ts-expect-error: External dependencies
 import PropertyMsg = com.road.yishi.proto.simple.PropertyMsg;
+//@ts-expect-error: External dependencies
 import AltarCampaignSkillMsg = com.road.yishi.proto.campaign.AltarCampaignSkillMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaLinkRspMsg = com.road.yishi.proto.consortia.ConsortiaLinkRspMsg;
+//@ts-expect-error: External dependencies
 import AltarCampaignReportMsg = com.road.yishi.proto.campaign.AltarCampaignReportMsg;
+//@ts-expect-error: External dependencies
 import HurtOrderMsg = com.road.yishi.proto.campaign.HurtOrderMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaInfoMsg = com.road.yishi.proto.consortia.ConsortiaInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaOrderInfoMsg = com.road.yishi.proto.consortia.ConsortiaOrderInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaUserInviteInfoListRspMsg = com.road.yishi.proto.consortia.ConsortiaUserInviteInfoListRspMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaUserInviteInfoMsg = com.road.yishi.proto.consortia.ConsortiaUserInviteInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaDutyListRspMsg = com.road.yishi.proto.consortia.ConsortiaDutyListRspMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaDutyInfoMsg = com.road.yishi.proto.consortia.ConsortiaDutyInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaRenameRspMsg = com.road.yishi.proto.consortia.ConsortiaRenameRspMsg;
+//@ts-expect-error: External dependencies
 import AllTaskInfoMsg = com.road.yishi.proto.consortia.AllTaskInfoMsg;
+//@ts-expect-error: External dependencies
 import TaskRecordMsg = com.road.yishi.proto.consortia.TaskRecordMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaTaskMsg = com.road.yishi.proto.consortia.ConsortiaTaskMsg;
+//@ts-expect-error: External dependencies
 import HiSkillInfoMsg = com.road.yishi.proto.consortia.HiSkillInfoMsg;
 import GoodsProfile from "../datas/goods/GoodsProfile";
 import Logger from "../../core/logger/Logger";
@@ -84,7 +110,10 @@ import Dictionary from "../../core/utils/Dictionary";
 import ConfigMgr from "../../core/config/ConfigMgr";
 import { ConfigType } from "../constant/ConfigDefine";
 import { t_s_consortiataskrewardData } from "../config/t_s_consortiataskreward";
+
+//@ts-expect-error: External dependencies
 import ConsortiaAltarInfoMsg = com.road.yishi.proto.consortia.ConsortiaAltarInfoMsg;
+//@ts-expect-error: External dependencies
 import ConsortiaAltarItemMsg = com.road.yishi.proto.consortia.ConsortiaAltarItemMsg;
 import ConsortiaPrayInfo from "../module/consortia/data/ConsortiaPrayInfo";
 import { t_s_consortiataskData } from "../config/t_s_consortiatask";

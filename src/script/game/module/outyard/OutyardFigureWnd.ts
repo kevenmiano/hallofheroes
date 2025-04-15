@@ -25,8 +25,11 @@ import OutyardGuildInfo from "./data/OutyardGuildInfo";
 import OutyardFigureMemItem from "./view/OutyardFigureMemItem";
 import OutyardFigureStatusItem from "./view/OutyardFigureStatusItem";
 
+//@ts-expect-error: External dependencies
 import StackHeadSelfMsg = com.road.yishi.proto.stackhead.StackHeadSelfMsg;
+//@ts-expect-error: External dependencies
 import StackHeadStateMsg = com.road.yishi.proto.stackhead.StackHeadStateMsg;
+//@ts-expect-error: External dependencies
 import StackHeadAttackMsg = com.road.yishi.proto.stackhead.StackHeadAttackMsg;
 
 /**

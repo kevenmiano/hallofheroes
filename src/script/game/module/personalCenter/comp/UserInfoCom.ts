@@ -49,7 +49,8 @@ export default class UserInfoCom extends FUI_UserInfoCom {
     this.btn_name.onClick(this, this.onBtnNameClick);
     this.btn_role.onClick(this, this.onChangeRole);
     if (Utils.isWxMiniGame()) {
-      this.btn_login.visible = wx && wx.restartMiniProgram;
+      this.btn_login.visible =
+        wx && typeof wx.restartMiniProgram === "function";
     }
     this.btn_login.onClick(this, this.onBackToLogin);
     this.btn_modify.onClick(this, this.onIconClick);

@@ -102,8 +102,12 @@ export class ConsortiaTreeExpView extends Laya.Sprite {
         this.txtProgTranstion.text = LangManager.Instance.GetTranslation(
           "ConsortiaTreeExpView.energy",
         );
+
+        //@ts-expect-error: External dependencies
         TweenLite.to(this.progTranstion, 1, {
           value: 100,
+          //@ts-expect-error: External dependencies
+
           ease: Linear.easeNone,
           onUpdate: () => {},
           onComplete: this.energyProgressBack.bind(this),

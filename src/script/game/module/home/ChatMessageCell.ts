@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import FUI_ChatMessageCell from "../../../../fui/Base/FUI_ChatMessageCell";
 import { EmPackName, EmWindow } from "../../constant/UIDefine";
 import { ChatChannel } from "../../datas/ChatChannel";

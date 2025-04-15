@@ -1,5 +1,5 @@
 import FUI_CommonFrame3 from "../../../../../fui/Base/FUI_CommonFrame3";
-import FUI_TabButton from "../../../../../fui/Base/FUI_TabButton";
+// import FUI_TabButton from "../../../../../fui/Base/FUI_TabButton";
 import ConfigMgr from "../../../../core/config/ConfigMgr";
 import LangManager from "../../../../core/lang/LangManager";
 import BaseWindow from "../../../../core/ui/Base/BaseWindow";
@@ -221,7 +221,7 @@ export default class SkillEditWnd extends BaseWindow {
     );
   }
 
-  private onRenderListItem1(index: number, item: FUI_TabButton) {
+  private onRenderListItem1(index: number, item: any) {
     if (item) {
       item.title = this.titleArr[index];
     }

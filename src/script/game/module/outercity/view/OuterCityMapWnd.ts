@@ -29,7 +29,9 @@ import SmallMapCityItem from "../com/SmallMapCityItem";
 import SmallMapMineItem from "../com/SmallMapMineItem";
 import SmallMapPlayerItem from "../com/SmallMapPlayerItem";
 import SmallMapTreasureItem from "../com/SmallMapTreasureItem";
+//@ts-expect-error: External dependencies
 import PosMoveMsg = com.road.yishi.proto.worldmap.PosMoveMsg;
+//@ts-expect-error: External dependencies
 import RouteMsg = com.road.yishi.proto.worldmap.RouteMsg;
 import SmallMapVehicleItem from "../com/SmallMapVehicleItem";
 import OutercityVehicleArmyView from "../../../map/campaign/view/physics/OutercityVehicleArmyView";

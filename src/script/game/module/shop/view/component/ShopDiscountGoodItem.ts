@@ -6,6 +6,7 @@
  * @LastEditTime: 2023-01-09 16:16:20
  * @Description: 欢乐折扣商城物品单元格
  */
+import BaseTipItem from "@/script/game/component/item/BaseTipItem";
 import FUI_ShopDiscountGoodItem from "../../../../../../fui/Shop/FUI_ShopDiscountGoodItem";
 import LangManager from "../../../../../core/lang/LangManager";
 import UIManager from "../../../../../core/ui/UIManager";

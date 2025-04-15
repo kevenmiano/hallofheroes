@@ -72,10 +72,10 @@ export default class RoleCom {
   public static STEP_ONE: number = 99999;
   public static BLOOD_MAX: number = 1000000;
   public Btn_Buy_Hp: BuyHpBtn; //购买血量
-  private userNameTxt: fgui.GBasicTextField;
-  public powerValueTxt: fgui.GBasicTextField; //体力
-  private levelTxt: fgui.GBasicTextField; //等级
-  private fightOpt: fgui.GBasicTextField; //战斗力
+  private userNameTxt: fgui.GTextField;
+  public powerValueTxt: fgui.GTextField; //体力
+  private levelTxt: fgui.GTextField; //等级
+  private fightOpt: fgui.GTextField; //战斗力
   public redStatus: fgui.Controller;
   public Bar_Exp: fgui.GProgressBar;
 
@@ -109,16 +109,12 @@ export default class RoleCom {
     ) as fgui.GComponent;
     this.userNameTxt = this.roleCom.asCom.getChild(
       "userNameTxt",
-    ) as fgui.GBasicTextField;
+    ) as fgui.GTextField;
     this.powerValueTxt = this.roleCom.asCom.getChild(
       "powerValueTxt",
-    ) as fgui.GBasicTextField;
-    this.levelTxt = this.roleCom.asCom.getChild(
-      "levelTxt",
-    ) as fgui.GBasicTextField;
-    this.fightOpt = this.roleCom.asCom.getChild(
-      "fightOpt",
-    ) as fgui.GBasicTextField;
+    ) as fgui.GTextField;
+    this.levelTxt = this.roleCom.asCom.getChild("levelTxt") as fgui.GTextField;
+    this.fightOpt = this.roleCom.asCom.getChild("fightOpt") as fgui.GTextField;
     this.Btn_Buy_Hp = this.roleCom.asCom.getChild("Btn_Buy_Hp") as BuyHpBtn;
     this.Bar_Exp = this.roleCom.asCom.getChild("Bar_Exp") as fgui.GProgressBar;
     this.bufferList = this.roleCom.asCom.getChild("bufferList") as fgui.GList;

@@ -4,6 +4,8 @@ import { UIFilter } from "../../../../core/ui/UIFilter";
 import { IconFactory } from "../../../../core/utils/IconFactory";
 import SinglePassCardStateInfo from "../../singlepass/model/SinglePassCardStateInfo";
 import MonopolyFinishRewardItem from "./MonopolyFinishRewardItem";
+
+//@ts-expect-error: External dependencies
 import TempMsg = com.road.yishi.proto.campaign.TempMsg;
 
 /**

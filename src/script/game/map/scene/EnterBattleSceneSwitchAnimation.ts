@@ -1,6 +1,22 @@
-import ISceneSwitchAnimation from "../space/interfaces/ISceneSwitchAnimation";
+// import ISceneSwitchAnimation from "../space/interfaces/ISceneSwitchAnimation";
 import { BaseSceneView } from "./BaseSceneView";
 import LayerMgr from "../../../core/layer/LayerMgr";
+
+interface ISceneSwitchAnimation {
+  /**
+   * 下个场景
+   */
+  nextScene($scene: BaseSceneView): void;
+
+  /**
+   * 当前场景
+   */
+  curScene(value: BaseSceneView): void;
+
+  start(): void;
+
+  stop(): void;
+}
 
 /**
  * @author yuanzhan.yu

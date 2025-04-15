@@ -1,6 +1,7 @@
 import FUI_MarketRecordCom from "../../../../../fui/Market/FUI_MarketRecordCom";
 import MarketRecordItem from "./MarketRecordItem";
 
+//@ts-expect-error: External dependencies
 import IMarketOrderMsg = com.road.yishi.proto.market.IMarketOrderMsg;
 
 export default class MarketRecordCom extends FUI_MarketRecordCom {

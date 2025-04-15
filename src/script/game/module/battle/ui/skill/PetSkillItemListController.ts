@@ -19,6 +19,8 @@ import { RemotePetManager } from "../../../../manager/RemotePetManager";
 import { SocketSendManager } from "../../../../manager/SocketSendManager";
 import { TempleteManager } from "../../../../manager/TempleteManager";
 import { PetSkillItemListView } from "./PetSkillItemListView";
+
+//@ts-expect-error: External dependencies
 import HeroOrderMsg = com.road.yishi.proto.battle.HeroOrderMsg;
 
 export class PetSkillItemListController {

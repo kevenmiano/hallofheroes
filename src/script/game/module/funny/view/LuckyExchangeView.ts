@@ -19,9 +19,18 @@ import { NotificationManager } from "../../../manager/NotificationManager";
 import { PlayerManager } from "../../../manager/PlayerManager";
 import LuckyExchangeItem from "./LuckyExchangeItem";
 import LuckyExchangeRareItem from "./LuckyExchangeRareItem";
+//@ts-expect-error: External dependencies
 import LuckExchangeTempMsg = com.road.yishi.proto.active.LuckExchangeTempMsg;
+//@ts-expect-error: External dependencies
 import LuckExchangeItemTempMsg = com.road.yishi.proto.active.LuckExchangeItemTempMsg;
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  dispose(): void;
+}
 
 /**幸运兑换 */
 export default class LuckyExchangeView

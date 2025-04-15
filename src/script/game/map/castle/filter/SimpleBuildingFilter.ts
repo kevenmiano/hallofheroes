@@ -1,4 +1,17 @@
-import IBuildingFilter from "../../space/interfaces/IBuildingFilter";
+// import IBuildingFilter from "../../space/interfaces/IBuildingFilter";
+
+interface IBuildingFilter {
+  setLightFilter(display: Laya.Sprite): void;
+  setLightingFilter(display: Laya.Sprite): void;
+  setGlowFilter(display: Laya.Sprite): void;
+  setBuildingOverFilter(display: Laya.Sprite): void;
+  setGrayFilter(display: Laya.Sprite): void;
+  setBuildingOutFilter(display: Laya.Sprite): void;
+  setNormalFilter(display: Laya.Sprite): void;
+  setBuildingBuildingFilter(display: Laya.Sprite): void;
+  setBuildingFinishFilter(display: Laya.Sprite): void;
+  setRedFilter(display: Laya.Sprite): void;
+}
 
 /**
  * @author:shujin.ou
@@ -11,6 +24,10 @@ export default class SimpleBuildingFilter implements IBuildingFilter {
   protected orangeGlow: Laya.GlowFilter;
   protected grayFilter: Laya.ColorFilter;
   protected lightFilter: Laya.ColorFilter;
+
+  public filterType: any;
+  public filterValue: any;
+
   constructor() {
     this.setupGrayFilter();
     this.setupLightingFilter();

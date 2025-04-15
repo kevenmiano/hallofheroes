@@ -15,6 +15,8 @@ import { MyMountWnd } from "./MyMountWnd";
  * @author zhihua.zhou
  */
 export class PlayerMountWnd extends BaseWindow {
+  //@ts-expect-error: External dependencies
+
   private txt_name: fairygui.GBasicTextField;
   private txt0: fairygui.GTextField;
   private txt1: fairygui.GTextField;

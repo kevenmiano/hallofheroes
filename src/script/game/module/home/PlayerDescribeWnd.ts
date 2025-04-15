@@ -6,28 +6,28 @@ import { TempleteManager } from "../../manager/TempleteManager";
  * 个人信息详细说明窗口
  */
 export default class PlayerDescribeWnd extends BaseWindow {
-  private txt_gameName: fgui.GBasicTextField;
-  private txt_gold: fgui.GBasicTextField;
-  private txt_head: fgui.GBasicTextField;
-  private txt_stamina: fgui.GBasicTextField;
-  private txt_level: fgui.GBasicTextField;
-  private txt_fight: fgui.GBasicTextField;
-  private txt_diamond: fgui.GBasicTextField;
-  private txt_blood: fgui.GBasicTextField;
-  private txt_solider: fgui.GBasicTextField;
-  private txt_buff: fgui.GBasicTextField;
-  private txt_exp: fgui.GBasicTextField;
+  private txt_gameName: fgui.GTextField;
+  private txt_gold: fgui.GTextField;
+  private txt_head: fgui.GTextField;
+  private txt_stamina: fgui.GTextField;
+  private txt_level: fgui.GTextField;
+  private txt_fight: fgui.GTextField;
+  private txt_diamond: fgui.GTextField;
+  private txt_blood: fgui.GTextField;
+  private txt_solider: fgui.GTextField;
+  private txt_buff: fgui.GTextField;
+  private txt_exp: fgui.GTextField;
 
-  private txt_gold_des: fgui.GBasicTextField;
-  private txt_head_des: fgui.GBasicTextField;
-  private txt_stamina_des: fgui.GBasicTextField;
-  private txt_level_des: fgui.GBasicTextField;
-  private txt_fight_des: fgui.GBasicTextField;
-  private txt_diamond_des: fgui.GBasicTextField;
-  private txt_blood_des: fgui.GBasicTextField;
-  private txt_solider_des: fgui.GBasicTextField;
-  private txt_buff_des: fgui.GBasicTextField;
-  private txt_exp_des: fgui.GBasicTextField;
+  private txt_gold_des: fgui.GTextField;
+  private txt_head_des: fgui.GTextField;
+  private txt_stamina_des: fgui.GTextField;
+  private txt_level_des: fgui.GTextField;
+  private txt_fight_des: fgui.GTextField;
+  private txt_diamond_des: fgui.GTextField;
+  private txt_blood_des: fgui.GTextField;
+  private txt_solider_des: fgui.GTextField;
+  private txt_buff_des: fgui.GTextField;
+  private txt_exp_des: fgui.GTextField;
 
   public OnInitWind(): void {
     super.OnInitWind();

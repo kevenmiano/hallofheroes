@@ -1,3 +1,4 @@
+//@ts-expect-error: External dependencies
 import FUI_SendFlowerItem from "../../../../fui/Chat/FUI_SendFlowerItem";
 import LangManager from "../../../core/lang/LangManager";
 import BaseWindow from "../../../core/ui/Base/BaseWindow";

@@ -109,8 +109,12 @@ export default class MountShareWnd extends BaseWindow {
   }
 
   private removeEvent() {
-    this.rewardList.itemRenderer && this.rewardList.itemRenderer.recover();
-    this.sharelist.itemRenderer && this.sharelist.itemRenderer.recover();
+    if (this.rewardList.itemRenderer instanceof Laya.Handler) {
+      this.rewardList.itemRenderer.recover();
+    }
+    if (this.sharelist.itemRenderer instanceof Laya.Handler) {
+      this.sharelist.itemRenderer.recover();
+    }
     this.sharelist.off(fairygui.Events.CLICK_ITEM, this, this.shareBtnHandlr);
     Utils.clearGListHandle(this.rewardList);
   }

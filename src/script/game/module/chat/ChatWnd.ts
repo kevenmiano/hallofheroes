@@ -73,8 +73,11 @@ import ChatTabData from "./data/ChatTabData";
 import SysMsgCell from "./SysMsgCell";
 import VoiceMsgCell from "./VoiceMsgCell";
 
+//@ts-expect-error: External dependencies
 import ChatItemInfoMsg = com.road.yishi.proto.chat.ChatItemInfoMsg;
+//@ts-expect-error: External dependencies
 import ChatStarInfoMsg = com.road.yishi.proto.chat.ChatStarInfoMsg;
+//@ts-expect-error: External dependencies
 import ChatPowCardInfoMsg = com.road.yishi.proto.chat.ChatPowCardInfoMsg;
 import { NativeChannel } from "../../../core/sdk/native/NativeChannel";
 import { t_s_itemtemplateData } from "../../config/t_s_itemtemplate";

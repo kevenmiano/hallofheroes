@@ -30,6 +30,8 @@ import {
   eFilterFrameText,
   FilterFrameText,
 } from "../../../component/FilterFrameText";
+
+//@ts-expect-error: External dependencies
 import ShopMsg = com.road.yishi.proto.shop.ShopMsg;
 import { BaseItem } from "../../../component/item/BaseItem";
 import { MountsManager } from "../../../manager/MountsManager";

@@ -1,4 +1,5 @@
 import FUI_RechargeLotteryInfoItem from "../../../../../fui/Funny/FUI_RechargeLotteryInfoItem";
+//@ts-expect-error: External dependencies
 import LotteryInfoMsg = com.road.yishi.proto.active.LotteryInfoMsg;
 import LangManager from "../../../../core/lang/LangManager";
 /**

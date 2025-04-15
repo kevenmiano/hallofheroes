@@ -11,7 +11,7 @@ import {
   SpaceEvent,
 } from "../../../../constant/event/NotificationEvent";
 import { FogGridType } from "../../../../constant/FogGridType";
-import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
+// import { IEnterFrame } from "../../../../interfaces/IEnterFrame";
 import { CampaignManager } from "../../../../manager/CampaignManager";
 import { EnterFrameManager } from "../../../../manager/EnterFrameManager";
 import MediatorMananger from "../../../../manager/MediatorMananger";
@@ -48,6 +48,7 @@ import NewbieModule from "../../../../module/guide/NewbieModule";
 import NewbieConfig from "../../../../module/guide/data/NewbieConfig";
 import { PosType } from "../../../space/constant/PosType";
 import { ShowAvatarBattle } from "../../../../avatar/view/ShowAvatarBattle";
+import { IEnterFrame } from "@/script/game/interfaces/EnterFrame";
 
 /**
  *
@@ -222,7 +223,9 @@ export class CampaignWalkLayer extends Laya.Sprite implements IEnterFrame {
 
   private __standPosHandler(data: any) {
     Logger.info("[CampaignWalkLayer]同步军队站立位置", data);
+    //@ts-expect-error: External dependencies
     let sPos: com.road.yishi.proto.campaign.StandPosMsg = <
+      //@ts-expect-error: External dependencies
       com.road.yishi.proto.campaign.StandPosMsg
     >data;
     let serverName: string = sPos.serverName;
@@ -587,6 +590,8 @@ export class CampaignWalkLayer extends Laya.Sprite implements IEnterFrame {
     if (CampaignManager.Instance.exit) {
       return;
     }
+
+    //@ts-expect-error: External dependencies
     let msg: com.road.yishi.proto.worldmap.PosMoveMsg = data;
     let serverName: string = msg.serverName;
     let armyView: CampaignArmyView = this._armys.get(
@@ -662,9 +667,11 @@ export class CampaignWalkLayer extends Laya.Sprite implements IEnterFrame {
   }
 
   private __updateArmyPosHandler(
+    //@ts-expect-error: External dependencies
     data: com.road.yishi.proto.army.ArmyPosUpdatedMsg,
   ) {
     Logger.info("[CampaignWalkLayer]把军队移动到某个位置", data);
+    //@ts-expect-error: External dependencies
     let msg: com.road.yishi.proto.army.ArmyPosUpdatedMsg = data;
     let armyView: CampaignArmyView = this._armys.get(
       msg.serverName + "_" + msg.armyId,

@@ -653,7 +653,11 @@ export default class PveCampaignWnd extends BaseWindow {
   dispose() {
     this.tree.removeChildrenToPool();
     this.tree.off(fgui.Events.CLICK_ITEM, this, this.onClickTreeItem);
-    this.tree.treeNodeRender.recover();
+
+    if (this.tree.treeNodeRender instanceof Laya.Handler) {
+      this.tree.treeNodeRender.recover();
+    }
+
     this.tree.treeNodeRender = null;
     //当玩家通关副本开启该副本的扫荡功能后, 扫荡按钮上的文字颜色显示异常,界面缓存 保留的enabled=false的颜色
     this.btnSweep.enabled = true;

@@ -6,7 +6,7 @@ export default class FUI_CarnivalInfoItem extends fgui.GComponent {
   public txt_title: fgui.GRichTextField;
   public iconType: fgui.GLoader;
   public txt_value: fgui.GRichTextField;
-  public Group: fgui.GGroup;
+  // public group: fgui.GGroup;
   public static URL: string = "ui://qvbm8hnzuuxigs";
 
   public static createInstance(): FUI_CarnivalInfoItem {
@@ -21,6 +21,6 @@ export default class FUI_CarnivalInfoItem extends fgui.GComponent {
     this.txt_title = <fgui.GRichTextField>this.getChild("txt_title");
     this.iconType = <fgui.GLoader>this.getChild("iconType");
     this.txt_value = <fgui.GRichTextField>this.getChild("txt_value");
-    this.Group = <fgui.GGroup>this.getChild("Group");
+    this.group = <fgui.GGroup>this.getChild("Group");
   }
 }

@@ -5,7 +5,14 @@ import { BottleModel } from "../model/BottleModel";
 import { BottleManager } from "../../../manager/BottleManager";
 import StringUtils from "../../../utils/StringUtils";
 import { ToolTipsManager } from "../../../manager/ToolTipsManager";
-import { FunnyContent } from "./FunnyContent";
+// import { FunnyContent } from "@/script/game/module/funny/view/FunnyContent";
+
+interface FunnyContent {
+  onUpdate(): void;
+  onShow(): void;
+  onHide(): void;
+  onDestroy(): void;
+}
 
 /**
  * @description

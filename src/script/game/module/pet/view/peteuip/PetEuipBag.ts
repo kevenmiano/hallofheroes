@@ -9,6 +9,8 @@ import { C2SProtocol } from "../../../../constant/protocol/C2SProtocol";
 import { GoodsInfo } from "../../../../datas/goods/GoodsInfo";
 import { NotificationManager } from "../../../../manager/NotificationManager";
 import { PetData } from "../../data/PetData";
+
+//@ts-expect-error: External dependencies
 import PayTypeMsg = com.road.yishi.proto.player.PayTypeMsg;
 import { BagType } from "../../../../constant/BagDefine";
 import { GoodsManager } from "../../../../manager/GoodsManager";

@@ -1,3 +1,4 @@
+//@ts-expect-error: External dependencies
 import FUI_CarnivalGameGoodsItem from "../../../../../fui/Carnival/FUI_CarnivalGameGoodsItem";
 import FUI_CarnivalGamePageItem from "../../../../../fui/Carnival/FUI_CarnivalGamePageItem";
 import LangManager from "../../../../core/lang/LangManager";

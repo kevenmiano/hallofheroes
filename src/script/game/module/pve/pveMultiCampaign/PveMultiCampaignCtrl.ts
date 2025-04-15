@@ -18,6 +18,7 @@ import Logger from "../../../../core/logger/Logger";
 import { FrameCtrlManager } from "../../../mvc/FrameCtrlManager";
 import { EmWindow } from "../../../constant/UIDefine";
 
+//@ts-expect-error: External dependency
 import RoomMsg = com.road.yishi.proto.room.RoomMsg;
 
 export default class PveMultiCampaignCtrl extends FrameCtrlBase {
